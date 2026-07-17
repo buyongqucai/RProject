@@ -1,0 +1,7 @@
+﻿source("配置.R", encoding = "UTF-8")
+setup_script_env()
+cat("=== sciadv_adz3266 MAMs 交集分析 ===\n\n")
+source("01_人源MAMs交集.R", encoding = "UTF-8")
+source("02_鼠源MAMs交集与细胞定位.R", encoding = "UTF-8")
+if (file.exists("03_scRNA验证.R")) source("03_scRNA验证.R", encoding = "UTF-8")
+cat("\n=== 分析完成 ===\n")

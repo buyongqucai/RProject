@@ -1,0 +1,5 @@
+"dataset","type","n_pdf","n_extra","n_miss_fig","n_miss_tab","n_mac_full","n_mac_immune","n_nonimm_in_immune","n_macro_deg","n_mams_inter","ok_immune","ok_mac_align"
+"GSE190856","scRNA",27,0,0,0,39756,39756,0,179,0,TRUE,TRUE
+"GSE207363","scRNA",33,0,0,0,9433,9433,0,873,3,TRUE,TRUE
+"GSE207177","scRNA",25,0,0,0,3246,3246,0,2891,12,TRUE,TRUE
+"GSE267388","bulk",23,0,0,0,NA,NA,NA,2344,2,NA,NA

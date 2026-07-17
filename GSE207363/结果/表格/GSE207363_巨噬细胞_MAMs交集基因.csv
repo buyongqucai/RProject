@@ -1,0 +1,4 @@
+"gene","log2FC","pvalue","padj","pct.1","pct.2","method","contrast","category"
+"Pink1",-1.71905759870933,9.32458414203122e-21,1.83162806301919e-16,0.063,0.159,"macrophage_FindMarkers","Sepsis vs Sham","mito_dynamics"
+"Slc8a1",-1.74191776215742,5.23003046763691e-15,1.02733488475792e-10,0.069,0.141,"macrophage_FindMarkers","Sepsis vs Sham","calcium"
+"Fundc1",-1.07587440426312,4.45123754034815e-07,0.00874356590050586,0.093,0.135,"macrophage_FindMarkers","Sepsis vs Sham","mito_dynamics"

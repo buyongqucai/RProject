@@ -1,0 +1,10 @@
+﻿source("閰嶇疆.R", encoding = "UTF-8")
+setup_script_env()
+cat("=== PRJCA045393 鑴撴瘨鐥囧績鑲屾崯浼ゆ椂搴?RNA-seq ===\n\n")
+source("01_涓嬭浇鏁版嵁.R", encoding = "UTF-8")
+source("02_棰勫鐞嗕笌璐ㄦ帶.R", encoding = "UTF-8")
+source("03_宸紓鍒嗘瀽.R", encoding = "UTF-8")
+source("04_鍙鍖?R", encoding = "UTF-8")
+source("05_瀵岄泦鍒嗘瀽.R", encoding = "UTF-8")
+cat("\n=== 鍒嗘瀽瀹屾垚 ===\n")
+
