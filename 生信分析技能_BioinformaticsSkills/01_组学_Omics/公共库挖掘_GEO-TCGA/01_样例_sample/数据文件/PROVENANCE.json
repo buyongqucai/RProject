@@ -1,0 +1,10 @@
+{
+  "data_provenance": "REAL",
+  "accession": "GSE10072",
+  "geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE10072",
+  "cache_file": "geo_cache/GSE10072_series_matrix.txt.gz",
+  "n_probes": 2000,
+  "n_samples": 24,
+  "grouping": "Normal Lung vs Adenocarcinoma (Sample_source_name_ch1)",
+  "note": "Parsed locally from GEO series matrix; GEOquery getGEO crashes on this host."
+}

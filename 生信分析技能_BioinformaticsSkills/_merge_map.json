@@ -1,0 +1,149 @@
+{
+  "deprecated_folders": {
+    "蛋白结构预测与口袋_ProteinStructure": "蛋白结构与建模_ProteinStructure",
+    "同源建模_HomologyModeling": "蛋白结构与建模_ProteinStructure",
+    "HiC三维基因组_HiC": "三维基因组分析_3DGenome",
+    "染色质环与HiChIP_ChromatinLoop": "三维基因组分析_3DGenome",
+    "CUT与Tag分析_CUTnTag": "表观遗传ChIP-seq_Epigenomics",
+    "表观峰检测_ChIP-CUTnTag": "表观遗传ChIP-seq_Epigenomics",
+    "变异检测与注释_VariantCalling": "变异检测与外显子组_Variant-WES",
+    "全外显子组分析_WES": "变异检测与外显子组_Variant-WES",
+    "宏基因组分析_Metagenomics": "宏基因组与病原_Metagenome-Pathogen",
+    "宏转录组分析_Metatranscriptomics": "宏基因组与病原_Metagenome-Pathogen",
+    "病毒组与病原检测_Virome": "宏基因组与病原_Metagenome-Pathogen",
+    "耐药与毒力基因_AMR-Virulence": "宏基因组与病原_Metagenome-Pathogen",
+    "非编码RNA分析_ncRNA": "非编码与ceRNA_ncRNA-ceRNA",
+    "ceRNA网络分析_ceRNA": "非编码与ceRNA_ncRNA-ceRNA",
+    "ADMET与类药性评价_ADMET": "类药性与QSAR_ADMET-QSAR",
+    "QSAR与药效团_QSAR-Pharmacophore": "类药性与QSAR_ADMET-QSAR",
+    "肿瘤突变负荷与特征_TMB-Signature": "肿瘤体细胞景观_TumorSomatic",
+    "肿瘤异质性与克隆演化_ClonalEvolution": "肿瘤体细胞景观_TumorSomatic",
+    "磷酸化与PTM蛋白组_PTM-Proteomics": "蛋白质组分析_Proteomics",
+    "相互作用组AP-MS_Interactomics": "蛋白质组分析_Proteomics",
+    "脂质组分析_Lipidomics": "代谢组分析_Metabolomics",
+    "代谢通量分析_Fluxomics": "代谢组分析_Metabolomics",
+    "单细胞轨迹与命运_Trajectory": "单细胞进阶方法_scRNA-Advanced",
+    "单细胞组成差异_scComposition": "单细胞进阶方法_scRNA-Advanced",
+    "单细胞整合与图谱_AtlasIntegration": "单细胞进阶方法_scRNA-Advanced",
+    "eQTL与QTL作图_eQTL": "遗传关联下游_GeneticDownstream",
+    "共定位与TWAS_Coloc-TWAS": "遗传关联下游_GeneticDownstream",
+    "多基因风险评分_PRS": "遗传关联下游_GeneticDownstream",
+    "时间序列组学_TimeSeriesOmics": "剂量反应与时间序列_DoseTime",
+    "HLA分型_HLA-Typing": "新抗原与免疫组库_Neoantigen-TCR"
+  },
+  "created": [
+    {
+      "id": "bioinfo-protein-structure",
+      "folder": "蛋白结构与建模_ProteinStructure",
+      "absorbed": [
+        "蛋白结构预测与口袋_ProteinStructure",
+        "同源建模_HomologyModeling"
+      ]
+    },
+    {
+      "id": "bioinfo-3d-genome",
+      "folder": "三维基因组分析_3DGenome",
+      "absorbed": [
+        "HiC三维基因组_HiC",
+        "染色质环与HiChIP_ChromatinLoop"
+      ]
+    },
+    {
+      "id": "bioinfo-chipseq",
+      "folder": "表观遗传ChIP-seq_Epigenomics",
+      "absorbed": [
+        "CUT与Tag分析_CUTnTag"
+      ]
+    },
+    {
+      "id": "bioinfo-variant-wes",
+      "folder": "变异检测与外显子组_Variant-WES",
+      "absorbed": [
+        "变异检测与注释_VariantCalling",
+        "全外显子组分析_WES"
+      ]
+    },
+    {
+      "id": "bioinfo-metagenome-pathogen",
+      "folder": "宏基因组与病原_Metagenome-Pathogen",
+      "absorbed": [
+        "宏基因组分析_Metagenomics",
+        "宏转录组分析_Metatranscriptomics",
+        "病毒组与病原检测_Virome",
+        "耐药与毒力基因_AMR-Virulence"
+      ]
+    },
+    {
+      "id": "bioinfo-ncrna-cerna",
+      "folder": "非编码与ceRNA_ncRNA-ceRNA",
+      "absorbed": [
+        "非编码RNA分析_ncRNA",
+        "ceRNA网络分析_ceRNA"
+      ]
+    },
+    {
+      "id": "bioinfo-admet-qsar",
+      "folder": "类药性与QSAR_ADMET-QSAR",
+      "absorbed": [
+        "ADMET与类药性评价_ADMET",
+        "QSAR与药效团_QSAR-Pharmacophore"
+      ]
+    },
+    {
+      "id": "bioinfo-tumor-somatic",
+      "folder": "肿瘤体细胞景观_TumorSomatic",
+      "absorbed": [
+        "肿瘤突变负荷与特征_TMB-Signature",
+        "肿瘤异质性与克隆演化_ClonalEvolution"
+      ]
+    },
+    {
+      "id": "bioinfo-proteomics",
+      "folder": "蛋白质组分析_Proteomics",
+      "absorbed": [
+        "磷酸化与PTM蛋白组_PTM-Proteomics",
+        "相互作用组AP-MS_Interactomics"
+      ]
+    },
+    {
+      "id": "bioinfo-metabolomics",
+      "folder": "代谢组分析_Metabolomics",
+      "absorbed": [
+        "脂质组分析_Lipidomics",
+        "代谢通量分析_Fluxomics"
+      ]
+    },
+    {
+      "id": "bioinfo-scrna-advanced",
+      "folder": "单细胞进阶方法_scRNA-Advanced",
+      "absorbed": [
+        "单细胞轨迹与命运_Trajectory",
+        "单细胞组成差异_scComposition",
+        "单细胞整合与图谱_AtlasIntegration"
+      ]
+    },
+    {
+      "id": "bioinfo-genetic-downstream",
+      "folder": "遗传关联下游_GeneticDownstream",
+      "absorbed": [
+        "eQTL与QTL作图_eQTL",
+        "共定位与TWAS_Coloc-TWAS",
+        "多基因风险评分_PRS"
+      ]
+    },
+    {
+      "id": "bioinfo-dose-time",
+      "folder": "剂量反应与时间序列_DoseTime",
+      "absorbed": [
+        "时间序列组学_TimeSeriesOmics"
+      ]
+    },
+    {
+      "id": "bioinfo-neoantigen",
+      "folder": "新抗原与免疫组库_Neoantigen-TCR",
+      "absorbed": [
+        "HLA分型_HLA-Typing"
+      ]
+    }
+  ]
+}

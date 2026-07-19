@@ -1,0 +1,266 @@
+{
+  "generated_at": "2026-07-18T19:08:33",
+  "core": [
+    {
+      "folder": "统一交付规范_DeliveryStandards",
+      "path": "00_基础_Foundation/统一交付规范_DeliveryStandards",
+      "status": "PASS",
+      "kind": "delivery_demo",
+      "report": "00_基础_Foundation/统一交付规范_DeliveryStandards/01_样例_sample/结果文件/报告文件/DeliveryStandards_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 统一交付规范_DeliveryStandards report=DeliveryStandards_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "统一可视化规范_VizStandards",
+      "path": "00_基础_Foundation/统一可视化规范_VizStandards",
+      "status": "PASS",
+      "kind": "viz_demo",
+      "report": "00_基础_Foundation/统一可视化规范_VizStandards/01_样例_sample/结果文件/报告文件/VizStandards_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 统一可视化规范_VizStandards report=VizStandards_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "数据真实性验证_DataAuthenticity",
+      "path": "00_基础_Foundation/数据真实性验证_DataAuthenticity",
+      "status": "PASS",
+      "kind": "authenticity",
+      "report": "00_基础_Foundation/数据真实性验证_DataAuthenticity/01_样例_sample/结果文件/报告文件/DataAuthenticity_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "运行: E:/RProject/书清项目/校验/数据真实性核对.R\nWarning messages:\n1: package 'tidyverse' was built under R version 4.6.1 \n2: package 'ggplot2' was built under R version 4.6.1 \n3: package 'tibble' was built under R version 4.6.1 \n4: package 'tidyr' was built under R version 4.6.1 \n5: package 'readr' was built under R version 4.6.1 \n6: package 'dplyr' was built under R version 4.6.1 \n7: package 'stringr' was built under R version 4.6.1 \n8: package 'forcats' was built under R version 4.6.1 \n9: package 'lubridate' was built under R version 4.6.1 \nDONE PASS — 数据真实性验证_DataAuthenticity report=DataAuthenticity_样例报告_v1.html\n",
+      "stdout": "\n================ 汇总 ================\nFAIL: 0  WARN: 0 \n\n报告已保存: 校验/数据真实性核对报告.csv\n"
+    },
+    {
+      "folder": "转录组分析_RNA-seq",
+      "path": "01_组学_Omics/转录组分析_RNA-seq",
+      "status": "PASS",
+      "kind": "rnaseq",
+      "report": "01_组学_Omics/转录组分析_RNA-seq/01_样例_sample/结果文件/报告文件/RNA-seq_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 转录组分析_RNA-seq report=RNA-seq_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "蛋白质组分析_Proteomics",
+      "path": "01_组学_Omics/蛋白质组分析_Proteomics",
+      "status": "PASS",
+      "kind": "proteomics",
+      "report": "01_组学_Omics/蛋白质组分析_Proteomics/01_样例_sample/结果文件/报告文件/Proteomics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 蛋白质组分析_Proteomics report=Proteomics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "单细胞与空间转录组分析_scRNA-Spatial",
+      "path": "01_组学_Omics/单细胞与空间转录组分析_scRNA-Spatial",
+      "status": "PASS",
+      "kind": "scrna",
+      "report": "01_组学_Omics/单细胞与空间转录组分析_scRNA-Spatial/01_样例_sample/结果文件/报告文件/scRNA-Spatial_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 单细胞与空间转录组分析_scRNA-Spatial report=scRNA-Spatial_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "代谢组分析_Metabolomics",
+      "path": "01_组学_Omics/代谢组分析_Metabolomics",
+      "status": "PASS",
+      "kind": "metabolomics",
+      "report": "01_组学_Omics/代谢组分析_Metabolomics/01_样例_sample/结果文件/报告文件/Metabolomics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 代谢组分析_Metabolomics report=Metabolomics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "微生物组16S分析_Microbiome16S",
+      "path": "01_组学_Omics/微生物组16S分析_Microbiome16S",
+      "status": "PASS",
+      "kind": "microbiome16s",
+      "report": "01_组学_Omics/微生物组16S分析_Microbiome16S/01_样例_sample/结果文件/报告文件/Microbiome16S_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 微生物组16S分析_Microbiome16S report=Microbiome16S_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "DNA甲基化分析_WGBS-RRBS",
+      "path": "01_组学_Omics/DNA甲基化分析_WGBS-RRBS",
+      "status": "PASS",
+      "kind": "methylation",
+      "report": "01_组学_Omics/DNA甲基化分析_WGBS-RRBS/01_样例_sample/结果文件/报告文件/WGBS-RRBS_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — DNA甲基化分析_WGBS-RRBS report=WGBS-RRBS_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "公共库挖掘_GEO-TCGA",
+      "path": "01_组学_Omics/公共库挖掘_GEO-TCGA",
+      "status": "PASS",
+      "kind": "geo_tcga",
+      "report": "01_组学_Omics/公共库挖掘_GEO-TCGA/01_样例_sample/结果文件/报告文件/GEO-TCGA_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 公共库挖掘_GEO-TCGA report=GEO-TCGA_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "全基因组关联分析_GWAS",
+      "path": "02_遗传与变异_Genetics/全基因组关联分析_GWAS",
+      "status": "PASS",
+      "kind": "gwas",
+      "report": "02_遗传与变异_Genetics/全基因组关联分析_GWAS/01_样例_sample/结果文件/报告文件/GWAS_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 全基因组关联分析_GWAS report=GWAS_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "网络药理学_NetworkPharmacology",
+      "path": "03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology",
+      "status": "PASS",
+      "kind": "network_pharm",
+      "report": "03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology/01_样例_sample/结果文件/报告文件/NetworkPharmacology_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 网络药理学_NetworkPharmacology report=NetworkPharmacology_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "生存分析与预后模型_Survival",
+      "path": "04_临床预测与统计_ClinicalStats/生存分析与预后模型_Survival",
+      "status": "PASS",
+      "kind": "survival",
+      "report": "04_临床预测与统计_ClinicalStats/生存分析与预后模型_Survival/01_样例_sample/结果文件/报告文件/Survival_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 生存分析与预后模型_Survival report=Survival_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "共表达网络WGCNA_WGCNA",
+      "path": "05_系统方法_SystemsMethods/共表达网络WGCNA_WGCNA",
+      "status": "PASS",
+      "kind": "wgcna",
+      "report": "05_系统方法_SystemsMethods/共表达网络WGCNA_WGCNA/01_样例_sample/结果文件/报告文件/WGCNA_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 共表达网络WGCNA_WGCNA report=WGCNA_样例报告_v1.html\n",
+      "stdout": ""
+    }
+  ],
+  "png_hashes": {
+    "00_基础_Foundation/统一交付规范_DeliveryStandards/01_样例_sample/结果文件/图片文件/DeliveryStandards_bar_RuleCoverage.png": {
+      "sha256": "4827ce413d63a76637469e6b3e7a501f7f2b43d76f929bc38758eb882b8f62ee",
+      "size": 123103
+    },
+    "00_基础_Foundation/统一可视化规范_VizStandards/01_样例_sample/结果文件/图片文件/VizStandards_scatter_GroupAB.png": {
+      "sha256": "d747711041127788c8e8397ba53a2d9c32213708fe92347d73f67fa6389cb078",
+      "size": 265950
+    },
+    "00_基础_Foundation/数据真实性验证_DataAuthenticity/01_样例_sample/结果文件/图片文件/DataAuthenticity_bar_SampleCountCheck.png": {
+      "sha256": "aa5640bb26ef859eeec7e9bc249dc9426423cce34b13bc7e3972c7a6f85ce9d1",
+      "size": 85033
+    },
+    "01_组学_Omics/转录组分析_RNA-seq/01_样例_sample/结果文件/图片文件/RNA-seq_PCA_TreatVsControl.png": {
+      "sha256": "91521966069e23b301d8812cefab2972c8e74edd3b128111eb14e45a00f2125f",
+      "size": 121514
+    },
+    "01_组学_Omics/转录组分析_RNA-seq/01_样例_sample/结果文件/图片文件/RNA-seq_volcano_TreatVsControl.png": {
+      "sha256": "163c9c4db407c238459ea461afc78fd89ae86746c72677a2719b276070a5f22b",
+      "size": 206116
+    },
+    "01_组学_Omics/蛋白质组分析_Proteomics/01_样例_sample/结果文件/图片文件/Proteomics_bar_Top15DEP.png": {
+      "sha256": "debdff8b1615a6a08fd891c14758707cd8e4dd2c39ed5c1a4a062a72f8986a80",
+      "size": 186138
+    },
+    "01_组学_Omics/单细胞与空间转录组分析_scRNA-Spatial/01_样例_sample/结果文件/图片文件/scRNA-Spatial_UMAP_MonoVsTcell.png": {
+      "sha256": "e952c74b92fcf12e5c35066b422bcecfd58214280f15377832f7a4525333d6f9",
+      "size": 422226
+    },
+    "01_组学_Omics/代谢组分析_Metabolomics/01_样例_sample/结果文件/图片文件/Metabolomics_bar_VIP_HerbVsVehicle.png": {
+      "sha256": "89d7b88972b98e9a7c559f35a499bd0e1c7d0949b84e03e5c6df37dbaa98c1f0",
+      "size": 144784
+    },
+    "01_组学_Omics/微生物组16S分析_Microbiome16S/01_样例_sample/结果文件/图片文件/Microbiome16S_boxplot_Shannon_SiteAVsB.png": {
+      "sha256": "34128a833e043ce122282a067b586311819a8502f54eda1f0dac27d975a6ef98",
+      "size": 126882
+    },
+    "01_组学_Omics/DNA甲基化分析_WGBS-RRBS/01_样例_sample/结果文件/图片文件/WGBS-RRBS_hist_deltaBeta.png": {
+      "sha256": "6335eed072d8d7cdc452fc7a00e55ce29ebcaa21f4b2506ed00324d9b06584e1",
+      "size": 95022
+    },
+    "01_组学_Omics/公共库挖掘_GEO-TCGA/01_样例_sample/结果文件/图片文件/GEO-TCGA_bar_RiskMeanTime.png": {
+      "sha256": "b773f4a0ad60f8383c414083b2bcfe9ef16629100505cdccb32c6429e384ee77",
+      "size": 100806
+    },
+    "02_遗传与变异_Genetics/全基因组关联分析_GWAS/01_样例_sample/结果文件/图片文件/GWAS_manhattan_toySNPs.png": {
+      "sha256": "03c6564eb165db476f495a3c7197eaba4ef9b11b7c4c37eec9f9091c1dcf656a",
+      "size": 254522
+    },
+    "03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology/01_样例_sample/结果文件/图片文件/NetworkPharmacology_bar_TargetDegree.png": {
+      "sha256": "8bb1316c53296c42595b32b3ab3e8cbdc1f5834113787fbf319b0fa6d8ed40ff",
+      "size": 125939
+    },
+    "04_临床预测与统计_ClinicalStats/生存分析与预后模型_Survival/01_样例_sample/结果文件/图片文件/Survival_KM_HighVsLow.png": {
+      "sha256": "06d6b06849fcbfc2a895d02cc448332d1a9d491aa5b2e1e55ef6583fb8b0b0e7",
+      "size": 123413
+    },
+    "05_系统方法_SystemsMethods/共表达网络WGCNA_WGCNA/01_样例_sample/结果文件/图片文件/WGCNA_heatmap_ModuleTrait.png": {
+      "sha256": "69572cdfd193b37e0dcc0ca6aad2498d32f511ef4a136a63955ba30a5a33ec60",
+      "size": 119556
+    }
+  },
+  "pending_count": 56,
+  "pending": [
+    "00_基础_Foundation/NGS质控与比对_NGS-QC-Alignment",
+    "00_基础_Foundation/可复现工作流_ReproducibleWorkflow",
+    "00_基础_Foundation/实验设计与统计功效_StudyDesign",
+    "00_基础_Foundation/批次校正与整合_BatchCorrection",
+    "00_基础_Foundation/文献与数据库检索_Literature-DB",
+    "00_基础_Foundation/研究方案编排_ResearchOrchestrator",
+    "01_组学_Omics/ATAC专论_ATAC-seq",
+    "01_组学_Omics/RNA编辑与修饰_RNAEditing",
+    "01_组学_Omics/三维基因组分析_3DGenome",
+    "01_组学_Omics/剪接与异构体分析_AlternativeSplicing",
+    "01_组学_Omics/单细胞多组学_scMultiome",
+    "01_组学_Omics/单细胞质谱流式_CyTOF",
+    "01_组学_Omics/基因芯片表达分析_Microarray",
+    "01_组学_Omics/宏基因组与病原_Metagenome-Pathogen",
+    "01_组学_Omics/新生转录组_NascentRNA",
+    "01_组学_Omics/核糖体图谱分析_Ribo-seq",
+    "01_组学_Omics/空间转录组进阶_SpatialAdvanced",
+    "01_组学_Omics/糖组学分析_Glycomics",
+    "01_组学_Omics/表观遗传ChIP-seq_Epigenomics",
+    "01_组学_Omics/非编码与ceRNA_ncRNA-ceRNA",
+    "02_遗传与变异_Genetics/RNA融合基因检测_FusionGene",
+    "02_遗传与变异_Genetics/变异检测与外显子组_Variant-WES",
+    "02_遗传与变异_Genetics/基因组组装与注释_GenomeAssembly",
+    "02_遗传与变异_Genetics/孟德尔随机化_MendelianRandomization",
+    "02_遗传与变异_Genetics/拷贝数变异分析_CNV",
+    "02_遗传与变异_Genetics/系统发育分析_Phylogenetics",
+    "02_遗传与变异_Genetics/结构变异分析_StructuralVariant",
+    "02_遗传与变异_Genetics/群体遗传学_PopulationGenetics",
+    "02_遗传与变异_Genetics/肿瘤体细胞景观_TumorSomatic",
+    "02_遗传与变异_Genetics/遗传关联下游_GeneticDownstream",
+    "02_遗传与变异_Genetics/长读长测序分析_LongRead",
+    "03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics",
+    "03_药物计算_DrugDiscovery/分子对接与虚拟筛选_MolecularDocking",
+    "03_药物计算_DrugDiscovery/类药性与QSAR_ADMET-QSAR",
+    "03_药物计算_DrugDiscovery/药物敏感性与GDSC_DrugResponse",
+    "03_药物计算_DrugDiscovery/药物重定位与连通图_CMap-L1000",
+    "03_药物计算_DrugDiscovery/蛋白结构与建模_ProteinStructure",
+    "04_临床预测与统计_ClinicalStats/免疫浸润与免疫治疗_ImmuneInfiltration",
+    "04_临床预测与统计_ClinicalStats/分子分型与共识聚类_MolecularSubtyping",
+    "04_临床预测与统计_ClinicalStats/剂量反应与时间序列_DoseTime",
+    "04_临床预测与统计_ClinicalStats/外泌体与液体活检_LiquidBiopsy",
+    "04_临床预测与统计_ClinicalStats/放射组学与病理组学_Radiomics-Pathomics",
+    "04_临床预测与统计_ClinicalStats/新抗原与免疫组库_Neoantigen-TCR",
+    "04_临床预测与统计_ClinicalStats/机器学习生物标志物_ML-Biomarker",
+    "04_临床预测与统计_ClinicalStats/荟萃分析_MetaAnalysis",
+    "04_临床预测与统计_ClinicalStats/诊断效能ROC_DiagnosticROC",
+    "05_系统方法_SystemsMethods/CRISPR筛选分析_CRISPRscreen",
+    "05_系统方法_SystemsMethods/单细胞进阶方法_scRNA-Advanced",
+    "05_系统方法_SystemsMethods/基因集富集与通路_GSEA-Pathway",
+    "05_系统方法_SystemsMethods/多组学联合分析_MultiOmics",
+    "05_系统方法_SystemsMethods/细胞通讯分析_CellCommunication",
+    "05_系统方法_SystemsMethods/虚拟敲除与扰动_InSilicoKO",
+    "05_系统方法_SystemsMethods/蛋白质互作网络_PPI-Network",
+    "05_系统方法_SystemsMethods/跨物种基因映射_CrossSpecies",
+    "05_系统方法_SystemsMethods/转录因子与调控网络_TF-Network",
+    "06_已落地流水线_ProductionPipelines/差异分析与UMAP流水线_DEG-UMAP"
+  ]
+}

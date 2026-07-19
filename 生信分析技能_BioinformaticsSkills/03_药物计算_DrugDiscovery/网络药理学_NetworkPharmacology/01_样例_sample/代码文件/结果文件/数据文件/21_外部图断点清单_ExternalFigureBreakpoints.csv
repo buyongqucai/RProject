@@ -1,0 +1,5 @@
+"figure","status","software","how_to"
+"Herb-compound-target network (Cytoscape)","BLOCKED_EXTERNAL","Cytoscape 3.10.2","Import 网络边_CompoundGene_Cytoscape.csv + 网络节点_CompoundGene_Cytoscape.csv (or full 网络边_network.csv + type.csv); map Degree size 60-120; export SVG"
+"STRING vector graphic","BLOCKED_EXTERNAL","STRING web","Upload overlap genes; export high-res SVG"
+"PPI degree gradient (Cytoscape)","BLOCKED_EXTERNAL","STRING + Cytoscape 3.10.2","Import string_interactions_short.tsv; Analyze Network; Degree color/size; export SVG/.cys"
+"KEGG official pathway maps (Top10)","BLOCKED_EXTERNAL","KEGG website","Search Top pathway names on https://www.kegg.jp/ and download pathway images"

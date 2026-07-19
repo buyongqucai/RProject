@@ -1,0 +1,15 @@
+{
+  "data_provenance": "REAL",
+  "source": "Bioconductor ExperimentData",
+  "package": "airway",
+  "accession": "airway (Bioconductor ExperimentData)",
+  "contrast": "dex trt vs untrt",
+  "n_genes": 63677,
+  "n_samples": 8,
+  "group_counts": {
+    "trt": 4,
+    "untrt": 4
+  },
+  "method": "limma-voom",
+  "note": "REAL public RNA-seq counts; not simulated."
+}

@@ -1,0 +1,214 @@
+{
+  "tested_at": "2026-07-19T05:08:58.330600+00:00",
+  "english_query_terms": [
+    "lung cancer",
+    "Lung Neoplasms",
+    "MESH:D008175"
+  ],
+  "results": {
+    "CTD": [
+      {
+        "ok": false,
+        "term": "MESH:D008175",
+        "report": "genes_curated",
+        "error": "<HTTPError 302: 'Moved Temporarily'>"
+      },
+      {
+        "ok": false,
+        "term": "MESH:D008175",
+        "report": "genes",
+        "error": "<HTTPError 302: 'Moved Temporarily'>"
+      },
+      {
+        "ok": false,
+        "term": "Lung Neoplasms",
+        "report": "genes_curated",
+        "error": "<HTTPError 302: 'Moved Temporarily'>"
+      },
+      {
+        "ok": false,
+        "term": "Lung Neoplasms",
+        "report": "genes",
+        "error": "<HTTPError 302: 'Moved Temporarily'>"
+      },
+      {
+        "ok": false,
+        "term": "lung cancer",
+        "report": "genes_curated",
+        "error": "<HTTPError 302: 'Moved Temporarily'>"
+      },
+      {
+        "ok": false,
+        "term": "lung cancer",
+        "report": "genes",
+        "error": "<HTTPError 302: 'Moved Temporarily'>"
+      }
+    ],
+    "OpenTargets": {
+      "ok": true,
+      "query": "lung cancer",
+      "disease_id": "MONDO_0008903",
+      "disease_name": "lung cancer",
+      "n_genes_returned": 200,
+      "total_count": 16017,
+      "sample_genes": [
+        "EGFR",
+        "KRAS",
+        "ERBB2",
+        "ALK",
+        "MET",
+        "ROS1",
+        "TP53",
+        "BRAF",
+        "DICER1",
+        "RB1",
+        "PIK3CA",
+        "RET",
+        "ERBB4",
+        "EML4",
+        "STK11",
+        "KMT2D",
+        "CDKN2A",
+        "NTRK1",
+        "KDR",
+        "POLD1",
+        "KIF5B",
+        "POLE",
+        "FGFR2",
+        "CCDC6",
+        "KEAP1",
+        "NF1",
+        "CD274",
+        "NFE2L2",
+        "NTRK3",
+        "CD74"
+      ],
+      "artifact": "E:\\RProject\\生信分析技能_BioinformaticsSkills\\03_药物计算_DrugDiscovery\\网络药理学_NetworkPharmacology\\01_样例_sample\\数据文件\\_test_lung_cancer_pull\\OpenTargets_lung_cancer_associatedTargets.csv",
+      "note": "Companion API; not a primary delivery SOP DB"
+    },
+    "CTD_bulk": {
+      "ok": true,
+      "artifact_gz": "e:\\RProject\\生信分析技能_BioinformaticsSkills\\03_药物计算_DrugDiscovery\\网络药理学_NetworkPharmacology\\01_样例_sample\\数据文件\\_test_lung_cancer_pull\\CTD_curated_genes_diseases.tsv.gz",
+      "bytes": 563593,
+      "n_matching_rows": 652,
+      "n_genes": 575,
+      "matched_disease_names_sample": [
+        "Adenocarcinoma of Lung",
+        "Carcinoma, Lewis Lung",
+        "Carcinoma, Non-Small-Cell Lung",
+        "Lung Neoplasms",
+        "Small Cell Lung Carcinoma"
+      ],
+      "sample_genes": [
+        "A2M",
+        "ABCB1",
+        "ABCB1B",
+        "ACE",
+        "ACSL4",
+        "ACSM1",
+        "ACTB",
+        "ADA",
+        "ADAM28",
+        "ADAMTS1",
+        "ADCY1",
+        "AHCY",
+        "AHR",
+        "AKR1C1",
+        "AKT1",
+        "ALB",
+        "ALDH18A1",
+        "ALDOA",
+        "ALK",
+        "ALOX12B",
+        "ALOX5",
+        "ALX4",
+        "ANK3",
+        "ANKRD18A",
+        "ANKRD20A2P",
+        "ANP32A",
+        "ANXA1",
+        "ANXA2",
+        "ANXA5",
+        "AOC4P"
+      ],
+      "gene_list_csv": "e:\\RProject\\生信分析技能_BioinformaticsSkills\\03_药物计算_DrugDiscovery\\网络药理学_NetworkPharmacology\\01_样例_sample\\数据文件\\_test_lung_cancer_pull\\CTD_bulk_filter_lung_cancer_genes.csv"
+    },
+    "CTD_strict_MESH_D008175": {
+      "ok": true,
+      "n_genes": 295,
+      "n_rows": 295,
+      "artifact": "E:\\RProject\\生信分析技能_BioinformaticsSkills\\03_药物计算_DrugDiscovery\\网络药理学_NetworkPharmacology\\01_样例_sample\\数据文件\\_test_lung_cancer_pull\\CTD_MESH_D008175_Lung_Neoplasms_genes.csv",
+      "matched": [
+        [
+          "MESH:D008175",
+          "Lung Neoplasms"
+        ]
+      ],
+      "english_terms": [
+        "Lung Neoplasms",
+        "MESH:D008175"
+      ],
+      "sample_genes": [
+        "A2M",
+        "ACE",
+        "ACSM1",
+        "ACTB",
+        "ADA",
+        "ADAM28",
+        "AKT1",
+        "ALX4",
+        "ANK3",
+        "ANKRD18A",
+        "ANKRD20A2P",
+        "ANXA2",
+        "AOC4P",
+        "APC",
+        "APOA1",
+        "APOC3",
+        "APOE",
+        "AR",
+        "ARHGEF5",
+        "AS3MT",
+        "ATG101",
+        "ATOX1",
+        "AVPI1",
+        "AZGP1",
+        "BAP1",
+        "BCL2L1",
+        "BECN1",
+        "BHLHE41",
+        "BIRC5",
+        "BRAF"
+      ]
+    }
+  },
+  "summary": {
+    "success": true,
+    "primary_automated_success": "CTD_curated_bulk",
+    "n_genes_broad_lung_filter": 575,
+    "n_genes_strict_MESH_D008175": 295,
+    "english_terms_used": [
+      "lung cancer",
+      "Lung Neoplasms",
+      "MESH:D008175"
+    ],
+    "skill_primary_dbs": [
+      "GeneCards",
+      "TTD",
+      "DrugBank",
+      "OMIM"
+    ],
+    "optional_db_tested": "CTD",
+    "artifacts": {
+      "report": "E:\\RProject\\生信分析技能_BioinformaticsSkills\\03_药物计算_DrugDiscovery\\网络药理学_NetworkPharmacology\\01_样例_sample\\数据文件\\_test_lung_cancer_pull\\TEST_REPORT.json",
+      "broad_csv": "e:\\RProject\\生信分析技能_BioinformaticsSkills\\03_药物计算_DrugDiscovery\\网络药理学_NetworkPharmacology\\01_样例_sample\\数据文件\\_test_lung_cancer_pull\\CTD_bulk_filter_lung_cancer_genes.csv",
+      "strict_csv": "E:\\RProject\\生信分析技能_BioinformaticsSkills\\03_药物计算_DrugDiscovery\\网络药理学_NetworkPharmacology\\01_样例_sample\\数据文件\\_test_lung_cancer_pull\\CTD_MESH_D008175_Lung_Neoplasms_genes.csv",
+      "bulk_gz": "e:\\RProject\\生信分析技能_BioinformaticsSkills\\03_药物计算_DrugDiscovery\\网络药理学_NetworkPharmacology\\01_样例_sample\\数据文件\\_test_lung_cancer_pull\\CTD_curated_genes_diseases.tsv.gz"
+    },
+    "auth_notes": {
+      "GeneCards_TTD_DrugBank": "Manual English-name browser export; auto-scrape blocked (403 / no API in skill)",
+      "OMIM": "Optional OMIM_API_KEY from https://www.omim.org/api",
+      "CTD": "No key for bulk download of curated gene-disease TSV"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "group": "生信分析技能_BioinformaticsSkills",
+  "description": "去重后工作流模板",
+  "orchestrator": "00_基础_Foundation/研究方案编排_ResearchOrchestrator/技能说明_研究方案编排_ResearchOrchestrator.md",
+  "workflows": [
+    {
+      "id": "wf-drug-target-gene",
+      "title_zh": "药物-基因层：网络药理→对接→MD",
+      "skill_ids": [
+        "bioinfo-research-orchestrator",
+        "bioinfo-network-pharmacology",
+        "bioinfo-protein-structure",
+        "bioinfo-molecular-docking",
+        "bioinfo-molecular-dynamics",
+        "bioinfo-admet-qsar",
+        "bioinfo-viz-standards"
+      ],
+      "notes": "结构与建模已合并；ADMET+QSAR 已合并。"
+    },
+    {
+      "id": "wf-prognosis-survival",
+      "title_zh": "预后：GEO→生存/ROC",
+      "skill_ids": [
+        "bioinfo-research-orchestrator",
+        "data-authenticity-verification",
+        "bioinfo-geo-tcga",
+        "bioinfo-survival",
+        "bioinfo-diagnostic-roc",
+        "bioinfo-viz-standards"
+      ]
+    },
+    {
+      "id": "wf-mechanism-scrna",
+      "title_zh": "机制+单细胞",
+      "skill_ids": [
+        "bioinfo-research-orchestrator",
+        "data-authenticity-verification",
+        "bioinfo-scrna-spatial",
+        "bioinfo-scrna-advanced",
+        "bioinfo-cell-communication",
+        "bioinfo-rnaseq",
+        "bioinfo-viz-standards"
+      ]
+    },
+    {
+      "id": "wf-metabolomics-rna",
+      "title_zh": "代谢脂质+转录",
+      "skill_ids": [
+        "bioinfo-research-orchestrator",
+        "bioinfo-metabolomics",
+        "bioinfo-rnaseq",
+        "bioinfo-gsea-pathway",
+        "bioinfo-viz-standards"
+      ]
+    },
+    {
+      "id": "wf-cerna-mir",
+      "title_zh": "非编码与ceRNA",
+      "skill_ids": [
+        "bioinfo-research-orchestrator",
+        "bioinfo-ncrna-cerna",
+        "bioinfo-rnaseq",
+        "bioinfo-viz-standards"
+      ]
+    },
+    {
+      "id": "wf-metagenome",
+      "title_zh": "宏基因组与病原",
+      "skill_ids": [
+        "bioinfo-research-orchestrator",
+        "bioinfo-metagenome-pathogen",
+        "bioinfo-viz-standards"
+      ]
+    },
+    {
+      "id": "wf-scm-deg-umap",
+      "title_zh": "脓毒症心肌病四数据集",
+      "skill_ids": [
+        "bioinfo-research-orchestrator",
+        "data-authenticity-verification",
+        "differential-analysis-and-umap",
+        "bioinfo-viz-standards"
+      ]
+    }
+  ]
+}

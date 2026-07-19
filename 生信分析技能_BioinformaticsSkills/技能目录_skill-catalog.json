@@ -1,0 +1,2582 @@
+{
+  "group": "生信分析技能_BioinformaticsSkills",
+  "root": "生信分析技能_BioinformaticsSkills",
+  "project_path": "E:/RProject/生信分析技能_BioinformaticsSkills",
+  "cursor_entry": ".cursor/skills/生信分析技能_BioinformaticsSkills/SKILL.md",
+  "naming_rule": "中文_English",
+  "skill_doc_pattern": "技能说明_<文件夹名>.md",
+  "group_doc": "技能组总说明_BioinformaticsSkills.md",
+  "naming_spec": "项目结构规范_ProjectLayout.md",
+  "workflows_file": "工作流_workflows.json",
+  "landscape_file": "技能全景清单_SkillLandscape.md",
+  "deprecated_folders": {
+    "蛋白结构预测与口袋_ProteinStructure": "蛋白结构与建模_ProteinStructure",
+    "同源建模_HomologyModeling": "蛋白结构与建模_ProteinStructure",
+    "HiC三维基因组_HiC": "三维基因组分析_3DGenome",
+    "染色质环与HiChIP_ChromatinLoop": "三维基因组分析_3DGenome",
+    "CUT与Tag分析_CUTnTag": "表观遗传ChIP-seq_Epigenomics",
+    "表观峰检测_ChIP-CUTnTag": "表观遗传ChIP-seq_Epigenomics",
+    "变异检测与注释_VariantCalling": "变异检测与外显子组_Variant-WES",
+    "全外显子组分析_WES": "变异检测与外显子组_Variant-WES",
+    "宏基因组分析_Metagenomics": "宏基因组与病原_Metagenome-Pathogen",
+    "宏转录组分析_Metatranscriptomics": "宏基因组与病原_Metagenome-Pathogen",
+    "病毒组与病原检测_Virome": "宏基因组与病原_Metagenome-Pathogen",
+    "耐药与毒力基因_AMR-Virulence": "宏基因组与病原_Metagenome-Pathogen",
+    "非编码RNA分析_ncRNA": "非编码与ceRNA_ncRNA-ceRNA",
+    "ceRNA网络分析_ceRNA": "非编码与ceRNA_ncRNA-ceRNA",
+    "ADMET与类药性评价_ADMET": "类药性与QSAR_ADMET-QSAR",
+    "QSAR与药效团_QSAR-Pharmacophore": "类药性与QSAR_ADMET-QSAR",
+    "肿瘤突变负荷与特征_TMB-Signature": "肿瘤体细胞景观_TumorSomatic",
+    "肿瘤异质性与克隆演化_ClonalEvolution": "肿瘤体细胞景观_TumorSomatic",
+    "磷酸化与PTM蛋白组_PTM-Proteomics": "蛋白质组分析_Proteomics",
+    "相互作用组AP-MS_Interactomics": "蛋白质组分析_Proteomics",
+    "脂质组分析_Lipidomics": "代谢组分析_Metabolomics",
+    "代谢通量分析_Fluxomics": "代谢组分析_Metabolomics",
+    "单细胞轨迹与命运_Trajectory": "单细胞进阶方法_scRNA-Advanced",
+    "单细胞组成差异_scComposition": "单细胞进阶方法_scRNA-Advanced",
+    "单细胞整合与图谱_AtlasIntegration": "单细胞进阶方法_scRNA-Advanced",
+    "eQTL与QTL作图_eQTL": "遗传关联下游_GeneticDownstream",
+    "共定位与TWAS_Coloc-TWAS": "遗传关联下游_GeneticDownstream",
+    "多基因风险评分_PRS": "遗传关联下游_GeneticDownstream",
+    "时间序列组学_TimeSeriesOmics": "剂量反应与时间序列_DoseTime",
+    "HLA分型_HLA-Typing": "新抗原与免疫组库_Neoantigen-TCR"
+  },
+  "viz_rules": {
+    "min_dpi": 600,
+    "formats": [
+      "svg",
+      "png"
+    ],
+    "cjk": true,
+    "figure_language": "English",
+    "no_label_overlap": true,
+    "plotqa_required": true,
+    "journal_paradigm_doc": "00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/高分期刊出图范式_JournalFigureParadigm.md",
+    "frozen_paradigms_doc": "00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/已跑通范式登记_FrozenParadigms.md",
+    "frozen_skills": [
+      "bioinfo-network-pharmacology"
+    ]
+  },
+  "skills": [
+    {
+      "id": "bioinfo-skill-group",
+      "path": ".",
+      "doc": "技能组总说明_BioinformaticsSkills.md",
+      "title_zh": "生信分析技能",
+      "title_en": "BioinformaticsSkills",
+      "triggers": [
+        "生信",
+        "组学"
+      ],
+      "research_intents": [
+        "路由"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "group"
+    },
+    {
+      "id": "bioinfo-ngs-qc",
+      "path": "00_基础_Foundation/NGS质控与比对_NGS-QC-Alignment",
+      "doc": "技能说明_NGS质控与比对_NGS-QC-Alignment.md",
+      "title_zh": "NGS质控与比对",
+      "title_en": "NGS-QC-Alignment",
+      "triggers": [
+        "NGS质控与比对",
+        "NGS-QC-Alignment"
+      ],
+      "research_intents": [
+        "NGS质控与比对",
+        "NGS-QC-Alignment"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "foundation"
+    },
+    {
+      "id": "bioinfo-repro-workflow",
+      "path": "00_基础_Foundation/可复现工作流_ReproducibleWorkflow",
+      "doc": "技能说明_可复现工作流_ReproducibleWorkflow.md",
+      "title_zh": "可复现工作流",
+      "title_en": "ReproducibleWorkflow",
+      "triggers": [
+        "可复现工作流",
+        "ReproducibleWorkflow"
+      ],
+      "research_intents": [
+        "可复现工作流",
+        "ReproducibleWorkflow"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "foundation"
+    },
+    {
+      "id": "bioinfo-study-design",
+      "path": "00_基础_Foundation/实验设计与统计功效_StudyDesign",
+      "doc": "技能说明_实验设计与统计功效_StudyDesign.md",
+      "title_zh": "实验设计与统计功效",
+      "title_en": "StudyDesign",
+      "triggers": [
+        "实验设计与统计功效",
+        "StudyDesign"
+      ],
+      "research_intents": [
+        "实验设计与统计功效",
+        "StudyDesign"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "foundation"
+    },
+    {
+      "id": "bioinfo-batch",
+      "path": "00_基础_Foundation/批次校正与整合_BatchCorrection",
+      "doc": "技能说明_批次校正与整合_BatchCorrection.md",
+      "title_zh": "批次校正与整合",
+      "title_en": "BatchCorrection",
+      "triggers": [
+        "批次校正与整合",
+        "BatchCorrection"
+      ],
+      "research_intents": [
+        "批次校正与整合",
+        "BatchCorrection"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "foundation"
+    },
+    {
+      "id": "data-authenticity-verification",
+      "path": "00_基础_Foundation/数据真实性验证_DataAuthenticity",
+      "doc": "技能说明_数据真实性验证_DataAuthenticity.md",
+      "title_zh": "数据真实性验证",
+      "title_en": "DataAuthenticity",
+      "triggers": [
+        "数据真实性验证",
+        "DataAuthenticity"
+      ],
+      "research_intents": [
+        "数据真实性验证",
+        "DataAuthenticity"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-delivery-standards",
+        "bioinfo-viz-standards"
+      ],
+      "depends_on": [
+        "bioinfo-delivery-standards",
+        "bioinfo-viz-standards"
+      ],
+      "category": "foundation"
+    },
+    {
+      "id": "bioinfo-literature-db",
+      "path": "00_基础_Foundation/文献与数据库检索_Literature-DB",
+      "doc": "技能说明_文献与数据库检索_Literature-DB.md",
+      "title_zh": "文献与数据库检索",
+      "title_en": "Literature-DB",
+      "triggers": [
+        "文献与数据库检索",
+        "Literature-DB"
+      ],
+      "research_intents": [
+        "文献与数据库检索",
+        "Literature-DB"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "foundation"
+    },
+    {
+      "id": "bioinfo-research-orchestrator",
+      "path": "00_基础_Foundation/研究方案编排_ResearchOrchestrator",
+      "doc": "技能说明_研究方案编排_ResearchOrchestrator.md",
+      "title_zh": "研究方案编排",
+      "title_en": "ResearchOrchestrator",
+      "triggers": [
+        "研究方案编排",
+        "ResearchOrchestrator"
+      ],
+      "research_intents": [
+        "研究方案编排",
+        "ResearchOrchestrator"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-delivery-standards",
+        "bioinfo-viz-standards"
+      ],
+      "depends_on": [
+        "bioinfo-delivery-standards",
+        "bioinfo-viz-standards"
+      ],
+      "category": "foundation"
+    },
+    {
+      "id": "bioinfo-viz-standards",
+      "path": "00_基础_Foundation/统一可视化规范_VizStandards",
+      "doc": "技能说明_统一可视化规范_VizStandards.md",
+      "title_zh": "统一可视化规范",
+      "title_en": "VizStandards",
+      "triggers": [
+        "统一可视化规范",
+        "VizStandards"
+      ],
+      "research_intents": [
+        "统一可视化规范",
+        "VizStandards"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-delivery-standards"
+      ],
+      "category": "foundation",
+      "viz_status": "aligned",
+      "viz_status_date": "2026-07-19",
+      "description_note": "期刊出图 DPI≥600 SVG+PNG；单栏85–90mm；journal muted；出图后强制 PlotQA；范式见高分期刊出图范式_JournalFigureParadigm.md；冻结见已跑通范式登记_FrozenParadigms.md；与 DeliveryStandards 同时 requires"
+    },
+    {
+      "id": "bioinfo-delivery-standards",
+      "path": "00_基础_Foundation/统一交付规范_DeliveryStandards",
+      "doc": "技能说明_统一交付规范_DeliveryStandards.md",
+      "title_zh": "统一交付规范",
+      "title_en": "DeliveryStandards",
+      "triggers": [
+        "交付规范",
+        "文件命名",
+        "样例报告",
+        "DeliveryStandards"
+      ],
+      "research_intents": [
+        "交付物命名",
+        "样例审计",
+        "HTML报告"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "合规命名图",
+        "审计表",
+        "HTML报告"
+      ],
+      "r_packages": [
+        "ggplot2"
+      ],
+      "cli_tools": [],
+      "combines_with": [
+        "bioinfo-viz-standards",
+        "bioinfo-research-orchestrator"
+      ],
+      "requires": [
+        "bioinfo-viz-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards"
+      ],
+      "category": "foundation",
+      "description_note": "交付文件名强制 {NN}_{中文}_{EnglishPascal}；结果在 代码文件/结果文件/；raw 仅 数据文件/；样例须 source VizStandards 再 DeliveryStandards；见文档_docs/样例目录与命名_SampleLayoutNaming.md"
+    },
+    {
+      "id": "bioinfo-atac",
+      "path": "01_组学_Omics/ATAC专论_ATAC-seq",
+      "doc": "技能说明_ATAC专论_ATAC-seq.md",
+      "title_zh": "ATAC专论",
+      "title_en": "ATAC-seq",
+      "triggers": [
+        "ATAC专论",
+        "ATAC-seq"
+      ],
+      "research_intents": [
+        "ATAC专论",
+        "ATAC-seq"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-crispr-screen",
+      "path": "05_系统方法_SystemsMethods/CRISPR筛选分析_CRISPRscreen",
+      "doc": "技能说明_CRISPR筛选分析_CRISPRscreen.md",
+      "title_zh": "CRISPR筛选分析",
+      "title_en": "CRISPRscreen",
+      "triggers": [
+        "CRISPR筛选分析",
+        "CRISPRscreen"
+      ],
+      "research_intents": [
+        "CRISPR筛选分析",
+        "CRISPRscreen"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "systems"
+    },
+    {
+      "id": "bioinfo-methylation",
+      "path": "01_组学_Omics/DNA甲基化分析_WGBS-RRBS",
+      "doc": "技能说明_DNA甲基化分析_WGBS-RRBS.md",
+      "title_zh": "DNA甲基化分析",
+      "title_en": "WGBS-RRBS",
+      "triggers": [
+        "DNA甲基化分析",
+        "WGBS-RRBS"
+      ],
+      "research_intents": [
+        "DNA甲基化分析",
+        "WGBS-RRBS"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-rna-editing",
+      "path": "01_组学_Omics/RNA编辑与修饰_RNAEditing",
+      "doc": "技能说明_RNA编辑与修饰_RNAEditing.md",
+      "title_zh": "RNA编辑与修饰",
+      "title_en": "RNAEditing",
+      "triggers": [
+        "RNA编辑与修饰",
+        "RNAEditing"
+      ],
+      "research_intents": [
+        "RNA编辑与修饰",
+        "RNAEditing"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-fusion",
+      "path": "02_遗传与变异_Genetics/RNA融合基因检测_FusionGene",
+      "doc": "技能说明_RNA融合基因检测_FusionGene.md",
+      "title_zh": "RNA融合基因检测",
+      "title_en": "FusionGene",
+      "triggers": [
+        "RNA融合基因检测",
+        "FusionGene"
+      ],
+      "research_intents": [
+        "RNA融合基因检测",
+        "FusionGene"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-3d-genome",
+      "path": "01_组学_Omics/三维基因组分析_3DGenome",
+      "doc": "技能说明_三维基因组分析_3DGenome.md",
+      "title_zh": "三维基因组分析",
+      "title_en": "3DGenome",
+      "triggers": [
+        "Hi-C",
+        "TAD",
+        "HiChIP",
+        "ChIA-PET",
+        "染色质环"
+      ],
+      "research_intents": [
+        "Hi-C",
+        "TAD",
+        "HiChIP",
+        "ChIA-PET",
+        "染色质环"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-metabolomics",
+      "path": "01_组学_Omics/代谢组分析_Metabolomics",
+      "doc": "技能说明_代谢组分析_Metabolomics.md",
+      "title_zh": "代谢组分析",
+      "title_en": "Metabolomics",
+      "triggers": [
+        "代谢组",
+        "OPLS-DA",
+        "脂质组",
+        "lipidomics",
+        "通量",
+        "FBA"
+      ],
+      "research_intents": [
+        "代谢组",
+        "OPLS-DA",
+        "脂质组",
+        "lipidomics",
+        "通量",
+        "FBA"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-immune-infiltration",
+      "path": "04_临床预测与统计_ClinicalStats/免疫浸润与免疫治疗_ImmuneInfiltration",
+      "doc": "技能说明_免疫浸润与免疫治疗_ImmuneInfiltration.md",
+      "title_zh": "免疫浸润与免疫治疗",
+      "title_en": "ImmuneInfiltration",
+      "triggers": [
+        "免疫浸润与免疫治疗",
+        "ImmuneInfiltration"
+      ],
+      "research_intents": [
+        "免疫浸润与免疫治疗",
+        "ImmuneInfiltration"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "clinical"
+    },
+    {
+      "id": "bioinfo-gwas",
+      "path": "02_遗传与变异_Genetics/全基因组关联分析_GWAS",
+      "doc": "技能说明_全基因组关联分析_GWAS.md",
+      "title_zh": "全基因组关联分析",
+      "title_en": "GWAS",
+      "triggers": [
+        "全基因组关联分析",
+        "GWAS"
+      ],
+      "research_intents": [
+        "全基因组关联分析",
+        "GWAS"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-geo-tcga",
+      "path": "01_组学_Omics/公共库挖掘_GEO-TCGA",
+      "doc": "技能说明_公共库挖掘_GEO-TCGA.md",
+      "title_zh": "公共库挖掘",
+      "title_en": "GEO-TCGA",
+      "triggers": [
+        "公共库挖掘",
+        "GEO-TCGA"
+      ],
+      "research_intents": [
+        "公共库挖掘",
+        "GEO-TCGA"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [
+        "bioinfo-survival",
+        "bioinfo-meta-analysis",
+        "bioinfo-diagnostic-roc",
+        "bioinfo-rnaseq"
+      ],
+      "requires": [
+        "bioinfo-viz-standards",
+        "data-authenticity-verification",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "data-authenticity-verification",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-wgcna",
+      "path": "05_系统方法_SystemsMethods/共表达网络WGCNA_WGCNA",
+      "doc": "技能说明_共表达网络WGCNA_WGCNA.md",
+      "title_zh": "共表达网络WGCNA",
+      "title_en": "WGCNA",
+      "triggers": [
+        "共表达网络WGCNA",
+        "WGCNA"
+      ],
+      "research_intents": [
+        "共表达网络WGCNA",
+        "WGCNA"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "systems"
+    },
+    {
+      "id": "bioinfo-subtyping",
+      "path": "04_临床预测与统计_ClinicalStats/分子分型与共识聚类_MolecularSubtyping",
+      "doc": "技能说明_分子分型与共识聚类_MolecularSubtyping.md",
+      "title_zh": "分子分型与共识聚类",
+      "title_en": "MolecularSubtyping",
+      "triggers": [
+        "分子分型与共识聚类",
+        "MolecularSubtyping"
+      ],
+      "research_intents": [
+        "分子分型与共识聚类",
+        "MolecularSubtyping"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "clinical"
+    },
+    {
+      "id": "bioinfo-molecular-dynamics",
+      "path": "03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics",
+      "doc": "技能说明_分子动力学模拟_MolecularDynamics.md",
+      "title_zh": "分子动力学模拟",
+      "title_en": "MolecularDynamics",
+      "triggers": [
+        "分子动力学模拟",
+        "MolecularDynamics"
+      ],
+      "research_intents": [
+        "分子动力学模拟",
+        "MolecularDynamics"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "drug"
+    },
+    {
+      "id": "bioinfo-molecular-docking",
+      "path": "03_药物计算_DrugDiscovery/分子对接与虚拟筛选_MolecularDocking",
+      "doc": "技能说明_分子对接与虚拟筛选_MolecularDocking.md",
+      "title_zh": "分子对接与虚拟筛选",
+      "title_en": "MolecularDocking",
+      "triggers": [
+        "分子对接与虚拟筛选",
+        "MolecularDocking"
+      ],
+      "research_intents": [
+        "分子对接与虚拟筛选",
+        "MolecularDocking"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "drug"
+    },
+    {
+      "id": "bioinfo-dose-time",
+      "path": "04_临床预测与统计_ClinicalStats/剂量反应与时间序列_DoseTime",
+      "doc": "技能说明_剂量反应与时间序列_DoseTime.md",
+      "title_zh": "剂量反应与时间序列",
+      "title_en": "DoseTime",
+      "triggers": [
+        "时间序列",
+        "纵向",
+        "剂量时间",
+        "dose-response"
+      ],
+      "research_intents": [
+        "时间序列",
+        "纵向",
+        "剂量时间",
+        "dose-response"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "clinical"
+    },
+    {
+      "id": "bioinfo-splicing",
+      "path": "01_组学_Omics/剪接与异构体分析_AlternativeSplicing",
+      "doc": "技能说明_剪接与异构体分析_AlternativeSplicing.md",
+      "title_zh": "剪接与异构体分析",
+      "title_en": "AlternativeSplicing",
+      "triggers": [
+        "剪接与异构体分析",
+        "AlternativeSplicing"
+      ],
+      "research_intents": [
+        "剪接与异构体分析",
+        "AlternativeSplicing"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-scrna-spatial",
+      "path": "01_组学_Omics/单细胞与空间转录组分析_scRNA-Spatial",
+      "doc": "技能说明_单细胞与空间转录组分析_scRNA-Spatial.md",
+      "title_zh": "单细胞与空间转录组分析",
+      "title_en": "scRNA-Spatial",
+      "triggers": [
+        "单细胞与空间转录组分析",
+        "scRNA-Spatial"
+      ],
+      "research_intents": [
+        "单细胞与空间转录组分析",
+        "scRNA-Spatial"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-scmultiome",
+      "path": "01_组学_Omics/单细胞多组学_scMultiome",
+      "doc": "技能说明_单细胞多组学_scMultiome.md",
+      "title_zh": "单细胞多组学",
+      "title_en": "scMultiome",
+      "triggers": [
+        "单细胞多组学",
+        "scMultiome"
+      ],
+      "research_intents": [
+        "单细胞多组学",
+        "scMultiome"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-cytof",
+      "path": "01_组学_Omics/单细胞质谱流式_CyTOF",
+      "doc": "技能说明_单细胞质谱流式_CyTOF.md",
+      "title_zh": "单细胞质谱流式",
+      "title_en": "CyTOF",
+      "triggers": [
+        "单细胞质谱流式",
+        "CyTOF"
+      ],
+      "research_intents": [
+        "单细胞质谱流式",
+        "CyTOF"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-scrna-advanced",
+      "path": "05_系统方法_SystemsMethods/单细胞进阶方法_scRNA-Advanced",
+      "doc": "技能说明_单细胞进阶方法_scRNA-Advanced.md",
+      "title_zh": "单细胞进阶方法",
+      "title_en": "scRNA-Advanced",
+      "triggers": [
+        "轨迹",
+        "monocle",
+        "velocity",
+        "miloR",
+        "scCODA",
+        "图谱整合",
+        "scVI"
+      ],
+      "research_intents": [
+        "轨迹",
+        "monocle",
+        "velocity",
+        "miloR",
+        "scCODA",
+        "图谱整合",
+        "scVI"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "systems"
+    },
+    {
+      "id": "bioinfo-variant-wes",
+      "path": "02_遗传与变异_Genetics/变异检测与外显子组_Variant-WES",
+      "doc": "技能说明_变异检测与外显子组_Variant-WES.md",
+      "title_zh": "变异检测与外显子组",
+      "title_en": "Variant-WES",
+      "triggers": [
+        "变异检测",
+        "VCF",
+        "GATK",
+        "WES",
+        "外显子组",
+        "SNV"
+      ],
+      "research_intents": [
+        "变异检测",
+        "VCF",
+        "GATK",
+        "WES",
+        "外显子组",
+        "SNV"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-genome-assembly",
+      "path": "02_遗传与变异_Genetics/基因组组装与注释_GenomeAssembly",
+      "doc": "技能说明_基因组组装与注释_GenomeAssembly.md",
+      "title_zh": "基因组组装与注释",
+      "title_en": "GenomeAssembly",
+      "triggers": [
+        "基因组组装与注释",
+        "GenomeAssembly"
+      ],
+      "research_intents": [
+        "基因组组装与注释",
+        "GenomeAssembly"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-microarray",
+      "path": "01_组学_Omics/基因芯片表达分析_Microarray",
+      "doc": "技能说明_基因芯片表达分析_Microarray.md",
+      "title_zh": "基因芯片表达分析",
+      "title_en": "Microarray",
+      "triggers": [
+        "基因芯片表达分析",
+        "Microarray"
+      ],
+      "research_intents": [
+        "基因芯片表达分析",
+        "Microarray"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-gsea-pathway",
+      "path": "05_系统方法_SystemsMethods/基因集富集与通路_GSEA-Pathway",
+      "doc": "技能说明_基因集富集与通路_GSEA-Pathway.md",
+      "title_zh": "基因集富集与通路",
+      "title_en": "GSEA-Pathway",
+      "triggers": [
+        "基因集富集与通路",
+        "GSEA-Pathway"
+      ],
+      "research_intents": [
+        "基因集富集与通路",
+        "GSEA-Pathway"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "systems"
+    },
+    {
+      "id": "bioinfo-liquid-biopsy",
+      "path": "04_临床预测与统计_ClinicalStats/外泌体与液体活检_LiquidBiopsy",
+      "doc": "技能说明_外泌体与液体活检_LiquidBiopsy.md",
+      "title_zh": "外泌体与液体活检",
+      "title_en": "LiquidBiopsy",
+      "triggers": [
+        "外泌体与液体活检",
+        "LiquidBiopsy"
+      ],
+      "research_intents": [
+        "外泌体与液体活检",
+        "LiquidBiopsy"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "data-authenticity-verification",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "data-authenticity-verification",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "clinical"
+    },
+    {
+      "id": "bioinfo-multiomics",
+      "path": "05_系统方法_SystemsMethods/多组学联合分析_MultiOmics",
+      "doc": "技能说明_多组学联合分析_MultiOmics.md",
+      "title_zh": "多组学联合分析",
+      "title_en": "MultiOmics",
+      "triggers": [
+        "多组学联合分析",
+        "MultiOmics"
+      ],
+      "research_intents": [
+        "多组学联合分析",
+        "MultiOmics"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "systems"
+    },
+    {
+      "id": "bioinfo-mr",
+      "path": "02_遗传与变异_Genetics/孟德尔随机化_MendelianRandomization",
+      "doc": "技能说明_孟德尔随机化_MendelianRandomization.md",
+      "title_zh": "孟德尔随机化",
+      "title_en": "MendelianRandomization",
+      "triggers": [
+        "孟德尔随机化",
+        "MendelianRandomization"
+      ],
+      "research_intents": [
+        "孟德尔随机化",
+        "MendelianRandomization"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-metagenome-pathogen",
+      "path": "01_组学_Omics/宏基因组与病原_Metagenome-Pathogen",
+      "doc": "技能说明_宏基因组与病原_Metagenome-Pathogen.md",
+      "title_zh": "宏基因组与病原",
+      "title_en": "Metagenome-Pathogen",
+      "triggers": [
+        "宏基因组",
+        "宏转录组",
+        "病毒组",
+        "AMR",
+        "Kraken",
+        "HUMAnN",
+        "CARD"
+      ],
+      "research_intents": [
+        "宏基因组",
+        "宏转录组",
+        "病毒组",
+        "AMR",
+        "Kraken",
+        "HUMAnN",
+        "CARD"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-16s",
+      "path": "01_组学_Omics/微生物组16S分析_Microbiome16S",
+      "doc": "技能说明_微生物组16S分析_Microbiome16S.md",
+      "title_zh": "微生物组16S分析",
+      "title_en": "Microbiome16S",
+      "triggers": [
+        "微生物组16S分析",
+        "Microbiome16S"
+      ],
+      "research_intents": [
+        "微生物组16S分析",
+        "Microbiome16S"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-cnv",
+      "path": "02_遗传与变异_Genetics/拷贝数变异分析_CNV",
+      "doc": "技能说明_拷贝数变异分析_CNV.md",
+      "title_zh": "拷贝数变异分析",
+      "title_en": "CNV",
+      "triggers": [
+        "拷贝数变异分析",
+        "CNV"
+      ],
+      "research_intents": [
+        "拷贝数变异分析",
+        "CNV"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-radiomics",
+      "path": "04_临床预测与统计_ClinicalStats/放射组学与病理组学_Radiomics-Pathomics",
+      "doc": "技能说明_放射组学与病理组学_Radiomics-Pathomics.md",
+      "title_zh": "放射组学与病理组学",
+      "title_en": "Radiomics-Pathomics",
+      "triggers": [
+        "放射组学与病理组学",
+        "Radiomics-Pathomics"
+      ],
+      "research_intents": [
+        "放射组学与病理组学",
+        "Radiomics-Pathomics"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "clinical"
+    },
+    {
+      "id": "bioinfo-neoantigen",
+      "path": "04_临床预测与统计_ClinicalStats/新抗原与免疫组库_Neoantigen-TCR",
+      "doc": "技能说明_新抗原与免疫组库_Neoantigen-TCR.md",
+      "title_zh": "新抗原与免疫组库",
+      "title_en": "Neoantigen-TCR",
+      "triggers": [
+        "新抗原",
+        "TCR",
+        "BCR",
+        "HLA",
+        "OptiType",
+        "netMHCpan"
+      ],
+      "research_intents": [
+        "新抗原",
+        "TCR",
+        "BCR",
+        "HLA",
+        "OptiType",
+        "netMHCpan"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "clinical"
+    },
+    {
+      "id": "bioinfo-nascent-rna",
+      "path": "01_组学_Omics/新生转录组_NascentRNA",
+      "doc": "技能说明_新生转录组_NascentRNA.md",
+      "title_zh": "新生转录组",
+      "title_en": "NascentRNA",
+      "triggers": [
+        "新生转录组",
+        "NascentRNA"
+      ],
+      "research_intents": [
+        "新生转录组",
+        "NascentRNA"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-ml-biomarker",
+      "path": "04_临床预测与统计_ClinicalStats/机器学习生物标志物_ML-Biomarker",
+      "doc": "技能说明_机器学习生物标志物_ML-Biomarker.md",
+      "title_zh": "机器学习生物标志物",
+      "title_en": "ML-Biomarker",
+      "triggers": [
+        "机器学习生物标志物",
+        "ML-Biomarker"
+      ],
+      "research_intents": [
+        "机器学习生物标志物",
+        "ML-Biomarker"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "clinical"
+    },
+    {
+      "id": "bioinfo-riboseq",
+      "path": "01_组学_Omics/核糖体图谱分析_Ribo-seq",
+      "doc": "技能说明_核糖体图谱分析_Ribo-seq.md",
+      "title_zh": "核糖体图谱分析",
+      "title_en": "Ribo-seq",
+      "triggers": [
+        "核糖体图谱分析",
+        "Ribo-seq"
+      ],
+      "research_intents": [
+        "核糖体图谱分析",
+        "Ribo-seq"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-survival",
+      "path": "04_临床预测与统计_ClinicalStats/生存分析与预后模型_Survival",
+      "doc": "技能说明_生存分析与预后模型_Survival.md",
+      "title_zh": "生存分析与预后模型",
+      "title_en": "Survival",
+      "triggers": [
+        "生存分析与预后模型",
+        "Survival"
+      ],
+      "research_intents": [
+        "生存分析与预后模型",
+        "Survival"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "data-authenticity-verification",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "data-authenticity-verification",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "clinical"
+    },
+    {
+      "id": "bioinfo-spatial-advanced",
+      "path": "01_组学_Omics/空间转录组进阶_SpatialAdvanced",
+      "doc": "技能说明_空间转录组进阶_SpatialAdvanced.md",
+      "title_zh": "空间转录组进阶",
+      "title_en": "SpatialAdvanced",
+      "triggers": [
+        "空间转录组进阶",
+        "SpatialAdvanced"
+      ],
+      "research_intents": [
+        "空间转录组进阶",
+        "SpatialAdvanced"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-admet-qsar",
+      "path": "03_药物计算_DrugDiscovery/类药性与QSAR_ADMET-QSAR",
+      "doc": "技能说明_类药性与QSAR_ADMET-QSAR.md",
+      "title_zh": "类药性与QSAR",
+      "title_en": "ADMET-QSAR",
+      "triggers": [
+        "ADMET",
+        "Lipinski",
+        "QSAR",
+        "药效团",
+        "类药性"
+      ],
+      "research_intents": [
+        "ADMET",
+        "Lipinski",
+        "QSAR",
+        "药效团",
+        "类药性"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "drug"
+    },
+    {
+      "id": "bioinfo-glycomics",
+      "path": "01_组学_Omics/糖组学分析_Glycomics",
+      "doc": "技能说明_糖组学分析_Glycomics.md",
+      "title_zh": "糖组学分析",
+      "title_en": "Glycomics",
+      "triggers": [
+        "糖组学分析",
+        "Glycomics"
+      ],
+      "research_intents": [
+        "糖组学分析",
+        "Glycomics"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-phylo",
+      "path": "02_遗传与变异_Genetics/系统发育分析_Phylogenetics",
+      "doc": "技能说明_系统发育分析_Phylogenetics.md",
+      "title_zh": "系统发育分析",
+      "title_en": "Phylogenetics",
+      "triggers": [
+        "系统发育分析",
+        "Phylogenetics"
+      ],
+      "research_intents": [
+        "系统发育分析",
+        "Phylogenetics"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-cell-communication",
+      "path": "05_系统方法_SystemsMethods/细胞通讯分析_CellCommunication",
+      "doc": "技能说明_细胞通讯分析_CellCommunication.md",
+      "title_zh": "细胞通讯分析",
+      "title_en": "CellCommunication",
+      "triggers": [
+        "细胞通讯分析",
+        "CellCommunication"
+      ],
+      "research_intents": [
+        "细胞通讯分析",
+        "CellCommunication"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "systems"
+    },
+    {
+      "id": "bioinfo-sv",
+      "path": "02_遗传与变异_Genetics/结构变异分析_StructuralVariant",
+      "doc": "技能说明_结构变异分析_StructuralVariant.md",
+      "title_zh": "结构变异分析",
+      "title_en": "StructuralVariant",
+      "triggers": [
+        "结构变异分析",
+        "StructuralVariant"
+      ],
+      "research_intents": [
+        "结构变异分析",
+        "StructuralVariant"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-network-pharmacology",
+      "path": "03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology",
+      "doc": "技能说明_网络药理学_NetworkPharmacology.md",
+      "title_zh": "网络药理学",
+      "title_en": "NetworkPharmacology",
+      "triggers": [
+        "网络药理学",
+        "NetworkPharmacology",
+        "TCMSP",
+        "成分靶点疾病",
+        "中药靶点",
+        "药物疾病交集"
+      ],
+      "research_intents": [
+        "网络药理学",
+        "中药",
+        "药靶",
+        "药物靶点",
+        "NetworkPharmacology"
+      ],
+      "data_types": [
+        "compound_target_csv",
+        "disease_gene_csv",
+        "ppi_tsv"
+      ],
+      "inputs": [
+        "TCMSP→BATMAN(known)→ETCM→HERB/TCMBank+SwissTargetPrediction成分靶点瀑布",
+        "GeneCards/TTD/DrugBank/OMIM/CTD/DisGeNET疾病基因",
+        "可替换CSV契约"
+      ],
+      "outputs": [
+        "交集靶点表",
+        "成分-靶点网络图",
+        "PPI",
+        "GO/KEGG富集图",
+        "出版级图"
+      ],
+      "r_packages": [
+        "igraph",
+        "ggplot2",
+        "clusterProfiler"
+      ],
+      "cli_tools": [],
+      "combines_with": [
+        "bioinfo-protein-structure",
+        "bioinfo-molecular-docking",
+        "bioinfo-molecular-dynamics",
+        "bioinfo-admet-qsar",
+        "bioinfo-ppi-network"
+      ],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "drug",
+      "viz_status": "frozen",
+      "viz_status_date": "2026-07-19",
+      "viz_frozen_note": "Do not modify NetPharm visual recipes/layouts/sample figures unless user unfreezes. See 已跑通范式登记_FrozenParadigms.md",
+      "when_to_use": "中药/复方/化合物需成分→靶点→多疾病库→交集→网络/PPI→GO/KEGG；无商业库时用CSV契约，禁止编造degree bar冒充全流程"
+    },
+    {
+      "id": "bioinfo-popgen",
+      "path": "02_遗传与变异_Genetics/群体遗传学_PopulationGenetics",
+      "doc": "技能说明_群体遗传学_PopulationGenetics.md",
+      "title_zh": "群体遗传学",
+      "title_en": "PopulationGenetics",
+      "triggers": [
+        "群体遗传学",
+        "PopulationGenetics"
+      ],
+      "research_intents": [
+        "群体遗传学",
+        "PopulationGenetics"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-tumor-somatic",
+      "path": "02_遗传与变异_Genetics/肿瘤体细胞景观_TumorSomatic",
+      "doc": "技能说明_肿瘤体细胞景观_TumorSomatic.md",
+      "title_zh": "肿瘤体细胞景观",
+      "title_en": "TumorSomatic",
+      "triggers": [
+        "TMB",
+        "mutation signature",
+        "克隆演化",
+        "PyClone",
+        "sigminer"
+      ],
+      "research_intents": [
+        "TMB",
+        "mutation signature",
+        "克隆演化",
+        "PyClone",
+        "sigminer"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-meta-analysis",
+      "path": "04_临床预测与统计_ClinicalStats/荟萃分析_MetaAnalysis",
+      "doc": "技能说明_荟萃分析_MetaAnalysis.md",
+      "title_zh": "荟萃分析",
+      "title_en": "MetaAnalysis",
+      "triggers": [
+        "荟萃分析",
+        "MetaAnalysis"
+      ],
+      "research_intents": [
+        "荟萃分析",
+        "MetaAnalysis"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "clinical"
+    },
+    {
+      "id": "bioinfo-drug-response",
+      "path": "03_药物计算_DrugDiscovery/药物敏感性与GDSC_DrugResponse",
+      "doc": "技能说明_药物敏感性与GDSC_DrugResponse.md",
+      "title_zh": "药物敏感性与GDSC",
+      "title_en": "DrugResponse",
+      "triggers": [
+        "药物敏感性与GDSC",
+        "DrugResponse"
+      ],
+      "research_intents": [
+        "药物敏感性与GDSC",
+        "DrugResponse"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "drug"
+    },
+    {
+      "id": "bioinfo-cmap",
+      "path": "03_药物计算_DrugDiscovery/药物重定位与连通图_CMap-L1000",
+      "doc": "技能说明_药物重定位与连通图_CMap-L1000.md",
+      "title_zh": "药物重定位与连通图",
+      "title_en": "CMap-L1000",
+      "triggers": [
+        "药物重定位与连通图",
+        "CMap-L1000"
+      ],
+      "research_intents": [
+        "药物重定位与连通图",
+        "CMap-L1000"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "drug"
+    },
+    {
+      "id": "bioinfo-insilico-ko",
+      "path": "05_系统方法_SystemsMethods/虚拟敲除与扰动_InSilicoKO",
+      "doc": "技能说明_虚拟敲除与扰动_InSilicoKO.md",
+      "title_zh": "虚拟敲除与扰动",
+      "title_en": "InSilicoKO",
+      "triggers": [
+        "虚拟敲除与扰动",
+        "InSilicoKO"
+      ],
+      "research_intents": [
+        "虚拟敲除与扰动",
+        "InSilicoKO"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "systems"
+    },
+    {
+      "id": "bioinfo-protein-structure",
+      "path": "03_药物计算_DrugDiscovery/蛋白结构与建模_ProteinStructure",
+      "doc": "技能说明_蛋白结构与建模_ProteinStructure.md",
+      "title_zh": "蛋白结构与建模",
+      "title_en": "ProteinStructure",
+      "triggers": [
+        "AlphaFold",
+        "PDB",
+        "口袋",
+        "同源建模",
+        "MODELLER"
+      ],
+      "research_intents": [
+        "AlphaFold",
+        "PDB",
+        "口袋",
+        "同源建模",
+        "MODELLER"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "drug"
+    },
+    {
+      "id": "bioinfo-ppi",
+      "path": "05_系统方法_SystemsMethods/蛋白质互作网络_PPI-Network",
+      "doc": "技能说明_蛋白质互作网络_PPI-Network.md",
+      "title_zh": "蛋白质互作网络",
+      "title_en": "PPI-Network",
+      "triggers": [
+        "蛋白质互作网络",
+        "PPI-Network"
+      ],
+      "research_intents": [
+        "蛋白质互作网络",
+        "PPI-Network"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "systems"
+    },
+    {
+      "id": "bioinfo-proteomics",
+      "path": "01_组学_Omics/蛋白质组分析_Proteomics",
+      "doc": "技能说明_蛋白质组分析_Proteomics.md",
+      "title_zh": "蛋白质组分析",
+      "title_en": "Proteomics",
+      "triggers": [
+        "蛋白质组",
+        "LFQ",
+        "TMT",
+        "DIA",
+        "磷酸化",
+        "PTM",
+        "AP-MS",
+        "PPI质谱"
+      ],
+      "research_intents": [
+        "蛋白质组",
+        "LFQ",
+        "TMT",
+        "DIA",
+        "磷酸化",
+        "PTM",
+        "AP-MS",
+        "PPI质谱"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-chipseq",
+      "path": "01_组学_Omics/表观遗传ChIP-seq_Epigenomics",
+      "doc": "技能说明_表观遗传ChIP-seq_Epigenomics.md",
+      "title_zh": "表观遗传ChIP-seq",
+      "title_en": "Epigenomics",
+      "triggers": [
+        "ChIP-seq",
+        "CUT&Tag",
+        "CUT&RUN",
+        "peak",
+        "DiffBind"
+      ],
+      "research_intents": [
+        "ChIP-seq",
+        "CUT&Tag",
+        "CUT&RUN",
+        "peak",
+        "DiffBind"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-diagnostic-roc",
+      "path": "04_临床预测与统计_ClinicalStats/诊断效能ROC_DiagnosticROC",
+      "doc": "技能说明_诊断效能ROC_DiagnosticROC.md",
+      "title_zh": "诊断效能ROC",
+      "title_en": "DiagnosticROC",
+      "triggers": [
+        "诊断效能ROC",
+        "DiagnosticROC"
+      ],
+      "research_intents": [
+        "诊断效能ROC",
+        "DiagnosticROC"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "clinical"
+    },
+    {
+      "id": "bioinfo-cross-species",
+      "path": "05_系统方法_SystemsMethods/跨物种基因映射_CrossSpecies",
+      "doc": "技能说明_跨物种基因映射_CrossSpecies.md",
+      "title_zh": "跨物种基因映射",
+      "title_en": "CrossSpecies",
+      "triggers": [
+        "跨物种基因映射",
+        "CrossSpecies"
+      ],
+      "research_intents": [
+        "跨物种基因映射",
+        "CrossSpecies"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "systems"
+    },
+    {
+      "id": "bioinfo-tf-network",
+      "path": "05_系统方法_SystemsMethods/转录因子与调控网络_TF-Network",
+      "doc": "技能说明_转录因子与调控网络_TF-Network.md",
+      "title_zh": "转录因子与调控网络",
+      "title_en": "TF-Network",
+      "triggers": [
+        "转录因子与调控网络",
+        "TF-Network"
+      ],
+      "research_intents": [
+        "转录因子与调控网络",
+        "TF-Network"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "systems"
+    },
+    {
+      "id": "bioinfo-rnaseq",
+      "path": "01_组学_Omics/转录组分析_RNA-seq",
+      "doc": "技能说明_转录组分析_RNA-seq.md",
+      "title_zh": "转录组分析",
+      "title_en": "RNA-seq",
+      "triggers": [
+        "转录组分析",
+        "RNA-seq"
+      ],
+      "research_intents": [
+        "转录组分析",
+        "RNA-seq"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "bioinfo-genetic-downstream",
+      "path": "02_遗传与变异_Genetics/遗传关联下游_GeneticDownstream",
+      "doc": "技能说明_遗传关联下游_GeneticDownstream.md",
+      "title_zh": "遗传关联下游",
+      "title_en": "GeneticDownstream",
+      "triggers": [
+        "eQTL",
+        "QTL",
+        "coloc",
+        "TWAS",
+        "PRS",
+        "PRSice"
+      ],
+      "research_intents": [
+        "eQTL",
+        "QTL",
+        "coloc",
+        "TWAS",
+        "PRS",
+        "PRSice"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-longread",
+      "path": "02_遗传与变异_Genetics/长读长测序分析_LongRead",
+      "doc": "技能说明_长读长测序分析_LongRead.md",
+      "title_zh": "长读长测序分析",
+      "title_en": "LongRead",
+      "triggers": [
+        "长读长测序分析",
+        "LongRead"
+      ],
+      "research_intents": [
+        "长读长测序分析",
+        "LongRead"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "genetics"
+    },
+    {
+      "id": "bioinfo-ncrna-cerna",
+      "path": "01_组学_Omics/非编码与ceRNA_ncRNA-ceRNA",
+      "doc": "技能说明_非编码与ceRNA_ncRNA-ceRNA.md",
+      "title_zh": "非编码与ceRNA",
+      "title_en": "ncRNA-ceRNA",
+      "triggers": [
+        "miRNA",
+        "lncRNA",
+        "circRNA",
+        "ceRNA",
+        "非编码"
+      ],
+      "research_intents": [
+        "miRNA",
+        "lncRNA",
+        "circRNA",
+        "ceRNA",
+        "非编码"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "omics"
+    },
+    {
+      "id": "differential-analysis-and-umap",
+      "path": "06_已落地流水线_ProductionPipelines/差异分析与UMAP流水线_DEG-UMAP",
+      "doc": "技能说明_差异分析与UMAP流水线_DEG-UMAP.md",
+      "title_zh": "差异分析与UMAP流水线",
+      "title_en": "DEG-UMAP",
+      "triggers": [
+        "差异分析与UMAP流水线",
+        "DEG-UMAP"
+      ],
+      "research_intents": [
+        "差异分析与UMAP流水线",
+        "DEG-UMAP"
+      ],
+      "data_types": [],
+      "inputs": [],
+      "outputs": [
+        "结果表",
+        "出版级图"
+      ],
+      "r_packages": [],
+      "cli_tools": [],
+      "combines_with": [],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "pipeline"
+    }
+  ],
+  "layout_version": "2026-07-layout-v2",
+  "layout": {
+    "00_基础_Foundation": "foundation",
+    "01_组学_Omics": "omics",
+    "02_遗传与变异_Genetics": "genetics",
+    "03_药物计算_DrugDiscovery": "drug",
+    "04_临床预测与统计_ClinicalStats": "clinical",
+    "05_系统方法_SystemsMethods": "systems",
+    "06_已落地流水线_ProductionPipelines": "pipeline",
+    "07_分类验证_Validation": "validation"
+  },
+  "delivery_rules": {
+    "image_pattern": "{skill_en}_{plot_type}_{theme}.{png|svg}",
+    "table_pattern": "{skill_en}_{table_type}_{object}.csv",
+    "report_pattern": "{skill_en}_样例报告_{version}.html",
+    "banned_names": [
+      "plot.png",
+      "fig1.png",
+      "sample_pca.png",
+      "sample_volcano.png",
+      "样例报告.html"
+    ],
+    "min_dpi": 600,
+    "audit_required": true
+  }
+}

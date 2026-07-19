@@ -1,0 +1,11 @@
+{
+  "data_provenance": "REAL",
+  "accession": "GSE10072",
+  "platform": "Affymetrix HG-U133A (GSE10072)",
+  "contrast": "Tumor vs Normal lung",
+  "method": "limma",
+  "n_series": 107,
+  "n_subset": 20,
+  "figures": ["MA", "volcano"],
+  "note": "REAL GEO microarray; journal volcano via plot_volcano_journal; not fabricated."
+}

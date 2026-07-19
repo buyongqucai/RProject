@@ -34,3 +34,11 @@ NA
 # Large binary files
 *.mtx
 *.tar
+
+# Local mega project caches (do not push)
+书清项目/
+山水项目/
+**/源数据/
+*.rds
+*.h5ad
+*.qs

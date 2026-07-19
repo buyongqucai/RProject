@@ -1,0 +1,25 @@
+HEADER    TRANSFERASE                             17-JUN-02   1M17              
+TITLE     EPIDERMAL GROWTH FACTOR RECEPTOR TYROSINE KINASE DOMAIN WITH 4-       
+TITLE    2 ANILINOQUINAZOLINE INHIBITOR ERLOTINIB                               
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: EPIDERMAL GROWTH FACTOR RECEPTOR;                          
+COMPND   3 CHAIN: A;                                                            
+COMPND   4 FRAGMENT: TYROSINE KINASE DOMAIN (RESIDUES 671-998);                 
+COMPND   5 SYNONYM: RECEPTOR PROTEIN-TYROSINE KINASE ERBB-1;                    
+COMPND   6 EC: 2.7.1.112;                                                       
+COMPND   7 ENGINEERED: YES                                                      
+SOURCE    MOL_ID: 1;                                                            
+SOURCE   2 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE   3 ORGANISM_COMMON: HUMAN;                                              
+SOURCE   4 ORGANISM_TAXID: 9606;                                                
+SOURCE   5 GENE: EGFR;                                                          
+SOURCE   6 EXPRESSION_SYSTEM: SPODOPTERA FRUGIPERDA;                            
+SOURCE   7 EXPRESSION_SYSTEM_COMMON: FALL ARMYWORM;                             
+SOURCE   8 EXPRESSION_SYSTEM_TAXID: 7108;                                       
+SOURCE   9 EXPRESSION_SYSTEM_STRAIN: AUTOGRAPHICA CALIFORNICA/T.NICOPLUSIA;     
+SOURCE  10 EXPRESSION_SYSTEM_CELL_LINE: SF9;                                    
+SOURCE  11 EXPRESSION_SYSTEM_VECTOR_TYPE: PLASMID;                              
+SOURCE  12 EXPRESSION_SYSTEM_PLASMID: PVL1392                                   
+KEYWDS    TRANSFERASE, TYROSINE KINASE DOMAIN                                   
+EXPDTA    X-RAY DIFFRACTION                                                     
+AUTHOR    J.STAMOS,M.X.SLIWKOWSKI,C.EIGENBROT           

@@ -1,0 +1,874 @@
+{
+  "generated_at": "2026-07-18T19:13:47",
+  "n": 70,
+  "counts": {
+    "PASS": 58,
+    "BLOCKED": 12
+  },
+  "png_unique": 72,
+  "png_total": 72,
+  "results": [
+    {
+      "folder": "统一交付规范_DeliveryStandards",
+      "path": "00_基础_Foundation/统一交付规范_DeliveryStandards",
+      "status": "PASS",
+      "kind": "delivery_demo",
+      "report": "00_基础_Foundation/统一交付规范_DeliveryStandards/01_样例_sample/结果文件/报告文件/DeliveryStandards_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 统一交付规范_DeliveryStandards report=DeliveryStandards_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "统一可视化规范_VizStandards",
+      "path": "00_基础_Foundation/统一可视化规范_VizStandards",
+      "status": "PASS",
+      "kind": "viz_demo",
+      "report": "00_基础_Foundation/统一可视化规范_VizStandards/01_样例_sample/结果文件/报告文件/VizStandards_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 统一可视化规范_VizStandards report=VizStandards_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "数据真实性验证_DataAuthenticity",
+      "path": "00_基础_Foundation/数据真实性验证_DataAuthenticity",
+      "status": "PASS",
+      "kind": "authenticity",
+      "report": "00_基础_Foundation/数据真实性验证_DataAuthenticity/01_样例_sample/结果文件/报告文件/DataAuthenticity_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "运行: E:/RProject/书清项目/校验/数据真实性核对.R\nWarning messages:\n1: package 'tidyverse' was built under R version 4.6.1 \n2: package 'ggplot2' was built under R version 4.6.1 \n3: package 'tibble' was built under R version 4.6.1 \n4: package 'tidyr' was built under R version 4.6.1 \n5: package 'readr' was built under R version 4.6.1 \n6: package 'dplyr' was built under R version 4.6.1 \n7: package 'stringr' was built under R version 4.6.1 \n8: package 'forcats' was built under R version 4.6.1 \n9: package 'lubridate' was built under R version 4.6.1 \nDONE PASS — 数据真实性验证_DataAuthenticity report=DataAuthenticity_样例报告_v1.html\n",
+      "stdout": "\n================ 汇总 ================\nFAIL: 0  WARN: 0 \n\n报告已保存: 校验/数据真实性核对报告.csv\n"
+    },
+    {
+      "folder": "转录组分析_RNA-seq",
+      "path": "01_组学_Omics/转录组分析_RNA-seq",
+      "status": "PASS",
+      "kind": "rnaseq",
+      "report": "01_组学_Omics/转录组分析_RNA-seq/01_样例_sample/结果文件/报告文件/RNA-seq_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 转录组分析_RNA-seq report=RNA-seq_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "蛋白质组分析_Proteomics",
+      "path": "01_组学_Omics/蛋白质组分析_Proteomics",
+      "status": "PASS",
+      "kind": "proteomics",
+      "report": "01_组学_Omics/蛋白质组分析_Proteomics/01_样例_sample/结果文件/报告文件/Proteomics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 蛋白质组分析_Proteomics report=Proteomics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "单细胞与空间转录组分析_scRNA-Spatial",
+      "path": "01_组学_Omics/单细胞与空间转录组分析_scRNA-Spatial",
+      "status": "PASS",
+      "kind": "scrna",
+      "report": "01_组学_Omics/单细胞与空间转录组分析_scRNA-Spatial/01_样例_sample/结果文件/报告文件/scRNA-Spatial_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 单细胞与空间转录组分析_scRNA-Spatial report=scRNA-Spatial_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "代谢组分析_Metabolomics",
+      "path": "01_组学_Omics/代谢组分析_Metabolomics",
+      "status": "PASS",
+      "kind": "metabolomics",
+      "report": "01_组学_Omics/代谢组分析_Metabolomics/01_样例_sample/结果文件/报告文件/Metabolomics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 代谢组分析_Metabolomics report=Metabolomics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "微生物组16S分析_Microbiome16S",
+      "path": "01_组学_Omics/微生物组16S分析_Microbiome16S",
+      "status": "PASS",
+      "kind": "microbiome16s",
+      "report": "01_组学_Omics/微生物组16S分析_Microbiome16S/01_样例_sample/结果文件/报告文件/Microbiome16S_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 微生物组16S分析_Microbiome16S report=Microbiome16S_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "DNA甲基化分析_WGBS-RRBS",
+      "path": "01_组学_Omics/DNA甲基化分析_WGBS-RRBS",
+      "status": "PASS",
+      "kind": "methylation",
+      "report": "01_组学_Omics/DNA甲基化分析_WGBS-RRBS/01_样例_sample/结果文件/报告文件/WGBS-RRBS_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — DNA甲基化分析_WGBS-RRBS report=WGBS-RRBS_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "公共库挖掘_GEO-TCGA",
+      "path": "01_组学_Omics/公共库挖掘_GEO-TCGA",
+      "status": "PASS",
+      "kind": "geo_tcga",
+      "report": "01_组学_Omics/公共库挖掘_GEO-TCGA/01_样例_sample/结果文件/报告文件/GEO-TCGA_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 公共库挖掘_GEO-TCGA report=GEO-TCGA_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "全基因组关联分析_GWAS",
+      "path": "02_遗传与变异_Genetics/全基因组关联分析_GWAS",
+      "status": "PASS",
+      "kind": "gwas",
+      "report": "02_遗传与变异_Genetics/全基因组关联分析_GWAS/01_样例_sample/结果文件/报告文件/GWAS_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 全基因组关联分析_GWAS report=GWAS_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "网络药理学_NetworkPharmacology",
+      "path": "03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology",
+      "status": "PASS",
+      "kind": "network_pharm",
+      "report": "03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology/01_样例_sample/结果文件/报告文件/NetworkPharmacology_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 网络药理学_NetworkPharmacology report=NetworkPharmacology_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "生存分析与预后模型_Survival",
+      "path": "04_临床预测与统计_ClinicalStats/生存分析与预后模型_Survival",
+      "status": "PASS",
+      "kind": "survival",
+      "report": "04_临床预测与统计_ClinicalStats/生存分析与预后模型_Survival/01_样例_sample/结果文件/报告文件/Survival_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 生存分析与预后模型_Survival report=Survival_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "共表达网络WGCNA_WGCNA",
+      "path": "05_系统方法_SystemsMethods/共表达网络WGCNA_WGCNA",
+      "status": "PASS",
+      "kind": "wgcna",
+      "report": "05_系统方法_SystemsMethods/共表达网络WGCNA_WGCNA/01_样例_sample/结果文件/报告文件/WGCNA_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 共表达网络WGCNA_WGCNA report=WGCNA_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "NGS质控与比对_NGS-QC-Alignment",
+      "path": "00_基础_Foundation/NGS质控与比对_NGS-QC-Alignment",
+      "status": "PASS",
+      "kind": "ngs_qc",
+      "report": "00_基础_Foundation/NGS质控与比对_NGS-QC-Alignment/01_样例_sample/结果文件/报告文件/NGS-QC-Alignment_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — NGS质控与比对_NGS-QC-Alignment report=NGS-QC-Alignment_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "可复现工作流_ReproducibleWorkflow",
+      "path": "00_基础_Foundation/可复现工作流_ReproducibleWorkflow",
+      "status": "PASS",
+      "kind": "reproducible",
+      "report": "00_基础_Foundation/可复现工作流_ReproducibleWorkflow/01_样例_sample/结果文件/报告文件/ReproducibleWorkflow_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 可复现工作流_ReproducibleWorkflow report=ReproducibleWorkflow_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "实验设计与统计功效_StudyDesign",
+      "path": "00_基础_Foundation/实验设计与统计功效_StudyDesign",
+      "status": "PASS",
+      "kind": "study_design",
+      "report": "00_基础_Foundation/实验设计与统计功效_StudyDesign/01_样例_sample/结果文件/报告文件/StudyDesign_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 实验设计与统计功效_StudyDesign report=StudyDesign_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "批次校正与整合_BatchCorrection",
+      "path": "00_基础_Foundation/批次校正与整合_BatchCorrection",
+      "status": "PASS",
+      "kind": "batch_correction",
+      "report": "00_基础_Foundation/批次校正与整合_BatchCorrection/01_样例_sample/结果文件/报告文件/BatchCorrection_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 批次校正与整合_BatchCorrection report=BatchCorrection_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "文献与数据库检索_Literature-DB",
+      "path": "00_基础_Foundation/文献与数据库检索_Literature-DB",
+      "status": "PASS",
+      "kind": "literature_db",
+      "report": "00_基础_Foundation/文献与数据库检索_Literature-DB/01_样例_sample/结果文件/报告文件/Literature-DB_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 文献与数据库检索_Literature-DB report=Literature-DB_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "研究方案编排_ResearchOrchestrator",
+      "path": "00_基础_Foundation/研究方案编排_ResearchOrchestrator",
+      "status": "PASS",
+      "kind": "research_orch",
+      "report": "00_基础_Foundation/研究方案编排_ResearchOrchestrator/01_样例_sample/结果文件/报告文件/ResearchOrchestrator_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 研究方案编排_ResearchOrchestrator report=ResearchOrchestrator_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "ATAC专论_ATAC-seq",
+      "path": "01_组学_Omics/ATAC专论_ATAC-seq",
+      "status": "BLOCKED",
+      "kind": "blocked_atac",
+      "report": "01_组学_Omics/ATAC专论_ATAC-seq/01_样例_sample/结果文件/报告文件/ATAC-seq_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — ATAC专论_ATAC-seq report=ATAC-seq_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "RNA编辑与修饰_RNAEditing",
+      "path": "01_组学_Omics/RNA编辑与修饰_RNAEditing",
+      "status": "PASS",
+      "kind": "rna_editing",
+      "report": "01_组学_Omics/RNA编辑与修饰_RNAEditing/01_样例_sample/结果文件/报告文件/RNAEditing_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — RNA编辑与修饰_RNAEditing report=RNAEditing_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "三维基因组分析_3DGenome",
+      "path": "01_组学_Omics/三维基因组分析_3DGenome",
+      "status": "BLOCKED",
+      "kind": "blocked_3d",
+      "report": "01_组学_Omics/三维基因组分析_3DGenome/01_样例_sample/结果文件/报告文件/3DGenome_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — 三维基因组分析_3DGenome report=3DGenome_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "剪接与异构体分析_AlternativeSplicing",
+      "path": "01_组学_Omics/剪接与异构体分析_AlternativeSplicing",
+      "status": "PASS",
+      "kind": "splicing",
+      "report": "01_组学_Omics/剪接与异构体分析_AlternativeSplicing/01_样例_sample/结果文件/报告文件/AlternativeSplicing_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 剪接与异构体分析_AlternativeSplicing report=AlternativeSplicing_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "单细胞多组学_scMultiome",
+      "path": "01_组学_Omics/单细胞多组学_scMultiome",
+      "status": "PASS",
+      "kind": "sc_multiome",
+      "report": "01_组学_Omics/单细胞多组学_scMultiome/01_样例_sample/结果文件/报告文件/scMultiome_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 单细胞多组学_scMultiome report=scMultiome_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "单细胞质谱流式_CyTOF",
+      "path": "01_组学_Omics/单细胞质谱流式_CyTOF",
+      "status": "PASS",
+      "kind": "cytof",
+      "report": "01_组学_Omics/单细胞质谱流式_CyTOF/01_样例_sample/结果文件/报告文件/CyTOF_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 单细胞质谱流式_CyTOF report=CyTOF_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "基因芯片表达分析_Microarray",
+      "path": "01_组学_Omics/基因芯片表达分析_Microarray",
+      "status": "PASS",
+      "kind": "microarray",
+      "report": "01_组学_Omics/基因芯片表达分析_Microarray/01_样例_sample/结果文件/报告文件/Microarray_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 基因芯片表达分析_Microarray report=Microarray_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "宏基因组与病原_Metagenome-Pathogen",
+      "path": "01_组学_Omics/宏基因组与病原_Metagenome-Pathogen",
+      "status": "PASS",
+      "kind": "metagenome",
+      "report": "01_组学_Omics/宏基因组与病原_Metagenome-Pathogen/01_样例_sample/结果文件/报告文件/Metagenome-Pathogen_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 宏基因组与病原_Metagenome-Pathogen report=Metagenome-Pathogen_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "新生转录组_NascentRNA",
+      "path": "01_组学_Omics/新生转录组_NascentRNA",
+      "status": "PASS",
+      "kind": "nascent_rna",
+      "report": "01_组学_Omics/新生转录组_NascentRNA/01_样例_sample/结果文件/报告文件/NascentRNA_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 新生转录组_NascentRNA report=NascentRNA_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "核糖体图谱分析_Ribo-seq",
+      "path": "01_组学_Omics/核糖体图谱分析_Ribo-seq",
+      "status": "PASS",
+      "kind": "riboseq",
+      "report": "01_组学_Omics/核糖体图谱分析_Ribo-seq/01_样例_sample/结果文件/报告文件/Ribo-seq_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 核糖体图谱分析_Ribo-seq report=Ribo-seq_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "空间转录组进阶_SpatialAdvanced",
+      "path": "01_组学_Omics/空间转录组进阶_SpatialAdvanced",
+      "status": "PASS",
+      "kind": "spatial_adv",
+      "report": "01_组学_Omics/空间转录组进阶_SpatialAdvanced/01_样例_sample/结果文件/报告文件/SpatialAdvanced_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 空间转录组进阶_SpatialAdvanced report=SpatialAdvanced_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "糖组学分析_Glycomics",
+      "path": "01_组学_Omics/糖组学分析_Glycomics",
+      "status": "PASS",
+      "kind": "glycomics",
+      "report": "01_组学_Omics/糖组学分析_Glycomics/01_样例_sample/结果文件/报告文件/Glycomics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 糖组学分析_Glycomics report=Glycomics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "表观遗传ChIP-seq_Epigenomics",
+      "path": "01_组学_Omics/表观遗传ChIP-seq_Epigenomics",
+      "status": "BLOCKED",
+      "kind": "blocked_chip",
+      "report": "01_组学_Omics/表观遗传ChIP-seq_Epigenomics/01_样例_sample/结果文件/报告文件/Epigenomics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — 表观遗传ChIP-seq_Epigenomics report=Epigenomics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "非编码与ceRNA_ncRNA-ceRNA",
+      "path": "01_组学_Omics/非编码与ceRNA_ncRNA-ceRNA",
+      "status": "PASS",
+      "kind": "ncrna",
+      "report": "01_组学_Omics/非编码与ceRNA_ncRNA-ceRNA/01_样例_sample/结果文件/报告文件/ncRNA-ceRNA_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 非编码与ceRNA_ncRNA-ceRNA report=ncRNA-ceRNA_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "RNA融合基因检测_FusionGene",
+      "path": "02_遗传与变异_Genetics/RNA融合基因检测_FusionGene",
+      "status": "BLOCKED",
+      "kind": "blocked_fusion",
+      "report": "02_遗传与变异_Genetics/RNA融合基因检测_FusionGene/01_样例_sample/结果文件/报告文件/FusionGene_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — RNA融合基因检测_FusionGene report=FusionGene_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "变异检测与外显子组_Variant-WES",
+      "path": "02_遗传与变异_Genetics/变异检测与外显子组_Variant-WES",
+      "status": "BLOCKED",
+      "kind": "blocked_wes",
+      "report": "02_遗传与变异_Genetics/变异检测与外显子组_Variant-WES/01_样例_sample/结果文件/报告文件/Variant-WES_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — 变异检测与外显子组_Variant-WES report=Variant-WES_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "基因组组装与注释_GenomeAssembly",
+      "path": "02_遗传与变异_Genetics/基因组组装与注释_GenomeAssembly",
+      "status": "BLOCKED",
+      "kind": "blocked_assembly",
+      "report": "02_遗传与变异_Genetics/基因组组装与注释_GenomeAssembly/01_样例_sample/结果文件/报告文件/GenomeAssembly_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — 基因组组装与注释_GenomeAssembly report=GenomeAssembly_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "孟德尔随机化_MendelianRandomization",
+      "path": "02_遗传与变异_Genetics/孟德尔随机化_MendelianRandomization",
+      "status": "PASS",
+      "kind": "mr",
+      "report": "02_遗传与变异_Genetics/孟德尔随机化_MendelianRandomization/01_样例_sample/结果文件/报告文件/MendelianRandomization_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nWarning message:\n`geom_errorbarh()` was deprecated in ggplot2 4.0.0.\nℹ Please use the `orientation` argument of `geom_errorbar()` instead. \n`height` was translated to `width`.\n`height` was translated to `width`.\nDONE PASS — 孟德尔随机化_MendelianRandomization report=MendelianRandomization_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "拷贝数变异分析_CNV",
+      "path": "02_遗传与变异_Genetics/拷贝数变异分析_CNV",
+      "status": "PASS",
+      "kind": "cnv",
+      "report": "02_遗传与变异_Genetics/拷贝数变异分析_CNV/01_样例_sample/结果文件/报告文件/CNV_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 拷贝数变异分析_CNV report=CNV_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "系统发育分析_Phylogenetics",
+      "path": "02_遗传与变异_Genetics/系统发育分析_Phylogenetics",
+      "status": "PASS",
+      "kind": "phylo",
+      "report": "02_遗传与变异_Genetics/系统发育分析_Phylogenetics/01_样例_sample/结果文件/报告文件/Phylogenetics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 系统发育分析_Phylogenetics report=Phylogenetics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "结构变异分析_StructuralVariant",
+      "path": "02_遗传与变异_Genetics/结构变异分析_StructuralVariant",
+      "status": "BLOCKED",
+      "kind": "blocked_sv",
+      "report": "02_遗传与变异_Genetics/结构变异分析_StructuralVariant/01_样例_sample/结果文件/报告文件/StructuralVariant_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — 结构变异分析_StructuralVariant report=StructuralVariant_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "群体遗传学_PopulationGenetics",
+      "path": "02_遗传与变异_Genetics/群体遗传学_PopulationGenetics",
+      "status": "PASS",
+      "kind": "popgen",
+      "report": "02_遗传与变异_Genetics/群体遗传学_PopulationGenetics/01_样例_sample/结果文件/报告文件/PopulationGenetics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 群体遗传学_PopulationGenetics report=PopulationGenetics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "肿瘤体细胞景观_TumorSomatic",
+      "path": "02_遗传与变异_Genetics/肿瘤体细胞景观_TumorSomatic",
+      "status": "PASS",
+      "kind": "tumor_somatic",
+      "report": "02_遗传与变异_Genetics/肿瘤体细胞景观_TumorSomatic/01_样例_sample/结果文件/报告文件/TumorSomatic_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 肿瘤体细胞景观_TumorSomatic report=TumorSomatic_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "遗传关联下游_GeneticDownstream",
+      "path": "02_遗传与变异_Genetics/遗传关联下游_GeneticDownstream",
+      "status": "PASS",
+      "kind": "genetic_down",
+      "report": "02_遗传与变异_Genetics/遗传关联下游_GeneticDownstream/01_样例_sample/结果文件/报告文件/GeneticDownstream_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 遗传关联下游_GeneticDownstream report=GeneticDownstream_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "长读长测序分析_LongRead",
+      "path": "02_遗传与变异_Genetics/长读长测序分析_LongRead",
+      "status": "BLOCKED",
+      "kind": "blocked_longread",
+      "report": "02_遗传与变异_Genetics/长读长测序分析_LongRead/01_样例_sample/结果文件/报告文件/LongRead_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — 长读长测序分析_LongRead report=LongRead_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "分子动力学模拟_MolecularDynamics",
+      "path": "03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics",
+      "status": "BLOCKED",
+      "kind": "blocked_md",
+      "report": "03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics/01_样例_sample/结果文件/报告文件/MolecularDynamics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — 分子动力学模拟_MolecularDynamics report=MolecularDynamics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "分子对接与虚拟筛选_MolecularDocking",
+      "path": "03_药物计算_DrugDiscovery/分子对接与虚拟筛选_MolecularDocking",
+      "status": "BLOCKED",
+      "kind": "blocked_docking",
+      "report": "03_药物计算_DrugDiscovery/分子对接与虚拟筛选_MolecularDocking/01_样例_sample/结果文件/报告文件/MolecularDocking_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — 分子对接与虚拟筛选_MolecularDocking report=MolecularDocking_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "类药性与QSAR_ADMET-QSAR",
+      "path": "03_药物计算_DrugDiscovery/类药性与QSAR_ADMET-QSAR",
+      "status": "PASS",
+      "kind": "admet",
+      "report": "03_药物计算_DrugDiscovery/类药性与QSAR_ADMET-QSAR/01_样例_sample/结果文件/报告文件/ADMET-QSAR_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 类药性与QSAR_ADMET-QSAR report=ADMET-QSAR_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "药物敏感性与GDSC_DrugResponse",
+      "path": "03_药物计算_DrugDiscovery/药物敏感性与GDSC_DrugResponse",
+      "status": "PASS",
+      "kind": "drug_response",
+      "report": "03_药物计算_DrugDiscovery/药物敏感性与GDSC_DrugResponse/01_样例_sample/结果文件/报告文件/DrugResponse_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 药物敏感性与GDSC_DrugResponse report=DrugResponse_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "药物重定位与连通图_CMap-L1000",
+      "path": "03_药物计算_DrugDiscovery/药物重定位与连通图_CMap-L1000",
+      "status": "PASS",
+      "kind": "cmap",
+      "report": "03_药物计算_DrugDiscovery/药物重定位与连通图_CMap-L1000/01_样例_sample/结果文件/报告文件/CMap-L1000_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 药物重定位与连通图_CMap-L1000 report=CMap-L1000_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "蛋白结构与建模_ProteinStructure",
+      "path": "03_药物计算_DrugDiscovery/蛋白结构与建模_ProteinStructure",
+      "status": "PASS",
+      "kind": "protein_struct",
+      "report": "03_药物计算_DrugDiscovery/蛋白结构与建模_ProteinStructure/01_样例_sample/结果文件/报告文件/ProteinStructure_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 蛋白结构与建模_ProteinStructure report=ProteinStructure_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "免疫浸润与免疫治疗_ImmuneInfiltration",
+      "path": "04_临床预测与统计_ClinicalStats/免疫浸润与免疫治疗_ImmuneInfiltration",
+      "status": "PASS",
+      "kind": "immune",
+      "report": "04_临床预测与统计_ClinicalStats/免疫浸润与免疫治疗_ImmuneInfiltration/01_样例_sample/结果文件/报告文件/ImmuneInfiltration_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 免疫浸润与免疫治疗_ImmuneInfiltration report=ImmuneInfiltration_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "分子分型与共识聚类_MolecularSubtyping",
+      "path": "04_临床预测与统计_ClinicalStats/分子分型与共识聚类_MolecularSubtyping",
+      "status": "PASS",
+      "kind": "subtype",
+      "report": "04_临床预测与统计_ClinicalStats/分子分型与共识聚类_MolecularSubtyping/01_样例_sample/结果文件/报告文件/MolecularSubtyping_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 分子分型与共识聚类_MolecularSubtyping report=MolecularSubtyping_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "剂量反应与时间序列_DoseTime",
+      "path": "04_临床预测与统计_ClinicalStats/剂量反应与时间序列_DoseTime",
+      "status": "PASS",
+      "kind": "dose_time",
+      "report": "04_临床预测与统计_ClinicalStats/剂量反应与时间序列_DoseTime/01_样例_sample/结果文件/报告文件/DoseTime_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 剂量反应与时间序列_DoseTime report=DoseTime_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "外泌体与液体活检_LiquidBiopsy",
+      "path": "04_临床预测与统计_ClinicalStats/外泌体与液体活检_LiquidBiopsy",
+      "status": "PASS",
+      "kind": "liquid_biopsy",
+      "report": "04_临床预测与统计_ClinicalStats/外泌体与液体活检_LiquidBiopsy/01_样例_sample/结果文件/报告文件/LiquidBiopsy_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 外泌体与液体活检_LiquidBiopsy report=LiquidBiopsy_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "放射组学与病理组学_Radiomics-Pathomics",
+      "path": "04_临床预测与统计_ClinicalStats/放射组学与病理组学_Radiomics-Pathomics",
+      "status": "BLOCKED",
+      "kind": "blocked_radiomics",
+      "report": "04_临床预测与统计_ClinicalStats/放射组学与病理组学_Radiomics-Pathomics/01_样例_sample/结果文件/报告文件/Radiomics-Pathomics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — 放射组学与病理组学_Radiomics-Pathomics report=Radiomics-Pathomics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "新抗原与免疫组库_Neoantigen-TCR",
+      "path": "04_临床预测与统计_ClinicalStats/新抗原与免疫组库_Neoantigen-TCR",
+      "status": "BLOCKED",
+      "kind": "blocked_neoantigen",
+      "report": "04_临床预测与统计_ClinicalStats/新抗原与免疫组库_Neoantigen-TCR/01_样例_sample/结果文件/报告文件/Neoantigen-TCR_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE BLOCKED — 新抗原与免疫组库_Neoantigen-TCR report=Neoantigen-TCR_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "机器学习生物标志物_ML-Biomarker",
+      "path": "04_临床预测与统计_ClinicalStats/机器学习生物标志物_ML-Biomarker",
+      "status": "PASS",
+      "kind": "ml_biomarker",
+      "report": "04_临床预测与统计_ClinicalStats/机器学习生物标志物_ML-Biomarker/01_样例_sample/结果文件/报告文件/ML-Biomarker_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 机器学习生物标志物_ML-Biomarker report=ML-Biomarker_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "荟萃分析_MetaAnalysis",
+      "path": "04_临床预测与统计_ClinicalStats/荟萃分析_MetaAnalysis",
+      "status": "PASS",
+      "kind": "meta",
+      "report": "04_临床预测与统计_ClinicalStats/荟萃分析_MetaAnalysis/01_样例_sample/结果文件/报告文件/MetaAnalysis_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nWarning message:\n`geom_errorbarh()` was deprecated in ggplot2 4.0.0.\nℹ Please use the `orientation` argument of `geom_errorbar()` instead. \n`height` was translated to `width`.\n`height` was translated to `width`.\nDONE PASS — 荟萃分析_MetaAnalysis report=MetaAnalysis_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "诊断效能ROC_DiagnosticROC",
+      "path": "04_临床预测与统计_ClinicalStats/诊断效能ROC_DiagnosticROC",
+      "status": "PASS",
+      "kind": "diagnostic_roc",
+      "report": "04_临床预测与统计_ClinicalStats/诊断效能ROC_DiagnosticROC/01_样例_sample/结果文件/报告文件/DiagnosticROC_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 诊断效能ROC_DiagnosticROC report=DiagnosticROC_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "CRISPR筛选分析_CRISPRscreen",
+      "path": "05_系统方法_SystemsMethods/CRISPR筛选分析_CRISPRscreen",
+      "status": "PASS",
+      "kind": "crispr",
+      "report": "05_系统方法_SystemsMethods/CRISPR筛选分析_CRISPRscreen/01_样例_sample/结果文件/报告文件/CRISPRscreen_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — CRISPR筛选分析_CRISPRscreen report=CRISPRscreen_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "单细胞进阶方法_scRNA-Advanced",
+      "path": "05_系统方法_SystemsMethods/单细胞进阶方法_scRNA-Advanced",
+      "status": "PASS",
+      "kind": "scrna_adv",
+      "report": "05_系统方法_SystemsMethods/单细胞进阶方法_scRNA-Advanced/01_样例_sample/结果文件/报告文件/scRNA-Advanced_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'\nDONE PASS — 单细胞进阶方法_scRNA-Advanced report=scRNA-Advanced_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "基因集富集与通路_GSEA-Pathway",
+      "path": "05_系统方法_SystemsMethods/基因集富集与通路_GSEA-Pathway",
+      "status": "PASS",
+      "kind": "gsea",
+      "report": "05_系统方法_SystemsMethods/基因集富集与通路_GSEA-Pathway/01_样例_sample/结果文件/报告文件/GSEA-Pathway_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 基因集富集与通路_GSEA-Pathway report=GSEA-Pathway_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "多组学联合分析_MultiOmics",
+      "path": "05_系统方法_SystemsMethods/多组学联合分析_MultiOmics",
+      "status": "PASS",
+      "kind": "multiomics",
+      "report": "05_系统方法_SystemsMethods/多组学联合分析_MultiOmics/01_样例_sample/结果文件/报告文件/MultiOmics_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'\nDONE PASS — 多组学联合分析_MultiOmics report=MultiOmics_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "细胞通讯分析_CellCommunication",
+      "path": "05_系统方法_SystemsMethods/细胞通讯分析_CellCommunication",
+      "status": "PASS",
+      "kind": "cellcomm",
+      "report": "05_系统方法_SystemsMethods/细胞通讯分析_CellCommunication/01_样例_sample/结果文件/报告文件/CellCommunication_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 细胞通讯分析_CellCommunication report=CellCommunication_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "虚拟敲除与扰动_InSilicoKO",
+      "path": "05_系统方法_SystemsMethods/虚拟敲除与扰动_InSilicoKO",
+      "status": "PASS",
+      "kind": "insilico_ko",
+      "report": "05_系统方法_SystemsMethods/虚拟敲除与扰动_InSilicoKO/01_样例_sample/结果文件/报告文件/InSilicoKO_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 虚拟敲除与扰动_InSilicoKO report=InSilicoKO_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "蛋白质互作网络_PPI-Network",
+      "path": "05_系统方法_SystemsMethods/蛋白质互作网络_PPI-Network",
+      "status": "PASS",
+      "kind": "ppi",
+      "report": "05_系统方法_SystemsMethods/蛋白质互作网络_PPI-Network/01_样例_sample/结果文件/报告文件/PPI-Network_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 蛋白质互作网络_PPI-Network report=PPI-Network_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "跨物种基因映射_CrossSpecies",
+      "path": "05_系统方法_SystemsMethods/跨物种基因映射_CrossSpecies",
+      "status": "PASS",
+      "kind": "cross_species",
+      "report": "05_系统方法_SystemsMethods/跨物种基因映射_CrossSpecies/01_样例_sample/结果文件/报告文件/CrossSpecies_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 跨物种基因映射_CrossSpecies report=CrossSpecies_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "转录因子与调控网络_TF-Network",
+      "path": "05_系统方法_SystemsMethods/转录因子与调控网络_TF-Network",
+      "status": "PASS",
+      "kind": "tf_network",
+      "report": "05_系统方法_SystemsMethods/转录因子与调控网络_TF-Network/01_样例_sample/结果文件/报告文件/TF-Network_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 转录因子与调控网络_TF-Network report=TF-Network_样例报告_v1.html\n",
+      "stdout": ""
+    },
+    {
+      "folder": "差异分析与UMAP流水线_DEG-UMAP",
+      "path": "06_已落地流水线_ProductionPipelines/差异分析与UMAP流水线_DEG-UMAP",
+      "status": "PASS",
+      "kind": "deg_umap_pipe",
+      "report": "06_已落地流水线_ProductionPipelines/差异分析与UMAP流水线_DEG-UMAP/01_样例_sample/结果文件/报告文件/DEG-UMAP_样例报告_v1.html",
+      "returncode": 0,
+      "stderr": "Warning message:\npackage 'ggplot2' was built under R version 4.6.1 \nDONE PASS — 差异分析与UMAP流水线_DEG-UMAP report=DEG-UMAP_样例报告_v1.html\n",
+      "stdout": ""
+    }
+  ],
+  "png_hashes_sample": {
+    "00_基础_Foundation/NGS质控与比对_NGS-QC-Alignment/01_样例_sample/结果文件/图片文件/NGS-QC-Alignment_bar_MeanPhred_perLib.png": {
+      "sha256": "d0b061d80b7811b8d84714f2799479c3ab3870c19d59dacfc8fabe122e2d7331",
+      "size": 133678
+    },
+    "00_基础_Foundation/可复现工作流_ReproducibleWorkflow/01_样例_sample/结果文件/图片文件/ReproducibleWorkflow_bar_ReproChecklist.png": {
+      "sha256": "a219451c3576c8b299b767718b7c8580e2e2962e9595c701fb40dcfd67e41933",
+      "size": 113796
+    },
+    "00_基础_Foundation/实验设计与统计功效_StudyDesign/01_样例_sample/结果文件/图片文件/StudyDesign_line_PowerVsN.png": {
+      "sha256": "5c88901250a1948bd244f979a9874ec0a67e592f5094d2881570d34c031e3f98",
+      "size": 167065
+    },
+    "00_基础_Foundation/批次校正与整合_BatchCorrection/01_样例_sample/结果文件/图片文件/BatchCorrection_PCA_BeforeAfterBatch.png": {
+      "sha256": "8af07dcbe95b12dfa20c5a56d7c96af39f10d97c853b923dd3bde0b06e8748ec",
+      "size": 360151
+    },
+    "00_基础_Foundation/数据真实性验证_DataAuthenticity/01_样例_sample/结果文件/图片文件/DataAuthenticity_bar_SampleCountCheck.png": {
+      "sha256": "aa5640bb26ef859eeec7e9bc249dc9426423cce34b13bc7e3972c7a6f85ce9d1",
+      "size": 85033
+    },
+    "00_基础_Foundation/文献与数据库检索_Literature-DB/01_样例_sample/结果文件/图片文件/Literature-DB_bar_SearchHits.png": {
+      "sha256": "1142d9fa60f2e5790a6177adcaeaa5b0d960b9ef795d79acd9bfde3f697cdd4c",
+      "size": 98300
+    },
+    "00_基础_Foundation/研究方案编排_ResearchOrchestrator/01_样例_sample/结果文件/图片文件/ResearchOrchestrator_bar_PlanStages.png": {
+      "sha256": "b5dad44c0619212a7a374387395441ab6cde7af9fa5fdb9e103d00696939b5f5",
+      "size": 114896
+    },
+    "00_基础_Foundation/统一交付规范_DeliveryStandards/01_样例_sample/结果文件/图片文件/DeliveryStandards_bar_RuleCoverage.png": {
+      "sha256": "4827ce413d63a76637469e6b3e7a501f7f2b43d76f929bc38758eb882b8f62ee",
+      "size": 123103
+    },
+    "00_基础_Foundation/统一可视化规范_VizStandards/01_样例_sample/结果文件/图片文件/VizStandards_scatter_GroupAB.png": {
+      "sha256": "d747711041127788c8e8397ba53a2d9c32213708fe92347d73f67fa6389cb078",
+      "size": 265950
+    },
+    "01_组学_Omics/ATAC专论_ATAC-seq/01_样例_sample/结果文件/图片文件/ATAC-seq_bar_BlockedContract.png": {
+      "sha256": "9c2dad2399ae6884a5b4c2be74640b8be16ab4cce3458457cd3c5b5a45d27424",
+      "size": 110986
+    },
+    "01_组学_Omics/DNA甲基化分析_WGBS-RRBS/01_样例_sample/结果文件/图片文件/WGBS-RRBS_hist_deltaBeta.png": {
+      "sha256": "6335eed072d8d7cdc452fc7a00e55ce29ebcaa21f4b2506ed00324d9b06584e1",
+      "size": 95022
+    },
+    "01_组学_Omics/RNA编辑与修饰_RNAEditing/01_样例_sample/结果文件/图片文件/RNAEditing_boxplot_EditRate_BrainVsLiver.png": {
+      "sha256": "be9f7da4fba9bc13b0711501f2334fe53d2a64e44f2ff0d5cb2657ff506a8136",
+      "size": 170695
+    },
+    "01_组学_Omics/三维基因组分析_3DGenome/01_样例_sample/结果文件/图片文件/3DGenome_bar_BlockedContract.png": {
+      "sha256": "348aa0f3a7985ba5f316e70d63e393997220b36c408ffe4de0bbe96d32dc5f12",
+      "size": 111310
+    },
+    "01_组学_Omics/代谢组分析_Metabolomics/01_样例_sample/结果文件/图片文件/Metabolomics_bar_VIP_HerbVsVehicle.png": {
+      "sha256": "89d7b88972b98e9a7c559f35a499bd0e1c7d0949b84e03e5c6df37dbaa98c1f0",
+      "size": 144784
+    },
+    "01_组学_Omics/公共库挖掘_GEO-TCGA/01_样例_sample/结果文件/图片文件/GEO-TCGA_bar_RiskMeanTime.png": {
+      "sha256": "b773f4a0ad60f8383c414083b2bcfe9ef16629100505cdccb32c6429e384ee77",
+      "size": 100806
+    },
+    "01_组学_Omics/剪接与异构体分析_AlternativeSplicing/01_样例_sample/结果文件/图片文件/AlternativeSplicing_volcano_dPSI_SE.png": {
+      "sha256": "8ac8cfebf00954e8722f4a4db7d1147090917b16c6e0d2a0ba02b78275300eb1",
+      "size": 146871
+    },
+    "01_组学_Omics/单细胞与空间转录组分析_scRNA-Spatial/01_样例_sample/结果文件/图片文件/scRNA-Spatial_UMAP_MonoVsTcell.png": {
+      "sha256": "e952c74b92fcf12e5c35066b422bcecfd58214280f15377832f7a4525333d6f9",
+      "size": 422226
+    },
+    "01_组学_Omics/单细胞多组学_scMultiome/01_样例_sample/结果文件/图片文件/scMultiome_scatter_JointRNAvsATAC.png": {
+      "sha256": "e7d219b3985fc3d853360d8701296cd8a2d6a30c0e62d3e96f2572f84c9165ba",
+      "size": 420456
+    },
+    "01_组学_Omics/单细胞质谱流式_CyTOF/01_样例_sample/结果文件/图片文件/CyTOF_heatmap_MarkerByCluster.png": {
+      "sha256": "ab39838f9041062b6cd9527cd72bb1bcc188dc19a12a31401ad906113030ebe0",
+      "size": 128305
+    },
+    "01_组学_Omics/基因芯片表达分析_Microarray/01_样例_sample/结果文件/图片文件/Microarray_MA_CaseVsControl.png": {
+      "sha256": "00e0ece48377be8fa76b3641ef3aa98c560157cee1bd875724a18d53ee37ed63",
+      "size": 226660
+    },
+    "01_组学_Omics/宏基因组与病原_Metagenome-Pathogen/01_样例_sample/结果文件/图片文件/Metagenome-Pathogen_bar_PathogenAbundance.png": {
+      "sha256": "16ea61d282ed4c9b7f483616a6c3f77d304cb78f0e4c425187c50098d512f57c",
+      "size": 141791
+    },
+    "01_组学_Omics/微生物组16S分析_Microbiome16S/01_样例_sample/结果文件/图片文件/Microbiome16S_boxplot_Shannon_SiteAVsB.png": {
+      "sha256": "34128a833e043ce122282a067b586311819a8502f54eda1f0dac27d975a6ef98",
+      "size": 126882
+    },
+    "01_组学_Omics/新生转录组_NascentRNA/01_样例_sample/结果文件/图片文件/NascentRNA_bar_PauseIndex_Top12.png": {
+      "sha256": "cdaf3372bbe5f4031cd0f940b253ed0572713ddb63d7d6ac9a438bdbb8de0f1f",
+      "size": 171378
+    },
+    "01_组学_Omics/核糖体图谱分析_Ribo-seq/01_样例_sample/结果文件/图片文件/Ribo-seq_area_ORF_Coverage.png": {
+      "sha256": "7ed31cdbf1c43bcc15410d058e85775670b42909beebee5fb7fdd9fe1ee7762b",
+      "size": 253035
+    },
+    "01_组学_Omics/空间转录组进阶_SpatialAdvanced/01_样例_sample/结果文件/图片文件/SpatialAdvanced_spatial_DomainSpots.png": {
+      "sha256": "4d98e6fe706ff77b872d803ab1e253a539c17c98d879384f61a2e136c8b0c30e",
+      "size": 235140
+    },
+    "01_组学_Omics/糖组学分析_Glycomics/01_样例_sample/结果文件/图片文件/Glycomics_bar_Top10Glycans.png": {
+      "sha256": "e7b9649a02419e21fa6a7d163221587799e15af63f02644c7f0752d6faa08595",
+      "size": 171901
+    },
+    "01_组学_Omics/蛋白质组分析_Proteomics/01_样例_sample/结果文件/图片文件/Proteomics_bar_Top15DEP.png": {
+      "sha256": "debdff8b1615a6a08fd891c14758707cd8e4dd2c39ed5c1a4a062a72f8986a80",
+      "size": 186138
+    },
+    "01_组学_Omics/表观遗传ChIP-seq_Epigenomics/01_样例_sample/结果文件/图片文件/Epigenomics_bar_BlockedContract.png": {
+      "sha256": "b6e589106c66fb618278d43c7068709cd44cbf3050567450e0cfe50179c1deb8",
+      "size": 112521
+    },
+    "01_组学_Omics/转录组分析_RNA-seq/01_样例_sample/结果文件/图片文件/RNA-seq_PCA_TreatVsControl.png": {
+      "sha256": "91521966069e23b301d8812cefab2972c8e74edd3b128111eb14e45a00f2125f",
+      "size": 121514
+    },
+    "01_组学_Omics/转录组分析_RNA-seq/01_样例_sample/结果文件/图片文件/RNA-seq_volcano_TreatVsControl.png": {
+      "sha256": "163c9c4db407c238459ea461afc78fd89ae86746c72677a2719b276070a5f22b",
+      "size": 206116
+    },
+    "01_组学_Omics/非编码与ceRNA_ncRNA-ceRNA/01_样例_sample/结果文件/图片文件/ncRNA-ceRNA_bar_ceRNA_Degree.png": {
+      "sha256": "8c514585669a60a83c8142bbd3abcae22f21676303e3f6e228f8e7034334d65d",
+      "size": 131001
+    },
+    "02_遗传与变异_Genetics/RNA融合基因检测_FusionGene/01_样例_sample/结果文件/图片文件/FusionGene_bar_BlockedContract.png": {
+      "sha256": "2ce66aa9b1fe96db595c5255e1f2bd3ebeeb402e21e6a897f82b32dd6556af27",
+      "size": 110710
+    },
+    "02_遗传与变异_Genetics/全基因组关联分析_GWAS/01_样例_sample/结果文件/图片文件/GWAS_manhattan_toySNPs.png": {
+      "sha256": "03c6564eb165db476f495a3c7197eaba4ef9b11b7c4c37eec9f9091c1dcf656a",
+      "size": 254522
+    },
+    "02_遗传与变异_Genetics/变异检测与外显子组_Variant-WES/01_样例_sample/结果文件/图片文件/Variant-WES_bar_BlockedContract.png": {
+      "sha256": "9f6c8af9c8bc5e437d998468ba570b328b70a934483ec910cf972f5d6bd0f54c",
+      "size": 111076
+    },
+    "02_遗传与变异_Genetics/基因组组装与注释_GenomeAssembly/01_样例_sample/结果文件/图片文件/GenomeAssembly_bar_BlockedContract.png": {
+      "sha256": "4cee0d0a461ec1c88bcf5a20f5216dba10b379c4438d009d95fd2ce6bae411d2",
+      "size": 113853
+    },
+    "02_遗传与变异_Genetics/孟德尔随机化_MendelianRandomization/01_样例_sample/结果文件/图片文件/MendelianRandomization_forest_IV_Estimates.png": {
+      "sha256": "f510d62fa400fff89b778e286a0272fb230bc37f13657a48ce5ca8c83d267c93",
+      "size": 176517
+    },
+    "02_遗传与变异_Genetics/拷贝数变异分析_CNV/01_样例_sample/结果文件/图片文件/CNV_line_CNsegments.png": {
+      "sha256": "be8d758fca78bd93d8a5a6f9c7db1f26a4ca8fe7c51c768d977a10896c596f30",
+      "size": 228995
+    },
+    "02_遗传与变异_Genetics/系统发育分析_Phylogenetics/01_样例_sample/结果文件/图片文件/Phylogenetics_bar_SpeciesDistance.png": {
+      "sha256": "441a94d143190819761a0031ee18ada9702be649755e3c2690fd81beba2de588",
+      "size": 154913
+    },
+    "02_遗传与变异_Genetics/结构变异分析_StructuralVariant/01_样例_sample/结果文件/图片文件/StructuralVariant_bar_BlockedContract.png": {
+      "sha256": "920234daef317311eea46f28305a70cd7b12fdbb27e421b6a96152b2f6389d61",
+      "size": 110648
+    },
+    "02_遗传与变异_Genetics/群体遗传学_PopulationGenetics/01_样例_sample/结果文件/图片文件/PopulationGenetics_line_FstScan.png": {
+      "sha256": "e445ba7ab8a928aa02a44c096d43907f989dd8bf5b2605e512bc531730d588ce",
+      "size": 296863
+    }
+  }
+}

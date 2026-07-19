@@ -1,0 +1,1889 @@
+[
+  {
+    "id": "bioinfo-network-pharmacology",
+    "folder": "网络药理学_NetworkPharmacology",
+    "path": "03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology",
+    "doc": "技能说明_网络药理学_NetworkPharmacology.md",
+    "title_zh": "网络药理学",
+    "title_en": "NetworkPharmacology",
+    "section": "H",
+    "priority": "P0-Drug",
+    "research_intents": [
+      "网络药理",
+      "中药靶点",
+      "成分靶点疾病"
+    ],
+    "data_types": [
+      "化合物",
+      "靶点列表",
+      "DEG"
+    ],
+    "r_packages": [
+      "igraph",
+      "clusterProfiler",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "药物-基因"
+  },
+  {
+    "id": "bioinfo-molecular-docking",
+    "folder": "分子对接与虚拟筛选_MolecularDocking",
+    "path": "03_药物计算_DrugDiscovery/分子对接与虚拟筛选_MolecularDocking",
+    "doc": "技能说明_分子对接与虚拟筛选_MolecularDocking.md",
+    "title_zh": "分子对接与虚拟筛选",
+    "title_en": "MolecularDocking",
+    "section": "H",
+    "priority": "P0-Drug",
+    "research_intents": [
+      "分子对接",
+      "Vina",
+      "虚拟筛选"
+    ],
+    "data_types": [
+      "受体PDB",
+      "配体SDF"
+    ],
+    "r_packages": [
+      "bio3d",
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "AutoDock Vina",
+      "Open Babel"
+    ],
+    "purpose_layer": "药物-基因"
+  },
+  {
+    "id": "bioinfo-molecular-dynamics",
+    "folder": "分子动力学模拟_MolecularDynamics",
+    "path": "03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics",
+    "doc": "技能说明_分子动力学模拟_MolecularDynamics.md",
+    "title_zh": "分子动力学模拟",
+    "title_en": "MolecularDynamics",
+    "section": "H",
+    "priority": "P0-Drug",
+    "research_intents": [
+      "分子动力学",
+      "GROMACS",
+      "MD",
+      "RMSD"
+    ],
+    "data_types": [
+      "拓扑",
+      "轨迹"
+    ],
+    "r_packages": [
+      "bio3d",
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "GROMACS",
+      "Amber"
+    ],
+    "purpose_layer": "药物-基因"
+  },
+  {
+    "id": "bioinfo-protein-structure",
+    "folder": "蛋白结构预测与口袋_ProteinStructure",
+    "path": "01_组学_Omics/蛋白结构预测与口袋_ProteinStructure",
+    "doc": "技能说明_蛋白结构预测与口袋_ProteinStructure.md",
+    "title_zh": "蛋白结构预测与口袋",
+    "title_en": "ProteinStructure",
+    "section": "H",
+    "priority": "P0-Drug",
+    "research_intents": [
+      "AlphaFold",
+      "蛋白结构",
+      "口袋",
+      "PDB"
+    ],
+    "data_types": [
+      "序列",
+      "PDB ID"
+    ],
+    "r_packages": [
+      "bio3d"
+    ],
+    "cli_tools": [
+      "fpocket"
+    ],
+    "purpose_layer": "药物-基因"
+  },
+  {
+    "id": "bioinfo-admet",
+    "folder": "ADMET与类药性评价_ADMET",
+    "path": "01_组学_Omics/ADMET与类药性评价_ADMET",
+    "doc": "技能说明_ADMET与类药性评价_ADMET.md",
+    "title_zh": "ADMET与类药性评价",
+    "title_en": "ADMET",
+    "section": "H",
+    "priority": "P0-Drug",
+    "research_intents": [
+      "ADMET",
+      "类药性",
+      "Lipinski"
+    ],
+    "data_types": [
+      "SMILES"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "SwissADME",
+      "pkCSM",
+      "RDKit"
+    ],
+    "purpose_layer": "药物-基因"
+  },
+  {
+    "id": "bioinfo-qsar",
+    "folder": "QSAR与药效团_QSAR-Pharmacophore",
+    "path": "01_组学_Omics/QSAR与药效团_QSAR-Pharmacophore",
+    "doc": "技能说明_QSAR与药效团_QSAR-Pharmacophore.md",
+    "title_zh": "QSAR与药效团",
+    "title_en": "QSAR-Pharmacophore",
+    "section": "H",
+    "priority": "P2",
+    "research_intents": [
+      "QSAR",
+      "药效团"
+    ],
+    "data_types": [
+      "活性数据",
+      "SMILES"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "RDKit"
+    ],
+    "purpose_layer": "药物-基因"
+  },
+  {
+    "id": "bioinfo-cmap",
+    "folder": "药物重定位与连通图_CMap-L1000",
+    "path": "03_药物计算_DrugDiscovery/药物重定位与连通图_CMap-L1000",
+    "doc": "技能说明_药物重定位与连通图_CMap-L1000.md",
+    "title_zh": "药物重定位与连通图",
+    "title_en": "CMap-L1000",
+    "section": "H",
+    "priority": "P1",
+    "research_intents": [
+      "CMap",
+      "L1000",
+      "药物重定位"
+    ],
+    "data_types": [
+      "基因签名",
+      "DEG"
+    ],
+    "r_packages": [
+      "PharmacoGx",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "药物-基因"
+  },
+  {
+    "id": "bioinfo-genome-assembly",
+    "folder": "基因组组装与注释_GenomeAssembly",
+    "path": "02_遗传与变异_Genetics/基因组组装与注释_GenomeAssembly",
+    "doc": "技能说明_基因组组装与注释_GenomeAssembly.md",
+    "title_zh": "基因组组装与注释",
+    "title_en": "GenomeAssembly",
+    "section": "A",
+    "priority": "P2",
+    "research_intents": [
+      "基因组组装",
+      "de novo",
+      "Prokka"
+    ],
+    "data_types": [
+      "FASTQ"
+    ],
+    "r_packages": [
+      "rtracklayer"
+    ],
+    "cli_tools": [
+      "SPAdes",
+      "Flye",
+      "Prokka"
+    ],
+    "purpose_layer": "—"
+  },
+  {
+    "id": "bioinfo-variant-calling",
+    "folder": "变异检测与注释_VariantCalling",
+    "path": "01_组学_Omics/变异检测与注释_VariantCalling",
+    "doc": "技能说明_变异检测与注释_VariantCalling.md",
+    "title_zh": "变异检测与注释",
+    "title_en": "VariantCalling",
+    "section": "A",
+    "priority": "P0",
+    "research_intents": [
+      "变异检测",
+      "VCF",
+      "GATK",
+      "SNV"
+    ],
+    "data_types": [
+      "BAM",
+      "VCF"
+    ],
+    "r_packages": [
+      "VariantAnnotation",
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "GATK",
+      "bcftools"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-cnv",
+    "folder": "拷贝数变异分析_CNV",
+    "path": "02_遗传与变异_Genetics/拷贝数变异分析_CNV",
+    "doc": "技能说明_拷贝数变异分析_CNV.md",
+    "title_zh": "拷贝数变异分析",
+    "title_en": "CNV",
+    "section": "A",
+    "priority": "P1",
+    "research_intents": [
+      "CNV",
+      "拷贝数"
+    ],
+    "data_types": [
+      "BAM"
+    ],
+    "r_packages": [
+      "DNAcopy",
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "CNVkit"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-sv",
+    "folder": "结构变异分析_StructuralVariant",
+    "path": "02_遗传与变异_Genetics/结构变异分析_StructuralVariant",
+    "doc": "技能说明_结构变异分析_StructuralVariant.md",
+    "title_zh": "结构变异分析",
+    "title_en": "StructuralVariant",
+    "section": "A",
+    "priority": "P2",
+    "research_intents": [
+      "结构变异",
+      "SV"
+    ],
+    "data_types": [
+      "BAM"
+    ],
+    "r_packages": [
+      "StructuralVariantAnnotation"
+    ],
+    "cli_tools": [
+      "Manta",
+      "lumpy"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-wes",
+    "folder": "全外显子组分析_WES",
+    "path": "01_组学_Omics/全外显子组分析_WES",
+    "doc": "技能说明_全外显子组分析_WES.md",
+    "title_zh": "全外显子组分析",
+    "title_en": "WES",
+    "section": "A",
+    "priority": "P2",
+    "research_intents": [
+      "WES",
+      "外显子组"
+    ],
+    "data_types": [
+      "WES FASTQ"
+    ],
+    "r_packages": [
+      "VariantAnnotation"
+    ],
+    "cli_tools": [
+      "GATK",
+      "Exomiser"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-longread",
+    "folder": "长读长测序分析_LongRead",
+    "path": "02_遗传与变异_Genetics/长读长测序分析_LongRead",
+    "doc": "技能说明_长读长测序分析_LongRead.md",
+    "title_zh": "长读长测序分析",
+    "title_en": "LongRead",
+    "section": "A",
+    "priority": "P2",
+    "research_intents": [
+      "长读长",
+      "ONT",
+      "PacBio"
+    ],
+    "data_types": [
+      "long-read FASTQ"
+    ],
+    "r_packages": [
+      "NanoMethViz"
+    ],
+    "cli_tools": [
+      "minimap2",
+      "Medaka"
+    ],
+    "purpose_layer": "—"
+  },
+  {
+    "id": "bioinfo-splicing",
+    "folder": "剪接与异构体分析_AlternativeSplicing",
+    "path": "01_组学_Omics/剪接与异构体分析_AlternativeSplicing",
+    "doc": "技能说明_剪接与异构体分析_AlternativeSplicing.md",
+    "title_zh": "剪接与异构体分析",
+    "title_en": "AlternativeSplicing",
+    "section": "B",
+    "priority": "P0",
+    "research_intents": [
+      "剪接",
+      "rMATS",
+      "异构体"
+    ],
+    "data_types": [
+      "BAM"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "rMATS",
+      "LeafCutter"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-ncrna",
+    "folder": "非编码RNA分析_ncRNA",
+    "path": "01_组学_Omics/非编码RNA分析_ncRNA",
+    "doc": "技能说明_非编码RNA分析_ncRNA.md",
+    "title_zh": "非编码RNA分析",
+    "title_en": "ncRNA",
+    "section": "B",
+    "priority": "P0",
+    "research_intents": [
+      "miRNA",
+      "lncRNA",
+      "circRNA",
+      "非编码"
+    ],
+    "data_types": [
+      "小RNA/RNA-seq"
+    ],
+    "r_packages": [
+      "clusterProfiler",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-riboseq",
+    "folder": "核糖体图谱分析_Ribo-seq",
+    "path": "01_组学_Omics/核糖体图谱分析_Ribo-seq",
+    "doc": "技能说明_核糖体图谱分析_Ribo-seq.md",
+    "title_zh": "核糖体图谱分析",
+    "title_en": "Ribo-seq",
+    "section": "B",
+    "priority": "P1",
+    "research_intents": [
+      "Ribo-seq",
+      "翻译效率"
+    ],
+    "data_types": [
+      "Ribo-seq BAM"
+    ],
+    "r_packages": [
+      "ORFik"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-rna-editing",
+    "folder": "RNA编辑与修饰_RNAEditing",
+    "path": "01_组学_Omics/RNA编辑与修饰_RNAEditing",
+    "doc": "技能说明_RNA编辑与修饰_RNAEditing.md",
+    "title_zh": "RNA编辑与修饰",
+    "title_en": "RNAEditing",
+    "section": "B",
+    "priority": "P2",
+    "research_intents": [
+      "RNA编辑",
+      "m6A",
+      "MeRIP"
+    ],
+    "data_types": [
+      "BAM",
+      "IP"
+    ],
+    "r_packages": [
+      "exomePeak2"
+    ],
+    "cli_tools": [
+      "REDItools"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-tf-network",
+    "folder": "转录因子与调控网络_TF-Network",
+    "path": "05_系统方法_SystemsMethods/转录因子与调控网络_TF-Network",
+    "doc": "技能说明_转录因子与调控网络_TF-Network.md",
+    "title_zh": "转录因子与调控网络",
+    "title_en": "TF-Network",
+    "section": "B",
+    "priority": "P0",
+    "research_intents": [
+      "转录因子",
+      "GRN",
+      "SCENIC",
+      "motif"
+    ],
+    "data_types": [
+      "表达",
+      "ATAC"
+    ],
+    "r_packages": [
+      "decoupleR",
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "HOMER"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-atac",
+    "folder": "ATAC专论_ATAC-seq",
+    "path": "01_组学_Omics/ATAC专论_ATAC-seq",
+    "doc": "技能说明_ATAC专论_ATAC-seq.md",
+    "title_zh": "ATAC专论",
+    "title_en": "ATAC-seq",
+    "section": "B",
+    "priority": "P1",
+    "research_intents": [
+      "ATAC",
+      "染色质开放"
+    ],
+    "data_types": [
+      "ATAC FASTQ"
+    ],
+    "r_packages": [
+      "Signac",
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "MACS2",
+      "Bowtie2"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-methylation",
+    "folder": "DNA甲基化分析_WGBS-RRBS",
+    "path": "01_组学_Omics/DNA甲基化分析_WGBS-RRBS",
+    "doc": "技能说明_DNA甲基化分析_WGBS-RRBS.md",
+    "title_zh": "DNA甲基化分析",
+    "title_en": "WGBS-RRBS",
+    "section": "B",
+    "priority": "P0",
+    "research_intents": [
+      "甲基化",
+      "WGBS",
+      "RRBS",
+      "EPIC",
+      "450K"
+    ],
+    "data_types": [
+      "bedGraph",
+      "idat"
+    ],
+    "r_packages": [
+      "bsseq",
+      "minfi",
+      "DSS",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-hic",
+    "folder": "HiC三维基因组_HiC",
+    "path": "01_组学_Omics/HiC三维基因组_HiC",
+    "doc": "技能说明_HiC三维基因组_HiC.md",
+    "title_zh": "HiC三维基因组",
+    "title_en": "HiC",
+    "section": "B",
+    "priority": "P1",
+    "research_intents": [
+      "Hi-C",
+      "TAD",
+      "三维基因组"
+    ],
+    "data_types": [
+      ".hic",
+      ".cool"
+    ],
+    "r_packages": [
+      "GenomicInteractions"
+    ],
+    "cli_tools": [
+      "Juicer",
+      "cooler"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-scmultiome",
+    "folder": "单细胞多组学_scMultiome",
+    "path": "01_组学_Omics/单细胞多组学_scMultiome",
+    "doc": "技能说明_单细胞多组学_scMultiome.md",
+    "title_zh": "单细胞多组学",
+    "title_en": "scMultiome",
+    "section": "C",
+    "priority": "P1",
+    "research_intents": [
+      "multiome",
+      "CITE-seq"
+    ],
+    "data_types": [
+      "h5",
+      "RDS"
+    ],
+    "r_packages": [
+      "Seurat",
+      "Signac"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-细胞"
+  },
+  {
+    "id": "bioinfo-trajectory",
+    "folder": "单细胞轨迹与命运_Trajectory",
+    "path": "01_组学_Omics/单细胞轨迹与命运_Trajectory",
+    "doc": "技能说明_单细胞轨迹与命运_Trajectory.md",
+    "title_zh": "单细胞轨迹与命运",
+    "title_en": "Trajectory",
+    "section": "C",
+    "priority": "P1",
+    "research_intents": [
+      "轨迹",
+      "monocle",
+      "velocity",
+      "拟时"
+    ],
+    "data_types": [
+      "Seurat"
+    ],
+    "r_packages": [
+      "monocle3",
+      "slingshot",
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "velocyto",
+      "scVelo"
+    ],
+    "purpose_layer": "病因-细胞"
+  },
+  {
+    "id": "bioinfo-cell-communication",
+    "folder": "细胞通讯分析_CellCommunication",
+    "path": "05_系统方法_SystemsMethods/细胞通讯分析_CellCommunication",
+    "doc": "技能说明_细胞通讯分析_CellCommunication.md",
+    "title_zh": "细胞通讯分析",
+    "title_en": "CellCommunication",
+    "section": "C",
+    "priority": "P0",
+    "research_intents": [
+      "细胞通讯",
+      "CellChat",
+      "配体受体"
+    ],
+    "data_types": [
+      "Seurat"
+    ],
+    "r_packages": [
+      "CellChat",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-细胞"
+  },
+  {
+    "id": "bioinfo-spatial-advanced",
+    "folder": "空间转录组进阶_SpatialAdvanced",
+    "path": "01_组学_Omics/空间转录组进阶_SpatialAdvanced",
+    "doc": "技能说明_空间转录组进阶_SpatialAdvanced.md",
+    "title_zh": "空间转录组进阶",
+    "title_en": "SpatialAdvanced",
+    "section": "C",
+    "priority": "P2",
+    "research_intents": [
+      "空间转录组",
+      "Visium",
+      "Xenium",
+      "MERFISH"
+    ],
+    "data_types": [
+      "空间对象"
+    ],
+    "r_packages": [
+      "Seurat",
+      "Giotto"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-细胞"
+  },
+  {
+    "id": "bioinfo-atlas",
+    "folder": "单细胞整合与图谱_AtlasIntegration",
+    "path": "01_组学_Omics/单细胞整合与图谱_AtlasIntegration",
+    "doc": "技能说明_单细胞整合与图谱_AtlasIntegration.md",
+    "title_zh": "单细胞整合与图谱",
+    "title_en": "AtlasIntegration",
+    "section": "C",
+    "priority": "P2",
+    "research_intents": [
+      "图谱整合",
+      "scVI",
+      "query atlas"
+    ],
+    "data_types": [
+      "多批次 scRNA"
+    ],
+    "r_packages": [
+      "Seurat",
+      "harmony"
+    ],
+    "cli_tools": [
+      "scvi-tools"
+    ],
+    "purpose_layer": "病因-细胞"
+  },
+  {
+    "id": "bioinfo-ptm",
+    "folder": "磷酸化与PTM蛋白组_PTM-Proteomics",
+    "path": "01_组学_Omics/磷酸化与PTM蛋白组_PTM-Proteomics",
+    "doc": "技能说明_磷酸化与PTM蛋白组_PTM-Proteomics.md",
+    "title_zh": "磷酸化与PTM蛋白组",
+    "title_en": "PTM-Proteomics",
+    "section": "D",
+    "priority": "P2",
+    "research_intents": [
+      "磷酸化",
+      "PTM"
+    ],
+    "data_types": [
+      "修饰肽表"
+    ],
+    "r_packages": [
+      "limma",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-lipidomics",
+    "folder": "脂质组分析_Lipidomics",
+    "path": "01_组学_Omics/脂质组分析_Lipidomics",
+    "doc": "技能说明_脂质组分析_Lipidomics.md",
+    "title_zh": "脂质组分析",
+    "title_en": "Lipidomics",
+    "section": "D",
+    "priority": "P2",
+    "research_intents": [
+      "脂质组",
+      "lipidomics"
+    ],
+    "data_types": [
+      "脂质峰表"
+    ],
+    "r_packages": [
+      "lipidr",
+      "ropls",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-代谢物"
+  },
+  {
+    "id": "bioinfo-fluxomics",
+    "folder": "代谢通量分析_Fluxomics",
+    "path": "01_组学_Omics/代谢通量分析_Fluxomics",
+    "doc": "技能说明_代谢通量分析_Fluxomics.md",
+    "title_zh": "代谢通量分析",
+    "title_en": "Fluxomics",
+    "section": "D",
+    "priority": "P2",
+    "research_intents": [
+      "代谢通量",
+      "FBA",
+      "13C"
+    ],
+    "data_types": [
+      "模型"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "COBRApy"
+    ],
+    "purpose_layer": "病因-代谢物"
+  },
+  {
+    "id": "bioinfo-metagenomics",
+    "folder": "宏基因组分析_Metagenomics",
+    "path": "01_组学_Omics/宏基因组分析_Metagenomics",
+    "doc": "技能说明_宏基因组分析_Metagenomics.md",
+    "title_zh": "宏基因组分析",
+    "title_en": "Metagenomics",
+    "section": "E",
+    "priority": "P1",
+    "research_intents": [
+      "宏基因组",
+      "Kraken",
+      "HUMAnN"
+    ],
+    "data_types": [
+      "WGS reads"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "Kraken2",
+      "HUMAnN",
+      "MetaBAT"
+    ],
+    "purpose_layer": "病因-细胞"
+  },
+  {
+    "id": "bioinfo-metatranscriptomics",
+    "folder": "宏转录组分析_Metatranscriptomics",
+    "path": "01_组学_Omics/宏转录组分析_Metatranscriptomics",
+    "doc": "技能说明_宏转录组分析_Metatranscriptomics.md",
+    "title_zh": "宏转录组分析",
+    "title_en": "Metatranscriptomics",
+    "section": "E",
+    "priority": "P2",
+    "research_intents": [
+      "宏转录组"
+    ],
+    "data_types": [
+      "群落 RNA"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "HUMAnN"
+    ],
+    "purpose_layer": "病因-细胞"
+  },
+  {
+    "id": "bioinfo-virome",
+    "folder": "病毒组与病原检测_Virome",
+    "path": "01_组学_Omics/病毒组与病原检测_Virome",
+    "doc": "技能说明_病毒组与病原检测_Virome.md",
+    "title_zh": "病毒组与病原检测",
+    "title_en": "Virome",
+    "section": "E",
+    "priority": "P2",
+    "research_intents": [
+      "病毒组",
+      "病原"
+    ],
+    "data_types": [
+      "reads"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "VirSorter",
+      "blast"
+    ],
+    "purpose_layer": "—"
+  },
+  {
+    "id": "bioinfo-amr",
+    "folder": "耐药与毒力基因_AMR-Virulence",
+    "path": "01_组学_Omics/耐药与毒力基因_AMR-Virulence",
+    "doc": "技能说明_耐药与毒力基因_AMR-Virulence.md",
+    "title_zh": "耐药与毒力基因",
+    "title_en": "AMR-Virulence",
+    "section": "E",
+    "priority": "P2",
+    "research_intents": [
+      "耐药",
+      "AMR",
+      "毒力",
+      "CARD"
+    ],
+    "data_types": [
+      "基因组"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "ABRicate",
+      "CARD"
+    ],
+    "purpose_layer": "—"
+  },
+  {
+    "id": "bioinfo-immune-infiltration",
+    "folder": "免疫浸润与免疫治疗_ImmuneInfiltration",
+    "path": "04_临床预测与统计_ClinicalStats/免疫浸润与免疫治疗_ImmuneInfiltration",
+    "doc": "技能说明_免疫浸润与免疫治疗_ImmuneInfiltration.md",
+    "title_zh": "免疫浸润与免疫治疗",
+    "title_en": "ImmuneInfiltration",
+    "section": "F",
+    "priority": "P0",
+    "research_intents": [
+      "免疫浸润",
+      "CIBERSORT",
+      "TIDE",
+      "ssGSEA"
+    ],
+    "data_types": [
+      "表达矩阵"
+    ],
+    "r_packages": [
+      "GSVA",
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "CIBERSORTx"
+    ],
+    "purpose_layer": "病因-细胞"
+  },
+  {
+    "id": "bioinfo-neoantigen",
+    "folder": "新抗原与免疫组库_Neoantigen-TCR",
+    "path": "04_临床预测与统计_ClinicalStats/新抗原与免疫组库_Neoantigen-TCR",
+    "doc": "技能说明_新抗原与免疫组库_Neoantigen-TCR.md",
+    "title_zh": "新抗原与免疫组库",
+    "title_en": "Neoantigen-TCR",
+    "section": "F",
+    "priority": "P1",
+    "research_intents": [
+      "新抗原",
+      "TCR",
+      "BCR"
+    ],
+    "data_types": [
+      "VCF",
+      "FASTQ"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "netMHCpan",
+      "MiXCR"
+    ],
+    "purpose_layer": "药物-细胞"
+  },
+  {
+    "id": "bioinfo-tmb",
+    "folder": "肿瘤突变负荷与特征_TMB-Signature",
+    "path": "01_组学_Omics/肿瘤突变负荷与特征_TMB-Signature",
+    "doc": "技能说明_肿瘤突变负荷与特征_TMB-Signature.md",
+    "title_zh": "肿瘤突变负荷与特征",
+    "title_en": "TMB-Signature",
+    "section": "F",
+    "priority": "P1",
+    "research_intents": [
+      "TMB",
+      "mutation signature",
+      "sigminer"
+    ],
+    "data_types": [
+      "VCF"
+    ],
+    "r_packages": [
+      "sigminer",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-clonal",
+    "folder": "肿瘤异质性与克隆演化_ClonalEvolution",
+    "path": "01_组学_Omics/肿瘤异质性与克隆演化_ClonalEvolution",
+    "doc": "技能说明_肿瘤异质性与克隆演化_ClonalEvolution.md",
+    "title_zh": "肿瘤异质性与克隆演化",
+    "title_en": "ClonalEvolution",
+    "section": "F",
+    "priority": "P2",
+    "research_intents": [
+      "克隆演化",
+      "PyClone",
+      "异质性"
+    ],
+    "data_types": [
+      "VAF"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "PyClone"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-drug-response",
+    "folder": "药物敏感性与GDSC_DrugResponse",
+    "path": "03_药物计算_DrugDiscovery/药物敏感性与GDSC_DrugResponse",
+    "doc": "技能说明_药物敏感性与GDSC_DrugResponse.md",
+    "title_zh": "药物敏感性与GDSC",
+    "title_en": "DrugResponse",
+    "section": "F",
+    "priority": "P1",
+    "research_intents": [
+      "GDSC",
+      "药敏",
+      "oncoPredict"
+    ],
+    "data_types": [
+      "表达矩阵"
+    ],
+    "r_packages": [
+      "oncoPredict",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "药物-基因"
+  },
+  {
+    "id": "bioinfo-gsea-pathway",
+    "folder": "基因集富集与通路_GSEA-Pathway",
+    "path": "05_系统方法_SystemsMethods/基因集富集与通路_GSEA-Pathway",
+    "doc": "技能说明_基因集富集与通路_GSEA-Pathway.md",
+    "title_zh": "基因集富集与通路",
+    "title_en": "GSEA-Pathway",
+    "section": "G",
+    "priority": "P0",
+    "research_intents": [
+      "GSEA",
+      "GO",
+      "KEGG",
+      "GSVA",
+      "富集"
+    ],
+    "data_types": [
+      "基因列表",
+      "有序列表"
+    ],
+    "r_packages": [
+      "clusterProfiler",
+      "GSVA",
+      "enrichplot",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "解释"
+  },
+  {
+    "id": "bioinfo-wgcna",
+    "folder": "共表达网络WGCNA_WGCNA",
+    "path": "05_系统方法_SystemsMethods/共表达网络WGCNA_WGCNA",
+    "doc": "技能说明_共表达网络WGCNA_WGCNA.md",
+    "title_zh": "共表达网络WGCNA",
+    "title_en": "WGCNA",
+    "section": "G",
+    "priority": "P0",
+    "research_intents": [
+      "WGCNA",
+      "共表达",
+      "模块"
+    ],
+    "data_types": [
+      "表达矩阵"
+    ],
+    "r_packages": [
+      "WGCNA",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "解释"
+  },
+  {
+    "id": "bioinfo-ppi",
+    "folder": "蛋白质互作网络_PPI-Network",
+    "path": "05_系统方法_SystemsMethods/蛋白质互作网络_PPI-Network",
+    "doc": "技能说明_蛋白质互作网络_PPI-Network.md",
+    "title_zh": "蛋白质互作网络",
+    "title_en": "PPI-Network",
+    "section": "G",
+    "priority": "P0",
+    "research_intents": [
+      "PPI",
+      "STRING",
+      "互作网络"
+    ],
+    "data_types": [
+      "基因列表"
+    ],
+    "r_packages": [
+      "STRINGdb",
+      "igraph",
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "Cytoscape"
+    ],
+    "purpose_layer": "解释"
+  },
+  {
+    "id": "bioinfo-mr",
+    "folder": "孟德尔随机化_MendelianRandomization",
+    "path": "02_遗传与变异_Genetics/孟德尔随机化_MendelianRandomization",
+    "doc": "技能说明_孟德尔随机化_MendelianRandomization.md",
+    "title_zh": "孟德尔随机化",
+    "title_en": "MendelianRandomization",
+    "section": "G",
+    "priority": "P0",
+    "research_intents": [
+      "孟德尔随机化",
+      "MR",
+      "TwoSampleMR"
+    ],
+    "data_types": [
+      "GWAS 汇总"
+    ],
+    "r_packages": [
+      "TwoSampleMR",
+      "MendelianRandomization"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "预测"
+  },
+  {
+    "id": "bioinfo-coloc-twas",
+    "folder": "共定位与TWAS_Coloc-TWAS",
+    "path": "01_组学_Omics/共定位与TWAS_Coloc-TWAS",
+    "doc": "技能说明_共定位与TWAS_Coloc-TWAS.md",
+    "title_zh": "共定位与TWAS",
+    "title_en": "Coloc-TWAS",
+    "section": "G",
+    "priority": "P2",
+    "research_intents": [
+      "coloc",
+      "TWAS",
+      "共定位"
+    ],
+    "data_types": [
+      "GWAS",
+      "eQTL"
+    ],
+    "r_packages": [
+      "coloc"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-ml-biomarker",
+    "folder": "机器学习生物标志物_ML-Biomarker",
+    "path": "04_临床预测与统计_ClinicalStats/机器学习生物标志物_ML-Biomarker",
+    "doc": "技能说明_机器学习生物标志物_ML-Biomarker.md",
+    "title_zh": "机器学习生物标志物",
+    "title_en": "ML-Biomarker",
+    "section": "G",
+    "priority": "P0",
+    "research_intents": [
+      "机器学习",
+      "标志物",
+      "随机森林",
+      "LASSO"
+    ],
+    "data_types": [
+      "表达",
+      "临床"
+    ],
+    "r_packages": [
+      "caret",
+      "glmnet",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "预测"
+  },
+  {
+    "id": "bioinfo-radiomics",
+    "folder": "放射组学与病理组学_Radiomics-Pathomics",
+    "path": "04_临床预测与统计_ClinicalStats/放射组学与病理组学_Radiomics-Pathomics",
+    "doc": "技能说明_放射组学与病理组学_Radiomics-Pathomics.md",
+    "title_zh": "放射组学与病理组学",
+    "title_en": "Radiomics-Pathomics",
+    "section": "I",
+    "priority": "P2",
+    "research_intents": [
+      "放射组学",
+      "病理组学"
+    ],
+    "data_types": [
+      "影像特征"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "临床"
+  },
+  {
+    "id": "bioinfo-cytof",
+    "folder": "单细胞质谱流式_CyTOF",
+    "path": "01_组学_Omics/单细胞质谱流式_CyTOF",
+    "doc": "技能说明_单细胞质谱流式_CyTOF.md",
+    "title_zh": "单细胞质谱流式",
+    "title_en": "CyTOF",
+    "section": "I",
+    "priority": "P2",
+    "research_intents": [
+      "CyTOF",
+      "质谱流式"
+    ],
+    "data_types": [
+      "fcs"
+    ],
+    "r_packages": [
+      "FlowSOM",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-细胞"
+  },
+  {
+    "id": "bioinfo-glycomics",
+    "folder": "糖组学分析_Glycomics",
+    "path": "01_组学_Omics/糖组学分析_Glycomics",
+    "doc": "技能说明_糖组学分析_Glycomics.md",
+    "title_zh": "糖组学分析",
+    "title_en": "Glycomics",
+    "section": "I",
+    "priority": "P2",
+    "research_intents": [
+      "糖组学",
+      "糖蛋白"
+    ],
+    "data_types": [
+      "糖谱"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-代谢物"
+  },
+  {
+    "id": "bioinfo-interactomics",
+    "folder": "相互作用组AP-MS_Interactomics",
+    "path": "01_组学_Omics/相互作用组AP-MS_Interactomics",
+    "doc": "技能说明_相互作用组AP-MS_Interactomics.md",
+    "title_zh": "相互作用组AP-MS",
+    "title_en": "Interactomics",
+    "section": "I",
+    "priority": "P2",
+    "research_intents": [
+      "AP-MS",
+      "互作组"
+    ],
+    "data_types": [
+      "质谱鉴定表"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "解释"
+  },
+  {
+    "id": "bioinfo-study-design",
+    "folder": "实验设计与统计功效_StudyDesign",
+    "path": "00_基础_Foundation/实验设计与统计功效_StudyDesign",
+    "doc": "技能说明_实验设计与统计功效_StudyDesign.md",
+    "title_zh": "实验设计与统计功效",
+    "title_en": "StudyDesign",
+    "section": "J",
+    "priority": "P1",
+    "research_intents": [
+      "实验设计",
+      "样本量",
+      "功效"
+    ],
+    "data_types": [
+      "设计参数"
+    ],
+    "r_packages": [
+      "pwr"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "基础"
+  },
+  {
+    "id": "bioinfo-batch",
+    "folder": "批次校正与整合_BatchCorrection",
+    "path": "00_基础_Foundation/批次校正与整合_BatchCorrection",
+    "doc": "技能说明_批次校正与整合_BatchCorrection.md",
+    "title_zh": "批次校正与整合",
+    "title_en": "BatchCorrection",
+    "section": "J",
+    "priority": "P1",
+    "research_intents": [
+      "批次校正",
+      "ComBat",
+      "Harmony"
+    ],
+    "data_types": [
+      "多批次矩阵"
+    ],
+    "r_packages": [
+      "sva",
+      "harmony",
+      "limma"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "基础"
+  },
+  {
+    "id": "bioinfo-literature-db",
+    "folder": "文献与数据库检索_Literature-DB",
+    "path": "00_基础_Foundation/文献与数据库检索_Literature-DB",
+    "doc": "技能说明_文献与数据库检索_Literature-DB.md",
+    "title_zh": "文献与数据库检索",
+    "title_en": "Literature-DB",
+    "section": "J",
+    "priority": "P2",
+    "research_intents": [
+      "文献检索",
+      "DisGeNET",
+      "OpenTargets",
+      "TCMSP"
+    ],
+    "data_types": [
+      "关键词"
+    ],
+    "r_packages": [],
+    "cli_tools": [],
+    "purpose_layer": "基础"
+  },
+  {
+    "id": "bioinfo-repro-workflow",
+    "folder": "可复现工作流_ReproducibleWorkflow",
+    "path": "00_基础_Foundation/可复现工作流_ReproducibleWorkflow",
+    "doc": "技能说明_可复现工作流_ReproducibleWorkflow.md",
+    "title_zh": "可复现工作流",
+    "title_en": "ReproducibleWorkflow",
+    "section": "J",
+    "priority": "P2",
+    "research_intents": [
+      "Snakemake",
+      "Nextflow",
+      "可复现",
+      "容器"
+    ],
+    "data_types": [
+      "流水线"
+    ],
+    "r_packages": [
+      "sessioninfo"
+    ],
+    "cli_tools": [
+      "Snakemake",
+      "Nextflow",
+      "Docker"
+    ],
+    "purpose_layer": "基础"
+  },
+  {
+    "id": "bioinfo-ngs-qc",
+    "folder": "NGS质控与比对_NGS-QC-Alignment",
+    "path": "00_基础_Foundation/NGS质控与比对_NGS-QC-Alignment",
+    "doc": "技能说明_NGS质控与比对_NGS-QC-Alignment.md",
+    "title_zh": "NGS质控与比对",
+    "title_en": "NGS-QC-Alignment",
+    "section": "K",
+    "priority": "P0",
+    "research_intents": [
+      "FastQC",
+      "MultiQC",
+      "比对",
+      "BAM"
+    ],
+    "data_types": [
+      "FASTQ"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "FastQC",
+      "MultiQC",
+      "BWA",
+      "STAR",
+      "samtools"
+    ],
+    "purpose_layer": "基础"
+  },
+  {
+    "id": "bioinfo-microarray",
+    "folder": "基因芯片表达分析_Microarray",
+    "path": "01_组学_Omics/基因芯片表达分析_Microarray",
+    "doc": "技能说明_基因芯片表达分析_Microarray.md",
+    "title_zh": "基因芯片表达分析",
+    "title_en": "Microarray",
+    "section": "K",
+    "priority": "P1",
+    "research_intents": [
+      "芯片",
+      "Affymetrix",
+      "microarray"
+    ],
+    "data_types": [
+      "CEL",
+      "系列矩阵"
+    ],
+    "r_packages": [
+      "affy",
+      "limma",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-fusion",
+    "folder": "RNA融合基因检测_FusionGene",
+    "path": "02_遗传与变异_Genetics/RNA融合基因检测_FusionGene",
+    "doc": "技能说明_RNA融合基因检测_FusionGene.md",
+    "title_zh": "RNA融合基因检测",
+    "title_en": "FusionGene",
+    "section": "K",
+    "priority": "P1",
+    "research_intents": [
+      "融合基因",
+      "STAR-Fusion",
+      "Arriba"
+    ],
+    "data_types": [
+      "RNA FASTQ"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "STAR-Fusion",
+      "Arriba"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-cutntag",
+    "folder": "CUT与Tag分析_CUTnTag",
+    "path": "01_组学_Omics/CUT与Tag分析_CUTnTag",
+    "doc": "技能说明_CUT与Tag分析_CUTnTag.md",
+    "title_zh": "CUT与Tag分析",
+    "title_en": "CUTnTag",
+    "section": "K",
+    "priority": "P1",
+    "research_intents": [
+      "CUT&Tag",
+      "CUT&RUN"
+    ],
+    "data_types": [
+      "FASTQ"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "MACS2",
+      "Bowtie2"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-chromatin-loop",
+    "folder": "染色质环与HiChIP_ChromatinLoop",
+    "path": "01_组学_Omics/染色质环与HiChIP_ChromatinLoop",
+    "doc": "技能说明_染色质环与HiChIP_ChromatinLoop.md",
+    "title_zh": "染色质环与HiChIP",
+    "title_en": "ChromatinLoop",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "HiChIP",
+      "ChIA-PET",
+      "染色质环"
+    ],
+    "data_types": [
+      "pairs"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "HiCCUPS"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-nascent-rna",
+    "folder": "新生转录组_NascentRNA",
+    "path": "01_组学_Omics/新生转录组_NascentRNA",
+    "doc": "技能说明_新生转录组_NascentRNA.md",
+    "title_zh": "新生转录组",
+    "title_en": "NascentRNA",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "GRO-seq",
+      "PRO-seq",
+      "TT-seq"
+    ],
+    "data_types": [
+      "BAM"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-cerna",
+    "folder": "ceRNA网络分析_ceRNA",
+    "path": "01_组学_Omics/ceRNA网络分析_ceRNA",
+    "doc": "技能说明_ceRNA网络分析_ceRNA.md",
+    "title_zh": "ceRNA网络分析",
+    "title_en": "ceRNA",
+    "section": "K",
+    "priority": "P0",
+    "research_intents": [
+      "ceRNA",
+      "miRNA海绵",
+      "竞争内源"
+    ],
+    "data_types": [
+      "表达",
+      "miRNA"
+    ],
+    "r_packages": [
+      "igraph",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-liquid-biopsy",
+    "folder": "外泌体与液体活检_LiquidBiopsy",
+    "path": "04_临床预测与统计_ClinicalStats/外泌体与液体活检_LiquidBiopsy",
+    "doc": "技能说明_外泌体与液体活检_LiquidBiopsy.md",
+    "title_zh": "外泌体与液体活检",
+    "title_en": "LiquidBiopsy",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "外泌体",
+      "液体活检",
+      "cfDNA",
+      "ctDNA"
+    ],
+    "data_types": [
+      "体液组学"
+    ],
+    "r_packages": [
+      "limma",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "临床"
+  },
+  {
+    "id": "bioinfo-meta-analysis",
+    "folder": "荟萃分析_MetaAnalysis",
+    "path": "04_临床预测与统计_ClinicalStats/荟萃分析_MetaAnalysis",
+    "doc": "技能说明_荟萃分析_MetaAnalysis.md",
+    "title_zh": "荟萃分析",
+    "title_en": "MetaAnalysis",
+    "section": "K",
+    "priority": "P0",
+    "research_intents": [
+      "荟萃",
+      "meta",
+      "森林图",
+      "异质性"
+    ],
+    "data_types": [
+      "多研究效应量"
+    ],
+    "r_packages": [
+      "meta",
+      "metafor",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "比较"
+  },
+  {
+    "id": "bioinfo-survival",
+    "folder": "生存分析与预后模型_Survival",
+    "path": "04_临床预测与统计_ClinicalStats/生存分析与预后模型_Survival",
+    "doc": "技能说明_生存分析与预后模型_Survival.md",
+    "title_zh": "生存分析与预后模型",
+    "title_en": "Survival",
+    "section": "K",
+    "priority": "P0",
+    "research_intents": [
+      "生存",
+      "KM",
+      "Cox",
+      "预后",
+      "列线图"
+    ],
+    "data_types": [
+      "临床随访",
+      "表达"
+    ],
+    "r_packages": [
+      "survival",
+      "survminer",
+      "rms",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "预测"
+  },
+  {
+    "id": "bioinfo-diagnostic-roc",
+    "folder": "诊断效能ROC_DiagnosticROC",
+    "path": "04_临床预测与统计_ClinicalStats/诊断效能ROC_DiagnosticROC",
+    "doc": "技能说明_诊断效能ROC_DiagnosticROC.md",
+    "title_zh": "诊断效能ROC",
+    "title_en": "DiagnosticROC",
+    "section": "K",
+    "priority": "P0",
+    "research_intents": [
+      "ROC",
+      "AUC",
+      "诊断",
+      "截断"
+    ],
+    "data_types": [
+      "连续标志物",
+      "二分类"
+    ],
+    "r_packages": [
+      "pROC",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "预测"
+  },
+  {
+    "id": "bioinfo-subtyping",
+    "folder": "分子分型与共识聚类_MolecularSubtyping",
+    "path": "04_临床预测与统计_ClinicalStats/分子分型与共识聚类_MolecularSubtyping",
+    "doc": "技能说明_分子分型与共识聚类_MolecularSubtyping.md",
+    "title_zh": "分子分型与共识聚类",
+    "title_en": "MolecularSubtyping",
+    "section": "K",
+    "priority": "P1",
+    "research_intents": [
+      "分子分型",
+      "共识聚类",
+      "ConsensusClusterPlus"
+    ],
+    "data_types": [
+      "表达矩阵"
+    ],
+    "r_packages": [
+      "ConsensusClusterPlus",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-crispr-screen",
+    "folder": "CRISPR筛选分析_CRISPRscreen",
+    "path": "05_系统方法_SystemsMethods/CRISPR筛选分析_CRISPRscreen",
+    "doc": "技能说明_CRISPR筛选分析_CRISPRscreen.md",
+    "title_zh": "CRISPR筛选分析",
+    "title_en": "CRISPRscreen",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "CRISPR",
+      "MAGeCK",
+      "筛选"
+    ],
+    "data_types": [
+      "count 表"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [
+      "MAGeCK"
+    ],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-insilico-ko",
+    "folder": "虚拟敲除与扰动_InSilicoKO",
+    "path": "05_系统方法_SystemsMethods/虚拟敲除与扰动_InSilicoKO",
+    "doc": "技能说明_虚拟敲除与扰动_InSilicoKO.md",
+    "title_zh": "虚拟敲除与扰动",
+    "title_en": "InSilicoKO",
+    "section": "K",
+    "priority": "P1",
+    "research_intents": [
+      "虚拟敲除",
+      "in silico KO",
+      "CellOracle"
+    ],
+    "data_types": [
+      "GRN",
+      "DEG"
+    ],
+    "r_packages": [
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "预测"
+  },
+  {
+    "id": "bioinfo-cross-species",
+    "folder": "跨物种基因映射_CrossSpecies",
+    "path": "05_系统方法_SystemsMethods/跨物种基因映射_CrossSpecies",
+    "doc": "技能说明_跨物种基因映射_CrossSpecies.md",
+    "title_zh": "跨物种基因映射",
+    "title_en": "CrossSpecies",
+    "section": "K",
+    "priority": "P1",
+    "research_intents": [
+      "跨物种",
+      "ortholog",
+      "babelgene"
+    ],
+    "data_types": [
+      "多基因列表"
+    ],
+    "r_packages": [
+      "babelgene",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "解释"
+  },
+  {
+    "id": "bioinfo-eqtl",
+    "folder": "eQTL与QTL作图_eQTL",
+    "path": "01_组学_Omics/eQTL与QTL作图_eQTL",
+    "doc": "技能说明_eQTL与QTL作图_eQTL.md",
+    "title_zh": "eQTL与QTL作图",
+    "title_en": "eQTL",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "eQTL",
+      "QTL",
+      "矩阵EQTL"
+    ],
+    "data_types": [
+      "基因型",
+      "表达"
+    ],
+    "r_packages": [
+      "MatrixEQTL"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-基因"
+  },
+  {
+    "id": "bioinfo-prs",
+    "folder": "多基因风险评分_PRS",
+    "path": "01_组学_Omics/多基因风险评分_PRS",
+    "doc": "技能说明_多基因风险评分_PRS.md",
+    "title_zh": "多基因风险评分",
+    "title_en": "PRS",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "PRS",
+      "多基因风险",
+      "PRSice"
+    ],
+    "data_types": [
+      "GWAS",
+      "基因型"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "PRSice-2",
+      "LDpred2"
+    ],
+    "purpose_layer": "预测"
+  },
+  {
+    "id": "bioinfo-popgen",
+    "folder": "群体遗传学_PopulationGenetics",
+    "path": "02_遗传与变异_Genetics/群体遗传学_PopulationGenetics",
+    "doc": "技能说明_群体遗传学_PopulationGenetics.md",
+    "title_zh": "群体遗传学",
+    "title_en": "PopulationGenetics",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "群体遗传",
+      "Fst",
+      "admixture"
+    ],
+    "data_types": [
+      "基因型"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "PLINK",
+      "ADMIXTURE"
+    ],
+    "purpose_layer": "基础"
+  },
+  {
+    "id": "bioinfo-phylo",
+    "folder": "系统发育分析_Phylogenetics",
+    "path": "02_遗传与变异_Genetics/系统发育分析_Phylogenetics",
+    "doc": "技能说明_系统发育分析_Phylogenetics.md",
+    "title_zh": "系统发育分析",
+    "title_en": "Phylogenetics",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "系统发育",
+      "建树",
+      "MSA"
+    ],
+    "data_types": [
+      "序列"
+    ],
+    "r_packages": [
+      "ape",
+      "ggtree"
+    ],
+    "cli_tools": [
+      "MAFFT",
+      "IQ-TREE"
+    ],
+    "purpose_layer": "—"
+  },
+  {
+    "id": "bioinfo-sc-composition",
+    "folder": "单细胞组成差异_scComposition",
+    "path": "01_组学_Omics/单细胞组成差异_scComposition",
+    "doc": "技能说明_单细胞组成差异_scComposition.md",
+    "title_zh": "单细胞组成差异",
+    "title_en": "scComposition",
+    "section": "K",
+    "priority": "P1",
+    "research_intents": [
+      "组成差异",
+      "miloR",
+      "scCODA",
+      "propeller"
+    ],
+    "data_types": [
+      "单细胞元数据"
+    ],
+    "r_packages": [
+      "miloR",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "病因-细胞"
+  },
+  {
+    "id": "bioinfo-hla",
+    "folder": "HLA分型_HLA-Typing",
+    "path": "01_组学_Omics/HLA分型_HLA-Typing",
+    "doc": "技能说明_HLA分型_HLA-Typing.md",
+    "title_zh": "HLA分型",
+    "title_en": "HLA-Typing",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "HLA",
+      "OptiType",
+      "HLA分型"
+    ],
+    "data_types": [
+      "WES/RNA"
+    ],
+    "r_packages": [],
+    "cli_tools": [
+      "OptiType",
+      "HLA-HD"
+    ],
+    "purpose_layer": "基础"
+  },
+  {
+    "id": "bioinfo-timeseries",
+    "folder": "时间序列组学_TimeSeriesOmics",
+    "path": "01_组学_Omics/时间序列组学_TimeSeriesOmics",
+    "doc": "技能说明_时间序列组学_TimeSeriesOmics.md",
+    "title_zh": "时间序列组学",
+    "title_en": "TimeSeriesOmics",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "时间序列",
+      "纵向",
+      "剂量时间"
+    ],
+    "data_types": [
+      "多时间点表达"
+    ],
+    "r_packages": [
+      "limma",
+      "ggplot2"
+    ],
+    "cli_tools": [],
+    "purpose_layer": "比较"
+  },
+  {
+    "id": "bioinfo-homology-modeling",
+    "folder": "同源建模_HomologyModeling",
+    "path": "01_组学_Omics/同源建模_HomologyModeling",
+    "doc": "技能说明_同源建模_HomologyModeling.md",
+    "title_zh": "同源建模",
+    "title_en": "HomologyModeling",
+    "section": "K",
+    "priority": "P2",
+    "research_intents": [
+      "同源建模",
+      "MODELLER"
+    ],
+    "data_types": [
+      "序列"
+    ],
+    "r_packages": [
+      "bio3d"
+    ],
+    "cli_tools": [
+      "MODELLER"
+    ],
+    "purpose_layer": "药物-基因"
+  }
+]

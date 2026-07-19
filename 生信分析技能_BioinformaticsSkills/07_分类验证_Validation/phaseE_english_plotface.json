@@ -1,0 +1,297 @@
+{
+  "updated_at": "2026-07-18T20:08:59",
+  "patch_stats": {
+    "run_sample_files": 18,
+    "run_sample_replacements": 22,
+    "template_replacements": 11
+  },
+  "remaining_before_rerun": [],
+  "counts": {
+    "PASS": 58,
+    "BLOCKED": 12
+  },
+  "results": [
+    {
+      "skill": "00_基础_Foundation/NGS质控与比对_NGS-QC-Alignment",
+      "status": "PASS"
+    },
+    {
+      "skill": "00_基础_Foundation/可复现工作流_ReproducibleWorkflow",
+      "status": "PASS"
+    },
+    {
+      "skill": "00_基础_Foundation/实验设计与统计功效_StudyDesign",
+      "status": "PASS"
+    },
+    {
+      "skill": "00_基础_Foundation/批次校正与整合_BatchCorrection",
+      "status": "PASS"
+    },
+    {
+      "skill": "00_基础_Foundation/数据真实性验证_DataAuthenticity",
+      "status": "PASS"
+    },
+    {
+      "skill": "00_基础_Foundation/文献与数据库检索_Literature-DB",
+      "status": "PASS"
+    },
+    {
+      "skill": "00_基础_Foundation/研究方案编排_ResearchOrchestrator",
+      "status": "PASS"
+    },
+    {
+      "skill": "00_基础_Foundation/统一交付规范_DeliveryStandards",
+      "status": "PASS"
+    },
+    {
+      "skill": "00_基础_Foundation/统一可视化规范_VizStandards",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/ATAC专论_ATAC-seq",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "01_组学_Omics/DNA甲基化分析_WGBS-RRBS",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/RNA编辑与修饰_RNAEditing",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/三维基因组分析_3DGenome",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "01_组学_Omics/代谢组分析_Metabolomics",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/公共库挖掘_GEO-TCGA",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/剪接与异构体分析_AlternativeSplicing",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/单细胞与空间转录组分析_scRNA-Spatial",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/单细胞多组学_scMultiome",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/单细胞质谱流式_CyTOF",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/基因芯片表达分析_Microarray",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/宏基因组与病原_Metagenome-Pathogen",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/微生物组16S分析_Microbiome16S",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/新生转录组_NascentRNA",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/核糖体图谱分析_Ribo-seq",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/空间转录组进阶_SpatialAdvanced",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/糖组学分析_Glycomics",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/蛋白质组分析_Proteomics",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/表观遗传ChIP-seq_Epigenomics",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "01_组学_Omics/转录组分析_RNA-seq",
+      "status": "PASS"
+    },
+    {
+      "skill": "01_组学_Omics/非编码与ceRNA_ncRNA-ceRNA",
+      "status": "PASS"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/RNA融合基因检测_FusionGene",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/全基因组关联分析_GWAS",
+      "status": "PASS"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/变异检测与外显子组_Variant-WES",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/基因组组装与注释_GenomeAssembly",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/孟德尔随机化_MendelianRandomization",
+      "status": "PASS"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/拷贝数变异分析_CNV",
+      "status": "PASS"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/系统发育分析_Phylogenetics",
+      "status": "PASS"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/结构变异分析_StructuralVariant",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/群体遗传学_PopulationGenetics",
+      "status": "PASS"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/肿瘤体细胞景观_TumorSomatic",
+      "status": "PASS"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/遗传关联下游_GeneticDownstream",
+      "status": "PASS"
+    },
+    {
+      "skill": "02_遗传与变异_Genetics/长读长测序分析_LongRead",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "03_药物计算_DrugDiscovery/分子对接与虚拟筛选_MolecularDocking",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "03_药物计算_DrugDiscovery/类药性与QSAR_ADMET-QSAR",
+      "status": "PASS"
+    },
+    {
+      "skill": "03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology",
+      "status": "PASS"
+    },
+    {
+      "skill": "03_药物计算_DrugDiscovery/药物敏感性与GDSC_DrugResponse",
+      "status": "PASS"
+    },
+    {
+      "skill": "03_药物计算_DrugDiscovery/药物重定位与连通图_CMap-L1000",
+      "status": "PASS"
+    },
+    {
+      "skill": "03_药物计算_DrugDiscovery/蛋白结构与建模_ProteinStructure",
+      "status": "PASS"
+    },
+    {
+      "skill": "04_临床预测与统计_ClinicalStats/免疫浸润与免疫治疗_ImmuneInfiltration",
+      "status": "PASS"
+    },
+    {
+      "skill": "04_临床预测与统计_ClinicalStats/分子分型与共识聚类_MolecularSubtyping",
+      "status": "PASS"
+    },
+    {
+      "skill": "04_临床预测与统计_ClinicalStats/剂量反应与时间序列_DoseTime",
+      "status": "PASS"
+    },
+    {
+      "skill": "04_临床预测与统计_ClinicalStats/外泌体与液体活检_LiquidBiopsy",
+      "status": "PASS"
+    },
+    {
+      "skill": "04_临床预测与统计_ClinicalStats/放射组学与病理组学_Radiomics-Pathomics",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "04_临床预测与统计_ClinicalStats/新抗原与免疫组库_Neoantigen-TCR",
+      "status": "BLOCKED"
+    },
+    {
+      "skill": "04_临床预测与统计_ClinicalStats/机器学习生物标志物_ML-Biomarker",
+      "status": "PASS"
+    },
+    {
+      "skill": "04_临床预测与统计_ClinicalStats/生存分析与预后模型_Survival",
+      "status": "PASS"
+    },
+    {
+      "skill": "04_临床预测与统计_ClinicalStats/荟萃分析_MetaAnalysis",
+      "status": "PASS"
+    },
+    {
+      "skill": "04_临床预测与统计_ClinicalStats/诊断效能ROC_DiagnosticROC",
+      "status": "PASS"
+    },
+    {
+      "skill": "05_系统方法_SystemsMethods/CRISPR筛选分析_CRISPRscreen",
+      "status": "PASS"
+    },
+    {
+      "skill": "05_系统方法_SystemsMethods/共表达网络WGCNA_WGCNA",
+      "status": "PASS"
+    },
+    {
+      "skill": "05_系统方法_SystemsMethods/单细胞进阶方法_scRNA-Advanced",
+      "status": "PASS"
+    },
+    {
+      "skill": "05_系统方法_SystemsMethods/基因集富集与通路_GSEA-Pathway",
+      "status": "PASS"
+    },
+    {
+      "skill": "05_系统方法_SystemsMethods/多组学联合分析_MultiOmics",
+      "status": "PASS"
+    },
+    {
+      "skill": "05_系统方法_SystemsMethods/细胞通讯分析_CellCommunication",
+      "status": "PASS"
+    },
+    {
+      "skill": "05_系统方法_SystemsMethods/虚拟敲除与扰动_InSilicoKO",
+      "status": "PASS"
+    },
+    {
+      "skill": "05_系统方法_SystemsMethods/蛋白质互作网络_PPI-Network",
+      "status": "PASS"
+    },
+    {
+      "skill": "05_系统方法_SystemsMethods/跨物种基因映射_CrossSpecies",
+      "status": "PASS"
+    },
+    {
+      "skill": "05_系统方法_SystemsMethods/转录因子与调控网络_TF-Network",
+      "status": "PASS"
+    },
+    {
+      "skill": "06_已落地流水线_ProductionPipelines/差异分析与UMAP流水线_DEG-UMAP",
+      "status": "PASS"
+    }
+  ],
+  "remaining_plot_cjk_after": [],
+  "svg_cjk": []
+}

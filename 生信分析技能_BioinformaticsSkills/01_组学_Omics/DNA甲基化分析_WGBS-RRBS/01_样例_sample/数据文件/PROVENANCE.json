@@ -1,0 +1,9 @@
+{
+  "data_provenance": "REAL",
+  "source": "Bioconductor FlowSorted.Blood.450k",
+  "accession": "FlowSorted.Blood.450k (Bioconductor ExperimentData, 450k)",
+  "scope": "450k/850k beta matrix downstream only",
+  "blocked_upstream": ["Bismark", "MethylKit", "WGBS FASTQ alignment"],
+  "contrast": "CD8T vs CD4T",
+  "status_note": "PARTIAL: REAL beta QC/DMP demo; full WGBS pipeline not run in sample."
+}

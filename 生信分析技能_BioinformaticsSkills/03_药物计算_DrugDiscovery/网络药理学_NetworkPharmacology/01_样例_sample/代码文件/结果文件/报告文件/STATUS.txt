@@ -1,0 +1,15 @@
+PARTIAL
+data_provenance=REAL
+disease_english_name=Atherosclerosis
+R_figures=PASS_SUBSET
+compound_disease_overlap_table=PASS
+compound_overlap_bar=PASS
+compound_overlap_by_herb=PASS
+KEGG_circos=PASS
+STRING_PPI_official_image=PASS
+STRING_PPI_score900=PASS
+STRING_PPI_concentric_R=PASS
+HCTP_network_preview=PASS
+Cytoscape_polish=OPTIONAL
+KEGG_official_maps=BLOCKED_EXTERNAL
+STRING_settings=required_score=900;3D=on;hide_disconnected=1;flavor=evidence

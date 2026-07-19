@@ -1,0 +1,2 @@
+"skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
+"Epigenomics","post",3,3,0,"n/a BLOCKED",TRUE,"TOY",NA,"已 source 本技能 脚本_scripts/: 运行ChIP-seq骨架_runChipseqSkeleton.R, 运行骨架_runSkeleton.R","BLOCKED: 需 ChIP FASTQ 与 MACS2/bowtie 比对栈","2026-07-18 21:27:33"

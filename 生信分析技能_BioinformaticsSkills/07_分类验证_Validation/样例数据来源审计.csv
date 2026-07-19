@@ -1,0 +1,71 @@
+﻿技能,数据来源类型,证据路径,说明,STATUS
+00_基础_Foundation/NGS质控与比对_NGS-QC-Alignment,TOY,00_基础_Foundation/NGS质控与比对_NGS-QC-Alignment/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+00_基础_Foundation/可复现工作流_ReproducibleWorkflow,TOY,00_基础_Foundation/可复现工作流_ReproducibleWorkflow/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+00_基础_Foundation/实验设计与统计功效_StudyDesign,TOY,00_基础_Foundation/实验设计与统计功效_StudyDesign/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+00_基础_Foundation/批次校正与整合_BatchCorrection,TOY,00_基础_Foundation/批次校正与整合_BatchCorrection/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+00_基础_Foundation/数据真实性验证_DataAuthenticity,TOY,00_基础_Foundation/数据真实性验证_DataAuthenticity/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+00_基础_Foundation/文献与数据库检索_Literature-DB,TOY,00_基础_Foundation/文献与数据库检索_Literature-DB/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+00_基础_Foundation/研究方案编排_ResearchOrchestrator,TOY,00_基础_Foundation/研究方案编排_ResearchOrchestrator/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+00_基础_Foundation/统一交付规范_DeliveryStandards,TOY,00_基础_Foundation/统一交付规范_DeliveryStandards/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+00_基础_Foundation/统一可视化规范_VizStandards,TOY,00_基础_Foundation/统一可视化规范_VizStandards/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/ATAC专论_ATAC-seq,BLOCKED,01_组学_Omics/ATAC专论_ATAC-seq/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+01_组学_Omics/DNA甲基化分析_WGBS-RRBS,REAL,01_组学_Omics/DNA甲基化分析_WGBS-RRBS/01_样例_sample/数据文件,FlowSorted.Blood.450k beta subset; upstream WGBS BLOCKED,PARTIAL
+01_组学_Omics/RNA编辑与修饰_RNAEditing,TOY,01_组学_Omics/RNA编辑与修饰_RNAEditing/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/三维基因组分析_3DGenome,BLOCKED,01_组学_Omics/三维基因组分析_3DGenome/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+01_组学_Omics/代谢组分析_Metabolomics,TOY,01_组学_Omics/代谢组分析_Metabolomics/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/公共库挖掘_GEO-TCGA,REAL,01_组学_Omics/公共库挖掘_GEO-TCGA/01_样例_sample/数据文件,GSE10072 series matrix cache,PASS
+01_组学_Omics/剪接与异构体分析_AlternativeSplicing,TOY,01_组学_Omics/剪接与异构体分析_AlternativeSplicing/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/单细胞与空间转录组分析_scRNA-Spatial,TOY,01_组学_Omics/单细胞与空间转录组分析_scRNA-Spatial/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/单细胞多组学_scMultiome,TOY,01_组学_Omics/单细胞多组学_scMultiome/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/单细胞质谱流式_CyTOF,TOY,01_组学_Omics/单细胞质谱流式_CyTOF/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/基因芯片表达分析_Microarray,REAL,01_组学_Omics/基因芯片表达分析_Microarray/01_样例_sample/数据文件,GSE10072 Affymetrix limma MA,PASS
+01_组学_Omics/宏基因组与病原_Metagenome-Pathogen,TOY,01_组学_Omics/宏基因组与病原_Metagenome-Pathogen/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/微生物组16S分析_Microbiome16S,TOY,01_组学_Omics/微生物组16S分析_Microbiome16S/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/新生转录组_NascentRNA,TOY,01_组学_Omics/新生转录组_NascentRNA/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/核糖体图谱分析_Ribo-seq,TOY,01_组学_Omics/核糖体图谱分析_Ribo-seq/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/空间转录组进阶_SpatialAdvanced,TOY,01_组学_Omics/空间转录组进阶_SpatialAdvanced/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/糖组学分析_Glycomics,TOY,01_组学_Omics/糖组学分析_Glycomics/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/蛋白质组分析_Proteomics,TOY,01_组学_Omics/蛋白质组分析_Proteomics/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+01_组学_Omics/表观遗传ChIP-seq_Epigenomics,BLOCKED,01_组学_Omics/表观遗传ChIP-seq_Epigenomics/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+01_组学_Omics/转录组分析_RNA-seq,REAL,01_组学_Omics/转录组分析_RNA-seq/01_样例_sample/数据文件,airway Bioconductor; limma-voom,PASS
+01_组学_Omics/非编码与ceRNA_ncRNA-ceRNA,TOY,01_组学_Omics/非编码与ceRNA_ncRNA-ceRNA/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+02_遗传与变异_Genetics/RNA融合基因检测_FusionGene,BLOCKED,02_遗传与变异_Genetics/RNA融合基因检测_FusionGene/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+02_遗传与变异_Genetics/全基因组关联分析_GWAS,TOY,02_遗传与变异_Genetics/全基因组关联分析_GWAS/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+02_遗传与变异_Genetics/变异检测与外显子组_Variant-WES,BLOCKED,02_遗传与变异_Genetics/变异检测与外显子组_Variant-WES/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+02_遗传与变异_Genetics/基因组组装与注释_GenomeAssembly,BLOCKED,02_遗传与变异_Genetics/基因组组装与注释_GenomeAssembly/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+02_遗传与变异_Genetics/孟德尔随机化_MendelianRandomization,TOY,02_遗传与变异_Genetics/孟德尔随机化_MendelianRandomization/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+02_遗传与变异_Genetics/拷贝数变异分析_CNV,TOY,02_遗传与变异_Genetics/拷贝数变异分析_CNV/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+02_遗传与变异_Genetics/系统发育分析_Phylogenetics,TOY,02_遗传与变异_Genetics/系统发育分析_Phylogenetics/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+02_遗传与变异_Genetics/结构变异分析_StructuralVariant,BLOCKED,02_遗传与变异_Genetics/结构变异分析_StructuralVariant/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+02_遗传与变异_Genetics/群体遗传学_PopulationGenetics,TOY,02_遗传与变异_Genetics/群体遗传学_PopulationGenetics/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+02_遗传与变异_Genetics/肿瘤体细胞景观_TumorSomatic,TOY,02_遗传与变异_Genetics/肿瘤体细胞景观_TumorSomatic/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+02_遗传与变异_Genetics/遗传关联下游_GeneticDownstream,TOY,02_遗传与变异_Genetics/遗传关联下游_GeneticDownstream/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+02_遗传与变异_Genetics/长读长测序分析_LongRead,BLOCKED,02_遗传与变异_Genetics/长读长测序分析_LongRead/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics,BLOCKED,03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+03_药物计算_DrugDiscovery/分子对接与虚拟筛选_MolecularDocking,BLOCKED,03_药物计算_DrugDiscovery/分子对接与虚拟筛选_MolecularDocking/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+03_药物计算_DrugDiscovery/类药性与QSAR_ADMET-QSAR,TOY,03_药物计算_DrugDiscovery/类药性与QSAR_ADMET-QSAR/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology,REAL,03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology/01_样例_sample/数据文件,用户交付中间表 / REAL,PASS
+03_药物计算_DrugDiscovery/药物敏感性与GDSC_DrugResponse,TOY,03_药物计算_DrugDiscovery/药物敏感性与GDSC_DrugResponse/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+03_药物计算_DrugDiscovery/药物重定位与连通图_CMap-L1000,TOY,03_药物计算_DrugDiscovery/药物重定位与连通图_CMap-L1000/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+03_药物计算_DrugDiscovery/蛋白结构与建模_ProteinStructure,TOY,03_药物计算_DrugDiscovery/蛋白结构与建模_ProteinStructure/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+04_临床预测与统计_ClinicalStats/免疫浸润与免疫治疗_ImmuneInfiltration,TOY,04_临床预测与统计_ClinicalStats/免疫浸润与免疫治疗_ImmuneInfiltration/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+04_临床预测与统计_ClinicalStats/分子分型与共识聚类_MolecularSubtyping,TOY,04_临床预测与统计_ClinicalStats/分子分型与共识聚类_MolecularSubtyping/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+04_临床预测与统计_ClinicalStats/剂量反应与时间序列_DoseTime,TOY,04_临床预测与统计_ClinicalStats/剂量反应与时间序列_DoseTime/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+04_临床预测与统计_ClinicalStats/外泌体与液体活检_LiquidBiopsy,TOY,04_临床预测与统计_ClinicalStats/外泌体与液体活检_LiquidBiopsy/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+04_临床预测与统计_ClinicalStats/放射组学与病理组学_Radiomics-Pathomics,BLOCKED,04_临床预测与统计_ClinicalStats/放射组学与病理组学_Radiomics-Pathomics/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+04_临床预测与统计_ClinicalStats/新抗原与免疫组库_Neoantigen-TCR,BLOCKED,04_临床预测与统计_ClinicalStats/新抗原与免疫组库_Neoantigen-TCR/01_样例_sample/数据文件,契约桩 BLOCKED,BLOCKED
+04_临床预测与统计_ClinicalStats/机器学习生物标志物_ML-Biomarker,TOY,04_临床预测与统计_ClinicalStats/机器学习生物标志物_ML-Biomarker/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+04_临床预测与统计_ClinicalStats/生存分析与预后模型_Survival,TOY,04_临床预测与统计_ClinicalStats/生存分析与预后模型_Survival/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+04_临床预测与统计_ClinicalStats/荟萃分析_MetaAnalysis,TOY,04_临床预测与统计_ClinicalStats/荟萃分析_MetaAnalysis/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+04_临床预测与统计_ClinicalStats/诊断效能ROC_DiagnosticROC,TOY,04_临床预测与统计_ClinicalStats/诊断效能ROC_DiagnosticROC/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+05_系统方法_SystemsMethods/CRISPR筛选分析_CRISPRscreen,TOY,05_系统方法_SystemsMethods/CRISPR筛选分析_CRISPRscreen/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+05_系统方法_SystemsMethods/共表达网络WGCNA_WGCNA,TOY,05_系统方法_SystemsMethods/共表达网络WGCNA_WGCNA/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+05_系统方法_SystemsMethods/单细胞进阶方法_scRNA-Advanced,TOY,05_系统方法_SystemsMethods/单细胞进阶方法_scRNA-Advanced/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+05_系统方法_SystemsMethods/基因集富集与通路_GSEA-Pathway,TOY,05_系统方法_SystemsMethods/基因集富集与通路_GSEA-Pathway/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+05_系统方法_SystemsMethods/多组学联合分析_MultiOmics,TOY,05_系统方法_SystemsMethods/多组学联合分析_MultiOmics/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+05_系统方法_SystemsMethods/细胞通讯分析_CellCommunication,TOY,05_系统方法_SystemsMethods/细胞通讯分析_CellCommunication/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+05_系统方法_SystemsMethods/虚拟敲除与扰动_InSilicoKO,TOY,05_系统方法_SystemsMethods/虚拟敲除与扰动_InSilicoKO/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+05_系统方法_SystemsMethods/蛋白质互作网络_PPI-Network,TOY,05_系统方法_SystemsMethods/蛋白质互作网络_PPI-Network/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+05_系统方法_SystemsMethods/跨物种基因映射_CrossSpecies,TOY,05_系统方法_SystemsMethods/跨物种基因映射_CrossSpecies/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+05_系统方法_SystemsMethods/转录因子与调控网络_TF-Network,TOY,05_系统方法_SystemsMethods/转录因子与调控网络_TF-Network/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS
+06_已落地流水线_ProductionPipelines/差异分析与UMAP流水线_DEG-UMAP,TOY,06_已落地流水线_ProductionPipelines/差异分析与UMAP流水线_DEG-UMAP/01_样例_sample/数据文件,脚本模拟 toy；不可外推,PASS

@@ -1,0 +1,83 @@
+{
+  "data_provenance": "REAL",
+  "source": "user_delivery_query_backed_export",
+  "not_live_scrape": true,
+  "delivery_path": "D:\\网络药理学文件\\网络药理学交付文件20260710(1)\\交付文件",
+  "disease_english_name": "Atherosclerosis",
+  "genecards_min_relevance_score": 40.0,
+  "venn_uses_full_genecards": true,
+  "disease_query_note": "Each disease DB file was queried with the English disease name (see 网药数据解读.docx). Disease multi-DB Venn uses FULL GeneCards export (疾病靶点按库_VennFull_DiseaseGenesByDB.csv). Downstream overlap/enrichment uses GeneCards filtered at Relevance Score>=40.",
+  "herbs": [
+    {
+      "zh": "三七",
+      "en": "Sanqi"
+    },
+    {
+      "zh": "丹参",
+      "en": "Danshen"
+    },
+    {
+      "zh": "人参",
+      "en": "Renshen"
+    },
+    {
+      "zh": "葛根",
+      "en": "Gegen"
+    },
+    {
+      "zh": "黄芪",
+      "en": "Huangqi"
+    },
+    {
+      "zh": "黄连",
+      "en": "Huanglian"
+    }
+  ],
+  "databases": {
+    "drug": [
+      "TCMSP"
+    ],
+    "disease": [
+      "GeneCards",
+      "TTD",
+      "DrugBank",
+      "OMIM"
+    ],
+    "ppi": [
+      "STRING"
+    ]
+  },
+  "urls": {
+    "GeneCards": "https://www.genecards.org/",
+    "TTD": "https://db.idrblab.net/ttd/",
+    "DrugBank": "https://go.drugbank.com/",
+    "OMIM": "https://www.omim.org/",
+    "TCMSP": "https://tcmsp-e.com/",
+    "STRING": "https://string-db.org/"
+  },
+  "derived_files": [
+    "派生_成分靶点边_DerivedCompoundTargets.csv",
+    "疾病靶点按库_DiseaseGenesByDB.csv",
+    "疾病靶点按库_VennFull_DiseaseGenesByDB.csv",
+    "疾病靶点合并_DiseaseGenesUnion.csv",
+    "药物成分靶点_CompoundTargets.csv",
+    "成分重命名_CompoundRenameMap.csv",
+    "成分疾病交集靶点_CompoundDiseaseOverlapTargets.csv",
+    "成分未映射备注_UnmappedCompounds.csv"
+  ],
+  "counts": {
+    "n_herbs": 6,
+    "drug_union": 229,
+    "disease_union_filtered": 443,
+    "disease_by_db_rows_filtered": 460,
+    "disease_by_db_rows_venn_full": 11709,
+    "genecards_full": 11659,
+    "genecards_filtered": 410,
+    "drug_disease_overlap": 206,
+    "compound_targets_edges": 1748,
+    "compound_disease_overlap_edges": 1635,
+    "n_mol_rename_ids": 103,
+    "n_unmapped_compounds": 3
+  },
+  "note": "REAL query-backed intermediates from user delivery; not fabricated with rnorm. Compound–disease-overlap edges rebuilt via _prepare_compound_overlap_from_delivery.py. Cytoscape figures remain BLOCKED_EXTERNAL."
+}

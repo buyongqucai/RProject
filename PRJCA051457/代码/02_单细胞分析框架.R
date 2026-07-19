@@ -1,5 +1,0 @@
-source("配置.R", encoding = "UTF-8")
-setup_script_env()
-source(file.path(PROJECT_ROOT, "共享脚本", "工具_单细胞差异分析.R"), encoding = "UTF-8")
-check_scrna_dependencies()
-message("PRJCA051457 scRNA 分析框架已加载，请参考文档完成 pseudobulk 流程。")
