@@ -51,8 +51,9 @@ shanshui_root <- Sys.getenv("SHANSHUI_ROOT", "E:/RProject/山水项目")
 acc_umap <- "GSE164522"
 acc_prop <- "GSE207177"
 
-# Prefer cached slim extracts; fallback to live project trees
+# Prefer skill-local caches; live 书清/山水 trees are optional fallback only
 umap_cache <- file.path(data_dir, "real_GSE164522_umap_subsample.csv")
+umap_rds_cache <- file.path(data_dir, "real_GSE164522_seurat_umap_subsample.rds")
 prop_cache <- file.path(data_dir, "real_GSE207177_celltype_proportions.csv")
 umap_rds_live <- file.path(
   shanshui_root, "GSE164522", "模块B_肝转移单细胞", "03_输出数据",
@@ -60,27 +61,33 @@ umap_rds_live <- file.path(
 )
 prop_live <- file.path(shuqing_root, "GSE207177", "结果", "表格", "GSE207177_细胞类型比例.csv")
 
+load_umap_from_rds <- function(rds_path, via) {
+  if (!file.exists(rds_path) || !requireNamespace("Seurat", quietly = TRUE)) return(NULL)
+  obj <- readRDS(rds_path)
+  emb <- as.data.frame(Seurat::Embeddings(obj, "umap"))
+  names(emb) <- c("umap_1", "umap_2")
+  md <- as.data.frame(obj[[]])
+  d <- cbind(emb, md)
+  d$celltype <- d$celltype_major
+  d$group <- d$group_label
+  d$score <- d$FCGR3A_raw
+  set.seed(202)
+  d <- d[sample(seq_len(nrow(d)), min(3000L, nrow(d))), , drop = FALSE]
+  attr(d, "via") <- via
+  d
+}
+
 load_umap <- function() {
   if (file.exists(umap_cache)) {
     d <- read.csv(umap_cache, check.names = FALSE, stringsAsFactors = FALSE)
     attr(d, "via") <- "cache"
     return(d)
   }
-  if (file.exists(umap_rds_live) && requireNamespace("Seurat", quietly = TRUE)) {
-    obj <- readRDS(umap_rds_live)
-    emb <- as.data.frame(Seurat::Embeddings(obj, "umap"))
-    names(emb) <- c("umap_1", "umap_2")
-    md <- as.data.frame(obj[[]])
-    d <- cbind(emb, md)
-    d$celltype <- d$celltype_major
-    d$group <- d$group_label
-    d$score <- d$FCGR3A_raw
-    set.seed(202)
-    d <- d[sample(seq_len(nrow(d)), min(3000L, nrow(d))), , drop = FALSE]
-    attr(d, "via") <- "SHANSHUI_ROOT"
-    return(d)
-  }
-  stop("No REAL UMAP: missing cache and live Seurat subsample RDS")
+  d <- load_umap_from_rds(umap_rds_cache, "skill_rds_cache")
+  if (!is.null(d)) return(d)
+  d <- load_umap_from_rds(umap_rds_live, "SHANSHUI_ROOT")
+  if (!is.null(d)) return(d)
+  stop("No REAL UMAP: missing skill-local CSV/RDS cache (and optional live Seurat RDS)")
 }
 
 load_prop_shuqing <- function() {

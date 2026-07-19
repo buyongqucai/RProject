@@ -1,7 +1,7 @@
-# DATA_SOURCE — WGCNA sample (REAL)
+# DATA_SOURCE (REAL, skill-local cache)
 
 - **data_provenance:** REAL
-- **accession:** GSE10072 (lung adenocarcinoma smoking; Spira et al.)
-- **caches:** `real_GSE10072_expr_topVar.csv`, `real_GSE10072_sample_meta.csv`
-- **source:** GEO-TCGA skill sample subset (official GEO series matrix derived)
-- Env: reuse BioinformaticsSkills GEO-TCGA caches
+- **accession / source:** GSE207177
+- **note:** WGCNA hub genes
+- **origin tree:** 书清（已复制进本技能；样例优先读本目录，不依赖完整项目树）
+- **embedded:** 2026-07-19

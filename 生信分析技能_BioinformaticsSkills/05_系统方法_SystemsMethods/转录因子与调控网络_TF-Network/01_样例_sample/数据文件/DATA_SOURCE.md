@@ -1,8 +1,8 @@
-# 数据来源
+# DATA_SOURCE (REAL, skill-local cache)
 
-- **data_provenance: TOY**
-
-- **toy=TRUE**（强制）：可复现模拟数据，**不可外推**
-- **技能**：`转录因子与调控网络_TF-Network`
-- **analysis_kind**：`tf_network`
-- **规范**：统一交付规范_DeliveryStandards
+- **data_provenance:** REAL
+- **accession / source:** GSE207177
+- **note:** TF activity (ulm/decoupleR-like) from 书清延展分析; WGCNA hub genes as optional network seed
+- **files:** `real_GSE207177_TF_activity.csv`, `real_GSE207177_WGCNA_hub_genes.csv`
+- **origin tree:** 书清（已复制进本技能；样例优先读本目录）
+- **embedded:** 2026-07-19

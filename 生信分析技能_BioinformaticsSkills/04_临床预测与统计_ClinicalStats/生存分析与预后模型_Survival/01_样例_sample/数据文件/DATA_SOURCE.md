@@ -1,8 +1,7 @@
-# DATA_SOURCE — Survival sample (REAL)
+# DATA_SOURCE (REAL, skill-local cache)
 
 - **data_provenance:** REAL
-- **accession:** GSE17536 (CRC microarray; Moffitt / Smith et al.)
-- **cache:** `real_GSE17536_OS_FCGR3A.csv`
-- **risk:** High/Low by median FCGR3A expression (not fabricated groups)
-- **source:** 山水项目 GSE17536 clinical+FCGR3A table
-- Env: `SHANSHUI_ROOT`
+- **accession / source:** GSE17536
+- **note:** OS + FCGR3A from 山水 clinical
+- **origin tree:** 山水（已复制进本技能；样例优先读本目录，不依赖完整项目树）
+- **embedded:** 2026-07-19

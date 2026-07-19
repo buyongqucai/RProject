@@ -1,8 +1,7 @@
-# 数据来源
+# DATA_SOURCE (REAL, skill-local cache)
 
-- **data_provenance: REAL**
-- **accession: GSE207177**
-- **源表**：书清 `GSE207177/结果/表格/GSE207177_CIBERSORT免疫浸润.csv`
-- **缓存**：`real_GSE207177_CIBERSORT_fractions.csv`
-- **技能**：`免疫浸润与免疫治疗_ImmuneInfiltration`
-- **SHUQING_ROOT** 默认 `E:/RProject/书清项目`
+- **data_provenance:** REAL
+- **accession / source:** GSE207177
+- **note:** CIBERSORT-like fractions
+- **origin tree:** 书清（已复制进本技能；样例优先读本目录，不依赖完整项目树）
+- **embedded:** 2026-07-19

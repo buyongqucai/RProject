@@ -1,7 +1,7 @@
-# 数据来源
+# DATA_SOURCE (REAL, skill-local cache)
 
-- **data_provenance: REAL**
-- **accession**: GSE10072（肺腺癌 vs 正常肺 Affymetrix）
-- **缓存**: `geo_cache/GSE10072_series_matrix.txt.gz`（NCBI FTP 下载）
-- **样例范围**: 24 样本子集 + 2000 probe；元数据表 + PCA + 组织箱线
-- **说明**: 本机 `GEOquery::getGEO` 崩溃，使用本地 series matrix 解析；见 `PROVENANCE.json`
+- **data_provenance:** REAL
+- **accession / source:** GSE10072
+- **note:** expression subset + meta in skill
+- **origin tree:** GEO（已复制进本技能；样例优先读本目录，不依赖完整项目树）
+- **embedded:** 2026-07-19

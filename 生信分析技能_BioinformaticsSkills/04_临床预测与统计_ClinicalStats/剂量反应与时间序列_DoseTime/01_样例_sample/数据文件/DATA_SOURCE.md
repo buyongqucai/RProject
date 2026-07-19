@@ -1,7 +1,7 @@
-# DATA_SOURCE — DoseTime sample (REAL)
+# DATA_SOURCE (REAL, skill-local cache)
 
 - **data_provenance:** REAL
-- **accession:** GSE207177
-- **cache:** `real_GSE207177_MAMs_timeseries.csv`
-- **source:** 书清项目 GSE207177_MAMs时序表达.csv
-- Env: `SHUQING_ROOT`
+- **accession / source:** GSE207177
+- **note:** MAMs time-course expression
+- **origin tree:** 书清（已复制进本技能；样例优先读本目录，不依赖完整项目树）
+- **embedded:** 2026-07-19

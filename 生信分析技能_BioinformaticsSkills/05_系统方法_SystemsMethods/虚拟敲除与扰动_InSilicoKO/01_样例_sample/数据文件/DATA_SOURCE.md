@@ -1,8 +1,8 @@
-# 数据来源
+# DATA_SOURCE (REAL, skill-local cache)
 
-- **data_provenance: TOY**
-
-- **toy=TRUE**（强制）：可复现模拟数据，**不可外推**
-- **技能**：`虚拟敲除与扰动_InSilicoKO`
-- **analysis_kind**：`insilico_ko`
-- **规范**：统一交付规范_DeliveryStandards
+- **data_provenance:** REAL
+- **accession / source:** GSE207177
+- **note:** in silico KO TF rescued DEG counts from 书清延展分析
+- **files:** `real_GSE207177_InSilicoKO_TF.csv`
+- **origin tree:** 书清（已复制进本技能）
+- **embedded:** 2026-07-19

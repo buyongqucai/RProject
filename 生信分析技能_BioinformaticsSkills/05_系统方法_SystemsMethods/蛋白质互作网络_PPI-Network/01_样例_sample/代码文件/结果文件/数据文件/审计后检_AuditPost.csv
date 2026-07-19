@@ -1,2 +1,2 @@
 "skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
-"PPI-Network","post",8,2,NA,"toy PPI",TRUE,"TOY",NA,"已 source 本技能 脚本_scripts/: 运行骨架_runSkeleton.R","hub+network; data_provenance=TOY","2026-07-18 21:28:36"
+"PPI-Network","post",9,2,6,"GSE207177 hub ligand-target network",FALSE,"REAL","GSE207177","sourced: 运行骨架_runSkeleton.R","hub degree + network; data_provenance=REAL","2026-07-19 20:48:00"

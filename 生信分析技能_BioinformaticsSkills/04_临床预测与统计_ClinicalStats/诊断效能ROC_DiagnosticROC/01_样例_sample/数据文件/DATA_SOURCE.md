@@ -1,8 +1,7 @@
-# 数据来源
+# DATA_SOURCE (REAL, skill-local cache)
 
-- **data_provenance: TOY**
-
-- **toy=TRUE**（强制）：可复现模拟数据，**不可外推**
-- **技能**：`诊断效能ROC_DiagnosticROC`
-- **analysis_kind**：`diagnostic_roc`
-- **规范**：统一交付规范_DeliveryStandards
+- **data_provenance:** REAL
+- **accession / source:** GSE17536
+- **note:** FCGR3A score vs OS event for ROC
+- **origin tree:** 山水（已复制进本技能；样例优先读本目录，不依赖完整项目树）
+- **embedded:** 2026-07-19

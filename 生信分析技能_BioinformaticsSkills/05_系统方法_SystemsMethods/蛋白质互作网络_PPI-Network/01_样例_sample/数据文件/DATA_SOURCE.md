@@ -1,8 +1,7 @@
-# 数据来源
+# DATA_SOURCE (REAL, skill-local cache)
 
-- **data_provenance: TOY**
-
-- **toy=TRUE**（强制）：可复现模拟数据，**不可外推**
-- **技能**：`蛋白质互作网络_PPI-Network`
-- **analysis_kind**：`ppi`
-- **规范**：统一交付规范_DeliveryStandards
+- **data_provenance:** REAL
+- **accession / source:** GSE207177
+- **note:** hub ligand-target network edges
+- **origin tree:** 书清（已复制进本技能；样例优先读本目录，不依赖完整项目树）
+- **embedded:** 2026-07-19
