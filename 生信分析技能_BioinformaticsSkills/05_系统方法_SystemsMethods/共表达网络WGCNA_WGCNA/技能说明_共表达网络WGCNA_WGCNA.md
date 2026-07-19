@@ -24,15 +24,17 @@ bulk 表达样本足够
 
 ## 4. 数据处理方法
 
-软阈值→模块→hub→富集
+软阈值 → TOM → 动态剪枝模块 → 模块特征基因（ME）→ 与性状相关 → 可选 hub/富集。
+
+样例流程（GSE10072）：方差 Top 基因 → `WGCNA::adjacency`（power=6）→ `TOMsimilarity` → `cutreeDynamic` → `moduleEigengenes` → 与吸烟性状 `cor`。
 
 ## 5. R 包与软件栈
 
 | 步骤 | R包或CLI | 作用 | 备注 |
 |------|----------|------|------|
-| 分析 | `WGCNA` | 核心 R 包 | |
-| 分析 | `ggplot2` | 核心 R 包 | |
-| 出图 | `ggplot2` + 出版级出图_PublicationPlot.R | DPI≥600 | 强制可视化规范 |
+| 共表达 | `WGCNA` | soft-threshold / TOM / ME | 需 `dynamicTreeCut` |
+| 备用 | `stats::hclust` | 无 WGCNA 时层次模块 | 样例含 fallback |
+| 出图 | `ggplot2` + PublicationPlot | 模块热图/趋势/样本树 | `plot_severity_trend_journal` / `plot_sample_dendrogram_journal` |
 
 ## 6. 数据可视化
 
@@ -48,4 +50,9 @@ bulk 表达样本足够
 
 ## 样例验证
 
-样例：`01_样例_sample/`
+样例：`01_样例_sample/`（**data_provenance=REAL**，`GSE10072`）
+
+- 缓存：`real_GSE10072_expr_topVar.csv` + `real_GSE10072_sample_meta.csv`
+- 复跑：`代码文件/run_sample.R`
+- 图：模块–性状热图、模块大小、ME 趋势、样本树状图
+- 对齐期刊 Fig1-a/d 风格（树状 + 模块趋势）

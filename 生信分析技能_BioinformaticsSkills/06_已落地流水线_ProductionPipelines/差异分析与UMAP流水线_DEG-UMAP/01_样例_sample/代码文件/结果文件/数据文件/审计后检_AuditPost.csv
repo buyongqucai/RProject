@@ -1,2 +1,2 @@
 "skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
-"DEG-UMAP","post",50,6,6,"toy pipeline meta",TRUE,"TOY",NA,"未找到可 source 的技能脚本","DEG-UMAP pipe","2026-07-19 09:56:10"
+"DEG-UMAP","post",15926,8,8,"airway trt vs untrt (Bioconductor)",FALSE,"REAL","airway","no skill scripts","volcano+PCA+heatmap+UMAP; data_provenance=REAL","2026-07-19 20:37:20"

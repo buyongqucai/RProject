@@ -14,7 +14,7 @@ description: >-
 
 对齐用户交付方法说明《网药数据解读》（20260710）及数据库分类/成分靶点获取 SOP（2026-07）。**禁止**编造基因列表或伪造 STRING 边。
 
-**出图（2026-07 修订）：** STRING PPI 与药–成分–靶–通路网络均可由 **代码/AI（R）绘制**，**不要求** Cytoscape / STRING 网页手绘；Cytoscape 仅作可选精修。可达性与自动/手工分工见 [`文档_docs/数据库可达性与自动获取_DBAutomation.md`](文档_docs/数据库可达性与自动获取_DBAutomation.md)。
+**出图（2026-07 修订）：** STRING PPI 与药–成分–靶–通路网络均可由 **代码/AI（R）绘制**，**不要求** Cytoscape / STRING 网页手绘；Cytoscape 仅作可选精修。库侧 AUTO/MANUAL 见 §1.5。
 
 ## 1. 数据来源（分类 SSOT）
 
@@ -74,7 +74,7 @@ description: >-
 | **MANUAL — 需你导出** | GeneCards、TTD、DrugBank、OMIM、DisGeNET；TCMSP、BATMAN（known）、ETCM2、HERB、TCMBank、SwissTargetPrediction |
 | **出图 AUTO** | PPI 同心/Degree 图、HCTP 多层网络、韦恩/柱/GO/KEGG 表驱动图（有表即可） |
 
-详表与异常配合清单：[`数据库可达性与自动获取_DBAutomation.md`](文档_docs/数据库可达性与自动获取_DBAutomation.md)。
+异常配合清单见 §4.1（`异常清单_CompoundTargetExceptions.csv`）。
 
 本库样例：`data_provenance: REAL` —— **用户交付、已按英文病名与单药导出的中间表**（疾病/草药库多数非本机自动爬虫；CTD/STRING/KEGG 可程序化）。见 `PROVENANCE.json` 的 `disease_english_name`。
 
@@ -256,11 +256,7 @@ python 网络药理学_NetworkPharmacology/_prepare_compound_overlap_from_delive
 | OMIM API | 可选 | https://www.omim.org/api → `OMIM_API_KEY` |
 | CTD | **是（bulk）** | `CTD_curated_genes_diseases.tsv.gz` 实测可下 |
 | KEGG REST / STRING API | **是** | 通路列表与 PPI 边可程序化；网络图代码绘制 |
-| OpenTargets | 陪跑 | GraphQL 实测可用；**非**交付主疾病库 |
-
-完整表：[`数据库可达性与自动获取_DBAutomation.md`](文档_docs/数据库可达性与自动获取_DBAutomation.md)。
-
-**肺癌英文检索实测（2026-07）：** 见 `01_样例_sample/数据文件/_test_lung_cancer_pull/TEST_REPORT.json`（CTD curated bulk 过滤成功）。
+| OpenTargets | 陪跑 | GraphQL 可用；**非**交付主疾病库 |
 
 ### 单药成分–靶点导出 SOP（摘要）
 

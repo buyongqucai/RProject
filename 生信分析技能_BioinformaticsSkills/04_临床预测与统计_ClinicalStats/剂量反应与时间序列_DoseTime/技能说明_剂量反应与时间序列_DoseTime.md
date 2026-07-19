@@ -25,19 +25,16 @@ description: >-
 
 ## 4. 数据处理方法
 
-设计矩阵→limma spline/Impulse→模式聚类→富集。
+官方时间/剂量元数据 → 长表（gene × sample × time）→ 均值折线 / severity 映射 → 可选配对前后比较；正式分析可用 limma splines。
 
-### 已合并原技能触发词
-
-`时间序列组学_TimeSeriesOmics` 的触发需求一律走本技能（见 catalog `deprecated_ids`）。
+样例（GSE207177）：书清 `MAMs时序表达` → Control / CLP12h / CLP24h。
 
 ## 5. R 包与软件栈
 
 | 步骤 | R包或CLI | 作用 | 备注 |
 |------|----------|------|------|
-| 分析 | `limma` | 核心 R 包 | |
-| 分析 | `ggplot2` | 核心 R 包 | |
-| 出图 | `ggplot2` + 出版级出图 | DPI≥600 | 可视化规范 |
+| 差异/趋势 | `limma` | spline / 设计矩阵 | 正式分析 |
+| 出图 | `ggplot2` + PublicationPlot | 折线 / `plot_severity_trend_journal` / `plot_paired_box_journal` | 样例直接用 |
 
 ## 6. 数据可视化
 
@@ -53,4 +50,12 @@ description: >-
 
 ## 样例验证
 
-样例：`01_样例_sample/`
+样例：`01_样例_sample/`（**data_provenance=REAL**，`GSE207177`）
+
+- 缓存：`real_GSE207177_MAMs_timeseries.csv`（书清）
+- 复跑：`代码文件/run_sample.R`；`SHUQING_ROOT` 可回源
+- 图：时序折线、基因–时间趋势、Control vs CLP24h 配对箱线
+
+### 已合并原技能触发词
+
+`时间序列组学_TimeSeriesOmics` 的触发需求一律走本技能（见 catalog `deprecated_ids`）。

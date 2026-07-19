@@ -1,8 +1,6 @@
-# 数据来源
+# DATA_SOURCE — DEG-UMAP sample (REAL)
 
-- **data_provenance: TOY**
-
-- **toy=TRUE**（强制）：可复现模拟数据，**不可外推**
-- **技能**：`差异分析与UMAP流水线_DEG-UMAP`
-- **analysis_kind**：`deg_umap_pipe`
-- **规范**：统一交付规范_DeliveryStandards
+- **data_provenance:** REAL
+- **bulk DEG/PCA:** airway (Bioconductor) + GSE10072 subset
+- **UMAP:** GSE164522 Seurat subsample (山水; same as scRNA-Spatial)
+- Env: SHANSHUI_ROOT / existing skill caches

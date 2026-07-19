@@ -1,8 +1,8 @@
-# 数据来源
+# DATA_SOURCE — Survival sample (REAL)
 
-- **data_provenance: TOY**
-
-- **toy=TRUE**（强制）：可复现模拟数据，**不可外推**
-- **技能**：`生存分析与预后模型_Survival`
-- **analysis_kind**：`survival`
-- **规范**：统一交付规范_DeliveryStandards
+- **data_provenance:** REAL
+- **accession:** GSE17536 (CRC microarray; Moffitt / Smith et al.)
+- **cache:** `real_GSE17536_OS_FCGR3A.csv`
+- **risk:** High/Low by median FCGR3A expression (not fabricated groups)
+- **source:** 山水项目 GSE17536 clinical+FCGR3A table
+- Env: `SHANSHUI_ROOT`

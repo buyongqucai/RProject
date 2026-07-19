@@ -144,6 +144,40 @@ p3 <- ggplot(hdf, aes(sample, gene, fill = z)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 delivery_save_plot(p3, skill_en, "heatmap", "Top12DEG", 5.5, 4.8, fig_dir, bio_root)
 
+# Sample dendrogram from airway expression + PC density/box (REAL data)
+p_tree <- plot_sample_dendrogram_journal(
+  logc[head(deg$gene[order(deg$P.Value)], 100), , drop = FALSE],
+  group = data.frame(sample = meta$sample, group = meta$group),
+  title = "Sample dendrogram (airway top100 DEG)"
+)
+delivery_save_plot(p_tree, skill_en, "dendrogram", "AirwaySamples", 6.5, 4.5, fig_dir, bio_root, order = 4)
+
+p_pc <- plot_pc_density_box_journal(
+  pcd, value_col = "PC1", group_col = "group",
+  title = "PC1 density + box (airway)", xlab = "PC1",
+  palette = pca_cols
+)
+delivery_save_plot(p_pc, skill_en, "densitybox", "PC1_ByDex", 5.5, 4.8, fig_dir, bio_root, order = 5)
+
+# Pathway-like score brackets from mean z of top up DEGs per sample
+top_up <- head(deg$gene[deg$sig == "up"], 30)
+if (length(top_up) >= 5) {
+  zmat <- t(scale(t(logc[top_up, , drop = FALSE])))
+  sc <- colMeans(zmat, na.rm = TRUE)
+  score_df <- data.frame(
+    sample = names(sc),
+    value = as.numeric(sc),
+    group = meta$group[match(names(sc), meta$sample)],
+    stringsAsFactors = FALSE
+  )
+  p_br <- plot_box_bracket_journal(
+    score_df, value_col = "value", group_col = "group",
+    title = "Top-up DEG score by dex (airway)", ylab = "Mean z-score",
+    palette = pca_cols
+  )
+  delivery_save_plot(p_br, skill_en, "box", "PathwayScoreBrackets", 4.8, 4.5, fig_dir, bio_root, order = 6)
+}
+
 prov <- list(
   data_provenance = data_provenance,
   source = "Bioconductor ExperimentData",
@@ -163,9 +197,12 @@ if (requireNamespace("jsonlite", quietly = TRUE)) {
 fig_map <- c(
   "火山图（处理对照）" = paste0("../图片文件/", delivery_stem(skill_en, "volcano", "TrtVsUntrt"), ".png"),
   "PCA图（处理对照）" = paste0("../图片文件/", delivery_stem(skill_en, "PCA", "TrtVsUntrt"), ".png"),
-  "Top12 热图" = paste0("../图片文件/", delivery_stem(skill_en, "heatmap", "Top12DEG"), ".png")
+  "Top12 热图" = paste0("../图片文件/", delivery_stem(skill_en, "heatmap", "Top12DEG"), ".png"),
+  "样本树状图" = paste0("../图片文件/", delivery_stem(skill_en, "dendrogram", "AirwaySamples", order = 4), ".png"),
+  "PC1密度箱线" = paste0("../图片文件/", delivery_stem(skill_en, "densitybox", "PC1_ByDex", order = 5), ".png"),
+  "通路评分箱线" = paste0("../图片文件/", delivery_stem(skill_en, "box", "PathwayScoreBrackets", order = 6), ".png")
 )
-interp <- "REAL airway limma-voom DEG: volcano + PCA + top heatmap. accession=airway."
+interp <- "REAL airway limma-voom DEG: volcano + PCA + heatmap + dendrogram + PC density/box + score brackets."
 status <- "PASS"
 
 data_html <- paste0(

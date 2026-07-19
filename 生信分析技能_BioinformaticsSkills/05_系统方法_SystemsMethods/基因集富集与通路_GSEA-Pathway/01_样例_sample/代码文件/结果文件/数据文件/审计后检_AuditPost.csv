@@ -1,2 +1,2 @@
 "skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
-"GSEA-Pathway","post",8,4,NA,"toy gene sets",TRUE,"TOY",NA,"已 source 本技能 脚本_scripts/: 运行骨架_runSkeleton.R","GSEA NES; data_provenance=TOY","2026-07-19 09:56:10"
+"GSEA-Pathway","post",11237,4,NA,"GSE207177 macrophage DEG + KEGG GSEA",FALSE,"REAL",NA,"已 source 本技能 脚本_scripts/: 运行骨架_runSkeleton.R | REAL GSE207177 via cache; SHUQING_ROOT=E:/RProject/书清项目","GSEA NES + classic ES + pathway gene heatmap; data_provenance=REAL","2026-07-19 20:10:12"

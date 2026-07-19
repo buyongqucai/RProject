@@ -88,8 +88,17 @@ description: >-
 | 富集水平柱（按类着色） | `plot_enrich_hbar_facet` + `bioinfo_enrich_facet` |
 | 富集气泡/点图（Count × −log10p） | `plot_enrich_dot_journal`（**优先于棒棒糖**） |
 | 箱线+抖动 | `plot_box_jitter_journal` |
-| UMAP 注释 | `plot_umap_discrete_journal` / `bioinfo_umap_discrete`；feature → `bioinfo_feature_blue` |
-| KM + risk table | `plot_km_journal`（需 survminer）+ High/Low `bioinfo_survival` |
+| 箱线+抖动+显著性括号 | `plot_box_bracket_journal` |
+| 配对箱线（灰线连接） | `plot_paired_box_journal` |
+| UMAP 注释 | `plot_umap_discrete_journal` / `bioinfo_umap_discrete` |
+| Feature UMAP（连续蓝阶） | `plot_umap_feature_journal` / `bioinfo_feature_blue` |
+| 堆叠细胞比例 | `plot_stacked_proportion_journal` |
+| GSEA 经典曲线（ES+barcode+metric） | `plot_gsea_classic_journal` |
+| KM + risk table + log-rank p | `plot_km_risk_table_journal`（默认 ggplot；`options(bioinfo.km.use_survminer=TRUE)` 用 survminer） |
+| 严重度/时间趋势（smooth+CI） | `plot_severity_trend_journal` |
+| 样本树状图 / cladogram | `plot_sample_dendrogram_journal` |
+| 通路活性热图（GSVA 风格） | `plot_pathway_activity_heatmap_journal` |
+| PC 密度+箱线组合 | `plot_pc_density_box_journal` |
 
 网药交付原图副本（对照用）：`网络药理学_.../01_样例_sample/参考_交付原图/`（历史对照；**新图勿再默认棒棒糖**）。
 

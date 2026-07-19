@@ -16,7 +16,7 @@
 3. 既有 NetPharm **柱状图 / 韦恩 / GO / KEGG** 等非网络图：**未经用户要求不得改样式**（FROZEN）。
 4. STRING **API** 取边 + Degree 同心/渐变 R 图 = 正式交付路径；官网 3D 图仅陪跑。
 5. 出图完成后执行**项目级 PlotQA**（见上链）；本文件不另建 NetPharm-only 遮挡阈值表。
-6. 库自动/手工分工见 [`数据库可达性与自动获取_DBAutomation.md`](数据库可达性与自动获取_DBAutomation.md)。
+6. 库 AUTO/MANUAL 分工见技能说明 §1.5（CTD/KEGG/STRING 可程序化；其余多为手工导出）。
 
 ---
 

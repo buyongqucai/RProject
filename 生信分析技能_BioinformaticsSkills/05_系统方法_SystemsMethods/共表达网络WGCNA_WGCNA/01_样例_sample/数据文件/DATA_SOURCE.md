@@ -1,8 +1,7 @@
-# 数据来源
+# DATA_SOURCE — WGCNA sample (REAL)
 
-- **data_provenance: TOY**
-
-- **toy=TRUE**（强制）：可复现模拟数据，**不可外推**
-- **技能**：`共表达网络WGCNA_WGCNA`
-- **analysis_kind**：`wgcna`
-- **规范**：统一交付规范_DeliveryStandards
+- **data_provenance:** REAL
+- **accession:** GSE10072 (lung adenocarcinoma smoking; Spira et al.)
+- **caches:** `real_GSE10072_expr_topVar.csv`, `real_GSE10072_sample_meta.csv`
+- **source:** GEO-TCGA skill sample subset (official GEO series matrix derived)
+- Env: reuse BioinformaticsSkills GEO-TCGA caches

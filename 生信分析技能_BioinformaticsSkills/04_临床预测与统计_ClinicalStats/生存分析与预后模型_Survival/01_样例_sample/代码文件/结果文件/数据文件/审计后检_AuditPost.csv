@@ -1,2 +1,2 @@
 "skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
-"Survival","post",50,4,50,"toy_survival risk",TRUE,"TOY",NA,"已 source 本技能 脚本_scripts/: 运行骨架_runSkeleton.R","KM toy","2026-07-19 09:56:10"
+"Survival","post",177,7,177,"GSE17536 OS + FCGR3A median risk",FALSE,"REAL","GSE17536","sourced: 运行骨架_runSkeleton.R","KM + risk table; data_provenance=REAL","2026-07-19 20:33:42"

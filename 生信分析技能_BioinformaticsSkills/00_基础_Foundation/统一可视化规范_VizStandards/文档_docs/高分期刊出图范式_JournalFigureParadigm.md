@@ -38,7 +38,7 @@
 | f | GO/通路 **水平柱**（按模块分色） | 模块功能注释 | GSEA-Pathway ORA；RNA-seq 富集 |
 | g–j | 通路评分箱线 + jitter + 显著性括号 | 通路活性组间定量比较 | GSVA/ssGSEA（GSEA-Pathway）；单细胞 AUCell 可类比 |
 
-**实现要点：** `theme_journal`；分组色贯穿 b/c/g–j；富集用 `plot_enrich_hbar_facet`（禁止默认棒棒糖）；箱线用 `plot_box_jitter_journal`。
+**实现要点：** `theme_journal`；分组色贯穿 b/c/g–j；富集用 `plot_enrich_hbar_facet`（禁止默认棒棒糖）；箱线用 `plot_box_bracket_journal`；树状图 `plot_sample_dendrogram_journal`；趋势 `plot_severity_trend_journal`；PC 分布 `plot_pc_density_box_journal`。
 
 ---
 
@@ -55,7 +55,7 @@
 | E–F | GSEA enrichment 曲线（NES + p） | 基因集富集方向 | GSEA-Pathway |
 | G–J | KM 生存/复发 + **number-at-risk** | 签名高低风险预后 | Survival；GEO-TCGA 临床层 |
 
-**实现要点：** 热图 `scale_fill_diverging_rb`；火山 `plot_volcano_journal`；生存 High/Low = `bioinfo_survival`；KM **必须** risk table。
+**实现要点：** 热图 `scale_fill_diverging_rb` / `plot_pathway_activity_heatmap_journal`；火山 `plot_volcano_journal`；配对 `plot_paired_box_journal`；GSEA `plot_gsea_classic_journal`；生存 High/Low = `bioinfo_survival`；KM **必须** `plot_km_risk_table_journal`（含 risk table）。
 
 ---
 
@@ -67,14 +67,14 @@
 |------|------|------------|-------------------|
 | A | UMAP 细胞类型注释 | 细胞组成与身份 | scRNA-Spatial；DEG-UMAP |
 | B | UMAP 条件/亚簇/样本来源 | 原发–转移或批次/条件分布 | scRNA-Spatial；scRNA-Advanced |
-| C | 富集 **气泡/点图**（Count × −log10 padj） | META/通路显著性 | GSEA-Pathway；scRNA 下游富集 |
+| C | 富集 **棒棒糖**（Count × padj 渐变；Fig3-C）或气泡点图 | META/通路显著性 | GSEA-Pathway；scRNA 下游富集 |
 | D | GSEA 曲线（签名基因集） | 签名在排序列表中的富集 | GSEA-Pathway |
 | E | AUC 直方图 + 阈值竖线 | 定义 Activate 细胞子集 | AUCell（DEG-UMAP 延展 / scRNA-Advanced） |
 | F | Feature plot（连续蓝阶） | 签名评分空间定位 | scRNA-Spatial（`bioinfo_feature_blue`） |
 | G | 堆叠比例图（风险组×细胞状态） | 临床组细胞组成差异 | scRNA-Spatial 比例图 |
 | H | KM + number-at-risk | META risk 预后验证 | Survival |
 
-**实现要点：** 离散 UMAP `bioinfo_umap_discrete`；连续 feature `bioinfo_feature_blue`；点图优先于棒棒糖。
+**实现要点：** 离散 UMAP `plot_umap_discrete_journal(..., label_on_plot=TRUE)`（簇上白底标注）；连续 feature `plot_umap_feature_journal`（灰→深蓝）；比例 `plot_stacked_proportion_journal`；Fig3-C 用 `plot_enrich_lollipop_journal`；GSEA 用 `plot_gsea_classic_journal`（绿 ES + 红蓝 rank bar + 嵌字统计）。
 
 ---
 
@@ -109,3 +109,4 @@
 | 日期 | 变更 |
 |------|------|
 | 2026-07-19 | 初版：三参考图面板目录 + 技能映射；NetPharm 明确排除视觉覆盖 |
+| 2026-07-19 | 全面补充 journal helpers（GSEA 经典曲线、feature UMAP、堆叠比例、KM+risk table、括号箱线、配对箱线、严重度趋势、样本树、通路活性热图、PC 密度箱线）；样例重生成；NetPharm 仍 frozen |

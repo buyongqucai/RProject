@@ -1,2 +1,2 @@
 "skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
-"RNA-seq","post",63677,8,8,"airway colData$dex trt vs untrt",FALSE,"REAL","airway (Bioconductor ExperimentData)","已 source 本技能 脚本_scripts/: 运行转录组骨架_runRnaseqSkeleton.R","REAL limma-voom DEG; data_provenance=REAL","2026-07-19 09:56:22"
+"RNA-seq","post",63677,8,8,"airway colData$dex trt vs untrt",FALSE,"REAL","airway (Bioconductor ExperimentData)","已 source 本技能 脚本_scripts/: 运行转录组骨架_runRnaseqSkeleton.R","REAL limma-voom DEG; data_provenance=REAL","2026-07-19 19:37:01"

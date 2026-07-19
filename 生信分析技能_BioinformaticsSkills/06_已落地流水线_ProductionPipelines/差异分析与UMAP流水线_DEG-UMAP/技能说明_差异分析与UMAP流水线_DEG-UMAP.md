@@ -229,4 +229,11 @@ Windows 下用 `E:\R-4.6.0\bin\Rscript.exe --vanilla 06_补充图.R`。
 
 ## 样例验证
 
-样例：`01_样例_sample/`
+样例：`01_样例_sample/`（**data_provenance=REAL**）
+
+| 臂 | 数据 | 图 |
+|----|------|-----|
+| bulk DEG | Bioconductor `airway` counts → `edgeR` filter + `limma::voom` | 火山 / PCA / TopDEG 热图 |
+| sc UMAP | 山水 `GSE164522` Seurat subsample | 细胞类型 UMAP（簇标注） |
+
+复跑：`代码文件/01_run_sample.R`。缓存见 `数据文件/real_*`。

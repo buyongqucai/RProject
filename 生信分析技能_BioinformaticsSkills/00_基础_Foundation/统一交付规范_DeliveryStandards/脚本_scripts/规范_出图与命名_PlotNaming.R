@@ -118,7 +118,16 @@ delivery_skill_en <- function(folder_name) {
   venn = list(zh = "韦恩图", en = "Venn"),
   enrichment = list(zh = "富集图", en = "Enrichment"),
   circos = list(zh = "圈图", en = "Circos"),
-  chord = list(zh = "圈图", en = "Chord")
+  chord = list(zh = "圈图", en = "Chord"),
+  gsea = list(zh = "GSEA曲线", en = "GSEA"),
+  featureumap = list(zh = "特征UMAP", en = "FeatureUMAP"),
+  stackedbar = list(zh = "堆叠比例图", en = "StackedProportion"),
+  proportion = list(zh = "堆叠比例图", en = "StackedProportion"),
+  dendrogram = list(zh = "样本树状图", en = "Dendrogram"),
+  cladogram = list(zh = "样本树状图", en = "Cladogram"),
+  trend = list(zh = "趋势图", en = "Trend"),
+  pairedbox = list(zh = "配对箱线图", en = "PairedBox"),
+  densitybox = list(zh = "密度箱线组合", en = "DensityBox")
 )
 
 # 表类型 → 中文语义 + 英文 Pascal（object 可拼入英文段）

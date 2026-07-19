@@ -59,14 +59,39 @@ dist <- data.frame(
   distance = sort(runif(10, 0.02, 0.45), decreasing = TRUE)
 )
 write.csv(dist, file.path(tab_dir, delivery_table_name(skill_en, "dist", "species")), row.names = FALSE)
-write_delivery_audit(skill_en, "post", 10, 2, NA, "toy phylogeny", TRUE, NA, sourced_note, "distances",
+write_delivery_audit(skill_en, "post", 10, 2, NA, "toy phylogeny", TRUE, NA, sourced_note, "distances + dendrogram",
   file.path(tab_dir, delivery_audit_name(skill_en, "post")))
 library(ggplot2)
 p <- ggplot(dist, aes(reorder(pair, distance), distance)) + geom_col(fill = bioinfo_palette[6]) +
   coord_flip() + labs(title = "Phylogenetics pairwise distance (toy)", x = NULL, y = "distance")
-delivery_save_plot(p, skill_en, "bar", "SpeciesDistance", 6.5, 5, fig_dir, bio_root)
-fig_map <- c("种间距离" = paste0("../图片文件/", delivery_stem(skill_en, "bar", "SpeciesDistance"), ".png"))
-interp <- "系统发育距离玩具条形图。"
+delivery_save_plot(p, skill_en, "bar", "SpeciesDistance", 6.5, 5, fig_dir, bio_root, order = 1)
+
+# Sample / species dendrogram from existing toy_counts.csv (genes × samples)
+counts_path <- file.path(data_dir, "toy_counts.csv")
+meta_path <- file.path(data_dir, "toy_meta.csv")
+if (file.exists(counts_path)) {
+  ct <- utils::read.csv(counts_path, check.names = FALSE, stringsAsFactors = FALSE)
+  mat <- as.matrix(ct[, -1, drop = FALSE])
+  storage.mode(mat) <- "numeric"
+  rownames(mat) <- ct[[1]]
+  grp <- NULL
+  if (file.exists(meta_path)) {
+    meta <- utils::read.csv(meta_path, stringsAsFactors = FALSE)
+    grp <- meta[, c(1, 2)]
+  }
+  p_den <- plot_sample_dendrogram_journal(
+    mat, group = grp, title = "Sample dendrogram from toy_counts",
+    hclust_method = "average"
+  )
+  delivery_save_plot(p_den, skill_en, "dendrogram", "SampleTree", 6.5, 4.5, fig_dir, bio_root, order = 2)
+  fig_map <- c(
+    "种间距离" = paste0("../图片文件/", delivery_stem(skill_en, "bar", "SpeciesDistance", order = 1), ".png"),
+    "样本树状图" = paste0("../图片文件/", delivery_stem(skill_en, "dendrogram", "SampleTree", order = 2), ".png")
+  )
+} else {
+  fig_map <- c("种间距离" = paste0("../图片文件/", delivery_stem(skill_en, "bar", "SpeciesDistance", order = 1), ".png"))
+}
+interp <- "系统发育距离玩具条形图 + 基于 toy_counts 的样本层次聚类树。"
 status <- "PASS"
 
 data_html <- paste0(

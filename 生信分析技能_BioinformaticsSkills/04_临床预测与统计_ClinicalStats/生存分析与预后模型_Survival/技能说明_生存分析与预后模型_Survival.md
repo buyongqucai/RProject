@@ -58,4 +58,14 @@ GEO-TCGA、ROC、ML；出图强制 [统一可视化规范](../../00_基础_Found
 
 ## 样例验证
 
-样例：`01_样例_sample/`
+样例：`01_样例_sample/`（**data_provenance=REAL**）
+
+| 项 | 内容 |
+|----|------|
+| 数据 | `GSE17536` OS + FCGR3A（山水临床表）；High/Low = 表达中位数分层 |
+| 缓存 | `数据文件/real_GSE17536_OS_FCGR3A.csv` |
+| 出图 | `plot_km_risk_table_journal` → KM + number-at-risk + log-rank |
+| 复跑 | `代码文件/01_run_sample.R`；`SHANSHUI_ROOT` 可回源 |
+| 包 | `survival`（必选）；`survminer` 可选（`options(bioinfo.km.use_survminer=TRUE)`） |
+
+**处理步骤：** 临床 OS 时间/事件 → 签名基因分层 → KM → PlotQA。

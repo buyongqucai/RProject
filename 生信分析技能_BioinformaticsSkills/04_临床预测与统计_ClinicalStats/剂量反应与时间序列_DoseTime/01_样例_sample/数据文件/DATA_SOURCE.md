@@ -1,8 +1,7 @@
-# 数据来源
+# DATA_SOURCE — DoseTime sample (REAL)
 
-- **data_provenance: TOY**
-
-- **toy=TRUE**（强制）：可复现模拟数据，**不可外推**
-- **技能**：`剂量反应与时间序列_DoseTime`
-- **analysis_kind**：`dose_time`
-- **规范**：统一交付规范_DeliveryStandards
+- **data_provenance:** REAL
+- **accession:** GSE207177
+- **cache:** `real_GSE207177_MAMs_timeseries.csv`
+- **source:** 书清项目 GSE207177_MAMs时序表达.csv
+- Env: `SHUQING_ROOT`

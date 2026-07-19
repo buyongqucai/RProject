@@ -1,2 +1,2 @@
 "skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
-"scRNA-Spatial","post",200,3,200,"toy cluster labels",TRUE,"TOY",NA,"已 source 本技能 脚本_scripts/: 运行单细胞空转骨架_runScrnaSkeleton.R","pseudo-UMAP","2026-07-18 21:27:12"
+"scRNA-Spatial","post",7228,9,7228,"GSE164522 Seurat UMAP subsample + GSE207177 proportions",FALSE,"REAL",NA,"已 source 本技能 脚本_scripts/: 运行单细胞空转骨架_runScrnaSkeleton.R | UMAP via cache (GSE164522); proportions via cache (GSE207177)","celltype UMAP + FCGR3A feature UMAP + stacked proportions; data_provenance=REAL","2026-07-19 20:11:12"
