@@ -8,6 +8,8 @@
 
 规范 SSOT：`00_基础_Foundation/统一交付规范_DeliveryStandards/文档_docs/样例目录与命名_SampleLayoutNaming.md`
 
+技能流水线（GEO 自动 QC→Doublet→注释→pseudobulk）见上级 `技能说明_*.md` 与 `脚本_scripts/`；本样例侧重 UMAP/比例图交付演示（`data_provenance=REAL` 公共坐标/比例表）。
+
 运行（若已编号）：
 
 ```bash

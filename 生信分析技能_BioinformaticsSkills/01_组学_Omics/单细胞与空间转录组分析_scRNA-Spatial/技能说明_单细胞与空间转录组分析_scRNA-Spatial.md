@@ -72,11 +72,11 @@ GSEXXXXX_auto_scRNA/
 
 交付到本仓库样例时，仍映射到 DeliveryStandards：`代码文件/结果文件/{图片,数据,报告}文件/`。
 
-### 关键可调参数（规划值，骨架尚未实现）
+### 关键可调参数（默认）
 
-> 以下为**规划参数**（2026-08-30 议题 05 降级）：`脚本_scripts/运行单细胞空转骨架_runScrnaSkeleton.R` 当前为 TODO 清单骨架，尚未实现这些参数；实现后本表恢复为「默认值」表述并接入真实数据测试。
+> 2026-08-30 议题 08 落地：`脚本_scripts/运行单细胞空转骨架_runScrnaSkeleton.R` 已实现 `scrna_qc_filter` / `scrna_resolution_grid` / `scrna_find_markers` 并接入 `run_scrna_pipeline` 签名；PBMC3k 真实数据 E2E 见 `01_样例_sample/代码文件/run_pbmc3k_pipeline.R`。
 
-| 参数 | 规划默认 | 含义 |
+| 参数 | 默认 | 含义 |
 |------|------|------|
 | `QC_MIN_FEATURE_FLOOR` | 200 | 基因数硬下限 |
 | `PB_MIN_SAMPLES` | 2 | 启用伪 bulk 的每组最小样本数 |

@@ -1,0 +1,2 @@
+"skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
+"scRNA-Spatial","post",32738,2700,1,"10x PBMC3k filtered_gene_bc_matrices (hg19)",FALSE,"REAL","10x-pbmc3k","运行单细胞空转骨架_runScrnaSkeleton.R 四参数主链","QC floor=200: 2700→2700 cells; RES_GRID 0.1-1.2; pick res=0.6; markers=5261 rows (log2FC>=1, FDR<=0.05); cell_level_exploratory","2026-08-30 18:42:25"

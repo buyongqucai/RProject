@@ -2,3 +2,5 @@ PASS
 data_provenance=REAL
 umap_accession=GSE164522
 proportion_accession=GSE207177
+pipeline_ref=https://mp.weixin.qq.com/s/Z8x1a1Q8A5uQq3qAzBpDpg
+pipeline_note=样例为已整理坐标/比例表演示出图；完整 GEO 自动流（QC/DoubletFinder/pseudobulk）见技能说明与骨架脚本

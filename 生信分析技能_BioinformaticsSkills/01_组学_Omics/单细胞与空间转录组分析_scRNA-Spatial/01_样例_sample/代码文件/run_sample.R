@@ -129,7 +129,7 @@ write.csv(umap[, intersect(c("umap_1", "umap_2", "celltype", "group", "tissue", 
           file.path(tab_dir, delivery_table_name(skill_en, "UMAP", "GSE164522")), row.names = FALSE)
 write_delivery_audit(
   skill_en, "post", n, ncol(umap), n, paste0(acc_umap, " Seurat UMAP subsample + ", acc_prop, " proportions"),
-  TRUE, NA, paste(sourced_note, via_note, sep = " | "),
+  FALSE, NA, paste(sourced_note, via_note, sep = " | "),
   "celltype UMAP + FCGR3A feature UMAP + stacked proportions; data_provenance=REAL",
   file.path(tab_dir, delivery_audit_name(skill_en, "post")),
   data_provenance = "REAL"
