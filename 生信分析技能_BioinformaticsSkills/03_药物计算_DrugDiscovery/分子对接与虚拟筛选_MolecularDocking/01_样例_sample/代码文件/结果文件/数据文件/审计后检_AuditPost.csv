@@ -1,2 +1,2 @@
 "skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
-"MolecularDocking","post",3,3,0,"n/a BLOCKED",TRUE,"TOY",NA,"已 source 本技能 脚本_scripts/: 运行骨架_runSkeleton.R","BLOCKED: 需 AutoDock Vina/商业对接软件与受体准备流水线","2026-07-18 21:28:01"
+"MolecularDocking","post",3,3,0,"n/a BLOCKED",FALSE,"BLOCKED",NA,"已 source 本技能 脚本_scripts/: 运行骨架_runSkeleton.R","BLOCKED: 需 AutoDock Vina/商业对接软件与受体准备流水线","2026-08-30 17:17:55"

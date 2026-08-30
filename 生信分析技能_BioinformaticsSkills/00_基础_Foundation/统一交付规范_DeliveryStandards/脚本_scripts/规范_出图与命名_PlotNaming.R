@@ -119,6 +119,8 @@ delivery_skill_en <- function(folder_name) {
   enrichment = list(zh = "富集图", en = "Enrichment"),
   circos = list(zh = "圈图", en = "Circos"),
   chord = list(zh = "圈图", en = "Chord"),
+  upset = list(zh = "交集图", en = "UpSet"),
+  sankey = list(zh = "桑基图", en = "Sankey"),
   gsea = list(zh = "GSEA曲线", en = "GSEA"),
   featureumap = list(zh = "特征UMAP", en = "FeatureUMAP"),
   stackedbar = list(zh = "堆叠比例图", en = "StackedProportion"),

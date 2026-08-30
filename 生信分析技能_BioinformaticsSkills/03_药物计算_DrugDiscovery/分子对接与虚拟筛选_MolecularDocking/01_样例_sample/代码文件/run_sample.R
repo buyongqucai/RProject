@@ -62,7 +62,8 @@ stub <- data.frame(
 )
 write.csv(stub, file.path(tab_dir, delivery_table_name(skill_en, "contract", "blockedStub")), row.names = FALSE)
 write_delivery_audit(skill_en, "post", nrow(stub), 3, 0, "n/a BLOCKED", TRUE, NA, sourced_note,
-  paste("BLOCKED:", blocked_reason), file.path(tab_dir, delivery_audit_name(skill_en, "post")))
+  paste("BLOCKED:", blocked_reason), file.path(tab_dir, delivery_audit_name(skill_en, "post")),
+  data_provenance = "BLOCKED")
 library(ggplot2)
 p <- ggplot(stub, aes(item, ok, fill = item)) +
   geom_col(show.legend = FALSE) +
@@ -75,7 +76,7 @@ interp <- paste0("客观 BLOCKED：", blocked_reason, "。已产出合规命名�
 status <- "BLOCKED"
 
 data_html <- paste0(
-  "<p><b>toy=TRUE</b>：本样例为可复现模拟数据，<b>不可外推</b>为真实生物学/临床结论。</p>",
+  "<p><b>BLOCKED</b>：本样例为契约桩（无真实数据），未产生任何模拟/分析数据；不得外推。</p>",
   "<p>详见 <code>数据文件/DATA_SOURCE.md</code>。</p>"
 )
 audit_path <- file.path(tab_dir, delivery_audit_name(skill_en, "post"))

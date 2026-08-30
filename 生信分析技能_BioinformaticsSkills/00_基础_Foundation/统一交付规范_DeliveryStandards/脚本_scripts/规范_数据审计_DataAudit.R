@@ -29,6 +29,7 @@ write_delivery_audit <- function(skill_en, stage = "post",
   }
   if (identical(data_provenance, "TOY")) toy <- TRUE
   if (identical(data_provenance, "REAL")) toy <- FALSE
+  if (identical(data_provenance, "BLOCKED")) toy <- FALSE
   df <- data.frame(
     skill = skill_en,
     stage = stage,

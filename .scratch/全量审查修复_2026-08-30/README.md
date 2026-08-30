@@ -10,7 +10,7 @@
 
 | # | 文件 | 标签 | 摘要 |
 |---|------|------|------|
-| 01 | [01-BLOCKED样例provenance误标.md](01-BLOCKED样例provenance误标.md) | 待Agent处理 | 审计表 toy=TRUE 与 BLOCKED 矛盾（模板级） |
+| 01 | [01-BLOCKED样例provenance误标.md](01-BLOCKED样例provenance误标.md) | 已完成 | 审计表 toy=TRUE 与 BLOCKED 矛盾（模板级） |
 | 02 | [02-summary_vina双schema统一.md](02-summary_vina双schema统一.md) | 已完成 | 两脚本读同一 CSV 用不同列名 |
 | 03 | [03-删除legacy图像识别死代码.md](03-删除legacy图像识别死代码.md) | 待Agent处理 | ~250 行不可达代码 + assets |
 | 04 | [04-环图标签黑色合规.md](04-环图标签黑色合规.md) | 待Agent处理 | `#333333`/`#666666` → `#000000` |

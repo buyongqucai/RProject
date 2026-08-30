@@ -90,7 +90,8 @@ write_delivery_audit(
   skill_en, "post", nrow(stub), ncol(stub), 0L, "n/a BLOCKED Hi-C",
   TRUE, NA_character_, sourced_note,
   paste("BLOCKED:", blocked_reason),
-  file.path(tab_dir, delivery_audit_name(skill_en, "post"))
+  file.path(tab_dir, delivery_audit_name(skill_en, "post")),
+  data_provenance = "BLOCKED"
 )
 
 p <- ggplot(contact_long, aes(bin_i, bin_j, fill = contact)) +
@@ -120,7 +121,7 @@ interp <- paste0(
 status <- "BLOCKED"
 
 data_html <- paste0(
-  "<p><b>toy=TRUE</b>：本样例为可复现模拟/契约数据，<b>不可外推</b>为真实三维基因组结论。</p>",
+  "<p><b>BLOCKED</b>：本样例为契约桩（无真实 Hi-C 数据）；接触矩阵仅为示意，<b>不可外推</b>为真实三维基因组结论。</p>",
   "<p>详见 <code>数据文件/DATA_SOURCE.md</code>。</p>"
 )
 audit_path <- file.path(tab_dir, delivery_audit_name(skill_en, "post"))
