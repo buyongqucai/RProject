@@ -1,6 +1,6 @@
 # 02 — summary_vina.csv 双 schema 统一
 
-标签: 待Agent处理
+标签: 已完成（2026-08-30，commit 61538fd）
 
 ## 来源
 
