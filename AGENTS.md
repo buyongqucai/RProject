@@ -1,5 +1,7 @@
 # RProject — Agent 说明
 
+动手前先读 `CONTEXT.md`（领域词汇）与 `docs/项目规范_ProjectStandards.md`（医学/生物学/学术规范与存放约定）。
+
 ## Agent skills
 
 ### Issue tracker（问题跟踪）
