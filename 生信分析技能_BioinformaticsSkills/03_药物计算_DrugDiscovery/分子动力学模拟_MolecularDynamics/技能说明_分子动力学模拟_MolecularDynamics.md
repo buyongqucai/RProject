@@ -54,6 +54,18 @@ RMSD/RMSF 曲线；**DPI≥600；SVG+PNG；图面 English；防遮挡**。
 
 样例 `STATUS=BLOCKED`。GROMACS：pdb2gmx → solvate → NVT/NPT → production → RMSD/RMSF 英文图。
 
+## 10. 运行环境登记（2026-08-30）
+
+| 项 | 值 | 备注 |
+|----|----|------|
+| GROMACS | 2023.3（Ubuntu apt `gromacs` 2023.3-1ubuntu3） | mixed precision / thread_mpi / SSE4.1，CPU 通用构建 |
+| 运行层 | WSL2 `Ubuntu-24.04`（WSL 2.7.12.0） | 虚拟磁盘 `E:\WSL\Ubuntu\ext4.vhdx`（数据落 E 盘） |
+| Windows 调用 | `wsl -d Ubuntu-24.04 -- gmx <args>` | 默认 root；E 盘文件经 `/mnt/e/...` 访问 |
+| GPU | RTX 4060 已对 WSL2 可见（`nvidia-smi` 通过） | apt 版不含 CUDA；GPU 加速需源码构建（后续议题） |
+| 配套（Windows 侧已装） | PyMOL `E:\pymol`、OpenBabel 3.1.1、Vina、MGLTools、LigPlot+ | 对接/格式转换/可视化沿用 |
+
+**解除 BLOCKED 的前置已满足**（GROMACS 可用）。样例真实数据 E2E（pdb2gmx→生产→RMSD/RMSF 出图 + 审计 REAL）按 ADR 0002 独占迭代进行，完成前 `STATUS` 保持 BLOCKED。
+
 ## 样例验证
 
 样例：`01_样例_sample/`
