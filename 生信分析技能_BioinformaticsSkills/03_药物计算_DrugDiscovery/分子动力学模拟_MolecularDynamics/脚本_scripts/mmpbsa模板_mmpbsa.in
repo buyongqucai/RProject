@@ -1,0 +1,12 @@
+# gmx_MMPBSA 输入模板 — GB(igb=5) + 逐残基分解
+# 用法见 技能说明 §9.9；startframe/endframe 按轨迹帧数调整
+&general
+  startframe=1, endframe=21, interval=1,
+  verbose=1, keep_files=0,
+/
+&gb
+  igb=5, saltcon=0.150,
+/
+&decomp
+  idecomp=1, dec_verbose=0,
+/

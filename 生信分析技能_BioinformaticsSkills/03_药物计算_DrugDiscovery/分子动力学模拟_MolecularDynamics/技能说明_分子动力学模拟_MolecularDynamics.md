@@ -111,11 +111,27 @@ wsl -d Ubuntu-24.04 -- bash -c "cd <工作目录> && \
 
 ### 9.6 PBC 校正与分析
 
-`trjconv -pbc mol -center -ur compact`（蛋白居中）→ `gmx rms`（Backbone RMSD）/ `gmx rmsf -res`（Cα RMSF）/ `gmx hbond -num`（蛋白-配体氢键）/ `gmx gyrate`（Rg）。分析全部用默认组，printf 管道非交互选择。
+`trjconv -pbc mol -center -ur compact`（蛋白居中）→ 默认组非交互分析：
 
-### 9.7 R 出图与交付
+| 指标 | 命令 | 输出 |
+|------|------|------|
+| RMSD | `gmx rms -tu ns`（Backbone 拟合+计算） | rmsd_backbone.xvg |
+| RMSF | `gmx rmsf -res`（C-alpha） | rmsf_calpha.xvg |
+| 氢键 | `gmx hbond -num`（Protein ↔ 配体） | hbond_num.xvg（3 列：time/氢键数/接触对数） |
+| Rg | `gmx gyrate`（Protein） | gyrate.xvg |
+| SASA | `gmx sasa -tu ns`（Protein） | sasa.xvg |
+| FEL | R 内 kde2d(RMSD, Rg) → ΔG = −kT ln(P/Pmax) | 由出图脚本算 |
+| 结合自由能 | gmx_MMPBSA（GB igb=5 + idecomp=1 逐残基分解） | FINAL_RESULTS/FINAL_DECOMP_MMPBSA.dat |
 
-`01_样例_sample/代码文件/分析出图_plotMdAnalysis.R`：解析 xvg → CSV（表格文件）→ RMSD/RMSF/氢键/Rg 四图（VizStandards：DPI≥600、PNG+SVG、图面英文、PlotQA 逐图审核）→ 审计 `data_provenance=REAL` → 报告 + STATUS。
+**MM-GBSA（gmx_MMPBSA）**：模板 `脚本_scripts/mmpbsa模板_mmpbsa.in`；索引 `printf 'q\n' | gmx make_ndx -f md.tpr -o index.ndx`（默认组编号 Protein=1、配体如 JZ4=13，以实际列表为准）；
+`mamba run -n md gmx_MMPBSA -O -i mmpbsa.in -cs md.tpr -ct md_center.xtc -ci index.ndx -cg 1 13 -cp topol.top -o FINAL_RESULTS_MMPBSA.dat -do FINAL_DECOMP_MMPBSA.dat`。
+输出单位为 **kcal/mol**（出图脚本 ×4.184 转 kJ/mol）；结尾自动拉起 gmx_MMPBSA_ana 报 PyQt5 缺失属无害（CLI 流程不用 GUI）。熵项（nmode/QT）演示不算，正式研究再开。
+
+### 9.7 R 出图与交付（含 Origin 数据导出）
+
+`01_样例_sample/代码文件/分析出图_plotMdAnalysis.R`：解析 xvg + MM-GBSA .dat → CSV（结果文件）→ **必备八图**：RMSD / RMSF / 氢键 / Rg / SASA / FEL(等值线) / 结合自由能分解(堆叠柱) / 逐残基贡献 Top15(柱+误差棒)（VizStandards：DPI≥600、PNG+SVG、图面英文、PlotQA 逐图审核）→ 审计 `data_provenance=REAL` → 报告 + STATUS。
+
+**Origin 协同**：用户侧 Origin 装于 `E:\Origin`；出图脚本同步把每图数据以英文列名 CSV 导出到 `E:\Origin_Data\<项目名>\`（样例为 `E:\Origin_Data\3HTB\`），供 Origin 复绘/精修；R 图为规范交付件，Origin 图为用户自选加工。
 
 ### 9.8 环境安装 SOP（2026-08-30 实测）
 
@@ -144,11 +160,13 @@ wsl -d Ubuntu-24.04 -- bash -c "cd <工作目录> && \
 | 运行层 | WSL2 `Ubuntu-24.04`（WSL 2.7.12.0） | 虚拟磁盘 `E:\WSL\Ubuntu\ext4.vhdx`（数据落 E 盘） |
 | Windows 调用 | `wsl -d Ubuntu-24.04 -- gmx <args>` | 默认 root；E 盘文件经 `/mnt/e/...` 访问 |
 | 拓扑工具链 | Miniforge `/opt/miniforge3` + env `md`：AmberTools（antechamber/parmchk2/tleap/sqm）+ acpype，python 3.11 | 清华 tuna 镜像安装；用户拒 conda 官网慢源 → 镜像方案 |
+| 自由能 | 同 env `md`：gmx_MMPBSA 1.5.3（conda-forge） | GB/PB + 逐残基分解；gmx_MMPBSA_ana GUI 需 PyQt5（未装，CLI 不受影响） |
 | UV 备用 | `/opt/venv-md`（uv venv，pip 版 acpype） | 轻量 Python 层；不含 antechamber |
+| Origin | `E:\Origin`（Windows 侧，用户已装） | 项目数据约定放 `E:\Origin_Data\<项目>\`；出图脚本自动导出 |
 | GPU | RTX 4060 已对 WSL2 可见（`nvidia-smi` 通过） | apt 版不含 CUDA；GPU 加速需源码构建（后续议题） |
 | 配套（Windows 侧已装） | PyMOL `E:\pymol`、OpenBabel 3.1.1、Vina、MGLTools、LigPlot+ | 对接/格式转换/可视化沿用 |
 
-**BLOCKED 已解除（2026-08-30）**：3HTB 真实数据 E2E 跑通——pdb2gmx(amber99sb-ildn/tip3p) + acpype/GAFF2(JZ4) → 溶剂化/0.15 M NaCl → EM/NVT/NPT → 0.2 ns 生产（22.98 ns/day）→ RMSD 0.084 nm / Rg 1.65 nm / 氢键 0–2 个 → 四图 PlotQA 全 PASS、审计 REAL、`STATUS=REAL`。1 ns 及以上将 `NS` 调大重跑即可（幂等续跑）。
+**BLOCKED 已解除（2026-08-30）**：3HTB 真实数据 E2E 跑通——pdb2gmx(amber99sb-ildn/tip3p) + acpype/GAFF2(JZ4) → 溶剂化/0.15 M NaCl → EM/NVT/NPT → 0.2 ns 生产（22.98 ns/day）→ RMSD 0.084 nm / Rg 1.65 nm / SASA ~91 nm² / 氢键 0–2 个；MM-GBSA ΔG_bind = −105.2 kJ/mol（GB igb=5，21 帧，未含熵）。必备八图 PlotQA 全 PASS、审计 REAL、`STATUS=REAL`；Origin 数据同步导出 `E:\Origin_Data\3HTB\`。1 ns 及以上将 `NS` 调大重跑即可（幂等续跑）。
 
 ## 样例验证
 

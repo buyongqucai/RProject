@@ -1,0 +1,4 @@
+# MD/WSL 相关脚本与参数文件必须 LF（CRLF 会导致 bash/grompp 报错）
+*.sh text eol=lf
+*.mdp text eol=lf
+mmpbsa模板_mmpbsa.in text eol=lf

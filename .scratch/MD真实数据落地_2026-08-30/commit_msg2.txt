@@ -1,0 +1,7 @@
+feat(MD): 补齐必备图种——SASA/FEL/MM-GBSA 分解/逐残基贡献 + Origin 数据导出
+
+- gmx sasa 补跑；gmx_MMPBSA 1.5.3（tuna conda-forge）GB igb=5 + idecomp=1：ΔG_bind=-105.2 kJ/mol（21 帧演示，未含熵）
+- 分析出图脚本扩为必备八图（RMSD/RMSF/氢键/Rg/SASA/FEL 等值线/结合自由能堆叠柱/逐残基 Top15），PlotQA 8/8 PASS
+- 每图数据以英文列名 CSV 同步导出 E:\Origin_Data\3HTB\（Origin 装于 E:\Origin，用户侧复绘约定）
+- 技能说明 §9.6/9.7 补 SASA/FEL/MM-GBSA SOP 与 Origin 协同约定；§10 环境表登记 gmx_MMPBSA 与 Origin
+- .gitattributes 追加 mmpbsa 模板 LF 固化
