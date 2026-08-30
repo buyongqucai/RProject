@@ -1,0 +1,12 @@
+feat(MD): 3HTB 真实数据 E2E 跑通，样例 STATUS BLOCKED→REAL
+
+- 流水线脚本 运行复合物MD_runComplexMd.sh：acpype/GAFF2 配体拓扑 → pdb2gmx(amber99sb-ildn/tip3p) → 复合物组装 → 溶剂化/0.15M NaCl → EM/NVT/NPT → 生产（NS 参数化）→ PBC 校正 → RMSD/RMSF/氢键/Rg；幂等分段可断点续跑
+- mdp 模板 5 件（__LIG__ 占位符）；全程默认组免索引（gmx select 赋值语法 2023.3 不可用）
+- 拓扑工具链：Miniforge(清华镜像)+mamba+ambertools/acpype（官网表单 88B/s 不可用；UV 无 antechamber 二进制，保留 /opt/venv-md 备用）
+- 踩坑修复：CRLF→LF（+新增 .gitattributes 固化）、mol2 GBK 中文名、moleculetype 对齐改名、solvate/genion 防重入、ions 步 -maxwarn 1
+- 0.2 ns 演示生产 22.98 ns/day；RMSD 0.084 nm / Rg 1.65 nm / 氢键 0–2
+- 分析出图_plotMdAnalysis.R：xvg→CSV→四图（DPI600 PNG+SVG 英文图面，PlotQA 全 PASS）+审计 REAL+报告；run_sample.R 改为入口编排
+- 技能说明 §9 详细 SOP（含环境安装与踩坑登记）+ §10 环境表更新；DATA_SOURCE 翻 REAL；清理 toy/BLOCKED 残留
+- .gitignore 增加 工作文件_mdwork/（gro/tpr/xtc 等大中间件不入库）
+
+票据：.scratch/MD真实数据落地_2026-08-30/

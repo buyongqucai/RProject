@@ -49,3 +49,6 @@ NA
 *.rds
 *.h5ad
 *.qs
+
+# MD working dirs (gro/tpr/xtc/trr/edr/cpt 等大体积中间件)
+**/工作文件_mdwork/
