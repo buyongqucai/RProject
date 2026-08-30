@@ -61,7 +61,7 @@ stub <- data.frame(
   note = c("missing", "missing", "DeliveryStandards OK")
 )
 write.csv(stub, file.path(tab_dir, delivery_table_name(skill_en, "contract", "blockedStub")), row.names = FALSE)
-write_delivery_audit(skill_en, "post", nrow(stub), 3, 0, "n/a BLOCKED", TRUE, NA, sourced_note,
+write_delivery_audit(skill_en, "post", nrow(stub), 3, 0, "n/a BLOCKED", FALSE, NA, sourced_note,
   paste("BLOCKED:", blocked_reason), file.path(tab_dir, delivery_audit_name(skill_en, "post")),
   data_provenance = "BLOCKED")
 library(ggplot2)

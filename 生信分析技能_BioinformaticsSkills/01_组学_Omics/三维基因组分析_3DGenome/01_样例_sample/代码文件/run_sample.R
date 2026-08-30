@@ -88,7 +88,7 @@ write.csv(contact_long, file.path(tab_dir, delivery_table_name(skill_en, "contac
 
 write_delivery_audit(
   skill_en, "post", nrow(stub), ncol(stub), 0L, "n/a BLOCKED Hi-C",
-  TRUE, NA_character_, sourced_note,
+  FALSE, NA_character_, sourced_note,
   paste("BLOCKED:", blocked_reason),
   file.path(tab_dir, delivery_audit_name(skill_en, "post")),
   data_provenance = "BLOCKED"

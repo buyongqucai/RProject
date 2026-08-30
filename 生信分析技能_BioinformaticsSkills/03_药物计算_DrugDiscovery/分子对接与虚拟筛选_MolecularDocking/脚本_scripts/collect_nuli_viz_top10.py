@@ -8,10 +8,13 @@ Safety:
 from __future__ import annotations
 
 import argparse
-import csv
 import re
 import shutil
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from dock_summary_schema import load_summary_rows
 
 # ---- 项目专用路径常量（本机桌面「努力学习_分子对接」布局，移植时需改） ----
 ROOT = Path.home() / "Desktop" / "努力学习_分子对接"
@@ -35,14 +38,7 @@ def main() -> None:
     )
     args = ap.parse_args()
 
-    rows = []
-    with SUMMARY.open(encoding="utf-8-sig", newline="") as f:
-        for r in csv.DictReader(f):
-            try:
-                aff = float(r.get("best_affinity_kcal") or 999)
-            except Exception:
-                aff = 999.0
-            rows.append((aff, r))
+    rows = [(r["affinity_kcal_mol"], r) for r in load_summary_rows(SUMMARY)]
     rows.sort(key=lambda x: x[0])
     top = rows[:10]
 
@@ -58,9 +54,9 @@ def main() -> None:
     ]
 
     for aff, r in top:
-        seq = str(r.get("对接序号") or "").strip()
+        seq = str(r.get("task") or "").strip()
         src = JOBS / seq
-        name = f"{seq}_{safe(r.get('蛋白'))}_{safe(r.get('PDB'))}_{safe(r.get('成分'))}"
+        name = f"{seq}_{safe(r.get('protein'))}_{safe(r.get('pdb'))}_{safe(r.get('ligand'))}"
         dst = OUT / name
         dst.mkdir(parents=True, exist_ok=True)
         dst_img = dst / "图片"
@@ -86,11 +82,11 @@ def main() -> None:
             "\n".join(
                 [
                     f"对接序号={seq}",
-                    f"蛋白={r.get('蛋白')}",
-                    f"PDB={r.get('PDB')}",
-                    f"成分={r.get('成分')}",
-                    f"CID={r.get('CID')}",
-                    f"best_affinity_kcal={r.get('best_affinity_kcal')}",
+                    f"蛋白={r.get('protein')}",
+                    f"PDB={r.get('pdb')}",
+                    f"成分={r.get('ligand')}",
+                    f"CID={r.get('cid')}",
+                    f"best_affinity_kcal={aff}",
                     f"status={r.get('status')}",
                     f"source={src}",
                     "",
@@ -99,7 +95,7 @@ def main() -> None:
             encoding="utf-8",
         )
         index_lines.append(
-            f"{seq}\t{r.get('best_affinity_kcal')}\t{r.get('蛋白')}\t{r.get('PDB')}\t{r.get('成分')}\t{name}"
+            f"{seq}\t{aff}\t{r.get('protein')}\t{r.get('pdb')}\t{r.get('ligand')}\t{name}"
         )
         print(f"copied {name} files={n}")
 

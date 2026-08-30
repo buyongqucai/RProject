@@ -50,6 +50,7 @@ SECTOR_BG = [
 
 
 def short_name(ligand: str, ligand_name: str, max_len: int = 22) -> str:
+    # 项目专用别名表（痤疮/努力学习项目配体）；库内复用时按项目扩充
     aliases = {
         "chalcone_dihydroxy_dimethoxy": "Chalcone derivative",
         "n_acetyltryptophan": "N-acetyltryptophan",

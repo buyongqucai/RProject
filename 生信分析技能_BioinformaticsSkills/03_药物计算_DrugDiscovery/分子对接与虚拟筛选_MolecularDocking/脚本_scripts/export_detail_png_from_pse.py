@@ -24,7 +24,7 @@ import numpy as np
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from dock_export_common import collapse_console_qt, ensure_img_subdir
+from dock_export_common import ensure_img_subdir
 
 PYMOL_WIN = Path(r"E:\pymol\PyMOLWin.exe")
 PYMOL_HOOK = Path(__file__).resolve().parent / "pymol_detail_export_hook.py"
@@ -110,10 +110,6 @@ def _capture_hwnd_bitmap(hwnd: int, use_client: bool = False) -> Image.Image:
     arr = np.frombuffer(buf, dtype=np.uint8).reshape(h, w, 4)
     rgb = arr[:, :, [2, 1, 0]].copy()
     return Image.fromarray(rgb, mode="RGB")
-
-
-def normalize_job(job: Path) -> list[str]:
-    return ensure_img_subdir(job)
 
 
 def find_jobs(roots: list[Path]) -> list[Path]:
@@ -301,6 +297,7 @@ def main(argv: list[str] | None = None) -> int:
         # 显式 --root 时只处理指定路径，避免叠加默认根目录导致一次导出全部任务
         roots = [Path(r) for r in args.root]
     else:
+        # 项目专用默认根目录（本机桌面布局；库内复用请显式 --root）
         roots = [
             desktop / "痤疮_分子对接_序号文件夹",
             desktop / "努力学习_分子对接" / "序号文件夹",
@@ -327,7 +324,7 @@ def main(argv: list[str] | None = None) -> int:
     only = parse_only(args.only)
     if not args.skip_normalize:
         for job in jobs:
-            notes = normalize_job(job)
+            notes = ensure_img_subdir(job)
             if notes:
                 print(f"[norm] {job.name}: " + "; ".join(notes))
 

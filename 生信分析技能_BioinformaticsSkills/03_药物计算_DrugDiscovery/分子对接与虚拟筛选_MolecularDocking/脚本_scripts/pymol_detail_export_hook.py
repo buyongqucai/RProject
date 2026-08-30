@@ -49,12 +49,22 @@ def _load_export_helpers():
     return mod
 
 
+def _load_common():
+    """直接加载 dock_export_common（与 helpers 同目录），不经过 export 模块转发。"""
+    mod_path = _export_helpers_path().parent / "dock_export_common.py"
+    spec = importlib.util.spec_from_file_location("dock_export_common", mod_path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
 _EXP = None
+_COMMON = None
 
 
 def _collapse_console(win) -> None:
     """最大化之后强制收起底部代码区（.pse 会话常会恢复展开状态）。"""
-    _EXP.collapse_console_qt(win, _log)
+    _COMMON.collapse_console_qt(win, _log)
 
 
 def _run_export() -> None:
@@ -64,9 +74,10 @@ def _run_export() -> None:
     debug_win = os.environ.get("PYMOL_DETAIL_DEBUG_WIN", "").strip()
 
     try:
-        global _EXP
+        global _EXP, _COMMON
         _EXP = _load_export_helpers()
         exp = _EXP
+        _COMMON = _load_common()
         _log(f"[hook] helpers={_export_helpers_path()}")
     except Exception:
         traceback.print_exc()

@@ -5,7 +5,8 @@
 ## 修复记录
 
 - 接缝：`规范_数据审计_DataAudit.R` 增 `data_provenance="BLOCKED"` → `toy=FALSE` 强制分支。
-- 模板：13 个 BLOCKED 样例 `run_sample.R` 统一显式传 `data_provenance = "BLOCKED"`，报告正文 toy=TRUE 表述改为 BLOCKED 契约桩表述（3DGenome 变体单独修；WGBS-RRBS 为 REAL 样例，不在此列）。
+- 模板：12 个 BLOCKED 样例 `run_sample.R` 统一显式传 `data_provenance = "BLOCKED"`，报告正文 toy=TRUE 表述改为 BLOCKED 契约桩表述（3DGenome 变体单独修；WGBS-RRBS 为 REAL 样例，不在此列）。（复审更正：初版记录误写 13 个，实为 12 个。）
+- 复审补强：12 个模板位置参数 `toy=TRUE` → `FALSE`，调用点与 `data_provenance="BLOCKED"` 不再自相矛盾。
 - 测试：`统一交付规范_DeliveryStandards/测试_tests/test_blocked_provenance.R`（testthat，27 PASS）锁定接缝行为 + 全库模板回归扫描。
 - E2E：重跑分子对接样例，`审计后检_AuditPost.csv` = `toy=FALSE, data_provenance="BLOCKED"`。
 
