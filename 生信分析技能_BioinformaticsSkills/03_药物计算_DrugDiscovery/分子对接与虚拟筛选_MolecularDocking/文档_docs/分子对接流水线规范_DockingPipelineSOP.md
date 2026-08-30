@@ -28,6 +28,11 @@
 
 失败回退：本地已有 3D SDF/MOL2；仅当无 PubChem 3D 时才用 SMILES + Open Babel 建 3D。勿静默跳过不记日志。
 
+**批量结构库脚本（2026-08-31 登记）：**
+- [`脚本_scripts/结构库准备_prepareStructureLibrary.py`](../脚本_scripts/结构库准备_prepareStructureLibrary.py)：按 `分子对接_蛋白表.csv` / `分子对接_化合物表.csv` 全量下载 + 清洗 + 加氢到 `big*/small*` 六目录（幂等；PDB ID 走 RCSB，UniProt 条目走 AlphaFold v6→v4）。
+- [`脚本_scripts/结构库修补_repairStructureLibrary.py`](../脚本_scripts/结构库修补_repairStructureLibrary.py)：盐型 CID → PUG 名称解析母体 CID；平面分子（z-span≈0 如苯甲酸）放行；含 Si 配体（Vina 不支持）跳过 pdbqt 并记 `SKIP_unsupported`。
+- 已知坑：RCSB 超大复合物无 legacy PDB（404）时下 `.cif` 再 obabel 转 PDB（如 9CMK）；obabel 日志 "20 molecules converted" 含子串 "0 molecules converted"，判失败须用词边界。
+
 **Open Babel 硬性约定（本机常见坑）：**
 - **禁止**对黄酮等刚性芳香体系默认 `--gen3d`（易崩溃或写出全零/压扁坐标，报错如 `Rigid fragment … all zero coordinates`）。
 - 标准路径：`PubChem 3D SDF → obabel -h → MOL2 → PDBQT（gasteiger）`，**不要**再 `--gen3d`。
