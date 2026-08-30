@@ -41,7 +41,13 @@ de_fdr <- 0.05
 res_grid <- seq(0.1, 1.2, by = 0.1)
 
 # ---- 01 载入 + 原始计数校验 ----
-mtx_dir <- file.path(paths$raw_dir, "pbmc3k", "filtered_gene_bc_matrices", "hg19")
+pbmc3k_dir <- file.path(paths$raw_dir, "pbmc3k")
+mtx_dir <- file.path(pbmc3k_dir, "filtered_gene_bc_matrices", "hg19")
+tar_gz <- file.path(pbmc3k_dir, "pbmc3k_filtered_gene_bc_matrices.tar.gz")
+if (!dir.exists(mtx_dir) && file.exists(tar_gz)) {
+  # matrix.mtx 被 .gitignore(*.mtx) 排除；克隆后从已入库的 tar.gz 解包恢复
+  utils::untar(tar_gz, exdir = pbmc3k_dir)
+}
 stopifnot("缺 PBMC3k 矩阵（见 数据文件/DATA_SOURCE.md）" = dir.exists(mtx_dir))
 counts <- Read10X(mtx_dir)
 chk <- validate_raw_counts_stub(counts)
