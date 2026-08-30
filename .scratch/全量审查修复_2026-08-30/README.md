@@ -13,7 +13,7 @@
 | 01 | [01-BLOCKED样例provenance误标.md](01-BLOCKED样例provenance误标.md) | 已完成 | 审计表 toy=TRUE 与 BLOCKED 矛盾（模板级） |
 | 02 | [02-summary_vina双schema统一.md](02-summary_vina双schema统一.md) | 已完成 | 两脚本读同一 CSV 用不同列名 |
 | 03 | [03-删除legacy图像识别死代码.md](03-删除legacy图像识别死代码.md) | 已完成 | ~250 行不可达代码 + assets |
-| 04 | [04-环图标签黑色合规.md](04-环图标签黑色合规.md) | 待Agent处理 | `#333333`/`#666666` → `#000000` |
+| 04 | [04-环图标签黑色合规.md](04-环图标签黑色合规.md) | 已完成 | `#333333`/`#666666` → `#000000` |
 | 05 | [05-scRNA骨架参数落地.md](05-scRNA骨架参数落地.md) | 待分诊 | 文档参数无实现，或文档降级 |
 | 06 | [06-对接脚本群卫生.md](06-对接脚本群卫生.md) | 待分诊 | 重复代码/死变量/陈旧注释/硬编码 |
 | 07 | [07-gitignore卫生.md](07-gitignore卫生.md) | 已完成 | `__pycache__/`、`Rplots.pdf` |

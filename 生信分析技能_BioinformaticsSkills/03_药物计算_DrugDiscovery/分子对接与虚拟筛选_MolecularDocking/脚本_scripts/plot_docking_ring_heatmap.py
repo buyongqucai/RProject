@@ -255,7 +255,7 @@ def draw_ring_dashboard(
                 ha="center",
                 va="center",
                 fontsize=7,
-                color="#666666",
+                color="#000000",
                 zorder=5,
             )
 
@@ -291,7 +291,7 @@ def draw_ring_dashboard(
         ha="center",
         va="center",
         fontsize=7,
-        color="#333333",
+        color="#000000",
         zorder=7,
     )
 
