@@ -29,6 +29,8 @@ from matplotlib.colors import LinearSegmentedColormap, Normalize
 from matplotlib.patches import FancyBboxPatch, Wedge
 from PIL import Image
 
+from dock_export_common import log
+
 
 # journal-ish affinity ramp: weak (near 0) → pale；strong (more negative) → deep rose
 AFF_CMAP = LinearSegmentedColormap.from_list(
@@ -45,13 +47,6 @@ SECTOR_BG = [
     "#EAF3EA",  # green
     "#F0EAF7",  # lilac
 ]
-
-
-def log(msg: str) -> None:
-    try:
-        print(msg, flush=True)
-    except UnicodeEncodeError:
-        print(msg.encode("gbk", errors="replace").decode("gbk"), flush=True)
 
 
 def short_name(ligand: str, ligand_name: str, max_len: int = 22) -> str:

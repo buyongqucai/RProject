@@ -12,6 +12,8 @@
 | `run_nuli_ting_detail_combine.py` | 努力学习 Top10 + 痤疮：逐任务截图 detail 并拼 `result_*.png` |
 | `collect_nuli_viz_top10.py` | 努力学习 Top10 汇总（默认 merge；`--force-wipe` 需用户明确） |
 | `plot_docking_ring_heatmap.py` | **一对多**圆环结合能热图 + 外周 `result_N.png` 拼图（PNG+SVG，DPI≥600） |
+| `dock_export_common.py` | 公共 helper：`log`（GBK 安全）、`ensure_img_subdir`、`collapse_console_qt`（Qt 收起代码区，hook/手验共用） |
+| `dock_summary_schema.py` | `summary_vina.csv` 唯一 schema（canonical 英文列 + legacy 中文列归一化） |
 
 result 拼图引擎（Pillow）：`E:\PythonProject\分子对接\2.分子对接结果图组合.py`  
 （detail 按关键内容紧裁放大、排除蛋白丝带主色 → 填满右侧虚线框）

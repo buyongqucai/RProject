@@ -2,18 +2,22 @@
 """努力学习 Top10 + 婷婷(痤疮)：截图重导 detail、拼接 result，PNG 归入 图片/。
 
 每个 detail 用独立 PyMOL 进程导出，避免批量 draw 崩溃。
+项目专用脚本：路径常量绑定本机桌面项目布局，非通用交付件。
 """
 from __future__ import annotations
 
 import shutil
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 from PIL import Image
 import numpy as np
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from dock_export_common import ensure_img_subdir
+
+# ---- 项目专用路径常量（本机桌面布局，移植时需改） ----
 DESKTOP = Path.home() / "Desktop"
 COMBINE_PY = Path(r"E:\PythonProject\分子对接\2.分子对接结果图组合.py")
 EXPORT_PY = Path(
@@ -46,23 +50,6 @@ def crop_bw(path: Path, tolerance: int = 0) -> None:
     cropped = img.crop((left, top, right + 1, bottom + 1))
     dpi = img.info.get("dpi", (600, 600))
     cropped.save(path, dpi=dpi)
-
-
-def ensure_img_subdir(folder: Path) -> Path:
-    img = folder / "图片"
-    img.mkdir(parents=True, exist_ok=True)
-    for p in list(folder.glob("*.png")):
-        dst = img / p.name
-        if dst.exists():
-            if p.stat().st_mtime >= dst.stat().st_mtime:
-                shutil.copy2(p, dst)
-            p.unlink()
-        else:
-            shutil.move(str(p), str(dst))
-    tmp = folder / "_png_tmp"
-    if tmp.exists():
-        shutil.rmtree(tmp)
-    return img
 
 
 def sync_pse_top10_to_jobs(viz: Path, jobs: Path) -> None:
@@ -98,6 +85,7 @@ def sync_png_to_jobs(viz: Path, jobs: Path) -> None:
         dst_img = jobs / seq / "图片"
         dst_img.mkdir(parents=True, exist_ok=True)
         for png in src_img.glob("*.png"):
+            # result_01.png 是早期拼接流程的残留废图（首张占位），不属于交付集，跳过
             if png.name.lower().startswith("result_01"):
                 continue
             shutil.copy2(png, dst_img / png.name)
@@ -131,6 +119,7 @@ def export_one_folder(folder: Path) -> None:
 
 def combine_dirs(img_dirs: list[Path]) -> None:
     for img in img_dirs:
+        # result_01.png 为早期拼接残留废图，重拼前必须删除，否则会被 combiner 当作有效结果
         for bad in img.glob("result_01.png"):
             bad.unlink()
             print(f"[clean] removed {bad}")

@@ -13,6 +13,7 @@ import re
 import shutil
 from pathlib import Path
 
+# ---- 项目专用路径常量（本机桌面「努力学习_分子对接」布局，移植时需改） ----
 ROOT = Path.home() / "Desktop" / "努力学习_分子对接"
 JOBS = ROOT / "序号文件夹"
 OUT = ROOT / "可视化组合_Top10"

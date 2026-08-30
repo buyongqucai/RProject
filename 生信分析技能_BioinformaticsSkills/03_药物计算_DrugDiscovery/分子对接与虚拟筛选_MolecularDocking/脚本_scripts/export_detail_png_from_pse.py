@@ -14,14 +14,17 @@ from __future__ import annotations
 import argparse
 import ctypes
 import os
-import shutil
 import subprocess
+import sys
 import time
 from ctypes import wintypes
 from pathlib import Path
 
 import numpy as np
 from PIL import Image
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from dock_export_common import collapse_console_qt, ensure_img_subdir
 
 PYMOL_WIN = Path(r"E:\pymol\PyMOLWin.exe")
 PYMOL_HOOK = Path(__file__).resolve().parent / "pymol_detail_export_hook.py"
@@ -110,22 +113,7 @@ def _capture_hwnd_bitmap(hwnd: int, use_client: bool = False) -> Image.Image:
 
 
 def normalize_job(job: Path) -> list[str]:
-    notes: list[str] = []
-    img = job / "图片"
-    img.mkdir(parents=True, exist_ok=True)
-    for p in list(job.glob("*.png")):
-        dst = img / p.name
-        if dst.exists():
-            p.unlink()
-            notes.append(f"removed duplicate root png: {p.name}")
-        else:
-            shutil.move(str(p), str(dst))
-            notes.append(f"moved root png -> 图片/{p.name}")
-    tmp = job / "_png_tmp"
-    if tmp.exists():
-        shutil.rmtree(tmp)
-        notes.append("deleted _png_tmp")
-    return notes
+    return ensure_img_subdir(job)
 
 
 def find_jobs(roots: list[Path]) -> list[Path]:

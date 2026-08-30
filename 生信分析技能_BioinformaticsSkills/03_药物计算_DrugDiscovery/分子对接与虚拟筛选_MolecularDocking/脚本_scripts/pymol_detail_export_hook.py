@@ -49,58 +49,12 @@ def _load_export_helpers():
     return mod
 
 
+_EXP = None
+
+
 def _collapse_console(win) -> None:
     """最大化之后强制收起底部代码区（.pse 会话常会恢复展开状态）。"""
-    # 同步右侧工具条按钮状态
-    try:
-        frame = win.contentsPanelFrame
-        frame.toggleLogActive(False)
-        tools = frame.contentsPanelTools
-        tools.log_active = False
-        tools.timeline_active = False
-        tools._check_log_active()
-        tools._check_timeline_active()
-    except Exception as exc:
-        _log(f"[hook] panel sync warn: {exc}")
-
-    try:
-        win.toggle_command_log(False)
-    except Exception as exc:
-        _log(f"[hook] toggle_command_log warn: {exc}")
-
-    try:
-        if win.lineedit and win.lineedit.isVisible():
-            win.toggle_lineedit()
-    except Exception as exc:
-        _log(f"[hook] toggle_lineedit warn: {exc}")
-
-    # 直接隐藏 browser / lineedit，并把 dock 压到 0
-    try:
-        win.browser.hide()
-        if getattr(win, "pymol_timeline_gui", None):
-            win.pymol_timeline_gui.hide()
-        if win.lineedit:
-            win.lineedit.hide()
-        if getattr(win, "command_label", None):
-            win.command_label.hide()
-        win._resize_docks(win.dockWidget, 0)
-        win.dockWidget.hide()
-    except Exception as exc:
-        _log(f"[hook] dock hide warn: {exc}")
-
-    QApplication.processEvents()
-
-    try:
-        browser_vis = win.browser.isVisible()
-        line_vis = win.lineedit.isVisible() if win.lineedit else None
-        dock_vis = win.dockWidget.isVisible()
-        dock_h = int(win.dockWidget.height())
-        _log(
-            f"[hook] after collapse: browser={browser_vis} "
-            f"lineedit={line_vis} dock_vis={dock_vis} dock_h={dock_h}px"
-        )
-    except Exception as exc:
-        _log(f"[hook] status warn: {exc}")
+    _EXP.collapse_console_qt(win, _log)
 
 
 def _run_export() -> None:
@@ -110,7 +64,9 @@ def _run_export() -> None:
     debug_win = os.environ.get("PYMOL_DETAIL_DEBUG_WIN", "").strip()
 
     try:
-        exp = _load_export_helpers()
+        global _EXP
+        _EXP = _load_export_helpers()
+        exp = _EXP
         _log(f"[hook] helpers={_export_helpers_path()}")
     except Exception:
         traceback.print_exc()

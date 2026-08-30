@@ -4,7 +4,7 @@
 统一分子对接可视化（ST/PT/CJ/QJ）
 
 氢键（强制）：
-  cmd.distance("QJ", "(PT)", "(not PT)", quiet=1, mode=2, label=0, reset=1)
+  cmd.distance("QJ", "(PT)", "(not PT)", quiet=1, mode=2, label=1, reset=1)
 
 对象：
   ST = 受体口袋 cartoon（big/detail）；surface 视图仅 surface、不要 cartoon
@@ -27,12 +27,8 @@ import tempfile
 from pathlib import Path
 from typing import List, Optional, Tuple
 
-
-def log(msg: str) -> None:
-    try:
-        print(msg, flush=True)
-    except UnicodeEncodeError:
-        print(msg.encode("gbk", errors="replace").decode("gbk"), flush=True)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from dock_export_common import log
 
 
 def find_obabel() -> Optional[Path]:
@@ -555,7 +551,6 @@ def select_jobs(
     if not summary.exists():
         summary = jobs_root / "summary_vina.csv"
     if summary.exists():
-        sys.path.insert(0, str(Path(__file__).resolve().parent))
         from dock_summary_schema import load_summary_rows
 
         rows = [(r["affinity_kcal_mol"], r["task"]) for r in load_summary_rows(summary)]
