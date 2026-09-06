@@ -88,7 +88,7 @@ STP 表字段通常含：Target（蛋白名）、**Common name（基因）**、U
 
 | 步骤 | 状态 |
 |------|------|
-| **TCMSP-e 全量抓取**（token→搜索→成分 JSON→molecule.php 靶点） | **AUTO**：`脚本_scripts/TCMSP批量抓取_tcmspBatchScrape.py`（2026-08-31 验证，502 味全量 OK；模板列 FASA- 实为 tpsa 字段） |
+| **TCMSP-e 全量抓取**（token→搜索→草药页 Ingredients + Related Targets） | **AUTO**：`脚本_scripts/TCMSP批量抓取_tcmspBatchScrape.py`（2026-08-31 全量；**2026-09-02** 起 molecule.php 不再内嵌 JSON，改为草药页一次取成分与靶点；靶点表第三列为 UniProt reviewed human 基因简称，见 `TCMSP靶点UniProt映射_mapTcmspUniprot.py`；FASA- 列=FASA/tpsa） |
 | HERB 2.0 `chedi` API（search/detail） | **AUTO**（可达时） |
 | SwissTargetPrediction 表单提交 + 结果解析 | **AUTO**（可达时）；失败 → MANUAL 导出 |
 | BATMAN / ETCM / GeneCards 等 | 仍以 MANUAL 导出为主（无稳定公开 API） |

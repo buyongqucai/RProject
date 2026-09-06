@@ -110,20 +110,47 @@ np_plot_disease_db_venn <- function(disease_by_db) {
     ggplot2::scale_fill_identity() +
     ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = c(0, 0.18))) +
     ggplot2::labs(
-      title = "Size of each list",
-      subtitle = paste0("Union = ", union_n, " unique genes"),
+      title = "Size of each set",
       x = NULL, y = NULL
     ) +
     ggplot2::theme_classic(base_size = 11) +
     ggplot2::theme(
-      plot.title = ggplot2::element_text(face = "italic", hjust = 0.5, size = 11),
-      plot.subtitle = ggplot2::element_text(hjust = 0.5, size = 9, color = "grey40"),
+      plot.title = ggplot2::element_text(face = "plain", hjust = 0.5, size = 11),
       axis.text.x = ggplot2::element_text(size = 10),
       axis.line.y = ggplot2::element_line(color = "grey50"),
       axis.ticks.y = ggplot2::element_line(color = "grey50")
     )
 
-  # compose: title + venn grob + bar
+  # 微生信交付第二底栏：按出现在几个集合中计数
+  membership <- table(factor(unlist(sets)))
+  share_n <- as.integer(table(factor(as.integer(membership), levels = seq_along(sets))))
+  names(share_n) <- as.character(seq_along(sets))
+  share_df <- data.frame(
+    k = factor(names(share_n), levels = names(share_n)),
+    n = as.numeric(share_n),
+    stringsAsFactors = FALSE
+  )
+  share_cols <- grDevices::colorRampPalette(c("#C7B8E6", "#7E6BB5"))(nrow(share_df))
+  p_share <- ggplot2::ggplot(share_df, ggplot2::aes(x = 1, y = n, fill = k)) +
+    ggplot2::geom_col(width = 0.55, color = NA, show.legend = FALSE) +
+    ggplot2::geom_text(
+      ggplot2::aes(label = ifelse(n > 0, paste0(k, "\n", n), "")),
+      position = ggplot2::position_stack(vjust = 0.5),
+      size = 3.0, color = "grey20"
+    ) +
+    ggplot2::coord_flip() +
+    ggplot2::scale_fill_manual(values = setNames(share_cols, share_df$k)) +
+    ggplot2::labs(
+      title = "Number of elements, specific (1) or shared by 2, 3 ... sets",
+      x = NULL, y = NULL
+    ) +
+    ggplot2::theme_void(base_size = 11) +
+    ggplot2::theme(
+      plot.title = ggplot2::element_text(face = "italic", hjust = 0.5, size = 10),
+      plot.margin = ggplot2::margin(4, 8, 4, 8)
+    )
+
+  # compose: title + venn grob + dual bars（对齐交付原图双底栏）
   if (!requireNamespace("cowplot", quietly = TRUE)) {
     stop("Install cowplot to compose delivery-style Venn + bar panel")
   }
@@ -139,9 +166,9 @@ np_plot_disease_db_venn <- function(disease_by_db) {
     )
   venn_gg <- cowplot::ggdraw(vd)
   cowplot::plot_grid(
-    title_gg, sub_gg, venn_gg, p_bar,
+    title_gg, sub_gg, venn_gg, p_bar, p_share,
     ncol = 1,
-    rel_heights = c(0.06, 0.04, 0.62, 0.28)
+    rel_heights = c(0.05, 0.035, 0.55, 0.22, 0.145)
   )
 }
 
@@ -154,13 +181,13 @@ np_plot_drug_disease_venn <- function(drug_genes, disease_genes) {
   if (!requireNamespace("cowplot", quietly = TRUE)) stop("Install cowplot")
 
   sets <- list(
-    Drug = unique(as.character(drug_genes$gene)),
+    Drugs = unique(as.character(drug_genes$gene)),
     Disease = unique(as.character(disease_genes$gene))
   )
   fills <- c("#00A087", "#3C5488")
   sizes <- vapply(sets, length, integer(1))
   union_n <- length(unique(unlist(sets, use.names = FALSE)))
-  inter_n <- length(intersect(sets$Drug, sets$Disease))
+  inter_n <- length(intersect(sets$Drugs, sets$Disease))
 
   futile.logger::flog.threshold(futile.logger::ERROR, name = "VennDiagramLogger")
   vd <- VennDiagram::venn.diagram(
@@ -181,10 +208,11 @@ np_plot_drug_disease_venn <- function(drug_genes, disease_genes) {
     print.mode = "raw"
   )
 
+  # 交付原图底栏仅 Drugs / Disease 两柱（不含 Overlap 第三柱）
   bar_df <- data.frame(
-    set = factor(c("Drug", "Disease", "Overlap"), levels = c("Drug", "Disease", "Overlap")),
-    n = c(sizes[["Drug"]], sizes[["Disease"]], inter_n),
-    fill = c(fills[1], fills[2], "#8491B4"),
+    set = factor(c("Drugs", "Disease"), levels = c("Drugs", "Disease")),
+    n = c(sizes[["Drugs"]], sizes[["Disease"]]),
+    fill = fills,
     stringsAsFactors = FALSE
   )
   p_bar <- ggplot2::ggplot(bar_df, ggplot2::aes(set, n, fill = fill)) +
@@ -193,14 +221,38 @@ np_plot_drug_disease_venn <- function(drug_genes, disease_genes) {
     ggplot2::scale_fill_identity() +
     ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = c(0, 0.15))) +
     ggplot2::labs(
-      title = "Size of each list",
-      subtitle = paste0("Union = ", union_n),
+      title = "Size of each set",
       x = NULL, y = NULL
     ) +
     ggplot2::theme_classic(base_size = 11) +
     ggplot2::theme(
-      plot.title = ggplot2::element_text(face = "italic", hjust = 0.5, size = 11),
-      plot.subtitle = ggplot2::element_text(hjust = 0.5, size = 9, color = "grey40")
+      plot.title = ggplot2::element_text(face = "plain", hjust = 0.5, size = 11)
+    )
+
+  # 双底栏第二行：仅单集 / 两集共享（对齐微生信 Drug–Disease 交付）
+  share_df <- data.frame(
+    k = factor(c("1", "2"), levels = c("1", "2")),
+    n = c(union_n - inter_n, inter_n),
+    fill = c("#C7B8E6", fills[1]),
+    stringsAsFactors = FALSE
+  )
+  p_share <- ggplot2::ggplot(share_df, ggplot2::aes(x = 1, y = n, fill = fill)) +
+    ggplot2::geom_col(width = 0.55, color = NA, show.legend = FALSE) +
+    ggplot2::geom_text(
+      ggplot2::aes(label = paste0(k, "\n", n)),
+      position = ggplot2::position_stack(vjust = 0.5),
+      size = 3.2, color = "grey20"
+    ) +
+    ggplot2::coord_flip() +
+    ggplot2::scale_fill_identity() +
+    ggplot2::labs(
+      title = "Number of elements, specific (1) or shared by 2, 3 ... sets",
+      x = NULL, y = NULL
+    ) +
+    ggplot2::theme_void(base_size = 11) +
+    ggplot2::theme(
+      plot.title = ggplot2::element_text(face = "italic", hjust = 0.5, size = 10),
+      plot.margin = ggplot2::margin(4, 8, 4, 8)
     )
 
   title_gg <- cowplot::ggdraw() +
@@ -211,8 +263,8 @@ np_plot_drug_disease_venn <- function(drug_genes, disease_genes) {
       size = 10, color = "grey40", hjust = 0.5
     )
   cowplot::plot_grid(
-    title_gg, sub_gg, cowplot::ggdraw(vd), p_bar,
-    ncol = 1, rel_heights = c(0.06, 0.04, 0.62, 0.28)
+    title_gg, sub_gg, cowplot::ggdraw(vd), p_bar, p_share,
+    ncol = 1, rel_heights = c(0.05, 0.035, 0.55, 0.22, 0.145)
   )
 }
 
@@ -406,9 +458,12 @@ np_compound_panel_palette <- function(n) {
 }
 
 #' 单面板水平柱（化学名；面板主色 + 按数值深浅）
+#' 布局：单 ggplot；axis-l 与 panel 均钉绝对英寸宽 → 网格内柱区（红框）等宽对齐
 .np_compound_overlap_one_panel <- function(df, panel_title, panel_color,
-                                           show_x = TRUE, wrap_width = 40,
-                                           label_max = 42) {
+                                           show_x = TRUE, wrap_width = 36,
+                                           label_max = 56,
+                                           lab_width_in = 2.6,
+                                           bar_width = grid::unit(2.8, "in")) {
   df <- df[order(df$n_overlap_targets, df$compound_name), , drop = FALSE]
   lab <- as.character(df$compound_name)
   miss <- is.na(lab) | !nzchar(lab)
@@ -420,9 +475,8 @@ np_compound_panel_palette <- function(n) {
   }
   df$ylab <- factor(lab, levels = unique(lab))
   n_show <- nrow(df)
-  y_cex <- if (n_show > 16) 6.0 else if (n_show > 10) 6.8 else 7.6
+  y_cex <- if (n_show > 16) 5.8 else if (n_show > 10) 6.6 else 7.4
   xlim_max <- max(df$n_overlap_targets, na.rm = TRUE)
-  # light → panel_color ramp by value
   ramp <- grDevices::colorRampPalette(c(
     .np_lighten_color(panel_color, toward_white = 0.45),
     panel_color
@@ -439,10 +493,10 @@ np_compound_panel_palette <- function(n) {
     ggplot2::scale_fill_identity() +
     ggplot2::geom_text(
       ggplot2::aes(label = n_overlap_targets),
-      hjust = -0.2, size = 2.35, color = "grey20"
+      hjust = -0.15, size = 2.3, color = "grey20"
     ) +
     ggplot2::scale_x_continuous(
-      limits = c(0, max(xlim_max * 1.16, 1)),
+      limits = c(0, max(xlim_max * 1.18, 1)),
       expand = ggplot2::expansion(mult = c(0, 0.02))
     ) +
     ggplot2::labs(
@@ -450,9 +504,11 @@ np_compound_panel_palette <- function(n) {
       x = if (show_x) "Overlap target count" else NULL,
       y = NULL
     )
-  np_apply_journal(p) +
+  p <- np_apply_journal(p) +
     ggplot2::theme(
-      axis.text.y = ggplot2::element_text(size = y_cex, lineheight = 0.9, hjust = 1),
+      axis.text.y = ggplot2::element_text(
+        size = y_cex, lineheight = 0.9, hjust = 1, color = "grey15"
+      ),
       axis.title.x = ggplot2::element_text(size = 8.5),
       plot.title = ggplot2::element_text(
         face = "bold", size = 10, hjust = 0, color = panel_color
@@ -460,13 +516,18 @@ np_compound_panel_palette <- function(n) {
       legend.position = "none",
       panel.grid.major.y = ggplot2::element_blank(),
       panel.grid.major.x = ggplot2::element_line(color = "grey92", linewidth = 0.3),
-      plot.margin = ggplot2::margin(8, 14, 6, 6),
+      plot.margin = ggplot2::margin(6, 10, 4, 4),
       plot.background = ggplot2::element_rect(
         fill = grDevices::adjustcolor(panel_color, alpha.f = 0.04),
         color = NA
       ),
       panel.background = ggplot2::element_rect(fill = "white", color = NA)
     )
+
+  bar_w <- bar_width
+  if (is.numeric(bar_width)) bar_w <- grid::unit(as.numeric(bar_width), "in")
+  lab_w <- grid::unit(as.numeric(lab_width_in), "in")
+  .np_as_equal_panel_grob(p, panel_width = bar_w, lab_width = lab_w)
 }
 
 #' 选择子图网格：每格成分数接近；优先 2 列（长化学名可读）
@@ -495,18 +556,63 @@ np_choose_compound_panel_grid <- function(n, target_per = 14L, max_per = 16L) {
   )
 }
 
-#' 拼图标题条
-.np_compound_overlap_compose <- function(panels, ncol, main_title, subtitle) {
+#' 固定主画幅（panel）宽度 + 左侧名称栏（axis-l）宽度 → 红框区等宽可对齐
+.np_as_equal_panel_grob <- function(p,
+                                    panel_width = grid::unit(2.8, "in"),
+                                    lab_width = NULL) {
+  if (!requireNamespace("grid", quietly = TRUE)) stop("需要 grid")
+  g <- ggplot2::ggplotGrob(p)
+  idx <- which(grepl("^panel$", g$layout$name) | grepl("^panel-", g$layout$name))
+  if (length(idx)) {
+    cols <- unique(g$layout$l[idx])
+    for (col in cols) {
+      g$widths[[col]] <- panel_width
+    }
+  }
+  if (!is.null(lab_width)) {
+    # y 轴文字列；钉死后长名只能折行/裁切，不能挤占 panel
+    ax <- which(grepl("^axis-l", g$layout$name))
+    if (length(ax)) {
+      cols_ax <- unique(g$layout$l[ax])
+      for (col in cols_ax) {
+        g$widths[[col]] <- lab_width
+      }
+    }
+  }
+  g
+}
+
+#' 全体化学名 → 共用名称栏宽（英寸）
+.np_compound_global_lab_width <- function(names_chr, wrap_width = 36, label_max = 56) {
+  lab <- as.character(names_chr)
+  lab[is.na(lab) | !nzchar(lab)] <- ""
+  too_long <- nchar(lab) > label_max
+  lab[too_long] <- paste0(substr(lab[too_long], 1L, label_max - 1L), "…")
+  if (exists("np_wrap_term", mode = "function")) {
+    lab <- np_wrap_term(lab, width = wrap_width)
+  }
+  lines <- unlist(strsplit(lab, "\n"), use.names = FALSE)
+  max_chars <- max(c(1L, nchar(lines)), na.rm = TRUE)
+  as.numeric(max(2.2, min(3.2, max_chars * 0.072)))
+}
+
+#' 拼图：等宽格子，柱区（红框）对齐
+.np_compound_overlap_compose <- function(panels, ncol, main_title, subtitle,
+                                         panel_width = NULL) {
   if (!requireNamespace("cowplot", quietly = TRUE)) {
     stop("Install cowplot for multi-panel compound overlap figures", call. = FALSE)
   }
   n_panel <- length(panels)
-  nrow <- as.integer(ceiling(n_panel / ncol))
-  n_slot <- nrow * ncol
+  nrow <- as.integer(ceiling(n_panel / as.integer(ncol)))
+  n_slot <- nrow * as.integer(ncol)
   if (length(panels) < n_slot) {
     panels <- c(panels, rep(list(cowplot::ggdraw()), n_slot - length(panels)))
   }
-  grid_plot <- cowplot::plot_grid(plotlist = panels, ncol = ncol)
+  # 各格子已是固定 axis-l + panel 的 gtable；等宽等分即可对齐红框
+  grid_plot <- cowplot::plot_grid(
+    plotlist = panels, ncol = as.integer(ncol),
+    align = "none", rel_widths = rep(1, as.integer(ncol))
+  )
   title <- cowplot::ggdraw() +
     cowplot::draw_label(main_title, fontface = "bold", size = 13, hjust = 0.5)
   sub <- cowplot::ggdraw() +
@@ -541,6 +647,9 @@ np_plot_compound_overlap_panels <- function(summary_df,
   sizes <- rep(base, n_panel)
   if (rem > 0) sizes[seq_len(rem)] <- sizes[seq_len(rem)] + 1L
   cols <- np_compound_panel_palette(n_panel)
+  wrap_w <- 36L
+  lab_max <- 56L
+  lab_w <- .np_compound_global_lab_width(df$compound_name, wrap_width = wrap_w, label_max = lab_max)
 
   panels <- vector("list", n_panel)
   idx <- 1L
@@ -553,14 +662,14 @@ np_plot_compound_overlap_panels <- function(summary_df,
     title <- sprintf("Ranks %d–%d  ·  n = %d", rank_lo, rank_hi, nrow(part))
     panels[[i]] <- .np_compound_overlap_one_panel(
       part, title, panel_color = cols[i], show_x = TRUE,
-      wrap_width = 38, label_max = 40
+      wrap_width = wrap_w, label_max = lab_max, lab_width_in = lab_w
     )
   }
   .np_compound_overlap_compose(
     panels, grid$ncol,
     "Compound–disease overlap targets (equal panels)",
     sprintf(
-      "Chemical names · %d compounds · %d×%d panels (~%d each, by rank)",
+      "Chemical names · %d compounds · %d×%d panels (~%d each, by rank) · aligned bar panels",
       n, grid$nrow, grid$ncol, grid$per
     )
   )
@@ -585,6 +694,9 @@ np_plot_compound_overlap_by_herb <- function(edges,
   names(agg)[names(agg) == "target_gene"] <- "n_overlap_targets"
   herbs <- names(sort(table(agg$herb_en), decreasing = TRUE))
   herb_cols <- setNames(np_compound_panel_palette(length(herbs)), herbs)
+  wrap_w <- 36L
+  lab_max <- 56L
+  lab_w <- .np_compound_global_lab_width(agg$compound_name, wrap_width = wrap_w, label_max = lab_max)
 
   panels <- list()
   for (h in herbs) {
@@ -595,7 +707,7 @@ np_plot_compound_overlap_by_herb <- function(edges,
     if (n_h <= max_per) {
       panels[[length(panels) + 1]] <- .np_compound_overlap_one_panel(
         d, sprintf("%s  ·  n = %d", h, n_h), panel_color = base_col,
-        show_x = TRUE, wrap_width = 36, label_max = 38
+        show_x = TRUE, wrap_width = wrap_w, label_max = lab_max, lab_width_in = lab_w
       )
     } else {
       # split large herb into equal chunks; shade variants of same color
@@ -614,7 +726,7 @@ np_plot_compound_overlap_by_herb <- function(edges,
           part,
           sprintf("%s (%d/%d)  ·  n = %d", h, s, n_sub, nrow(part)),
           panel_color = shades[s],
-          show_x = TRUE, wrap_width = 36, label_max = 38
+          show_x = TRUE, wrap_width = wrap_w, label_max = lab_max, lab_width_in = lab_w
         )
       }
     }
@@ -1047,8 +1159,30 @@ np_draw_kegg_chord <- function(chord, label_genes = TRUE) {
   )
   grid.col <- c(gene_cols_map, pw_cols)
 
-  # gaps: small within blocks; modest split between gene ↔ pathway hemispheres
-  gaps <- c(rep(0.5, max(0, n_gene - 1)), 3.5, rep(1.0, max(0, n_pw - 1)), 3.5)
+  # 基因 / 通路扇区总量 1:1；上下分裂缝压小 → 半圆视觉连续（禁两瓣月牙）
+  gap_inside <- 4
+  gap_split <- 1.5
+  g_gap <- if (n_gene > 1) gap_inside / (n_gene - 1) else 0
+  p_gap <- if (n_pw > 1) gap_inside / (n_pw - 1) else 0
+  gaps <- c(
+    rep(g_gap, max(0, n_gene - 1)),
+    gap_split,
+    rep(p_gap, max(0, n_pw - 1)),
+    gap_split
+  )
+  # 强制两侧 xmax 等（各占半圆画幅；单扇区宽度按组内均分，且 >= 实际连边和）
+  rs <- rowSums(mat); cs <- colSums(mat)
+  half <- max(sum(rs), sum(cs), 1)
+  xmax_gene <- pmax(rs, half / n_gene)
+  xmax_pw <- pmax(cs, half / n_pw)
+  # 两侧总和对齐
+  if (sum(xmax_gene) > sum(xmax_pw)) {
+    xmax_pw <- xmax_pw * (sum(xmax_gene) / sum(xmax_pw))
+  } else if (sum(xmax_pw) > sum(xmax_gene)) {
+    xmax_gene <- xmax_gene * (sum(xmax_pw) / sum(xmax_gene))
+  }
+  xmax_all <- c(xmax_gene, xmax_pw)
+
   circlize::circos.clear()
   circlize::circos.par(
     start.degree = 90,
@@ -1057,8 +1191,9 @@ np_draw_kegg_chord <- function(chord, label_genes = TRUE) {
     track.margin = c(0.01, 0.01),
     cell.padding = c(0.002, 0, 0.002, 0),
     points.overflow.warning = FALSE,
-    canvas.xlim = c(-1.15, 1.55),
-    canvas.ylim = c(-1.15, 1.15)
+    # 圆居中；右侧加宽给全称图例
+    canvas.xlim = c(-1.40, 1.95),
+    canvas.ylim = c(-1.30, 1.30)
   )
 
   # link colors: pathway-colored ribbons (matrix form; vector col is unreliable in circlize 0.4.18)
@@ -1078,12 +1213,12 @@ np_draw_kegg_chord <- function(chord, label_genes = TRUE) {
     grid.col = grid.col,
     col = col_mat,
     transparency = 0,
+    xmax = xmax_all,
     annotationTrack = "grid",
-    annotationTrackHeight = 0.06,
-    # only one outer track for gene labels — do NOT preallocate a 2nd color track
-    # (that duplicated grid.col and created an extra outermost color ring)
+    annotationTrackHeight = 0.055,
     preAllocateTracks = list(
-      list(track.height = if (label_genes) 0.10 else 0.02)
+      # 外侧标签轨加高：通路全称折行 + 基因名
+      list(track.height = if (label_genes) 0.18 else 0.12)
     ),
     directional = 1,
     direction.type = "diffHeight",
@@ -1092,32 +1227,42 @@ np_draw_kegg_chord <- function(chord, label_genes = TRUE) {
     link.largest.ontop = TRUE
   )
 
-  if (label_genes) {
-    cex_lab <- if (n_gene > 90) 0.26 else if (n_gene > 60) 0.32 else 0.42
-    circlize::circos.trackPlotRegion(
-      track.index = 1,
-      bg.border = NA,
-      panel.fun = function(x, y) {
-        sector <- circlize::get.cell.meta.data("sector.index")
-        if (!sector %in% genes) return(invisible(NULL))
-        xlim <- circlize::get.cell.meta.data("xlim")
+  # 外侧标签：基因名 + 通路全称（折行，禁止省略号截断）
+  cex_gene <- if (n_gene > 100) 0.20 else if (n_gene > 70) 0.26 else if (n_gene > 50) 0.32 else 0.40
+  cex_pw <- if (n_pw > 18) 0.32 else if (n_pw > 12) 0.38 else 0.44
+  wrap_w <- if (n_pw > 18) 22L else 28L
+  circlize::circos.trackPlotRegion(
+    track.index = 1,
+    bg.border = NA,
+    panel.fun = function(x, y) {
+      sector <- circlize::get.cell.meta.data("sector.index")
+      xlim <- circlize::get.cell.meta.data("xlim")
+      if (sector %in% genes) {
+        if (!isTRUE(label_genes)) return(invisible(NULL))
         circlize::circos.text(
-          mean(xlim), 0.15, sector,
-          facing = "clockwise",
-          niceFacing = TRUE,
-          adj = c(0, 0.5),
-          cex = cex_lab,
-          col = "grey20"
+          mean(xlim), 0.12, sector,
+          facing = "clockwise", niceFacing = TRUE,
+          adj = c(0, 0.5), cex = cex_gene, col = "grey20"
+        )
+      } else if (sector %in% pathways) {
+        lab <- sector
+        if (exists("np_wrap_term", mode = "function")) {
+          lab <- np_wrap_term(lab, width = wrap_w)
+        }
+        circlize::circos.text(
+          mean(xlim), 0.10, lab,
+          facing = "clockwise", niceFacing = TRUE,
+          adj = c(0, 0.5), cex = cex_pw, col = "grey10"
         )
       }
-    )
-  }
+    }
+  )
 
-  # legends in right canvas margin (circle stays visually centered)
-  x0 <- 1.05
-  y_top <- 1.05
+  # legends in right canvas margin (full pathway names, no ellipsis)
+  x0 <- 1.28
+  y_top <- 1.15
   n_bar <- 80
-  bar_x <- seq(x0, x0 + 0.42, length.out = n_bar + 1)
+  bar_x <- seq(x0, x0 + 0.48, length.out = n_bar + 1)
   bar_cols <- grDevices::colorRampPalette(
     c("#B8E186", "#7FC97F", "#41B6C4", "#225EA8", "#081D58")
   )(n_bar)
@@ -1125,17 +1270,17 @@ np_draw_kegg_chord <- function(chord, label_genes = TRUE) {
     graphics::rect(bar_x[i], y_top - 0.045, bar_x[i + 1], y_top, col = bar_cols[i], border = NA)
   }
   graphics::rect(bar_x[1], y_top - 0.045, bar_x[n_bar + 1], y_top, border = "grey40", lwd = 0.6)
-  graphics::text(x0 + 0.21, y_top + 0.07, "-log10(pvalue)", cex = 0.78, font = 2)
+  graphics::text(x0 + 0.24, y_top + 0.07, "-log10(pvalue)", cex = 0.78, font = 2)
   graphics::text(bar_x[1], y_top - 0.09, sprintf("%.0f", nl_range[1]), cex = 0.65, adj = c(0.5, 1))
   graphics::text(bar_x[n_bar + 1], y_top - 0.09, sprintf("%.0f", nl_range[2]), cex = 0.65, adj = c(0.5, 1))
 
   graphics::text(x0 + 0.02, y_top - 0.16, "KEGG Pathways", cex = 0.72, font = 2, adj = c(0, 0.5))
-  leg_cex <- if (n_pw > 18) 0.52 else 0.6
-  step <- if (n_pw > 18) 0.055 else 0.062
+  leg_cex <- if (n_pw > 18) 0.48 else 0.55
+  step <- if (n_pw > 18) 0.052 else 0.060
   y_leg <- y_top - 0.22
   for (i in seq_len(n_pw)) {
     yy <- y_leg - (i - 1) * step
-    if (yy < -1.05) break
+    if (yy < -1.15) break
     graphics::points(x0 + 0.02, yy, pch = 19, col = pw_cols[i], cex = 1.05)
     graphics::text(x0 + 0.055, yy, pathways[i], adj = c(0, 0.5), cex = leg_cex, col = "grey15")
   }
@@ -1147,7 +1292,7 @@ np_draw_kegg_chord <- function(chord, label_genes = TRUE) {
 #' Save KEGG chord/circos as bilingual PNG+SVG (base graphics; not ggplot)
 np_save_kegg_chord <- function(kegg_df, out_dir, stem = "圈图_KEGG_Circos",
                                top_n = 20, label_genes = TRUE,
-                               width = 11, height = 9, dpi = 600) {
+                               width = 13, height = 11, dpi = 600) {
   chord <- np_prep_kegg_chord(kegg_df, top_n = top_n)
   dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
   stem <- sub("\\.(png|svg|pdf)$", "", stem, ignore.case = TRUE)

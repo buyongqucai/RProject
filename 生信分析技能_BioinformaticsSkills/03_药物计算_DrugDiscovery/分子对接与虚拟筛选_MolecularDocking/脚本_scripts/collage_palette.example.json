@@ -1,0 +1,24 @@
+{
+  "default": {
+    "protein_color": "cyan",
+    "residue_color": "orange",
+    "hbond_color": "yellow",
+    "ligand_spectrum": "rainbow",
+    "label_dark": true,
+    "auto_colors": false
+  },
+  "by_index": {
+    "14": {
+      "protein_color": "cyan",
+      "residue_color": "orange",
+      "hbond_color": "yellow",
+      "ligand_spectrum": "rainbow"
+    },
+    "22": {
+      "protein_color": "green",
+      "residue_color": "magenta",
+      "hbond_color": "yellow",
+      "ligand_spectrum": "rainbow"
+    }
+  }
+}

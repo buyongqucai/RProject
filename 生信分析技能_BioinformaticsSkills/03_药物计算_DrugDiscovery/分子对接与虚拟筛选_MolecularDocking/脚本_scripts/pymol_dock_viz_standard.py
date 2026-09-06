@@ -7,10 +7,12 @@
   cmd.distance("QJ", "(PT)", "(not PT)", quiet=1, mode=2, label=1, reset=1)
 
 对象：
-  ST = 受体口袋 cartoon（big/detail）；surface 视图仅 surface、不要 cartoon
+  ST = 完整受体 cartoon（big/detail）；surface 视图仅 surface、不要 cartoon
+       （对接口袋由定心工具+盒子决定；可视化禁止为减负删除 ST 原子）
   PT = 最佳姿态配体 sticks
   QJ = 上述 distance 氢键
   CJ = 仅参与 QJ 的受体残基 sticks（橙色）
+  detail：导出前自动旋转选角，尽量减少配体/氢键/残基及标签在 2D 截图中的相互遮挡
 
 运行：E:\\pymol\\python.exe C:\\test\\pymol_dock_viz_standard.py --jobs-root ... --all
 """
@@ -95,22 +97,176 @@ def pose_for_pymol(output_pdbqt: Path, tmp_dir: Path) -> Path:
     return pdbqt
 
 
-def tilt_detail_view(cmd) -> None:
-    """Avoid face-on view of planar aromatics (flavones look 'flat' on screen)."""
+def _collect_xyz(cmd, selection: str) -> List[Tuple[float, float, float]]:
+    """World-space coordinates for atoms in selection (state 1)."""
+    from pymol import stored
+
+    stored._dock_xyz = []
     try:
-        cmd.turn("x", 42)
-        cmd.turn("y", -28)
-        cmd.turn("z", 12)
+        cmd.iterate_state(
+            1,
+            selection,
+            "stored._dock_xyz.append((float(x), float(y), float(z)))",
+        )
+    except Exception:
+        return []
+    return list(stored._dock_xyz)
+
+
+def _project_xy_depth(
+    coords: List[Tuple[float, float, float]], view
+) -> List[Tuple[float, float, float]]:
+    """
+    Project world coords with current get_view() into camera space.
+    Returns (sx, sy, depth) per point; larger depth = farther from camera (OpenGL-like).
+    """
+    if not coords:
+        return []
+    # Rotation 3x3 is view[0:9] row-major; origin of rotation view[12:15]
+    r = [
+        [float(view[0]), float(view[1]), float(view[2])],
+        [float(view[3]), float(view[4]), float(view[5])],
+        [float(view[6]), float(view[7]), float(view[8])],
+    ]
+    ox, oy, oz = float(view[12]), float(view[13]), float(view[14])
+    out: List[Tuple[float, float, float]] = []
+    for x, y, z in coords:
+        dx, dy, dz = x - ox, y - oy, z - oz
+        # camera-space ≈ R * (p - origin); PyMOL view stores camera→model; use R^T for model→cam
+        cx = r[0][0] * dx + r[1][0] * dy + r[2][0] * dz
+        cy = r[0][1] * dx + r[1][1] * dy + r[2][1] * dz
+        cz = r[0][2] * dx + r[1][2] * dy + r[2][2] * dz
+        out.append((cx, cy, cz))
+    return out
+
+
+def _occlusion_score(
+    cmd,
+    pt_xyz: List[Tuple[float, float, float]],
+    ca_xyz: List[Tuple[float, float, float]],
+) -> float:
+    """
+    Higher = better for a 2D screenshot: ligand in front, key points spread on screen,
+    fewer near-overlaps between ligand COM / residue CAs (proxy for label/stick clash).
+    """
+    try:
+        view = cmd.get_view()
+    except Exception:
+        return float("-inf")
+    pt_p = _project_xy_depth(pt_xyz, view)
+    ca_p = _project_xy_depth(ca_xyz, view)
+    if not pt_p:
+        return float("-inf")
+
+    def mean_depth(pts):
+        return sum(p[2] for p in pts) / len(pts)
+
+    # Prefer ligand closer to camera than residue CAs (smaller cz in this convention)
+    depth_term = 0.0
+    if ca_p:
+        depth_term = mean_depth(ca_p) - mean_depth(pt_p)
+
+    lig_com = (
+        sum(p[0] for p in pt_p) / len(pt_p),
+        sum(p[1] for p in pt_p) / len(pt_p),
+    )
+    anchors = [lig_com] + [(p[0], p[1]) for p in ca_p]
+    # Also sample a few PT heavy atoms so ligand shape isn't a single point
+    step = max(1, len(pt_p) // 8)
+    anchors.extend((p[0], p[1]) for p in pt_p[::step])
+
+    min_d = 1e9
+    clash = 0
+    for i in range(len(anchors)):
+        for j in range(i + 1, len(anchors)):
+            dx = anchors[i][0] - anchors[j][0]
+            dy = anchors[i][1] - anchors[j][1]
+            d = (dx * dx + dy * dy) ** 0.5
+            if d < min_d:
+                min_d = d
+            if d < 1.2:
+                clash += 1
+
+    # Spread: mean distance from ligand COM to CAs
+    spread = 0.0
+    if ca_p:
+        spread = sum(
+            ((p[0] - lig_com[0]) ** 2 + (p[1] - lig_com[1]) ** 2) ** 0.5 for p in ca_p
+        ) / len(ca_p)
+
+    return 4.0 * depth_term + 2.5 * min_d + 1.0 * spread - 3.0 * clash
+
+
+def optimize_detail_camera(cmd, has_cj: bool) -> None:
+    """
+    Before detail PNG/.pse: sample orientations so ligand / H-bonds / CJ residues
+    (and later their labels) are less mutually occluded in the 2D screenshot.
+    Does not delete atoms; only rotates the camera (turn).
+    """
+    # Focus framing on interaction core first
+    if has_cj and cmd.count_atoms("CJ") > 0:
+        core = "PT or CJ"
+    else:
+        core = "PT"
+    try:
+        cmd.orient(core)
     except Exception:
         pass
+    try:
+        cmd.zoom(core, 4.0, complete=1)
+    except TypeError:
+        try:
+            cmd.zoom(core, 4.0)
+        except Exception:
+            pass
+
+    pt_xyz = _collect_xyz(cmd, "PT and not elem H")
+    if not pt_xyz:
+        pt_xyz = _collect_xyz(cmd, "PT")
+    ca_sel = "CJ and name CA" if (has_cj and cmd.count_atoms("CJ") > 0) else ""
+    ca_xyz = _collect_xyz(cmd, ca_sel) if ca_sel else []
+
+    base = list(cmd.get_view())
+    best_view = list(base)
+    best_score = _occlusion_score(cmd, pt_xyz, ca_xyz)
+
+    # 选角颗粒度：每 20°。绕 x、y 各扫一圈（约 36 个），不做 20×20 全组合。
+    step = 20
+    turns = [(a, 0, 0) for a in range(0, 360, step)]
+    turns += [(0, a, 0) for a in range(step, 360, step)]
+
+    for tx, ty, tz in turns:
+        try:
+            cmd.set_view(base)
+            if tx:
+                cmd.turn("x", float(tx))
+            if ty:
+                cmd.turn("y", float(ty))
+            if tz:
+                cmd.turn("z", float(tz))
+            sc = _occlusion_score(cmd, pt_xyz, ca_xyz)
+            if sc > best_score:
+                best_score = sc
+                best_view = list(cmd.get_view())
+        except Exception:
+            continue
+
+    try:
+        cmd.set_view(best_view)
+    except Exception:
+        pass
+    log(f"  detail camera: occlusion_score={best_score:.3f} (auto-orient)")
 
 
 def find_receptor(job: Path) -> Optional[Path]:
-    recs = [
-        p
-        for p in job.glob("*_clean_h.pdbqt")
-        if re.match(r"^[0-9A-Za-z]{4}_clean_h\.pdbqt$", p.name)
-    ]
+    """Locate rigid receptor pdbqt: PDBID_clean_h or uniprot_af_clean_h; skip CID ligands."""
+    recs = []
+    for p in job.glob("*_clean_h.pdbqt"):
+        name = p.name
+        if re.match(r"^[0-9A-Za-z]{4}_clean_h\.pdbqt$", name):
+            recs.append(p)
+        elif re.match(r"^[0-9a-z]+_af_clean_h\.pdbqt$", name, re.I):
+            recs.append(p)
     return recs[0] if recs else None
 
 
@@ -220,9 +376,14 @@ def build_qj_and_cj(cmd, hbond_color: str, residue_color: str) -> bool:
             pass
         cmd.color(hbond_color, "QJ")
         cmd.set("dash_color", hbond_color)
-        cmd.set("dash_width", 2.5)
-        cmd.set("dash_gap", 0.25)
-        cmd.set("dash_length", 0.08)
+        # 与 detail 截图细虚线一致；过粗（如 2.5）在 big/surface 远景会显得像粗棒
+        cmd.set("dash_width", 1.0)
+        cmd.set("dash_gap", 0.35)
+        cmd.set("dash_length", 0.06)
+        try:
+            cmd.set("dash_radius", 0.025)
+        except Exception:
+            pass
         try:
             cmd.hide("labels", "QJ")
         except Exception:
@@ -262,14 +423,21 @@ def build_qj_and_cj(cmd, hbond_color: str, residue_color: str) -> bool:
     return True
 
 
-def zoom_complete(cmd, selection: str, buffer: float) -> None:
-    """完整入画：orient + zoom + 大幅放宽 slab，避免 ribbon/残基被近裁剪切黑。"""
+def zoom_complete(cmd, selection: str, buffer: float, do_orient: bool = True) -> None:
+    """
+    完整入画（相机操作，不是删原子）：
+    - 对当前仍显示/选中的对象做 orient + zoom(complete)，让它们都进入画面；
+    - 再放宽 near/far clip（slab），避免丝带/残基被前后裁切面切黑。
+    不等于「只留口袋」；全链 ST 时画面可以很远。
+    do_orient=False：仅缩放+放宽 clip，保留已选好的旋转角（detail 防遮挡后使用）。
+    """
     cmd.set("orthoscopic", 1)
-    try:
-        cmd.zoom(selection, float(buffer), complete=1)
-    except TypeError:
-        cmd.zoom(selection, float(buffer))
-    cmd.orient(selection)
+    if do_orient:
+        try:
+            cmd.zoom(selection, float(buffer), complete=1)
+        except TypeError:
+            cmd.zoom(selection, float(buffer))
+        cmd.orient(selection)
     try:
         cmd.zoom(selection, float(buffer), complete=1)
     except TypeError:
@@ -355,6 +523,24 @@ def apply_detail_labels(cmd) -> None:
                 pass
 
 
+def save_draw_png(cmd, path: Path, width: int, height: int, dpi: int) -> None:
+    """
+    对齐 PyMOL 图形界面 Save Image → Draw (fast)：
+    ray=0（禁止 Ray）；尺寸/DPI 与对话框一致。
+    不用超大离屏 ray；detail 定稿 PNG 不走此函数（见截图导出）。
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    # Draw：先按目标像素 draw，再写出（与 GUI Draw 同路径；ray 必须为 0）
+    try:
+        cmd.draw(int(width), int(height), antialias=1, quiet=1)
+    except TypeError:
+        try:
+            cmd.draw(int(width), int(height))
+        except Exception:
+            pass
+    cmd.png(str(path), width=int(width), height=int(height), dpi=int(dpi), ray=0)
+
+
 def viz_one(
     job: Path,
     protein_color: str,
@@ -366,6 +552,7 @@ def viz_one(
     detail_size: int,
     dpi: int,
     cmd,
+    skip_detail: bool = False,
 ) -> bool:
     seq = job.name
     receptor = find_receptor(job)
@@ -376,55 +563,53 @@ def viz_one(
 
     img = job / "图片"
     img.mkdir(parents=True, exist_ok=True)
-    # pose 临时文件放系统临时目录；禁止保留任务内 _png_tmp
     tmp_dir = Path(tempfile.mkdtemp(prefix=f"dock_viz_{seq}_"))
     pose = pose_for_pymol(output, tmp_dir)
 
+    # detail PNG 不在此用 cmd.png 定稿；skip_detail 时不强制 detail.pse（保留手调）
     targets = [
         img / f"big-{seq}.png",
         img / f"surface-{seq}.png",
-        img / f"detail-{seq}.png",
         job / f"big-{seq}.pse",
         job / f"surface-{seq}.pse",
-        job / f"detail-{seq}.pse",
     ]
-    # 清理历史遗留
+    if not skip_detail:
+        targets.append(job / f"detail-{seq}.pse")
     legacy_tmp = job / "_png_tmp"
     if legacy_tmp.exists():
         shutil.rmtree(legacy_tmp, ignore_errors=True)
 
-    def base_load() -> bool:
+    def setup_session() -> None:
         cmd.reinitialize()
         cmd.bg_color("white")
         cmd.set("ray_opaque_background", 1)
         cmd.set("ray_trace_mode", 0)
-        cmd.set("antialias", 2)
+        cmd.set("antialias", 1)  # 与 GUI Draw 常用设置接近；勿盲目拉高
         cmd.set("depth_cue", 0)
         cmd.set("orthoscopic", 1)
         cmd.set("stick_radius", 0.18)
-        cmd.set("label_digits", 1)  # 氢键距离一位小数（创建 QJ 前设定）
+        cmd.set("label_digits", 1)
+        try:
+            cmd.set("use_shaders", 1)
+        except Exception:
+            pass
 
+    def load_complex() -> bool:
+        """只 load 一次；后续 big/surface/detail 只改显示，不 reinitialize。"""
+        setup_session()
         cmd.load(str(receptor), "ST")
         cmd.load(str(pose), "PT")
-
-        # 口袋裁剪（性能）；显示时仍完整框住 ST/PT/CJ/QJ
-        cmd.select("pocket", "ST within 14 of PT")
-        cmd.remove("ST and not pocket")
         cmd.hide("everything")
-
         if ligand_spectrum.lower() == "rainbow":
             cmd.spectrum("count", "rainbow", "PT and elem C")
         else:
             cmd.color(ligand_spectrum, "PT")
         cmd.show("sticks", "PT")
-
         has_cj = build_qj_and_cj(cmd, hbond_color=hbond_color, residue_color=residue_color)
         if has_cj:
             log(f"  CJ atoms={cmd.count_atoms('CJ')}")
         else:
             log(f"  [warn] no QJ-linked CJ for job {seq}")
-
-        # ST 整链上色后再刷 CJ：禁止先橙后青（会把 CJ 盖成蛋白色）
         cmd.color(protein_color, "ST")
         cmd.show("cartoon", "ST")
         cmd.hide("sticks", "ST")
@@ -433,7 +618,6 @@ def viz_one(
             cmd.color(residue_color, "CJ")
             cmd.color(residue_color, "CJ and elem C")
             cmd.enable("QJ")
-        # 配体最后再强调一次，避免被其它 color 误伤
         if ligand_spectrum.lower() == "rainbow":
             cmd.spectrum("count", "rainbow", "PT and elem C")
         else:
@@ -443,72 +627,75 @@ def viz_one(
         return has_cj
 
     def scene_selection(has_cj: bool) -> str:
-        # QJ 为 measurement 对象，不能加入 zoom/orient 选择式
         parts = ["ST", "PT"]
         if has_cj and cmd.count_atoms("CJ") > 0:
             parts.append("CJ")
         return " or ".join(parts)
 
-    def save_png(path: Path, w: int, h: int):
-        cmd.png(str(path), width=int(w), height=int(h), dpi=dpi, ray=0)
+    def refresh_pt_cj(has_cj: bool) -> None:
+        if has_cj and cmd.count_atoms("CJ") > 0:
+            cmd.show("sticks", "CJ")
+            cmd.color(residue_color, "CJ")
+            cmd.color(residue_color, "CJ and elem C")
+            if "QJ" in cmd.get_names("objects"):
+                cmd.enable("QJ")
+                try:
+                    cmd.show("dashes", "QJ")
+                except Exception:
+                    pass
+        cmd.show("sticks", "PT")
+        if ligand_spectrum.lower() == "rainbow":
+            cmd.spectrum("count", "rainbow", "PT and elem C")
+        else:
+            cmd.color(ligand_spectrum, "PT")
 
-    # ---- big：完整显示 ST cartoon + CJ + PT + QJ；无标签 ----
-    has_cj = base_load()
-    hide_all_labels(cmd)
+    # ---- 一次加载 ----
+    has_cj = load_complex()
     sel = scene_selection(has_cj)
-    zoom_complete(cmd, sel, buffer=8.0)
-    save_png(img / f"big-{seq}.png", width, height)
-    cmd.save(str(job / f"big-{seq}.pse"))
 
-    # ---- surface：仅 ST surface（不要 cartoon）+ CJ/PT/QJ；无标签 ----
-    has_cj = base_load()
+    # ---- big：cartoon；Draw(fast) 参数 ----
+    hide_all_labels(cmd)
+    cmd.hide("surface", "ST")
+    cmd.show("cartoon", "ST")
+    cmd.set("cartoon_transparency", 0.0, "ST")
+    refresh_pt_cj(has_cj)
+    zoom_complete(cmd, sel, buffer=8.0)
+    save_draw_png(cmd, img / f"big-{seq}.png", width, height, dpi)
+    cmd.save(str(job / f"big-{seq}.pse"))
+    log(f"  wrote big Draw {width}x{height} dpi={dpi} ray=0")
+
+    # ---- surface：仅 surface；同一会话 ----
+    hide_all_labels(cmd)
     cmd.hide("cartoon", "ST")
     cmd.hide("sticks", "ST")
     cmd.show("surface", "ST")
     cmd.set("transparency", 0.35, "ST")
-    if has_cj:
-        cmd.show("sticks", "CJ")
-        cmd.color(residue_color, "CJ")
-        cmd.color(residue_color, "CJ and elem C")
-        cmd.enable("QJ")
-    cmd.show("sticks", "PT")
-    if "QJ" in cmd.get_names("objects"):
-        cmd.enable("QJ")
-        try:
-            cmd.show("dashes", "QJ")
-        except Exception:
-            pass
-    hide_all_labels(cmd)
-    sel = scene_selection(has_cj)
+    refresh_pt_cj(has_cj)
     zoom_complete(cmd, sel, buffer=8.0)
-    save_png(img / f"surface-{seq}.png", width, height)
+    save_draw_png(cmd, img / f"surface-{seq}.png", width, height, dpi)
     cmd.save(str(job / f"surface-{seq}.pse"))
+    log(f"  wrote surface Draw {width}x{height} dpi={dpi} ray=0")
 
-    # ---- detail：1:1；滚轮式拉远囊括配体/残基/氢键/标签 ----
-    has_cj = base_load()
+    if skip_detail:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+        if legacy_tmp.exists():
+            shutil.rmtree(legacy_tmp, ignore_errors=True)
+        ok = all(p.exists() and p.stat().st_size > 100 for p in targets)
+        log(f"[{'ok' if ok else 'FAIL'}] viz {seq} (big/surface only)")
+        return ok
+
+    # ---- detail：自动选角 + 标签 → 只存 .pse；PNG 留给截图导出（防标签变小）----
     cmd.hide("surface", "ST")
     cmd.show("cartoon", "ST")
     cmd.set("cartoon_transparency", 0.85, "ST")
-    if has_cj:
-        cmd.show("sticks", "CJ")
-        cmd.color(residue_color, "CJ")
-        cmd.color(residue_color, "CJ and elem C")
-        cmd.enable("QJ")
-    cmd.show("sticks", "PT")
-    if "QJ" in cmd.get_names("objects"):
-        cmd.enable("QJ")
-        try:
-            cmd.show("dashes", "QJ")
-        except Exception:
-            pass
+    refresh_pt_cj(has_cj)
     if has_cj and cmd.count_atoms("CJ") > 0:
         detail_sel = "PT or CJ"
     else:
         detail_sel = "PT or ST"
-    # 先构图再贴标签，避免标签计入过紧包围盒
-    zoom_complete(cmd, detail_sel, buffer=8.0)
-    tilt_detail_view(cmd)
+    optimize_detail_camera(cmd, has_cj=has_cj)
     apply_detail_labels(cmd)
+    zoom_complete(cmd, detail_sel, buffer=8.0, do_orient=False)
     try:
         cmd.zoom(detail_sel, 4.0, complete=1)
     except TypeError:
@@ -524,8 +711,8 @@ def viz_one(
             cmd.set_view(v)
     except Exception:
         pass
-    save_png(img / f"detail-{seq}.png", detail_size, detail_size)
     cmd.save(str(job / f"detail-{seq}.pse"))
+    log(f"  wrote detail.pse only (no cmd.png; use screenshot export after hand-tune)")
 
     shutil.rmtree(tmp_dir, ignore_errors=True)
     if legacy_tmp.exists():
@@ -547,10 +734,16 @@ def select_jobs(
         return [p for p in jobs if p.name in only]
     if do_all or top is None:
         return jobs
-    summary = jobs_root.parent / "summary_vina.csv"
-    if not summary.exists():
-        summary = jobs_root / "summary_vina.csv"
-    if summary.exists():
+    summary = None
+    for base in (jobs_root.parent, jobs_root):
+        for name in ("summary_adgpu.csv", "summary_vina.csv"):
+            p = base / name
+            if p.is_file():
+                summary = p
+                break
+        if summary is not None:
+            break
+    if summary is not None:
         from dock_summary_schema import load_summary_rows
 
         rows = [(r["affinity_kcal_mol"], r["task"]) for r in load_summary_rows(summary)]
@@ -571,15 +764,20 @@ def main(argv: List[str]) -> int:
     ap.add_argument("--residue-color", default="orange")
     ap.add_argument("--hbond-color", default="yellow")
     ap.add_argument("--ligand-spectrum", default="rainbow", help="rainbow or solid color")
-    ap.add_argument("--width", type=int, default=9120, help="big/surface width")
-    ap.add_argument("--height", type=int, default=4164, help="big/surface height")
+    ap.add_argument("--width", type=int, default=5040, help="big/surface width (px); GUI Draw default")
+    ap.add_argument("--height", type=int, default=3653, help="big/surface height (px); GUI Draw default")
     ap.add_argument(
         "--detail-size",
         type=int,
-        default=6000,
-        help="detail square size (1:1, width=height)",
+        default=4500,
+        help="unused for first-pass detail PNG (screenshot export); kept for CLI compat",
     )
     ap.add_argument("--dpi", type=int, default=600)
+    ap.add_argument(
+        "--skip-detail",
+        action="store_true",
+        help="only write big/surface; do not overwrite hand-tuned detail.pse",
+    )
     args = ap.parse_args(argv)
 
     root = Path(args.jobs_root)
@@ -610,6 +808,7 @@ def main(argv: List[str]) -> int:
                 height=args.height,
                 detail_size=args.detail_size,
                 dpi=args.dpi,
+                skip_detail=args.skip_detail,
                 cmd=cmd,
             ):
                 ok_n += 1

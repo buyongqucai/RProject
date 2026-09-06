@@ -1,0 +1,2 @@
+"skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
+"MolecularDynamics","post",21,4,1,"n/a single complex",FALSE,"REAL","RCSB PDB 3HTB","运行复合物MD_runComplexMd.sh; 分析出图_plotMdAnalysis.R; 出版级出图/PlotQA","REAL MD E2E: pdb2gmx(amber99sb-ildn/tip3p) + GAFF2(JZ4) + 0.15M NaCl; EM/NVT/NPT/0.20 ns production; frames=21; mean RMSD=0.075 nm; mean Rg=1.668 nm","2026-08-31 22:30:19"

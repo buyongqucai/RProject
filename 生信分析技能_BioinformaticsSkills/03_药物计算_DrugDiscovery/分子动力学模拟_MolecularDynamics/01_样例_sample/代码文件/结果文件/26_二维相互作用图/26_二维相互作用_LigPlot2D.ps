@@ -1,0 +1,1261 @@
+%!PS-Adobe-3.0
+%%Creator: Ligplot v.4.1
+%%DocumentNeededResources: font Times-Roman Symbol
+%%BoundingBox: (atend)
+%%Pages: 1
+%%Title: complex
+%%EndComments
+%%BeginProlog
+/L { moveto lineto stroke } bind def
+/G { gsave } bind def
+/W { setlinewidth } bind def
+/D { setdash } bind def
+/Col { setrgbcolor } bind def
+/Zero_linewidth { 0.0 } def
+/Sphcol { 1 setgray } def
+/Sphere {  newpath 3 copy 0 360 arc gsave Sphcol fill 0
+  setgray 0.5 setlinewidth
+  3 copy 0.94 mul 260 350 arc stroke 3 copy 0.87 mul 275 335 arc stroke
+  3 copy 0.79 mul 295 315 arc stroke 3 copy 0.8 mul 115 135 arc
+  3 copy 0.6 mul 135 115 arcn closepath gsave 1 setgray fill grestore stroke
+  3 copy 0.7 mul 115 135 arc stroke 3 copy 0.6 mul 124.9 125 arc
+  0.8 mul 125 125.1 arc stroke grestore stroke } bind def
+/Grey00 {   0.00 setgray } def
+/Grey01 {   0.10 setgray } def
+/Grey02 {   0.20 setgray } def
+/Grey03 {   0.30 setgray } def
+/Grey04 {   0.40 setgray } def
+/Grey05 {   0.50 setgray } def
+/Grey06 {   0.60 setgray } def
+/Grey07 {   0.70 setgray } def
+/Grey08 {   0.80 setgray } def
+/Grey09 {   0.90 setgray } def
+/Grey10 {   1.00 setgray } def
+/BLACK__________ {   0.0000   0.0000   0.0000 setrgbcolor } def
+/WHITE__________ {   1.0000   1.0000   1.0000 setrgbcolor } def
+/RED____________ {   1.0000   0.0000   0.0000 setrgbcolor } def
+/GREEN__________ {   0.0000   1.0000   0.0000 setrgbcolor } def
+/BLUE___________ {   0.0000   0.0000   1.0000 setrgbcolor } def
+/YELLOW_________ {   1.0000   1.0000   0.0000 setrgbcolor } def
+/ORANGE_________ {   0.8000   0.5000   0.0000 setrgbcolor } def
+/LIME_GREEN_____ {   0.5000   1.0000   0.0000 setrgbcolor } def
+/PURPLE_________ {   0.5000   0.0000   1.0000 setrgbcolor } def
+/CYAN___________ {   0.5000   1.0000   1.0000 setrgbcolor } def
+/PINK___________ {   1.0000   0.5000   1.0000 setrgbcolor } def
+/SKY_BLUE_______ {   0.3000   0.8000   1.0000 setrgbcolor } def
+/CREAM__________ {   1.0000   1.0000   0.7000 setrgbcolor } def
+/TURQUOISE______ {   0.0000   1.0000   1.0000 setrgbcolor } def
+/LILAC__________ {   1.0000   0.0000   1.0000 setrgbcolor } def
+/BRICK_RED______ {   0.8000   0.0000   0.0000 setrgbcolor } def
+/BROWN__________ {   0.5000   0.0000   0.0000 setrgbcolor } def
+/LIGHT_GREY_____ {   0.9700   0.9700   0.9700 setrgbcolor } def
+/OLIVE_GREEN____ {   0.1000   0.5000   0.0000 setrgbcolor } def
+/Background_col     { WHITE__________ } def
+/Ligbond_colour     { PURPLE_________ } def
+/Nligbond_colour    { ORANGE_________ } def
+/Hbond_colour       { OLIVE_GREEN____ } def
+/Ext_bond_colour    { PURPLE_________ } def
+/Hydrophobic_col    { BRICK_RED______ } def
+/Accessib_min       { ORANGE_________ } def
+/Accessib_max       { YELLOW_________ } def
+/Nitrogen_colour    { BLUE___________ } def
+/Oxygen_colour      { RED____________ } def
+/Carbon_colour      { BLACK__________ } def
+/Sulphur_colour     { YELLOW_________ } def
+/Water_colour       { TURQUOISE______ } def
+/Phosphorus_colour  { PURPLE_________ } def
+/Iron_colour        { PINK___________ } def
+/Other_colour       { LIME_GREEN_____ } def
+/Atom_edge_col      { BLACK__________ } def
+/Simpleres_col      { BLACK__________ } def
+/Title_colour       { BLACK__________ } def
+/Key_Text_colour    { BLACK__________ } def
+/Ligresname_col     { BLUE___________ } def
+/Nligresname_col    { BRICK_RED______ } def
+/Watername_col      { PURPLE_________ } def
+/Hydrophname_col    { BLACK__________ } def
+/Ligatmname_col     { BLACK__________ } def
+/Nligatmname_col    { BLACK__________ } def
+/HBlength_col       { OLIVE_GREEN____ } def
+/Title_size {   20.000 } def
+/Poly3 { moveto lineto lineto fill grestore } bind def
+/Pl3 { 6 copy Poly3 moveto moveto moveto closepath stroke } bind def
+/Pline3 { 6 copy Poly3 moveto lineto lineto closepath stroke } bind def
+/Poly4 { moveto lineto lineto lineto fill grestore } bind def
+/Pl4 { 8 copy Poly4 moveto moveto moveto moveto closepath stroke } bind def
+/Pline4 { 8 copy Poly4 moveto lineto lineto lineto closepath stroke } bind def
+/Circol { 1 setgray } def
+/Circle { gsave newpath 0 360 arc gsave Circol fill grestore stroke grestore } bind def
+/Ucircle { gsave newpath 0 360 arc gsave Circol fill grestore grestore } bind def
+/Arc { newpath arc stroke newpath } bind def
+/Ocircle { gsave newpath 0 360 arc stroke grestore } bind def
+/Ellipse_col_none { 0.0 0.0 0.0 setrgbcolor } def
+/Ellipse_col_natvar { 0.0 0.0 0.0 setrgbcolor } def
+/Ellipse_col_disease { 1.0 0.0 0.0 setrgbcolor } def
+/Ellipse_col_note { 0.7 0.7 0.7 setrgbcolor } def
+/Ellipse_col_mutagen { 0.0 1.0 0.0 setrgbcolor } def
+/Ellipse_col_DDD { 0.0 0.0 1.0 setrgbcolor } def
+/Ellipse_col_clinvar { 1.0 0.0 0.0 setrgbcolor } def
+/Ellipse_col_added { 0.5 0.0 1.0 setrgbcolor } def
+/Ellipse { gsave translate scale Circle grestore } bind def
+/Oellipse { gsave translate scale Ocircle grestore } bind def
+/Print { /Times-Roman findfont exch scalefont setfont show } bind def
+/Gprint { /Symbol findfont exch scalefont setfont show } bind def
+/Font { /Times-Roman findfont } bind def
+/Gfont { /Symbol findfont } bind def
+/Fprint { scalefont setfont show } bind def
+/Center {
+  dup /Times-Roman findfont exch scalefont setfont
+  exch stringwidth pop -2 div exch -3 div rmoveto
+ } bind def
+/CenterRot90 {
+  dup /Times-Roman findfont exch scalefont setfont
+  exch stringwidth pop -2 div exch 3 div exch rmoveto
+ } bind def
+/UncenterRot90 {
+  dup /Times-Roman findfont exch scalefont setfont
+  exch stringwidth } bind def
+/Rot90 { gsave currentpoint translate 90 rotate } bind def
+/RotAngle { gsave currentpoint translate rotate } bind def
+%%EndProlog
+%%BeginSetup
+1 setlinecap 1 setlinejoin 1 setlinewidth 0 setgray [ ] 0 setdash newpath
+%%EndSetup
+%%Page: 1 1 
+/LigplotSave save def
+1.000 setgray
+ -1.00 -1.00 moveto  650.00  -1.00 lineto 650.00 951.00 lineto
+  -1.00 951.00 lineto closepath
+gsave 1.0000 setgray fill grestore
+stroke gsave
+
+% Background
+
+G Background_col    
+  30.00   50.00  550.00   50.00  550.00  780.00   30.00  780.00 Pl4
+
+% Plot heading
+
+Title_colour      
+ 290.00   64.60 moveto
+(complex) Title_size Center
+(complex) Title_size Print
+
+% KEY TO SYMBOLS
+
+gsave
+/Default_linewidth {    0.200 } def
+/Arc_linewidth {    0.750 } def
+/Key_size {   18.615 } def
+/Text_size {    9.855 } def
+/Ligatom_radius  {    5.000 } def
+/Nligatom_radius {    5.000 } def
+/Ligbond_width   {    3.800 } def
+/Nligbond_width  {    2.600 } def
+/Hbond_width     {    1.400 } def
+/HBtext_size     {    4.928 } def
+/Hydrophnam_size {    7.391 } def
+Key_Text_colour   
+Default_linewidth W
+  45.60  172.28 moveto
+(Key) Key_size Print
+
+% Ligand bond
+
+gsave
+Ligbond_width   W
+Ligbond_colour    
+  61.20  149.28   92.40  149.28 L
+grestore
+gsave
+Atom_edge_col     
+/Sphcol { Nitrogen_colour    } def
+  61.20  149.28 Ligatom_radius  Sphere
+/Sphcol { Carbon_colour      } def
+  92.40  149.28 Ligatom_radius  Sphere
+grestore
+ 108.00  146.82 moveto
+(Ligand bond) Text_size Print
+
+% Nonligand bond
+
+gsave
+Nligbond_width  W
+Nligbond_colour   
+  61.20  131.76   92.40  131.76 L
+grestore
+gsave
+Atom_edge_col     
+/Sphcol { Nitrogen_colour    } def
+  61.20  131.76 Nligatom_radius Sphere
+/Sphcol { Carbon_colour      } def
+  92.40  131.76 Nligatom_radius Sphere
+grestore
+ 108.00  129.30 moveto
+(Non-ligand bond) Text_size Print
+
+% Hydrogen bond
+
+gsave
+Hbond_colour      
+Hbond_width     W
+[  2  2 ] 0 setdash
+  61.20  114.24   70.56  114.24 L
+  92.40  114.24   79.92  114.24 L
+[]  0 setdash
+grestore
+gsave
+HBlength_col      
+  76.80  114.24 moveto
+(3.0) HBtext_size     Center
+(3.0) HBtext_size     Print
+grestore
+gsave
+Atom_edge_col     
+/Sphcol { Nitrogen_colour    } def
+  61.20  114.24 Ligatom_radius  Sphere
+grestore
+gsave
+Atom_edge_col     
+/Sphcol { Oxygen_colour      } def
+  92.40  114.24 Nligatom_radius Sphere
+grestore
+ 108.00  111.78 moveto
+(Hydrogen bond and its length) Text_size Print
+
+% Hydrophobic interaction
+
+gsave
+Hydrophname_col   
+ 269.20  147.09 moveto
+(His 53) Hydrophnam_size Center
+(His 53) Hydrophnam_size Print
+grestore
+gsave
+Atom_edge_col     
+/Sphcol { Carbon_colour      } def
+ 269.20  114.24 Ligatom_radius  Sphere
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 269.20  120.49  269.20  122.99 L
+ 271.13  120.18  271.90  122.56 L
+ 272.87  119.30  274.34  121.32 L
+ 274.26  117.91  276.28  119.38 L
+ 269.20  120.49  269.20  122.99 L
+ 267.27  120.18  266.50  122.56 L
+ 265.53  119.30  264.06  121.32 L
+ 264.14  117.91  262.12  119.38 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 269.20  147.09   11.00  210.00  330.00 Arc
+ 270.35  136.15  270.81  131.77 L
+ 268.05  136.15  267.59  131.77 L
+ 265.80  136.63  264.44  132.44 L
+ 263.70  137.56  261.50  133.75 L
+ 261.84  138.92  258.90  135.65 L
+ 260.30  140.62  256.74  138.04 L
+ 270.35  136.15  270.81  131.77 L
+ 272.60  136.63  273.96  132.44 L
+ 274.70  137.56  276.90  133.75 L
+ 276.56  138.92  279.50  135.65 L
+ 278.10  140.62  281.66  138.04 L
+ 279.25  142.62  283.27  140.83 L
+grestore
+ 290.00  144.63 moveto
+(Non-ligand residues involved in hydrophobic) Text_size Print
+ 290.00  133.68 moveto
+(contact(s)) Text_size Print
+ 290.00  111.78 moveto
+(Corresponding atoms involved in hydrophobic contact(s)) Text_size Print
+grestore
+%convert -clip 520x671+30-50
+%convert -crop 520x671+1+1
+
+%  
+
+
+% MAIN PLOT
+
+
+% Scaled object and text sizes
+
+/Ligatom_radius  {    6.778 } def
+/Nligatom_radius {    6.778 } def
+/Water_radius    {    8.216 } def
+/Hphobic_radius  {   23.621 } def
+/Simple_radius   {   16.432 } def
+/Ligbond_width   {    3.903 } def
+/Nligbond_width  {    2.670 } def
+/Hbond_width     {    1.438 } def
+/Ext_bond_width  {    1.438 } def
+/Default_linewidth {    0.200 } def
+/Arc_linewidth     {    0.750 } def
+/Simple_width      {    1.643 } def
+/Ligresname_size {   16.432 } def
+/Nligresnam_size {   12.940 } def
+/Watername_size  {   10.270 } def
+/Hydrophnam_size {   10.270 } def
+/Simpletext_size {   10.270 } def
+/Ligatmname_size {    6.368 } def
+/Nligatmnam_size {    6.368 } def
+/HBtext_size     {    9.038 } def
+
+% Hydrogen bond lines
+
+gsave
+Hbond_colour      
+Hbond_width     W
+[  3  3 ] 0 setdash
+[]  0 setdash
+grestore
+
+% External bond lines
+
+gsave
+Ext_bond_colour   
+Ext_bond_width  W
+grestore
+
+% Bond lines
+
+gsave
+Ligbond_colour    
+Ligbond_width   W
+ 274.55  507.64  282.28  477.00 L
+ 307.58  393.83  288.78  372.11 L
+ 307.58  393.83  297.74  421.26 L
+ 288.78  372.11  260.29  377.36 L
+ 260.29  377.36  250.11  404.41 L
+ 250.11  404.41  268.15  426.81 L
+ 250.11  404.41  223.20  408.72 L
+ 297.74  421.26  268.15  426.81 L
+ 268.15  426.81  257.51  455.65 L
+ 257.51  455.65  282.28  477.00 L
+grestore
+
+% Atoms
+
+gsave
+Default_linewidth W
+Atom_edge_col     
+/Sphcol { Carbon_colour      } def
+ 274.55  507.64 Ligatom_radius  Sphere
+Ligatmname_col    
+ 283.45  516.54 moveto
+( C4 ) Ligatmname_size Center
+( C4 ) Ligatmname_size Print
+Atom_edge_col     
+/Sphcol { Carbon_colour      } def
+ 282.28  477.00 Ligatom_radius  Sphere
+Ligatmname_col    
+ 291.18  485.90 moveto
+( C14) Ligatmname_size Center
+( C14) Ligatmname_size Print
+Atom_edge_col     
+/Sphcol { Carbon_colour      } def
+ 307.58  393.83 Ligatom_radius  Sphere
+Ligatmname_col    
+ 316.48  402.73 moveto
+( C7 ) Ligatmname_size Center
+( C7 ) Ligatmname_size Print
+Atom_edge_col     
+/Sphcol { Carbon_colour      } def
+ 288.78  372.11 Ligatom_radius  Sphere
+Ligatmname_col    
+ 279.88  363.21 moveto
+( C8 ) Ligatmname_size Center
+( C8 ) Ligatmname_size Print
+Atom_edge_col     
+/Sphcol { Carbon_colour      } def
+ 297.74  421.26 Ligatom_radius  Sphere
+Ligatmname_col    
+ 306.64  430.16 moveto
+( C11) Ligatmname_size Center
+( C11) Ligatmname_size Print
+Atom_edge_col     
+/Sphcol { Carbon_colour      } def
+ 260.29  377.36 Ligatom_radius  Sphere
+Ligatmname_col    
+ 269.19  386.26 moveto
+( C9 ) Ligatmname_size Center
+( C9 ) Ligatmname_size Print
+Atom_edge_col     
+/Sphcol { Carbon_colour      } def
+ 250.11  404.41 Ligatom_radius  Sphere
+Ligatmname_col    
+ 241.21  413.31 moveto
+( C10) Ligatmname_size Center
+( C10) Ligatmname_size Print
+Atom_edge_col     
+/Sphcol { Carbon_colour      } def
+ 268.15  426.81 Ligatom_radius  Sphere
+Ligatmname_col    
+ 277.06  435.71 moveto
+( C12) Ligatmname_size Center
+( C12) Ligatmname_size Print
+Atom_edge_col     
+/Sphcol { Oxygen_colour      } def
+ 223.20  408.72 Ligatom_radius  Sphere
+Ligatmname_col    
+ 232.10  417.62 moveto
+( OAB) Ligatmname_size Center
+( OAB) Ligatmname_size Print
+Atom_edge_col     
+/Sphcol { Carbon_colour      } def
+ 257.51  455.65 Ligatom_radius  Sphere
+Ligatmname_col    
+ 248.61  464.55 moveto
+( C13) Ligatmname_size Center
+( C13) Ligatmname_size Print
+grestore
+
+% Hydrophobic interactions
+
+gsave
+Default_linewidth W
+
+% Hydrophobic contact
+
+Hydrophname_col   
+Zero_linewidth W
+G Background_col    
+ 169.10  468.90  169.10  456.58  218.81  456.58  218.81  468.90 Pl4
+ 193.96  462.74 moveto
+(Ala 99(A)) Hydrophnam_size Center
+(Ala 99(A)) Hydrophnam_size Print
+
+% Hydrophobic contact
+
+Hydrophname_col   
+Zero_linewidth W
+G Background_col    
+ 194.23  562.26  194.23  549.93  243.94  549.93  243.94  562.26 Pl4
+ 219.08  556.10 moveto
+(Gln 102(A)) Hydrophnam_size Center
+(Gln 102(A)) Hydrophnam_size Print
+
+% Hydrophobic contact
+
+Hydrophname_col   
+Zero_linewidth W
+G Background_col    
+ 311.89  522.62  311.89  510.30  361.59  510.30  361.59  522.62 Pl4
+ 336.74  516.46 moveto
+(Leu 118(A)) Hydrophnam_size Center
+(Leu 118(A)) Hydrophnam_size Print
+
+% Hydrophobic contact
+
+Hydrophname_col   
+Zero_linewidth W
+G Background_col    
+ 338.99  362.91  338.99  350.59  388.70  350.59  388.70  362.91 Pl4
+ 363.85  356.75 moveto
+(Val 87(A)) Hydrophnam_size Center
+(Val 87(A)) Hydrophnam_size Print
+
+% Hydrophobic contact
+
+Hydrophname_col   
+Zero_linewidth W
+G Background_col    
+ 216.16  312.34  216.16  300.02  265.87  300.02  265.87  312.34 Pl4
+ 241.02  306.18 moveto
+(Leu 84(A)) Hydrophnam_size Center
+(Leu 84(A)) Hydrophnam_size Print
+
+% Hydrophobic contact
+
+Hydrophname_col   
+Zero_linewidth W
+G Background_col    
+ 135.95  373.49  135.95  361.17  185.66  361.17  185.66  373.49 Pl4
+ 160.80  367.33 moveto
+(Val 111(A)) Hydrophnam_size Center
+(Val 111(A)) Hydrophnam_size Print
+
+% Hydrophobic contact
+
+Hydrophname_col   
+Zero_linewidth W
+G Background_col    
+ 367.55  450.64  367.55  438.32  417.26  438.32  417.26  450.64 Pl4
+ 392.41  444.48 moveto
+(Leu 121(A)) Hydrophnam_size Center
+(Leu 121(A)) Hydrophnam_size Print
+
+% Hydrophobic contact
+
+Hydrophname_col   
+Zero_linewidth W
+G Background_col    
+ 394.34  587.06  394.34  574.74  444.05  574.74  444.05  587.06 Pl4
+ 419.20  580.90 moveto
+(Phe 153(A)) Hydrophnam_size Center
+(Phe 153(A)) Hydrophnam_size Print
+
+% Hydrophobic contact
+
+Hydrophname_col   
+Zero_linewidth W
+G Background_col    
+ 190.13  661.38  190.13  649.06  239.83  649.06  239.83  661.38 Pl4
+ 214.98  655.22 moveto
+(Ser 117(A)) Hydrophnam_size Center
+(Ser 117(A)) Hydrophnam_size Print
+
+% Hydrophobic contact
+
+Hydrophname_col   
+Zero_linewidth W
+G Background_col    
+ 273.75  604.74  273.75  592.42  323.46  592.42  323.46  604.74 Pl4
+ 298.60  598.58 moveto
+(Leu 133(A)) Hydrophnam_size Center
+(Leu 133(A)) Hydrophnam_size Print
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 264.37  460.63  267.11  462.62 L
+ 265.57  458.27  268.79  459.31 L
+ 265.98  455.65  269.37  455.65 L
+ 265.57  453.03  268.79  451.98 L
+ 264.37  460.63  267.11  462.62 L
+ 262.49  462.50  264.48  465.25 L
+ 260.13  463.71  261.18  466.93 L
+ 257.51  464.12  257.51  467.51 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 419.20  580.90   23.62  157.76  277.76 Arc
+ 400.09  567.01  392.44  561.46 L
+ 397.62  571.29  388.99  567.45 L
+ 396.09  575.99  386.85  574.02 L
+ 395.58  580.90  386.13  580.90 L
+ 396.09  585.81  386.85  587.77 L
+ 397.62  590.51  388.99  594.35 L
+ 400.09  567.01  392.44  561.46 L
+ 403.39  563.34  397.07  556.32 L
+ 407.39  560.44  402.66  552.26 L
+ 411.90  558.43  408.98  549.45 L
+ 416.73  557.41  415.74  548.01 L
+ 421.67  557.41  422.65  548.01 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 264.37  460.63  267.11  462.62 L
+ 265.57  458.27  268.79  459.31 L
+ 265.98  455.65  269.37  455.65 L
+ 265.57  453.03  268.79  451.98 L
+ 264.37  460.63  267.11  462.62 L
+ 262.49  462.50  264.48  465.25 L
+ 260.13  463.71  261.18  466.93 L
+ 257.51  464.12  257.51  467.51 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 419.20  580.90   23.62  157.76  277.76 Arc
+ 400.09  567.01  392.44  561.46 L
+ 397.62  571.29  388.99  567.45 L
+ 396.09  575.99  386.85  574.02 L
+ 395.58  580.90  386.13  580.90 L
+ 396.09  585.81  386.85  587.77 L
+ 397.62  590.51  388.99  594.35 L
+ 400.09  567.01  392.44  561.46 L
+ 403.39  563.34  397.07  556.32 L
+ 407.39  560.44  402.66  552.26 L
+ 411.90  558.43  408.98  549.45 L
+ 416.73  557.41  415.74  548.01 L
+ 421.67  557.41  422.65  548.01 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 277.17  515.70  278.22  518.92 L
+ 279.53  514.50  281.52  517.24 L
+ 281.41  512.62  284.15  514.61 L
+ 282.61  510.26  285.83  511.31 L
+ 277.17  515.70  278.22  518.92 L
+ 274.55  516.11  274.55  519.50 L
+ 271.93  515.70  270.89  518.92 L
+ 269.57  514.50  267.58  517.24 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 298.60  598.58   23.62  195.19  315.19 Arc
+ 291.30  576.11  288.38  567.13 L
+ 286.79  578.12  282.07  569.94 L
+ 282.80  581.02  276.47  574.00 L
+ 279.49  584.69  271.85  579.14 L
+ 277.02  588.97  268.39  585.13 L
+ 275.50  593.67  266.25  591.70 L
+ 291.30  576.11  288.38  567.13 L
+ 296.13  575.09  295.15  565.69 L
+ 301.07  575.09  302.06  565.69 L
+ 305.90  576.11  308.82  567.13 L
+ 310.41  578.12  315.14  569.94 L
+ 314.41  581.02  320.73  574.00 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 265.98  455.65  269.37  455.65 L
+ 265.57  453.03  268.79  451.98 L
+ 264.37  450.67  267.11  448.68 L
+ 262.49  448.79  264.48  446.05 L
+ 265.98  455.65  269.37  455.65 L
+ 265.57  458.27  268.79  459.31 L
+ 264.37  460.63  267.11  462.62 L
+ 262.49  462.50  264.48  465.25 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 392.41  444.48   23.62  115.27  235.27 Arc
+ 368.78  444.48  359.34  444.48 L
+ 369.30  449.39  360.06  451.35 L
+ 370.83  454.09  362.20  457.93 L
+ 373.30  458.36  365.65  463.92 L
+ 376.60  462.03  370.28  469.05 L
+ 380.60  464.94  375.87  473.12 L
+ 368.78  444.48  359.34  444.48 L
+ 369.30  439.57  360.06  437.60 L
+ 370.83  434.87  362.20  431.03 L
+ 373.30  430.59  365.65  425.04 L
+ 376.60  426.92  370.28  419.90 L
+ 380.60  424.02  375.87  415.84 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 281.41  502.66  284.15  500.67 L
+ 279.53  500.79  281.52  498.05 L
+ 277.17  499.58  278.22  496.36 L
+ 274.55  499.17  274.55  495.78 L
+ 281.41  502.66  284.15  500.67 L
+ 282.61  505.02  285.83  503.98 L
+ 283.02  507.64  286.41  507.64 L
+ 282.61  510.26  285.83  511.31 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 392.41  444.48   23.62   91.81  211.81 Arc
+ 370.83  454.09  362.20  457.93 L
+ 373.30  458.36  365.65  463.92 L
+ 376.60  462.03  370.28  469.05 L
+ 380.60  464.94  375.87  473.12 L
+ 385.11  466.94  382.19  475.93 L
+ 389.94  467.97  388.95  477.37 L
+ 370.83  454.09  362.20  457.93 L
+ 369.30  449.39  360.06  451.35 L
+ 368.78  444.48  359.34  444.48 L
+ 369.30  439.57  360.06  437.60 L
+ 370.83  434.87  362.20  431.03 L
+ 373.30  430.59  365.65  425.04 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 289.14  481.98  291.88  483.98 L
+ 290.34  479.62  293.57  480.67 L
+ 290.76  477.00  294.15  477.00 L
+ 290.34  474.39  293.57  473.34 L
+ 289.14  481.98  291.88  483.98 L
+ 287.26  483.86  289.26  486.60 L
+ 284.90  485.06  285.95  488.28 L
+ 282.28  485.48  282.28  488.87 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 336.74  516.46   23.62  155.92  275.92 Arc
+ 317.63  502.57  309.99  497.02 L
+ 315.16  506.85  306.53  503.01 L
+ 313.63  511.55  304.39  509.58 L
+ 313.12  516.46  303.67  516.46 L
+ 313.63  521.37  304.39  523.33 L
+ 315.16  526.07  306.53  529.91 L
+ 317.63  502.57  309.99  497.02 L
+ 320.93  498.90  314.61  491.88 L
+ 324.93  496.00  320.20  487.82 L
+ 329.44  493.99  326.52  485.01 L
+ 334.27  492.97  333.28  483.57 L
+ 339.21  492.97  340.20  483.57 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 273.13  433.67  275.13  436.41 L
+ 275.01  431.79  277.75  433.79 L
+ 276.21  429.43  279.44  430.48 L
+ 276.63  426.81  280.02  426.81 L
+ 273.13  433.67  275.13  436.41 L
+ 270.77  434.87  271.82  438.10 L
+ 268.15  435.29  268.15  438.68 L
+ 265.54  434.87  264.49  438.10 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 336.74  516.46   23.62  172.58  292.58 Arc
+ 320.93  498.90  314.61  491.88 L
+ 317.63  502.57  309.99  497.02 L
+ 315.16  506.85  306.53  503.01 L
+ 313.63  511.55  304.39  509.58 L
+ 313.12  516.46  303.67  516.46 L
+ 313.63  521.37  304.39  523.33 L
+ 320.93  498.90  314.61  491.88 L
+ 324.93  496.00  320.20  487.82 L
+ 329.44  493.99  326.52  485.01 L
+ 334.27  492.97  333.28  483.57 L
+ 339.21  492.97  340.20  483.57 L
+ 344.04  493.99  346.96  485.01 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 300.36  429.32  301.41  432.54 L
+ 302.72  428.11  304.71  430.86 L
+ 304.60  426.24  307.34  428.23 L
+ 305.80  423.88  309.02  424.92 L
+ 300.36  429.32  301.41  432.54 L
+ 297.74  429.73  297.74  433.12 L
+ 295.12  429.32  294.08  432.54 L
+ 292.76  428.11  290.77  430.86 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 336.74  516.46   23.62  187.72  307.72 Arc
+ 329.44  493.99  326.52  485.01 L
+ 324.93  496.00  320.20  487.82 L
+ 320.93  498.90  314.61  491.88 L
+ 317.63  502.57  309.99  497.02 L
+ 315.16  506.85  306.53  503.01 L
+ 313.63  511.55  304.39  509.58 L
+ 329.44  493.99  326.52  485.01 L
+ 334.27  492.97  333.28  483.57 L
+ 339.21  492.97  340.20  483.57 L
+ 344.04  493.99  346.96  485.01 L
+ 348.55  496.00  353.27  487.82 L
+ 352.55  498.90  358.87  491.88 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 289.14  481.98  291.88  483.98 L
+ 290.34  479.62  293.57  480.67 L
+ 290.76  477.00  294.15  477.00 L
+ 290.34  474.39  293.57  473.34 L
+ 289.14  481.98  291.88  483.98 L
+ 287.26  483.86  289.26  486.60 L
+ 284.90  485.06  285.95  488.28 L
+ 282.28  485.48  282.28  488.87 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 336.74  516.46   23.62  155.92  275.92 Arc
+ 317.63  502.57  309.99  497.02 L
+ 315.16  506.85  306.53  503.01 L
+ 313.63  511.55  304.39  509.58 L
+ 313.12  516.46  303.67  516.46 L
+ 313.63  521.37  304.39  523.33 L
+ 315.16  526.07  306.53  529.91 L
+ 317.63  502.57  309.99  497.02 L
+ 320.93  498.90  314.61  491.88 L
+ 324.93  496.00  320.20  487.82 L
+ 329.44  493.99  326.52  485.01 L
+ 334.27  492.97  333.28  483.57 L
+ 339.21  492.97  340.20  483.57 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 271.93  515.70  270.89  518.92 L
+ 274.55  516.11  274.55  519.50 L
+ 277.17  515.70  278.22  518.92 L
+ 279.53  514.50  281.52  517.24 L
+ 271.93  515.70  270.89  518.92 L
+ 269.57  514.50  267.58  517.24 L
+ 267.70  512.62  264.95  514.61 L
+ 266.49  510.26  263.27  511.31 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 214.98  655.22   23.62  231.98  351.98 Arc
+ 222.28  632.75  225.20  623.77 L
+ 217.45  631.73  218.44  622.33 L
+ 212.51  631.73  211.52  622.33 L
+ 207.68  632.75  204.76  623.77 L
+ 203.17  634.76  198.45  626.58 L
+ 199.18  637.66  192.85  630.64 L
+ 222.28  632.75  225.20  623.77 L
+ 226.79  634.76  231.52  626.58 L
+ 230.79  637.66  237.11  630.64 L
+ 234.09  641.33  241.74  635.78 L
+ 236.56  645.61  245.19  641.77 L
+ 238.09  650.31  247.33  648.34 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 216.35  403.74  213.60  401.75 L
+ 215.14  406.10  211.92  405.05 L
+ 214.73  408.72  211.34  408.72 L
+ 215.14  411.34  211.92  412.38 L
+ 216.35  403.74  213.60  401.75 L
+ 218.22  401.86  216.23  399.12 L
+ 220.58  400.66  219.53  397.44 L
+ 223.20  400.25  223.20  396.86 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 160.80  367.33   23.62  333.56   93.56 Arc
+ 179.91  381.21  187.56  386.77 L
+ 182.38  376.94  191.01  380.78 L
+ 183.91  372.24  193.15  374.20 L
+ 184.42  367.33  193.87  367.33 L
+ 183.91  362.42  193.15  360.45 L
+ 182.38  357.72  191.01  353.88 L
+ 179.91  381.21  187.56  386.77 L
+ 176.61  384.88  182.93  391.90 L
+ 172.61  387.79  177.34  395.97 L
+ 168.10  389.79  171.02  398.78 L
+ 163.27  390.82  164.26  400.22 L
+ 158.33  390.82  157.35  400.22 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 216.35  403.74  213.60  401.75 L
+ 215.14  406.10  211.92  405.05 L
+ 214.73  408.72  211.34  408.72 L
+ 215.14  411.34  211.92  412.38 L
+ 216.35  403.74  213.60  401.75 L
+ 218.22  401.86  216.23  399.12 L
+ 220.58  400.66  219.53  397.44 L
+ 223.20  400.25  223.20  396.86 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 160.80  367.33   23.62  333.56   93.56 Arc
+ 179.91  381.21  187.56  386.77 L
+ 182.38  376.94  191.01  380.78 L
+ 183.91  372.24  193.15  374.20 L
+ 184.42  367.33  193.87  367.33 L
+ 183.91  362.42  193.15  360.45 L
+ 182.38  357.72  191.01  353.88 L
+ 179.91  381.21  187.56  386.77 L
+ 176.61  384.88  182.93  391.90 L
+ 172.61  387.79  177.34  395.97 L
+ 168.10  389.79  171.02  398.78 L
+ 163.27  390.82  164.26  400.22 L
+ 158.33  390.82  157.35  400.22 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 267.70  512.62  264.95  514.61 L
+ 269.57  514.50  267.58  517.24 L
+ 271.93  515.70  270.89  518.92 L
+ 274.55  516.11  274.55  519.50 L
+ 267.70  512.62  264.95  514.61 L
+ 266.49  510.26  263.27  511.31 L
+ 266.08  507.64  262.69  507.64 L
+ 266.49  505.02  263.27  503.98 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 219.08  556.10   23.62  258.86   18.86 Arc
+ 238.19  542.21  245.84  536.66 L
+ 234.89  538.54  241.21  531.52 L
+ 230.89  535.64  235.62  527.46 L
+ 226.38  533.63  229.30  524.64 L
+ 221.55  532.60  222.54  523.21 L
+ 216.61  532.60  215.63  523.21 L
+ 238.19  542.21  245.84  536.66 L
+ 240.66  546.49  249.29  542.64 L
+ 242.19  551.18  251.43  549.22 L
+ 242.70  556.10  252.15  556.10 L
+ 242.19  561.01  251.43  562.97 L
+ 240.66  565.70  249.29  569.55 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 277.30  483.86  275.31  486.60 L
+ 279.67  485.06  278.62  488.28 L
+ 282.28  485.48  282.28  488.87 L
+ 284.90  485.06  285.95  488.28 L
+ 277.30  483.86  275.31  486.60 L
+ 275.43  481.98  272.69  483.98 L
+ 274.23  479.62  271.00  480.67 L
+ 273.81  477.00  270.42  477.00 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 219.08  556.10   23.62  248.63    8.63 Arc
+ 234.89  538.54  241.21  531.52 L
+ 230.89  535.64  235.62  527.46 L
+ 226.38  533.63  229.30  524.64 L
+ 221.55  532.60  222.54  523.21 L
+ 216.61  532.60  215.63  523.21 L
+ 211.78  533.63  208.86  524.64 L
+ 234.89  538.54  241.21  531.52 L
+ 238.19  542.21  245.84  536.66 L
+ 240.66  546.49  249.29  542.64 L
+ 242.19  551.18  251.43  549.22 L
+ 242.70  556.10  252.15  556.10 L
+ 242.19  561.01  251.43  562.97 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 254.89  463.71  253.84  466.93 L
+ 257.51  464.12  257.51  467.51 L
+ 260.13  463.71  261.18  466.93 L
+ 262.49  462.50  264.48  465.25 L
+ 254.89  463.71  253.84  466.93 L
+ 252.53  462.50  250.54  465.25 L
+ 250.66  460.63  247.91  462.62 L
+ 249.45  458.27  246.23  459.31 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 219.08  556.10   23.62  230.94  350.94 Arc
+ 226.38  533.63  229.30  524.64 L
+ 221.55  532.60  222.54  523.21 L
+ 216.61  532.60  215.63  523.21 L
+ 211.78  533.63  208.86  524.64 L
+ 207.27  535.64  202.55  527.46 L
+ 203.28  538.54  196.95  531.52 L
+ 226.38  533.63  229.30  524.64 L
+ 230.89  535.64  235.62  527.46 L
+ 234.89  538.54  241.21  531.52 L
+ 238.19  542.21  245.84  536.66 L
+ 240.66  546.49  249.29  542.64 L
+ 242.19  551.18  251.43  549.22 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 267.70  512.62  264.95  514.61 L
+ 269.57  514.50  267.58  517.24 L
+ 271.93  515.70  270.89  518.92 L
+ 274.55  516.11  274.55  519.50 L
+ 267.70  512.62  264.95  514.61 L
+ 266.49  510.26  263.27  511.31 L
+ 266.08  507.64  262.69  507.64 L
+ 266.49  505.02  263.27  503.98 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 219.08  556.10   23.62  258.86   18.86 Arc
+ 238.19  542.21  245.84  536.66 L
+ 234.89  538.54  241.21  531.52 L
+ 230.89  535.64  235.62  527.46 L
+ 226.38  533.63  229.30  524.64 L
+ 221.55  532.60  222.54  523.21 L
+ 216.61  532.60  215.63  523.21 L
+ 238.19  542.21  245.84  536.66 L
+ 240.66  546.49  249.29  542.64 L
+ 242.19  551.18  251.43  549.22 L
+ 242.70  556.10  252.15  556.10 L
+ 242.19  561.01  251.43  562.97 L
+ 240.66  565.70  249.29  569.55 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 218.22  415.57  216.23  418.32 L
+ 220.58  416.78  219.53  420.00 L
+ 223.20  417.19  223.20  420.58 L
+ 225.82  416.78  226.87  420.00 L
+ 218.22  415.57  216.23  418.32 L
+ 216.35  413.70  213.60  415.69 L
+ 215.14  411.34  211.92  412.38 L
+ 214.73  408.72  211.34  408.72 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 193.96  462.74   23.62  238.43  358.43 Arc
+ 205.77  442.28  210.49  434.10 L
+ 201.26  440.27  204.18  431.29 L
+ 196.43  439.25  197.41  429.85 L
+ 191.49  439.25  190.50  429.85 L
+ 186.66  440.27  183.74  431.29 L
+ 182.15  442.28  177.42  434.10 L
+ 205.77  442.28  210.49  434.10 L
+ 209.76  445.19  216.08  438.16 L
+ 213.07  448.86  220.71  443.30 L
+ 215.54  453.13  224.17  449.29 L
+ 217.06  457.83  226.30  455.86 L
+ 217.58  462.74  227.03  462.74 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 260.10  429.43  256.87  430.48 L
+ 261.30  431.79  258.56  433.79 L
+ 263.17  433.67  261.18  436.41 L
+ 265.54  434.87  264.49  438.10 L
+ 260.10  429.43  256.87  430.48 L
+ 259.68  426.81  256.29  426.81 L
+ 260.10  424.20  256.87  423.15 L
+ 261.30  421.83  258.56  419.84 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 193.96  462.74   23.62  274.16   34.16 Arc
+ 215.54  453.13  224.17  449.29 L
+ 213.07  448.86  220.71  443.30 L
+ 209.76  445.19  216.08  438.16 L
+ 205.77  442.28  210.49  434.10 L
+ 201.26  440.27  204.18  431.29 L
+ 196.43  439.25  197.41  429.85 L
+ 215.54  453.13  224.17  449.29 L
+ 217.06  457.83  226.30  455.86 L
+ 217.58  462.74  227.03  462.74 L
+ 217.06  467.65  226.30  469.62 L
+ 215.54  472.35  224.17  476.19 L
+ 213.07  476.62  220.71  482.18 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 245.13  411.26  243.14  414.00 L
+ 247.49  412.46  246.44  415.69 L
+ 250.11  412.88  250.11  416.27 L
+ 252.73  412.46  253.77  415.69 L
+ 245.13  411.26  243.14  414.00 L
+ 243.25  409.39  240.51  411.38 L
+ 242.05  407.02  238.83  408.07 L
+ 241.64  404.41  238.25  404.41 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 193.96  462.74   23.62  253.91   13.91 Arc
+ 209.76  445.19  216.08  438.16 L
+ 205.77  442.28  210.49  434.10 L
+ 201.26  440.27  204.18  431.29 L
+ 196.43  439.25  197.41  429.85 L
+ 191.49  439.25  190.50  429.85 L
+ 186.66  440.27  183.74  431.29 L
+ 209.76  445.19  216.08  438.16 L
+ 213.07  448.86  220.71  443.30 L
+ 215.54  453.13  224.17  449.29 L
+ 217.06  457.83  226.30  455.86 L
+ 217.58  462.74  227.03  462.74 L
+ 217.06  467.65  226.30  469.62 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 255.31  384.21  253.32  386.96 L
+ 257.67  385.42  256.62  388.64 L
+ 260.29  385.83  260.29  389.22 L
+ 262.91  385.42  263.96  388.64 L
+ 255.31  384.21  253.32  386.96 L
+ 253.44  382.34  250.69  384.33 L
+ 252.23  379.98  249.01  381.03 L
+ 251.82  377.36  248.43  377.36 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 193.96  462.74   23.62  247.84    7.84 Arc
+ 209.76  445.19  216.08  438.16 L
+ 205.77  442.28  210.49  434.10 L
+ 201.26  440.27  204.18  431.29 L
+ 196.43  439.25  197.41  429.85 L
+ 191.49  439.25  190.50  429.85 L
+ 186.66  440.27  183.74  431.29 L
+ 209.76  445.19  216.08  438.16 L
+ 213.07  448.86  220.71  443.30 L
+ 215.54  453.13  224.17  449.29 L
+ 217.06  457.83  226.30  455.86 L
+ 217.58  462.74  227.03  462.74 L
+ 217.06  467.65  226.30  469.62 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 304.60  416.28  307.34  414.29 L
+ 302.72  414.40  304.71  411.66 L
+ 300.36  413.20  301.41  409.98 L
+ 297.74  412.79  297.74  409.40 L
+ 304.60  416.28  307.34  414.29 L
+ 305.80  418.64  309.02  417.59 L
+ 306.21  421.26  309.60  421.26 L
+ 305.80  423.88  309.02  424.92 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 363.85  356.75   23.62   75.70  195.70 Arc
+ 348.04  374.30  341.72  381.33 L
+ 352.04  377.21  347.31  385.39 L
+ 356.55  379.21  353.63  388.20 L
+ 361.38  380.24  360.39  389.64 L
+ 366.32  380.24  367.30  389.64 L
+ 371.15  379.21  374.07  388.20 L
+ 348.04  374.30  341.72  381.33 L
+ 344.74  370.63  337.09  376.19 L
+ 342.27  366.36  333.64  370.20 L
+ 340.74  361.66  331.50  363.63 L
+ 340.23  356.75  330.78  356.75 L
+ 340.74  351.84  331.50  349.87 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 314.43  388.85  317.18  386.86 L
+ 312.56  386.98  314.55  384.24 L
+ 310.20  385.77  311.25  382.55 L
+ 307.58  385.36  307.58  381.97 L
+ 314.43  388.85  317.18  386.86 L
+ 315.64  391.21  318.86  390.17 L
+ 316.05  393.83  319.44  393.83 L
+ 315.64  396.45  318.86  397.50 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 363.85  356.75   23.62   86.61  206.61 Arc
+ 344.74  370.63  337.09  376.19 L
+ 348.04  374.30  341.72  381.33 L
+ 352.04  377.21  347.31  385.39 L
+ 356.55  379.21  353.63  388.20 L
+ 361.38  380.24  360.39  389.64 L
+ 366.32  380.24  367.30  389.64 L
+ 344.74  370.63  337.09  376.19 L
+ 342.27  366.36  333.64  370.20 L
+ 340.74  361.66  331.50  363.63 L
+ 340.23  356.75  330.78  356.75 L
+ 340.74  351.84  331.50  349.87 L
+ 342.27  347.14  333.64  343.30 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 314.43  388.85  317.18  386.86 L
+ 312.56  386.98  314.55  384.24 L
+ 310.20  385.77  311.25  382.55 L
+ 307.58  385.36  307.58  381.97 L
+ 314.43  388.85  317.18  386.86 L
+ 315.64  391.21  318.86  390.17 L
+ 316.05  393.83  319.44  393.83 L
+ 315.64  396.45  318.86  397.50 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 363.85  356.75   23.62   86.61  206.61 Arc
+ 344.74  370.63  337.09  376.19 L
+ 348.04  374.30  341.72  381.33 L
+ 352.04  377.21  347.31  385.39 L
+ 356.55  379.21  353.63  388.20 L
+ 361.38  380.24  360.39  389.64 L
+ 366.32  380.24  367.30  389.64 L
+ 344.74  370.63  337.09  376.19 L
+ 342.27  366.36  333.64  370.20 L
+ 340.74  361.66  331.50  363.63 L
+ 340.23  356.75  330.78  356.75 L
+ 340.74  351.84  331.50  349.87 L
+ 342.27  347.14  333.64  343.30 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 283.80  365.25  281.81  362.51 L
+ 281.92  367.13  279.18  365.14 L
+ 280.72  369.49  277.50  368.44 L
+ 280.31  372.11  276.92  372.11 L
+ 283.80  365.25  281.81  362.51 L
+ 286.16  364.05  285.11  360.83 L
+ 288.78  363.64  288.78  360.25 L
+ 291.40  364.05  292.44  360.83 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 241.02  306.18   23.62  354.08  114.08 Arc
+ 252.83  326.64  257.55  334.82 L
+ 256.82  323.74  263.14  330.76 L
+ 260.13  320.07  267.77  325.62 L
+ 262.60  315.79  271.23  319.63 L
+ 264.12  311.09  273.36  313.06 L
+ 264.64  306.18  274.09  306.18 L
+ 252.83  326.64  257.55  334.82 L
+ 248.32  328.65  251.24  337.63 L
+ 243.49  329.67  244.47  339.07 L
+ 238.55  329.67  237.56  339.07 L
+ 233.72  328.65  230.80  337.63 L
+ 229.21  326.64  224.48  334.82 L
+grestore
+gsave
+Hydrophobic_col   
+Default_linewidth W
+ 257.67  369.30  256.62  366.08 L
+ 255.31  370.51  253.32  367.76 L
+ 253.44  372.38  250.69  370.39 L
+ 252.23  374.74  249.01  373.69 L
+ 257.67  369.30  256.62  366.08 L
+ 260.29  368.89  260.29  365.50 L
+ 262.91  369.30  263.96  366.08 L
+ 265.27  370.51  267.26  367.76 L
+grestore
+gsave
+Hydrophobic_col   
+Arc_linewidth W
+ 241.02  306.18   23.62   14.85  134.85 Arc
+ 248.32  328.65  251.24  337.63 L
+ 252.83  326.64  257.55  334.82 L
+ 256.82  323.74  263.14  330.76 L
+ 260.13  320.07  267.77  325.62 L
+ 262.60  315.79  271.23  319.63 L
+ 264.12  311.09  273.36  313.06 L
+ 248.32  328.65  251.24  337.63 L
+ 243.49  329.67  244.47  339.07 L
+ 238.55  329.67  237.56  339.07 L
+ 233.72  328.65  230.80  337.63 L
+ 229.21  326.64  224.48  334.82 L
+ 225.21  323.74  218.89  330.76 L
+grestore
+grestore
+
+% Residue names
+
+gsave
+Ligresname_col    
+ 310.05  450.16 moveto
+(JZ4 164(B)) Ligresname_size Center
+(JZ4 164(B)) Ligresname_size Print
+grestore
+
+
+LigplotSave restore
+showpage
+%%Trailer
+%%BoundingBox: 29 49 551 781
+%%EOF

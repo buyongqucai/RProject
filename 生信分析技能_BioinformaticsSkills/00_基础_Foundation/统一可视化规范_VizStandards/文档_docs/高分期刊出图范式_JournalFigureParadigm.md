@@ -6,7 +6,7 @@
 **冻结登记：** [`已跑通范式登记_FrozenParadigms.md`](已跑通范式登记_FrozenParadigms.md)
 
 > 参考图来源：用户上传的三张多面板期刊风格图（工作区 assets；面板经目视核对）。  
-> **网络药理学_NetworkPharmacology 视觉配方已 FROZEN**——本范式不覆盖其网络/韦恩/柱状交付图；见冻结登记。
+> **网络药理学_NetworkPharmacology**、**分子动力学模拟_MolecularDynamics** 交付配方已 **FROZEN**——本范式不覆盖其专用图册（网药网络/韦恩/柱状；MD Origin FEL/能量柱/分组 HTML 报告）；见冻结登记。
 
 ---
 

@@ -10,7 +10,8 @@ description: >-
 
 # 网络药理学 / NetworkPharmacology
 
-> **FROZEN（2026-07-19）— do not adjust viz.** 网络布局（HCTP/Ellipse/PPI）、柱状/韦恩/GO/KEGG 交付图与样例图已验证冻结；Agents **不得**按期刊多面板范式重绘或改配色/布局，除非用户明确解冻。登记：[`已跑通范式登记_FrozenParadigms.md`](../../00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/已跑通范式登记_FrozenParadigms.md)。
+> **出图约束 SSOT：** [`出图约束_NetworkFigureStandards.md`](文档_docs/出图约束_NetworkFigureStandards.md) — 状态 **`FROZEN`（2026-07-26 用户确认）**；**§J–§L 为 2026-07-27 用户授权增补**（网络分析报告 / 空靶点药味 / 生物结构动画）。未经「解冻」不得改 §A–§H 视觉 recipe、疾病双口径与主 HTML 报告结构。  
+> 登记：[`已跑通范式登记_FrozenParadigms.md`](../../00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/已跑通范式登记_FrozenParadigms.md)。
 
 对齐用户交付方法说明《网药数据解读》（20260710）及数据库分类/成分靶点获取 SOP（2026-07）。**禁止**编造基因列表或伪造 STRING 边。
 
@@ -33,7 +34,7 @@ description: >-
 | 5 | CTD | https://ctdbase.org/ | `疾病靶点_CTD.csv` |
 | 6 | DisGeNET | https://disgenet.com/ | `疾病靶点_DisGeNET.csv` |
 
-疾病多库韦恩使用**完整 GeneCards**（`venn_uses_full_genecards=true`）；下游交集/富集仍用 Relevance≥40 过滤集（若该库有 Relevance 列）。
+疾病多库韦恩使用**完整 GeneCards**（`venn_uses_full_genecards=true`）；下游交集/富集/网络用 Relevance≥40 过滤集再与其他库并集。详见出图约束 **§0a 疾病基因双口径**（禁止把全量 7000+ 与药病交集几百混为一谈）。
 
 ### 1.2 药物 / 成分–靶点数据库
 
@@ -42,8 +43,8 @@ description: >-
 | **TCMSP** | https://tcmsp-e.com/ | 优先：有效成分（OB≥30%, DL≥0.18）+ 成分–靶点 |
 | **BATMAN-TCM** | http://bionet.ncpsb.org.cn/batman-tcm/#/search | 仅取 **known/curated 已知靶点**；**禁止**用 BATMAN 预测靶点 |
 | **ETCM / ETCM2** | http://www.tcmip.cn/ETCM2/front/#/ | 成分–靶点补充 |
-| **HERB 2.0** | http://47.92.70.12/ | 有效成分信息；取 **SMILES** 后交 SwissTargetPrediction |
-| **SwissTargetPrediction** | https://swisstargetprediction.ch/ | 由 SMILES 预测靶点；剔除 probability=0 |
+| **HERB 2.0** | http://herb.ac.cn/（chedi API） | 有效成分 + **SMILES**；无 curated 成分靶点时交 SwissTargetPrediction |
+| **SwissTargetPrediction** | https://swisstargetprediction.ch/ | SMILES→人源靶点；**剔除 Probability=0**；细则见 [`文档_docs/成分靶点获取与交付规范_CompoundTargetSOP.md`](文档_docs/成分靶点获取与交付规范_CompoundTargetSOP.md) |
 | **TCMBank** | https://tcmbank.cn/ | 可取药物有效成分，再走预测（SwissTargetPrediction） |
 
 ### 1.3 通路 / PPI（非疾病库、非草药成分库）
@@ -58,8 +59,8 @@ description: >-
 | 阶段 | 数据库 / 平台 | 粒度 | 产出 |
 |------|---------------|------|------|
 | 药物列表 | 项目表 `药物中文名称.xlsx` | **单药一行** | 待检索中药名列表 |
-| 成分 + 靶点 | §1.2 瀑布（TCMSP→BATMAN→ETCM→HERB/TCMBank→SwissTargetPrediction） | **每药一份** | 成分参数/靶点表 → `{药}靶点基因.csv` |
-| 靶点标准化 | UniProt（reviewed human） | 每药 | `{药}靶点基因.csv` |
+| 成分 + 靶点 | §1.2 瀑布（TCMSP→BATMAN→ETCM→HERB/TCMBank→SwissTargetPrediction） | **每药一份** | `HERB_{药}_*.csv` + `{药}靶点基因.xlsx`（整合靶点三列，见 §4.1.1） |
+| 靶点基因补全 | UniProt reviewed human（**仅**补 STP 复合物空 Common name） | 每药 | 写入整合表基因列；**禁止**全蛋白组左拼交付 |
 | 疾病基因 | §1.1 六库 | **按英文病名各库一份** | `疾病靶点_{DB}.csv` |
 | 整合 | 本地 | 全药去重 + 多库并集 + 全药∩疾病 + **每药∩疾病** | 见 §4 |
 | PPI | STRING **API 自动** → **代码绘制**（非手绘） | 交集基因 | `PPI互作_StringInteractions.tsv` + `网络图_StringPPI_*` |
@@ -70,8 +71,8 @@ description: >-
 
 | 能力 | 库 / 平台 |
 |------|-----------|
-| **AUTO — 代码可拉** | CTD curated bulk；KEGG REST；STRING API；Open Targets GraphQL（陪跑） |
-| **MANUAL — 需你导出** | GeneCards、TTD、DrugBank、OMIM、DisGeNET；TCMSP、BATMAN（known）、ETCM2、HERB、TCMBank、SwissTargetPrediction |
+| **AUTO — 代码可拉** | CTD curated bulk；KEGG REST；STRING API；Open Targets GraphQL（陪跑）；**HERB chedi API**；**SwissTargetPrediction** 表单提交（locate→predict→result，可达时） |
+| **MANUAL — 需你导出** | GeneCards、TTD、DrugBank、OMIM、DisGeNET；TCMSP、BATMAN（known）、ETCM2、TCMBank；STP/HERB 在 AUTO 失败时回退手工 |
 | **出图 AUTO** | PPI 同心/Degree 图、HCTP 多层网络、韦恩/柱/GO/KEGG 表驱动图（有表即可） |
 
 异常配合清单见 §4.1（`异常清单_CompoundTargetExceptions.csv`）。
@@ -82,6 +83,8 @@ description: >-
 
 - 输入必须可溯源到：**单药名** + **英文病名** + 具体库导出文件；禁止把多药揉成一张无 herb 维度的「假单表」当作唯一输入而不保留单药文件。
 - **最终范式不变式**：无论成分–靶点来自哪一库，整合后 schema 一律为 **药物–有效成分–靶点**（drug–compound–target），再与疾病基因/通路衔接。
+- **HERB→STP 交付精简**：只保留 HERB 匹配表 + 各成分 Swiss 明细 + **整合靶点**（`成分 | Protein names | Gene Names (primary)`）。详见 [`成分靶点获取与交付规范_CompoundTargetSOP.md`](文档_docs/成分靶点获取与交付规范_CompoundTargetSOP.md)。
+- **禁止**把 UniProt reviewed 全表（约 2 万行）左拼进 `{药}靶点基因` 当主交付（历史「白术式」左栏仅作可选对照，非 STP 路径默认）。
 - 列契约见 `脚本_scripts/01_契约接口_DataContracts.R`。
 - `STATUS` / 审计 / `DATA_SOURCE.md` 必须写 `data_provenance` 与图册完成度（`PARTIAL` 允许；**禁止假全流程 PASS**）。
 - 本环境 **不** 登录爬取 TCMSP/GeneCards 等；缺导出则该步 `BLOCKED_EXTERNAL`，不得编造基因列表。
@@ -131,10 +134,11 @@ flowchart TD
   E --> F[提交 SMILES → SwissTargetPrediction]
   F --> G{分子量过大无法跑?}
   G -->|是| X[error → 写入异常清单]
-  G -->|否| H[剔除 probability=0 后整合]
-  H --> Z
+  G -->|否| H[剔除 Probability=0]
+  H --> I[复合物空基因 → UniProt Accession 展开]
+  I --> Z
   T[TCMBank 取有效成分] -.-> F
-  Z --> U[UniProt reviewed human 标准化 → 药靶点基因.csv]
+  Z --> U[整合靶点三列写入 药靶点基因.xlsx]
 ```
 
 **逐步规则：**
@@ -142,11 +146,26 @@ flowchart TD
 1. **TCMSP 优先** — 检索单药；成分筛选 OB≥30%、DL≥0.18；有成分–靶点则采用并进入整合。
 2. TCMSP 无数据 → **BATMAN-TCM**：只拉取 **known/curated 已知靶点**；**不得**使用 BATMAN 的预测靶点。
 3. BATMAN 无已知靶点 → **ETCM / ETCM2**。
-4. ETCM 仍无 → **HERB 2.0**：收集有效成分；从 HERB 取得 **SMILES** → 提交 **SwissTargetPrediction** 做预测靶点。
+4. ETCM 仍无 → **HERB 2.0**：收集有效成分；从 HERB 取得 **SMILES** → 提交 **SwissTargetPrediction**（Homo sapiens）做预测靶点。
 5. **TCMBank** 路径：亦可用于获取药物有效成分，再视需要走 SwissTargetPrediction 预测。
-6. **过滤**：剔除 probability = 0（或等价零分）的靶点；其余并入整合表。
-7. 分子量过大导致 SwissTargetPrediction **无法运行** → 记为 **error**，写入 **异常清单** 交用户；不得编造靶点。
-8. **不变式**：无论数据来自哪一库，整合 schema 始终为 **药物–有效成分–靶点**。
+6. **过滤**：剔除 Probability = 0（或等价零分）；**必须执行该过滤**（即使某次返回中 0 分行为 0 条，也要在规范说明中写明「已滤 / 删除 N 条」）。
+7. **空 Common name**：STP 对多亚基复合物常留空基因、Uniprot 为 `A&B&…` → Swiss 明细保留；整合表用 UniProt reviewed **展开为基因**；无法映射则不入整合表（禁止空基因进入下游）。
+8. 分子量过大导致 SwissTargetPrediction **无法运行** → 记为 **error**，写入 **异常清单** 交用户；不得编造靶点。
+9. **不变式**：整合 schema = **药物–有效成分–靶点(基因)**；交付见 §4.1.1。
+
+### 4.1.1 HERB→STP 交付结构（精简，强制）
+
+完整条文：[`文档_docs/成分靶点获取与交付规范_CompoundTargetSOP.md`](文档_docs/成分靶点获取与交付规范_CompoundTargetSOP.md)。
+
+| 保留 | 不保留（除非用户另要） |
+|------|------------------------|
+| `HERB_{药}_有效成分.csv`、`HERB_{药}_靶点明细.csv` | UniProt 全表左拼的巨型 `{药}靶点基因` |
+| **`{英文名}_Swiss预测靶点_筛选前.csv`** 与 **`_筛选后.csv`**（每成分各两份） | 含糊的 `Swiss_*` / 不分筛选阶段的单文件冒充终稿 |
+| `{药}靶点基因.xlsx`：`整合靶点` + 同上命名的 Swiss 表 + HERB 表 | 空异常清单、未请求的疾病交集旁路文件 |
+
+**Swiss 命名（强制）：** `{compound_en}_Swiss预测靶点_筛选前|筛选后.csv`；筛选后 = Probability>0；即便 0 分行数为 0 也要两套文件并存。
+
+**预测方式（程序化要点）：** `POST locate.php` → `POST predict.php`（`organism=Homo_sapiens`, SMILES）→ 解析 `result.php?job=`；失败则 MANUAL 导出。
 
 **异常清单（exception list）列约定：**
 
@@ -191,11 +210,13 @@ flowchart TD
 
 **代码 SSOT：** `脚本_scripts/04_交付网络布局_DeliveryNetworkLayouts.R`（覆盖 `03_*` 的 plot helpers）。摘要：
 
-| 图 | 硬约束 |
-|----|--------|
-| HCTP | Degree→size **60–120**；描边 `transparent`；C–D 边蓝色；靶点圆角方（10% 边长）浅粉全标注；通路仅 `hsa…`；columns 成分间距 **×1.30**；ellipse 扁椭圆 + 通路↔成分 **≥0.5 cm**；字号类型内恒定 Target24/Herb36/Compound38/Pathway38 |
-| STRING PPI | score>0.9、去 isolate；Degree→色+大小（60–120 严格单调）；**不缩小 hub**；4–5 环外密；环内字号恒定 |
-| 流程 | **代码出图为交付默认**；Cytoscape 可选；不编造 STRING 边；非网络图未经要求不改样式（FROZEN） |
+| 交付图（轨 B 中文） | 轨 A | 硬约束摘要 |
+|--------------------|------|------------|
+| KEGG圈图 / KEGG圈图基因名 | 10 | 半圆连续；通路全称禁省略；标签不互挡；约 13×11 in |
+| 药物有效成分疾病靶点通路网络图（+椭圆布局） | 11（+12） | Degree→size **60–120**；描边 `transparent`；C–D 蓝；靶点圆角方浅粉；**通路用 hsa 编号**；**靶点全标不空白**（加距防叠）；columns ×**1.30**；ellipse 间隙 **≥0.5 cm**；字号类型内恒定 |
+| PPI渐变图（+_Degree） | 14（+15） | score≥0.9；**topDegree≤200**；环布局；标签不互挡；副标题含 n/e |
+| string_vector_graphic | 13 | STRING 官网陪跑（外网失败 → `BLOCKED_EXTERNAL`） |
+| 流程 | — | **代码出图为交付默认**；Cytoscape 可选；文档 **`FROZEN`（2026-07-26）** |
 
 配色与版式强制对齐：
 - 全局：`theme_journal()` + `bioinfo_npg` / 分组绿红紫（VizStandards）
@@ -203,14 +224,19 @@ flowchart TD
 
 | 交付图 | 实现状态 | 如何操作（缺图时） |
 |--------|----------|-------------------|
-| 疾病数据库可视化韦恩图 | **交付原图（样例）** / R 近似回退 | 样例直接使用微生信交付 SVG（含 Size of each list + Number of elements 双底栏）。新项目：上传分库基因到微生信，或调用 `np_plot_disease_db_venn` 近似 |
+| 疾病数据库可视化韦恩图 | **交付原图（样例）** / 微生信模板重绘 | 样例：微生信 SVG → `_export_delivery_venn_figures.py`。新项目：上传分库基因到微生信；或用 `09_build_weishengxin_style_venn.py`（样例 SVG 模板+本项目数据）写入交付位。`np_plot_*_venn` 仅为缺图近似，不得标 DONE |
 | 疾病药物交集韦恩图 | **R 可复现** | 药物去重基因 vs 疾病并集 |
 | 单药∩疾病靶点数 | **R 可复现** | 各 `{药}_与疾病基因交集` 计数柱图 |
-| 成分×药病交集靶点表 + 均分/按药子图 | **R 可复现** | 均分排名子图 `CompoundDiseaseOverlap`；按药分面 `CompoundDiseaseOverlapByHerb`（大约再拆）；水平柱、每面板异色；仅化学名 |
+| 成分×药病交集靶点表 + 均分/按药子图 | **R 可复现** | 均分排名子图 `CompoundDiseaseOverlap`；按药分面 `CompoundDiseaseOverlapByHerb`（大约再拆）；水平柱、每面板异色；仅化学名。**柱区（红框）全图等宽对齐**：gtable 钉死 `axis-l` + `panel` 绝对宽（共用 `lab_width`）；长名折行，不挤柱区 |
 | GO BPCCMF 柱/气泡 | **R 可复现**（有结果表） | Metascape 导出后用本技能脚本重绘 |
 | KEGG 柱/棒棒糖/气泡 | **R 可复现**（有结果表） | clusterProfiler 或盒子导出 CSV 后重绘 |
 | KEGG 圈图 / 圈图基因名 | **R 可复现**（`circlize`，需 `geneID`） | `np_save_kegg_chord` → `圈图_KEGG_Circos`；无 geneID 时才断点 |
-| KEGG 官方通路图 Top10 | **外部** | https://www.kegg.jp/ 按通路英文名检索 → Download pathway image |
+| KEGG 官方通路图 Top20 | **REST 可下** | `24_download_kegg_pathway_maps.py` → `图片/KEGG官方通路图/`；学术遵守 KEGG 条款 |
+| 药味成分 UpSet / 桑基 / 药味×通路热图 | **R 可复现** | Fig 16–19；见出图约束 §E |
+| HTML 交付报告 | **脚本生成** | 根目录 `图注与解读说明.html`；相对路径；整夹分享 |
+| HCTP 网络分析报告 | **脚本生成** | `32_export_cytoscape_network_analysis.py` → `数据/网络图/网络图数据.csv` + `网络分析报告.html`；成分显示原名；出图约束 **§J** |
+| 空靶点药味说明 | **必注** | 如肉桂=0：BLOCKED_EXTERNAL，禁止假靶点；**§K** + 成分靶点 SOP §7 |
+| 人体生物结构动画 | **可选示意** | `图片/动画_生物结构/`；插画底图+GIF；**§L**；非 KEGG 拓扑复刻 |
 | 药物有效成分疾病靶点通路网络图 | **代码/AI 可绘（交付默认）** | `02_run_network_preview.R` / `np_plot_hctp_network`；**无需** Cytoscape 手绘 |
 | STRING PPI 网络图 | **STRING API + 代码可绘（交付默认）** | `np_fetch_string_ppi` + `np_plot_string_ppi`；**无需**网页/Cytoscape 手绘 |
 | Cytoscape 精修（可选） | Cytoscape 3.10.2 | 非必做；仅当用户要 `.cys` 交互工程时见下方 SOP |
@@ -252,7 +278,9 @@ python 网络药理学_NetworkPharmacology/_prepare_compound_overlap_from_delive
 | 库 | 自动拉取 | 说明 |
 |----|----------|------|
 | GeneCards / DrugBank / OMIM | **否**（403 或需登录） | 请你浏览器导出；缺文件 → `BLOCKED_EXTERNAL`，禁止编造 |
-| TTD / DisGeNET / TCMSP / BATMAN / ETCM2 / HERB / TCMBank / SwissTargetPrediction | **否**（页可达或仅表单，无稳定公开 API） | 请你按瀑布导出；TCMBank 优先 **http://tcmbank.cn/** |
+| TTD / DisGeNET / TCMSP / BATMAN / ETCM2 / TCMBank | **否**（页可达或仅表单，无稳定公开 API） | 请你按瀑布导出；TCMBank 优先 **http://tcmbank.cn/** |
+| HERB 2.0 | **是（chedi API，可达时）** | search/detail；失败 → MANUAL |
+| SwissTargetPrediction | **是（表单提交，可达时）** | locate→predict→result；滤 Probability=0；失败 → MANUAL |
 | OMIM API | 可选 | https://www.omim.org/api → `OMIM_API_KEY` |
 | CTD | **是（bulk）** | `CTD_curated_genes_diseases.tsv.gz` 实测可下 |
 | KEGG REST / STRING API | **是** | 通路列表与 PPI 边可程序化；网络图代码绘制 |
@@ -265,9 +293,9 @@ python 网络药理学_NetworkPharmacology/_prepare_compound_overlap_from_delive
 1. **TCMSP** 检索单药 → OB≥30%、DL≥0.18 → 参数表 + 成分靶点（有则结束本药获取）。  
 2. 无 → **BATMAN-TCM**（http://bionet.ncpsb.org.cn/batman-tcm/#/search）仅 **known** 靶点。  
 3. 无 → **ETCM2**（http://www.tcmip.cn/ETCM2/front/#/）。  
-4. 无 → **HERB 2.0**（http://47.92.70.12/）取成分与 SMILES → **SwissTargetPrediction**（https://swisstargetprediction.ch/）；**TCMBank**（https://tcmbank.cn/）可作成分来源后同走预测。  
-5. 剔除 probability=0；MW 过大无法预测 → 写入 `异常清单_CompoundTargetExceptions.csv`。  
-6. UniProt 标准化 → `{药}靶点基因.csv`；schema = 药物–有效成分–靶点。
+4. 无 → **HERB 2.0** 取成分与 SMILES → **SwissTargetPrediction**（Homo sapiens）；**TCMBank** 可作成分来源后同走预测。  
+5. 剔除 Probability=0；复合物空基因用 UniProt Accession 展开；MW 过大 → `异常清单_CompoundTargetExceptions.csv`。  
+6. 交付 `{药}靶点基因.xlsx`（整合三列 + 各成分 Swiss）；**不做** UniProt 全表左拼。schema = 药物–有效成分–靶点(基因)。
 
 ## 7. 数据结果解读
 

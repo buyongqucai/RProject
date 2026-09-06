@@ -9,26 +9,39 @@
 
 模板约定（与 TCMSP羌活/秦艽 参考表逐项核对）：
   参数表格：13 列 [Mol ID, Molecule Name, MW, AlogP, Hdon, Hacc, OB, Caco-2, BBB,
-                   DL, FASA-(实为 tpsa), HL, Save(空)]；筛选 OB>=30 且 DL>=0.18；数值 2 位小数。
-  靶点表格：无表头，2 列 [成分名, 靶点名]；按参数表格行序逐成分展开。
+                   DL, FASA-(实为 tpsa/FASA), HL, Save(空)]；筛选 OB>=30 且 DL>=0.18；数值 2 位小数。
+  靶点表格：无表头，3 列 [成分名, 靶点名, UniProt基因简称]；基因简称经 reviewed human 验证，
+            匹配不上留空。
+
+草药页一次返回 Ingredients + Related Targets（2026-09 起 molecule.php 不再内嵌 JSON）。
 
 用法：
-  python TCMSP批量抓取_tcmspBatchScrape.py --pilot 羌活 --out <临时目录>   # 试点
-  python TCMSP批量抓取_tcmspBatchScrape.py --all --out "D:\\数据库\\药物数据库\\准备文件"
+  python TCMSP批量抓取_tcmspBatchScrape.py --pilot 羌活 Qianghuo --out <临时目录>
+  python TCMSP批量抓取_tcmspBatchScrape.py --all --force --mtime-before 2026-08-01 --out "D:\\数据库\\药物数据库\\准备文件"
 """
 from __future__ import annotations
 
 import argparse
 import csv
+import importlib.util
 import json
 import random
 import re
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 
 import requests
 from openpyxl import Workbook
+
+_UP = Path(__file__).with_name("TCMSP靶点UniProt映射_mapTcmspUniprot.py")
+_spec = importlib.util.spec_from_file_location("tcmsp_uniprot", _UP)
+_up = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_up)
+DEFAULT_TSV = _up.DEFAULT_TSV
+build_resolver = _up.build_resolver
+download_reviewed_human = _up.download_reviewed_human
 
 BASE = "https://www.tcmsp-e.com"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -41,6 +54,7 @@ OB_MIN, DL_MIN = 30.0, 0.18
 
 def new_session() -> requests.Session:
     s = requests.Session()
+    s.trust_env = False
     s.headers.update({"User-Agent": UA})
     return s
 
@@ -95,12 +109,13 @@ def search_latin(s: requests.Session, token: str, pinyin: str) -> str | None:
 def herb_ingredients(s: requests.Session, token: str, latin: str) -> list[dict]:
     r = s.get(f"{BASE}/tcmspsearch.php",
               params={"qr": latin, "qsr": "herb_en_name", "token": token},
-              timeout=120)
+              timeout=180)
     r.raise_for_status()
     return pick_grid(extract_grids(r.text), "molecule_ID")
 
 
 def molecule_adme_targets(s: requests.Session, molecule_id: str) -> tuple[dict, list[str]]:
+    """兼容旧入口；2026-09 起 molecule.php 常无 JSON，优先用草药页 Related Targets。"""
     r = s.get(f"{BASE}/molecule.php", params={"qn": molecule_id}, timeout=60)
     r.raise_for_status()
     grids = extract_grids(r.text)
@@ -125,13 +140,24 @@ def fnum(v, nd=2):
 
 
 def scrape_herb(s: requests.Session, token: str, cn: str, pinyin: str,
-                out_dir: Path, log: dict) -> dict:
+                out_dir: Path, log: dict, resolve=None) -> dict:
     latin = search_latin(s, token, pinyin)
     if not latin:
         log.update(status="NOT_FOUND", note="search empty")
         return log
     polite()
-    ingredients = herb_ingredients(s, token, latin)
+    r = s.get(f"{BASE}/tcmspsearch.php",
+              params={"qr": latin, "qsr": "herb_en_name", "token": token},
+              timeout=180)
+    r.raise_for_status()
+    grids = extract_grids(r.text)
+    ingredients = pick_grid(grids, "molecule_ID")
+    # Related Targets 网格同时含 molecule_name + target_name
+    edges = []
+    for g in grids:
+        if g and "target_name" in g[0] and "molecule_name" in g[0]:
+            edges = g
+            break
     log["n_ingredients"] = len(ingredients)
     if not ingredients:
         log.update(status="NO_INGREDIENTS", note=latin)
@@ -141,21 +167,27 @@ def scrape_herb(s: requests.Session, token: str, cn: str, pinyin: str,
                 if (fnum(g.get("ob"), 99) or 0) >= OB_MIN
                 and (fnum(g.get("dl"), 99) or 0) >= DL_MIN]
     log["n_filtered"] = len(filtered)
+    keep_mol = {g.get("MOL_ID") for g in filtered}
+    keep_name = {g.get("molecule_name") for g in filtered}
 
-    param_rows, edge_rows = [], []
+    param_rows = []
     for g in filtered:
-        polite()
-        adme, targets = molecule_adme_targets(s, g["molecule_ID"])
-        src = {**g, **adme}  # molecule 页补 tpsa
         param_rows.append([
-            g.get("MOL_ID"), g.get("molecule_name"), fnum(src.get("mw")),
-            fnum(src.get("alogp")), int(float(src.get("hdon") or 0)),
-            int(float(src.get("hacc") or 0)), fnum(src.get("ob")),
-            fnum(src.get("caco2")), fnum(src.get("bbb")), fnum(src.get("dl")),
-            fnum(src.get("tpsa")), fnum(src.get("halflife")), None,
+            g.get("MOL_ID"), g.get("molecule_name"), fnum(g.get("mw")),
+            fnum(g.get("alogp")), int(float(g.get("hdon") or 0)),
+            int(float(g.get("hacc") or 0)), fnum(g.get("ob")),
+            fnum(g.get("caco2")), fnum(g.get("bbb")), fnum(g.get("dl")),
+            fnum(g.get("FASA") or g.get("tpsa")), fnum(g.get("halflife")), None,
         ])
-        for t in targets:
-            edge_rows.append([g.get("molecule_name"), t])
+
+    edge_rows = []
+    for e in edges:
+        mol_id, mol_name = e.get("MOL_ID"), e.get("molecule_name")
+        if mol_id not in keep_mol and mol_name not in keep_name:
+            continue
+        tname = e.get("target_name") or ""
+        gene = resolve(tname) if resolve else ""
+        edge_rows.append([mol_name, tname, gene])
     log["n_pairs"] = len(edge_rows)
 
     wb = Workbook()
@@ -165,7 +197,7 @@ def scrape_herb(s: requests.Session, token: str, cn: str, pinyin: str,
         ws.append(row)
     wb.save(out_dir / f"TCMSP{cn}参数表格.xlsx")
 
-    wb2 = Workbook()  # 靶点表格：无表头
+    wb2 = Workbook()
     ws2 = wb2.active
     for row in edge_rows:
         ws2.append(row)
@@ -180,6 +212,11 @@ def main():
     ap.add_argument("--pilot", nargs="*", default=None,
                     help="试点药味（中文名+拼音，如 羌活 Qianghuo）；缺省只跑这些")
     ap.add_argument("--all", action="store_true", help="browse 全清单补缺")
+    ap.add_argument("--force", action="store_true", help="已有文件也重抓")
+    ap.add_argument("--mtime-before", default=None,
+                    help="仅重抓该日期（YYYY-MM-DD）之前修改的药味；需配合 --force")
+    ap.add_argument("--uniprot-tsv", default=str(DEFAULT_TSV))
+    ap.add_argument("--skip-uniprot", action="store_true")
     ap.add_argument("--out", required=True)
     ap.add_argument("--log", default=None, help="进度 CSV（默认 <out>/_tcmsp_scrape_log.csv）")
     args = ap.parse_args()
@@ -192,19 +229,43 @@ def main():
     token = get_token(s)
     print(f"[token] {token}", flush=True)
 
+    cutoff = None
+    if args.mtime_before:
+        cutoff = datetime.strptime(args.mtime_before, "%Y-%m-%d").timestamp()
+
+    resolve = None
+    if not args.skip_uniprot:
+        tsv = download_reviewed_human(Path(args.uniprot_tsv))
+        resolve = build_resolver(tsv)
+        print("[uniprot] resolver ready", flush=True)
+
+    def skip_existing(cn: str) -> bool:
+        p1 = out_dir / f"TCMSP{cn}参数表格.xlsx"
+        p2 = out_dir / f"TCMSP{cn}有效成分靶点表格.xlsx"
+        if not (p1.exists() and p2.exists()):
+            return False
+        if not args.force:
+            return True
+        if cutoff is None:
+            return False
+        return min(p1.stat().st_mtime, p2.stat().st_mtime) >= cutoff
+
     if args.all:
         herbs = list_all_herbs(s)
         print(f"[browse] {len(herbs)} herbs", flush=True)
         todo = []
         for h in herbs:
             cn = h["herb_cn_name"]
-            if (out_dir / f"TCMSP{cn}参数表格.xlsx").exists() and \
-               (out_dir / f"TCMSP{cn}有效成分靶点表格.xlsx").exists():
+            if skip_existing(cn):
                 continue
             todo.append((cn, h["herb_pinyin"]))
     else:
         pairs = args.pilot or []
         todo = [(pairs[i], pairs[i + 1]) for i in range(0, len(pairs) - 1, 2)]
+        if args.force:
+            pass
+        else:
+            todo = [(cn, py) for cn, py in todo if not skip_existing(cn)]
 
     print(f"[todo] {len(todo)} herbs", flush=True)
     write_header = not log_path.exists()
@@ -217,7 +278,25 @@ def main():
             log = {"n_ingredients": 0, "n_filtered": 0, "n_pairs": 0,
                    "status": "ERROR", "note": ""}
             try:
-                log = scrape_herb(s, token, cn, pinyin, out_dir, log)
+                last_err = None
+                for attempt in range(3):
+                    try:
+                        log = scrape_herb(s, token, cn, pinyin, out_dir, log,
+                                          resolve=resolve)
+                        last_err = None
+                        break
+                    except (requests.exceptions.Timeout,
+                            requests.exceptions.ConnectionError) as e:
+                        last_err = e
+                        print(f"  retry {attempt+1}/3 {cn} {type(e).__name__}",
+                              flush=True)
+                        time.sleep(5 * (attempt + 1))
+                        try:
+                            token = get_token(s)
+                        except Exception:
+                            pass
+                if last_err is not None:
+                    raise last_err
             except Exception as e:  # 单味失败不中断批次
                 log["note"] = f"{type(e).__name__}: {e}"[:200]
             w.writerow([cn, pinyin, log["status"], log["n_ingredients"],

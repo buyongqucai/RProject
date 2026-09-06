@@ -1,0 +1,7 @@
+study_id,year,design,population,neoadjuvant_regimen,n_intervention,n_control,outcome,hr,hr_lo,hr_hi,followup_months,adjuvant_note,pmid,doi,source_note
+PREOPANC_2022,2022,RCT_phase3,Resectable+BRPC,Gemcitabine CRT,119,127,OS,0.73,0.56,0.96,59,Both arms adjuvant gemcitabine,34694891,10.1200/JCO.21.02233,Versteijne JCO 2022 long-term ITT
+PREOPANC_2022,2022,RCT_phase3,Resectable+BRPC,Gemcitabine CRT,119,127,DFS,0.69,0.53,0.91,59,Both arms adjuvant gemcitabine,34694891,10.1200/JCO.21.02233,DFS from long-term report
+Prep02_JSAP05,2025,RCT_phase2_3,Resectable,Gemcitabine+S-1,182,182,OS,0.73,0.56,0.95,NA,Adjuvant S-1 both arms,40235447,NA,Unno Ann Surg EuropePMC abstract
+Prep02_JSAP05,2025,RCT_phase2_3,Resectable,Gemcitabine+S-1,182,182,RFS,0.77,0.61,0.98,NA,Adjuvant S-1 both arms,40235447,NA,Relapse-free survival (not identical to DFS)
+ESPAC5_2023,2023,RCT_phase2_feasibility,BRPC,Combined neoadjuvant arms,55,31,OS,0.29,0.14,0.60,NA,Feasibility; short follow-up,36521500,10.1016/S2468-1253(22)00348-X,Combined neoadjuvant vs immediate surgery FAS approx
+ESPAC5_2023,2023,RCT_phase2_feasibility,BRPC,Combined neoadjuvant arms,55,31,DFS,0.53,0.28,0.98,NA,DFS measured from surgery,36521500,10.1016/S2468-1253(22)00348-X,1-year DFS HR

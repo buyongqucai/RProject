@@ -66,7 +66,7 @@ data_provenance: REAL | TOY | BLOCKED
 3. `source` **本技能** `脚本_scripts/*.R`（骨架/工具），禁止全局假 DEG 模板冒充
 4. 文件名用 `delivery_stem()` / `delivery_table_name()` / `delivery_audit_name()` / `delivery_report_name()`（可选 `order=` 流水线序号）
 5. 路径用 `delivery_sample_paths(sample_root)`（结果默认 `代码文件/结果文件/`，兼容旧根级回退）
-6. `write_delivery_report()` → 合规 HTML
+6. `write_delivery_report()` → 合规 HTML（版式见 [`文档_docs/样例报告范式_SampleReportParadigm.md`](文档_docs/样例报告范式_SampleReportParadigm.md)；金标为分子动力学样例报告）
 
 ## 5. R 包与软件栈
 
@@ -158,6 +158,7 @@ data_provenance: REAL | TOY | BLOCKED
 - toy 数据结论必须写「不可外推」；REAL 须可核对 accession / 病名查询词 / 交付路径
 - 报告须写明是否 `source` 了 VizStandards + DeliveryStandards + 本技能脚本
 - `data_provenance` 可取 `REAL|TOY|BLOCKED`；图完成度另用 STATUS（勿混为一谈）
+- HTML 版式、KPI、分组图、分条解读：[`文档_docs/样例报告范式_SampleReportParadigm.md`](文档_docs/样例报告范式_SampleReportParadigm.md)
 
 ## 8. 能否结合其它生信
 

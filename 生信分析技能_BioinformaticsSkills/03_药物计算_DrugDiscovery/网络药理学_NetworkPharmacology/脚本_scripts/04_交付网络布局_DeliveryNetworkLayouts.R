@@ -369,6 +369,45 @@
   (as.numeric(pt) / ggplot2::.pt) * as.numeric(scale)
 }
 
+#' Lab scale used by HCTP (same clamp as plot path) — for early pitch planning.
+.np_hctp_lab_scale <- function(plot_width_in, plot_height_in, lab_pt = .np_hctp_label_pt) {
+  lab_base <- if (!is.null(lab_pt$canvas_scale)) lab_pt$canvas_scale else 0.16
+  lab_ref <- if (!is.null(lab_pt$canvas_ref_in)) lab_pt$canvas_ref_in else 20
+  lab_scale <- lab_base * (as.numeric(lab_ref) / max(as.numeric(plot_width_in), as.numeric(plot_height_in), 1))
+  max(0.16, min(0.24, lab_scale))
+}
+
+#' Min center-to-center gap from the two longest labels in a section.
+#' Gap is OK when spacing >= sum(half-extents of top-2 labels) in data coords.
+#' @param axis "x" uses char-width; "y" uses line-height; "chord" uses width (orbit).
+.np_top2_label_min_gap <- function(labels,
+                                   size_mm,
+                                   plot_half_range,
+                                   plot_span_mm,
+                                   width_factor = 0.55,
+                                   height_factor = 1.08,
+                                   axis = c("x", "y", "chord")) {
+  axis <- match.arg(axis)
+  labs <- as.character(labels)
+  labs <- labs[!is.na(labs) & nzchar(labs)]
+  if (!length(labs)) return(0)
+  size_mm <- as.numeric(size_mm)
+  half <- as.numeric(plot_half_range)
+  span_mm <- as.numeric(plot_span_mm)
+  if (!is.finite(size_mm) || size_mm <= 0 || !is.finite(half) || half <= 0 ||
+      !is.finite(span_mm) || span_mm <= 0) {
+    return(0)
+  }
+  nch <- nchar(labs)
+  ord <- order(nch, decreasing = TRUE)
+  top_n <- nch[ord[seq_len(min(2L, length(ord)))]]
+  if (length(top_n) == 1L) top_n <- c(top_n, top_n)
+  dpm <- (2 * half) / span_mm # data units per mm
+  half_w <- (as.numeric(top_n) * width_factor * size_mm * dpm) / 2
+  half_h <- rep((height_factor * size_mm * dpm) / 2, length(top_n))
+  if (identical(axis, "y")) sum(half_h) else sum(half_w)
+}
+
 #' STRING PPI 渐变图：Degree→颜色+大小；大 Degree 居中；真同心圆；去游离点
 np_plot_string_ppi <- function(ppi,
                                title = "STRING PPI degree gradient",
@@ -377,7 +416,8 @@ np_plot_string_ppi <- function(ppi,
                                drop_isolates = TRUE,
                                layout = c("concentric", "fr"),
                                n_rings = NULL,
-                               outer_frac = 0.50) {
+                               outer_frac = 0.50,
+                               max_nodes = 200L) {
   if (!requireNamespace("igraph", quietly = TRUE)) stop("需要 igraph")
   if (!requireNamespace("ggplot2", quietly = TRUE)) stop("需要 ggplot2")
   layout <- match.arg(layout)
@@ -406,6 +446,19 @@ np_plot_string_ppi <- function(ppi,
     g <- igraph::delete_vertices(g, igraph::V(g)[igraph::degree(g) == 0])
   }
   if (igraph::vcount(g) < 2) stop("Fewer than 2 connected nodes", call. = FALSE)
+
+  # Degree top-N (≤200): keep induced subgraph then drop isolates again
+  if (!is.null(max_nodes) && is.finite(max_nodes) && igraph::vcount(g) > as.integer(max_nodes)) {
+    deg0 <- igraph::degree(g)
+    keep <- names(sort(deg0, decreasing = TRUE))[seq_len(as.integer(max_nodes))]
+    g <- igraph::induced_subgraph(g, vids = keep)
+    if (isTRUE(drop_isolates)) {
+      g <- igraph::delete_vertices(g, igraph::V(g)[igraph::degree(g) == 0])
+    }
+    message("PPI filtered to topDegree≤", as.integer(max_nodes),
+            " → n=", igraph::vcount(g), " e=", igraph::ecount(g))
+  }
+  if (igraph::vcount(g) < 2) stop("Fewer than 2 connected nodes after topDegree filter", call. = FALSE)
 
   if (!requireNamespace("ggforce", quietly = TRUE)) {
     stop("Install ggforce for PPI data-coord circles", call. = FALSE)
@@ -485,13 +538,23 @@ np_plot_string_ppi <- function(ppi,
       " r_range=[", round(min(node_df$r), 4), ",", round(max(node_df$r), 4), "]"
     )
   }
+  # Label every node including outermost ring (user: 最外圈也要有标签).
+  # Do not drop low-Degree outer labels when n is large.
   if (is.null(label_top_n) || !is.finite(label_top_n) || label_top_n >= nrow(node_df)) {
-    node_df$label <- node_df$name
+    node_df$label <- as.character(node_df$name)
   } else {
     keep <- order(-node_df$degree, node_df$name)[seq_len(as.integer(label_top_n))]
     node_df$label <- ""
     node_df$label[keep] <- node_df$name[keep]
+    # always keep outermost-ring labels even under label_top_n subset
+    outer_ring <- max(node_df$ring, na.rm = TRUE)
+    outer_idx <- which(node_df$ring == outer_ring)
+    node_df$label[outer_idx] <- node_df$name[outer_idx]
   }
+  message(
+    "PPI labels: labeled=", sum(nzchar(node_df$label)), "/", nrow(node_df),
+    " outer_ring_labeled=", sum(node_df$ring == max(node_df$ring, na.rm = TRUE) & nzchar(node_df$label))
+  )
   # Ring-constant label sizes by ring index only (inner > outer).
   # Do NOT clamp via plot_half — canvas growth would falsely shrink hub fonts.
   ring_rad_attr <- attr(lay, "ring_radii")
@@ -562,7 +625,8 @@ np_plot_string_ppi <- function(ppi,
     ggplot2::labs(
       title = title,
       subtitle = sprintf(
-        "STRING score ≥ 0.9 · isolates removed · Degree → color & size 60–120 (strict) · %d rings (outer≈%d/%d) · ring-constant fonts (n=%d, e=%d)",
+        "STRING score ≥ 0.9 · isolates removed · topDegree≤%d · Degree → color & size 60–120 · %d rings (outer≈%d/%d) · n=%d · e=%d",
+        if (is.null(max_nodes) || !is.finite(max_nodes)) igraph::vcount(g) else as.integer(max_nodes),
         n_rings_used,
         if (is.na(outer_n)) NA_integer_ else outer_n,
         igraph::vcount(g),
@@ -582,6 +646,7 @@ np_plot_string_ppi <- function(ppi,
 }
 
 #' Assign each compound to one herb; shared → herb with fewest assigned compounds
+#' Returns list(assigned=, same_hosts= named sameN→host, same_meta= list of records)
 .np_assign_compounds_unique <- function(herb_to_comps) {
   herbs <- names(herb_to_comps)
   cand <- list()
@@ -603,43 +668,104 @@ np_plot_string_ppi <- function(ppi,
       shared <- c(shared, c)
     }
   }
+  same_hosts <- character()
+  same_meta <- list()
   for (c in sort(unique(shared))) {
     hs <- unique(cand[[c]])
-    h <- hs[which.min(counts[hs])]
+    # host = fewest currently-assigned compounds among sharers (ties → first)
+    counts_before <- counts[hs]
+    h <- hs[which.min(counts_before)]
     assigned[[h]] <- c(assigned[[h]], c)
     counts[[h]] <- counts[[h]] + 1L
+    same_hosts[[c]] <- h
+    same_meta[[length(same_meta) + 1L]] <- list(
+      same_id = c,
+      host = h,
+      sharers = hs,
+      counts_before = as.list(counts_before),
+      host_count_before = as.integer(counts_before[[h]])
+    )
   }
-  lapply(assigned, unique)
+  list(
+    assigned = lapply(assigned, unique),
+    same_hosts = same_hosts,
+    same_meta = same_meta
+  )
 }
 
-#' Morandi muted herb/compound cluster colors — low chroma, hue-spread (distinct at a glance).
+# #region agent log
+.np_dbg_assign_log <- function(herb_to_comps, assign_res) {
+  try({
+    if (!requireNamespace("jsonlite", quietly = TRUE)) return(invisible(NULL))
+    assigned <- assign_res$assigned
+    n_in <- sum(vapply(herb_to_comps, length, 1L))
+    n_out <- sum(vapply(assigned, length, 1L))
+    hosts <- assign_res$same_hosts
+    meta <- assign_res$same_meta
+    # verify: host count ≤ every other sharer's count at assign time
+    ok <- TRUE
+    if (length(meta)) {
+      for (rec in meta) {
+        cts <- unlist(rec$counts_before)
+        if (length(cts) && as.integer(rec$host_count_before) > min(as.integer(cts))) ok <- FALSE
+      }
+    }
+    line <- jsonlite::toJSON(
+      list(
+        sessionId = "360a4e", runId = "post-fix", hypothesisId = "I",
+        location = "04_DeliveryNetworkLayouts.R:assign_unique",
+        message = "same* host = fewest-compound sharer",
+        data = list(
+          n_herb_comp_links_in = n_in,
+          n_assigned_out = n_out,
+          n_same = length(hosts),
+          same_hosts = as.list(hosts),
+          same_meta_sample = utils::head(meta, 12),
+          host_rule_ok = ok,
+          host_load = as.list(vapply(names(assigned), function(h) {
+            sum(grepl("^same[0-9]+$", assigned[[h]], ignore.case = TRUE))
+          }, integer(1)))
+        ),
+        timestamp = as.numeric(Sys.time()) * 1000
+      ),
+      auto_unbox = TRUE, null = "null"
+    )
+    cat(as.character(line), "\n", file = "E:/RProject/debug-360a4e.log", append = TRUE)
+  }, silent = TRUE)
+  invisible(NULL)
+}
+# #endregion
+
+#' Cytoscape-like herb/compound pastels (high chroma, hue-spread) — matched to
+#' reference HCTP SVG: lavender / sky / coral / gold / orange / lilac / teal …
 .np_herb_palette <- function(herbs) {
-  # dusty rose · olive sage · slate blue · muted mustard · dusty mauve · soft teal · …
   base <- c(
-    "#C4909A", "#9AAA7E", "#6E8FA8", "#C4A85A", "#A87898", "#5FA89A",
-    "#B08A7A", "#8B7AA8", "#A89870", "#7A9AA8"
+    "#CBD5E8", "#80B1D3", "#FB8072", "#E6AB02", "#FDB462",
+    "#BEBADA", "#8DD3C7", "#FCCDE5", "#B3DE69", "#BC80BD",
+    "#A6CEE3", "#FDBF6F"
   )
   n <- length(herbs)
   cols <- if (n <= length(base)) base[seq_len(n)] else grDevices::colorRampPalette(base)(n)
   stats::setNames(cols, herbs)
 }
 
-# HCTP accents: herbs stay Morandi (.np_herb_palette); targets/pathways = pre-Morandi
+# HCTP accents — colors sampled from reference Cytoscape-style SVG
 .np_hctp_accents <- list(
-  target = "#F5C6CB",                                    # light pink (pre-Morandi)
-  pathway = c("#F7FCB9", "#41AB5D", "#00441B"),           # lime → mid green → dark green
-  edge = "#8FA0A8",                                      # A–B / B–C muted grey
-  edge_cd = "#2F6FBF"                                    # C–D pathway↔target distinct blue
+  target = "#F0B2AE",                                    # center pink squares (ref #f0b2ae)
+  pathway = c("#C7E9C0", "#41AB5D", "#006D2C"),           # lime → mid → dark green hex/ellipse
+  edge = "#7A8A94",                                      # A–B / B–C grey — visible but under fills
+  edge_cd = "#3B7DD8"                                    # C–D blue — clearer without wash
 )
 
 # Cytoscape-style label points (converted via .np_pt_to_ggplot_size)
-# Hierarchy 24 / 36 / 38 preserved; canvas_scale fits dense C-grid on delivery size.
+# Hierarchy preserved; canvas_scale small so fills dominate labels (ref look).
 .np_hctp_label_pt <- list(
-  target = 24,      # gene symbols
-  herb = 36,        # herb codes
-  compound = 38,    # compound id/name
-  pathway = 38,     # hsa IDs
-  canvas_scale = 0.26  # (pt/.pt)*scale → ~2.2 / 3.3 / 3.5 mm
+  target = 22,      # gene symbols (fit inside pink squares)
+  herb = 30,        # herb codes
+  compound = 28,    # compound id — smaller than fills
+  pathway = 30,     # hsa IDs
+  canvas_scale = 0.16,
+  canvas_ref_in = 20
 )
 
 #' Map Degree → Cytoscape-style size parameter in [size_min, size_max] (default 60–120).
@@ -663,16 +789,51 @@ np_plot_string_ppi <- function(ppi,
   as.numeric(size) / size_to_r
 }
 
-#' Pathway display labels: KEGG/ID only (e.g. hsa04210). Never full names; never wrap.
-#' `pathway_names` is accepted for API compatibility but ignored for labeling.
+#' Pathway display labels: full English names when available; wrap long lines.
+#' Node keys remain pathway IDs; `pathway_names` may be named vector or ID→name map.
 .np_resolve_pathway_labels <- function(pathway_ids, pathway_names = NULL) {
-  invisible(pathway_names)
   ids <- as.character(pathway_ids)
   labs <- ids
   names(labs) <- ids
-  # strip any newlines / extra spaces so IDs stay single-line
-  labs <- gsub("[\r\n]+", "", labs)
-  labs <- gsub("\\s+", "", labs)
+  if (!is.null(pathway_names) && length(pathway_names)) {
+    pn <- pathway_names
+    if (is.data.frame(pn)) {
+      id_col <- intersect(c("ID", "id", "pathway_id", "name"), names(pn))
+      nm_col <- intersect(c("term", "Description", "description", "pathway_name", "label"), names(pn))
+      if (length(id_col) && length(nm_col)) {
+        pn <- stats::setNames(as.character(pn[[nm_col[1]]]), as.character(pn[[id_col[1]]]))
+      } else {
+        pn <- NULL
+      }
+    }
+    if (!is.null(pn)) {
+      # preserve names: as.character() alone drops names
+      pn_vals <- as.character(pn)
+      pn_nms <- names(pn)
+      if (is.null(pn_nms) && length(pn_vals) == length(ids)) {
+        pn_nms <- ids
+      }
+      if (!is.null(pn_nms)) {
+        names(pn_vals) <- as.character(pn_nms)
+        hit <- ids[ids %in% names(pn_vals)]
+        if (length(hit)) {
+          labs[hit] <- unname(pn_vals[hit])
+        }
+      }
+      miss <- ids[labs[ids] == ids | is.na(labs[ids])]
+      if (length(miss)) {
+        already <- miss[nchar(miss) > 12L & grepl(" ", miss, fixed = TRUE)]
+        if (length(already)) labs[already] <- already
+      }
+    }
+  }
+  labs <- gsub("[\r\n]+", " ", labs)
+  labs <- gsub("\\s+", " ", labs)
+  labs <- trimws(labs)
+  if (exists("np_wrap_term", mode = "function")) {
+    labs <- np_wrap_term(labs, width = 22)
+  }
+  names(labs) <- ids
   labs
 }
 
@@ -772,23 +933,30 @@ np_plot_string_ppi <- function(ppi,
 np_plot_hctp_network <- function(net,
                                  type_df,
                                  title = "Herb–compound–target–pathway network",
-                                 label_top_n = 45L,
+                                 label_top_n = NULL,
                                  edge_alpha = 0.08,
                                  pathway_mode = c("columns", "ellipse"),
                                  pathway_names = NULL,
+                                 pathway_label_mode = c("id", "name"),
+                                 label_all_targets = TRUE,
                                  size_min = 60,
                                  size_max = 120,
-                                 size_to_r = 560,
-                                 plot_width_in = 18.5,
-                                 plot_height_in = 16.5) {
+                                 size_to_r = 260,
+                                 plot_width_in = 21,
+                                 plot_height_in = 19) {
   if (!requireNamespace("igraph", quietly = TRUE)) stop("需要 igraph")
   if (!requireNamespace("ggplot2", quietly = TRUE)) stop("需要 ggplot2")
   if (!requireNamespace("ggforce", quietly = TRUE)) {
     stop("Install ggforce for octagon/ellipse/rounded nodes", call. = FALSE)
   }
   pathway_mode <- match.arg(pathway_mode)
-  invisible(label_top_n)
+  pathway_label_mode <- match.arg(pathway_label_mode)
   invisible(edge_alpha)
+  # Canvas ↔ fill size: smaller size_to_r → larger data-coord r (fills dominate labels)
+  canvas_side <- max(as.numeric(plot_width_in), as.numeric(plot_height_in), 1)
+  size_to_r <- as.numeric(size_to_r) * (20 / canvas_side)
+  size_to_r <- max(180, min(300, size_to_r))
+
 
   edges <- np_normalize_network_edges(net)
   typ <- np_normalize_type_table(type_df)
@@ -815,7 +983,22 @@ np_plot_hctp_network <- function(net,
   herb_comps <- lapply(herb_comps, unique)
   herbs <- names(sort(vapply(herb_comps, length, 1L), decreasing = TRUE))
   herb_comps <- herb_comps[herbs]
-  assigned <- .np_assign_compounds_unique(herb_comps)
+  assign_res <- .np_assign_compounds_unique(herb_comps)
+  assigned <- assign_res$assigned
+  same_hosts <- assign_res$same_hosts
+  # #region agent log
+  if (exists(".np_dbg_assign_log", mode = "function")) .np_dbg_assign_log(herb_comps, assign_res)
+  # #endregion
+  # same* stay in host herb satellite (fewest-compound sharer); NOT a pathway-like mid ring.
+  shared_comps <- character(0)
+  message(
+    "HCTP same* hosts (fewest-compound sharer): ",
+    if (length(same_hosts)) {
+      paste(paste0(names(same_hosts), "→", unname(same_hosts)), collapse = ", ")
+    } else {
+      "(none)"
+    }
+  )
 
   targets <- sort(names(type_vec)[type_vec == "C"])
   pathways <- sort(names(type_vec)[type_vec == "D"])
@@ -851,43 +1034,120 @@ np_plot_hctp_network <- function(net,
   r_p_a <- r_p * path_ell_a_frac
   r_p_b <- r_p * path_ell_b_frac
   r_p_extent <- max(r_p_a, r_p_b) # conservative radial half-extent
-  # Min pathway↔compound/herb edge gap (ellipse mode): 0.5 cm on delivery canvas
-  gap_cm_min <- 0.5
-  # Columns: +30% compound-to-compound clearance / orbit spacing vs prior baseline
-  compound_spacing_factor <- if (identical(pathway_mode, "columns")) 1.30 else 1.0
-  # Spacing: widen pitch/gaps so type-constant fonts fit without per-node shrink.
-  # pitch_safety = hard non-overlap floor; *_factor / compound_clearance = visual breathing room.
-  pitch_safety <- 1.12
-  # Ellipse needs airier target pitch so gene labels stay inside pink squares
+  # Min pathway↔compound/herb edge gap (ellipse): tighter inter-section voids
+  gap_cm_min <- 0.32
+  # Compounds: tighten orbits; neighbor distance floor = 4 × block scale (r).
+  compound_spacing_factor <- if (identical(pathway_mode, "columns")) 1.05 else 1.12
+  pitch_safety <- 1.05
   if (identical(pathway_mode, "ellipse")) {
-    pitch_factor_x <- 1.55
-    pitch_factor_y <- 1.68
-    compound_clearance <- 1.62
-    pathway_v_gap_factor <- 2.15
-    section_pad_tp <- 0.42
-    ellipse_annulus_frac <- 0.52
-    ellipse_clear_safety <- 0.22
+    pitch_factor_x <- 3.25
+    pitch_factor_y <- 3.50
+    compound_clearance <- 1.45
+    pathway_v_gap_factor <- 1.75
+    section_pad_tp <- 0.28
+    ellipse_annulus_frac <- 0.32
+    ellipse_clear_safety <- 0.16
   } else {
-    pitch_factor_x <- 1.45
-    pitch_factor_y <- 1.55
-    compound_clearance <- 1.50
-    pathway_v_gap_factor <- 2.00
-    section_pad_tp <- 0.36
+    pitch_factor_x <- 3.05
+    pitch_factor_y <- 3.30
+    compound_clearance <- 1.30
+    pathway_v_gap_factor <- 1.65
+    section_pad_tp <- 0.24
     ellipse_annulus_frac <- 0.55
-    ellipse_clear_safety <- 0.18
+    ellipse_clear_safety <- 0.10
   }
-  # Per-herb compound ring boost (user "GC" → sample herb code GG 甘草)
-  compound_clearance_boost <- c(GG = 2.55, GC = 2.55, DS = 1.90)
-  compound_orbit_floor <- c(GG = 1.05, GC = 1.05) # min ring radius for cramped herbs
-  section_pad_ph <- 0.14         # pathway↔herb floor pad
-  section_pad_col_herb <- 0.14   # columns: target↔herb pad
-  section_pad_col_path <- 0.95   # columns: beyond full satellite ring (enclosing)
-  pitch_x <- 2 * r_t * pitch_factor_x
-  pitch_y <- 2 * r_t * pitch_factor_y
+  # Per-herb mild boost only for known cramped herbs
+  compound_clearance_boost <- c(GG = 1.55, GC = 1.55, DS = 1.25)
+  compound_orbit_floor <- c(GG = 0.70, GC = 0.70)
+  # 成分邻距：圆心距 > 4 × 色块特征尺度 r（半宽）；够用即可，不再额外放大
+  compound_min_chord_r_mult <- 4
+  section_pad_ph <- 0.05         # pathway↔herb floor pad
+  section_pad_col_herb <- 0.05   # columns: target↔herb pad
+  section_pad_col_path <- 0.40   # columns: beyond satellite ring (enclosing)
+  # Target grid: tighten 50% vs fill-based pitch; floor by top-2 gene label extents.
+  pitch_x_des <- 2 * r_t * pitch_factor_x * 0.50
+  pitch_y_des <- 2 * r_t * pitch_factor_y * 0.50
+  lab_pt_plan <- .np_hctp_label_pt
+  lab_scale_plan <- .np_hctp_lab_scale(plot_width_in, plot_height_in, lab_pt_plan)
+  sz_tgt_plan <- .np_pt_to_ggplot_size(lab_pt_plan$target, scale = lab_scale_plan)
+  sz_comp_plan <- .np_pt_to_ggplot_size(lab_pt_plan$compound, scale = lab_scale_plan)
+  sz_path_plan <- .np_pt_to_ggplot_size(lab_pt_plan$pathway, scale = lab_scale_plan)
+  n_t_plan <- length(targets)
+  ncol_plan <- max(8L, as.integer(ceiling(sqrt(max(n_t_plan, 1L) * 1.15))))
+  nrow_plan <- as.integer(ceiling(max(n_t_plan, 1L) / ncol_plan))
+  pitch_x <- pitch_x_des
+  pitch_y <- pitch_y_des
+  for (iter in seq_len(4L)) {
+    half_guess <- max(
+      (ncol_plan - 1) / 2 * pitch_x,
+      (nrow_plan - 1) / 2 * pitch_y,
+      r_t * 4, 1
+    ) + r_t
+    min_px <- .np_top2_label_min_gap(
+      targets, sz_tgt_plan, half_guess, as.numeric(plot_width_in) * 25.4,
+      width_factor = 0.55, axis = "x"
+    )
+    min_py <- .np_top2_label_min_gap(
+      targets, sz_tgt_plan, half_guess, as.numeric(plot_height_in) * 25.4,
+      height_factor = 1.08, axis = "y"
+    )
+    # Also clear adjacent fill boxes after tighten
+    min_px <- max(min_px, 2 * r_t * 1.05)
+    min_py <- max(min_py, 2 * r_t * 1.05)
+    pitch_x_new <- max(pitch_x_des, min_px)
+    pitch_y_new <- max(pitch_y_des, min_py)
+    if (abs(pitch_x_new - pitch_x) < 1e-6 && abs(pitch_y_new - pitch_y) < 1e-6) {
+      pitch_x <- pitch_x_new
+      pitch_y <- pitch_y_new
+      break
+    }
+    pitch_x <- pitch_x_new
+    pitch_y <- pitch_y_new
+  }
+  message(
+    "HCTP target pitch: desired(×0.5)=", round(pitch_x_des, 3), "/", round(pitch_y_des, 3),
+    " → after top2-label floor=", round(pitch_x, 3), "/", round(pitch_y, 3),
+    " (sz_tgt=", round(sz_tgt_plan, 2), "mm)"
+  )
   message(
     "HCTP compound_spacing_factor=", compound_spacing_factor,
-    " (columns +30% compound packing; ellipse unchanged)"
+    " (compounds CCC>", compound_min_chord_r_mult, "×r; same* host-colored)"
   )
+  # #region agent log
+  try({
+    .np_dbg_log <- function(hid, loc, msg, data) {
+      line <- jsonlite::toJSON(
+        list(
+          sessionId = "360a4e", runId = "pre-fix", hypothesisId = hid,
+          location = loc, message = msg, data = data,
+          timestamp = as.numeric(Sys.time()) * 1000
+        ),
+        auto_unbox = TRUE, null = "null"
+      )
+      cat(as.character(line), "\n", file = "E:/RProject/debug-360a4e.log", append = TRUE)
+    }
+    if (requireNamespace("jsonlite", quietly = TRUE)) {
+      .np_dbg_log(
+        "D", "04_DeliveryNetworkLayouts.R:hctp_spacing",
+        "HCTP spacing/canvas params",
+        list(
+          pathway_mode = pathway_mode,
+          plot_width_in = plot_width_in,
+          plot_height_in = plot_height_in,
+          compound_spacing_factor = compound_spacing_factor,
+          compound_clearance = compound_clearance,
+          pitch_factor_x = pitch_factor_x,
+          pitch_factor_y = pitch_factor_y,
+          size_to_r = size_to_r,
+          n_targets = length(targets),
+          n_pathways = length(pathways),
+          n_herbs = length(herbs)
+        )
+      )
+    }
+  }, silent = TRUE)
+  # #endregion
+
 
   # --- coordinates ---
   pos <- list()
@@ -929,61 +1189,77 @@ np_plot_hctp_network <- function(net,
     # per-herb boost (GG/GC/DS) or mild extra clearance for moderate cramped rings
     boost <- if (h %in% names(compound_clearance_boost)) {
       compound_clearance_boost[[h]]
-    } else if (m >= 4L && m <= 12L) {
-      1.12
     } else if (m >= 20L) {
-      1.20
+      1.12
+    } else if (m >= 8L) {
+      1.06
     } else {
       1.0
     }
-    # columns: compound_spacing_factor=1.30 widens ring radius + angular clearance
+    # columns: mild radial pad from herb body (not the old large clearance stack)
     clr <- compound_clearance * boost * compound_spacing_factor
-    # chord safety slightly above 1 so adjacent compound fills never kiss
-    chord_safe <- if (identical(pathway_mode, "ellipse")) {
-      1.18
-    } else {
-      1.12 * compound_spacing_factor
+    # 圆心距下限 = 4 × 色块尺度 r；标签 top2 仅在更大时抬升
+    min_chord_blocks <- compound_min_chord_r_mult * r_b_max
+    half_comp_guess <- max(t_extent * 1.85, 6)
+    min_chord_lab <- .np_top2_label_min_gap(
+      comps, sz_comp_plan, half_comp_guess,
+      as.numeric(plot_height_in) * 25.4,
+      width_factor = 0.50, axis = "chord"
+    )
+    min_chord <- max(min_chord_blocks, min_chord_lab, 2.05 * r_b_max)
+    cr_from_chord <- function(mm) {
+      if (mm <= 1L || !is.finite(min_chord) || min_chord <= 0) return(0)
+      min_chord / (2 * sin(pi / mm))
     }
-    ring_gap <- 2 * r_b_max * clr
-    cr_hub <- r_h + r_b_max * clr
-    # split into 2 rings when many compounds — keep multi-ring for dense herbs (e.g. DS)
-    n_rings_c <- if (m >= 28L) 2L else 1L
+    # 环间距同样按 ≥4×r（环上成分圆心径向距）
+    ring_gap <- max(min_chord_blocks, 2.15 * r_b_max * clr)
+    cr_hub <- r_h + max(2.05 * r_b_max, r_b_max * clr)
+    n_rings_c <- if (m >= 28L) {
+      3L
+    } else if (m >= 14L || (identical(pathway_mode, "ellipse") && m >= 12L)) {
+      2L
+    } else {
+      1L
+    }
     if (n_rings_c == 1L) {
       cr1 <- if (m == 1L) {
         cr_hub
       } else {
-        max(cr_hub, chord_safe * r_b_max / sin(pi / m))
+        max(cr_hub, cr_from_chord(m))
       }
       if (h %in% names(compound_orbit_floor)) {
         cr1 <- max(cr1, compound_orbit_floor[[h]] * compound_spacing_factor)
       }
       orbit_plan[[i]] <- data.frame(name = comps, cr = rep(cr1, m), stringsAsFactors = FALSE)
       outer_orbit[[i]] <- cr1
-    } else {
-      # fewer on inner ring → less DS center crush; ~40% inner / 60% outer
+    } else if (n_rings_c == 2L) {
       n_inner <- as.integer(max(1L, ceiling(m * 0.40)))
       n_outer <- m - n_inner
-      cr1 <- max(
-        cr_hub,
-        if (n_inner <= 1L) cr_hub else chord_safe * r_b_max / sin(pi / n_inner)
+      cr1 <- max(cr_hub, if (n_inner <= 1L) cr_hub else cr_from_chord(n_inner))
+      cr2 <- max(cr1 + ring_gap, if (n_outer <= 1L) cr1 + ring_gap else cr_from_chord(n_outer))
+      orbit_plan[[i]] <- data.frame(
+        name = comps,
+        cr = c(rep(cr1, n_inner), rep(cr2, n_outer)),
+        stringsAsFactors = FALSE
       )
-      cr2 <- max(
-        cr1 + ring_gap,
-        if (n_outer <= 1L) cr1 + ring_gap else chord_safe * r_b_max / sin(pi / n_outer)
-      )
-      # prefer smaller outer: if single-ring is tighter, fall back
-      cr_single <- max(cr_hub, chord_safe * r_b_max / sin(pi / m))
-      if (cr_single <= cr2 * 0.92) {
-        orbit_plan[[i]] <- data.frame(name = comps, cr = rep(cr_single, m), stringsAsFactors = FALSE)
-        outer_orbit[[i]] <- cr_single
-      } else {
-        orbit_plan[[i]] <- data.frame(
-          name = comps,
-          cr = c(rep(cr1, n_inner), rep(cr2, n_outer)),
-          stringsAsFactors = FALSE
-        )
-        outer_orbit[[i]] <- cr2
+      outer_orbit[[i]] <- cr2
+    } else {
+      n1 <- as.integer(max(1L, ceiling(m * 0.28)))
+      n2 <- as.integer(max(1L, ceiling(m * 0.34)))
+      n3 <- m - n1 - n2
+      if (n3 < 1L) {
+        n3 <- 1L
+        n2 <- max(1L, m - n1 - n3)
       }
+      cr1 <- max(cr_hub, if (n1 <= 1L) cr_hub else cr_from_chord(n1))
+      cr2 <- max(cr1 + ring_gap, if (n2 <= 1L) cr1 + ring_gap else cr_from_chord(n2))
+      cr3 <- max(cr2 + ring_gap, if (n3 <= 1L) cr2 + ring_gap else cr_from_chord(n3))
+      orbit_plan[[i]] <- data.frame(
+        name = comps,
+        cr = c(rep(cr1, n1), rep(cr2, n2), rep(cr3, n3)),
+        stringsAsFactors = FALSE
+      )
+      outer_orbit[[i]] <- cr3
     }
   }
   max_comp_r <- if (n_h) max(outer_orbit) else 0
@@ -1009,7 +1285,7 @@ np_plot_hctp_network <- function(net,
 
   # min herb ring so adjacent herb+compound clusters do not collide
   herb_r_min_cluster <- if (n_h >= 2L) {
-    herb_clear * 1.03 / sin(pi / n_h)
+    herb_clear * 1.01 / sin(pi / n_h)
   } else {
     t_extent + herb_clear + 0.15
   }
@@ -1030,9 +1306,9 @@ np_plot_hctp_network <- function(net,
     gap_data_min <- gap_cm_min * duc_guess
     path_floor_x <- t_half_x + r_p_a + r_t_clear * 0.55 + section_pad_tp + ellipse_clear_safety
     path_floor_y <- t_half_y + r_p_b + r_t_clear * 0.55 + section_pad_tp + ellipse_clear_safety
-    path_floor <- max(path_floor_x, path_floor_y, t_corner + r_p_extent * 1.15 + section_pad_tp)
+    path_floor <- max(path_floor_x, path_floor_y, t_corner + r_p_extent * 1.05 + section_pad_tp)
     path_band <- max(
-      2.4 * r_p_extent * pathway_v_gap_factor + ellipse_clear_safety,
+      1.85 * r_p_extent * pathway_v_gap_factor + ellipse_clear_safety,
       gap_data_min + r_p_extent * pitch_safety + section_pad_ph
     )
     herb_r <- max(
@@ -1052,8 +1328,8 @@ np_plot_hctp_network <- function(net,
     path_R <- max(path_floor, min(path_R, path_ceil))
     # axis-matched ellipse: guarantee clearance on left/right AND top/bottom
     # Extra 12% on y — taller target grid was still hugging top/bottom pathways visually
-    path_rx <- max(path_R, path_floor_x) * 1.04
-    path_ry <- max(path_R * 0.98, path_floor_y) * 1.12
+    path_rx <- max(path_R, path_floor_x) * 1.01
+    path_ry <- max(path_R * 0.98, path_floor_y) * 1.04
     pang <- if (n_p <= 1L) {
       0
     } else {
@@ -1061,6 +1337,16 @@ np_plot_hctp_network <- function(net,
     }
     for (i in seq_len(n_p)) {
       pos[[pathways[i]]] <- c(path_rx * cos(pang[i]), path_ry * sin(pang[i]))
+    }
+    # path_rx/ry inflate AFTER herb_r was chosen — reclaim outer clearance for satellites.
+    path_outer_est <- max(path_rx, path_ry) + r_p_extent
+    herb_r_need <- path_outer_est + herb_clear + gap_data_min * 0.35 + section_pad_ph
+    if (is.finite(herb_r_need) && herb_r < herb_r_need) {
+      message(
+        "HCTP ellipse herb_r expand ", round(herb_r, 3), "→", round(herb_r_need, 3),
+        " (path_outer_est=", round(path_outer_est, 3), ")"
+      )
+      herb_r <- herb_r_need
     }
     message(
       "HCTP ellipse path shape a/b frac=", path_ell_a_frac, "/", path_ell_b_frac,
@@ -1095,11 +1381,51 @@ np_plot_hctp_network <- function(net,
       }
     }
   }
+  # #region agent log
+  try({
+    if (length(same_hosts) && requireNamespace("jsonlite", quietly = TRUE)) {
+      spat <- lapply(names(same_hosts), function(sid) {
+        host <- same_hosts[[sid]]
+        p_s <- pos[[sid]]
+        p_h <- pos[[host]]
+        if (is.null(p_s) || is.null(p_h)) {
+          return(list(same_id = sid, host = host, dist_host = NA_real_, nearest_herb = NA_character_))
+        }
+        d_host <- sqrt(sum((p_s - p_h)^2))
+        d_all <- vapply(herbs, function(hh) {
+          pp <- pos[[hh]]
+          if (is.null(pp)) return(Inf)
+          sqrt(sum((p_s - pp)^2))
+        }, numeric(1))
+        list(
+          same_id = sid, host = host, dist_host = d_host,
+          nearest_herb = names(d_all)[which.min(d_all)],
+          nearest_is_host = identical(names(d_all)[which.min(d_all)], host)
+        )
+      })
+      line <- jsonlite::toJSON(
+        list(
+          sessionId = "360a4e", runId = "post-fix", hypothesisId = "J",
+          location = "04_DeliveryNetworkLayouts.R:same_spatial_host",
+          message = "same* spatial nearest herb vs assigned host",
+          data = list(
+            pathway_mode = pathway_mode,
+            n = length(spat),
+            all_nearest_is_host = all(vapply(spat, function(x) isTRUE(x$nearest_is_host), logical(1))),
+            sample = utils::head(spat, 12)
+          ),
+          timestamp = as.numeric(Sys.time()) * 1000
+        ),
+        auto_unbox = TRUE, null = "null"
+      )
+      cat(as.character(line), "\n", file = "E:/RProject/debug-360a4e.log", append = TRUE)
+    }
+  }, silent = TRUE)
+  # #endregion
 
   if (!identical(pathway_mode, "ellipse")) {
     # Pathways L/R outermost: sit outside the full circular herb+compound ring
     # (herb_r + herb_clear), not merely max(|x|) of diagonal satellites.
-    path_v_gap <- 2 * r_p * pathway_v_gap_factor
     placed_nms <- names(pos)
     placed_types <- unname(type_vec[placed_nms])
     abc <- !is.na(placed_types) & placed_types %in% c("A", "B", "C")
@@ -1120,12 +1446,24 @@ np_plot_hctp_network <- function(net,
     outer_x <- max(x_extent + r_p * pitch_safety + section_pad_col_path,
                    ring_enclose, t_extent + r_p + section_pad_col_path)
     # hard floor: pathways must sit clearly outside satellite ring (user-visible enclosure)
-    outer_x <- max(outer_x, herb_r + herb_clear + r_p + 1.25)
+    outer_x <- max(outer_x, herb_r + herb_clear + r_p + 0.45)
     message(
       "HCTP columns outer_x=", round(outer_x, 3),
       " x_extent=", round(x_extent, 3),
       " ring_enclose=", round(ring_enclose, 3),
       " herb_r+clear=", round(herb_r + herb_clear, 3)
+    )
+    path_v_gap_des <- 2 * r_p * pathway_v_gap_factor
+    path_v_gap_lab <- .np_top2_label_min_gap(
+      c(left_p, right_p), sz_path_plan, max(outer_x, t_extent, 1),
+      as.numeric(plot_height_in) * 25.4,
+      height_factor = 1.08, axis = "y"
+    )
+    path_v_gap <- max(path_v_gap_des, path_v_gap_lab, 2 * r_p * 1.05)
+    message(
+      "HCTP pathway v_gap: fill-based=", round(path_v_gap_des, 3),
+      " top2-label=", round(path_v_gap_lab, 3),
+      " → used=", round(path_v_gap, 3)
     )
     place_col <- function(nodes, x, pos_list) {
       m <- length(nodes)
@@ -1186,6 +1524,7 @@ np_plot_hctp_network <- function(net,
   for (h in herbs) {
     nd$fill_col[nd$type == "B" & nd$herb_owner == h] <- herb_cols[[h]]
   }
+  # same* keep host herb color (herb_owner from assign); do not recolor to grey
   # pathway color by pathway connectivity (visual); size still global Degree
   pd <- as.numeric(path_deg[nd$name[nd$type == "D"]])
   if (length(pd)) {
@@ -1213,7 +1552,9 @@ np_plot_hctp_network <- function(net,
     b <- el_ab$to[i]
     h <- if (identical(type_vec[[a]], "A")) a else b
     cpd <- if (identical(type_vec[[a]], "B")) a else b
-    keep_ab[i] <- isTRUE(cpd %in% assigned[[h]])
+    # herb-unique: orbit membership; same*: keep all multi-herb A–B edges
+    keep_ab[i] <- isTRUE(cpd %in% assigned[[h]]) ||
+      (grepl("^same[0-9]+$", cpd, ignore.case = TRUE) && isTRUE(cpd %in% herb_comps[[h]]))
   }
   el_ab <- el_ab[keep_ab, , drop = FALSE]
   el_bc <- el[el$pair == "B-C", , drop = FALSE]
@@ -1400,9 +1741,29 @@ np_plot_hctp_network <- function(net,
   nd_c_shape <- .np_square_shape_df(nd_c, corner_frac = target_corner_frac, n_arc = 10L)
   nd_a$sides <- 8L
   nd_a$angle <- 0 # flat side horizontal (0°)
-  # pathway labels: ID only (e.g. hsa04210), single line — never full names
+  # pathway labels: default KEGG IDs (hsa…); optional full English names
   if (nrow(nd_d)) {
-    nd_d$label <- unname(.np_resolve_pathway_labels(nd_d$name, pathway_names))
+    if (identical(pathway_label_mode, "name")) {
+      nd_d$label <- unname(.np_resolve_pathway_labels(nd_d$name, pathway_names))
+    } else {
+      nd_d$label <- as.character(nd_d$name)
+    }
+  }
+  # targets: every node labeled (no blank pink squares); spacing widened to avoid overlap
+  n_c <- nrow(nd_c)
+  if (n_c) {
+    if (isTRUE(label_all_targets) && (is.null(label_top_n) || !is.finite(label_top_n))) {
+      nd_c$label <- as.character(nd_c$name)
+    } else {
+      lab_n <- label_top_n
+      if (is.null(lab_n) || !is.finite(lab_n)) {
+        lab_n <- n_c
+      }
+      lab_n <- as.integer(min(as.integer(lab_n), n_c))
+      nd_c$label <- ""
+      ord <- order(-nd_c$degree, nd_c$name)
+      nd_c$label[ord[seq_len(lab_n)]] <- nd_c$name[ord[seq_len(lab_n)]]
+    }
   }
 
   message(
@@ -1424,7 +1785,8 @@ np_plot_hctp_network <- function(net,
     } else {
       ""
     },
-    " labels=ID"
+    " pathway_labels=", pathway_label_mode,
+    "; targets_labeled=", if (n_c) sum(nzchar(nd_c$label)) else 0L, "/", n_c
   )
   if (!nrow(nd_c) || !nrow(nd_c_shape)) {
     warning("HCTP target fills missing: n_C=", nrow(nd_c), " shape_rows=", nrow(nd_c_shape))
@@ -1445,12 +1807,53 @@ np_plot_hctp_network <- function(net,
   edge_cd_col <- if (!is.null(accents$edge_cd)) accents$edge_cd else "#2F6FBF"
   # Cytoscape pt → ggplot mm: size = (pt / ggplot2::.pt) * canvas_scale
   # Type-constant fonts — never per-node clamp (spacing widened instead).
+  # Canvas coupling: keep readable mm when plot inches change.
   lab_pt <- .np_hctp_label_pt
-  lab_scale <- if (!is.null(lab_pt$canvas_scale)) lab_pt$canvas_scale else 0.26
+  lab_base <- if (!is.null(lab_pt$canvas_scale)) lab_pt$canvas_scale else 0.32
+  lab_ref <- if (!is.null(lab_pt$canvas_ref_in)) lab_pt$canvas_ref_in else 20
+  lab_scale <- lab_base * (as.numeric(lab_ref) / max(as.numeric(plot_width_in), as.numeric(plot_height_in), 1))
+  # Floor so labels never become unreadably small on large canvases
+  lab_scale <- max(0.16, min(0.24, lab_scale))
   sz_herb <- .np_pt_to_ggplot_size(lab_pt$herb, scale = lab_scale)
   sz_comp <- .np_pt_to_ggplot_size(lab_pt$compound, scale = lab_scale)
   sz_tgt  <- .np_pt_to_ggplot_size(lab_pt$target, scale = lab_scale)
   sz_path <- .np_pt_to_ggplot_size(lab_pt$pathway, scale = lab_scale)
+  # Fit target labels INSIDE pink squares (longest gene × min target r) — prevents
+  # spill that looks like overlap even when centers clear.
+  if (nrow(nd_c)) {
+    half_span <- max(abs(nd_c$x), abs(nd_c$y), 1)
+    max_nm <- nd_c$name[which.max(nchar(as.character(nd_c$name)))[1]]
+    min_r <- min(nd_c$r, na.rm = TRUE)
+    fit_sz <- .np_label_size_fit_in_r(
+      min_r * 0.92, max_nm,
+      plot_half_range = half_span,
+      plot_height_mm = as.numeric(plot_height_in) * 25.4,
+      width_factor = 0.55, height_factor = 1.08, fit_frac = 0.72,
+      max_size = sz_tgt, min_size = 0.85
+    )
+    # #region agent log
+    try({
+      if (requireNamespace("jsonlite", quietly = TRUE)) {
+        line <- jsonlite::toJSON(
+          list(
+            sessionId = "360a4e", runId = "post-fix", hypothesisId = "G",
+            location = "04_DeliveryNetworkLayouts.R:target_label_fit",
+            message = "target label size fit inside squares",
+            data = list(
+              sz_tgt_type = sz_tgt, sz_tgt_fit = fit_sz, min_r = min_r,
+              max_name = max_nm, pitch_x = pitch_x, pitch_y = pitch_y,
+              n_c = nrow(nd_c)
+            ),
+            timestamp = as.numeric(Sys.time()) * 1000
+          ),
+          auto_unbox = TRUE, null = "null"
+        )
+        cat(as.character(line), "\n", file = "E:/RProject/debug-360a4e.log", append = TRUE)
+      }
+    }, silent = TRUE)
+    # #endregion
+    sz_tgt <- fit_sz
+  }
   message(
     "HCTP type fonts(mm): target=", round(sz_tgt, 2),
     " herb=", round(sz_herb, 2),
@@ -1479,21 +1882,21 @@ np_plot_hctp_network <- function(net,
   }
 
   p <- ggplot2::ggplot() +
-    # solid edges under fills — A–B / B–C muted grey; C–D distinct blue
+    # Edges under fills — stronger visibility; solid lines (dashed too faint on dense nets)
     ggplot2::geom_segment(
       data = el_bc,
       ggplot2::aes(x = x, y = y, xend = xend, yend = yend),
-      color = edge_col, alpha = 0.18, linewidth = 0.2, linetype = "solid"
+      color = edge_col, alpha = 0.22, linewidth = 0.28, linetype = "solid"
     ) +
     ggplot2::geom_segment(
       data = el_ab,
       ggplot2::aes(x = x, y = y, xend = xend, yend = yend),
-      color = edge_col, alpha = 0.28, linewidth = 0.28, linetype = "solid"
+      color = edge_col, alpha = 0.32, linewidth = 0.36, linetype = "solid"
     ) +
     ggplot2::geom_segment(
       data = el_cd,
       ggplot2::aes(x = x, y = y, xend = xend, yend = yend),
-      color = edge_cd_col, alpha = 0.42, linewidth = 0.40, linetype = "solid"
+      color = edge_cd_col, alpha = 0.28, linewidth = 0.40, linetype = "solid"
     ) +
     # targets FIRST among nodes: solid pink rounded squares (must be visible, not labels-only)
     ggplot2::geom_polygon(
@@ -1526,27 +1929,37 @@ np_plot_hctp_network <- function(net,
       data = nd_b,
       ggplot2::aes(x = x, y = y, label = name, size = label_size),
       color = "black", hjust = 0.5, vjust = 0.5,
+      check_overlap = FALSE,
       show.legend = FALSE
     ) +
+    # targets: every label drawn; check_overlap=TRUE would drop glyphs → blank squares
     ggplot2::geom_text(
-      data = nd_c,
-      ggplot2::aes(x = x, y = y, label = name, size = label_size),
-      color = "black", hjust = 0.5, vjust = 0.5,
+      data = nd_c[nzchar(nd_c$label), , drop = FALSE],
+      ggplot2::aes(x = x, y = y, label = label, size = label_size),
+      color = "grey10", fontface = "bold", hjust = 0.5, vjust = 0.5,
+      check_overlap = FALSE,
       show.legend = FALSE
     ) +
     ggplot2::geom_text(
       data = nd_d,
       ggplot2::aes(x = x, y = y, label = label, size = label_size),
       fontface = "bold", color = "black",
-      hjust = 0.5, vjust = 0.5, lineheight = 1,
+      hjust = 0.5, vjust = 0.5, lineheight = 0.92,
+      check_overlap = FALSE,
       show.legend = FALSE
     ) +
     ggplot2::scale_size_identity() +
     ggplot2::labs(
       title = title,
       subtitle = sprintf(
-        "%s · Degree→size %d–%d (r=size/%g) · C–D edges blue · type-constant fonts · A=%d B=%d C=%d D=%d",
+        "%s · Degree→size %d–%d (r=size/%g) · C–D edges blue · pathway %s · targets labeled: %s · A=%d B=%d C=%d D=%d",
         path_subtitle, size_min, size_max, size_to_r,
+        if (identical(pathway_label_mode, "id")) "IDs (hsa…)" else "full names",
+        if (isTRUE(label_all_targets) && (is.null(label_top_n) || !is.finite(label_top_n))) {
+          "all (no blank)"
+        } else {
+          "topDegree subset"
+        },
         length(herbs), sum(vapply(assigned, length, 1L)), length(targets), length(pathways)
       )
     ) +
@@ -1560,6 +1973,9 @@ np_plot_hctp_network <- function(net,
     )
   if (isTRUE(.np_ensure_plotqa())) {
     lab_map <- setNames(as.character(nd$name), nd$name)
+    if (nrow(nd_c) && "label" %in% names(nd_c)) {
+      lab_map[nd_c$name] <- as.character(nd_c$label)
+    }
     if (nrow(nd_d) && "label" %in% names(nd_d)) {
       lab_map[nd_d$name] <- as.character(nd_d$label)
     }

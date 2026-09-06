@@ -12,7 +12,9 @@
 
 | Skill id / path | Status | 冻结/对齐内容 | Evidence | 日期 |
 |-----------------|--------|---------------|----------|------|
-| `bioinfo-network-pharmacology` / `03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology` | **frozen** | 全视觉轨：HCTP / Ellipse 网络、String PPI concentric、柱状（成分-疾病重叠、每药重叠、GO/KEGG）、韦恩等；**禁止重绘或「对齐期刊范式」改布局色** | `01_样例_sample/代码文件/结果文件/图片文件/`；`文档_docs/出图约束_NetworkFigureStandards.md`；技能说明首行 FROZEN 注记 | 2026-07-19 |
+| `bioinfo-network-pharmacology` / `03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology` | **frozen** | 全视觉轨 + 轨 B 目录 + 疾病双口径 + Fig16–19 + KEGG Top20 + HTML 报告（相对路径整夹分享）；**§J–§L 已用户授权增补**（网络分析报告 / 空靶点药 / 生物结构动画）；**禁止**未解冻改 §A–§H recipe | `文档_docs/出图约束_NetworkFigureStandards.md`（**FROZEN 2026-07-26**；§J–L 2026-07-27）；`01_样例_sample/`；技能说明首部 FROZEN 注记 | 2026-07-27 |
+| `bioinfo-molecular-dynamics` / `03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics` | **frozen** | 3HTB 样例：`01`–`26` 图册序 + 一图一夹 + `工作文件_MdWork` 阶段归档；Origin FEL/曲线/能量柱 recipe（Viridis、journal muted、禁止 `showLines(3)`/`pfb color()`）；PyMOL 快照 + LigPlot 正式化学结构；分组 HTML 报告（KPI + 分条解读 + 0.20 ns 警示）；**禁止**未解冻改图样/报告结构/解读口径 | `文档_docs/出图与交付约束_MdFigureStandards.md`（**FROZEN 2026-09-03**）；`01_样例_sample/`；`样例报告_SampleReport_v1.html` | 2026-09-03 |
+| `bioinfo-molecular-docking` / `03_药物计算_DrugDiscovery/分子对接与虚拟筛选_MolecularDocking` | **frozen** | AutoDock-GPU 默认路线；定心决策树（共晶包盒 / AutoSite / 回退）；`center_source` 强制登记；PyMOL ST/PT/CJ/QJ + detail 手调断点；**detail 截图定稿**（最大化 / buffer=4 / 满度 0.72 / 视口中心 6000²）+ **result 拼图效力序**（SOP §7.3/§7.4）；序号交付目录；热图色标 **仅非正值（vmax=0）**；**禁止**共晶 RMSD 重对接验收；**禁止**未解冻改路线/图样语义/schema | `文档_docs/对接与交付约束_DockingFrozen.md`（**FROZEN 2026-09-05**；detail/result 定稿 **2026-09-06**）；SOP §7.3/§7.4；`plot_docking_affinity_heatmap.py`；`努力学习/docking_adgpu/` | 2026-09-06 |
 | `bioinfo-viz-standards` / `00_基础_Foundation/统一可视化规范_VizStandards` | **aligned** | journal muted 色板；火山/热图/富集 bar·dot/UMAP/KM recipe；PlotQA 强制；多面板范式文档 | `出版级出图_PublicationPlot.R`；`出图后审核_PlotQA.*`；本目录两篇范式文档 | 2026-07-19 |
 | `bioinfo-plotqa`（PlotQA，挂于 VizStandards） | **aligned** | 出图后遮挡/长标签审核钩子 | `文档_docs/出图后审核_PlotQA.md`；`脚本_scripts/出图后审核_PlotQA.R` | 2026-07-19 |
 | `bioinfo-rnaseq` / `01_组学_Omics/转录组分析_RNA-seq` | **aligned** | 文档对齐 Fig1/2 图种 + PlotQA + 真实数据门禁 | 技能说明 §6 | 2026-07-19 |
@@ -28,7 +30,7 @@
 | `bioinfo-gwas` | **aligned-by-reference** | 同上；近邻：曼哈顿/QQ（期刊主题） | 技能说明 | 2026-07-19 |
 | `bioinfo-epigenomics`（ChIP） | **aligned-by-reference** | 同上；近邻：富集柱/热图 | 技能说明 | 2026-07-19 |
 | `bioinfo-proteomics` | **aligned-by-reference** | 同上；近邻：火山/热图/PCA | 技能说明 | 2026-07-19 |
-| 其他 DrugDiscovery（对接/MD/结构/ADMET/CMap/GDSC 等，**不含** NetPharm） | **aligned-by-reference** | 短注对齐 VizStandards；不强制重写代码 | 各技能说明 | 2026-07-19 |
+| 其他 DrugDiscovery（结构/ADMET/CMap/GDSC 等，**不含** NetPharm、**不含** MD、**不含** Docking） | **aligned-by-reference** | 短注对齐 VizStandards；不强制重写代码 | 各技能说明 | 2026-07-19 |
 | 其余未点名技能 | **pending** | 尚未逐条改文档；默认仍须走 VizStandards + PlotQA | — | 2026-07-19 |
 
 ---
@@ -46,5 +48,8 @@
 
 | 日期 | 变更 |
 |------|------|
+| 2026-09-03 | MD 用户确认冻结：图册 01–26、Origin/PyMOL/LigPlot recipe、分组 HTML 报告与解读口径 → `出图与交付约束_MdFigureStandards.md` |
+| 2026-07-27 | NetPharm：用户要求写入规范 — 出图约束增补 §J–§L（网络分析 HTML/大表、空靶点药味、生物结构动画）；成分靶点 SOP §7；**未解冻**既有视觉 recipe |
+| 2026-07-26 | NetPharm 用户确认冻结：出图约束扩写 §0a/§E–§H（双口径、高级附图、KEGG Top20、HTML 报告、轨 B 树）并标 **FROZEN** |
 | 2026-07-19 | 样例结果路径迁至 `代码文件/结果文件/`；NetPharm 仍 frozen（仅路径/编号，未改视觉） |
 | 2026-07-19 | 初版登记；NetPharm frozen；期刊范式对齐批次 |

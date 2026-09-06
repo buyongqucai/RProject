@@ -149,3 +149,4 @@ printf 'Protein\n' | gmx gyrate -s md.tpr -f md_center.xtc \
     -o gyrate.xvg > gyrate.log 2>&1 || true
 
 log "DONE: $(ls *.xvg 2>/dev/null | tr '\n' ' ')"
+log "样例归档（分类目录+中英对照）: python 整理样例目录_layoutMdSample.py"

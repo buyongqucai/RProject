@@ -1249,7 +1249,15 @@ plot_pathway_activity_heatmap_journal <- function(mat,
     scale_fill_diverging_rb(name = "Activity") +
     ggplot2::labs(x = NULL, y = NULL, title = title) +
     theme_journal() +
-    ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
+    # VizStandards: heatmap labels black (#000000)
+    ggplot2::theme(
+      axis.text = ggplot2::element_text(color = "#000000"),
+      axis.text.x = ggplot2::element_text(angle = 45, hjust = 1, color = "#000000"),
+      axis.title = ggplot2::element_text(color = "#000000"),
+      plot.title = ggplot2::element_text(color = "#000000"),
+      legend.text = ggplot2::element_text(color = "#000000"),
+      legend.title = ggplot2::element_text(color = "#000000")
+    )
 }
 
 #' Density + box combo for PC (or any continuous) scores by group (Fig1-c).

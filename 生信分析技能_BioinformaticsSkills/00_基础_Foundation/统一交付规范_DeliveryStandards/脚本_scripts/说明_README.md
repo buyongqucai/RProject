@@ -6,6 +6,8 @@
 #   保存后钩子：VizStandards 出图后审核_PlotQA（viz_qa_after_plot；options(bioinfo.plotqa.*)）
 # - 规范_数据审计_DataAudit.R：write_delivery_audit → 审计前检_AuditPre / 审计后检_AuditPost
 # - 规范_报告生成_ReportBuild.R：write_delivery_report → 样例报告_SampleReport_v1.html
+#   版式 SSOT：../文档_docs/样例报告范式_SampleReportParadigm.md
+#   金标：分子动力学模拟_MolecularDynamics 样例报告（KPI + 分组图 + 分条解读）
 #
 # 目录约定 SSOT：../文档_docs/样例目录与命名_SampleLayoutNaming.md
 # 样例 run_sample.R 强制按序 source：VizStandards → DeliveryStandards → 本技能脚本

@@ -12,7 +12,7 @@ description: >-
 # 统一可视化规范 / VizStandards
 
 **期刊多面板范式（SSOT）：** [`文档_docs/高分期刊出图范式_JournalFigureParadigm.md`](文档_docs/高分期刊出图范式_JournalFigureParadigm.md)  
-**冻结登记：** [`文档_docs/已跑通范式登记_FrozenParadigms.md`](文档_docs/已跑通范式登记_FrozenParadigms.md)（`网络药理学` = frozen，勿改其视觉）  
+**冻结登记：** [`文档_docs/已跑通范式登记_FrozenParadigms.md`](文档_docs/已跑通范式登记_FrozenParadigms.md)（`网络药理学`、`分子动力学模拟` = **frozen**，勿改其交付范式）  
 **PlotQA：** [`文档_docs/出图后审核_PlotQA.md`](文档_docs/出图后审核_PlotQA.md)
 
 ## 1. 数据来源
@@ -30,6 +30,15 @@ description: >-
 - 用户提到 DPI、SVG、PNG、图面语言、标签重叠、期刊出图  
 
 不适用：纯表格导出且无图。
+
+### 回退优先级（强制）
+
+出图时按下列顺序取规范；**不得**在未写明时凭通用习惯另起样式：
+
+1. 用户当场指定的样式 / 明确解冻的 FROZEN 样例  
+2. **领域技能**正文或 `文档_docs/` 中已写明的出图条款（含网药 FROZEN）  
+3. **本技能（VizStandards）** ← 领域技能**未写明**出图规范时，**一律先用本规范**  
+4. DeliveryStandards（仅文件命名 / 目录 / 审计，不管视觉 recipe）
 
 ## 4. 数据处理方法
 
@@ -70,6 +79,7 @@ description: >-
 | 字体 | 图面 **Arial/sans**；English only |
 | 分组色 | Control `#6B8F71` / TreatA `#C17B7B` / TreatB `#8B7BA8`（`bioinfo_groups`；Accent1 `#D4A574` / Accent2 `#5B8FA8`） |
 | 发散色 | 蓝–白–红（热图/通路活性 `bioinfo_diverging_rb`：`#2166AC`…`#B2182B`） |
+| **热图标签** | **一律黑色 `#000000`**：行名、列名、格内数值（annot）、坐标轴标题、图例标题/刻度文字；禁止随底色自动反白/灰字（除非领域技能 FROZEN 另有规定） |
 | 火山 | up `#C0392B` / down `#1A7A6D` / ns `#BDBDBD` |
 | 富集 | **默认水平柱 / 气泡点图**；facet 色 `bioinfo_enrich_facet`（BP `#6B8F71` / CC `#8B7BA8` / MF `#D4A574` / KEGG `#5B8FA8`）；**禁止以 lollipop 为默认** |
 | UMAP | 分类 `bioinfo_umap_discrete`；连续表达 `bioinfo_feature_blue` |
@@ -84,7 +94,7 @@ description: >-
 | 多面板字母 | `annotate_panel_letter` |
 | PCA 散点 + 分组色 | `plot_pca_journal` / `bioinfo_groups` + `theme_journal` |
 | 火山 up/down | `scale_color_volcano` / `plot_volcano_journal` |
-| 热图蓝白红 | `scale_fill_diverging_rb` |
+| 热图蓝白红 | `scale_fill_diverging_rb`；标签黑色见上表「热图标签」与 `plot_pathway_activity_heatmap_journal` |
 | 富集水平柱（按类着色） | `plot_enrich_hbar_facet` + `bioinfo_enrich_facet` |
 | 富集气泡/点图（Count × −log10p） | `plot_enrich_dot_journal`（**优先于棒棒糖**） |
 | 箱线+抖动 | `plot_box_jitter_journal` |

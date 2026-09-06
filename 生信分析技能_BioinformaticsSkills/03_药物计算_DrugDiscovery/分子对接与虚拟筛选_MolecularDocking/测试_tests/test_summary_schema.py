@@ -26,15 +26,23 @@ def _import(name: str):
 
 
 CANONICAL_CSV = (
-    "task,protein,pdb,ligand,ligand_name,cid,affinity_kcal_mol\n"
-    "1,KIT,1T46,quercetin,Quercetin,5280343,-10.5\n"
-    "2,KIT,1T46,luteolin,Luteolin,5280445,-8.3\n"
+    "task,protein,pdb,ligand,ligand_name,cid,affinity_kcal_mol,"
+    "center_source,center_detail,size_method,box_qc,fallback_used,engine\n"
+    "1,KIT,1T46,quercetin,Quercetin,5280343,-10.5,"
+    "cocrystal_meeko,STP:A:301,meeko_enveloping,PASS,,adgpu\n"
+    "2,KIT,1T46,luteolin,Luteolin,5280445,-8.3,"
+    "cocrystal_meeko,STP:A:301,meeko_enveloping,PASS,,adgpu\n"
 )
 
 LEGACY_CSV = (
     "对接序号,蛋白,PDB,成分,CID,best_affinity_kcal,status\n"
     "1,KIT,1T46,quercetin,5280343,-10.5,ok\n"
     "2,KIT,1T46,luteolin,5280445,-8.3,ok\n"
+)
+
+MINIMAL_CANONICAL_CSV = (
+    "task,protein,pdb,ligand,ligand_name,cid,affinity_kcal_mol\n"
+    "1,KIT,1T46,quercetin,Quercetin,5280343,-10.5\n"
 )
 
 
@@ -62,6 +70,9 @@ def test_canonical_schema_parsed(canonical_csv: Path) -> None:
     assert rows[0]["ligand"] == "quercetin"
     assert rows[0]["cid"] == "5280343"
     assert rows[0]["affinity_kcal_mol"] == pytest.approx(-10.5)
+    assert rows[0]["center_source"] == "cocrystal_meeko"
+    assert rows[0]["engine"] == "adgpu"
+    assert schema.center_source_ok(rows[0]["center_source"], require=True)
 
 
 def test_legacy_schema_normalized_to_canonical(legacy_csv: Path) -> None:
@@ -71,6 +82,25 @@ def test_legacy_schema_normalized_to_canonical(legacy_csv: Path) -> None:
     assert rows[1]["task"] == "2"
     assert rows[1]["ligand"] == "luteolin"
     assert rows[1]["affinity_kcal_mol"] == pytest.approx(-8.3)
+    assert rows[1]["center_source"] == ""  # 旧表无列，容忍空
+    assert schema.center_source_ok("", require=False)
+    assert not schema.center_source_ok("", require=True)
+
+
+def test_minimal_canonical_fills_center_fields(tmp_path: Path) -> None:
+    p = tmp_path / "summary_vina.csv"
+    p.write_text(MINIMAL_CANONICAL_CSV, encoding="utf-8")
+    schema = _import("dock_summary_schema")
+    rows = schema.load_summary_rows(p)
+    assert rows[0]["center_source"] == ""
+    assert rows[0]["center_detail"] == ""
+
+
+def test_center_method_alias_normalized() -> None:
+    schema = _import("dock_summary_schema")
+    assert schema.normalize_center_source("cocrystal_single_ligand_COM") == "cocrystal"
+    assert schema.center_source_ok("autosite", require=True)
+    assert not schema.center_source_ok("chain_com", require=True)
 
 
 def test_ring_heatmap_accepts_legacy_schema(tmp_path: Path) -> None:

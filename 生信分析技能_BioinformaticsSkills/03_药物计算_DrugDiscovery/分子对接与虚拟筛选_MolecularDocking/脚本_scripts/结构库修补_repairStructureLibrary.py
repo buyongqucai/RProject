@@ -64,9 +64,10 @@ def main():
             cid = (row.get("活性成分3D结构名称") or "").strip()
             cname = (row.get("活性成分名称") or "").strip()
             name = prep.safe_name(cname or f"cid_{cid}")
-            sdf = ROOT / "small" / f"{name}.sdf"
-            clean = ROOT / "small_clean" / f"{name}_clean.sdf"
-            pdbqt = ROOT / "small_clean_h" / f"{name}_clean_h.pdbqt"
+            stem = cid  # 2026-08-31 起：化合物文件一律以 PubChem CID 命名
+            sdf = ROOT / "small" / f"{stem}.sdf"
+            clean = ROOT / "small_clean" / f"{stem}_clean.sdf"
+            pdbqt = ROOT / "small_clean_h" / f"{stem}_clean_h.pdbqt"
             if pdbqt.exists() and pdbqt.stat().st_size > 100:
                 continue
 
@@ -120,7 +121,7 @@ def main():
                 log.writerow([cid, "pdbqt", "SKIP_unsupported", name,
                               time.strftime("%F %T")])
                 continue
-            mol2 = ROOT / "small_clean_h" / f"{name}.mol2"
+            mol2 = ROOT / "small_clean_h" / f"{stem}.mol2"
             ok1, m1 = prep.obabel([str(clean), "-O", str(mol2), "-h"])
             ok2, m2 = False, "no mol2"
             if ok1 and mol2.exists():

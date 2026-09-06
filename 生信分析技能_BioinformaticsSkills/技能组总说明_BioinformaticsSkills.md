@@ -34,7 +34,7 @@ description: >-
 
 - 图：DPI ≥ 600；SVG + PNG；图面 English；防遮挡；统一配色（`统一可视化规范_VizStandards`）
 - **期刊多面板范式：** [`高分期刊出图范式_JournalFigureParadigm.md`](00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/高分期刊出图范式_JournalFigureParadigm.md)
-- **冻结登记：** [`已跑通范式登记_FrozenParadigms.md`](00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/已跑通范式登记_FrozenParadigms.md) — `网络药理学_NetworkPharmacology` 视觉轨 **frozen**，未解冻不得改布局/配色/样例图
+- **冻结登记：** [`已跑通范式登记_FrozenParadigms.md`](00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/已跑通范式登记_FrozenParadigms.md) — `网络药理学_NetworkPharmacology`、`分子动力学模拟_MolecularDynamics` **frozen**，未解冻不得改布局/配色/样例图/报告范式
 - **出图后审核：** 每张图保存后强制 PlotQA（色块/标签互挡、长标签版式）— [`出图后审核_PlotQA.md`](00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/出图后审核_PlotQA.md)
 - 命名 / 审计 / HTML 报告：`统一交付规范_DeliveryStandards`（禁止 `plot.png`、`sample_volcano.png`、无前缀 `样例报告.html`）
 - 样例须 `source` 本技能 `脚本_scripts/`，不可用全局同构假流程冒充

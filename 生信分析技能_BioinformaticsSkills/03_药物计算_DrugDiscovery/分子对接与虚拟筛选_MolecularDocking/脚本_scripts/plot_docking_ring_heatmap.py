@@ -70,9 +70,14 @@ def short_name(ligand: str, ligand_name: str, max_len: int = 22) -> str:
 
 
 def load_summary(root: Path) -> List[dict]:
-    path = root / "summary_vina.csv"
-    if not path.exists():
-        raise FileNotFoundError(f"missing {path}")
+    path = None
+    for name in ("summary_adgpu.csv", "summary_vina.csv"):
+        p = root / name
+        if p.is_file():
+            path = p
+            break
+    if path is None:
+        raise FileNotFoundError(f"missing summary_adgpu.csv / summary_vina.csv under {root}")
     from dock_summary_schema import load_summary_rows
 
     rows = []
@@ -97,7 +102,7 @@ def load_summary(root: Path) -> List[dict]:
             }
         )
     if not rows:
-        raise RuntimeError("no rows in summary_vina.csv")
+        raise RuntimeError(f"no rows in {path.name}")
     return rows
 
 
@@ -122,14 +127,15 @@ def draw_ring_dashboard(
     protein = rows[0]["protein"]
     pdb = rows[0]["pdb"]
     affs = np.array([r["affinity"] for r in rows], dtype=float)
-    # more negative = stronger → map to high end of cmap
-    vmin, vmax = float(affs.min()), float(affs.max())
+    # FROZEN: color scale only non-positive (affinity should be ≤0)
+    vmin = float(np.nanmin(affs[affs <= 0])) if np.any(affs <= 0) else -10.0
+    vmax = 0.0
     if abs(vmax - vmin) < 1e-6:
-        vmax = vmin + 0.5
+        vmin = vmax - 0.5
     norm = Normalize(vmin=vmin, vmax=vmax)
     # invert: strongest (min) → 1.0
     def aff_to_color(a: float):
-        t = 1.0 - norm(a)  # strong → dark
+        t = 1.0 - norm(min(a, 0.0))  # clamp display color at 0
         return AFF_CMAP(t)
 
     fig, ax = plt.subplots(figsize=(fig_inches, fig_inches), dpi=dpi)

@@ -14,3 +14,4 @@
 - **内容:** T4 lysozyme L99A/M102Q（链 A，1364 原子）+ 配体 JZ4（2-propylphenol，10 原子）；结晶添加剂 PO4×2 / BME 与晶格水在预处理中去除
 - **用途:** 蛋白-配体复合物 MD E2E（pdb2gmx→GAFF 配体拓扑→溶剂化→NVT/NPT→生产→RMSD/RMSF/氢键）；GROMACS 官方教程（Lemkul）标准体系
 - **embedded:** 2026-08-30
+- **样例存放：** `数据文件/01_复合物结构_3HTB.pdb`；MD 工作归档 `工作文件_MdWork/3HTB/`（阶段目录见该目录 `00_目录说明_Layout.md`）

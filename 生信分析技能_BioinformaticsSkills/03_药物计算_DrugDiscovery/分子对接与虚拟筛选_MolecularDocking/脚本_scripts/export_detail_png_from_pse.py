@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """手调 detail.pse 后导出 PNG（标签所见即所得）。
 
-每个任务只开一次 PyMOLWin，流程（唯一路径）：
+每个任务只开一次 PyMOLWin，流程（唯一路径，SOP §7.3）：
   1. PyMOLWin.exe 打开 .pse 并 -r 加载 pymol_detail_export_hook.py
-  2. 钩子内用 PyMOL Qt API 先 **收起底部代码区**（大黑框命令日志），使 3D 视口变高
-  3. 最大化 → 截图 → 裁 3D 画布 → cover 正方形 PNG
-禁止写回 / 改动 .pse；禁止 cmd.png 离屏重渲。
+  2. 钩子：最大化 → 隐藏侧栏 + 收起底部代码区 → 始终 zoom(PT|CJ, buffer=4)
+     → 自适应满度 0.72（标签余量 1.15）→ 截客户区 → 顶栏剥离
+     → 视口几何中心正方形 → 等比放大到 6000²
+禁止写回 / 改动 .pse；禁止 cmd.png 离屏重渲；禁止 cover / 内容检测再裁。
 注意：「收起代码区」指截图前在 PyMOL 内折叠 UI，不是事后把黑框裁掉。
+本文件还向钩子提供截图 helper（extract_pymol_3d_canvas 等，经 PYMOL_EXPORT_HELPERS）。
 图像识别点击旧路径已废弃删除（议题 03），本文件不再依赖 cv2 / 模板 assets。
 """
 from __future__ import annotations
@@ -123,58 +125,53 @@ def find_jobs(roots: list[Path]) -> list[Path]:
     return jobs
 
 
-def cover_square(img: Image.Image, side: int) -> Image.Image:
-    """等比放大铺满正方形后居中裁切（避免信箱白边把最大化画面衬成一条）。"""
-    rgb = img.convert("RGB")
-    w, h = rgb.size
-    if w <= 0 or h <= 0:
-        return Image.new("RGB", (side, side), (255, 255, 255))
-    scale = max(side / w, side / h)
-    nw, nh = max(1, int(round(w * scale))), max(1, int(round(h * scale)))
-    resized = rgb.resize((nw, nh), Image.LANCZOS)
-    left = max(0, (nw - side) // 2)
-    top = max(0, (nh - side) // 2)
-    return resized.crop((left, top, left + side, top + side))
+def extract_pymol_3d_canvas(img: Image.Image, return_box: bool = False):
+    """从窗口客户区截图中取出 3D 白底视口：去掉顶栏/工具条、右侧对象面板、底部控制台。
 
-
-def extract_pymol_3d_canvas(img: Image.Image) -> Image.Image:
-    """从最大化截图中取出 3D 白底视口：去掉顶栏/工具条与右侧对象面板。
-
-    注意：禁止再用「去黑白边」去裁分子图——白底是画面本身，裁掉会只剩中间一条。
+    顶栏识别用「浅色标题条 + 深色菜单/工具条」两段式（行均亮度），
+    **不用**「纯白占比 > 0.7 才算视口」——丝带铺满时视口白占比常 < 0.5，
+    旧阈值会一路跳到半屏（top=h/2）把上半分子切掉（78 翻车）。
+    return_box=True 时同时返回裁剪框 (left, top, right, bottom)（闭区间，客户区坐标）。
     """
     rgb = img.convert("RGB")
-    arr = np.asarray(rgb, dtype=np.float32)
+    arr = np.asarray(rgb, dtype=np.uint8)
     h, w, _ = arr.shape
     if h < 200 or w < 200:
-        return rgb
+        return (rgb, (0, 0, w - 1, h - 1)) if return_box else rgb
 
+    white = np.all(arr >= 252, axis=2)
+    row_wf = white.mean(axis=1)
     row_mean = arr.mean(axis=(1, 2))
-    col_mean = arr.mean(axis=(0, 2))
 
-    # 顶部：先跳过很亮的细缝，再吃掉连续暗色菜单/工具条
-    y = 0
-    while y < int(h * 0.15) and row_mean[y] >= 175:
-        y += 1
-    while y < int(h * 0.40) and row_mean[y] < 175:
-        y += 1
-    top = y
+    # 顶：浅色标题条（均亮但几乎无纯白）→ 深色菜单/工具条 → 进入视口
+    top = 0
+    while (
+        top < int(h * 0.12)
+        and row_mean[top] >= 170
+        and row_wf[top] < 0.5
+    ):
+        top += 1
+    while top < int(h * 0.45) and row_mean[top] < 170:
+        top += 1
 
-    # 右侧暗色对象面板
-    x = w - 1
-    while x > int(w * 0.55) and col_mean[x] < 175:
-        x -= 1
-    right = x
+    # 底：深色控制台
+    bottom = h - 1
+    while bottom > top and row_mean[bottom] < 170:
+        bottom -= 1
 
-    # 底部控制台：自下往上吃掉最深的连续带（不限固定阈值）
-    yb = h - 1
-    if row_mean[yb] < 150:
-        while yb > top and row_mean[yb - 1] < 165:
-            yb -= 1
-    bottom = yb
-
+    # 右/左：深色对象面板（列均暗或白占比极低）
+    if bottom > top:
+        col_mean = arr[top : bottom + 1, :, :].mean(axis=(0, 2))
+        col_wf = white[top : bottom + 1, :].mean(axis=0)
+    else:
+        col_mean = arr.mean(axis=(0, 2))
+        col_wf = white.mean(axis=0)
     left = 0
-    while left < right and col_mean[left] < 175:
+    while left < int(w * 0.5) and (col_mean[left] < 170 or col_wf[left] < 0.05):
         left += 1
+    right = w - 1
+    while right > left and (col_mean[right] < 170 or col_wf[right] < 0.05):
+        right -= 1
 
     if right - left < int(w * 0.45) or bottom - top < int(h * 0.45):
         top = 96 if h > 200 else 0
@@ -185,7 +182,31 @@ def extract_pymol_3d_canvas(img: Image.Image) -> Image.Image:
     else:
         print(f"  [canvas-detect] LTRB=({left},{top},{right},{bottom})")
 
-    return rgb.crop((left, top, right + 1, bottom + 1))
+    crop = rgb.crop((left, top, right + 1, bottom + 1))
+    if return_box:
+        return crop, (left, top, right, bottom)
+    return crop
+
+
+def strip_dark_chrome_edges(img: Image.Image) -> Image.Image:
+    """二次保险：只去掉「大面积深色」的顶/底菜单残条（单靠均值会误伤顶边 sticks）。"""
+    rgb = img.convert("RGB")
+    arr = np.asarray(rgb, dtype=np.float32)
+    h, w, _ = arr.shape
+    if h < 50 or w < 50:
+        return rgb
+    dark_frac = (arr.mean(axis=2) < 100).mean(axis=1)
+    top = 0
+    while top < int(h * 0.15) and dark_frac[top] > 0.45:
+        top += 1
+    bottom = h - 1
+    while bottom > top and dark_frac[bottom] > 0.45:
+        bottom -= 1
+    if top == 0 and bottom == h - 1:
+        return rgb
+    if bottom - top < int(h * 0.5):
+        return rgb
+    return rgb.crop((0, top, w, bottom + 1))
 
 
 def export_detail_png(
@@ -218,6 +239,7 @@ def export_detail_png(
             (img_dir / f"detail-{seq}_debug_window.png").resolve()
         )
 
+    launch_ts = time.time()
     try:
         proc = subprocess.run(
             [str(PYMOL_WIN), str(pse.resolve()), "-r", str(PYMOL_HOOK)],
@@ -232,11 +254,30 @@ def export_detail_png(
     except subprocess.TimeoutExpired:
         return False, "PyMOL hook timeout"
 
-    hook_log = job / "_hook_export.log"
-    for _ in range(5):
-        if hook_log.is_file() and hook_log.stat().st_size > 0:
+    # PyMOLWin 可能是启动器（立即返回、真实进程后台跑钩子）：
+    # 以「产物 mtime ≥ 启动时刻」判定钩子真正写完，避免读到旧文件。
+    deadline = launch_ts + 120
+    while time.time() < deadline:
+        if out.exists() and out.stat().st_mtime >= launch_ts - 1 and out.stat().st_size > 1000:
             break
-        time.sleep(0.2)
+        # 钩子已失败退出（日志有 FAIL）则不再等
+        if hook_log.is_file():
+            try:
+                tail = hook_log.read_text(encoding="utf-8", errors="replace")
+                if "[hook] FAIL" in tail:
+                    break
+            except OSError:
+                pass
+        time.sleep(0.5)
+
+    for _ in range(10):
+        if hook_log.is_file() and hook_log.stat().st_size > 0:
+            try:
+                if "[hook] ok" in hook_log.read_text(encoding="utf-8", errors="replace") or "[hook] FAIL" in hook_log.read_text(encoding="utf-8", errors="replace"):
+                    break
+            except OSError:
+                pass
+        time.sleep(0.3)
 
     log = ((proc.stdout or "") + (proc.stderr or "")).strip()
     if hook_log.is_file():
@@ -256,6 +297,8 @@ def export_detail_png(
 
     if not out.exists() or out.stat().st_size < 1000:
         return False, f"export failed: {out}"
+    if out.stat().st_mtime < launch_ts - 1:
+        return False, f"no fresh output (hook did not write): {out}"
 
     debug_png = img_dir / f"detail-{seq}_debug_window.png"
     verify = debug_png.name if debug_window and debug_png.is_file() else out.name

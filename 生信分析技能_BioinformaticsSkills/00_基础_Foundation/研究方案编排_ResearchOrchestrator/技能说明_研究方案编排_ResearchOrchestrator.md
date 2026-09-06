@@ -84,7 +84,7 @@ description: >-
 
 计划中的图交付一律遵循 `统一可视化规范_VizStandards`：**DPI≥600；SVG+PNG；图面 English；防遮挡；PlotQA**。  
 选图时对照 [高分期刊出图范式](../统一可视化规范_VizStandards/文档_docs/高分期刊出图范式_JournalFigureParadigm.md)（Fig1 轨迹/模块、Fig2 热图·火山·GSEA·KM、Fig3 UMAP·签名·生存），在计划第 6 章写明「图种 → recipe」。  
-查 [已跑通范式登记](../统一可视化规范_VizStandards/文档_docs/已跑通范式登记_FrozenParadigms.md)：**`网络药理学_NetworkPharmacology` = frozen**，编排时不得要求「按期刊范式重绘网药网络/韦恩」。  
+查 [已跑通范式登记](../统一可视化规范_VizStandards/文档_docs/已跑通范式登记_FrozenParadigms.md)：**`网络药理学_NetworkPharmacology`**、**`分子动力学模拟_MolecularDynamics`** = **frozen**；编排时不得要求「按期刊范式重绘网药网络/韦恩」或「改掉 MD Origin/FEL/分组 HTML 报告范式」。  
 文件命名、审计表、HTML 样例报告一律遵循 `统一交付规范_DeliveryStandards`（禁止无语义 `plot.png` / `样例报告.html`）。
 
 ## 7. 数据结果解读
