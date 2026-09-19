@@ -61,6 +61,23 @@ NA
 .scratch/**/*.svg
 .scratch/**/*.gif
 .scratch/**/*.webp
+.scratch/**/*.pse
+.scratch/**/*.pdbqt
+.scratch/docking_*/
+.scratch/gold_*/
+.scratch/_*.py
+.scratch/_*.txt
+.scratch/view_*
+.scratch/batch_*
+.scratch/measure_*
+.scratch/regen_*
+.scratch/scan_*
+.scratch/sop_committed_*.txt
+.scratch/transcript_*.txt
+
+# 本地对照图 / 非技能资产（勿入库）
+参考图片/
+婷婷/
 
 # 仓内课题沙箱：大体积 KEGG/动画等（脚本与清单仍可入库；见 ADR 0003）
 努力学习项目/**/KEGG*/**/*.png
