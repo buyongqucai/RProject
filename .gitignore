@@ -52,3 +52,18 @@ NA
 
 # MD working dirs (gro/tpr/xtc/trr/edr/cpt 等大体积中间件)
 **/工作文件_mdwork/
+**/工作文件_MdWork/
+
+# Scratch：保留议题 markdown，忽略探针图与一次性脚本产物
+.scratch/**/*.png
+.scratch/**/*.jpg
+.scratch/**/*.jpeg
+.scratch/**/*.svg
+.scratch/**/*.gif
+.scratch/**/*.webp
+
+# 仓内课题沙箱：大体积 KEGG/动画等（脚本与清单仍可入库；见 ADR 0003）
+努力学习项目/**/KEGG*/**/*.png
+努力学习项目/**/KEGG*/**/*.svg
+努力学习项目/**/动画*/**
+努力学习项目/**/参考_交付原图/**

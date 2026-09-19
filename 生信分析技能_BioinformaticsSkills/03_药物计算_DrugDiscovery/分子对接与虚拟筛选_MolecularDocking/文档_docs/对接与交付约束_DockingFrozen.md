@@ -2,6 +2,7 @@
 
 > **状态：** `FROZEN`（2026-09-05 用户确认冻结；同日增补热图色标仅非正值；**同日修订** PyMOL：禁止减负裁链、完整入画释义、detail 自动选角；**2026-09-06 增补** detail 截图导出 + result 拼图定稿，见 SOP §7.3/§7.4）  
 > **解冻条件：** 用户明确说「解冻 / unfreeze」前，**禁止**改下列已验证范式。  
+> **进化：** 解冻后把新确认规则写回本文件与 SOP **各一处对应段落**；技能说明只改指针。反馈闭环见 `docs/项目规范_ProjectStandards.md` §0。  
 > **技术路线：** [`技术路线_AutoSite_AutoDockGPU.md`](技术路线_AutoSite_AutoDockGPU.md)  
 > **流水线：** [`分子对接流水线规范_DockingPipelineSOP.md`](分子对接流水线规范_DockingPipelineSOP.md)  
 > **中心登记：** [`中心位点方法登记_CenterSourceRegistry.md`](中心位点方法登记_CenterSourceRegistry.md)  

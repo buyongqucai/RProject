@@ -1,0 +1,13 @@
+---
+description: 工单化默认——改技能/规范前先认领 .scratch 工单；新建技能跟范式清单。
+alwaysApply: true
+---
+
+# 工单化与技能范式
+
+在 `E:\RProject` 内做**非琐碎**改动（技能、规范、样例、审计）时：
+
+1. 先读 `docs/agents/工单工作流_WorkOrder.md`；有进行中议题则认领 `.scratch/<功能>/issues/` 里 **frontier** 且 `待Agent处理` 的一张。
+2. 新建或审计领域技能：Read `docs/agents/技能范式清单_SkillParadigm.md`，按清单逐文件勾选；可用 `.cursor/skills/bioinfo-new-skill`。
+3. 用户确认的规则写入 **一处** SSOT（技能 `文档_docs/` 或 `docs/agents/`）；技能说明只改指针。
+4. 无工单的聊天里若用户明确说「先改 / 不用开单」，可直接做；否则先建 `.scratch/` 父议题再拆单。

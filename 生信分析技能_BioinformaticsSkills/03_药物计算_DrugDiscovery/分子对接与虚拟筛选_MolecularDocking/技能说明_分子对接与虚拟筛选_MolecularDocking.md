@@ -14,23 +14,22 @@ description: >-
 
 # 分子对接与虚拟筛选 / MolecularDocking
 
-> **对接与交付 SSOT：** [`文档_docs/对接与交付约束_DockingFrozen.md`](文档_docs/对接与交付约束_DockingFrozen.md) — 状态 **`FROZEN`（2026-09-05；2026-09-06 增补 detail/result）**。未经「解冻 / unfreeze」不得改引擎路线、定心决策树、`center_source` 登记、PyMOL 语义、detail 断点/截图定稿、result 拼图效力序、目录金标。**不做共晶重对接 RMSD 自检。**
+> **对接与交付 SSOT：** [`文档_docs/对接与交付约束_DockingFrozen.md`](文档_docs/对接与交付约束_DockingFrozen.md) — **`FROZEN`（2026-09-05；detail/result 2026-09-06）**。改引擎/定心/`center_source`/PyMOL 语义/detail·result 定稿/目录金标前须你说「解冻」。**定稿路径不含**共晶重对接 RMSD 自检。  
+> **进化：** 你确认的截图/拼图规则只写入 SOP §7.3/§7.4（+ FROZEN 指针）；本入口不另起版本。
 
-**流水线 SSOT（强制）：** [`文档_docs/分子对接流水线规范_DockingPipelineSOP.md`](文档_docs/分子对接流水线规范_DockingPipelineSOP.md)  
-**对接盒子 SSOT：** [`文档_docs/对接盒子定心与定边_DockingBoxProtocol.md`](文档_docs/对接盒子定心与定边_DockingBoxProtocol.md)  
-**中心方法登记 SSOT（强制）：** [`文档_docs/中心位点方法登记_CenterSourceRegistry.md`](文档_docs/中心位点方法登记_CenterSourceRegistry.md) — **每个对接任务必须写明 `center_source`**  
-**当前指定技术路线：** [`文档_docs/技术路线_AutoSite_AutoDockGPU.md`](文档_docs/技术路线_AutoSite_AutoDockGPU.md)（**有共晶则包盒定心；否则 AutoSite + AutoDock-GPU；异常回退 P2Rank/Fpocket**）  
-**交付目录金标（强制对齐）：** 桌面 `痤疮_分子对接_序号文件夹/`（任务 `N/` + `图片/` 内 big/surface/detail/result；`.pse` 在任务根；无 `_png_tmp`；项目根 git）
+**流水线 SSOT：** [`分子对接流水线规范_DockingPipelineSOP.md`](文档_docs/分子对接流水线规范_DockingPipelineSOP.md)  
+**盒子 / 中心登记 / 技术路线：** [`对接盒子定心与定边_DockingBoxProtocol.md`](文档_docs/对接盒子定心与定边_DockingBoxProtocol.md) · [`中心位点方法登记_CenterSourceRegistry.md`](文档_docs/中心位点方法登记_CenterSourceRegistry.md) · [`技术路线_AutoSite_AutoDockGPU.md`](文档_docs/技术路线_AutoSite_AutoDockGPU.md)  
+**金标目录：** 桌面 `痤疮_分子对接_序号文件夹/`（`N/` + `图片/` 内 big/surface/detail/result；`.pse` 在任务根）
 
-（下载 → 定盒并**登记中心方法** → AutoGrid → **AutoDock-GPU** → 登记表/`summary_*`（含 `center_source`）与结合能矩阵 → PyMOL → 热图；Vina 仅作可选对照；**无**共晶 RMSD 重对接步骤）
+流水线摘要：下载 → 定盒并登记 `center_source` → AutoGrid → AutoDock-GPU → summary/热图 → PyMOL →（手调后）§7.3 导出 detail + §7.4 拼 result。
 ## 1. 数据来源
 
 **优先** `D:\数据库\分子对接数据库\`（已下载受体/配体与登记表）；缺项再 PDB/AlphaFold / PubChem 3D。细则见 SOP §1。
 
 ## 2. 数据规范（判断是否可用）
 
-输入完整可溯源；分组/标注来自官方或实验记录；**禁止编造**亲和力或结构 ID。  
-对接盒子与引擎：默认按 [`技术路线_AutoSite_AutoDockGPU.md`](文档_docs/技术路线_AutoSite_AutoDockGPU.md)（AutoSite → AutoDock-GPU；异常回退 P2Rank/Fpocket）。禁止整链 COM、禁止全 HETATM 平均、禁止固定边长 22。
+输入完整可溯源；分组/标注来自官方或实验记录；亲和力与结构 ID 须可追溯。  
+对接盒子与引擎：[`技术路线_AutoSite_AutoDockGPU.md`](文档_docs/技术路线_AutoSite_AutoDockGPU.md)（定心决策树与硬护栏见该文 / FROZEN）。
 
 ### 2.1 每个任务必须说明「中心位点用了什么方法」（强制）
 
@@ -41,7 +40,7 @@ description: >-
 | 有共晶，Meeko 包盒 | `cocrystal_meeko`（或 `cocrystal`） |
 | 无共晶，AutoSite 质控通过 | `autosite` |
 | AutoSite 异常后 P2Rank / Fpocket / 文献 / 手填 | `p2rank` / `fpocket` / `annotated_site` / `manual` |
-| 无法定心 | `FAIL`（不得冒充打分） |
+| 无法定心 | `FAIL`（该任务不交付假打分） |
 
 **落盘：** 每任务 `task_info` + `summary_vina.csv` / `summary_adgpu.csv` 的 `center_source`（及 `center_detail`/`box_qc`/`fallback_used`/`engine`）+ 蛋白表受体级字段。缺 `center_source` 的新批次视为不合格。
 
@@ -63,8 +62,8 @@ description: >-
 5. **登记**：`分子对接_蛋白表.csv`（含受体级 `center_source`/`ref_ligand`）+ `分子对接_化合物表.csv`（不枚举组合）  
 6. **结果**：`summary_adgpu.csv`（或 `summary_vina.csv`）**每行含 `center_source`** + 结合能矩阵 / 热图  
 7. PyMOL 三视图：任务根 `big|surface|detail-N.pse`；`图片/` 内同名 PNG + **`result_N.png`**；**无 `_png_tmp`**  
-8. **手调 detail 后**：按 SOP **§7.3** 截图重导 `detail-N.png`（最大化 + 紧取景 + 自适应满度）；**禁止** `cmd.png` / 写回 `.pse`；再按 **§7.4** 拼 `result_N.png`  
-9. 多组合项目可另汇总 `可视化组合_Top10/`；项目根须 **git** 管理
+8. **手调 detail 后**：按 SOP **§7.3** 截图导出 `detail-N.png`，再按 **§7.4** 拼 `result_N.png`（定稿路径见 SOP；入口不复述步骤）  
+9. 多组合可汇总 `可视化组合_Top10/`；项目根 git 管理
 
 ## 5. R 包与软件栈
 
@@ -77,45 +76,37 @@ description: >-
 | 定心 | `AutoSite` / Meeko / P2Rank / Fpocket | 中心与盒子 | 见 CenterSourceRegistry |
 | 上游/主分析 | `Open Babel` | 格式/加氢/PDBQT | 非 R |
 | 3D 可视化 | `PyMOL` | ST/PT/CJ/QJ | `E:\pymol\python.exe` + `脚本_scripts/pymol_dock_viz_standard.py` |
-| detail 重导 | `PyMOLWin` + `-r` 钩子 | 每任务开一次；最大化 → 紧取景 → 视口中心正方形 6000²（SOP §7.3） | `export_detail_png_from_pse.py` + `pymol_detail_export_hook.py` |
-| result 拼图 | Pillow | big+detail；右图仅白边 trim 等比抵虚线（SOP §7.4） | `E:\PythonProject\分子对接\2.分子对接结果图组合.py` |
+| detail 重导 | `PyMOLWin` + `-r` 钩子 | 每任务一次；细则 SOP §7.3 | `export_detail_png_from_pse.py` + `pymol_detail_export_hook.py` |
+| result 拼图 | Pillow | big+detail；细则 SOP §7.4 | `E:\PythonProject\分子对接\2.分子对接结果图组合.py` |
 | 出图 | `ggplot2` + 出版级出图_PublicationPlot.R | DPI≥600 | 强制可视化规范 |
 
 ## 6. 数据可视化
 
-结合能条图、2D 相互作用图、亲和力热图、**PyMOL 对接复合物图**、**result 拼图**；**DPI≥600；SVG+PNG（热图）；图面 English；防遮挡**。  
-**结合能热图色标（FROZEN）：** `vmax=0`，图例**不得**出现正值；**无**总标题/轴标题/色标标题/底部脚注；脚本 `plot_docking_affinity_heatmap.py`。
+结合能条图、2D 相互作用图、亲和力热图、**PyMOL 复合物图**、**result 拼图**；DPI≥600；热图 SVG+PNG；图面 English。  
+**热图色标（FROZEN）：** `vmax=0`、无正值图例、无总/轴/色标标题；脚本 `plot_docking_affinity_heatmap.py`。
 
-**PyMOL（本技能写明，优先于通用习惯）：**
+**PyMOL 语义（本技能写明，优先于通用习惯）：**
 
 | 对象 | 含义 | 显示 |
 |------|------|------|
-| ST | 完整受体（口袋由定心工具+盒子决定；禁止减负删原子） | big/detail：**cartoon**；surface：**仅 surface（无 cartoon）**；色=`protein_color`（默认 cyan） |
-| PT | 最佳姿态配体 | sticks；色=`ligand_spectrum`（默认 **rainbow**；用户明确提出才更换；3D 结构图为本技能写明条款，不受 VizStandards 禁彩虹约束） |
-| QJ | `distance(PT, not PT, mode=2)` 氢键 | 虚线；色=`hbond_color`（默认 yellow） |
-| CJ | **仅与 PT 有 QJ 的残基** | sticks；色由 **`residue_color`**（默认橙色）；无氢键不显示 |
+| ST | 完整受体（定心+盒子决定口袋；完整入画=相机，不删原子） | big/detail：**cartoon**；surface：**仅 surface**；`protein_color`（默认 cyan） |
+| PT | 最佳姿态配体 | sticks；`ligand_spectrum`（默认 **rainbow**，ADR 0001） |
+| QJ | `distance(PT, not PT, mode=2)` | 虚线；`hbond_color`（默认 yellow） |
+| CJ | 仅与 PT 有 QJ 的残基 | sticks；`residue_color`（默认橙） |
 
-**完整入画：** 相机 zoom/clip，保证当前显示对象完整进画面且不被近远裁切面切黑；**≠** 裁掉蛋白。  
-**detail：** 导出前自动旋转选角，减轻配体/氢键/残基及标签在 2D 截图中的遮挡；再手调标签。  
-big/surface：**完整入画**，**无标签**；导出对齐 GUI **Draw (fast)**：**5040×3653、dpi=600、ray=0**。  
-detail：自动选角 + 标签后只存 `.pse`；**定稿 PNG 用截图导出**（不用 `cmd.png`，避免标签变小）。  
-PNG **只**在 `图片/`（含 `result_N.png`）；**.pse 在任务根**；**禁止** `_png_tmp`。  
+big/surface：完整入画、无标签；Draw(fast) **5040×3653、dpi=600、ray=0**。  
+detail：自动选角 + 手调标签后只存 `.pse`；定稿 PNG = **截图导出**（SOP §7.3）。PNG 仅在 `图片/`（含 `result_N.png`）；`.pse` 在任务根。
 
-**detail / result 定稿（2026-09-06 用户确认；细则 SOP §7.3 / §7.4，勿在本处另起版本）：**
+**detail / result（用户确认定稿；正文只在 SOP）：**
 
-- **第一原则：清晰完整** — 中心残基/配体/氢键/标签须全部在 `detail-N.png` 内；拼图找不回被截掉的内容。宁可略空，不要裁切。  
-- **detail 导出：** 每任务只开一次 `PyMOLWin.exe detail-N.pse -r pymol_detail_export_hook.py` → **最大化**（`IsZoomed=True`）→ 隐藏侧栏 + 收起底部代码区 → **始终** `zoom(PT|CJ, buffer=4)`（禁止保留过宽手调缩放）→ 自适应拉近目标满度 **0.72**（标签余量 1.15）→ 顶栏剥离 → **视口几何中心**正方形 → 6000²。禁止 `cmd.png` / cover 裁切 / 内容检测再裁 / 写回 `.pse`。可调：`PYMOL_DETAIL_BUFFER` / `PYMOL_DETAIL_FILL_TARGET` / `PYMOL_DETAIL_LABEL_PAD`。  
-- **result 拼图效力序：** ① 左右不重叠，左图完整铺开丝带等（实线黑框**不是**裁切框）→ ② 右图完整 + 锁纵横比 + 仅白边 trim 后等比抵虚线 → ③ 左关键簇尽量抵黑框（不得破坏①）。  
-- **配色变量：** `protein_color` / `residue_color` / `hbond_color` / `ligand_spectrum`；同批异色 `--auto-colors` 或 `--palette-json`。  
+- 效力摘要：清晰完整优先 → 拼图效力序 左完整不重叠 → 右等比抵虚线 → 左黑框内尽量抵框。  
+- **细则唯一正文：** SOP [`§7.3`](文档_docs/分子对接流水线规范_DockingPipelineSOP.md) / [`§7.4`](文档_docs/分子对接流水线规范_DockingPipelineSOP.md)；指针 [`result拼图与detail导出定稿_CollageDetailExport.md`](文档_docs/result拼图与detail导出定稿_CollageDetailExport.md)。  
+- 配色变量：`protein_color` / `residue_color` / `hbond_color` / `ligand_spectrum`（同批异色 `--auto-colors` / `--palette-json`）。
 
-**出图规范回退：** 本技能未另写的条款，**先用** [统一可视化规范_VizStandards](../../00_基础_Foundation/统一可视化规范_VizStandards/技能说明_统一可视化规范_VizStandards.md)。热图：**行/列名与格内数值标签一律黑色 `#000000`**。
-
-**对齐高分期刊范式：** 遵循 [期刊范式](../../00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/高分期刊出图范式_JournalFigureParadigm.md) + [PlotQA](../../00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/出图后审核_PlotQA.md)。**本技能对接与交付已 FROZEN**（见 [`对接与交付约束_DockingFrozen.md`](文档_docs/对接与交付约束_DockingFrozen.md)）。**网络药理学视觉轨已 FROZEN，本技能不得改网药样例图。**
-
+未另写条款 → [VizStandards](../../00_基础_Foundation/统一可视化规范_VizStandards/技能说明_统一可视化规范_VizStandards.md)（热图标签黑 `#000000`）+ [期刊范式](../../00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/高分期刊出图范式_JournalFigureParadigm.md) + [PlotQA](../../00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/出图后审核_PlotQA.md)。网药 FROZEN 图册由网药技能维护。
 ## 7. 数据结果解读
 
-打分近似；勿单凭对接定药效。亲和力应为负值；正值须查该任务的 `center_source`/`size_*` 并重对接。解读结合能时**必须点明定心方法**（例：「EGFR×槲皮素，center_source=cocrystal_meeko，affinity=…」）。  
-**不做**共晶配体 RMSD 重对接验收（见 FROZEN 约束）。
+打分近似；解读须点明该任务 `center_source`。亲和力应为负值；正值先查定心/盒子再重对接。定稿路径不含共晶 RMSD 重对接验收（FROZEN）。
 
 ## 8. 能否结合其它生信
 

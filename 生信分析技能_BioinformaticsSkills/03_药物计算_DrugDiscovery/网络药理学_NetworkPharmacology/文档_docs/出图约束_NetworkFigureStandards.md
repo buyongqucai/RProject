@@ -2,6 +2,7 @@
 
 > **状态：** `FROZEN`（2026-07-26 用户确认冻结）  
 > **解冻条件：** 用户明确说「解冻 / unfreeze」前，**禁止**改既有视觉 recipe、疾病双口径与主 HTML 报告结构。  
+> **进化：** 解冻后新确认图样只写入本文件；技能说明不复述 recipe。反馈闭环见仓库 `docs/项目规范_ProjectStandards.md` §0。  
 > **增补例外：** 用户于 2026-07-27 明确要求写入规范的 **§J–§L**（网络分析报告 / 空靶点药味 / 生物结构动画）为授权增补，**不改** §A–§H 已冻结图样。  
 > **代码 SSOT：** `脚本_scripts/04_交付网络布局_DeliveryNetworkLayouts.R`（在 `03_STRING与网络图_StringNetwork.R` 之后 source，覆盖其 plot helpers）；圈图见 `02_可视化_NetworkPharmPlots.R`；高级附图见 `05_高级附图_AdvancedPanels.R`  
 > **样例图：** `01_样例_sample/代码文件/结果文件/图片文件/`  

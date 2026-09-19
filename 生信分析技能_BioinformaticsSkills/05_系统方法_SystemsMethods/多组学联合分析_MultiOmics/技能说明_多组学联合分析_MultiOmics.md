@@ -1,4 +1,4 @@
-﻿---
+---
 name: bioinfo-multiomics
 description: >-
   多组学联合：调度转录/蛋白/代谢/单细胞等，证据优先级与整合可视化。

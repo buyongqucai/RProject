@@ -1,19 +1,20 @@
 # 领域文档（Domain Docs）— 单上下文
 
-本仓库为**单上下文（single-context）**布局，无 monorepo 多包结构。
+本仓库为**单上下文（single-context）**布局。仓内可有课题沙箱目录，但不另建 `CONTEXT-MAP.md`（见 ADR 0003）。
 
 ## 布局
 
 ```text
-CONTEXT.md                 # 仓库根：领域词汇、核心概念、边界（SSOT，唯一）
+CONTEXT.md                 # 词汇 + 边界（SSOT）
 docs/
-  架构决策_ADR/            # Architecture Decision Records
-    NNNN-标题.md           # 如 0001-热图标签统一黑色.md
+  架构决策_ADR/            # NNNN-标题.md
+  项目规范_ProjectStandards.md   # 含 §0 反馈进化闭环
 ```
 
 ## Agent 消费规则
 
-1. **动手前先读** `CONTEXT.md`：理解领域词汇与模块边界，避免自造术语。
-2. **涉及架构/规范决策时**：先查 `docs/架构决策_ADR/` 是否已有相关 ADR；新决策按序号新建 ADR，正文用中文，保留英文专业术语对照。
-3. **决策落地即更新**：讨论中确定的领域术语/约定，当场写回 `CONTEXT.md` 或对应 ADR，不停留在对话里。
-4. `CONTEXT.md` 不存在时，可在首次领域建模（domain-modeling）会话中创建。
+1. **动手前先读** `CONTEXT.md`。  
+2. **架构/边界决策**先查 `docs/架构决策_ADR/`；新决策按序号新建。  
+3. **你确认的术语/边界当场写回** `CONTEXT.md` 或 ADR，不停留在对话。  
+4. **反馈进化：** 满意规则写入技能 `文档_docs/` 的 SOP/FROZEN（单点）；技能说明只改指针。流程见 `项目规范` §0。  
+5. `CONTEXT.md` 无实现细节（不是 spec）。

@@ -2,7 +2,7 @@
 
 - **data_provenance:** REAL（已发表 RCT 摘要/全文报告的 HR；非编造）
 - **analysis_kind:** medical_srma_pilot
-- **scope:** L1 Pilot — **不是**完整系统评价；未做全库检索、双人筛选、GRADE、PRISMA 四阶段计数
+- **scope:** L1 Pilot 图册 — **不是**完整系统评价；未做全库检索、双人筛选、GRADE；PRISMA 为手选路径诚实计数（见 `04_PRISMA计数_*`）；RoB 2 单人试填（见 `05_RoB2_pilot.csv`）
 - **PICO（暂定，待用户终稿）:**
   - P: Resectable ± Borderline resectable PDAC（作者原文定义）
   - I: Neoadjuvant chemotherapy ± chemoradiotherapy pathway

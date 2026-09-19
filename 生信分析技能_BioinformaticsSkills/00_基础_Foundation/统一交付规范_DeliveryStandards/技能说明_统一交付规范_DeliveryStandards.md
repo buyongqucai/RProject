@@ -81,95 +81,30 @@ data_provenance: REAL | TOY | BLOCKED
 
 ## 6. 数据可视化与文件命名（强制）
 
-出图技术以 [`统一可视化规范_VizStandards`](../统一可视化规范_VizStandards/技能说明_统一可视化规范_VizStandards.md) 为准（DPI≥600、SVG+PNG、色盲友好、单栏/双栏版式）。本技能强制**文件名语义化**。
+出图技术 → [`统一可视化规范_VizStandards`](../统一可视化规范_VizStandards/技能说明_统一可视化规范_VizStandards.md)。  
+**命名 / 图面英文 / 图册门禁 / STATUS** → [`文档_docs/交付命名与图册门禁_DeliveryNamingGate.md`](文档_docs/交付命名与图册门禁_DeliveryNamingGate.md)（SSOT）。  
+目录树 → [`文档_docs/样例目录与命名_SampleLayoutNaming.md`](文档_docs/样例目录与命名_SampleLayoutNaming.md)。
 
-**出图后审核钩子：** `delivery_save_plot()` 在保存后自动调用 VizStandards [`出图后审核_PlotQA`](../统一可视化规范_VizStandards/文档_docs/出图后审核_PlotQA.md) 启发式检查（色块/标签/长标签）；默认 WARN 不中断保存。网络等有坐标的图须在布局脚本中另调 `viz_qa_network_nodes()`。关闭钩子：`options(bioinfo.plotqa.after_save = FALSE)`；FAIL 时中断：`options(bioinfo.plotqa.hard_fail = TRUE)`。
-
-### 文件名双语 ≠ 图面英文（必须严格区分）
-
-| 层级 | 规则 | 示例 |
-|------|------|------|
-| **交付文件名** | **强制**中英对照 `{中文语义}_{EnglishPascal}.{ext}` | `热图_ContactMatrixStub_Heatmap.png` |
-| **图内主标题 / 副标题 / 轴标题 / 图例 / strip / annotation**（`ggtitle` / `labs(title=…)` / `main=`） | **English only**；**禁止中文**出现在图内 | `Contact matrix (schematic · BLOCKED)` |
-
-**禁止**把文件名对照逻辑搬进图面，写成中英并排标题，例如：
-
-- ~~`接触矩阵示意 Contact Matrix Stub`~~
-- ~~`火山图 Treat vs Control Volcano`~~
-- ~~`接触矩阵（示意·BLOCKED）`~~（图面用中文）
-
-图面状态词用英文（如 `schematic · BLOCKED`）；轴上惯用符号（`logFC`、`-log10(p)`）可保留。HTML 报告正文仍可用中文说明；**仅图面文字强制英文**。
-
-### 结果文件命名（强制）
-
-```
-[{NN}_]{中文语义}_{EnglishCamelOrPascal}.{ext}
-```
-
-可选两位流水线序号前缀（`01_`、`02_`…）表示产出顺序；`delivery_stem(..., order = n)` / `delivery_save_plot(..., order = n)`。
-
-可含对比/对象段，例如：
-
-| 类型 | 模式 | 示例 |
-|------|------|------|
-| 图片 | `{NN}_{中文图类}_{对比或主题}_{EnType}.{png\|svg}` | `01_火山图_TreatVsControl_Volcano.png` + 同名 `.svg` |
-| 数据表 | `{NN}_{中文表义}_{对象}_{EnType}.csv` | `02_差异结果_TreatVsControl_Deg.csv` |
-| 审计表 | `审计前检_AuditPre.csv` / `审计后检_AuditPost.csv`（可加 `01_`） | （固定中英对照） |
-| 契约桩 | `契约阻塞桩_ContractBlockedStub.csv` | BLOCKED 技能 |
-| 报告 | `样例报告_SampleReport_v1.html` | |
-
-样例目录角色与编号细则见 [`文档_docs/样例目录与命名_SampleLayoutNaming.md`](文档_docs/样例目录与命名_SampleLayoutNaming.md)。
-
-**禁止**：纯英文无中文前缀的 `sample_*.csv`、`toy_*.csv`、`plot.png`、`fig1.png`、`RNA-seq_volcano_*.png`（仅技能英文开头）、无语义 `out.csv`。
-
-技能英文缩写可作**目录名 / 内部 id / catalog id**，但**交付文件名**必须中英对照。
-
-客观 BLOCKED 技能：产出与主题相关的契约表 + 审计表 + **主题相关示意/降级图**（图面英文标明 `schematic · BLOCKED`）；禁止无关 `toy_deg_results` 或滥贴火山图。
-
-### 图册责任表门禁（对齐网络药理学标杆）
-
-每个技能说明 **必须** 含「交付图册 × 实现状态」表，逐项标注：
-
-| 状态 | 含义 |
-|------|------|
-| **R可复现** | 样例脚本必须真正产出（SVG+PNG） |
-| **外部软件必做** | 本环境不做 GUI/商业工具出图；skill 写软件名、版本、逐步操作；样例 `STATUS` 标 `BLOCKED_EXTERNAL` 或总状态 `PARTIAL` |
-| **不做** | 明确声明范围外 |
-
-**禁止**：
-
-- 用无关简图 / igraph 等「顶替」必须由 Cytoscape、AutoDock、MACS2 等完成的交付图
-- 把 `PARTIAL` / `BLOCKED_EXTERNAL` 写成全流程 `PASS`
-- 缺图却不在 skill 写清用什么软件、如何操作
-
-标杆示例：[`网络药理学_NetworkPharmacology`](../../03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology/技能说明_网络药理学_NetworkPharmacology.md)。
-
-### STATUS 取值
-
-| STATUS | 何时使用 |
-|--------|----------|
-| `PASS` | 该技能声明的 R 可复现图册与契约全部完成，且无未说明的外部缺图 |
-| `PARTIAL` | R 子集完成 + 外部图已诚实断点（如网药） |
-| `BLOCKED` / `BLOCKED_EXTERNAL` | 关键 CLI/GUI 不可用；仅契约桩 + SOP |
+摘要：交付文件名中英对照；图面 English only；BLOCKED 技能出契约桩 + 主题相关示意（图注 `schematic · BLOCKED`）。
 
 ## 7. 数据结果解读
 
 - 审计写出且图/表命名合规 → 可进入解读
-- toy 数据结论必须写「不可外推」；REAL 须可核对 accession / 病名查询词 / 交付路径
+- toy 结论写「不可外推」；REAL 可核对 accession / 路径
 - 报告须写明是否 `source` 了 VizStandards + DeliveryStandards + 本技能脚本
-- `data_provenance` 可取 `REAL|TOY|BLOCKED`；图完成度另用 STATUS（勿混为一谈）
-- HTML 版式、KPI、分组图、分条解读：[`文档_docs/样例报告范式_SampleReportParadigm.md`](文档_docs/样例报告范式_SampleReportParadigm.md)
+- `data_provenance` 与 STATUS 分列，勿混
+- HTML 版式 → [`文档_docs/样例报告范式_SampleReportParadigm.md`](文档_docs/样例报告范式_SampleReportParadigm.md)
 
 ## 8. 能否结合其它生信
 
-- 与 [`统一可视化规范_VizStandards`](../统一可视化规范_VizStandards/技能说明_统一可视化规范_VizStandards.md)：**互补且同时强制**（技术 vs 交付）
-- 与 [`研究方案编排_ResearchOrchestrator`](../研究方案编排_ResearchOrchestrator/技能说明_研究方案编排_ResearchOrchestrator.md)：计划交付物必须遵守本规范；编排 **requires** 本技能 + VizStandards
-- 与 [`数据真实性验证_DataAuthenticity`](../数据真实性验证_DataAuthenticity/技能说明_数据真实性验证_DataAuthenticity.md)：公共数据审计字段对齐
-- **全部样例强制依赖**本技能与可视化规范（catalog：`requires: [bioinfo-viz-standards, bioinfo-delivery-standards]`）
+- 与 VizStandards：**互补且同时强制**
+- 与 ResearchOrchestrator：计划交付物须遵守本规范
+- 与 DataAuthenticity：公共数据审计字段对齐
+- catalog：`requires: [bioinfo-viz-standards, bioinfo-delivery-standards]`
 
 ## 样例验证
 
-样例：`01_样例_sample/`（目录与命名见 [`文档_docs/样例目录与命名_SampleLayoutNaming.md`](文档_docs/样例目录与命名_SampleLayoutNaming.md)；迁移进度见 [`文档_docs/样例结构迁移清单_SampleLayoutMigration.md`](文档_docs/样例结构迁移清单_SampleLayoutMigration.md)）
+`01_样例_sample/`（迁移见 [`文档_docs/样例结构迁移清单_SampleLayoutMigration.md`](文档_docs/样例结构迁移清单_SampleLayoutMigration.md)）
 
 ```bash
 Rscript 01_样例_sample/代码文件/01_run_sample.R
