@@ -29,6 +29,8 @@
 | 红绿循环 | 先写失败测试（红）再最小实现（绿）；重构不属于循环 |
 | 双轴审查 | code-review 的 Standards + Spec 两轴，分开报告不合并排名 |
 | 契约桩（BLOCKED） | 无真实数据时的合规占位；provenance 必须标 BLOCKED |
+| 网络毒理学 | 暴露物–靶点–表型网络技能；库档位 SSOT 为该技能 `数据库可抓取登记`（AUTO_API / AUTO_BULK / KEY / MANUAL / PREDICT） |
+| 虚拟敲除接诊表 | `虚拟敲除与扰动_InSilicoKO` 强制：自动抽取字段 → 确认表（含信源/可信度 H|M|L）→ 再 Phase1/Phase2；SSOT 为该技能 `接诊与确认表单` |
 
 ## 边界
 

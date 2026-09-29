@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>小鼠三叉神经节 Cplx2 虚拟敲除说明</title>
+<style>
+  body { font-family: "Segoe UI", "Microsoft YaHei", sans-serif; line-height: 1.65; max-width: 960px; margin: 2rem auto; padding: 0 1.2rem; color: #222; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 1.7rem; border-bottom: 1px solid #ddd; }
+  img { max-width: 100%; border: 1px solid #eee; margin: 0.4rem 0 0.8rem; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+  th, td { border: 1px solid #ccc; padding: 0.35rem 0.45rem; vertical-align: top; }
+  .note { background: #f6f6f6; padding: 0.6rem 0.8rem; }
+</style>
+</head>
+<body>
+<h1>小鼠三叉神经节感觉神经元中 Cplx2 的虚拟敲除</h1>
+<p>计算预测。不是动物敲除后的差异表达，也不是慢性三叉神经痛或给药 4 小时镇痛的验证。算法：Osorio 等，<cite>Patterns</cite> 2022，scTenifoldKnk。</p>
+
+<h2>步骤 1. 问题</h2>
+<p>在小鼠三叉神经节的感觉神经元亚群中，把 <code>Cplx2</code> 的调控出边置零之后，哪些基因被预测为扰动。显著线为 FDR &lt; 0.05。</p>
+
+<h2>步骤 2. 数据来源</h2>
+<table>
+  <tr><th>登录号</th><th>文献</th><th>本次用法</th></tr>
+  <tr><td>GSE197289</td><td>Yang 等，<cite>Neuron</cite> 2022。小鼠三叉神经节单核数据，含对照与两种头痛模型。</td><td>只用对照。过门槛的亚群做虚拟敲除。</td></tr>
+  <tr><td>GSE131272</td><td>Nguyen 等，<cite>eLife</cite> 2019。眶下神经切断后的三叉神经节。</td><td>已下载。没有作者亚群标签，未按亚群敲除。</td></tr>
+  <tr><td>GSE322600</td><td>小鼠 Sp5C，CION 对假手术。</td><td>51 个细胞，低于 300，未敲除。</td></tr>
+</table>
+<p>没有「小鼠 × 三叉神经节 × 慢性眶下神经缩窄 × 单细胞」的公开数据。</p>
+
+<h2>步骤 3. 筛选标准</h2>
+<table>
+  <tr><th>内容</th><th>标准</th><th>来源</th></tr>
+  <tr><td>亚群能否敲</td><td>检出率 ≥ 10%，检出细胞 ≥ 25，细胞数 ≥ 300</td><td>课题预先写明</td></tr>
+  <tr><td>显著基因</td><td>FDR &lt; 0.05；被敲基因自身不算新靶点</td><td>论文各例</td></tr>
+  <tr><td>富集</td><td>全基因按扰动距离排序后做 GSEA</td><td>论文方法</td></tr>
+  <tr><td>网络的点</td><td>仅显著基因</td><td>论文自我中心图图注</td></tr>
+  <tr><td>网络的边</td><td>展示互作时用 STRING，综合分 ≥ 0.9</td><td>论文用 STRING；分数用网药规定</td></tr>
+  <tr><td>正式参数</td><td>10 张网络，每次 500 细胞，文库大小 ≥ 1000，张量秩 3</td><td>软件默认</td></tr>
+</table>
+<p class="note">下图来自试跑：3 张网络、每次 200 个细胞、最多 1000 个基因、文库大小 500。低于默认，不能当作正式参数结果。固定 40 个点的同心圆网络不符合论文的显著基因规则，不作为本报告的网络结果。</p>
+
+<h2>步骤 4. 对照亚群里 Cplx2 的表达</h2>
+<p>过门槛并进入敲除的是 cLTMR、NF1、NP、PEP、TRPM8。</p>
+<img src="../图片文件/03_柱状图_对照亚群检出率_Cplx2DetectionBar.png" alt="detection" />
+<img src="../图片文件/02_小提琴图_对照亚群表达_Cplx2Violin.png" alt="violin" />
+<img src="../图片文件/02_散点图_对照亚群UMAP_SubtypeUmap.png" alt="umap subtype" />
+<img src="../图片文件/02_散点图_Cplx2表达UMAP_Cplx2Feature.png" alt="umap expression" />
+
+<h2>步骤 5. 虚拟敲除</h2>
+<p>每个亚群单独建网，把 <code>Cplx2</code> 出边置零，再与原网络做流形对齐。五个亚群中，除 <code>Cplx2</code> 自身外，只有 PEP 的 <code>Scarb2</code> 达到 FDR &lt; 0.05。</p>
+<img src="../图片文件/04_柱状图_扰动基因_Cplx2DrBar.png" alt="top genes" />
+<img src="../图片文件/04_散点图_扰动排名_Cplx2RankScatter.png" alt="rank scatter" />
+<img src="../图片文件/08_散点图_距离与边权_DrDistanceEdge.png" alt="distance vs edge" />
+<p>上图对应论文 Figure 5。横轴是扰动距离的 Z 分数，纵轴是该基因连到 <code>Cplx2</code> 的调控边权绝对值。红色为 FDR &lt; 0.05。</p>
+<img src="../图片文件/08_散点图_P值QQ_PvalueQQ.png" alt="qq" />
+
+<h2>步骤 6. 富集</h2>
+<p>对递质分泌（GO:0007269）和突触囊泡循环（GO:0099504）做 GSEA。五个亚群的校正后 P 值都大于 0.5，不能称为显著富集。图中数字是校正后 P 值。</p>
+<img src="../图片文件/08_热图_突触GSEA_SynapseNES.png" alt="nes heatmap" />
+<img src="../图片文件/08_富集曲线_cLTMR_GseaCurve.png" alt="gsea cLTMR" />
+<img src="../图片文件/08_富集曲线_NF1_GseaCurve.png" alt="gsea NF1" />
+<img src="../图片文件/08_富集曲线_NP_GseaCurve.png" alt="gsea NP" />
+<img src="../图片文件/08_富集曲线_PEP_GseaCurve.png" alt="gsea PEP" />
+<img src="../图片文件/08_富集曲线_TRPM8_GseaCurve.png" alt="gsea TRPM8" />
+
+<h2>步骤 7. 网络</h2>
+<p>论文的自我中心网络只连接 FDR &lt; 0.05 的基因。因此四群没有可连接的其他基因。PEP 只有 <code>Scarb2</code>，调控边权约 0.28。STRING 在综合分 0.4 和 0.9 下都没有这条边，所以没有 STRING 网络。这与论文「点必须显著、边用 STRING」一致，也因此画不出论文里那种多节点星形图。</p>
+<img src="../图片文件/08_网络图_PEP显著基因_Cplx2Scarb2.png" alt="pep fdr network" />
+
+<h2>步骤 8. 和 PDF 原图的对应</h2>
+<table>
+  <tr><th>PDF</th><th>本次</th></tr>
+  <tr><td>图 1 建网、置零、对齐</td><td>步骤相同。未粘贴论文原图。</td></tr>
+  <tr><td>图 2 模拟</td><td>未做。不是本课题数据。</td></tr>
+  <tr><td>图 3–4 富集曲线与显著基因网络</td><td>曲线已做，且不显著。网络只保留 PEP 的显著基因。</td></tr>
+  <tr><td>图 5 距离–边权</td><td>已做。</td></tr>
+  <tr><td>图 6 全基因系统敲除与 STRING 子网</td><td>未做系统敲除。STRING 无边。</td></tr>
+  <tr><td>40 节点同心圆</td><td>不符合论文的显著基因规则，不作为结果。</td></tr>
+</table>
+
+<h2>步骤 9. 使用与局限</h2>
+<p>脚本在上一级 <code>代码文件/</code>。正式复现应使用软件默认：10 张网络、每次 500 个细胞、文库大小至少 1000。</p>
+<ul>
+  <li>单核数据不能代表全部胞质转录本。</li>
+  <li>对照样本常为多鼠混合，不能写成每鼠重复。</li>
+  <li>虚拟敲除距离不是差异表达倍数。</li>
+</ul>
+</body>
+</html>
