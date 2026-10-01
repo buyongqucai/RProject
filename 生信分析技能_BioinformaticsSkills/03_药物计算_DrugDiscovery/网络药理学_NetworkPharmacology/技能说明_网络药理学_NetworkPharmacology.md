@@ -30,7 +30,7 @@ description: >-
 ## 3. 何时选用
 
 中药/复方成分–靶点–疾病网络与通路。下游：结构 → 对接 → MD。  
-不适用：仅 bulk DEG；仅 PPI 无成分层 → `蛋白质互作网络_PPI-Network`。
+不适用：仅 bulk DEG；仅 PPI 无成分层 → `蛋白质互作网络_PPI-Network`。化学/环境暴露或菌群代谢物毒理网络 → `网络毒理学_NetworkToxicology`。
 
 ## 4. 数据处理方法
 
