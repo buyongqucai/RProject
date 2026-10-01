@@ -2,14 +2,16 @@
 name: bioinfo-insilico-ko
 description: >-
   虚拟敲除与扰动 / InSilicoKO：默认 scTenifoldKnk（GRN 虚拟敲除）；接诊确认表单强制。
-  触发：虚拟敲除, in silico KO, scTenifoldKnk, CellOracle, regulon KO。
+  触发：虚拟敲除, in silico KO, scTenifoldKnk, GenKI, CellOracle, regulon KO。
 ---
 
 # 虚拟敲除与扰动 / InSilicoKO
 
 > **接诊 SSOT：** [`文档_docs/接诊与确认表单_IntakeConfirmForm.md`](文档_docs/接诊与确认表单_IntakeConfirmForm.md) — 每次先抽字段出确认表；未确认禁止正式敲除。  
 > **方法默认 / 信源：** [`文档_docs/方法默认与信源登记_MethodDefaultsRegistry.md`](文档_docs/方法默认与信源登记_MethodDefaultsRegistry.md)  
-> **出图图册：** [`文档_docs/出图图册_VkoFigureAtlas.md`](文档_docs/出图图册_VkoFigureAtlas.md) — PDF 图种重绘；禁论文截图当结果。
+> **出图图册：** [`文档_docs/出图图册_VkoFigureAtlas.md`](文档_docs/出图图册_VkoFigureAtlas.md) — PDF 图种重绘；禁论文截图当结果。  
+> **可复用方法论（唯一存放处）：** [`文档_docs/虚拟敲除方法论_VkoMethodology.md`](文档_docs/虚拟敲除方法论_VkoMethodology.md) — 换课题只另写实例计划，不改本文件；一实例一引擎；对照不预设。  
+> 具体课题的计划与结果放在该课题目录，不写入本技能方法论。
 
 ## 1. 数据来源
 
@@ -21,15 +23,15 @@ description: >-
 
 ## 3. 何时选用
 
-- GRN 虚拟敲除、scTenifoldKnk、按细胞亚群扰动预测  
-- 备选：CellOracle；regulon 逆转 **仅** master TF + DEG  
+- 虚拟敲除 / in silico KO：接诊后 **选定一个引擎** 写实例计划（默认 scTenifoldKnk；也可 GenKI 等，见方法登记）  
+- regulon 逆转 **仅** master TF + 已有 DEG  
 
-不适用：无表达矩阵的纯网药；非扰动的普通 DEG/富集 → 其它技能。
+不适用：无表达矩阵的纯网药；非扰动的普通 DEG/富集 → 其它技能。多种算法对照 **不是** 默认步骤。
 
 ## 4. 数据处理方法
 
-1. 接诊表确认（A+B）→ 2. Phase1 数据可行性（填 C）→ 3. 二次确认亚群/数据集 → 4. scTenifoldKnk（行置零 + 流形对齐）→ 5. DR 表 + 焦点富集 + 图册出图。  
-regulon 备选见旧样例，不默认。
+1. 接诊表确认（`method` = **一个**引擎）→ 2. Phase1 → 3. 按方法论写该引擎实例计划 → 4. 只跑该引擎 → 5. 用该引擎自己的显著性与出图。  
+步骤细则见方法论，不在此重复。regulon 备选见旧样例，不默认。
 
 ## 5. R 包与软件栈
 

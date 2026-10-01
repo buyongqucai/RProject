@@ -1,0 +1,7 @@
+"subtype","required_score","n_genes_query","n_edges","genes","note"
+"cLTMR",NA,1,0,"Cplx2","skipped_STRING_single_gene_no_FDR_partner"
+"NF1",NA,1,0,"Cplx2","skipped_STRING_single_gene_no_FDR_partner"
+"NP",NA,1,0,"Cplx2","skipped_STRING_single_gene_no_FDR_partner"
+"PEP",400,2,0,"Cplx2;Scarb2","edges_restricted_to_FDR_query_genes"
+"PEP",900,2,0,"Cplx2;Scarb2","edges_restricted_to_FDR_query_genes"
+"TRPM8",NA,1,0,"Cplx2","skipped_STRING_single_gene_no_FDR_partner"
