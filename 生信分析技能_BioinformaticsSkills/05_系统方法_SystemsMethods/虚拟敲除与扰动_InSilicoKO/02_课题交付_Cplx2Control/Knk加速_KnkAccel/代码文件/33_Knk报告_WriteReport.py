@@ -3,7 +3,7 @@
 from pathlib import Path
 
 ROOT = Path(r"C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\结果文件")
-REPORT = ROOT / "报告文件"
+REPORT = ROOT / "报告_1.4.3"
 SUBTYPES = ("PEP", "NF1")
 TARGETS = ("Mitf", "Bace2", "Cplx2", "Ppp1r26", "Slc28a3", "Sh3d21")
 CONTROLS = {"PEP": "Ret", "NF1": "Rdx"}

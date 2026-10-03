@@ -8,7 +8,7 @@ scTenifoldNet 1.4 的 `pcNetCoreRcpp` 对每个基因做一次留一设计矩阵
 
 ## 这份代码做什么
 
-建网在 `代码文件/knk_accel/`。1.4 仍是留一回归，只保留 `nComp=3`。`02_小矩阵自检_SelfCheck.py` 在小矩阵上对照完整 SVD，并尽量对照本机 `pcNetCoreRcpp`。线程固定为 1。这一轮的改动、时间和误差见 `优化记录_这一轮.md`。
+建网在 `代码文件/knk_accel/`。给别人调用的参数见 `库函数参数_PythonApi.md`。1.4 仍是留一回归，只保留 `nComp=3`。`02_小矩阵自检_SelfCheck.py` 在小矩阵上对照完整 SVD，并尽量对照本机 `pcNetCoreRcpp`。线程固定为 1。这一轮的改动、时间和误差见 `优化记录_这一轮.md`。
 
 未在 8000 基因上对齐之前，不能把这份结果叫做 scTenifoldKnk 正式结果，也不能替换 Formal 的 RDS。25 基因的自测已经对上 `pcNet`，见 `截断建网自测_CheckpointSelfTest.md`。
 
