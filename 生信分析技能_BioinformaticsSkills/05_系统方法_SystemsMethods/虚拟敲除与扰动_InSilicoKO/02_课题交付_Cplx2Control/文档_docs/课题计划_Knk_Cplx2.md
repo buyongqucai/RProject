@@ -18,7 +18,7 @@
 - 登录号、亚群、敲除基因：见上面的共用选择  
 - 路径：桌面 `琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO/数据文件`  
 - 细胞：`model == Control`，且只取 PEP、NF1  
-- 基因过滤：检出 ≥25 细胞；超过 8000 则按平均表达 soft_cap，**六个靶基因只要有检出就强制保留**（作者 Issue #33：不单用 HVG）  
+- 基因过滤：不设 8000 上限。细胞与基因先按官网 `scQC`（文库 >1000、线粒体比例 <0.1、检出比例 >5%）。六个靶基因只要检出细胞数大于 0 就强制留在矩阵里。若 `scTenifoldNet::checkMemory` 报内存装不下，采用它给出的最大基因数，并写明这是内存限制。
 - 新结果目录：`结果文件/PEP/scTenifoldKnk/<基因>/` 与 `结果文件/NF1/scTenifoldKnk/<基因>/`
 
 ## 引擎与参数
@@ -29,6 +29,11 @@
 | `qc_minLibSize` | 1000 | CRAN 默认 |
 | `nc_nNet` / `nc_nCells` / `td_K` | 10 / min(500, n−1) / 3 | CRAN 默认 |
 | 文献 | Osorio et al., *Patterns* 2022, DOI 10.1016/j.patter.2022.100434 | H |
+| `nc_nComp` / `nc_q` / `nc_lambda` / `ma_nDim` | 3 / 0.9 / 0 / 2 | 官网 README 默认。论文写「少量主成分」，没有给搜索步骤 |
+| 停机与小数 | `td_maxError=1e-5`，`td_nDecimal=3` | 官网数值默认，不另搜 |
+| `seed` | 1 | 官网说明换种子只用来看同一套参数的波动 |
+
+选择规律写在 [`方法默认与信源登记_MethodDefaultsRegistry.md`](../../../文档_docs/方法默认与信源登记_MethodDefaultsRegistry.md)。论文和官网 README 都没有把秩、主成分个数或分位数写成参数搜索。现行生物敲除用上表各跑一轮，不为换秩或换主成分重复建网。官网写明要重复的只有种子：那是同一套参数再跑，用来看抽样波动，不是搜索。
 
 Pilot（nNet=3、nCells=200、基因约 1000）只作试跑，**不能**当作正式结果。
 

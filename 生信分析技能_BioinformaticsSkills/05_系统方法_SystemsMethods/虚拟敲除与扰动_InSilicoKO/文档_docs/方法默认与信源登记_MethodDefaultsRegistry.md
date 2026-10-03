@@ -16,7 +16,7 @@
 |------|------|------|--------|
 | `param_nc_nNet` | 10 | CRAN / README | H |
 | `param_nc_nCells` | 500 | 同上；亚群细胞不足时下调并披露 | H |
-| `param_td_K` | 3（常用 3–5） | 官方 advanced vignette | H |
+| `param_td_K` | 3 | 官网 README 默认值与示例；论文只写 CP 分解，未写秩的搜索 | H |
 | `param_qc_minLibSize` | 1000 | 包默认；与数据集论文冲突时以数据集为准 | M–H |
 | `param_qc_mt` | 小鼠基因前缀 `mt-` | 包文档（非 `MT-`） | H |
 
@@ -24,7 +24,7 @@
 
 | 字段 | 默认 | 来源 | 可信度 |
 |------|------|------|--------|
-| `gene_filter_strategy` | 优先保留群体内 **高表达基因**；**不推荐**仅用 HVG 子集；必须包含 `gene_ko` | 作者回复 GitHub [Issue #33](https://github.com/cailab-tamu/scTenifoldKnk/issues/33) | H |
+| `gene_filter_strategy` | 优先保留群体内 **高表达基因**；**不推荐**仅用 HVG 子集；必须包含 `gene_ko`。2026-10-03 起本课题 **不设 8000 基因上限** | 作者回复 GitHub [Issue #33](https://github.com/cailab-tamu/scTenifoldKnk/issues/33)；基因数上限由用户确认去掉 | H |
 | `qc_minCells_note` | 部分版本 `qc_minCells` 可能未写回矩阵；预处理宜 **手动**按检出细胞数过滤 | GitHub [Issue #41](https://github.com/cailab-tamu/scTenifoldKnk/issues/41)（open） | M |
 
 ## 其它引擎（各自独立实例，不预设对照）
