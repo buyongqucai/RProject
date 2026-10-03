@@ -37,7 +37,7 @@ Pilot（nNet=3、nCells=200、基因约 1000）只作试跑，**不能**当作�
    入网规则：FDR < 0.05；边用 STRING；见方法登记「画法与筛选」。
 3. **本引擎优化（正式结果之后或并行隔离目录）**  
    - P0：固化当前并行启动说明。  
-   - P1：加速 `pcNet`（OpenMP 或 leave-one-out 等价），与 `pcNetCoreRcpp` 对齐后再考虑替换。  
+   - P1：加速 `pcNet`（OpenMP 或 leave-one-out 等价），与 `pcNetCoreRcpp` 对齐后再考虑替换。测试条目、通过线和现行范围见 [`../Knk加速_KnkAccel/文档_docs/测试规程_TestProtocol.md`](../Knk加速_KnkAccel/文档_docs/测试规程_TestProtocol.md)。  
    - P2：GPU/CUDA 仅作试验；未对齐不得称为官方 Knk 结果。  
    产物目录与 Formal 分开（如 `Knk加速_KnkAccel/`）。
 
