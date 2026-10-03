@@ -15,7 +15,7 @@
 | 02 | 亚群定位 + 靶基因表达 | — | Phase1 | UMAP/点图/小提琴 |
 | 03 | 靶基因各亚群检出率柱图 | — | Phase1 | 决定 `subtypes_to_ko` |
 | 04 | Top DR / perturbed genes 条图 | Fig 3 叙事 | Phase2 | **取代**旧 KOrescue 柱图主线角色 |
-| 05 | 焦点通路富集（GSEA/ORA） | Fig 3 | Phase2 | 默认突触囊泡/SNARE/递质释放 |
+| 05 | 焦点通路富集（GSEA/ORA） | Fig 3 | Phase2 | 本课题不预先指定突触条目，基因集见筛选 SSOT |
 | 06 | KO-centered 子网络 | 包网络图思路 | Phase2 | 显著 DR ∩ WT 网络边 |
 | 07 | 跨亚群共享 vs 特异 | Fig 7 | Phase2 | 仅当 ≥2 亚群敲除 |
 

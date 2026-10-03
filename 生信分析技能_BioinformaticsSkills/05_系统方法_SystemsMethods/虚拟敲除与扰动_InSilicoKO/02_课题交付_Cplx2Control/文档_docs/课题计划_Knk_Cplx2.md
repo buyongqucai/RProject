@@ -7,13 +7,19 @@
 
 ## 问题
 
-在小鼠 TG、GSE197289 **Control** 感觉神经元亚群（cLTMR、NF1、NP、PEP、TRPM8）中，用 scTenifoldKnk 虚拟敲除 **`Cplx2`**，得到各亚群 DR/扰动基因，并做突触囊泡循环、SNARE、递质释放方向的富集，用于功能讨论。结果是计算预测，不是湿实验 KO DEG。
+数据集、亚群和敲除基因只写在 [`数据集筛选与M4规程_DatasetScreening.md`](../../文档_docs/数据集筛选与M4规程_DatasetScreening.md) 的「两台机器共用的选择」。本文件只写 scTenifoldKnk 怎么跑。
+
+下一轮生物敲除：GSE197289 小鼠 Control，只跑 **PEP** 和 **NF1**，六个基因逐个敲（Mitf、Bace2、Cplx2、Ppp1r26、Slc28a3、Sh3d21）。某个基因检出为 0 才跳过。富集在扰动基因出来之后做，不预先指定突触囊泡、SNARE 或递质释放。结果是计算预测。
+
+已经在跑的五亚群 Formal（cLTMR、NF1、NP、PEP、TRPM8，只敲 Cplx2）和 cLTMR 加速对照，不改输出路径，不在本计划里下令停止。那些结果按旧选择留档，不当作现行生物敲除。
 
 ## 数据
 
-- 登录号：GSE197289；路径：桌面 `琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO/数据文件`  
-- 细胞：`model == Control` 且上述亚群  
-- 基因：检出 ≥25 细胞；超过 8000 则按平均表达 soft_cap，**强制保留 Cplx2**（作者 Issue #33：不单用 HVG）
+- 登录号、亚群、敲除基因：见上面的共用选择  
+- 路径：桌面 `琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO/数据文件`  
+- 细胞：`model == Control`，且只取 PEP、NF1  
+- 基因过滤：检出 ≥25 细胞；超过 8000 则按平均表达 soft_cap，**六个靶基因只要有检出就强制保留**（作者 Issue #33：不单用 HVG）  
+- 新结果目录：`结果文件/PEP/scTenifoldKnk/<基因>/` 与 `结果文件/NF1/scTenifoldKnk/<基因>/`
 
 ## 引擎与参数
 
@@ -28,14 +34,14 @@ Pilot（nNet=3、nCells=200、基因约 1000）只作试跑，**不能**当作�
 
 ## 阶段
 
-1. **正式跑（进行中）**  
-   `代码文件/13_正式参数虚拟敲除_RunFormalDefaults.R`  
-   亚群串行；`makeNetworks` 补丁使 10 张网并行（因 Rcpp `pcNet` 忽略 `nCores`）。  
-   完成标志：五亚群 `*_Cplx2_formal.rds` + `*_Cplx2Dr_Formal.csv` + `STATUS_Formal.txt`。
-2. **出图与富集**  
-   Formal 完成后跑 `14_正式后出图分析_PostFormalPipeline.R`（enrichR、GSEA、PDF+STRING 网络等）。  
-   入网规则：FDR < 0.05；边用 STRING；见方法登记「画法与筛选」。
-3. **本引擎优化（正式结果之后或并行隔离目录）**  
+1. **旧 Formal（留档，不是现行选择）**  
+   `代码文件/13_正式参数虚拟敲除_RunFormalDefaults.R` 里仍是五亚群、只敲 Cplx2。正在跑就让它跑完。不要把它的完成标志当成六个基因已经做完。
+2. **现行生物敲除**  
+   PEP 与 NF1，六个基因逐个敲，参数仍用上表的包默认。一个亚群一张野生型网，换基因只改 `gKO`。对照基因按共用选择的相关规则重算。  
+   完成标志：两个亚群、六个靶基因各自有 DR 表，外加对照基因的 DR 表。
+3. **出图与富集**  
+   扰动基因出来之后再富集。GO 生物学过程与 KEGG，BH，p = 0.05，q = 0.2。不把突触囊泡或 SNARE 写进筛选条件。STRING 只在检索到真实边时画。
+4. **本引擎优化（正式结果之后或并行隔离目录）**  
    - P0：固化当前并行启动说明。  
    - P1：加速 `pcNet`（OpenMP 或 leave-one-out 等价），与 `pcNetCoreRcpp` 对齐后再考虑替换。测试条目、通过线和现行范围见 [`../Knk加速_KnkAccel/文档_docs/测试规程_TestProtocol.md`](../Knk加速_KnkAccel/文档_docs/测试规程_TestProtocol.md)。  
    - P2：GPU/CUDA 仅作试验；未对齐不得称为官方 Knk 结果。  
@@ -43,9 +49,9 @@ Pilot（nNet=3、nCells=200、基因约 1000）只作试跑，**不能**当作�
 
 ## 验收
 
-- 五亚群 Formal checkpoint 齐全  
-- DR 总表、FDR 表、图与 `STATUS_Formal.txt`  
-- 报告声明：computational prediction；参数为包默认而非 pilot
+- 旧五亚群 Formal 若已完成，只作留档  
+- 现行跑次：PEP、NF1 × 六个靶基因 + 各 1 个对照基因的 DR 表  
+- 报告声明：computational prediction；参数为包默认而非 pilot；数据不是慢性三叉神经痛模型
 
 ## 声称
 
