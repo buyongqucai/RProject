@@ -34,6 +34,14 @@ Track A 与命题「双交集」同构且新颖；Track B 是独立第二篇的�
 
 ---
 
+## 0.1 方法标准（2026-10-04 按已发表文献定稿，审稿人认可口径）
+
+**标准 M-1 代谢物清单：** gutMGene v2.0 **全库代谢物不预筛**（文献量级 250–280 个）。有益/有害只作下游分层注释，不作入口过滤；分类锚定 [Nat Rev Gastro Hepatol 2019](https://www.nature.com/articles/s41575-019-0258-z) 三大类（SCFAs、胆汁酸、色氨酸代谢物）与 dysbiotic 清单（TMAO、H₂S、对甲酚硫酸盐、吲哚硫酸盐、次级胆汁酸 DCA/LCA，[IJMS 2023](https://www.mdpi.com/1422-0067/24/20/15256)）；毒性/成药性标注用 SwissADME + ADMETlab 2.0（肾纤维化 2026 同款）。Track A 有害组自全集拆出做对比。锚点论文：[Sci Rep 2026（278 个全取）](https://www.nature.com/articles/s41598-026-44114-2)、[Front Microbiol 2025（251 个全取）](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2025.1617496/full)、[肾纤维化 2026（全库+末端无毒筛选）](https://exa.ai/library/publication/qtnh116tby6)。
+
+**标准 M-2 靶点来源：** M = gutMGene 实证靶点（证据级 H）∪（**SEA ∩ STP 两工具一致**的预测靶点，证据级 M）；单工具命中（L）丢弃。锚点：[Sci Rep 2026「only overlapping targets identified by both were retained」](https://www.nature.com/articles/s41598-026-44114-2)、[Front Microbiol 2025（SEA 1773 ∩ STP 947 → 706）](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2025.1617496/full)。gutMGene 版本引用 [NAR 2025;53(D1):D783-D788](https://pubmed.ncbi.nlm.nih.gov/39475181/)，记录访问日期。
+
+---
+
 ## 1. 规模测算：双交集会不会「取空」？（用交付真实数据）
 
 随机期望（以 D 为背景宇宙）：`E[|C|] = |I₁| · |I₂| / |D|`，|I₁|=291，|D|=1517。
@@ -104,9 +112,10 @@ Track A 与命题「双交集」同构且新颖；Track B 是独立第二篇的�
 - [ ] 复用交付 1517/291 靶点，核对 HGNC 标准化（项目规范 §3）
 
 ### Phase 1 — M 集构建（2–4 天）
-- [ ] gutMGene 提取菌群代谢物（优先 UC 文献相关：SCFAs、次级胆汁酸、色氨酸代谢物、equol、TMAO…）
-- [ ] PubChem SMILES → SEA + SwissTargetPrediction；实证靶点与预测靶点**分开成列**
-- [ ] 标准化 HGNC/UniProt，输出 `M_代谢物靶点.csv`（含证据级 H/M/L）
+- [ ] 按标准 M-1：gutMGene v2.0 全库代谢物（不预筛），PubChem SMILES
+- [ ] 按标准 M-2：SEA + STP 预测，取两工具一致；实证(H) ∪ 一致预测(M)，单工具丢弃
+- [ ] 代谢物注释：有益/有害分组（NRH 2019 分类 + SwissADME/ADMETlab 2.0 毒性标注，H/M/L）
+- [ ] 标准化 HGNC/UniProt，输出 `M_代谢物靶点.csv`（含证据级列）
 
 ### Phase 2 — 双交集计算与统计（2–3 天）
 - [ ] I₂ = M∩D；C = I₁∩I₂；输出三表 + 韦恩/UpSet
@@ -124,12 +133,12 @@ Track A 与命题「双交集」同构且新颖；Track B 是独立第二篇的�
 - [ ] Track B：TCMToxDB/CTD/TTD 毒性靶点 ∩ F，肝毒/心毒双交集（雷公藤范式）
 - [ ] 毒理结论仅写「提示潜在毒性/拮抗候选」，附证据等级
 
-### Phase 5 — 验证层（分档执行）
+### Phase 5 — 验证层（已拍板档位：计算验证 + GEO + MR）
 - [ ] 分子对接：C 核心对（代谢物×核心靶点，Vina/CB-Dock2，3 次独立重复，阈值 −20.9 kJ/mol）
+- [ ] **GEO 转录组再验证（主线）**：UC 队列（GSE92415/GSE75214）中 C 的表达一致性 + 诊断效能（写全 AUC/CI）
+- [ ] **MR 分析（主线）**：MiBioGen→FinnGen 菌群-UC 因果支持（复刻 Immunol Res 2026 框架）
 - [ ] （加分）分子动力学 100 ns 抽查 top3 对
-- [ ] （加分）GEO 转录组再验证：UC 队列（GSE92415/GSE75214）中 C 的表达一致性 + 诊断效能（写全 AUC/CI）
-- [ ] （加分）MR：MiBioGen→FinnGen 菌群-UC 因果支持（复刻 Immunol Res 2026 框架）
-- [ ] （实验档）DSS 小鼠：16S + 靶向代谢组（SCFAs/胆汁酸/吲哚）+ qPCR/WB 验证核心对
+- [ ] （实验档备选）DSS 小鼠：16S + 靶向代谢组（SCFAs/胆汁酸/吲哚）+ qPCR/WB 验证核心对
 
 ---
 
@@ -152,10 +161,11 @@ Track A 与命题「双交集」同构且新颖；Track B 是独立第二篇的�
 
 | 周 | 目标 |
 |----|------|
-| 1 | Phase 0–1：M 集建成，DATA_SOURCE.md |
+| 1 | Phase 0–1：M 集建成（标准 M-1/M-2），DATA_SOURCE.md |
 | 2 | Phase 2：双交集 + 统计 + 敏感性（Go/No-Go 决策点） |
-| 3–4 | Phase 3–4：机制层 + 网毒模块（Track 拍板后） |
-| 5–6 | Phase 5 计算验证 + 图表 + 初稿 |
+| 3–4 | Phase 3–4：机制层 + 网毒模块（Track A） |
+| 5–6 | Phase 5：对接 + GEO 再验证 |
+| 7–8 | MR 分析 + 图表 + 初稿（验证档位已拍板 GEO+MR，总工期约 8 周） |
 
 ## 8. 参考文献（主要）
 
