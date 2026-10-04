@@ -11,7 +11,8 @@ description: >-
 > **方法默认 / 信源：** [`文档_docs/方法默认与信源登记_MethodDefaultsRegistry.md`](文档_docs/方法默认与信源登记_MethodDefaultsRegistry.md)  
 > **出图图册：** [`文档_docs/出图图册_VkoFigureAtlas.md`](文档_docs/出图图册_VkoFigureAtlas.md) — PDF 图种重绘；禁论文截图当结果。  
 > **可复用方法论（唯一存放处）：** [`文档_docs/虚拟敲除方法论_VkoMethodology.md`](文档_docs/虚拟敲除方法论_VkoMethodology.md) — 换课题只另写实例计划，不改本文件；一实例一引擎；对照不预设。  
-> **本课题的数据集、亚群、敲除基因：** [`文档_docs/数据集筛选与M4规程_DatasetScreening.md`](文档_docs/数据集筛选与M4规程_DatasetScreening.md) 的「两台机器共用的选择」。GenKI 与 scTenifoldKnk 都读这一处。  
+> **Cplx2 课题的数据集、亚群、敲除基因：** [`文档_docs/数据集筛选与M4规程_DatasetScreening.md`](文档_docs/数据集筛选与M4规程_DatasetScreening.md) 的「两台机器共用的选择」。GenKI 与 scTenifoldKnk 都读这一处。  
+> **婷婷痤疮课题：** [`03_课题交付_婷婷痤疮_TingtingAcne/文档_docs/课题计划_婷婷_AHR.md`](03_课题交付_婷婷痤疮_TingtingAcne/文档_docs/课题计划_婷婷_AHR.md)。敲 AHR；Knk 建网用 1.4.3 GPU，另跑 GenKI。不套用 Cplx2 的 PEP/NF1。  
 > 具体课题的计划与结果放在该课题目录，不写入本技能方法论。
 
 ## 1. 数据来源
