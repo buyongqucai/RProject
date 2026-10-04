@@ -1,6 +1,6 @@
 # Official CPU tensor, knockout, dRegulation, and enrichment from the saved 1.4.3 networks.
 args <- commandArgs(trailingOnly = TRUE)
-root <- args[[1]]
+desk <- if (length(args) >= 1) args[[1]] else "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除"
 np_plots <- "e:/RProject/生信分析技能_BioinformaticsSkills/03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology/脚本_scripts/02_可视化_NetworkPharmPlots.R"
 if (requireNamespace("RhpcBLASctl", quietly = TRUE)) {
   RhpcBLASctl::blas_set_num_threads(4L)
@@ -111,8 +111,11 @@ read_gpu_wt <- function(folder) {
 }
 
 for (subtype in c("PEP", "NF1")) {
-  gpu_dir <- file.path(root, subtype, "scTenifoldKnk", "_野生型")
-  cpu_dir <- file.path(root, subtype, "scTenifoldKnk_CPU", "_野生型")
+  gpu_dir <- file.path(desk, "结果文件", subtype, "scTenifoldKnk_1.4.3_GPU", "_野生型", "数据文件")
+  cpu_dir <- file.path(desk, "结果文件", subtype, "scTenifoldKnk_1.4.3_CPU", "_野生型", "数据文件")
+  cpu_note <- file.path(desk, "结果文件", subtype, "scTenifoldKnk_1.4.3_CPU", "_野生型", "报告文件")
+  gpu_note <- file.path(desk, "结果文件", subtype, "scTenifoldKnk_1.4.3_GPU", "_野生型", "报告文件")
+  dir.create(cpu_note, recursive = TRUE, showWarnings = FALSE)
   genes <- readLines(file.path(gpu_dir, "genes.txt"), warn = FALSE, encoding = "UTF-8")
   nets <- vector("list", 10L)
   t0 <- proc.time()
@@ -147,14 +150,14 @@ for (subtype in c("PEP", "NF1")) {
       sprintf("direction,%.3f,lambda=0", direction_sec),
       sprintf("wt_max_abs_vs_gpu,%.6e,after_round_diag_transpose", wt_gap)
     ),
-    file.path(cpu_dir, "timings_tail.csv")
+    file.path(cpu_note, "timings_tail.csv")
   )
   cat(subtype, "tensor", sprintf("%.3f", tensor_sec), "wt_vs_gpu", sprintf("%.6e", wt_gap), "\n")
-  timing <- readLines(file.path(gpu_dir, "timings.csv"), warn = FALSE, encoding = "UTF-8")
+  timing <- readLines(file.path(gpu_note, "timings.csv"), warn = FALSE, encoding = "UTF-8")
   control <- sub(".*gene=([^;]+).*", "\\1", timing[grepl("^control,", timing)])
   for (gene in c(targets, control)) {
     if (!gene %in% rownames(wt)) next
-    knock_one(wt, gene, file.path(root, subtype, "scTenifoldKnk_CPU", gene))
+    knock_one(wt, gene, file.path(desk, "结果文件", subtype, "scTenifoldKnk_1.4.3_CPU", gene, "数据文件"))
   }
   rm(wt)
   gc()

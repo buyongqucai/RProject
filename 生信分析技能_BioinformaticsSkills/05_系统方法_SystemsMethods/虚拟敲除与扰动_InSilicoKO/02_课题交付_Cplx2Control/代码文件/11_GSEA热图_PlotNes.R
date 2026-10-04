@@ -1,7 +1,8 @@
 options(stringsAsFactors = FALSE)
-root <- "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO"
-csv <- file.path(root, "结果文件", "数据文件", "08_GSEA_突触条目_SynapseGsea.csv")
-fig <- file.path(root, "结果文件", "图片文件")
+vko <- "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除"
+arch <- "C:/Users/10540/Desktop/琪乐无穷/五亚群留档"
+csv <- file.path(arch, "结果文件", "_跨亚群", "scTenifoldKnk", "数据文件", "08_GSEA_突触条目_SynapseGsea.csv")
+fig <- file.path(arch, "结果文件", "_跨亚群", "scTenifoldKnk", "图片文件")
 viz <- "E:/RProject/生信分析技能_BioinformaticsSkills/00_基础_Foundation/统一可视化规范_VizStandards/脚本_scripts/出版级出图_PublicationPlot.R"
 if (file.exists(viz)) source(viz, encoding = "UTF-8")
 suppressPackageStartupMessages(library(ggplot2))

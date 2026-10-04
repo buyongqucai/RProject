@@ -15,9 +15,9 @@ import time
 from pathlib import Path
 
 CODE_DIR = Path(__file__).resolve().parent
-DESKTOP = Path(r"C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\GenKI_GenKI")
-INPUT_DIR = DESKTOP / "结果文件" / "输入_cLTMR"
-OUT_DIR = DESKTOP / "结果文件" / "烟测_cLTMR"
+DESK = Path(r"C:\Users\10540\Desktop\琪乐无穷\虚拟敲除")
+INPUT_DIR = DESK / "结果文件" / "cLTMR" / "GenKI" / "_野生型" / "数据文件"
+OUT_DIR = DESK / "结果文件" / "cLTMR" / "GenKI" / "Cplx2" / "数据文件" / "烟测_cLTMR"
 TARGET = "Cplx2"
 SEED = 8096
 N_HVG = 3000

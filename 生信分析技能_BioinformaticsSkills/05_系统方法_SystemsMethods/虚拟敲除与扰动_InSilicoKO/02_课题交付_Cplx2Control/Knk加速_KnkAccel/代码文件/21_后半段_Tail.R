@@ -63,8 +63,9 @@ dr_sec <- (proc.time() - t0)[["elapsed"]]
 utils::write.csv(as.data.frame(dr), file.path(out_dir, "dr_optimized.csv"), row.names = FALSE)
 
 official_rds <- file.path(
-  "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO/结果文件/数据文件/敲除对象_KoObjects_Formal",
-  paste0(subtype, "_Cplx2_formal.rds")
+  "C:/Users/10540/Desktop/琪乐无穷/五亚群留档/结果文件",
+  subtype, "scTenifoldKnk", "Cplx2", "数据文件",
+  paste0("正式_", subtype, "_Cplx2_formal.rds")
 )
 official <- readRDS(official_rds)
 off_wt <- as.matrix(official$tensorNetworks$WT)

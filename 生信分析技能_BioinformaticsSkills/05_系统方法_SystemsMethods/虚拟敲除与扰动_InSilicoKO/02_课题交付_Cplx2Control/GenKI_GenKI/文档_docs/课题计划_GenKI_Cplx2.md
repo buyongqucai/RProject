@@ -5,7 +5,7 @@
 > **本计划不包含：** 与 scTenifoldKnk 的对照、共识或「谁更优」裁定。  
 > **约束：** 独立目录与进程；不停止正在进行的 Knk Formal，也不改它的输出路径。  
 > **选择 SSOT：** [`数据集筛选与M4规程_DatasetScreening.md`](../../../文档_docs/数据集筛选与M4规程_DatasetScreening.md) 的「两台机器共用的选择」。数据集、亚群、敲除基因改那一处。本文件只写 GenKI 怎么跑。  
-> **桌面副本：** `C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\GenKI_GenKI\课题计划_GenKI_Cplx2.md` 与本文件同一内容。改引擎参数时先改本文件，再复制到桌面。
+> **桌面副本：** `C:\Users\10540\Desktop\琪乐无穷\虚拟敲除\结果文件\_跨亚群\GenKI\报告文件\` 下的计划副本（若有）。改引擎参数时先改本文件，再复制到桌面。
 
 ## 问题
 
@@ -40,7 +40,7 @@ Yang 等 2023 年 *Frontiers in Pharmacology* 的小鼠 IoN-CCI 三叉神经节�
 
 ## 数据
 
-- 与 Knk 共用的 counts 与细胞注释仍在桌面 `琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\数据文件`。本次不复制、不搬家。见同目录 [`数据位置说明_DataPointer.md`](数据位置说明_DataPointer.md)。  
+- 与 Knk 共用的 counts 与细胞注释仍在桌面 `琪乐无穷\虚拟敲除\数据文件`。本次不复制矩阵。见 [`数据位置说明_DataPointer.md`](数据位置说明_DataPointer.md)。  
 - 亚群名单与 `scTenifoldKnk` 共用，写在 [`数据集筛选与M4规程_DatasetScreening.md`](../../../文档_docs/数据集筛选与M4规程_DatasetScreening.md)。依据是原研究细胞注释，不是 `scQC()`。`scQC()` 只在 R 函数内部过滤细胞和基因：文库大小超过 1000、去掉文库异常细胞、线粒体比例低于 0.1、基因检出比例高于 5%。GenKI 仍用 top 3000 HVG。某个亚群的矩阵里没有 `Cplx2` 时，该亚群不能敲，只记录。  
 - 基因：各亚群 **top 3000 HVG**（Seurat `vst`，与 NAR 2023 一致）。上表中要敲的基因若不在名单里，且该亚群检出细胞数大于 0，则强制补入，并在 STATUS 里写明。Knk 不再设 8000 基因上限。GenKI 仍只用 top 3000，不把质控后的全部基因送进模型。同一亚群共用一张网和一套训练好的模型，六个基因分别去掉各自的边。  
 - 低相关对照：在同一亚群、同一套基因里，用建网所用的 log 标准化表达，取与 `Cplx2` 绝对 Pearson 相关最小、方差大于 0、且不在上表六个敲除基因中的一个基因。基因名和相关系数写入 STATUS。对照与六个靶基因共用模型和网，只是去掉的边不同。对照也出现的富集条目不能算作该靶基因特异。
@@ -106,7 +106,7 @@ python 00_资源上限_CpuCap.py
 ## 目录
 
 - 技能：本文件所在的 `GenKI_GenKI/`（文档与以后的 Python）。  
-- 桌面：`琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\GenKI_GenKI\`（文献、课题计划副本、以后的结果）。  
+- 桌面：`琪乐无穷\虚拟敲除\结果文件\<亚群>\GenKI\<基因>\`；文献在 `_跨亚群\GenKI\报告文件\`。见 [`桌面存放_DesktopLayout.md`](../../文档_docs/桌面存放_DesktopLayout.md)。  
 - 不把 Knk 的脚本、结果、`虚拟敲除方法学.pdf` 移进新目录。
 
 ## 阶段

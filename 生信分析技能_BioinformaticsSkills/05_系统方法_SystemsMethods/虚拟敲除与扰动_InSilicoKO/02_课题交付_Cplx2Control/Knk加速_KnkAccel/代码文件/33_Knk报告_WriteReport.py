@@ -2,8 +2,9 @@
 
 from pathlib import Path
 
-ROOT = Path(r"C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\结果文件")
-REPORT = ROOT / "报告_1.4.3"
+DESK = Path(r"C:\Users\10540\Desktop\琪乐无穷\虚拟敲除")
+ALGO = "scTenifoldKnk_1.4.3_GPU"
+REPORT = DESK / "结果文件" / "_跨亚群" / ALGO / "报告文件"
 SUBTYPES = ("PEP", "NF1")
 TARGETS = ("Mitf", "Bace2", "Cplx2", "Ppp1r26", "Slc28a3", "Sh3d21")
 CONTROLS = {"PEP": "Ret", "NF1": "Rdx"}
@@ -18,10 +19,11 @@ p{margin:10px 0 12px}
 
 
 def responsive_count(subtype: str, gene: str) -> tuple[int, str]:
-    folder = ROOT / subtype / "scTenifoldKnk" / gene
-    if (folder / "说明_无出边.txt").exists():
+    data = DESK / "结果文件" / subtype / ALGO / gene / "数据文件"
+    note = DESK / "结果文件" / subtype / ALGO / gene / "报告文件"
+    if (note / "说明_无出边.txt").exists():
         return 0, "无出边"
-    path = folder / "响应基因_Responsive.csv"
+    path = data / "响应基因_Responsive.csv"
     if not path.exists():
         return 0, "无表"
     lines = [line for line in path.read_text(encoding="utf-8").splitlines()[1:] if line.strip()]

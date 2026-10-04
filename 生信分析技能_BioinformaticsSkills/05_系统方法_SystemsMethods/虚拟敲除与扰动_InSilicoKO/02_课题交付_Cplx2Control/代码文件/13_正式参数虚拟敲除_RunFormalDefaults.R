@@ -13,9 +13,10 @@
 options(stringsAsFactors = FALSE)
 set.seed(20261001)
 
-root <- "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO"
-raw_dir <- file.path(root, "数据文件")
-res_dir <- file.path(root, "结果文件")
+vko <- "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除"
+root <- "C:/Users/10540/Desktop/琪乐无穷/五亚群留档"
+raw_dir <- file.path(vko, "数据文件")
+res_dir <- file.path(root, "结果文件", "_跨亚群", "scTenifoldKnk")
 tab_dir <- file.path(res_dir, "数据文件")
 fig_dir <- file.path(res_dir, "图片文件")
 rep_dir <- file.path(res_dir, "报告文件")
@@ -178,10 +179,14 @@ if (!force_all && nzchar(force_env)) {
   force_set <- force_set[nzchar(force_set)]
 }
 formal_paths <- function(subtype) {
+  gene_data <- file.path(root, "结果文件", subtype, "scTenifoldKnk", "Cplx2", "数据文件")
+  wt_rep <- file.path(root, "结果文件", subtype, "scTenifoldKnk", "_野生型", "报告文件")
+  dir.create(gene_data, recursive = TRUE, showWarnings = FALSE)
+  dir.create(wt_rep, recursive = TRUE, showWarnings = FALSE)
   list(
-    rds = file.path(obj_dir, paste0(subtype, "_Cplx2_formal.rds")),
-    csv = file.path(tab_dir, paste0("04_扰动基因_", subtype, "_Cplx2Dr_Formal.csv")),
-    log = file.path(tab_dir, paste0("04_workerlog_", subtype, ".txt"))
+    rds = file.path(gene_data, paste0("正式_", subtype, "_Cplx2_formal.rds")),
+    csv = file.path(gene_data, paste0("04_扰动基因_", subtype, "_Cplx2Dr_Formal.csv")),
+    log = file.path(wt_rep, paste0("04_workerlog_", subtype, ".txt"))
   )
 }
 is_subtype_done <- function(subtype) {

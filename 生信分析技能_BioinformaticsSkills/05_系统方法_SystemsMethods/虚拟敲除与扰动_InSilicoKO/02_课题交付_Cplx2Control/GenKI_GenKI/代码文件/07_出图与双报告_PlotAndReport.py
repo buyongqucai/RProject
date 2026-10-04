@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-ROOT = Path(r"C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\GenKI_GenKI\结果文件")
+ROOT = Path(r"C:\Users\10540\Desktop\琪乐无穷\虚拟敲除\结果文件")
 FIG = ROOT / "图片文件"
 REPORT = ROOT / "报告文件"
 DPI = 600

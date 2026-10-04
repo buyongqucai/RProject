@@ -18,7 +18,7 @@ suppressPackageStartupMessages({
   library(furrr)
 })
 
-raw_dir <- "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO/数据文件"
+raw_dir <- "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除/数据文件"
 meta <- read.csv(gzfile(file.path(raw_dir, "01_细胞注释_CellMeta_GSE197289.csv.gz")), check.names = FALSE)
 counts <- readRDS(gzcon(gzfile(file.path(raw_dir, "02_表达矩阵_Counts_GSE197289.RDS.gz"), "rb")))
 meta <- meta[match(colnames(counts), meta$V1), , drop = FALSE]

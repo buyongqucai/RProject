@@ -1,8 +1,9 @@
 options(stringsAsFactors = FALSE)
-root <- "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO"
-tab <- file.path(root, "结果文件", "数据文件", "04_扰动基因_五亚群_Cplx2DrAll.csv")
-fig <- file.path(root, "结果文件", "图片文件")
-out <- file.path(root, "结果文件", "数据文件")
+vko <- "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除"
+arch <- "C:/Users/10540/Desktop/琪乐无穷/五亚群留档"
+tab <- file.path(arch, "结果文件", "_跨亚群", "scTenifoldKnk", "数据文件", "04_扰动基因_五亚群_Cplx2DrAll.csv")
+fig <- file.path(arch, "结果文件", "_跨亚群", "scTenifoldKnk", "图片文件")
+out <- file.path(arch, "结果文件", "_跨亚群", "scTenifoldKnk", "数据文件")
 suppressPackageStartupMessages({
   library(clusterProfiler)
   library(org.Mm.eg.db)

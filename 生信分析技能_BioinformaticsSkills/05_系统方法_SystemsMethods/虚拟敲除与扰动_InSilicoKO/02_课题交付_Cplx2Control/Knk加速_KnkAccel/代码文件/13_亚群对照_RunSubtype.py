@@ -32,7 +32,7 @@ from knk_accel.pcnet import GPU_SVD_DRIVER
 OUT = Path(r"C:\Users\10540\AppData\Local\knk_accel_cLTMR")
 DOCS = CODE_DIR.parent / "文档_docs"
 OFFICIAL_CSV = Path(
-    r"C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\结果文件\数据文件\04_扰动基因_cLTMR_Cplx2Dr_Formal.csv"
+    r"C:\Users\10540\Desktop\琪乐无穷\五亚群留档\结果文件\cLTMR\scTenifoldKnk\Cplx2\数据文件\04_扰动基因_cLTMR_Cplx2Dr_Formal.csv"
 )
 FORMAL_MARKER = "结果文件"
 

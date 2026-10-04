@@ -4,10 +4,11 @@
 options(stringsAsFactors = FALSE)
 set.seed(20260929)
 
-root <- "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO"
-raw_dir <- file.path(root, "数据文件")
-code_dir <- file.path(root, "代码文件")
-res_dir <- file.path(root, "结果文件")
+vko <- "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除"
+root <- "C:/Users/10540/Desktop/琪乐无穷/五亚群留档"
+raw_dir <- file.path(vko, "数据文件")
+code_dir <- file.path(vko, "代码文件")
+res_dir <- file.path(root, "结果文件", "_跨亚群", "scTenifoldKnk")
 tab_dir <- file.path(res_dir, "数据文件")
 fig_dir <- file.path(res_dir, "图片文件")
 rep_dir <- file.path(res_dir, "报告文件")

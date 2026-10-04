@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path(r"C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\GenKI_GenKI\结果文件")
+ROOT = Path(r"C:\Users\10540\Desktop\琪乐无穷\虚拟敲除\结果文件")
 ALGORITHM = "GenKI"
 CONTROLS = {"PEP": "Abcc8", "NF1": "Gm15551"}
 SOURCES = {"PEP": ROOT / "正式_pep_nf1_PEP", "NF1": ROOT / "正式_pep_nf1_NF1"}

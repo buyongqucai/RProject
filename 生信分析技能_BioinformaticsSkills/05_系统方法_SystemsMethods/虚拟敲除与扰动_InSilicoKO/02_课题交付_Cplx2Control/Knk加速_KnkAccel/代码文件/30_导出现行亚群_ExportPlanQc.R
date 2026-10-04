@@ -1,7 +1,6 @@
 # PEP and NF1 for the current plan. No 8000 cap. Does not write the old Formal tree.
 args <- commandArgs(trailingOnly = TRUE)
-if (length(args) < 1) stop("result root required")
-root <- args[[1]]
+desk <- if (length(args) >= 1 && !grepl("scTenifold", args[[1]])) args[[1]] else "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除"
 
 if (requireNamespace("RhpcBLASctl", quietly = TRUE)) {
   RhpcBLASctl::blas_set_num_threads(1L)
@@ -17,7 +16,7 @@ suppressPackageStartupMessages({
 })
 
 targets <- c("Mitf", "Bace2", "Cplx2", "Ppp1r26", "Slc28a3", "Sh3d21")
-raw_dir <- "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO/数据文件"
+raw_dir <- "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除/数据文件"
 meta <- read.csv(gzfile(file.path(raw_dir, "01_细胞注释_CellMeta_GSE197289.csv.gz")), check.names = FALSE)
 counts <- readRDS(gzcon(gzfile(file.path(raw_dir, "02_表达矩阵_Counts_GSE197289.RDS.gz"), "rb")))
 meta <- meta[match(colnames(counts), meta$V1), , drop = FALSE]
@@ -73,8 +72,12 @@ export_one <- function(subtype) {
   cors <- cors[is.finite(cors)]
   control <- names(which.min(abs(cors)))
 
-  out <- file.path(root, subtype, "scTenifoldKnk", "_野生型")
+  out <- file.path(
+    desk, "结果文件", subtype, "scTenifoldKnk_1.4.3_GPU", "_野生型", "数据文件"
+  )
+  note <- file.path(desk, "结果文件", subtype, "scTenifoldKnk_1.4.3_GPU", "_野生型", "报告文件")
   dir.create(out, recursive = TRUE, showWarnings = FALSE)
+  dir.create(note, recursive = TRUE, showWarnings = FALSE)
   con <- file(file.path(out, "cpm.bin"), "wb")
   writeBin(as.numeric(cpm), con, size = 8)
   close(con)
@@ -96,7 +99,7 @@ export_one <- function(subtype) {
       sprintf("indices,%.3f,n_draw=%d;n_net=10;q=0.9;stable=yes", index_sec, n_draw),
       sprintf("control,0,gene=%s;abs_cor=%.6g;missing=%s", control, abs(cors[[control]]), paste(missing, collapse = "|"))
     ),
-    file.path(out, "timings.csv")
+    file.path(note, "timings.csv")
   )
   cat(subtype, "genes", n_gene, "cells", ncol(cpm), "dense_gb", sprintf("%.2f", dense_gb), "control", control, "forced", paste(dropped, collapse = ","), "\n")
 }

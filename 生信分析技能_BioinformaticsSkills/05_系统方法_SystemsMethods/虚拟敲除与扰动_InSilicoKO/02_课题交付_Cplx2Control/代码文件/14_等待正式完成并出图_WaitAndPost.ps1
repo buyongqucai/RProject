@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 $desktop = [Environment]::GetFolderPath("Desktop")
-$rep = Join-Path $desktop "琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\结果文件\报告文件"
-$tab = Join-Path $desktop "琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\结果文件\数据文件"
+$rep = Join-Path $desktop "琪乐无穷\五亚群留档\结果文件\_跨亚群\scTenifoldKnk\报告文件"
+$tab = Join-Path $desktop "琪乐无穷\五亚群留档\结果文件\_跨亚群\scTenifoldKnk\数据文件"
 $obj = Join-Path $tab "敲除对象_KoObjects_Formal"
 $code = Split-Path -Parent $MyInvocation.MyCommand.Path
 $rscript = "E:\R-4.6.0\bin\Rscript.exe"

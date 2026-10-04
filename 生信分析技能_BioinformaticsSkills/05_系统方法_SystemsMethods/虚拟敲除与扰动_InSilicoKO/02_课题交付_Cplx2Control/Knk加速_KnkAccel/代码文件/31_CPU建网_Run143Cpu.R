@@ -1,7 +1,18 @@
 # Original 1.4.3 pcNet, q=0.9, 12 cores, one BLAS thread per process.
 args <- commandArgs(trailingOnly = TRUE)
-root <- args[[1]]
-n_cores <- as.integer(args[[2]])
+n_cores <- 12L
+if (length(args) >= 1 && grepl("^[0-9]+$", args[[length(args)]])) {
+  n_cores <- as.integer(args[[length(args)]])
+}
+desk <- "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除"
+algo_gpu <- "scTenifoldKnk_1.4.3_GPU"
+algo_cpu <- "scTenifoldKnk_1.4.3_CPU"
+wt_gpu <- function(subtype) {
+  file.path(desk, "结果文件", subtype, algo_gpu, "_野生型", "数据文件")
+}
+wt_cpu <- function(subtype) {
+  file.path(desk, "结果文件", subtype, algo_cpu, "_野生型", "数据文件")
+}
 source(
   "e:/RProject/生信分析技能_BioinformaticsSkills/05_系统方法_SystemsMethods/虚拟敲除与扰动_InSilicoKO/02_课题交付_Cplx2Control/Knk加速_KnkAccel/代码文件/R_仓库公式/pcNet_1.4.3.R",
   local = TRUE
@@ -13,9 +24,11 @@ if (requireNamespace("RhpcBLASctl", quietly = TRUE)) {
 Sys.setenv(OMP_NUM_THREADS = "1", OPENBLAS_NUM_THREADS = "1", MKL_NUM_THREADS = "1")
 
 run_one <- function(subtype) {
-  folder <- file.path(root, subtype, "scTenifoldKnk", "_野生型")
-  out <- file.path(root, subtype, "scTenifoldKnk_CPU", "_野生型")
+  folder <- wt_gpu(subtype)
+  out <- wt_cpu(subtype)
+  note <- file.path(desk, "结果文件", subtype, algo_cpu, "_野生型", "报告文件")
   dir.create(out, recursive = TRUE, showWarnings = FALSE)
+  dir.create(note, recursive = TRUE, showWarnings = FALSE)
   genes <- readLines(file.path(folder, "genes.txt"), warn = FALSE, encoding = "UTF-8")
   n_num <- file.info(file.path(folder, "cpm.bin"))$size / 8
   raw <- readBin(file.path(folder, "cpm.bin"), what = "double", n = n_num)
@@ -39,7 +52,7 @@ run_one <- function(subtype) {
     rm(network)
     gc()
   }
-  writeLines(times, file.path(out, "cpu_network_times.csv"))
+  writeLines(times, file.path(note, "cpu_network_times.csv"))
 }
 
 for (subtype in c("PEP", "NF1")) run_one(subtype)

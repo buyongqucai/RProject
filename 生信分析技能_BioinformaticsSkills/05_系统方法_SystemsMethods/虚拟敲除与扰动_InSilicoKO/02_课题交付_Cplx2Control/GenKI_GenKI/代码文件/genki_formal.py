@@ -1,8 +1,9 @@
-"""Formal GenKI run for five Control TG subtypes.
+"""Formal GenKI run for the current Control TG subtypes (PEP, NF1).
 
 Paper protocol: 100 random searches, at most 100 epochs with early stop on
-validation AP, then 1000 cell-bootstrap replicates. Search workers call
-prepare("search") before importing NumPy or PyTorch.
+validation AP, then 1000 no-replacement cell-order permutations (numpy
+permutation, seed 0). Search workers call prepare("search") before importing
+NumPy or PyTorch.
 """
 
 from __future__ import annotations
@@ -16,15 +17,16 @@ import traceback
 from pathlib import Path
 
 CODE_DIR = Path(__file__).resolve().parent
-DESKTOP = Path(r"C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\GenKI_GenKI")
-RESULT_DIR = DESKTOP / "结果文件"
+DESKTOP = Path(r"C:\Users\10540\Desktop\琪乐无穷\虚拟敲除")
+RESULT_DIR = DESKTOP / "结果文件" / "_跨亚群" / "GenKI" / "报告文件"
 RUN_ID = "pep_nf1"
 PROGRESS_JSON = RESULT_DIR / f"进度_状态_{RUN_ID}.json"
 PROGRESS_TXT = RESULT_DIR / f"进度_Progress_{RUN_ID}.txt"
 RUN_LOG = RESULT_DIR / f"正式运行日志_{RUN_ID}.log"
-RSCRIPT = Path(r"E:\R-4.5.3\bin\Rscript.exe")
+RSCRIPT = Path(r"E:\R-4.6.0\bin\Rscript.exe")
 EXPORT_R = CODE_DIR / "01_导出亚群计数_ExportSubtype.R"
 ENRICH_R = CODE_DIR / "04_焦点通路_EnrichResponse.R"
+KEGG_R = CODE_DIR / "08_KEGG富集_EnrichKEGG.R"
 
 TARGET = "Cplx2"
 SEED = 8096
@@ -278,7 +280,7 @@ def read_counts(subtype: str):
 
     import scipy.io
 
-    folder = RESULT_DIR / f"输入_{subtype}"
+    folder = DESKTOP / "结果文件" / subtype / "GenKI" / "_野生型" / "数据文件"
     genes = (folder / "genes.tsv").read_text(encoding="utf-8").splitlines()
     cells = (folder / "cells.tsv").read_text(encoding="utf-8").splitlines()
     raw = (folder / "counts.mtx").read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
@@ -337,19 +339,42 @@ def response_table(genes, distance, null):
     return frame, passed, minimum
 
 
-def enrich_response(gene_csv: Path, out_csv: Path) -> str:
+def enrich_response(gene_csv: Path, out_csv: Path, knockout: str = "") -> str:
     if not ENRICH_R.exists():
         return "enrichment script missing"
+    cmd = [str(RSCRIPT), str(ENRICH_R), str(gene_csv), str(out_csv)]
+    if knockout:
+        cmd.append(knockout)
     completed = subprocess.run(
-        [str(RSCRIPT), str(ENRICH_R), str(gene_csv), str(out_csv)],
+        cmd,
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         check=False,
     )
     message = (completed.stdout or "") + (completed.stderr or "")
     if completed.returncode != 0:
         return "enrichment failed: " + message[-500:]
     return message.strip().splitlines()[-1] if message.strip() else "enrichment wrote " + out_csv.name
+
+
+def run_kegg_batch() -> str:
+    """Run mouse KEGG ORA for every GenKI gene that already has a response table."""
+    if not KEGG_R.exists():
+        return "KEGG script missing"
+    completed = subprocess.run(
+        [str(RSCRIPT), str(KEGG_R)],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        check=False,
+    )
+    message = (completed.stdout or "") + (completed.stderr or "")
+    if completed.returncode != 0:
+        return "KEGG failed: " + message[-800:]
+    return message.strip().splitlines()[-1] if message.strip() else "KEGG_DONE"
 
 
 def detected_knock_genes(subtype: str) -> list[tuple[str, int]]:
@@ -420,20 +445,35 @@ def permute_one(model, data_wt, data_ko, subtype: str, gene: str, out_dir: Path)
             update_progress("当前阶段", f"{subtype} {gene} 排列 {done}/{N_PERMUTATIONS}")
             log_line(f"{subtype} {gene} 排列 {done}/{N_PERMUTATIONS}  已用 {time.time() - started:.0f}s")
     full, passed, _minimum = response_table(genes, distance, np.vstack(null_rows))
-    gene_dir = out_dir / gene
+    gene_dir = out_dir / gene / "数据文件"
+    note_dir = out_dir / gene / "报告文件"
     gene_dir.mkdir(parents=True, exist_ok=True)
+    note_dir.mkdir(parents=True, exist_ok=True)
     full.to_csv(gene_dir / "KL排序_RankKL.csv", index=False)
     passed.to_csv(gene_dir / "响应基因_Responsive.csv", index=False)
     if len(passed) > 0:
-        note = enrich_response(gene_dir / "响应基因_Responsive.csv", gene_dir / "富集_GOBP.csv")
-        log_line(f"{subtype} {gene} 富集 {note}")
+        note = enrich_response(
+            gene_dir / "响应基因_Responsive.csv",
+            gene_dir / "富集_GO.csv",
+            gene,
+        )
+        stray_note = gene_dir / "焦点通路_EnrichNote.txt"
+        if stray_note.exists():
+            stray_note.replace(note_dir / "焦点通路_EnrichNote.txt")
+        log_line(f"{subtype} {gene} GO富集 {note}")
+        # KEGG is batch-scripted over the result tree (same BH p/q); run per gene via shared script args path is whole-tree.
     else:
+        write_empty = note_dir / "05_富集_无通过条目.txt"
+        write_empty.write_text(
+            "GenKI 响应基因（KL top5% 且 >95% 重复出现）为 0，不做富集。\n",
+            encoding="utf-8",
+        )
         log_line(f"{subtype} {gene} 没有响应基因，不做富集")
     del torch
     return len(passed)
 
 
-def run_subtype(cap, subtype: str, search_workers: int) -> None:
+def run_subtype(cap, subtype: str, search_workers: int, out_dir=None) -> None:
     import numpy as np
     import pandas as pd
     import torch
@@ -441,12 +481,16 @@ def run_subtype(cap, subtype: str, search_workers: int) -> None:
     from GenKI.dataLoader import DataLoader
     from GenKI import utils
 
-    out_dir = RESULT_DIR / subtype / "GenKI"
-    done_flag = out_dir / "FORMAL_DONE.txt"
+    out_root = Path(out_dir) if out_dir is not None else DESKTOP / "结果文件" / subtype / "GenKI"
+    wt_data = out_root / "_野生型" / "数据文件"
+    wt_report = out_root / "_野生型" / "报告文件"
+    done_flag = out_root / "FORMAL_DONE.txt"
     if done_flag.exists():
         log_line(f"{subtype} 已有正式结果，跳过")
         return
-    out_dir.mkdir(parents=True, exist_ok=True)
+    out_root.mkdir(parents=True, exist_ok=True)
+    wt_data.mkdir(parents=True, exist_ok=True)
+    wt_report.mkdir(parents=True, exist_ok=True)
     started = time.time()
     update_progress("当前阶段", f"{subtype} 建网", headline=f"正式运行 {RUN_ID} {subtype}")
     log_line(f"{subtype} 开始建网")
@@ -456,7 +500,7 @@ def run_subtype(cap, subtype: str, search_workers: int) -> None:
         log_line(f"{subtype} 没有 Cplx2，跳过")
         return
     selected, forced = prepare_adata(subtype, [gene for gene, _count in present])
-    selected.write_h5ad(out_dir / f"{subtype}_hvg3000.h5ad")
+    selected.write_h5ad(wt_data / f"{subtype}_hvg3000.h5ad")
     log_line(
         f"{subtype} HVG cells={selected.n_obs} genes={selected.n_vars} forced={','.join(forced) or 'none'}"
     )
@@ -464,7 +508,7 @@ def run_subtype(cap, subtype: str, search_workers: int) -> None:
     wrapper = DataLoader(
         selected,
         target_gene=["Cplx2"],
-        GRN_file_dir=str(out_dir / "GRNs"),
+        GRN_file_dir=str(wt_data / "GRNs"),
         rebuild_GRN=True,
         cutoff=EDGE_PERCENTILE,
         n_cpus=int(cap.prepare("grn", bind_device=False)["grn"]["workers"]),
@@ -477,9 +521,9 @@ def run_subtype(cap, subtype: str, search_workers: int) -> None:
             ray.shutdown()
     except Exception:
         pass
-    graph_path = out_dir / "wt_graph.npz"
+    graph_path = wt_data / "wt_graph.npz"
     np.savez(graph_path, x=data_wt.x.numpy(), edge_index=data_wt.edge_index.numpy())
-    (out_dir / "genes.txt").write_text("\n".join(map(str, data_wt.y)) + "\n", encoding="utf-8")
+    (wt_data / "genes.txt").write_text("\n".join(map(str, data_wt.y)) + "\n", encoding="utf-8")
     log_line(
         f"{subtype} 建网完成 {time.time() - grn_started:.1f}s 边 {int(data_wt.edge_index.shape[1])}"
     )
@@ -506,10 +550,10 @@ def run_subtype(cap, subtype: str, search_workers: int) -> None:
         futures = [pool.submit(search_one, task) for task in tasks]
         for future in as_completed(futures):
             rows.append(future.result())
-            pd.DataFrame(rows).sort_values("trial").to_csv(out_dir / "搜索_SearchTrials.csv", index=False)
+            pd.DataFrame(rows).sort_values("trial").to_csv(wt_data / "搜索_SearchTrials.csv", index=False)
             log_line(f"{subtype} 搜索进度 {len(rows)}/{N_TRIALS}")
     trials = pd.DataFrame(rows).sort_values("trial")
-    trials.to_csv(out_dir / "搜索_SearchTrials.csv", index=False)
+    trials.to_csv(wt_data / "搜索_SearchTrials.csv", index=False)
     best = trials.sort_values(["select_score", "val_ap"], ascending=False).iloc[0]
     log_line(
         f"{subtype} 搜索选中 trial {int(best['trial'])} lr={best['lr']:.3g} "
@@ -539,7 +583,7 @@ def run_subtype(cap, subtype: str, search_workers: int) -> None:
         seed=SEED,
         on_epoch=on_fit_epoch,
     )
-    torch.save(model.state_dict(), out_dir / "vgae_state.pt")
+    torch.save(model.state_dict(), wt_data / "vgae_state.pt")
     control_name, control_r = choose_control(selected)
     log_line(f"{subtype} 对照基因 {control_name} r={control_r:.6f}")
     gene_list = [gene for gene, _count in present] + [control_name]
@@ -550,7 +594,7 @@ def run_subtype(cap, subtype: str, search_workers: int) -> None:
             continue
         wrapper._target_gene = [gene]
         data_ko = wrapper.load_kodata()
-        n_response[gene] = permute_one(model, data_wt, data_ko, subtype, gene, out_dir)
+        n_response[gene] = permute_one(model, data_wt, data_ko, subtype, gene, out_root)
 
     elapsed = time.time() - started
     status = [
@@ -569,7 +613,7 @@ def run_subtype(cap, subtype: str, search_workers: int) -> None:
         f"control_pearson_r={control_r:.6f}",
         f"edge_percentile={EDGE_PERCENTILE}",
         f"edges={int(data_wt.edge_index.shape[1])}",
-        "nComp=5",
+        "latent_dim=2",
         f"trials={N_TRIALS}",
         f"max_epochs={MAX_EPOCHS}",
         f"permutations={N_PERMUTATIONS}",
@@ -598,7 +642,7 @@ def run_subtype(cap, subtype: str, search_workers: int) -> None:
         "formal_done=yes",
     ]
     text = "\n".join(status) + "\n"
-    (out_dir / "STATUS_GenKI.txt").write_text(text, encoding="utf-8")
+    (wt_report / "STATUS_GenKI.txt").write_text(text, encoding="utf-8")
     with (RESULT_DIR / f"STATUS_GenKI_{RUN_ID}.txt").open("a", encoding="utf-8") as handle:
         handle.write("\n" + text)
     done_flag.write_text(text, encoding="utf-8")
@@ -606,23 +650,24 @@ def run_subtype(cap, subtype: str, search_workers: int) -> None:
 
 
 def export_all() -> None:
-    log_line("导出五个亚群的计数，已有的会跳过")
-    completed = subprocess.run(
-        [str(RSCRIPT), str(EXPORT_R), "all"],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-    if completed.returncode != 0:
-        raise RuntimeError(completed.stderr[-2000:] or completed.stdout[-2000:])
-    log_line("导出结束")
+    log_line("导出亚群计数，已有的会跳过")
+    for subtype in SUBTYPES:
+        completed = subprocess.run(
+            [str(RSCRIPT), str(EXPORT_R), subtype],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            check=False,
+        )
+        if completed.returncode != 0:
+            raise RuntimeError(subtype + ": " + (completed.stderr[-2000:] or completed.stdout[-2000:]))
+        log_line(f"{subtype} 导出结束")
 
 
 def main() -> int:
     name = cpu_name()
-    if "285K" in name.upper():
-        print("Ultra 9 285K is reserved for Knk Formal. GenKI was not started.")
-        return 2
+    # Knk Formal on this machine finished 2026-10-03 12:18; resource probe governs now.
     RESULT_DIR.mkdir(parents=True, exist_ok=True)
     cap = load_cap()
     plan = cap.prepare("grn", bind_device=False)
@@ -639,8 +684,10 @@ def main() -> int:
         log_line("正式运行中断\n" + traceback.format_exc())
         update_progress("当前阶段", "中断，见正式运行日志")
         return 1
-    update_progress("当前阶段", "五个亚群已完成", headline="正式运行完成")
-    log_line("五个亚群正式运行完成")
+    kegg_note = run_kegg_batch()
+    log_line("KEGG 批处理 " + kegg_note)
+    update_progress("当前阶段", "PEP NF1 已完成（含 GO/KEGG）", headline="正式运行完成")
+    log_line("PEP NF1 正式运行完成")
     return 0
 
 

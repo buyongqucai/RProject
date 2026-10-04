@@ -68,7 +68,7 @@ dr <- scTenifoldKnk::dRegulation(ma, empiricalNull = FALSE)
 dr_sec <- (proc.time() - t0)[["elapsed"]]
 utils::write.csv(as.data.frame(dr), file.path(out_dir, "dr_optimized.csv"), row.names = FALSE)
 
-official_rds <- "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO/结果文件/数据文件/敲除对象_KoObjects_Formal/cLTMR_Cplx2_formal.rds"
+official_rds <- "C:/Users/10540/Desktop/琪乐无穷/五亚群留档/结果文件/cLTMR/scTenifoldKnk/Cplx2/数据文件/正式_cLTMR_Cplx2_formal.rds"
 official <- readRDS(official_rds)
 off_wt <- as.matrix(official$tensorNetworks$WT)
 if (!identical(rownames(off_wt), rownames(wt)) || !identical(colnames(off_wt), colnames(wt))) {

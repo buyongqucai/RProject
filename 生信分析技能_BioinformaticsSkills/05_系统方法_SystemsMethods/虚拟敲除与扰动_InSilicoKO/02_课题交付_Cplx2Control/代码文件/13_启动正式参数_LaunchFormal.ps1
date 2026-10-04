@@ -11,7 +11,7 @@ Remove-Item Env:FORCE_RERUN -ErrorAction SilentlyContinue
 $script = Join-Path $PSScriptRoot "13_正式参数虚拟敲除_RunFormalDefaults.R"
 $rscript = "E:\R-4.6.0\bin\Rscript.exe"
 $desktop = [Environment]::GetFolderPath("Desktop")
-$logDir = Join-Path $desktop "琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\结果文件\报告文件"
+$logDir = Join-Path $desktop "琪乐无穷\五亚群留档\结果文件\_跨亚群\scTenifoldKnk\报告文件"
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 $stdout = Join-Path $logDir "正式参数_stdout.txt"
 $stderr = Join-Path $logDir "正式参数_stderr.txt"

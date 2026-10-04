@@ -18,7 +18,8 @@ sys.path.insert(0, str(CODE))
 from knk_accel.cp_decomp import tensor_from_networks_gpu
 from knk_accel.versions import pcnet_143
 
-ROOT = Path(r"C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\结果文件")
+DESK = Path(r"C:\Users\10540\Desktop\琪乐无穷\虚拟敲除")
+ALGO = "scTenifoldKnk_1.4.3_GPU"
 RSCRIPT = r"E:\R-4.6.0\bin\Rscript.exe"
 SUBTYPES = ("PEP", "NF1")
 
@@ -73,7 +74,9 @@ def r_init(folder: Path, n_gene: int) -> tuple[np.ndarray, np.ndarray, np.ndarra
 
 
 def one_subtype(subtype: str) -> None:
-    folder = ROOT / subtype / "scTenifoldKnk" / "_野生型"
+    folder = DESK / "结果文件" / subtype / ALGO / "_野生型" / "数据文件"
+    note = DESK / "结果文件" / subtype / ALGO / "_野生型" / "报告文件"
+    note.mkdir(parents=True, exist_ok=True)
     counts, genes = load_cpm(folder)
     lines = ["net,seconds,genes"]
     for net_id in range(1, 11):
@@ -88,7 +91,7 @@ def one_subtype(subtype: str) -> None:
         lines.append(f"{net_id},{elapsed:.3f},{len(genes)}")
         print(subtype, "gpu net", net_id, f"{elapsed:.3f}", flush=True)
         del network
-    (folder / "gpu_network_times.csv").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (note / "gpu_network_times.csv").write_text("\n".join(lines) + "\n", encoding="utf-8")
     nets = [read_csr(folder / f"gpu_net_{i:02d}.csr") for i in range(1, 11)]
     init = r_init(folder, len(genes))
     started = time.perf_counter()
@@ -96,7 +99,7 @@ def one_subtype(subtype: str) -> None:
     elapsed = time.perf_counter() - started
     matrix = np.asarray(result["matrix"])
     matrix.tofile(folder / "gpu_wt_rounded.bin")
-    (folder / "gpu_tensor.txt").write_text(
+    (note / "gpu_tensor.txt").write_text(
         f"seconds={elapsed:.3f}\niterations={result['iterations']}\nconverged={result['converged']}\n",
         encoding="utf-8",
     )

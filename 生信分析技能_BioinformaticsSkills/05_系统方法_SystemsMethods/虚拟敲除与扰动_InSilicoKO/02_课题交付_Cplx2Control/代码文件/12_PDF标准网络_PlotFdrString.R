@@ -6,9 +6,10 @@
 options(stringsAsFactors = FALSE)
 Sys.setenv(http_proxy = "http://127.0.0.1:7897", https_proxy = "http://127.0.0.1:7897")
 
-root <- "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO"
-tab_dir <- file.path(root, "结果文件", "数据文件")
-fig_dir <- file.path(root, "结果文件", "图片文件")
+vko <- "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除"
+arch <- "C:/Users/10540/Desktop/琪乐无穷/五亚群留档"
+tab_dir <- file.path(arch, "结果文件", "_跨亚群", "scTenifoldKnk", "数据文件")
+fig_dir <- file.path(arch, "结果文件", "_跨亚群", "scTenifoldKnk", "图片文件")
 dep_dir <- file.path(fig_dir, "_deprecated_Top40非PDF标准")
 repo <- "E:/RProject/生信分析技能_BioinformaticsSkills/05_系统方法_SystemsMethods/虚拟敲除与扰动_InSilicoKO/02_课题交付_Cplx2Control"
 repo_fig <- file.path(repo, "结果文件", "图片文件")

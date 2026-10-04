@@ -2,11 +2,12 @@
 # Also knock one negative-control gene (Rplp0) in the same five subtypes.
 options(stringsAsFactors = FALSE)
 set.seed(20260929)
-root <- "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO"
-raw_dir <- file.path(root, "数据文件")
-tab_dir <- file.path(root, "结果文件", "数据文件")
-fig_dir <- file.path(root, "结果文件", "图片文件")
-obj_dir <- file.path(root, "结果文件", "数据文件", "敲除对象_KoObjects")
+vko <- "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除"
+arch <- "C:/Users/10540/Desktop/琪乐无穷/五亚群留档"
+raw_dir <- file.path(vko, "数据文件")
+tab_dir <- file.path(arch, "结果文件", "_跨亚群", "scTenifoldKnk", "数据文件")
+fig_dir <- file.path(arch, "结果文件", "_跨亚群", "scTenifoldKnk", "图片文件")
+obj_dir <- file.path(arch, "结果文件", "_跨亚群", "scTenifoldKnk", "数据文件", "敲除对象_KoObjects")
 dir.create(obj_dir, recursive = TRUE, showWarnings = FALSE)
 suppressPackageStartupMessages({
   library(Matrix)

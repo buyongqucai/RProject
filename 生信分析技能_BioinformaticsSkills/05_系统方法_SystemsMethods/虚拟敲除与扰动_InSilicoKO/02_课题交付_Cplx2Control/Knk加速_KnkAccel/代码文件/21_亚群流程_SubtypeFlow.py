@@ -26,7 +26,7 @@ from knk_accel.versions import pcnet_143
 
 ROOT = Path(r"C:\Users\10540\AppData\Local\knk_flow")
 CL_EXISTING = Path(r"C:\Users\10540\AppData\Local\knk_accel_cLTMR")
-DATA = Path(r"C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\结果文件\数据文件")
+DATA = Path(r"C:\Users\10540\Desktop\琪乐无穷\五亚群留档\结果文件\_跨亚群\scTenifoldKnk\数据文件")
 DOCS = CODE.parent / "文档_docs"
 RSCRIPT = os.environ.get("RSCRIPT", r"E:\R-4.6.0\bin\Rscript.exe")
 SUBTYPES = ("cLTMR", "PEP", "TRPM8")

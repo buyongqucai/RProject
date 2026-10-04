@@ -18,7 +18,7 @@ import scipy.sparse
 GENES = ["Mitf", "Bace2", "Cplx2", "Ppp1r26", "Slc28a3", "Sh3d21"]
 SUBTYPES = ("PEP", "NF1")
 COLORS = {"PEP": "#5B8FA8", "NF1": "#C17B7B"}
-RESULT = Path(r"C:\Users\10540\Desktop\琪乐无穷\CPLX2虚拟敲除_Cplx2VirtualKO\GenKI_GenKI\结果文件")
+RESULT = Path(r"C:\Users\10540\Desktop\琪乐无穷\虚拟敲除\结果文件")
 FIG = RESULT / "图片文件"
 DPI = 600
 

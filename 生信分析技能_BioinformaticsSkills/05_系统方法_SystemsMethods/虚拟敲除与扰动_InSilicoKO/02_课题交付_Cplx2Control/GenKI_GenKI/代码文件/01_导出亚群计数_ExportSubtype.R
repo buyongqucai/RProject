@@ -10,7 +10,7 @@ subtypes <- if (requested == "all") {
   requested
 }
 
-root <- "C:/Users/10540/Desktop/琪乐无穷/CPLX2虚拟敲除_Cplx2VirtualKO"
+root <- "C:/Users/10540/Desktop/琪乐无穷/虚拟敲除"
 raw_dir <- file.path(root, "数据文件")
 
 message("loading meta and counts once")
@@ -27,7 +27,7 @@ meta <- meta[match(colnames(counts), meta$V1), , drop = FALSE]
 stopifnot(!anyNA(meta$V1))
 
 for (subtype in subtypes) {
-out_dir <- file.path(root, "GenKI_GenKI", "结果文件", paste0("输入_", subtype))
+out_dir <- file.path(root, "结果文件", subtype, "GenKI", "_野生型", "数据文件")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 if (file.exists(file.path(out_dir, "counts.mtx")) && file.exists(file.path(out_dir, "EXPORT.txt"))) {
   message("skip existing ", subtype)
