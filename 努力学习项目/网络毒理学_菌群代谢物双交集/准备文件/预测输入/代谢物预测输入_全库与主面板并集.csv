@@ -1,0 +1,337 @@
+﻿name_en,name_zh,source,cid,smiles
+2'-Deoxyguanosine,2'-Deoxyguanosine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,135398592,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+4-Hydroxyphenylacetic acid,4-Hydroxyphenylacetic acid,gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05,127,C1=CC(=CC=C1CC(=O)O)O
+Agmatine,Agmatine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,199,C(CCN=C(N)N)CN
+Alanine,Alanine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5950,C[C@@H](C(=O)O)N
+Asparagine,Asparagine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6267,C([C@@H](C(=O)O)N)C(=O)N
+Aspartic Acid,Aspartic Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5960,C([C@@H](C(=O)O)N)C(=O)O
+Butyrate,Butyrate,gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05; predeclared UC mechanism anchor + GMMAD2 UC/IBD FDR<0.05,104775,CCCC(=O)[O-]
+Citrulline,Citrulline,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,9750,C(C[C@@H](C(=O)O)N)CNC(=O)N
+Cysteine,Cysteine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5862,C([C@@H](C(=O)O)N)S
+Glutamic Acid,Glutamic Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,33032,C(CC(=O)O)[C@@H](C(=O)O)N
+Glutathione,Glutathione,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,124886,C(CC(=O)N[C@@H](CS)C(=O)NCC(=O)O)[C@@H](C(=O)O)N
+Glycine,Glycine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,750,C(C(=O)O)N
+Histidine,Histidine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6274,C1=C(NC=N1)C[C@@H](C(=O)O)N
+Hydroquinone,Hydroquinone,gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05,785,C1=CC(=CC=C1O)O
+Hypoxanthine,Hypoxanthine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,135398638,C1=NC2=C(N1)C(=O)NC=N2
+Leucine,Leucine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6106,CC(C)C[C@@H](C(=O)O)N
+Methionine,Methionine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6137,CSCC[C@@H](C(=O)O)N
+Oleic Acid,Oleic Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,445639,CCCCCCCC/C=C\CCCCCCCC(=O)O
+Palmitic Acid,Palmitic Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,985,CCCCCCCCCCCCCCCC(=O)O
+Pantothenic Acid,Pantothenic Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6613,CC(C)(CO)[C@H](C(=O)NCCC(=O)O)O
+Phenylalanine,Phenylalanine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6140,C1=CC=C(C=C1)C[C@@H](C(=O)O)N
+Proline,Proline,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,145742,C1C[C@H](NC1)C(=O)O
+Serine,Serine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5951,C([C@@H](C(=O)O)N)O
+Threonine,Threonine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6288,C[C@H]([C@@H](C(=O)O)N)O
+Tyrosine,Tyrosine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6057,C1=CC(=CC=C1C[C@@H](C(=O)O)N)O
+Valine,Valine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6287,CC(C)[C@@H](C(=O)O)N
+l-Isoleucine,l-Isoleucine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6306,CC[C@H](C)[C@@H](C(=O)O)N
+"(2S,6S)-2,6-diaminoheptanedioic acid","(2S,6S)-2,6-diaminoheptanedioic acid",GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439283,C(C[C@@H](C(=O)O)N)C[C@@H](C(=O)O)N
+"1,4-Diaminobutane","1,4-Diaminobutane",GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,1045,C(CCN)CN
+2'-Deoxyadenosine,2'-Deoxyadenosine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,13730,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C(N=CN=C32)N)CO)O
+2'-Deoxyadenosine-5'-monophosphate,2'-Deoxyadenosine-5'-monophosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,12599,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C(N=CN=C32)N)COP(=O)(O)O)O
+2'-Deoxyguanosine 5'-phosphate,2'-Deoxyguanosine 5'-phosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,135398597,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)COP(=O)(O)O)O
+2'-Deoxyuridine,2'-Deoxyuridine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,13712,C1[C@@H]([C@H](O[C@H]1N2C=CC(=O)NC2=O)CO)O
+2-Dehydropantoate,2-Dehydropantoate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,38,CC(C)(CO)C(=O)C(=O)O
+2-Oxobutanoic acid,2-Oxobutanoic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,58,CCC(=O)C(=O)O
+2-Oxoglutaric acid,2-Oxoglutaric acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,51,C(CC(=O)O)C(=O)C(=O)O
+3-Dehydroquinate,3-Dehydroquinate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5460271,C1[C@H]([C@@H](C(=O)C[C@]1(C(=O)[O-])O)O)O
+3-Dehydroshikimate,3-Dehydroshikimate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439774,C1[C@H]([C@@H](C(=O)C=C1C(=O)O)O)O
+3-deoxy-D-arabino-heptulosonate-7-phosphate,3-deoxy-D-arabino-heptulosonate-7-phosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,160647,C([C@H]([C@@H]([C@@H](COP(=O)(O)O)O)O)O)C(=O)C(=O)O
+4-(Phosphonooxy)-L-threonine,4-(Phosphonooxy)-L-threonine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,440901,C([C@H]([C@@H](C(=O)O)N)O)OP(=O)(O)O
+4-Methyl-2-oxopentanoic acid,4-Methyl-2-oxopentanoic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,70,CC(C)CC(=O)C(=O)O
+4-Methyl-5-(2-phosphoethyl)-thiazole,4-Methyl-5-(2-phosphoethyl)-thiazole,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,1137,CC1=C(SC=N1)CCOP(=O)(O)O
+5'-Deoxy-5'-methylthioadenosine,5'-Deoxy-5'-methylthioadenosine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439176,CSC[C@@H]1[C@H]([C@H]([C@@H](O1)N2C=NC3=C(N=CN=C32)N)O)O
+5'-Deoxyadenosine,5'-Deoxyadenosine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439182,C[C@@H]1[C@H]([C@H]([C@@H](O1)N2C=NC3=C(N=CN=C32)N)O)O
+5-O-(1-carboxylatovinyl)-3-phosphonatoshikimate,5-O-(1-carboxylatovinyl)-3-phosphonatoshikimate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,14506801,C=C(C(=O)[O-])O[C@@H]1CC(=C[C@H]([C@H]1O)OP(=O)([O-])[O-])C(=O)[O-]
+Adenine,Adenine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,190,C1=NC2=NC=NC(=C2N1)N
+Adenosine,Adenosine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,60961,C1=NC(=C2C(=N1)N(C=N2)[C@H]3[C@@H]([C@@H]([C@H](O3)CO)O)O)N
+Adenosine Phosphate,Adenosine Phosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6083,C1=NC(=C2C(=N1)N(C=N2)[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)O)O)O)N
+Anthranilic acid,Anthranilic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,227,C1=CC=C(C(=C1)C(=O)O)N
+Arginine,Arginine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6322,C(C[C@@H](C(=O)O)N)CN=C(N)N
+Betaine,Betaine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,247,C[N+](C)(C)CC(=O)[O-]
+Biotin,Biotin,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,171548,C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2
+Carnosine,Carnosine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439224,C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN
+Chenodeoxycholic acid,Chenodeoxycholic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile; predeclared UC mechanism anchor + GMMAD2 UC/IBD FDR<0.05,10133,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C
+Cholic acid,Cholic acid,predeclared UC mechanism anchor + GMMAD2 UC/IBD FDR<0.05,221493,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C
+Choline,Choline,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,305,C[N+](C)(C)CCO
+Choline Alfoscerate,Choline Alfoscerate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,657272,C[N+](C)(C)CCOP(=O)([O-])OC[C@@H](CO)O
+Cytidine,Cytidine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6175,C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O
+Cytidine-5'-diphosphate,Cytidine-5'-diphosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6132,C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O
+D-Fructose,D-Fructose,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,2723872,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O
+D-Galactose,D-Galactose,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6036,C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+D-Glucose,D-Glucose,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5793,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+D-Mannose,D-Mannose,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile; gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05,18950,C([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O)O
+Deoxycytidine 5'-monophosphate,Deoxycytidine 5'-monophosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,13945,C1[C@@H]([C@H](O[C@H]1N2C=CC(=NC2=O)N)COP(=O)(O)O)O
+Dihydroorotic acid,Dihydroorotic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,648,C1C(NC(=O)NC1=O)C(=O)O
+"Fructose 1,6-bisphosphate","Fructose 1,6-bisphosphate",GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5460765,C([C@@H]1[C@H]([C@@H]([C@](O1)(COP(=O)([O-])[O-])O)O)O)OP(=O)([O-])[O-]
+Fructose-6-phosphate,Fructose-6-phosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,69507,C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)OP(=O)(O)O
+Fumaric Acid,Fumaric Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,444972,C(=C/C(=O)O)\C(=O)O
+Glucosamine 6-phosphate,Glucosamine 6-phosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439217,C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O)N)O)O)OP(=O)(O)O
+Glucose 1-phosphate,Glucose 1-phosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439165,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)OP(=O)(O)O)O)O)O)O
+Glucose 6-phosphate,Glucose 6-phosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5958,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)OP(=O)(O)O
+Glutamine,Glutamine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5961,C(CC(=O)N)[C@@H](C(=O)O)N
+Glyceric acid,Glyceric acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,752,C(C(C(=O)O)O)O
+Guanosine,Guanosine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,135398635,C1=NC2=C(N1[C@H]3[C@@H]([C@@H]([C@H](O3)CO)O)O)N=C(NC2=O)N
+Guanosine-5'-monophosphate,Guanosine-5'-monophosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,135398631,C1=NC2=C(N1[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)O)O)O)N=C(NC2=O)N
+Indole,Indole,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile; gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05; predeclared UC mechanism anchor + GMMAD2 UC/IBD FDR<0.05,798,C1=CC=C2C(=C1)C=CN2
+Indole-3-acetic acid,Indole-3-acetic acid,predeclared UC mechanism anchor + GMMAD2 UC/IBD FDR<0.05,802,C1=CC=C2C(=C1)C(=CN2)CC(=O)O
+Inosine,Inosine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,135398641,C1=NC2=C(C(=O)N1)N=CN2[C@H]3[C@@H]([C@@H]([C@H](O3)CO)O)O
+Inosinic Acid,Inosinic Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,135398640,C1=NC2=C(C(=O)N1)N=CN2[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)O)O)O
+Isocitric acid,Isocitric acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,1198,C(C(C(C(=O)O)O)C(=O)O)C(=O)O
+L-Homocysteine,L-Homocysteine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,91552,C(CS)[C@@H](C(=O)O)N
+Lysine,Lysine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5962,C(CCN)C[C@@H](C(=O)O)N
+Maltose,Maltose,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6255,C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@@H]2[C@H](O[C@H]([C@@H]([C@H]2O)O)O)CO)O)O)O)O
+Maltotriose,Maltotriose,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,871,C(C1C(C(C(C(O1)OC2C(OC(C(C2O)O)OC3C(OC(C(C3O)O)O)CO)CO)O)O)O)O
+Mannose-6-phosphate,Mannose-6-phosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,65127,C([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O)OP(=O)(O)O
+N-Acetyl-D-Glucosamine,N-Acetyl-D-Glucosamine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439174,CC(=O)N[C@@H]1[C@H]([C@@H]([C@H](OC1O)CO)O)O
+N-Acetyl-L-glutamic acid,N-Acetyl-L-glutamic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,70914,CC(=O)N[C@@H](CCC(=O)O)C(=O)O
+Nicotinamide,Nicotinamide,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,936,C1=CC(=CN=C1)C(=O)N
+Nicotinic acid,Nicotinic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile; gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05,938,C1=CC(=CN=C1)C(=O)O
+Orotic acid,Orotic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,967,C1=C(NC(=O)NC1=O)C(=O)O
+Orotidine-5'-monophosphate,Orotidine-5'-monophosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,160617,C1=C(N(C(=O)NC1=O)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)O)O)O)C(=O)O
+Phosphoserine,Phosphoserine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,68841,C([C@@H](C(=O)O)N)OP(=O)(O)O
+Pyridoxamine,Pyridoxamine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,1052,CC1=NC=C(C(=C1O)CN)CO
+Pyruvic Acid,Pyruvic Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,1060,CC(=O)C(=O)O
+Raffinose,Raffinose,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439242,C([C@@H]1[C@@H]([C@@H]([C@H]([C@H](O1)OC[C@@H]2[C@H]([C@@H]([C@H]([C@H](O2)O[C@]3([C@H]([C@@H]([C@H](O3)CO)O)O)CO)O)O)O)O)O)O)O
+Riboflavin,Riboflavin,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,493570,CC1=CC2=C(C=C1C)N(C3=NC(=O)NC(=O)C3=N2)C[C@@H]([C@@H]([C@@H](CO)O)O)O
+S-Ribosylhomocysteine,S-Ribosylhomocysteine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,440041,C(CSC[C@@H]1[C@H]([C@H]([C@@H](O1)O)O)O)[C@@H](C(=O)O)N
+S-adenosyl-L-homocysteine,S-adenosyl-L-homocysteine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439155,C1=NC(=C2C(=N1)N(C=N2)[C@H]3[C@@H]([C@@H]([C@H](O3)CSCC[C@@H](C(=O)O)N)O)O)N
+S-adenosylmethionine,S-adenosylmethionine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,34755,C[S+](CC[C@@H](C(=O)[O-])N)C[C@@H]1[C@H]([C@H]([C@@H](O1)N2C=NC3=C(N=CN=C32)N)O)O
+Spermidine,Spermidine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,1102,C(CCNCCCN)CN
+Stearic Acid,Stearic Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5281,CCCCCCCCCCCCCCCCCC(=O)O
+Succinic Acid,Succinic Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,1110,C(CC(=O)O)C(=O)O
+Sucrose,Sucrose,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,5988,C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@]2([C@H]([C@@H]([C@H](O2)CO)O)O)CO)O)O)O)O
+Taurine,Taurine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,1123,C(CS(=O)(=O)O)N
+Tryptophan,Tryptophan,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6305,C1=CC=C2C(=C1)C(=CN2)C[C@@H](C(=O)O)N
+Uracil,Uracil,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,1174,C1=CNC(=O)NC1=O
+Ureidosuccinic acid,Ureidosuccinic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,279,C(C(C(=O)O)NC(=O)N)C(=O)O
+Uridine,Uridine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6029,C1=CN(C(=O)NC1=O)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O
+Uridine-5'-diphosphate,Uridine-5'-diphosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6031,C1=CN(C(=O)NC1=O)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O
+Xanthosine,Xanthosine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,64959,C1=NC2=C(N1[C@H]3[C@@H]([C@@H]([C@H](O3)CO)O)O)NC(=O)NC2=O
+beta-Alanine,beta-Alanine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,239,C(CN)C(=O)O
+l-Histidinol phosphate,l-Histidinol phosphate,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,439398,C1=C(NC=N1)C[C@@H](COP(=O)(O)O)N
+(10-[(Acetyloxy)methyl]-9-anthryl)methyl acetate,(10-[(Acetyloxy)methyl]-9-anthryl)methyl acetate,excluded from main; retained in gutMGene human full-library sensitivity,613145,CC(=O)OCC1=C2C=CC=CC2=C(C3=CC=CC=C31)COC(=O)C
+(20S)-Protopanaxadiol,(20S)-Protopanaxadiol,excluded from main; retained in gutMGene human full-library sensitivity,11213350,CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O)C)C)O)C)O)C
+"(2R)-1-(3,4-dihydroxyphenyl)-3-(2,4,6-trihydroxyphenyl)-propan-2-ol","(2R)-1-(3,4-dihydroxyphenyl)-3-(2,4,6-trihydroxyphenyl)-propan-2-ol",excluded from main; retained in gutMGene human full-library sensitivity,,
+"(2R)-1-(3-hydroxyphenyl)-3-(2,4,6-trihydroxyphenyl)propan-2-ol","(2R)-1-(3-hydroxyphenyl)-3-(2,4,6-trihydroxyphenyl)propan-2-ol",excluded from main; retained in gutMGene human full-library sensitivity,,
+"(2S)-1-(3,4-dihydroxyphenyl)-3-(2,4,6-trihydroxyphenyl) propan-2-ol","(2S)-1-(3,4-dihydroxyphenyl)-3-(2,4,6-trihydroxyphenyl) propan-2-ol",excluded from main; retained in gutMGene human full-library sensitivity,,
+"(2S)-1-(3-hydroxyphenyl)-3-(2,4,6-trihydroxyphenyl)propan-2-ol","(2S)-1-(3-hydroxyphenyl)-3-(2,4,6-trihydroxyphenyl)propan-2-ol",excluded from main; retained in gutMGene human full-library sensitivity,,
+"(4R)-4-hydroxy-5-(3,4-dihydroxyphenyl) valeric acid","(4R)-4-hydroxy-5-(3,4-dihydroxyphenyl) valeric acid",excluded from main; retained in gutMGene human full-library sensitivity,,
+(4R)-4-hydroxy-5-(3-hydroxyphenyl) valeric acid,(4R)-4-hydroxy-5-(3-hydroxyphenyl) valeric acid,excluded from main; retained in gutMGene human full-library sensitivity,,
+"(4R)-5-(3,4-dihydroxyphenyl)-��-valerolactone","(4R)-5-(3,4-dihydroxyphenyl)-��-valerolactone",excluded from main; retained in gutMGene human full-library sensitivity,,
+(4R)-5-(3-hydroxyphenyl)-��-valerolactone,(4R)-5-(3-hydroxyphenyl)-��-valerolactone,excluded from main; retained in gutMGene human full-library sensitivity,,
+"(4S)-4-hydroxy-5-(3,4-dihydroxyphenyl) valeric acid","(4S)-4-hydroxy-5-(3,4-dihydroxyphenyl) valeric acid",excluded from main; retained in gutMGene human full-library sensitivity,,
+(4S)-4-hydroxy-5-(3-hydroxyphenyl) valeric acid,(4S)-4-hydroxy-5-(3-hydroxyphenyl) valeric acid,excluded from main; retained in gutMGene human full-library sensitivity,,
+"(4S)-5-(3,4-dihydroxyphenyl)-��-valerolactone","(4S)-5-(3,4-dihydroxyphenyl)-��-valerolactone",excluded from main; retained in gutMGene human full-library sensitivity,,
+(4S)-5-(3-hydroxyphenyl)-��-valerolactone,(4S)-5-(3-hydroxyphenyl)-��-valerolactone,excluded from main; retained in gutMGene human full-library sensitivity,,
+(R)-(+)-Lactamide,(R)-(+)-Lactamide,excluded from main; retained in gutMGene human full-library sensitivity,1530236,C[C@H](C(=O)N)O
+(R)-3-(4-Hydroxyphenyl)lactate,(R)-3-(4-Hydroxyphenyl)lactate,excluded from main; retained in gutMGene human full-library sensitivity,9548632,C1=CC(=CC=C1C[C@H](C(=O)[O-])O)O
+"1,3-Diphenylpropan-2-ol","1,3-Diphenylpropan-2-ol",excluded from main; retained in gutMGene human full-library sensitivity,138478,C1=CC=C(C=C1)CC(CC2=CC=CC=C2)O
+"1,6-di-O-phosphono-beta-D-fructofuranose","1,6-di-O-phosphono-beta-D-fructofuranose",excluded from main; retained in gutMGene human full-library sensitivity,10267,C([C@@H]1[C@H]([C@@H]([C@](O1)(COP(=O)(O)O)O)O)O)OP(=O)(O)O
+1-18:1-lysoPE,1-18:1-lysoPE,excluded from main; retained in gutMGene human full-library sensitivity,58177709,CCCCCCCC/C=C\CCCCCCCC(=O)OC[C@H](COP(=O)([O-])OCC[NH3+])O
+1-O-Caffeoylglycerol,1-O-Caffeoylglycerol,excluded from main; retained in gutMGene human full-library sensitivity,5315606,C1=CC(=C(C=C1/C=C/C(=O)OCC(CO)O)O)O
+1-Propanol,1-Propanol,excluded from main; retained in gutMGene human full-library sensitivity,1031,CCCO
+10-Oxo-11-octadecenoic acid,10-Oxo-11-octadecenoic acid,excluded from main; retained in gutMGene human full-library sensitivity,10308378,CCCCCC/C=C/C(=O)CCCCCCCCC(=O)O
+10-keto-12Z-octadecenoic acid,10-keto-12Z-octadecenoic acid,excluded from main; retained in gutMGene human full-library sensitivity,24970825,CCCCC/C=C\CC(=O)CCCCCCCCC(=O)O
+11-Methoxycurvularin,11-Methoxycurvularin,excluded from main; retained in gutMGene human full-library sensitivity,10381440,C[C@H]1CCCC(CC(=O)C2=C(CC(=O)O1)C=C(C=C2O)O)OC
+2'-Deoxyinosine,2'-Deoxyinosine,excluded from main; retained in gutMGene human full-library sensitivity,135398593,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=CNC3=O)CO)O
+"2,3-Bis(3,4-dihydroxybenzyl)butyrolactone","2,3-Bis(3,4-dihydroxybenzyl)butyrolactone",excluded from main; retained in gutMGene human full-library sensitivity,500189,C1C(C(C(=O)O1)CC2=CC(=C(C=C2)O)O)CC3=CC(=C(C=C3)O)O
+"2,3-Butanediol","2,3-Butanediol",excluded from main; retained in gutMGene human full-library sensitivity,262,CC(C(C)O)O
+"2,3-Butanedione","2,3-Butanedione",excluded from main; retained in gutMGene human full-library sensitivity,650,CC(=O)C(=O)C
+"2,4-Dioxopentanedioic acid","2,4-Dioxopentanedioic acid",excluded from main; retained in gutMGene human full-library sensitivity,444873,C(C(=O)C(=O)O)C(=O)C(=O)O
+"2-(4-Hydroxyphenyl)propionic acid, (2S)-","2-(4-Hydroxyphenyl)propionic acid, (2S)-",excluded from main; retained in gutMGene human full-library sensitivity,6971268,C[C@@H](C1=CC=C(C=C1)O)C(=O)O
+2-Acetoxypropanoic acid,2-Acetoxypropanoic acid,excluded from main; retained in gutMGene human full-library sensitivity,79041,CC(C(=O)O)OC(=O)C
+"2-Amino-1-methyl-6-phenylimidazo(4,5-b)pyridine","2-Amino-1-methyl-6-phenylimidazo(4,5-b)pyridine",excluded from main; retained in gutMGene human full-library sensitivity,1530,CN1C2=C(N=CC(=C2)C3=CC=CC=C3)N=C1N
+2-Hydroxy-3-(4-hydroxyphenyl)propanoic acid,2-Hydroxy-3-(4-hydroxyphenyl)propanoic acid,excluded from main; retained in gutMGene human full-library sensitivity,9378,C1=CC(=CC=C1CC(C(=O)O)O)O
+2-Methylbutanoic acid,2-Methylbutanoic acid,excluded from main; retained in gutMGene human full-library sensitivity,8314,CCC(C)C(=O)O
+2-Methylbutyrate,2-Methylbutyrate,excluded from main; retained in gutMGene human full-library sensitivity,22253297,CCC(C)C(=O)[O-]
+2-hydroxy-3-(5-hydroxy-1H-indol-3-yl)propanoic acid,2-hydroxy-3-(5-hydroxy-1H-indol-3-yl)propanoic acid,excluded from main; retained in gutMGene human full-library sensitivity,192215,C1=CC2=C(C=C1O)C(=CN2)CC(C(=O)O)O
+20(R)-Ginsenoside Rh2,20(R)-Ginsenoside Rh2,excluded from main; retained in gutMGene human full-library sensitivity,54580480,CC(=CCC[C@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O)C)C)O)C)O)C
+3'-desmethylarctigenin,3'-desmethylarctigenin,excluded from main; retained in gutMGene human full-library sensitivity,,
+"3,4-Dihydroxy-trans-stilbene","3,4-Dihydroxy-trans-stilbene",excluded from main; retained in gutMGene human full-library sensitivity,10176710,C1=CC=C(C=C1)/C=C/C2=CC(=C(C=C2)O)O
+"3,4-Dihydroxybenzoic acid","3,4-Dihydroxybenzoic acid",excluded from main; retained in gutMGene human full-library sensitivity,72,C1=CC(=C(C=C1C(=O)O)O)O
+"3,4-Dihydroxyphenylacetic acid","3,4-Dihydroxyphenylacetic acid",excluded from main; retained in gutMGene human full-library sensitivity,547,C1=CC(=C(C=C1CC(=O)O)O)O
+"3,4-diHPP-2-ol","3,4-diHPP-2-ol",excluded from main; retained in gutMGene human full-library sensitivity,,
+"3,4-diHPVL","3,4-diHPVL",excluded from main; retained in gutMGene human full-library sensitivity,,
+"3,9-dihydroxy-6H-benzo[c]chromen-6-one","3,9-dihydroxy-6H-benzo[c]chromen-6-one",excluded from main; retained in gutMGene human full-library sensitivity,10376459,C1=CC2=C(C=C1O)C3=C(C=C(C=C3)O)OC2=O
+3-(1H-indol-3-yl)propanoate,3-(1H-indol-3-yl)propanoate,excluded from main; retained in gutMGene human full-library sensitivity,3292996,C1=CC=C2C(=C1)C(=CN2)CCC(=O)[O-]
+"3-(2,4-Dihydroxyphenyl)propanoic acid","3-(2,4-Dihydroxyphenyl)propanoic acid",excluded from main; retained in gutMGene human full-library sensitivity,96384,C1=CC(=C(C=C1O)O)CCC(=O)O
+"3-(3',4'-Dihydroxyphenyl)-1-(2,4,6-trihydroxyphenyl)-propan-2-ol","3-(3',4'-Dihydroxyphenyl)-1-(2,4,6-trihydroxyphenyl)-propan-2-ol",excluded from main; retained in gutMGene human full-library sensitivity,21722175,C1=CC(=C(C=C1CC(CC2=C(C=C(C=C2O)O)O)O)O)O
+"3-(3,4-Dihydroxyphenyl)-2-hydroxypropanoic acid","3-(3,4-Dihydroxyphenyl)-2-hydroxypropanoic acid",excluded from main; retained in gutMGene human full-library sensitivity,439435,C1=CC(=C(C=C1CC(C(=O)O)O)O)O
+3-(3-Hydroxyphenyl)propanoic acid,3-(3-Hydroxyphenyl)propanoic acid,excluded from main; retained in gutMGene human full-library sensitivity,91,C1=CC(=CC(=C1)O)CCC(=O)O
+3-(4-Hydroxyphenyl)propionic acid,3-(4-Hydroxyphenyl)propionic acid,excluded from main; retained in gutMGene human full-library sensitivity,10394,C1=CC(=CC=C1CCC(=O)O)O
+3-Hydroxy-2-methylbutanoic acid,3-Hydroxy-2-methylbutanoic acid,excluded from main; retained in gutMGene human full-library sensitivity,160471,CC(C(C)O)C(=O)O
+3-Hydroxy-4-methoxybenzenepropanoic acid,3-Hydroxy-4-methoxybenzenepropanoic acid,excluded from main; retained in gutMGene human full-library sensitivity,2752054,COC1=C(C=C(C=C1)CCC(=O)O)O
+3-Hydroxybenzoic acid,3-Hydroxybenzoic acid,excluded from main; retained in gutMGene human full-library sensitivity,7420,C1=CC(=CC(=C1)O)C(=O)O
+3-Hydroxyphenethyl alcohol,3-Hydroxyphenethyl alcohol,excluded from main; retained in gutMGene human full-library sensitivity,83404,C1=CC(=CC(=C1)O)CCO
+3-Indolepropionic acid,3-Indolepropionic acid,excluded from main; retained in gutMGene human full-library sensitivity,3744,C1=CC=C2C(=C1)C(=CN2)CCC(=O)O
+3-Phenylpropionic acid,3-Phenylpropionic acid,excluded from main; retained in gutMGene human full-library sensitivity,107,C1=CC=C(C=C1)CCC(=O)O
+3-Phosphoglyceric acid,3-Phosphoglyceric acid,excluded from main; retained in gutMGene human full-library sensitivity,439183,C([C@H](C(=O)O)O)OP(=O)(O)O
+4-Hydroxybenzoic acid,4-Hydroxybenzoic acid,excluded from main; retained in gutMGene human full-library sensitivity,135,C1=CC(=CC=C1C(=O)O)O
+4-Methylpentanoic acid,4-Methylpentanoic acid,excluded from main; retained in gutMGene human full-library sensitivity,12587,CC(C)CCC(=O)O
+4-Pyridoxic acid,4-Pyridoxic acid,excluded from main; retained in gutMGene human full-library sensitivity,6723,CC1=NC=C(C(=C1O)C(=O)O)CO
+"4-[(Z)-15,16-dihydroxydotriacont-19-enyl]-2-methyl-2H-uran-5-one","4-[(Z)-15,16-dihydroxydotriacont-19-enyl]-2-methyl-2H-uran-5-one",excluded from main; retained in gutMGene human full-library sensitivity,131751737,CCCCCCCCCCCC/C=C\CCC(C(CCCCCCCCCCCCCCC1=CC(OC1=O)C)O)O
+"5,7-Dihydroxy-2-(4-hydroxyphenyl)chroman-4-one","5,7-Dihydroxy-2-(4-hydroxyphenyl)chroman-4-one",excluded from main; retained in gutMGene human full-library sensitivity,932,C1C(OC2=CC(=CC(=C2C1=O)O)O)C3=CC=C(C=C3)O
+"5-(3,4-Dihydroxyphenyl)-4-hydroxypentanoic acid","5-(3,4-Dihydroxyphenyl)-4-hydroxypentanoic acid",excluded from main; retained in gutMGene human full-library sensitivity,52920332,C1=CC(=C(C=C1CC(CCC(=O)O)O)O)O
+"5-(3,4-Dihydroxyphenyl)-valerolactone","5-(3,4-Dihydroxyphenyl)-valerolactone",excluded from main; retained in gutMGene human full-library sensitivity,45093073,C1CC(OC(=O)C1)C2=CC(=C(C=C2)O)O
+"5-(3,4-Dihydroxyphenyl)pentanoic acid","5-(3,4-Dihydroxyphenyl)pentanoic acid",excluded from main; retained in gutMGene human full-library sensitivity,49831816,C1=CC(=C(C=C1CCCCC(=O)O)O)O
+5-(3-hydroxyphenyl)pentanoic Acid,5-(3-hydroxyphenyl)pentanoic Acid,excluded from main; retained in gutMGene human full-library sensitivity,10559720,C1=CC(=CC(=C1)O)CCCCC(=O)O
+5-Hydroxyindole-3-acetic acid,5-Hydroxyindole-3-acetic acid,excluded from main; retained in gutMGene human full-library sensitivity,1826,C1=CC2=C(C=C1O)C(=CN2)CC(=O)O
+5-Methoxyindole-3-acetic acid,5-Methoxyindole-3-acetic acid,excluded from main; retained in gutMGene human full-library sensitivity,18986,COC1=CC2=C(C=C1)NC=C2CC(=O)O
+5-OH-Equol,5-OH-Equol,excluded from main; retained in gutMGene human full-library sensitivity,,
+5-hydroxy-1H-imidazole-4-carboxamide,5-hydroxy-1H-imidazole-4-carboxamide,excluded from main; retained in gutMGene human full-library sensitivity,124343,C1=NC(=C(N1)C(=O)N)O
+6'-Hydroxy-O-desmethylangolensin,6'-Hydroxy-O-desmethylangolensin,excluded from main; retained in gutMGene human full-library sensitivity,20601635,CC(C1=CC=C(C=C1)O)C(=O)C2=C(C=C(C=C2O)O)O
+"6,7,4'-Trihydroxyisoflavone","6,7,4'-Trihydroxyisoflavone",excluded from main; retained in gutMGene human full-library sensitivity,5284649,C1=CC(=CC=C1C2=COC3=CC(=C(C=C3C2=O)O)O)O
+"6-[(4R,5S)-5-methyl-2-oxoimidazolidin-4-yl]hexanoic acid","6-[(4R,5S)-5-methyl-2-oxoimidazolidin-4-yl]hexanoic acid",excluded from main; retained in gutMGene human full-library sensitivity,445027,C[C@H]1[C@H](NC(=O)N1)CCCCCC(=O)O
+7-Aminoheptanoic acid,7-Aminoheptanoic acid,excluded from main; retained in gutMGene human full-library sensitivity,13580,C(CCCN)CCC(=O)O
+"7-Hydroxy-5-methyl-3-phenyl-6,7,8,9-tetrahydropyrido[3',2':4,5]imidazo[1,2-a]pyrimidin-5-ium chloride","7-Hydroxy-5-methyl-3-phenyl-6,7,8,9-tetrahydropyrido[3',2':4,5]imidazo[1,2-a]pyrimidin-5-ium chloride",excluded from main; retained in gutMGene human full-library sensitivity,129849310,CN1C2=C(N=CC(=C2)C3=CC=CC=C3)[N+]4=C1NC(CC4)O.[Cl-]
+8-Prenylnaringenin,8-Prenylnaringenin,excluded from main; retained in gutMGene human full-library sensitivity,480764,CC(=CCC1=C2C(=C(C=C1O)O)C(=O)C[C@H](O2)C3=CC=C(C=C3)O)C
+Acacetin,Acacetin,excluded from main; retained in gutMGene human full-library sensitivity,5280442,COC1=CC=C(C=C1)C2=CC(=O)C3=C(C=C(C=C3O2)O)O
+Acetate,Acetate,excluded from main; retained in gutMGene human full-library sensitivity,175,CC(=O)[O-]
+Acetoin,Acetoin,excluded from main; retained in gutMGene human full-library sensitivity,179,CC(C(=O)C)O
+Acetyl phosphate(2-),Acetyl phosphate(2-),excluded from main; retained in gutMGene human full-library sensitivity,4183249,CC(=O)OP(=O)([O-])[O-]
+Aglycone,Aglycone,excluded from main; retained in gutMGene human full-library sensitivity,139597845,CC[C@@H](C)[C@H]1[C@@H](C=C[C@]2(O1)C[C@@H]3C[C@H](O2)CC=C([C@H]([C@H](C=CC=C4CO[C@H]5[C@]4([C@@H](C=C([C@H]5O)C)C(=O)O3)O)C)O)C)C
+Allocholic acid,Allocholic acid,excluded from main; retained in gutMGene human full-library sensitivity,160636,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C
+Ammonium,Ammonium,excluded from main; retained in gutMGene human full-library sensitivity,223,[NH4+]
+Amylotriose,Amylotriose,excluded from main; retained in gutMGene human full-library sensitivity,439586,C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@@H]2[C@H](O[C@@H]([C@@H]([C@H]2O)O)O[C@@H]3[C@H](OC([C@@H]([C@H]3O)O)O)CO)CO)O)O)O)O
+Apigenin,Apigenin,excluded from main; retained in gutMGene human full-library sensitivity,5280443,C1=CC(=CC=C1C2=CC(=O)C3=C(C=C(C=C3O2)O)O)O
+Arachidonic Acid,Arachidonic Acid,excluded from main; retained in gutMGene human full-library sensitivity,444899,CCCCC/C=C\C/C=C\C/C=C\C/C=C\CCCC(=O)O
+Arctigenin,Arctigenin,excluded from main; retained in gutMGene human full-library sensitivity,64981,COC1=C(C=C(C=C1)C[C@H]2COC(=O)[C@@H]2CC3=CC(=C(C=C3)O)OC)OC
+Ascorbic Acid,Ascorbic Acid,excluded from main; retained in gutMGene human full-library sensitivity,54670067,C([C@@H]([C@@H]1C(=C(C(=O)O1)O)O)O)O
+Baohuoside I,Baohuoside I,excluded from main; retained in gutMGene human full-library sensitivity,5488822,C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC2=C(OC3=C(C(=CC(=C3C2=O)O)O)CC=C(C)C)C4=CC=C(C=C4)OC)O)O)O
+Benzoate,Benzoate,excluded from main; retained in gutMGene human full-library sensitivity,242,C1=CC=C(C=C1)C(=O)[O-]
+Bile acid,Bile acid,excluded from main; retained in gutMGene human full-library sensitivity,439520,CC(CCC(=O)O)C1CCC2C1([C@H](CC3C2[C@@H](C[C@H]4C3(CC[C@H](C4)O)C)O)O)C
+Caffeic Acid,Caffeic Acid,excluded from main; retained in gutMGene human full-library sensitivity,689043,C1=CC(=C(C=C1/C=C/C(=O)O)O)O
+Capric Acid,Capric Acid,excluded from main; retained in gutMGene human full-library sensitivity,2969,CCCCCCCCCC(=O)O
+Caproic Acid,Caproic Acid,excluded from main; retained in gutMGene human full-library sensitivity,8892,CCCCCC(=O)O
+Carbon Dioxide,Carbon Dioxide,excluded from main; retained in gutMGene human full-library sensitivity,280,C(=O)=O
+Chenodiol,Chenodiol,excluded from main; retained in gutMGene human full-library sensitivity,10133,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C
+Chrysin,Chrysin,excluded from main; retained in gutMGene human full-library sensitivity,5281607,C1=CC=C(C=C1)C2=CC(=O)C3=C(C=C(C=C3O2)O)O
+Citric Acid,Citric Acid,excluded from main; retained in gutMGene human full-library sensitivity,311,C(C(=O)O)C(CC(=O)O)(C(=O)O)O
+Cohibin B,Cohibin B,excluded from main; retained in gutMGene human full-library sensitivity,102066451,CCCCCCCCCCCCCC/C=C\CC[C@H]([C@@H](CCCCCCCCCCC1=C[C@@H](OC1=O)C)O)O
+Colibactin,Colibactin,excluded from main; retained in gutMGene human full-library sensitivity,138805674,C[C@H]1CCC(=N1)C2=C(C3(CC3)NC2=O)CC(=O)NCC4=NC(=CS4)C(=O)C(=O)C5=NC(=CS5)C(=O)CNC(=O)CC6=C(C(=O)NC67CC7)C8=N[C@H](CC8)C
+Coumarin,Coumarin,excluded from main; retained in gutMGene human full-library sensitivity,323,C1=CC=C2C(=C1)C=CC(=O)O2
+Creatine,Creatine,excluded from main; retained in gutMGene human full-library sensitivity,586,CN(CC(=O)O)C(=N)N
+Cystine,Cystine,excluded from main; retained in gutMGene human full-library sensitivity,67678,C([C@@H](C(=O)O)N)SSC[C@@H](C(=O)O)N
+D-Glucuronic Acid,D-Glucuronic Acid,excluded from main; retained in gutMGene human full-library sensitivity,94715,[C@@H]1([C@@H]([C@H](OC([C@@H]1O)O)C(=O)O)O)O
+D-Lactic acid,D-Lactic acid,excluded from main; retained in gutMGene human full-library sensitivity,61503,C[C@H](C(=O)O)O
+D-Methionine,D-Methionine,excluded from main; retained in gutMGene human full-library sensitivity,84815,CSCC[C@H](C(=O)O)N
+D-Xylose,D-Xylose,excluded from main; retained in gutMGene human full-library sensitivity,135191,C1[C@H]([C@@H]([C@H](C(O1)O)O)O)O
+DL-Alanine,DL-Alanine,excluded from main; retained in gutMGene human full-library sensitivity,602,CC(C(=O)O)N
+DL-Aspartic acid,DL-Aspartic acid,excluded from main; retained in gutMGene human full-library sensitivity,424,C(C(C(=O)O)N)C(=O)O
+DL-Norvaline,DL-Norvaline,excluded from main; retained in gutMGene human full-library sensitivity,824,CCCC(C(=O)O)N
+DL-Tartaric acid,DL-Tartaric acid,excluded from main; retained in gutMGene human full-library sensitivity,875,C(C(C(=O)O)O)(C(=O)O)O
+Daidzein,Daidzein,excluded from main; retained in gutMGene human full-library sensitivity,5281708,C1=CC(=CC=C1C2=COC3=C(C2=O)C=CC(=C3)O)O
+Dehydroxychlorogenic acid,Dehydroxychlorogenic acid,excluded from main; retained in gutMGene human full-library sensitivity,,
+Deoxycholic Acid,Deoxycholic Acid,excluded from main; retained in gutMGene human full-library sensitivity,222528,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2CC[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C
+Dihydrocaffeic acid,Dihydrocaffeic acid,excluded from main; retained in gutMGene human full-library sensitivity,348154,C1=CC(=C(C=C1CCC(=O)O)O)O
+Dihydrocaffeoyl-glycerol,Dihydrocaffeoyl-glycerol,excluded from main; retained in gutMGene human full-library sensitivity,,
+Dihydrochlorogenic acid,Dihydrochlorogenic acid,excluded from main; retained in gutMGene human full-library sensitivity,,
+Dihydrodaidzein,Dihydrodaidzein,excluded from main; retained in gutMGene human full-library sensitivity,176907,C1C(C(=O)C2=C(O1)C=C(C=C2)O)C3=CC=C(C=C3)O
+Dihydrogenistein,Dihydrogenistein,excluded from main; retained in gutMGene human full-library sensitivity,9838356,C1C(C(=O)C2=C(C=C(C=C2O1)O)O)C3=CC=C(C=C3)O
+Dihydroglycitein,Dihydroglycitein,excluded from main; retained in gutMGene human full-library sensitivity,101101166,COC1=C(C=C2C(=C1)C(=O)C(CO2)C3=CC=C(C=C3)O)O
+Dihydroresveratrol,Dihydroresveratrol,excluded from main; retained in gutMGene human full-library sensitivity,185914,C1=CC(=CC=C1CCC2=CC(=CC(=C2)O)O)O
+Diosmetin,Diosmetin,excluded from main; retained in gutMGene human full-library sensitivity,5281612,COC1=C(C=C(C=C1)C2=CC(=O)C3=C(C=C(C=C3O2)O)O)O
+Doconexent,Doconexent,excluded from main; retained in gutMGene human full-library sensitivity,445580,CC/C=C\C/C=C\C/C=C\C/C=C\C/C=C\C/C=C\CCC(=O)O
+Dopamine,Dopamine,excluded from main; retained in gutMGene human full-library sensitivity,681,C1=CC(=C(C=C1CCN)O)O
+Enterodiol,Enterodiol,excluded from main; retained in gutMGene human full-library sensitivity,115089,C1=CC(=CC(=C1)O)C[C@@H](CO)[C@@H](CC2=CC(=CC=C2)O)CO
+Equol,Equol,excluded from main; retained in gutMGene human full-library sensitivity,91469,C1[C@H](COC2=C1C=CC(=C2)O)C3=CC=C(C=C3)O
+Ethanol,Ethanol,excluded from main; retained in gutMGene human full-library sensitivity,702,CCO
+"Ethyl phenyllactate, (-)-","Ethyl phenyllactate, (-)-",excluded from main; retained in gutMGene human full-library sensitivity,9877619,CCOC(=O)[C@H](CC1=CC=CC=C1)O
+Folic Acid,Folic Acid,excluded from main; retained in gutMGene human full-library sensitivity,135398658,C1=CC(=CC=C1C(=O)N[C@@H](CCC(=O)O)C(=O)O)NCC2=CN=C3C(=N2)C(=O)NC(=N3)N
+Formate,Formate,excluded from main; retained in gutMGene human full-library sensitivity,283,C(=O)[O-]
+Gamma-Aminobutyric Acid,Gamma-Aminobutyric Acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,119,C(CC(=O)O)CN
+Genipin,Genipin,excluded from main; retained in gutMGene human full-library sensitivity,442424,COC(=O)C1=CO[C@H]([C@H]2[C@@H]1CC=C2CO)O
+Genistein,Genistein,excluded from main; retained in gutMGene human full-library sensitivity,5280961,C1=CC(=CC=C1C2=COC3=CC(=CC(=C3C2=O)O)O)O
+Ginsenoside Rd,Ginsenoside Rd,excluded from main; retained in gutMGene human full-library sensitivity,11679800,CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)CO)O)O)O)C)C)O)C)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)CO)O)O)O)C
+Ginsenoside Rh2,Ginsenoside Rh2,excluded from main; retained in gutMGene human full-library sensitivity,119307,CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O)C)C)O)C)O)C
+Glycerin,Glycerin,excluded from main; retained in gutMGene human full-library sensitivity,753,C(C(CO)O)O
+Glycerophospholipids,Glycerophospholipids,excluded from main; retained in gutMGene human full-library sensitivity,,
+Glycitein,Glycitein,excluded from main; retained in gutMGene human full-library sensitivity,5317750,COC1=C(C=C2C(=C1)C(=O)C(=CO2)C3=CC=C(C=C3)O)O
+Glycochenodeoxycholic acid,Glycochenodeoxycholic acid,excluded from main; retained in gutMGene human full-library sensitivity,12544,C[C@H](CCC(=O)NCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C
+Glycocholic acid,Glycocholic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,10140,C[C@H](CCC(=O)NCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C
+Glycoursodeoxycholic acid,Glycoursodeoxycholic acid,excluded from main; retained in gutMGene human full-library sensitivity,12310288,C[C@H](CCC(=O)NCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C
+Gondoic Acid,Gondoic Acid,excluded from main; retained in gutMGene human full-library sensitivity,5282768,CCCCCCCC/C=C\CCCCCCCCCC(=O)O
+Hesperetin dihydrochalcone,Hesperetin dihydrochalcone,excluded from main; retained in gutMGene human full-library sensitivity,147608,COC1=C(C=C(C=C1)CCC(=O)C2=C(C=C(C=C2O)O)O)O
+Hexanoate,Hexanoate,excluded from main; retained in gutMGene human full-library sensitivity,4398339,CCCCCC(=O)[O-]
+Hydrogen,Hydrogen,excluded from main; retained in gutMGene human full-library sensitivity,783,[HH]
+Hydrogen Sulfide,Hydrogen Sulfide,excluded from main; retained in gutMGene human full-library sensitivity,402,S
+Hydroxyquercitrin,Hydroxyquercitrin,excluded from main; retained in gutMGene human full-library sensitivity,129887767,C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC2=C(OC3=C(C2=O)C(=C(C(=C3)O)O)O)C4=CC(=C(C=C4)O)O)O)O)O
+Icaritin,Icaritin,excluded from main; retained in gutMGene human full-library sensitivity,5318980,CC(=CCC1=C2C(=C(C=C1O)O)C(=O)C(=C(O2)C3=CC=C(C=C3)OC)O)C
+Indole-3-lactic acid,Indole-3-lactic acid,excluded from main; retained in gutMGene human full-library sensitivity,92904,C1=CC=C2C(=C1)C(=CN2)CC(C(=O)O)O
+Indoxyl sulfate,Indoxyl sulfate,excluded from main; retained in gutMGene human full-library sensitivity,10258,C1=CC=C2C(=C1)C(=CN2)OS(=O)(=O)O
+Isoallolithocholic acid,Isoallolithocholic acid,excluded from main; retained in gutMGene human full-library sensitivity,94228,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC[C@@H]4[C@@]3(CC[C@@H](C4)O)C)C
+Isobutyric acid,Isobutyric acid,excluded from main; retained in gutMGene human full-library sensitivity,6590,CC(C)C(=O)O
+Isoquercetin,Isoquercetin,excluded from main; retained in gutMGene human full-library sensitivity,5280804,C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)O)O
+Isovalerate,Isovalerate,excluded from main; retained in gutMGene human full-library sensitivity,3587356,CC(C)CC(=O)[O-]
+Isovaleric acid,Isovaleric acid,excluded from main; retained in gutMGene human full-library sensitivity,10430,CC(C)CC(=O)O
+Kaempferol,Kaempferol,excluded from main; retained in gutMGene human full-library sensitivity,5280863,C1=CC(=CC=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O
+Kaempferol-3-sorphoroside,Kaempferol-3-sorphoroside,excluded from main; retained in gutMGene human full-library sensitivity,,
+L-Leucic acid,L-Leucic acid,excluded from main; retained in gutMGene human full-library sensitivity,83697,CC(C)C[C@@H](C(=O)O)O
+L-homoserine,L-homoserine,excluded from main; retained in gutMGene human full-library sensitivity,12647,C(CO)[C@@H](C(=O)O)N
+L-lactate,L-lactate,excluded from main; retained in gutMGene human full-library sensitivity,5460161,C[C@@H](C(=O)[O-])O
+L-ornithine,L-ornithine,excluded from main; retained in gutMGene human full-library sensitivity,6262,C(C[C@@H](C(=O)O)N)CN
+Lactate,Lactate,excluded from main; retained in gutMGene human full-library sensitivity,91435,CC(C(=O)[O-])O
+Lacto-N-tetraose,Lacto-N-tetraose,excluded from main; retained in gutMGene human full-library sensitivity,440993,CC(=O)N[C@@H]1[C@H]([C@@H]([C@H](O[C@H]1O[C@H]2[C@H]([C@H](O[C@H]([C@@H]2O)O[C@@H]3[C@H](OC([C@@H]([C@H]3O)O)O)CO)CO)O)CO)O)O[C@H]4[C@@H]([C@H]([C@H]([C@H](O4)CO)O)O)O
+Lariciresinol,Lariciresinol,excluded from main; retained in gutMGene human full-library sensitivity,332427,COC1=C(C=CC(=C1)C[C@H]2CO[C@@H]([C@H]2CO)C3=CC(=C(C=C3)O)OC)O
+Leucocyanidin,Leucocyanidin,excluded from main; retained in gutMGene human full-library sensitivity,71629,C1=CC(=C(C=C1C2C(C(C3=C(C=C(C=C3O2)O)O)O)O)O)O
+Leucylproline,Leucylproline,excluded from main; retained in gutMGene human full-library sensitivity,80817,CC(C)C[C@@H](C(=O)N1CCC[C@H]1C(=O)O)N
+Levodopa,Levodopa,excluded from main; retained in gutMGene human full-library sensitivity,6047,C1=CC(=C(C=C1C[C@@H](C(=O)O)N)O)O
+Linoleic Acid,Linoleic Acid,excluded from main; retained in gutMGene human full-library sensitivity,5280450,CCCCC/C=C\C/C=C\CCCCCCCC(=O)O
+Lithocholic acid,Lithocholic acid,excluded from main; retained in gutMGene human full-library sensitivity,9903,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC[C@H]4[C@@]3(CC[C@H](C4)O)C)C
+Loganetin,Loganetin,excluded from main; retained in gutMGene human full-library sensitivity,10466307,C[C@H]1[C@H](C[C@H]2[C@@H]1[C@@H](OC=C2C(=O)OC)O)O
+Lunularin,Lunularin,excluded from main; retained in gutMGene human full-library sensitivity,181511,C1=CC(=CC(=C1)O)CCC2=CC=C(C=C2)O
+Luteolin,Luteolin,excluded from main; retained in gutMGene human full-library sensitivity,5280445,C1=CC(=C(C=C1C2=CC(=O)C3=C(C=C(C=C3O2)O)O)O)O
+Melezitose,Melezitose,excluded from main; retained in gutMGene human full-library sensitivity,92817,C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@H]2[C@@H]([C@H](O[C@@]2(CO)O[C@@H]3[C@@H]([C@H]([C@@H]([C@H](O3)CO)O)O)O)CO)O)O)O)O)O
+Myricetin,Myricetin,excluded from main; retained in gutMGene human full-library sensitivity,5281672,C1=C(C=C(C(=C1O)O)O)C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O
+Myristic Acid,Myristic Acid,excluded from main; retained in gutMGene human full-library sensitivity,11005,CCCCCCCCCCCCCC(=O)O
+"N,O-Bis-(trimethylsilyl)phenylalanine","N,O-Bis-(trimethylsilyl)phenylalanine",excluded from main; retained in gutMGene human full-library sensitivity,522502,C[Si](C)(C)NC(CC1=CC=CC=C1)C(=O)O[Si](C)(C)C
+N-Acetyl-L-aspartic acid,N-Acetyl-L-aspartic acid,excluded from main; retained in gutMGene human full-library sensitivity,65065,CC(=O)N[C@@H](CC(=O)O)C(=O)O
+N-acetylornithine,N-acetylornithine,excluded from main; retained in gutMGene human full-library sensitivity,439232,CC(=O)N[C@@H](CCCN)C(=O)O
+N-acetylputrescine,N-acetylputrescine,excluded from main; retained in gutMGene human full-library sensitivity,122356,CC(=O)NCCCCN
+Naringenin chalcone,Naringenin chalcone,excluded from main; retained in gutMGene human full-library sensitivity,5280960,C1=CC(=CC=C1/C=C/C(=O)C2=C(C=C(C=C2O)O)O)O
+Norathyriol,Norathyriol,excluded from main; retained in gutMGene human full-library sensitivity,5281656,C1=C(C=C2C(=C1O)C(=O)C3=CC(=C(C=C3O2)O)O)O
+O-Desmethylangolensin,O-Desmethylangolensin,excluded from main; retained in gutMGene human full-library sensitivity,89472,CC(C1=CC=C(C=C1)O)C(=O)C2=C(C=C(C=C2)O)O
+Oxalacetic acid,Oxalacetic acid,excluded from main; retained in gutMGene human full-library sensitivity,970,C(C(=O)C(=O)O)C(=O)O
+Palmitoleic Acid,Palmitoleic Acid,excluded from main; retained in gutMGene human full-library sensitivity,445638,CCCCCC/C=C\CCCCCCCC(=O)O
+Palmitoylethanolamide,Palmitoylethanolamide,excluded from main; retained in gutMGene human full-library sensitivity,4671,CCCCCCCCCCCCCCCC(=O)NCCO
+Phenylacetic Acid,Phenylacetic Acid,excluded from main; retained in gutMGene human full-library sensitivity,999,C1=CC=C(C=C1)CC(=O)O
+Phloretin,Phloretin,excluded from main; retained in gutMGene human full-library sensitivity,4788,C1=CC(=CC=C1CCC(=O)C2=C(C=C(C=C2O)O)O)O
+Phloroglucinol,Phloroglucinol,excluded from main; retained in gutMGene human full-library sensitivity,359,C1=C(C=C(C=C1O)O)O
+Pipecolic acid,Pipecolic acid,excluded from main; retained in gutMGene human full-library sensitivity,849,C1CCNC(C1)C(=O)O
+Platycodin D,Platycodin D,excluded from main; retained in gutMGene human full-library sensitivity,162859,C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)O[C@@H]2[C@H]([C@H](CO[C@H]2OC(=O)[C@]34CCC(C[C@H]3C5=CC[C@H]6[C@]([C@@]5(C[C@H]4O)C)(CC[C@@H]7[C@@]6(C[C@@H]([C@@H](C7(CO)CO)O[C@H]8[C@@H]([C@H]([C@@H]([C@H](O8)CO)O)O)O)O)C)C)(C)C)O)O)O)O)O[C@H]9[C@@H]([C@H]([C@@H](CO9)O)O[C@H]1[C@@H]([C@](CO1)(CO)O)O)O
+Ponciretin,Ponciretin,excluded from main; retained in gutMGene human full-library sensitivity,25201019,COC1=CC=C(C=C1)C2CC(=O)C3=C(C=C(C=C3O2)O)[O-]
+Propionate,Propionate,excluded from main; retained in gutMGene human full-library sensitivity,104745,CCC(=O)[O-]
+Propylene Glycol,Propylene Glycol,excluded from main; retained in gutMGene human full-library sensitivity,1030,CC(CO)O
+Protopanaxadiol,Protopanaxadiol,excluded from main; retained in gutMGene human full-library sensitivity,9920281,CC(=CCC[C@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O)C)C)O)C)O)C
+Pyruvate,Pyruvate,excluded from main; retained in gutMGene human full-library sensitivity,107735,CC(=O)C(=O)[O-]
+Quercetin,Quercetin,excluded from main; retained in gutMGene human full-library sensitivity,5280343,C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O
+Quercimeritrin,Quercimeritrin,excluded from main; retained in gutMGene human full-library sensitivity,5282160,C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)O)O)O)O
+Quercitrin,Quercitrin,excluded from main; retained in gutMGene human full-library sensitivity,5280459,C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC2=C(OC3=CC(=CC(=C3C2=O)O)O)C4=CC(=C(C=C4)O)O)O)O)O
+Quinic acid,Quinic acid,excluded from main; retained in gutMGene human full-library sensitivity,6508,C1[C@H](C([C@@H](CC1(C(=O)O)O)O)O)O
+Secoisolariciresinol,Secoisolariciresinol,excluded from main; retained in gutMGene human full-library sensitivity,65373,COC1=C(C=CC(=C1)C[C@@H](CO)[C@@H](CC2=CC(=C(C=C2)O)OC)CO)O
+Sedoheptulose,Sedoheptulose,excluded from main; retained in gutMGene human full-library sensitivity,5459879,C([C@H]([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O)O
+Succinate,Succinate,excluded from main; retained in gutMGene human full-library sensitivity,160419,C(CC(=O)[O-])C(=O)[O-]
+Sulfate Ion,Sulfate Ion,excluded from main; retained in gutMGene human full-library sensitivity,1117,[O-]S(=O)(=O)[O-]
+Taurocholic acid,Taurocholic acid,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,6675,C[C@H](CCC(=O)NCCS(=O)(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C
+Taurodeoxycholic acid,Taurodeoxycholic acid,excluded from main; retained in gutMGene human full-library sensitivity,2733768,C[C@H](CCC(=O)NCCS(=O)(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2CC[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C
+Taurolithocholic acid,Taurolithocholic acid,excluded from main; retained in gutMGene human full-library sensitivity,439763,C[C@H](CCC(=O)NCCS(=O)(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC[C@H]4[C@@]3(CC[C@H](C4)O)C)C
+Thymine,Thymine,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile,1135,CC1=CNC(=O)NC1=O
+Tricarballylic acid,Tricarballylic acid,excluded from main; retained in gutMGene human full-library sensitivity,14925,C(C(CC(=O)O)C(=O)O)C(=O)O
+Trimethylamine,Trimethylamine,excluded from main; retained in gutMGene human full-library sensitivity,1146,CN(C)C
+Trimethylamine oxide,Trimethylamine oxide,excluded from main; retained in gutMGene human full-library sensitivity,1145,C[N+](C)(C)[O-]
+Tryptamine,Tryptamine,excluded from main; retained in gutMGene human full-library sensitivity,1150,C1=CC=C2C(=C1)C(=CN2)CCN
+Tyramine,Tyramine,excluded from main; retained in gutMGene human full-library sensitivity,5610,C1=CC(=CC=C1CCN)O
+Urea,Urea,excluded from main; retained in gutMGene human full-library sensitivity,1176,C(=O)(N)N
+Ursodiol,Ursodiol,excluded from main; retained in gutMGene human full-library sensitivity,31401,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C
+Valerate,Valerate,excluded from main; retained in gutMGene human full-library sensitivity,114781,CCCCC(=O)[O-]
+Valeric acid,Valeric acid,excluded from main; retained in gutMGene human full-library sensitivity,7991,CCCCC(=O)O
+Xanthine,Xanthine,excluded from main; retained in gutMGene human full-library sensitivity,1188,C1=NC2=C(N1)C(=O)NC(=O)N2
+beta-D-Gal-(1->4)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc,beta-D-Gal-(1->4)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc,excluded from main; retained in gutMGene human full-library sensitivity,9831622,CC(=O)N[C@@H]1[C@H]([C@@H]([C@H](O[C@H]1O[C@H]2[C@H]([C@H](O[C@H]([C@@H]2O)O[C@@H]3[C@H](OC([C@@H]([C@H]3O)O)O)CO)CO)O)CO)O[C@H]4[C@@H]([C@H]([C@H]([C@H](O4)CO)O)O)O)O
+beta-D-fructofuranose,beta-D-fructofuranose,excluded from main; retained in gutMGene human full-library sensitivity,439709,C([C@@H]1[C@H]([C@@H]([C@](O1)(CO)O)O)O)O
+"n,n,n-Trimethyllysine","n,n,n-Trimethyllysine",excluded from main; retained in gutMGene human full-library sensitivity,159660,C[N+](C)(C)CCCCC(C(=O)O)N
+p-Cresol glucuronide,p-Cresol glucuronide,excluded from main; retained in gutMGene human full-library sensitivity,154035,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+p-Cresol sulfate,p-Cresol sulfate,excluded from main; retained in gutMGene human full-library sensitivity,4615423,CC1=CC=C(C=C1)OS(=O)(=O)O
+procollagen type 1 n-terminal propeptide,procollagen type 1 n-terminal propeptide,excluded from main; retained in gutMGene human full-library sensitivity,,
+type I collagen cross-linked c-telopeptide,type I collagen cross-linked c-telopeptide,excluded from main; retained in gutMGene human full-library sensitivity,,

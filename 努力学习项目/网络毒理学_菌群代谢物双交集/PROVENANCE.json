@@ -1,0 +1,25 @@
+{
+  "project": "复方UC菌群代谢物三源共有靶点",
+  "access_date": "2026-10-07",
+  "delivery_inputs": {
+    "provenance": "REAL",
+    "F_unique_genes": 636,
+    "D_project_fixed_count": 1517,
+    "I1_genes": 291
+  },
+  "gutmgene_v2": {
+    "provenance": "REAL",
+    "human_microbe_metabolites": 251,
+    "human_metabolite_gene_metabolites": 45,
+    "human_metabolite_gene_genes": 154
+  },
+  "gmmad2": {
+    "provenance": "REAL",
+    "uc_rows": 2243,
+    "ibd_rows": 2146
+  },
+  "target_predictions": {
+    "provenance": "PREDICT",
+    "rule": "H union (SEA intersect STP)"
+  }
+}

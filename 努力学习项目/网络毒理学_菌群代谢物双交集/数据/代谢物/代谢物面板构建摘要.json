@@ -1,0 +1,17 @@
+{
+  "access_date": "2026-10-07",
+  "gmmad2_uc_rows": 2243,
+  "gmmad2_ibd_rows": 2146,
+  "gmmad2_uc_fdr_lt_0_05": 1642,
+  "gmmad2_ibd_fdr_lt_0_05": 1628,
+  "gmmad2_uc_score_strictly_above_90th_percentile_threshold": 0.2036182475,
+  "gmmad2_uc_score_strictly_above_90th_percentile": 105,
+  "gmmad2_ibd_top_decile_threshold": 0.5107528146,
+  "gutmgene_human_microbe_metabolites": 251,
+  "gutmgene_human_metabolite_gene_metabolites": 45,
+  "gutmgene_human_metabolite_gene_genes": 154,
+  "evidence_priority_main_metabolites": 112,
+  "full_library_sensitivity_metabolites": 251,
+  "prediction_input_union_metabolites": 336,
+  "special_exposures_excluded_from_smiles_prediction": 2
+}
