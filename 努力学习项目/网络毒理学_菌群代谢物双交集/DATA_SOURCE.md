@@ -62,3 +62,10 @@
 - 用途：7 个有害/特殊暴露物的人类化学–基因策展互作。
 - 证据：CTD curated；与 STP/SEA 预测边分开保存。
 - 结论边界：毒性线索/共同调控假设，不写拮抗、减毒或确定性毒性。
+
+
+## 8. GEO 外部一致性（2026-10-07）
+
+- GSE92415/GPL13158：Week 0 UC 87 vs Healthy 21，结肠黏膜。
+- GSE75214/GPL6244：活动期 UC 74 vs control 11，结肠黏膜。
+- 官方 series matrix 与 platform annotation；结论仅作外部一致性/探索性 AUC。
