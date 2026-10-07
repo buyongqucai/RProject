@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import numpy as np
@@ -39,7 +40,7 @@ def bh_adjust(values: list[float]) -> list[float]:
 
 def degree_weighted_permutation(i1: set[str], i2: set[str], d_set: set[str], degrees: dict[str, int], n: int = PERMUTATIONS) -> tuple[float, float]:
     genes = sorted(d_set)
-    weights = np.asarray([degrees.get(g, 1.0) for g in genes], dtype=float)
+    weights = np.asarray([max(1.0, float(degrees.get(g, 0))) for g in genes], dtype=float)
     weights = weights / weights.sum()
     i1_arr = np.asarray([g in i1 for g in genes])
     observed = len(i1 & i2)
@@ -51,6 +52,32 @@ def degree_weighted_permutation(i1: set[str], i2: set[str], d_set: set[str], deg
         hits += overlap >= observed
     return (hits + 1) / (n + 1), hits / n
 
+
+def degree_preserving_stratified_permutation(i1: set[str], i2: set[str], d_set: set[str], degrees: dict[str, int], n: int = PERMUTATIONS) -> tuple[float, float]:
+    genes = sorted(d_set)
+    values = np.asarray([degrees.get(g, 0) for g in genes], dtype=float)
+    positive = values[values > 0]
+    if len(positive):
+        edges = np.unique(np.quantile(positive, np.linspace(0, 1, 11)))
+    else:
+        edges = np.asarray([0.0, 1.0])
+    bins = np.searchsorted(edges, values, side="right") - 1
+    bins = np.clip(bins, 0, len(edges) - 2 if len(edges) > 1 else 0)
+    candidates = {int(b): np.asarray([i for i, bb in enumerate(bins) if bb == b]) for b in np.unique(bins)}
+    observed_bins = {int(b): int(sum(1 for g in i2 if bins[genes.index(g)] == b)) for b in candidates}
+    i1_arr = np.asarray([g in i1 for g in genes])
+    observed = len(i1 & i2)
+    hits = 0
+    rng = np.random.default_rng(RNG_SEED + 1)
+    for _ in range(n):
+        sampled_idx = []
+        for b, count in observed_bins.items():
+            pool = candidates[b]
+            if count:
+                sampled_idx.extend(rng.choice(pool, size=count, replace=False).tolist())
+        overlap = int(i1_arr[np.asarray(sampled_idx, dtype=int)].sum()) if sampled_idx else 0
+        hits += overlap >= observed
+    return (hits + 1) / (n + 1), hits / n
 
 def analyze(label: str, evidence: str, m: pd.DataFrame) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
     f_set = set(norm_genes(pd.read_csv(F_PATH)["gene"]))
@@ -76,17 +103,19 @@ def analyze(label: str, evidence: str, m: pd.DataFrame) -> tuple[dict, pd.DataFr
     ppi_counts: dict[str, int] = {}
     if PPI_PATH.exists():
         ppi = pd.read_csv(PPI_PATH, sep="\t")
-        cols = {c.lower(): c for c in ppi.columns}
-        a = cols.get("preferred_name_a") or cols.get("protein1") or ppi.columns[0]
-        b = cols.get("preferred_name_b") or cols.get("protein2") or ppi.columns[1]
+        cols = {re.sub(r"[^a-z0-9]", "", c.lower()): c for c in ppi.columns}
+        a = cols.get("preferrednamea") or cols.get("proteina") or ppi.columns[0]
+        b = cols.get("preferrednameb") or cols.get("proteinb") or ppi.columns[1]
         for value in pd.concat([ppi[a], ppi[b]]).dropna().astype(str):
             gene = value.strip().upper()
             ppi_counts[gene] = ppi_counts.get(gene, 0) + 1
     degrees = {g: edge_counts.get(g, 0) + ppi_counts.get(g, 0) for g in d_set}
     perm_p, perm_hits = degree_weighted_permutation(i1_set, i2_set, d_set, degrees)
+    strat_perm_p, strat_perm_hits = degree_preserving_stratified_permutation(i1_set, i2_set, d_set, degrees)
 
-    threshold = float(np.quantile(list(degrees.values()), 0.90)) if degrees else 0.0
-    hubs = {g for g, value in degrees.items() if value >= threshold}
+    positive_degrees = [v for v in degrees.values() if v > 0]
+    threshold = float(np.quantile(positive_degrees, 0.90)) if positive_degrees else 0.0
+    hubs = {g for g, value in degrees.items() if value >= threshold and value > 0}
     c_nohub = c_set - hubs
     i2_nohub = i2_set - hubs
     i1_nohub = i1_set - hubs
@@ -97,6 +126,7 @@ def analyze(label: str, evidence: str, m: pd.DataFrame) -> tuple[dict, pd.DataFr
         "I1_genes": len(i1_set), "M_genes": len(set(genes)), "I2_genes": n, "C_genes": overlap,
         "hypergeom_p": p, "jaccard_I1_I2": jaccard,
         "degree_weighted_permutation_p": perm_p, "perm_ge_observed_hits": perm_hits,
+        "degree_preserving_stratified_permutation_p": strat_perm_p, "stratified_perm_ge_observed_hits": strat_perm_hits,
         "permutations": PERMUTATIONS, "hub_degree_threshold_p90": threshold,
         "hub_genes_removed": len(hubs), "C_genes_no_top10pct_hub": len(c_nohub),
         "hypergeom_p_no_top10pct_hub": p_nohub,

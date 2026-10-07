@@ -20,6 +20,6 @@
   },
   "target_predictions": {
     "provenance": "PREDICT",
-    "rule": "H union (SEA intersect STP)"
+    "rule": "H union (SEA16_ChEMBL27 intersect STP)"
   }
 }

@@ -23,7 +23,7 @@
   - `Gut Microbe-Microbial metabolite.csv`：2488 行；human 子集 830 行、251 个唯一代谢物。
   - `Gut Microbe-Host Gene.csv`：1323 行。
   - `Microbial metabolite-Host Gene.csv`：1049 行；human 子集 265 行、45 个唯一代谢物、154 个基因。
-- 本课题的“全库敏感性”定义为上述可下载文献关联表中 `human/mouse=human` 的 251 个唯一代谢物快照。论文中的 278 个还包括数据库其它层级/重建条目，不强行混入本快照。
+- 本课题的“全库敏感性”定义为上述可下载文献关联表中 `human/mouse=human` 的 251 个唯一代谢物快照；H₂S 按特殊暴露物另列，因此进入小分子分析的全库敏感性面板为 250 个。论文中的 278 个还包括数据库其它层级/重建条目，不强行混入本快照。
 
 ## 3. GMMAD2
 
@@ -43,8 +43,8 @@
 
 | 工具 | 版本/库 | 保留规则 | 状态 |
 |---|---|---|---|
-| SwissTargetPrediction | Homo sapiens；站点 2026-10-07 可达 | `Probability > 0` | 批量执行中/待整合 |
-| SEA | ChEMBL 36；ECFP4 | 仅官方 `sea_result.tsv` 显著结果；`sea_result_all.tsv` 仅作审计 | 批量执行中/待整合 |
+| SwissTargetPrediction | Homo sapiens；站点 2026-10-07 可达 | `Probability > 0` | 300/335 个输入有保留结果；其余进异常清单 |
+| SEA | 新站 ChEMBL 36/ECFP4 公共代理多次 502；回退 SEA16 ChEMBL 27/rdkit_ecfp4 | SEA16 官方 `sea-results.xls` 中 Homo 结果，按 Query ID 追溯 | 32/32 批次完成，27,754 条逐化合物命中 |
 | gutMGene 实证 | human `Microbial metabolite-Host Gene.csv` | 直接进入 H 证据级 | 已下载 |
 
 `M = H ∪（SEA∩STP）`；单工具命中只进补充/异常审计，不进入核心 M。

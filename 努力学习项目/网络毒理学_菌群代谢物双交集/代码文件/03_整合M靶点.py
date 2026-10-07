@@ -9,6 +9,7 @@ import time
 from pathlib import Path
 from urllib.parse import quote
 
+import numpy as np
 import pandas as pd
 import requests
 
@@ -17,7 +18,7 @@ DATA = ROOT / "数据" / "代谢物"
 PREP = ROOT / "准备文件"
 GUT = PREP / "外部数据库" / "gutMGene_v2" / "Microbial metabolite-Host Gene.csv"
 STP_DIR = PREP / "STP原始"
-SEA_DIR = PREP / "SEA原始"
+SEA_DIR = PREP / "SEA16原始"
 
 
 def safe_name(name: str) -> str:
@@ -101,10 +102,10 @@ def main() -> None:
             common = norm_gene(row.get("Common name", ""))
             accessions = [x.strip() for x in str(row.get("Uniprot ID", "")).replace("&", ";").split(";") if x.strip()]
             genes = [common] if common else []
-            uniprot_genes(accessions, up_cache, session)
-            for acc in accessions:
-                genes.extend(up_cache.get(acc, []))
-            genes = sorted({g for g in genes if g})
+            if not genes:
+                uniprot_genes(accessions, up_cache, session)
+                for acc in accessions:
+                    genes.extend(up_cache.get(acc, []))
             if not genes:
                 genes = [""]
             for gene in genes:
@@ -121,7 +122,12 @@ def main() -> None:
     sea_files = list(SEA_DIR.glob("batch_*/compound_target_hits.tsv"))
     sea_rows = []
     for path in sea_files:
-        hits = pd.read_csv(path, sep="\t")
+        try:
+            hits = pd.read_csv(path, sep="\t") if path.stat().st_size > 0 else pd.DataFrame()
+        except pd.errors.EmptyDataError:
+            hits = pd.DataFrame()
+        if hits.empty:
+            continue
         mapping = pd.read_csv(path.parent / "compound_mapping.csv")
         cmap = mapping.set_index("compound_id")["name_en"].to_dict()
         for _, row in hits.iterrows():
@@ -130,11 +136,13 @@ def main() -> None:
                 continue
             species = str(row.get("target_species", ""))
             acc = str(row.get("uniprot_accession", "") or "")
-            if species != "Homo" and not acc.upper().endswith("_HUMAN"):
+            up_id = str(row.get("uniprot_id", "") or "")
+            if species != "Homo" and not acc.upper().endswith("_HUMAN") and not up_id.upper().endswith("_HUMAN"):
                 continue
-            genes = uniprot_genes([acc], up_cache, session).get(acc, [])
-            gene = norm_gene(genes[0]) if genes else ""
-            if not gene:
+            gene = norm_gene(row.get("target_gene", ""))
+            if not gene and acc:
+                genes = uniprot_genes([acc], up_cache, session).get(acc, [])
+                gene = norm_gene(genes[0]) if genes else ""
                 continue
             sea_rows.append({
                 "metabolite": metabolite, "gene": gene,
@@ -152,12 +160,22 @@ def main() -> None:
         for _, row in predicted.iterrows():
             m_rows.append({
                 "metabolite": row["metabolite"], "gene": row["gene"], "evidence_level": "M",
-                "source": "SEA_ChEMBL36_intersect_STP", "source_identifier": row.get("target_chembl_id", ""),
+                "source": "SEA16_ChEMBL27_intersect_STP", "source_identifier": row.get("target_chembl_id", ""),
                 "sea_z_score": row.get("sea_z_score", ""), "sea_p_value": row.get("sea_p_value", ""),
                 "stp_probability": row.get("stp_probability", ""),
                 "target_name": row.get("target_name", ""), "uniprot_accession": row.get("uniprot_accession", ""),
             })
     predicted_df = pd.DataFrame(m_rows)
+    threshold_df = pd.DataFrame()
+    if not sea_df.empty and not stp_df.empty:
+        threshold_df = sea_df.merge(stp_df, on=["metabolite", "gene"], how="inner").copy()
+        tc = pd.to_numeric(threshold_df.get("query_known_hit_tanimoto"), errors="coerce").fillna(0)
+        prob = pd.to_numeric(threshold_df.get("stp_probability"), errors="coerce").fillna(0)
+        threshold_df["pass_relaxed"] = True
+        threshold_df["pass_medium"] = (tc >= 0.35) & (prob >= 0.05)
+        threshold_df["pass_strict"] = (tc >= 0.40) & (prob >= 0.10)
+        threshold_df["threshold_level"] = np.select([threshold_df["pass_strict"], threshold_df["pass_medium"]], ["strict", "medium"], default="relaxed")
+        threshold_df.to_csv(DATA / "M_阈值敏感性.csv", index=False, encoding="utf-8-sig")
     all_targets = pd.concat([h_df, predicted_df], ignore_index=True, sort=False)
     all_targets = all_targets.drop_duplicates(["metabolite", "gene", "evidence_level"])
 
@@ -188,6 +206,9 @@ def main() -> None:
         "main_M_genes": int(main_targets["gene"].nunique()) if not main_targets.empty else 0,
         "full_M_genes": int(full_targets["gene"].nunique()) if not full_targets.empty else 0,
         "sea_batch_files": len(sea_files), "stp_filtered_files": len(stp_files),
+        "threshold_relaxed_edges": int(threshold_df.get("pass_relaxed", pd.Series(dtype=bool)).sum()),
+        "threshold_medium_edges": int(threshold_df.get("pass_medium", pd.Series(dtype=bool)).sum()),
+        "threshold_strict_edges": int(threshold_df.get("pass_strict", pd.Series(dtype=bool)).sum()),
     }
     (DATA / "M_构建摘要.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2))

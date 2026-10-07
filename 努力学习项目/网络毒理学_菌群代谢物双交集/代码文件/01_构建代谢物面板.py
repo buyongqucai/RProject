@@ -31,6 +31,7 @@ ANCHORS = {
     "Deoxycholic Acid", "Lithocholic acid", "Cholic Acid",
     "Chenodeoxycholic acid", "Isodeoxycholic acid",
 }
+SPECIAL_NAMES = {"Hydrogen Sulfide", "H2S", "Lipopolysaccharide", "LPS"}
 SPECIAL_EXPOSURES = [
     {
         "exposure": "Lipopolysaccharide (LPS)",
@@ -272,6 +273,8 @@ def main() -> None:
         "H" if gene else ("M" if main else "S")
         for gene, main in zip(merged["in_gutmgene_gene_evidence"], merged["included_main"])
     ]
+    merged["special_exposure_excluded"] = merged["metabolite"].astype(str).str.casefold().isin({x.casefold() for x in SPECIAL_NAMES})
+    merged.loc[merged["special_exposure_excluded"], ["included_main", "in_full_sensitivity"]] = False
     merged = merged.sort_values(["included_main", "in_full_sensitivity", "metabolite"], ascending=[False, False, True])
     merged.to_csv(OUT_DIR / "代谢物面板_主分析与全库敏感性.csv", index=False, encoding="utf-8-sig")
 
