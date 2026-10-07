@@ -1,0 +1,63 @@
+﻿id,label,type,layer,score
+G::Eubacterium ramulus,Eubacterium ramulus,GutMicrobe,1,2.0
+G::Agathobacter rectalis,Agathobacter rectalis,GutMicrobe,1,1.0
+G::Anaerostipes hadrus,Anaerostipes hadrus,GutMicrobe,1,1.0
+G::Anaerobutyricum hallii,Anaerobutyricum hallii,GutMicrobe,1,1.0
+G::Bifidobacterium adolescentis,Bifidobacterium adolescentis,GutMicrobe,1,1.0
+G::Bifidobacterium longum,Bifidobacterium longum,GutMicrobe,1,1.0
+G::Butyricimonas synergistica,Butyricimonas synergistica,GutMicrobe,1,1.0
+G::Blautia,Blautia,GutMicrobe,1,1.0
+G::Candidatus Saccharimonas,Candidatus Saccharimonas,GutMicrobe,1,1.0
+G::Christensenella minuta,Christensenella minuta,GutMicrobe,1,1.0
+G::Clostridioides difficile,Clostridioides difficile,GutMicrobe,1,1.0
+G::Butyricimonas virosa,Butyricimonas virosa,GutMicrobe,1,1.0
+M::Butyrate,Butyrate,Metabolite,2,14.0
+M::2'-Deoxyadenosine,2'-Deoxyadenosine,Metabolite,2,5.0
+M::5'-Deoxyadenosine,5'-Deoxyadenosine,Metabolite,2,5.0
+M::Adenosine,Adenosine,Metabolite,2,5.0
+M::5'-Deoxy-5'-methylthioadenosine,5'-Deoxy-5'-methylthioadenosine,Metabolite,2,5.0
+M::4-Hydroxyphenylacetic acid,4-Hydroxyphenylacetic acid,Metabolite,2,5.0
+M::Guanosine-5'-monophosphate,Guanosine-5'-monophosphate,Metabolite,2,5.0
+M::Oleic Acid,Oleic Acid,Metabolite,2,5.0
+M::Cholic acid,Cholic acid,Metabolite,2,4.0
+M::Inosinic Acid,Inosinic Acid,Metabolite,2,4.0
+M::Chenodeoxycholic acid,Chenodeoxycholic acid,Metabolite,2,4.0
+M::Stearic Acid,Stearic Acid,Metabolite,2,3.0
+C::same8,quercetin,Compound,3,7.0
+C::ZLT1,cellulose,Compound,3,5.0
+C::same6,kaempferol,Compound,3,4.0
+C::XF23,3beta-Hydroxyurs-12-En-28-Syre,Compound,3,3.0
+C::ZLT2,tannins,Compound,3,3.0
+C::HL2,berberrubine,Compound,3,2.0
+C::HL4,Berlambine,Compound,3,2.0
+C::HQ25,rivularin,Compound,3,2.0
+C::HQ8,Salvigenin,Compound,3,2.0
+C::HQ18,"5,2'-Dihydroxy-6,7,8-trimethoxyflavone",Compound,3,2.0
+C::HL1,berberine,Compound,3,2.0
+C::HQ11,Skullcapflavone II,Compound,3,2.0
+T::HSPA5,HSPA5,Target,4,11.0
+T::NT5E,NT5E,Target,4,10.0
+T::MAP3K7,MAP3K7,Target,4,9.0
+T::ADA,ADA,Target,4,7.0
+T::EZH2,EZH2,Target,4,6.0
+T::LGALS3,LGALS3,Target,4,6.0
+T::RAC1,RAC1,Target,4,5.0
+T::DNMT1,DNMT1,Target,4,4.0
+T::PPARG,PPARG,Target,4,4.0
+T::NOS3,NOS3,Target,4,3.0
+T::PPARD,PPARD,Target,4,3.0
+T::NOS2,NOS2,Target,4,3.0
+T::CA9,CA9,Target,4,3.0
+T::PPARA,PPARA,Target,4,3.0
+T::NR3C1,NR3C1,Target,4,2.0
+T::CA2,CA2,Target,4,2.0
+P::hsa05417,Lipid and atherosclerosis,Pathway,5,24.0
+P::hsa05130,Pathogenic Escherichia coli infection,Pathway,5,16.0
+P::hsa05418,Fluid shear stress and atherosclerosis,Pathway,5,14.0
+P::hsa04933,AGE-RAGE signaling pathway in diabetic complications,Pathway,5,14.0
+P::hsa04657,IL-17 signaling pathway,Pathway,5,13.0
+P::hsa04932,Non-alcoholic fatty liver disease,Pathway,5,11.0
+P::hsa05133,Pertussis,Pathway,5,11.0
+P::hsa05132,Salmonella infection,Pathway,5,14.0
+P::hsa05144,Malaria,Pathway,5,9.0
+P::hsa05323,Rheumatoid arthritis,Pathway,5,11.0

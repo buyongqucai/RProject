@@ -1,0 +1,107 @@
+﻿source,target,edge_type,score
+G::Christensenella minuta,M::Butyrate,G_M,1.0
+G::Eubacterium ramulus,M::Butyrate,G_M,1.0
+G::Eubacterium ramulus,M::4-Hydroxyphenylacetic acid,G_M,1.0
+G::Anaerobutyricum hallii,M::Butyrate,G_M,1.0
+G::Agathobacter rectalis,M::Butyrate,G_M,1.0
+G::Butyricimonas virosa,M::Butyrate,G_M,1.0
+G::Butyricimonas synergistica,M::Butyrate,G_M,1.0
+G::Blautia,M::Butyrate,G_M,1.0
+G::Candidatus Saccharimonas,M::Oleic Acid,G_M,1.0
+G::Bifidobacterium longum,M::Butyrate,G_M,1.0
+G::Bifidobacterium adolescentis,M::Butyrate,G_M,1.0
+G::Anaerostipes hadrus,M::Butyrate,G_M,1.0
+G::Clostridioides difficile,M::Butyrate,G_M,1.0
+M::Oleic Acid,T::PPARG,M_T,3.2829651998
+M::Oleic Acid,T::PPARA,M_T,3.2829651998
+M::Oleic Acid,T::PPARD,M_T,3.2829651998
+M::Adenosine,T::MAP3K7,M_T,3.2449200475
+M::Stearic Acid,T::PPARA,M_T,3.2256391623
+M::Stearic Acid,T::PPARD,M_T,3.2256391623
+M::Stearic Acid,T::PPARG,M_T,3.2190308549687066
+M::Adenosine,T::HSPA5,M_T,3.212348163828597
+M::Adenosine,T::ADA,M_T,3.209448020515628
+M::5'-Deoxyadenosine,T::MAP3K7,M_T,3.1972241772933137
+M::Guanosine-5'-monophosphate,T::RAC1,M_T,3.192604714951055
+M::2'-Deoxyadenosine,T::MAP3K7,M_T,3.1719421433207806
+M::5'-Deoxyadenosine,T::HSPA5,M_T,3.1538548006751443
+M::5'-Deoxy-5'-methylthioadenosine,T::EZH2,M_T,3.1510173242849384
+M::5'-Deoxyadenosine,T::ADA,M_T,3.1465630929475736
+M::Guanosine-5'-monophosphate,T::NT5E,M_T,3.133850097949974
+M::2'-Deoxyadenosine,T::HSPA5,M_T,3.095833111985104
+M::2'-Deoxyadenosine,T::ADA,M_T,3.088844319949686
+M::Inosinic Acid,T::RAC1,M_T,3.0735962702683928
+M::Butyrate,T::PPARG,M_T,3.0711553945
+M::5'-Deoxy-5'-methylthioadenosine,T::DNMT1,M_T,3.025147039446297
+M::5'-Deoxy-5'-methylthioadenosine,T::MAP3K7,M_T,3.006899111483281
+M::Chenodeoxycholic acid,T::NR3C1,M_T,3.0064084859965927
+M::5'-Deoxyadenosine,T::EZH2,M_T,2.9752464928552853
+M::Adenosine,T::EZH2,M_T,2.95285354869021
+M::4-Hydroxyphenylacetic acid,T::CA2,M_T,2.9255153625227086
+M::Adenosine,T::NT5E,M_T,2.8950505172644756
+M::2'-Deoxyadenosine,T::EZH2,M_T,2.894195592681097
+M::5'-Deoxy-5'-methylthioadenosine,T::HSPA5,M_T,2.8883122111528303
+M::Inosinic Acid,T::NT5E,M_T,2.882655322621983
+M::Cholic acid,T::NR3C1,M_T,2.8781656659118187
+M::5'-Deoxyadenosine,T::NT5E,M_T,2.839309017835653
+M::5'-Deoxy-5'-methylthioadenosine,T::ADA,M_T,2.7716421726986047
+M::Guanosine-5'-monophosphate,T::MAP3K7,M_T,2.7676118644778147
+M::Guanosine-5'-monophosphate,T::HSPA5,M_T,2.7676118644778147
+M::Inosinic Acid,T::MAP3K7,M_T,2.7333707556283247
+M::Inosinic Acid,T::HSPA5,M_T,2.7333707556283247
+M::2'-Deoxyadenosine,T::NT5E,M_T,2.7273412789336753
+C::HL1,T::NOS2,C_T,1.0
+C::HL1,T::NOS3,C_T,1.0
+C::HL2,T::NOS2,C_T,1.0
+C::HL2,T::NOS3,C_T,1.0
+C::HL4,T::NOS2,C_T,1.0
+C::HL4,T::NOS3,C_T,1.0
+C::same8,T::NOS3,C_T,1.0
+C::same8,T::MAP3K7,C_T,1.0
+C::same8,T::HSPA5,C_T,1.0
+C::same8,T::PPARG,C_T,1.0
+C::same8,T::PPARA,C_T,1.0
+C::same8,T::PPARD,C_T,1.0
+C::same6,T::NOS2,C_T,1.0
+C::same6,T::NOS3,C_T,1.0
+C::same6,T::MAP3K7,C_T,1.0
+C::same6,T::PPARG,C_T,1.0
+C::HQ8,T::NOS2,C_T,1.0
+C::HQ8,T::NOS3,C_T,1.0
+C::HQ11,T::NOS2,C_T,1.0
+C::HQ11,T::NOS3,C_T,1.0
+C::HQ18,T::NOS2,C_T,1.0
+C::HQ18,T::NOS3,C_T,1.0
+C::HQ25,T::NOS2,C_T,1.0
+C::HQ25,T::NOS3,C_T,1.0
+C::same8,T::NOS2,C_T,1.0
+C::XF23,T::DNMT1,C_T,1.0
+C::XF23,T::EZH2,C_T,1.0
+C::XF23,T::NR3C1,C_T,1.0
+C::ZLT1,T::LGALS3,C_T,1.0
+C::ZLT1,T::CA9,C_T,1.0
+C::ZLT1,T::CA2,C_T,1.0
+C::ZLT1,T::NR3C1,C_T,1.0
+C::ZLT1,T::PPARG,C_T,1.0
+C::ZLT2,T::LGALS3,C_T,1.0
+C::ZLT2,T::NT5E,C_T,1.0
+C::ZLT2,T::CA2,C_T,1.0
+T::MAP3K7,P::hsa05417,T_P,1.0
+T::PPARG,P::hsa05417,T_P,1.0
+T::NOS3,P::hsa05417,T_P,1.0
+T::RAC1,P::hsa05417,T_P,1.0
+T::HSPA5,P::hsa05417,T_P,1.0
+T::MAP3K7,P::hsa05130,T_P,1.0
+T::RAC1,P::hsa05130,T_P,1.0
+T::MAP3K7,P::hsa05418,T_P,1.0
+T::NOS3,P::hsa05418,T_P,1.0
+T::RAC1,P::hsa05418,T_P,1.0
+T::NOS3,P::hsa04933,T_P,1.0
+T::RAC1,P::hsa04933,T_P,1.0
+T::MAP3K7,P::hsa04657,T_P,1.0
+T::PPARG,P::hsa04932,T_P,1.0
+T::RAC1,P::hsa04932,T_P,1.0
+T::PPARA,P::hsa04932,T_P,1.0
+T::NOS2,P::hsa05133,T_P,1.0
+T::MAP3K7,P::hsa05132,T_P,1.0
+T::RAC1,P::hsa05132,T_P,1.0
