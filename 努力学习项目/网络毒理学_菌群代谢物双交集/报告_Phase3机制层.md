@@ -9,7 +9,7 @@
 - STRING：Homo sapiens，combined score ≥ 0.9。
 - 主面板 PPI：52 个节点、90 条边。
 - 全库敏感性 PPI：104 个节点、318 条边。
-- 去孤立点后绘图；Degree 同时映射颜色和节点大小。
+- 去孤立点后按网络药理学技能的同心 Degree 画法重绘：5 层环、outer_frac=0.54、Degree 同时映射颜色和节点大小、全部节点标注。
 - CytoHubba 式 MCC-like 排序采用透明的 `Degree × local triangles` 指标，最高为 IL1B、TNF、IL6、JUN。由于本机无 Cytoscape/cytoHubba GUI，报告中不冒充官方插件原始分值。
 - MCODE-compatible 模块检测按 BaderLab/MCODEAlgorithm 参数实现：degree cutoff=2、k-core=2、node score cutoff=0.2、haircut=true、fluff=false。得到 2 个 ≥3 节点模块：
   1. 炎症/趋化模块：JUN、IL1B、TNF、IL6、CCL2、CXCL8、ICAM1、MMP9、TLR4、IL10。
@@ -47,7 +47,7 @@
 | KEGG 富集 | PASS |
 | G-M-C-T-P 五层网络 | PASS |
 | PPI MCC-like 核心靶点条形图 | PASS |
-| Top PPI hub network（20节点/54边） | PASS |
+| Top PPI hub network（完整PPI中Top20 hubs） | PASS |
 | 机制层组合图 | PASS |
 
 ## 5. 结论边界
