@@ -1,0 +1,7 @@
+﻿metabolite,group,status,direction_context,pubchem_cid,canonical_smiles,gmmad2_abundance_direction,note
+Acetate,SCFA,beneficial_candidate,context dependent,175.0,CC(=O)[O-],Increase,"beneficial/harmful labels are downstream annotations, not entry filters"
+Propionate,SCFA,beneficial_candidate,context dependent,104745.0,CCC(=O)[O-],Increase,"beneficial/harmful labels are downstream annotations, not entry filters"
+Butyrate,SCFA,beneficial_candidate,context dependent,104775.0,CCCC(=O)[O-],Increase,"beneficial/harmful labels are downstream annotations, not entry filters"
+Indole,tryptophan/indole,beneficial_candidate,receptor/dose dependent,798.0,C1=CC=C2C(=C1)C=CN2,Increase,"beneficial/harmful labels are downstream annotations, not entry filters"
+Indole-3-acetic acid,tryptophan/indole,beneficial_candidate,receptor/dose dependent,802.0,C1=CC=C2C(=C1)C(=CN2)CC(=O)O,Increase,"beneficial/harmful labels are downstream annotations, not entry filters"
+3-Indolepropionic acid,tryptophan/indole,beneficial_candidate,receptor/dose dependent,3744.0,C1=CC=C2C(=C1)C(=CN2)CCC(=O)O,Increase,"beneficial/harmful labels are downstream annotations, not entry filters"
