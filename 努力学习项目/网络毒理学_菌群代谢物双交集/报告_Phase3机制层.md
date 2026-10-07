@@ -20,7 +20,7 @@
 富集背景使用 UC D 集映射到 Entrez 后的 1,499 个背景基因；查询集 78/78 映射成功。
 
 - GO：180 条显著条目。
-- KEGG：24 条显著条目。
+- KEGG：24 条显著条目。独立 KEGG 图展示全部 24 条，并对长通路名换行、扩大画布和坐标边距。
 - 主要 KEGG：Lipid and atherosclerosis、Pathogenic E. coli infection、Fluid shear stress and atherosclerosis、AGE-RAGE、IL-17 signaling 等。
 - GO 主要涉及脂质反应、含氧化合物反应、核受体/类固醇受体活性、金属肽酶活性等。
 
@@ -37,7 +37,7 @@
 
 ## 4. 图件与 PlotQA
 
-均输出同名 PNG+SVG，图面 English，DPI=600。
+均输出同名 PNG+SVG，图面 English，DPI=600。机制层组合图中的 KEGG 为 Top20 摘要；完整 24 条以独立 KEGG 图为准。
 
 | 图件 | PlotQA |
 |---|---|
@@ -47,6 +47,7 @@
 | KEGG 富集 | PASS |
 | G-M-C-T-P 五层网络 | PASS |
 | PPI MCC-like 核心靶点条形图 | PASS |
+| Top PPI hub network（20节点/54边） | PASS |
 | 机制层组合图 | PASS |
 
 ## 5. 结论边界
