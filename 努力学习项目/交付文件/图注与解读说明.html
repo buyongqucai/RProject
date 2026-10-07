@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>溃疡性结肠炎 · 网络药理学交付报告</title>
 <style>
 :root {
@@ -158,600 +159,545 @@ footer { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top
 </head>
 <body>
 <div class="wrap">
-  <nav class="toc" aria-label="目录">
-    <p class="brand">交付图注报告</p>
-    <span class="status">PENDING_USER_REVIEW</span>
-    <a href="#overview">0. 关键统计总览</a><a href="#bio">生物学结论提纲</a><a href="#venn">1. 韦恩图</a><a href="#extra">2. 补充柱状 / UpSet / 热图</a><a href="#enrich">3. 富集分析</a><a href="#network">4. 网络与 PPI</a><a href="#kegg">5. KEGG 官方通路图</a><a href="#data">6. 数据与写作</a>
-    <hr style="border:none;border-top:1px solid var(--line);margin:12px 0;" />
-    <a href="报告/图注与解读说明.md" target="_blank">Markdown 原文</a>
-    <a href="报告/_stats.json" target="_blank">统计 JSON</a>
-  </nav>
-  <main>
-    <header class="hero">
-      <h1>溃疡性结肠炎 · 网络药理学交付报告</h1>
-      <p>以 12 味药（肉桂靶点为 0）筛选有效成分与疾病靶点交集，构建药–成分–靶点–通路（HCTP）与 PPI，并做 GO/KEGG 富集。本页汇总<strong>关键统计</strong>、<strong>读图方法</strong>与<strong>生物学意义</strong>，数字来自 <code>数据/</code> 实时汇总。图片路径均为相对本目录的 <code>图片/...</code>，请<strong>打包整个「交付文件」文件夹</strong>发送，勿只发单个 HTML。</p>
-      <div class="meta-row">
-        <span class="chip">交集 291 基因 · KEGG 183 项 · HCTP 边 1929</span>
-        <span class="chip"><a href="README_轨B说明.txt">轨 B README</a></span>
-        <span class="chip"><a href="数据/富集分析/KEGG.csv">KEGG.csv</a></span>
-        <span class="chip">分享：整夹打包 → 打开本 HTML</span>
-      </div>
-    </header>
-
-    <section id="overview">
-      <h2>0. 关键统计总览</h2>
-      <p class="blurb">可直接写入结果部分的「规模数字」。刷新报告会自动重算。</p>
-      <div class="metrics"><div class="metric"><div class="metric-val">291</div><div class="metric-lab">药病交集靶点</div><div class="metric-sub">下游网络/富集核心输入</div></div><div class="metric"><div class="metric-val">636</div><div class="metric-lab">药物靶点并集</div><div class="metric-sub">占交集 45.8%</div></div><div class="metric"><div class="metric-val">1517</div><div class="metric-lab">疾病基因并集</div><div class="metric-sub">交集占病 19.2%</div></div><div class="metric"><div class="metric-val">130</div><div class="metric-lab">有效成分数</div><div class="metric-sub">进入成分层筛选</div></div><div class="metric"><div class="metric-val">1929</div><div class="metric-lab">HCTP 边数</div><div class="metric-sub">A12/B118/C290/D20</div></div><div class="metric"><div class="metric-val">183</div><div class="metric-lab">KEGG 通路项</div><div class="metric-sub">padj&lt;0.05：183</div></div><div class="metric"><div class="metric-val">3603</div><div class="metric-lab">GO 条目</div><div class="metric-sub">BP/CC/MF 合并表</div></div><div class="metric"><div class="metric-val">1308 / 261</div><div class="metric-lab">PPI 边 / 蛋白</div><div class="metric-sub">STRING 高分互作</div></div></div>
-      <div class="callout">
-        <p><strong>数据观看入口：</strong></p>
-        <ul>
-          <li><code>数据/疾病/</code> — 多库疾病基因与并集</li>
-          <li><code>数据/药物/</code> — 全药/单药靶点、药病交集、成分边与重命名</li>
-          <li><code>数据/网络图/</code> — <code>network.csv</code> / <code>type.csv</code>（A/B/C/D）</li>
-          <li><code>数据/富集分析/</code> — <code>KEGG.csv</code>、<code>BPCCMF.csv</code>（含 geneID）</li>
-          <li><code>数据/PPI/</code> — STRING 高分互作边</li>
-          <li><code>图片/KEGG官方通路图/</code> — Top20 官方通路地图</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="bio">
-      <h2>生物学结论提纲（写作可用）</h2>
-      <ol class="bio-box">
-        <li><strong>靶点层面：</strong>方剂药物靶点 636 与疾病基因 1517
+<nav aria-label="目录" class="toc">
+<p class="brand">交付图注报告</p>
+<span class="status">PENDING_USER_REVIEW</span>
+<a href="#overview">0. 关键统计总览</a><a href="#bio">生物学结论提纲</a><a href="#venn">1. 韦恩图</a><a href="#extra">2. 补充柱状 / UpSet / 热图</a><a href="#enrich">3. 富集分析</a><a href="#network">4. 网络与 PPI</a><a href="#kegg">5. KEGG 官方通路图</a><a href="#data">6. 数据与写作</a>
+<hr style="border:none;border-top:1px solid var(--line);margin:12px 0;"/>
+<a href="报告/图注与解读说明.md" target="_blank">Markdown 原文</a>
+<a href="报告/_stats.json" target="_blank">统计 JSON</a>
+</nav>
+<main>
+<header class="hero">
+<h1>溃疡性结肠炎 · 网络药理学交付报告</h1>
+<p>以 12 味药（肉桂靶点为 0）筛选有效成分与疾病靶点交集，构建药–成分–靶点–通路（HCTP）与 PPI，并做 GO/KEGG 富集。本页汇总<strong>关键统计</strong>、<strong>读图方法</strong>与<strong>生物学意义</strong>，数字来自 <code>数据/</code> 实时汇总。图片路径均为相对本目录的 <code>图片/...</code>，请<strong>打包整个「交付文件」文件夹</strong>发送，勿只发单个 HTML。</p>
+<div class="meta-row">
+<span class="chip">交集 291 基因 · KEGG 183 项 · HCTP 边 1929</span>
+<span class="chip"><a href="README_轨B说明.txt">轨 B README</a></span>
+<span class="chip"><a href="数据/富集分析/KEGG.csv">KEGG.csv</a></span>
+<span class="chip">分享：整夹打包 → 打开本 HTML</span>
+</div>
+</header>
+<section id="overview">
+<h2>0. 关键统计总览</h2>
+<p class="blurb">可直接写入结果部分的「规模数字」。刷新报告会自动重算。</p>
+<div class="metrics"><div class="metric"><div class="metric-val">291</div><div class="metric-lab">药病交集靶点</div><div class="metric-sub">下游网络/富集核心输入</div></div><div class="metric"><div class="metric-val">636</div><div class="metric-lab">药物靶点并集</div><div class="metric-sub">占交集 45.8%</div></div><div class="metric"><div class="metric-val">1517</div><div class="metric-lab">疾病基因并集</div><div class="metric-sub">交集占病 19.2%</div></div><div class="metric"><div class="metric-val">130</div><div class="metric-lab">有效成分数</div><div class="metric-sub">进入成分层筛选</div></div><div class="metric"><div class="metric-val">1929</div><div class="metric-lab">HCTP 边数</div><div class="metric-sub">A12/B118/C290/D20</div></div><div class="metric"><div class="metric-val">183</div><div class="metric-lab">KEGG 通路项</div><div class="metric-sub">padj&lt;0.05：183</div></div><div class="metric"><div class="metric-val">3603</div><div class="metric-lab">GO 条目</div><div class="metric-sub">BP/CC/MF 合并表</div></div><div class="metric"><div class="metric-val">1308 / 261</div><div class="metric-lab">PPI 边 / 蛋白</div><div class="metric-sub">STRING 高分互作</div></div></div>
+<div class="callout">
+<p><strong>数据观看入口：</strong></p>
+<ul>
+<li><code>数据/疾病/</code> — 多库疾病基因与并集</li>
+<li><code>数据/药物/</code> — 全药/单药靶点、药病交集、成分边与重命名</li>
+<li><code>数据/网络图/</code> — <code>network.csv</code> / <code>type.csv</code>（A/B/C/D）</li>
+<li><code>数据/富集分析/</code> — <code>KEGG.csv</code>、<code>BPCCMF.csv</code>（含 geneID）</li>
+<li><code>数据/PPI/</code> — STRING 高分互作边</li>
+<li><code>图片/KEGG官方通路图/</code> — Top20 官方通路地图</li>
+</ul>
+</div>
+</section>
+<section id="bio">
+<h2>生物学结论提纲（写作可用）</h2>
+<ol class="bio-box">
+<li><strong>靶点层面：</strong>方剂药物靶点 636 与疾病基因 1517
           交集得到 <strong>291</strong> 个候选靶点
           （占药靶 45.8%），提示存在可观的疾病相关分子重叠。</li>
-        <li><strong>药味贡献：</strong>交集靶点领先药味为 香附（交集230）、淫羊藿（交集99）、黄连（交集86）；
+<li><strong>药味贡献：</strong>交集靶点领先药味为 香附（交集230）、淫羊藿（交集99）、黄连（交集86）；
           肉桂当前靶点为 0，讨论时注明数据来源限制。</li>
-        <li><strong>成分协同：</strong>约 130 个有效成分进入分析，
+<li><strong>成分协同：</strong>约 130 个有效成分进入分析，
           UpSet 中共享成分（same*）支持多药协同，独有成分支持药味特异性。</li>
-        <li><strong>通路层面：</strong>KEGG 显著富集项丰富（n=183）。
+<li><strong>通路层面：</strong>KEGG 显著富集项丰富（n=183）。
           与 UC 更直接相关的优先讨论：<em>IL-17、TNF、TLR、HIF-1、PI3K-Akt</em>；
           感染/肿瘤类通路多反映共享炎症模块，避免过度因果表述。</li>
-        <li><strong>网络叙事：</strong>HCTP（A12/B118/C290/D20）
+<li><strong>网络叙事：</strong>HCTP（A12/B118/C290/D20）
           与桑基展示「药→成分→靶→通路」流量；PPI（1308 边 /
           261 蛋白）突出枢纽蛋白互作。</li>
-        <li><strong>局限：</strong>本分析为预测性网络药理学证据，需细胞/动物实验与临床文献交叉验证；
+<li><strong>局限：</strong>本分析为预测性网络药理学证据，需细胞/动物实验与临床文献交叉验证；
           KEGG 官方图仅作通路定位，不替代统计富集图。</li>
-      </ol>
-    </section>
-
-    
+</ol>
+</section>
 <section id="venn">
-  <h2>1. 韦恩图</h2>
-  <p class="blurb">先看疾病多库与药病交集规模，确定下游输入。</p>
-  <div class='callout'><p><strong>关键数字：</strong>疾病并集 1517；药物靶点 636；<em>药病交集 291</em>（占药靶 45.8%，占病基 19.2%）。中间交集是后续网络与富集的核心基因集。</p><p><strong>生物学意义：</strong>交集靶点提示方剂成分可能直接扰动 UC 相关分子；独有药物靶点可能为脱靶/其他适应症信号，独有疾病基因则尚未被本方成分覆盖。</p>
+<h2>1. 韦恩图</h2>
+<p class="blurb">先看疾病多库与药病交集规模，确定下游输入。</p>
+<div class="callout"><p><strong>关键数字：</strong>疾病并集 1517；药物靶点 636；<em>药病交集 291</em>（占药靶 45.8%，占病基 19.2%）。中间交集是后续网络与富集的核心基因集。</p><p><strong>生物学意义：</strong>交集靶点提示方剂成分可能直接扰动 UC 相关分子；独有药物靶点可能为脱靶/其他适应症信号，独有疾病基因则尚未被本方成分覆盖。</p>
 <div class="callout warn">
-  <p><strong>常见疑问：GeneCards 明明有 7720，为什么下游疾病只有 1517、药病交集只有 291？</strong></p>
-  <p>这不是算错，而是<strong>两套口径 + 一次药病交集</strong>：</p>
-  <ol>
-    <li><strong>多库韦恩图</strong>故意用 GeneCards <em>全量导出</em>（7720），展示各库覆盖广度。</li>
-    <li><strong>下游网络/富集</strong>对 GeneCards 做 Relevance Score ≥ 40.0 过滤 → 约 <strong>1451</strong> 个高相关基因，再与 TTD/DrugBank/OMIM/CTD 取并集得到疾病并集 <strong>1517</strong>。全量 GeneCards 噪声大（弱相关基因极多），不过滤会稀释富集与 PPI，反而不严谨。</li>
-    <li><strong>药病交集 291</strong> = 药物靶点并集（636）∩ 疾病并集（1517），不是「GeneCards 全量自己与自己交集」。交集变小是因为分子集合不同：方剂靶点有限，不可能覆盖全部疾病基因。</li>
-  </ol>
+<p><strong>常见疑问：GeneCards 明明有 7720，为什么下游疾病只有 1517、药病交集只有 291？</strong></p>
+<p>这不是算错，而是<strong>两套口径 + 一次药病交集</strong>：</p>
+<ol>
+<li><strong>多库韦恩图</strong>故意用 GeneCards <em>全量导出</em>（7720），展示各库覆盖广度。</li>
+<li><strong>下游网络/富集</strong>对 GeneCards 做 Relevance Score ≥ 40.0 过滤 → 约 <strong>1451</strong> 个高相关基因，再与 TTD/DrugBank/OMIM/CTD 取并集得到疾病并集 <strong>1517</strong>。全量 GeneCards 噪声大（弱相关基因极多），不过滤会稀释富集与 PPI，反而不严谨。</li>
+<li><strong>药病交集 291</strong> = 药物靶点并集（636）∩ 疾病并集（1517），不是「GeneCards 全量自己与自己交集」。交集变小是因为分子集合不同：方剂靶点有限，不可能覆盖全部疾病基因。</li>
+</ol>
 </div>
 <table>
-  <thead><tr><th>数据库</th><th>韦恩全量口径</th><th>下游过滤口径</th></tr></thead>
-  <tbody><tr><td>GeneCards</td><td>7720</td><td>1451</td></tr><tr><td>CTD</td><td>70</td><td>70</td></tr><tr><td>DrugBank</td><td>68</td><td>68</td></tr><tr><td>TTD</td><td>49</td><td>49</td></tr><tr><td>OMIM</td><td>3</td><td>3</td></tr></tbody>
+<thead><tr><th>数据库</th><th>韦恩全量口径</th><th>下游过滤口径</th></tr></thead>
+<tbody><tr><td>GeneCards</td><td>7720</td><td>1451</td></tr><tr><td>CTD</td><td>70</td><td>70</td></tr><tr><td>DrugBank</td><td>68</td><td>68</td></tr><tr><td>TTD</td><td>49</td><td>49</td></tr><tr><td>OMIM</td><td>3</td><td>3</td></tr></tbody>
 </table>
 <p class="note">技能规范：韦恩用 VennFull；下游交集/富集用 GeneCards Relevance≥40.0 ∪ 其他库（见 <code>疾病靶点按库_下游.csv</code> / <code>疾病靶点合并.csv</code>）。</p>
 </div>
-  <div class="grid">
+<div class="grid">
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/韦恩图/疾病数据库可视化韦恩图.png" target="_blank" rel="noopener"><img src="图片/韦恩图/疾病数据库可视化韦恩图.png" alt="疾病数据库可视化韦恩图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>疾病数据库可视化韦恩图</h3>
-    <p class="statline">全量口径示例：GeneCards=7720</p>
-    <p><span class="tag">含义</span>多库疾病基因集合关系（TTD / DrugBank / GeneCards / OMIM 等）</p>
-    <p><span class="tag how">怎么看</span>看各库独有与两两交集；GeneCards 通常远大于其他库。</p>
-    <p><span class="tag bio">生物学意义</span>多库交叉可提高疾病基因可信度；写作时说明并集/交集口径。</p>
-    
-    <p class="links"><a href="图片/韦恩图/疾病数据库可视化韦恩图.png" target="_blank">PNG</a> · <a href="图片/韦恩图/疾病数据库可视化韦恩图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/韦恩图/疾病数据库可视化韦恩图.png" rel="noopener" target="_blank"><img alt="疾病数据库可视化韦恩图" loading="lazy" src="图片/韦恩图/疾病数据库可视化韦恩图.png"/></a></div>
+<div class="card-body">
+<h3>疾病数据库可视化韦恩图</h3>
+<p class="statline">全量口径示例：GeneCards=7720</p>
+<p><span class="tag">含义</span>多库疾病基因集合关系（TTD / DrugBank / GeneCards / OMIM 等）</p>
+<p><span class="tag how">怎么看</span>看各库独有与两两交集；GeneCards 通常远大于其他库。</p>
+<p><span class="tag bio">生物学意义</span>多库交叉可提高疾病基因可信度；写作时说明并集/交集口径。</p>
+<p class="links"><a href="图片/韦恩图/疾病数据库可视化韦恩图.png" target="_blank">PNG</a> · <a href="图片/韦恩图/疾病数据库可视化韦恩图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
-
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/韦恩图/疾病药物交集韦恩图.png" target="_blank" rel="noopener"><img src="图片/韦恩图/疾病药物交集韦恩图.png" alt="疾病药物交集韦恩图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>疾病药物交集韦恩图</h3>
-    <p class="statline">Drugs=636 · Disease=1517 · ∩=291</p>
-    <p><span class="tag">含义</span>药物靶点并集 ∩ 疾病基因</p>
-    <p><span class="tag how">怎么看</span>中间数字即药病交集；两侧为各集合独有。</p>
-    <p><span class="tag bio">生物学意义</span>291 个交集基因是「可能介导疗效」的分子候选，进入 PPI/KEGG/HCTP。</p>
-    
-    <p class="links"><a href="图片/韦恩图/疾病药物交集韦恩图.png" target="_blank">PNG</a> · <a href="图片/韦恩图/疾病药物交集韦恩图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/韦恩图/疾病药物交集韦恩图.png" rel="noopener" target="_blank"><img alt="疾病药物交集韦恩图" loading="lazy" src="图片/韦恩图/疾病药物交集韦恩图.png"/></a></div>
+<div class="card-body">
+<h3>疾病药物交集韦恩图</h3>
+<p class="statline">Drugs=636 · Disease=1517 · ∩=291</p>
+<p><span class="tag">含义</span>药物靶点并集 ∩ 疾病基因</p>
+<p><span class="tag how">怎么看</span>中间数字即药病交集；两侧为各集合独有。</p>
+<p><span class="tag bio">生物学意义</span>291 个交集基因是「可能介导疗效」的分子候选，进入 PPI/KEGG/HCTP。</p>
+<p class="links"><a href="图片/韦恩图/疾病药物交集韦恩图.png" target="_blank">PNG</a> · <a href="图片/韦恩图/疾病药物交集韦恩图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
 </div>
 </section>
-
 <section id="extra">
-  <h2>2. 补充柱状 / UpSet / 热图</h2>
-  <p class="blurb">从单药、成分到通路覆盖，量化各方贡献。</p>
-  <div class='callout'><p><strong>药味：</strong>名义 12 味，有靶点 11 味；成分约 130 个；药–成分边 150。</p><p><strong>生物学意义：</strong>香附/淫羊藿/黄连等交集靶点多，提示其在方剂抗炎轴中贡献更大；肉桂靶点为 0，流量图中通常不可见，写作时需注明数据缺口而非「无作用」。UpSet 中 <code>same*</code> 为多药共享成分，常对应「君臣协同」的分子基础；热图显示各药对 Top 通路的靶点覆盖强度。</p><h4>单药 × 疾病交集</h4><table><thead><tr><th>药味</th><th>靶点数</th><th>与疾病交集</th></tr></thead><tbody><tr><td>香附</td><td>386</td><td><strong>230</strong></td></tr><tr><td>淫羊藿</td><td>192</td><td><strong>99</strong></td></tr><tr><td>黄连</td><td>158</td><td><strong>86</strong></td></tr><tr><td>棕榈炭</td><td>171</td><td><strong>68</strong></td></tr><tr><td>人参</td><td>96</td><td><strong>45</strong></td></tr><tr><td>黄芩</td><td>97</td><td><strong>43</strong></td></tr><tr><td>半夏</td><td>76</td><td><strong>29</strong></td></tr><tr><td>干姜</td><td>45</td><td><strong>18</strong></td></tr><tr><td>木香</td><td>30</td><td><strong>9</strong></td></tr><tr><td>茯苓</td><td>22</td><td><strong>7</strong></td></tr><tr><td>白术</td><td>19</td><td><strong>6</strong></td></tr><tr class="zero"><td>肉桂</td><td>0</td><td><strong>0</strong></td></tr></tbody></table></div>
-  <div class="grid">
+<h2>2. 补充柱状 / UpSet / 热图</h2>
+<p class="blurb">从单药、成分到通路覆盖，量化各方贡献。</p>
+<div class="callout"><p><strong>药味：</strong>名义 12 味，有靶点 11 味；成分约 130 个；药–成分边 150。</p><p><strong>生物学意义：</strong>香附/淫羊藿/黄连等交集靶点多，提示其在方剂抗炎轴中贡献更大；肉桂靶点为 0，流量图中通常不可见，写作时需注明数据缺口而非「无作用」。UpSet 中 <code>same*</code> 为多药共享成分，常对应「君臣协同」的分子基础；热图显示各药对 Top 通路的靶点覆盖强度。</p><h4>单药 × 疾病交集</h4><table><thead><tr><th>药味</th><th>靶点数</th><th>与疾病交集</th></tr></thead><tbody><tr><td>香附</td><td>386</td><td><strong>230</strong></td></tr><tr><td>淫羊藿</td><td>192</td><td><strong>99</strong></td></tr><tr><td>黄连</td><td>158</td><td><strong>86</strong></td></tr><tr><td>棕榈炭</td><td>171</td><td><strong>68</strong></td></tr><tr><td>人参</td><td>96</td><td><strong>45</strong></td></tr><tr><td>黄芩</td><td>97</td><td><strong>43</strong></td></tr><tr><td>半夏</td><td>76</td><td><strong>29</strong></td></tr><tr><td>干姜</td><td>45</td><td><strong>18</strong></td></tr><tr><td>木香</td><td>30</td><td><strong>9</strong></td></tr><tr><td>茯苓</td><td>22</td><td><strong>7</strong></td></tr><tr><td>白术</td><td>19</td><td><strong>6</strong></td></tr><tr class="zero"><td>肉桂</td><td>0</td><td><strong>0</strong></td></tr></tbody></table></div>
+<div class="grid">
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/补充_技能扩展/单药疾病交集柱状图.png" target="_blank" rel="noopener"><img src="图片/补充_技能扩展/单药疾病交集柱状图.png" alt="单药疾病交集柱状图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>单药疾病交集柱状图</h3>
-    
-    <p><span class="tag">含义</span>各味药与疾病交集基因数</p>
-    <p><span class="tag how">怎么看</span>柱越高，该药贡献的交集靶点越多。</p>
-    <p><span class="tag bio">生物学意义</span>识别「主贡献药味」，用于讨论方剂配伍中的核心药。</p>
-    
-    <p class="links"><a href="图片/补充_技能扩展/单药疾病交集柱状图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/单药疾病交集柱状图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/补充_技能扩展/单药疾病交集柱状图.png" rel="noopener" target="_blank"><img alt="单药疾病交集柱状图" loading="lazy" src="图片/补充_技能扩展/单药疾病交集柱状图.png"/></a></div>
+<div class="card-body">
+<h3>单药疾病交集柱状图</h3>
+<p><span class="tag">含义</span>各味药与疾病交集基因数</p>
+<p><span class="tag how">怎么看</span>柱越高，该药贡献的交集靶点越多。</p>
+<p><span class="tag bio">生物学意义</span>识别「主贡献药味」，用于讨论方剂配伍中的核心药。</p>
+<p class="links"><a href="图片/补充_技能扩展/单药疾病交集柱状图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/单药疾病交集柱状图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
-
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/补充_技能扩展/成分疾病交集柱状图.png" target="_blank" rel="noopener"><img src="图片/补充_技能扩展/成分疾病交集柱状图.png" alt="成分疾病交集柱状图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>成分疾病交集柱状图</h3>
-    
-    <p><span class="tag">含义</span>成分层面的药病交集</p>
-    <p><span class="tag how">怎么看</span>识别枢纽成分（连接多个疾病靶点）。</p>
-    <p><span class="tag bio">生物学意义</span>枢纽成分是实验验证与质量标志物的优先候选。</p>
-    
-    <p class="links"><a href="图片/补充_技能扩展/成分疾病交集柱状图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/成分疾病交集柱状图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/补充_技能扩展/成分疾病交集柱状图.png" rel="noopener" target="_blank"><img alt="成分疾病交集柱状图" loading="lazy" src="图片/补充_技能扩展/成分疾病交集柱状图.png"/></a></div>
+<div class="card-body">
+<h3>成分疾病交集柱状图</h3>
+<p><span class="tag">含义</span>成分层面的药病交集</p>
+<p><span class="tag how">怎么看</span>识别枢纽成分（连接多个疾病靶点）。</p>
+<p><span class="tag bio">生物学意义</span>枢纽成分是实验验证与质量标志物的优先候选。</p>
+<p class="links"><a href="图片/补充_技能扩展/成分疾病交集柱状图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/成分疾病交集柱状图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
-
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/补充_技能扩展/成分疾病交集按药柱状图.png" target="_blank" rel="noopener"><img src="图片/补充_技能扩展/成分疾病交集按药柱状图.png" alt="成分疾病交集按药柱状图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>成分疾病交集按药柱状图</h3>
-    
-    <p><span class="tag">含义</span>按药分面的成分交集</p>
-    <p><span class="tag how">怎么看</span>看方剂内部差异与各药主导成分。</p>
-    <p><span class="tag bio">生物学意义</span>便于论证「某药主要通过某几类成分起效」。</p>
-    
-    <p class="links"><a href="图片/补充_技能扩展/成分疾病交集按药柱状图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/成分疾病交集按药柱状图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/补充_技能扩展/成分疾病交集按药柱状图.png" rel="noopener" target="_blank"><img alt="成分疾病交集按药柱状图" loading="lazy" src="图片/补充_技能扩展/成分疾病交集按药柱状图.png"/></a></div>
+<div class="card-body">
+<h3>成分疾病交集按药柱状图</h3>
+<p><span class="tag">含义</span>按药分面的成分交集</p>
+<p><span class="tag how">怎么看</span>看方剂内部差异与各药主导成分。</p>
+<p><span class="tag bio">生物学意义</span>便于论证「某药主要通过某几类成分起效」。</p>
+<p class="links"><a href="图片/补充_技能扩展/成分疾病交集按药柱状图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/成分疾病交集按药柱状图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
-
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/补充_技能扩展/GO_BPCCMF柱状图.png" target="_blank" rel="noopener"><img src="图片/补充_技能扩展/GO_BPCCMF柱状图.png" alt="GO_BPCCMF 柱状图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>GO_BPCCMF 柱状图</h3>
-    <p class="statline">GO 条目 n=3603</p>
-    <p><span class="tag">含义</span>GO 三大类富集条形</p>
-    <p><span class="tag how">怎么看</span>配合气泡图看功能主题（炎症、凋亡、信号转导等）。</p>
-    <p><span class="tag bio">生物学意义</span>共 3603 条 GO 记录；反映交集基因的功能分布。</p>
-    
-    <p class="links"><a href="图片/补充_技能扩展/GO_BPCCMF柱状图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/GO_BPCCMF柱状图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/补充_技能扩展/GO_BPCCMF柱状图.png" rel="noopener" target="_blank"><img alt="GO_BPCCMF 柱状图" loading="lazy" src="图片/补充_技能扩展/GO_BPCCMF柱状图.png"/></a></div>
+<div class="card-body">
+<h3>GO_BPCCMF 柱状图</h3>
+<p class="statline">GO 条目 n=3603</p>
+<p><span class="tag">含义</span>GO 三大类富集条形</p>
+<p><span class="tag how">怎么看</span>配合气泡图看功能主题（炎症、凋亡、信号转导等）。</p>
+<p><span class="tag bio">生物学意义</span>共 3603 条 GO 记录；反映交集基因的功能分布。</p>
+<p class="links"><a href="图片/补充_技能扩展/GO_BPCCMF柱状图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/GO_BPCCMF柱状图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
-
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/补充_技能扩展/药味成分交集UpSet图.png" target="_blank" rel="noopener"><img src="图片/补充_技能扩展/药味成分交集UpSet图.png" alt="药味成分交集 UpSet 图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>药味成分交集 UpSet 图</h3>
-    
-    <p><span class="tag">含义</span>多药成分集合交集</p>
-    <p><span class="tag how">怎么看</span>左侧 Set size；上方柱=特定交集；点阵=参与药味；same* 多为共享成分。</p>
-    <p><span class="tag bio">生物学意义</span>共享成分解释多药协同；独有成分解释药味特异性。</p>
-    
-    <p class="links"><a href="图片/补充_技能扩展/药味成分交集UpSet图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/药味成分交集UpSet图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/补充_技能扩展/药味成分交集UpSet图.png" rel="noopener" target="_blank"><img alt="药味成分交集 UpSet 图" loading="lazy" src="图片/补充_技能扩展/药味成分交集UpSet图.png"/></a></div>
+<div class="card-body">
+<h3>药味成分交集 UpSet 图</h3>
+<p><span class="tag">含义</span>多药成分集合交集</p>
+<p><span class="tag how">怎么看</span>左侧 Set size；上方柱=特定交集；点阵=参与药味；same* 多为共享成分。</p>
+<p><span class="tag bio">生物学意义</span>共享成分解释多药协同；独有成分解释药味特异性。</p>
+<p class="links"><a href="图片/补充_技能扩展/药味成分交集UpSet图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/药味成分交集UpSet图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
-
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/补充_技能扩展/药味通路覆盖热图.png" target="_blank" rel="noopener"><img src="图片/补充_技能扩展/药味通路覆盖热图.png" alt="药味通路覆盖热图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>药味通路覆盖热图</h3>
-    
-    <p><span class="tag">含义</span>药味 × Top20 通路的交集靶点覆盖</p>
-    <p><span class="tag how">怎么看</span>格子数字=经成分链到该通路的不同交集靶点数；颜色越深覆盖越强。</p>
-    <p><span class="tag bio">生物学意义</span>若多药同时深色覆盖 TNF/IL-17/TLR 等，支持「多成分–多靶点–炎症轴」叙事。</p>
-    
-    <p class="links"><a href="图片/补充_技能扩展/药味通路覆盖热图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/药味通路覆盖热图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/补充_技能扩展/药味通路覆盖热图.png" rel="noopener" target="_blank"><img alt="药味通路覆盖热图" loading="lazy" src="图片/补充_技能扩展/药味通路覆盖热图.png"/></a></div>
+<div class="card-body">
+<h3>药味通路覆盖热图</h3>
+<p><span class="tag">含义</span>药味 × Top20 通路的交集靶点覆盖</p>
+<p><span class="tag how">怎么看</span>格子数字=经成分链到该通路的不同交集靶点数；颜色越深覆盖越强。</p>
+<p><span class="tag bio">生物学意义</span>若多药同时深色覆盖 TNF/IL-17/TLR 等，支持「多成分–多靶点–炎症轴」叙事。</p>
+<p class="links"><a href="图片/补充_技能扩展/药味通路覆盖热图.png" target="_blank">PNG</a> · <a href="图片/补充_技能扩展/药味通路覆盖热图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
 </div>
 </section>
-
 <section id="enrich">
-  <h2>3. 富集分析</h2>
-  <p class="blurb">GO / KEGG：先看显著性与主题，再落到官方通路图。</p>
-  <div class='callout'><p><strong>KEGG：</strong>183 条通路项，其中 padj&lt;0.05 约 183 条。优先报告 IL-17、TNF、TLR、HIF-1、PI3K-Akt 等与 UC/黏膜免疫相关者；感染/肿瘤类通路常因共享 NF-κB、凋亡模块而富集，需谨慎表述。</p><h4>Top10 KEGG（按 pvalue）</h4><table class='kegg-table'><thead><tr><th>#</th><th>ID</th><th>通路</th><th>基因数</th><th>pvalue</th><th>padj</th><th>生物学解读提示</th></tr></thead><tbody><tr><td>1</td><td>hsa05417</td><td>Lipid and atherosclerosis</td><td>66</td><td>8.69e-51</td><td>2.53e-48</td><td class='bio-cell'>富集常因共享炎症/脂质代谢基因；解读时对照 UC 文献，勿直接等同动脉粥样硬化。</td></tr><tr><td>2</td><td>hsa04933</td><td>AGE-RAGE signaling pathway in diabetic complications</td><td>42</td><td>1.16e-38</td><td>1.69e-36</td><td class='bio-cell'>AGE-RAGE 常因炎症基因重叠出现；宜作交叉通路提示。</td></tr><tr><td>3</td><td>hsa05161</td><td>Hepatitis B</td><td>49</td><td>4.36e-37</td><td>4.23e-35</td><td class='bio-cell'>病毒感染通路多反映 NF-κB/凋亡等共享模块，非指肝炎病因。</td></tr><tr><td>4</td><td>hsa05167</td><td>Kaposi sarcoma-associated herpesvirus infection</td><td>52</td><td>2.61e-36</td><td>1.90e-34</td><td class='bio-cell'>同上，感染类通路多为共享信号模块富集。</td></tr><tr><td>5</td><td>hsa04657</td><td>IL-17 signaling pathway</td><td>39</td><td>7.14e-36</td><td>4.15e-34</td><td class='bio-cell'>IL-17 轴与肠道黏膜炎症、中性粒细胞募集密切相关，UC 常用讨论通路。</td></tr><tr><td>6</td><td>hsa04668</td><td>TNF signaling pathway</td><td>42</td><td>4.21e-35</td><td>2.04e-33</td><td class='bio-cell'>TNF 信号是 UC 病理与抗 TNF 治疗的核心轴。</td></tr><tr><td>7</td><td>hsa05205</td><td>Proteoglycans in cancer</td><td>50</td><td>4.41e-33</td><td>1.83e-31</td><td class='bio-cell'>肿瘤相关通路常因增殖/基质基因重叠；作旁证而非肿瘤结论。</td></tr><tr><td>8</td><td>hsa05418</td><td>Fluid shear stress and atherosclerosis</td><td>42</td><td>1.80e-31</td><td>6.56e-30</td><td class='bio-cell'>结合 geneID 与 UC 文献判断是否为共享炎症模块或疾病特异轴。</td></tr><tr><td>9</td><td>hsa05215</td><td>Prostate cancer</td><td>37</td><td>9.17e-31</td><td>2.97e-29</td><td class='bio-cell'>结合 geneID 与 UC 文献判断是否为共享炎症模块或疾病特异轴。</td></tr><tr><td>10</td><td>hsa04151</td><td>PI3K-Akt signaling pathway</td><td>60</td><td>1.27e-29</td><td>3.68e-28</td><td class='bio-cell'>PI3K-Akt 调控细胞存活、增殖与屏障相关信号。</td></tr></tbody></table></div>
-  <div class="grid">
+<h2>3. 富集分析</h2>
+<p class="blurb">GO / KEGG：先看显著性与主题，再落到官方通路图。</p>
+<div class="callout"><p><strong>KEGG：</strong>183 条通路项，其中 padj&lt;0.05 约 183 条。优先报告 IL-17、TNF、TLR、HIF-1、PI3K-Akt 等与 UC/黏膜免疫相关者；感染/肿瘤类通路常因共享 NF-κB、凋亡模块而富集，需谨慎表述。</p><h4>Top10 KEGG（按 pvalue）</h4><table class="kegg-table"><thead><tr><th>#</th><th>ID</th><th>通路</th><th>基因数</th><th>pvalue</th><th>padj</th><th>生物学解读提示</th></tr></thead><tbody><tr><td>1</td><td>hsa05417</td><td>Lipid and atherosclerosis</td><td>66</td><td>8.69e-51</td><td>2.53e-48</td><td class="bio-cell">富集常因共享炎症/脂质代谢基因；解读时对照 UC 文献，勿直接等同动脉粥样硬化。</td></tr><tr><td>2</td><td>hsa04933</td><td>AGE-RAGE signaling pathway in diabetic complications</td><td>42</td><td>1.16e-38</td><td>1.69e-36</td><td class="bio-cell">AGE-RAGE 常因炎症基因重叠出现；宜作交叉通路提示。</td></tr><tr><td>3</td><td>hsa05161</td><td>Hepatitis B</td><td>49</td><td>4.36e-37</td><td>4.23e-35</td><td class="bio-cell">病毒感染通路多反映 NF-κB/凋亡等共享模块，非指肝炎病因。</td></tr><tr><td>4</td><td>hsa05167</td><td>Kaposi sarcoma-associated herpesvirus infection</td><td>52</td><td>2.61e-36</td><td>1.90e-34</td><td class="bio-cell">同上，感染类通路多为共享信号模块富集。</td></tr><tr><td>5</td><td>hsa04657</td><td>IL-17 signaling pathway</td><td>39</td><td>7.14e-36</td><td>4.15e-34</td><td class="bio-cell">IL-17 轴与肠道黏膜炎症、中性粒细胞募集密切相关，UC 常用讨论通路。</td></tr><tr><td>6</td><td>hsa04668</td><td>TNF signaling pathway</td><td>42</td><td>4.21e-35</td><td>2.04e-33</td><td class="bio-cell">TNF 信号是 UC 病理与抗 TNF 治疗的核心轴。</td></tr><tr><td>7</td><td>hsa05205</td><td>Proteoglycans in cancer</td><td>50</td><td>4.41e-33</td><td>1.83e-31</td><td class="bio-cell">肿瘤相关通路常因增殖/基质基因重叠；作旁证而非肿瘤结论。</td></tr><tr><td>8</td><td>hsa05418</td><td>Fluid shear stress and atherosclerosis</td><td>42</td><td>1.80e-31</td><td>6.56e-30</td><td class="bio-cell">结合 geneID 与 UC 文献判断是否为共享炎症模块或疾病特异轴。</td></tr><tr><td>9</td><td>hsa05215</td><td>Prostate cancer</td><td>37</td><td>9.17e-31</td><td>2.97e-29</td><td class="bio-cell">结合 geneID 与 UC 文献判断是否为共享炎症模块或疾病特异轴。</td></tr><tr><td>10</td><td>hsa04151</td><td>PI3K-Akt signaling pathway</td><td>60</td><td>1.27e-29</td><td>3.68e-28</td><td class="bio-cell">PI3K-Akt 调控细胞存活、增殖与屏障相关信号。</td></tr></tbody></table></div>
+<div class="grid">
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/富集分析/BPCCMF气泡图.png" target="_blank" rel="noopener"><img src="图片/富集分析/BPCCMF气泡图.png" alt="BPCCMF 气泡图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>BPCCMF 气泡图</h3>
-    
-    <p><span class="tag">含义</span>GO BP/CC/MF 气泡</p>
-    <p><span class="tag how">怎么看</span>横轴富集程度/基因比，点大小=基因数，颜色=显著性。</p>
-    <p><span class="tag bio">生物学意义</span>BP 常出现炎症应答、凋亡、信号转导等主题，支撑机制讨论。</p>
-    
-    <p class="links"><a href="图片/富集分析/BPCCMF气泡图.png" target="_blank">PNG</a> · <a href="图片/富集分析/BPCCMF气泡图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/富集分析/BPCCMF气泡图.png" rel="noopener" target="_blank"><img alt="BPCCMF 气泡图" loading="lazy" src="图片/富集分析/BPCCMF气泡图.png"/></a></div>
+<div class="card-body">
+<h3>BPCCMF 气泡图</h3>
+<p><span class="tag">含义</span>GO BP/CC/MF 气泡</p>
+<p><span class="tag how">怎么看</span>横轴富集程度/基因比，点大小=基因数，颜色=显著性。</p>
+<p><span class="tag bio">生物学意义</span>BP 常出现炎症应答、凋亡、信号转导等主题，支撑机制讨论。</p>
+<p class="links"><a href="图片/富集分析/BPCCMF气泡图.png" target="_blank">PNG</a> · <a href="图片/富集分析/BPCCMF气泡图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
 
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/富集分析/KEGG棒棒糖图.png" target="_blank" rel="noopener"><img src="图片/富集分析/KEGG棒棒糖图.png" alt="KEGG 棒棒糖图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>KEGG 棒棒糖图</h3>
-    
-    <p><span class="tag">含义</span>通路富集排序</p>
-    <p><span class="tag how">怎么看</span>优先看 Top 通路名称与 p / p.adjust。</p>
-    <p><span class="tag bio">生物学意义</span>棒棒糖便于论文主图展示「最显著通路名单」。</p>
-    
-    <p class="links"><a href="图片/富集分析/KEGG棒棒糖图.png" target="_blank">PNG</a> · <a href="图片/富集分析/KEGG棒棒糖图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/富集分析/KEGG富集气泡图_Top30.png" rel="noopener" target="_blank"><img alt="KEGG 富集气泡图（Top30）" loading="lazy" src="图片/富集分析/KEGG富集气泡图_Top30.png"/></a></div>
+<div class="card-body">
+<h3>KEGG 富集气泡图（Top30）</h3>
+<p class="statline">完整显著通路表 n=183 · 展示 Top30</p>
+<p><span class="tag">含义</span>KEGG 通路富集气泡图</p>
+<p><span class="tag how">怎么看</span>通路名已换行；点大小=基因数，颜色=-log10(Padj)，坐标与边距完整显示。</p>
+<p><span class="tag bio">生物学意义</span>优先关注 IL-17、TNF、TLR、PI3K-Akt 等与 UC/炎症相关通路；其余感染/肿瘤通路视为共享炎症模块。</p>
+<p class="links"><a href="图片/富集分析/KEGG富集气泡图_Top30.png" target="_blank">PNG</a> · <a href="图片/富集分析/KEGG富集气泡图_Top30.svg" target="_blank">SVG</a></p>
+</div>
+</article><article class="card">
+<div class="card-media"><a class="thumb" href="图片/富集分析/KEGG棒棒糖图.png" rel="noopener" target="_blank"><img alt="KEGG 棒棒糖图" loading="lazy" src="图片/富集分析/KEGG棒棒糖图.png"/></a></div>
+<div class="card-body">
+<h3>KEGG 棒棒糖图</h3>
+<p><span class="tag">含义</span>通路富集排序</p>
+<p><span class="tag how">怎么看</span>优先看 Top 通路名称与 p / p.adjust。</p>
+<p><span class="tag bio">生物学意义</span>棒棒糖便于论文主图展示「最显著通路名单」。</p>
+<p class="links"><a href="图片/富集分析/KEGG棒棒糖图.png" target="_blank">PNG</a> · <a href="图片/富集分析/KEGG棒棒糖图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
-
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/富集分析/KEGG柱状图.png" target="_blank" rel="noopener"><img src="图片/富集分析/KEGG柱状图.png" alt="KEGG 柱状图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>KEGG 柱状图</h3>
-    
-    <p><span class="tag">含义</span>通路富集条形</p>
-    <p><span class="tag how">怎么看</span>与棒棒糖互补，便于比长度。</p>
-    <p><span class="tag bio">生物学意义</span>适合补充材料或并排比较基因数。</p>
-    
-    <p class="links"><a href="图片/富集分析/KEGG柱状图.png" target="_blank">PNG</a> · <a href="图片/富集分析/KEGG柱状图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/富集分析/KEGG柱状图.png" rel="noopener" target="_blank"><img alt="KEGG 柱状图" loading="lazy" src="图片/富集分析/KEGG柱状图.png"/></a></div>
+<div class="card-body">
+<h3>KEGG 柱状图</h3>
+<p><span class="tag">含义</span>通路富集条形</p>
+<p><span class="tag how">怎么看</span>与棒棒糖互补，便于比长度。</p>
+<p><span class="tag bio">生物学意义</span>适合补充材料或并排比较基因数。</p>
+<p class="links"><a href="图片/富集分析/KEGG柱状图.png" target="_blank">PNG</a> · <a href="图片/富集分析/KEGG柱状图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
-
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/富集分析/KEGG圈图.png" target="_blank" rel="noopener"><img src="图片/富集分析/KEGG圈图.png" alt="KEGG 圈图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>KEGG 圈图</h3>
-    
-    <p><span class="tag">含义</span>通路–基因弦图</p>
-    <p><span class="tag how">怎么看</span>外围扇区=通路/基因，弦=归属关系。</p>
-    <p><span class="tag bio">生物学意义</span>展示枢纽基因同时属于多条炎症相关通路。</p>
-    
-    <p class="links"><a href="图片/富集分析/KEGG圈图.png" target="_blank">PNG</a> · <a href="图片/富集分析/KEGG圈图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/富集分析/KEGG圈图.png" rel="noopener" target="_blank"><img alt="KEGG 圈图" loading="lazy" src="图片/富集分析/KEGG圈图.png"/></a></div>
+<div class="card-body">
+<h3>KEGG 圈图</h3>
+<p><span class="tag">含义</span>通路–基因弦图</p>
+<p><span class="tag how">怎么看</span>外围扇区=通路/基因，弦=归属关系。</p>
+<p><span class="tag bio">生物学意义</span>展示枢纽基因同时属于多条炎症相关通路。</p>
+<p class="links"><a href="图片/富集分析/KEGG圈图.png" target="_blank">PNG</a> · <a href="图片/富集分析/KEGG圈图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
 </div>
 </section>
-
 <section id="network">
-  <h2>4. 网络与 PPI</h2>
-  <p class="blurb">HCTP 四层网络 + 桑基流量 + STRING 互作。</p>
-  <div class='callout'><p><strong>HCTP 节点：</strong>药(A)=12，成分(B)=118，靶点(C)=290，通路(D)=20；边=1929。</p><p><strong>PPI：</strong>1308 条高分互作，涉及 261 个蛋白。</p><p><strong>生物学意义：</strong>网络把「药→成分→靶→通路」连成可讲述的作用轴；桑基带宽反映关联强度；PPI 中 Degree 高的蛋白（如 TNF、AKT1、NFKB1、STAT3 等常见炎症枢纽）是验证与机制深挖的优先节点。</p></div>
-  <div class="grid">
+<h2>4. 网络与 PPI</h2>
+<p class="blurb">HCTP 四层网络 + 桑基流量 + STRING 互作。</p>
+<div class="callout"><p><strong>HCTP 节点：</strong>药(A)=12，成分(B)=118，靶点(C)=290，通路(D)=20；边=1929。</p><p><strong>PPI：</strong>1308 条高分互作，涉及 261 个蛋白。</p><p><strong>生物学意义：</strong>网络把「药→成分→靶→通路」连成可讲述的作用轴；桑基带宽反映关联强度；PPI 中 Degree 高的蛋白（如 TNF、AKT1、NFKB1、STAT3 等常见炎症枢纽）是验证与机制深挖的优先节点。</p></div>
+<div class="grid">
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/网络图/药物有效成分疾病靶点通路网络图.png" target="_blank" rel="noopener"><img src="图片/网络图/药物有效成分疾病靶点通路网络图.png" alt="药物有效成分疾病靶点通路网络图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>药物有效成分疾病靶点通路网络图</h3>
-    <p class="statline">边=1929 · C靶=290 · D通路=20</p>
-    <p><span class="tag">含义</span>HCTP 四层网络</p>
-    <p><span class="tag how">怎么看</span>A 药 / B 成分 / C 靶 / D 通路；看枢纽靶点与 same*。</p>
-    <p><span class="tag bio">生物学意义</span>整体拓扑展示方剂多成分多靶点特征。</p>
-    
-    <p class="links"><a href="图片/网络图/药物有效成分疾病靶点通路网络图.png" target="_blank">PNG</a> · <a href="图片/网络图/药物有效成分疾病靶点通路网络图.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/网络图/药物有效成分疾病靶点通路网络图.png" rel="noopener" target="_blank"><img alt="药物有效成分疾病靶点通路网络图" loading="lazy" src="图片/网络图/药物有效成分疾病靶点通路网络图.png"/></a></div>
+<div class="card-body">
+<h3>药物有效成分疾病靶点通路网络图</h3>
+<p class="statline">边=1929 · C靶=290 · D通路=20</p>
+<p><span class="tag">含义</span>HCTP 四层网络</p>
+<p><span class="tag how">怎么看</span>A 药 / B 成分 / C 靶 / D 通路；看枢纽靶点与 same*。</p>
+<p><span class="tag bio">生物学意义</span>整体拓扑展示方剂多成分多靶点特征。</p>
+<p class="links"><a href="图片/网络图/药物有效成分疾病靶点通路网络图.png" target="_blank">PNG</a> · <a href="图片/网络图/药物有效成分疾病靶点通路网络图.svg" target="_blank">SVG</a></p>
+</div>
+</article>
+<article class="card">
+<div class="card-media"><a class="thumb" href="图片/网络图/药物有效成分疾病靶点通路网络图_椭圆布局.png" rel="noopener" target="_blank"><img alt="药物有效成分疾病靶点通路网络图（椭圆布局）" loading="lazy" src="图片/网络图/药物有效成分疾病靶点通路网络图_椭圆布局.png"/></a></div>
+<div class="card-body">
+<h3>药物有效成分疾病靶点通路网络图（椭圆布局）</h3>
+<p><span class="tag">含义</span>同网络的椭圆分层布局</p>
+<p><span class="tag how">怎么看</span>层次更清晰，便于答辩展示四层结构。</p>
+<p><span class="tag bio">生物学意义</span>适合作为方法学/结果主图展示「分层作用」。</p>
+<p class="links"><a href="图片/网络图/药物有效成分疾病靶点通路网络图_椭圆布局.png" target="_blank">PNG</a> · <a href="图片/网络图/药物有效成分疾病靶点通路网络图_椭圆布局.svg" target="_blank">SVG</a></p>
+</div>
+</article>
+<article class="card">
+<div class="card-media"><a class="thumb" href="图片/网络图/药成分靶点通路桑基图.png" rel="noopener" target="_blank"><img alt="药成分靶点通路桑基图" loading="lazy" src="图片/网络图/药成分靶点通路桑基图.png"/></a></div>
+<div class="card-body">
+<h3>药成分靶点通路桑基图</h3>
+<p><span class="tag">含义</span>筛选后的四层流量总览（Top 成分/靶/通路）</p>
+<p><span class="tag how">怎么看</span>带宽≈关联强度；色带随药味；分列着色。</p>
+<p><span class="tag bio">生物学意义</span>直观讲述主要流量是否汇入 TNF/IL-17 等炎症轴。</p>
+<p class="links"><a href="图片/网络图/药成分靶点通路桑基图.png" target="_blank">PNG</a> · <a href="图片/网络图/药成分靶点通路桑基图.svg" target="_blank">SVG</a></p>
+</div>
+</article>
+<article class="card">
+<div class="card-media"><a class="thumb" href="图片/网络图/筛选成分桑基图.png" rel="noopener" target="_blank"><img alt="筛选成分桑基图" loading="lazy" src="图片/网络图/筛选成分桑基图.png"/></a></div>
+<div class="card-body">
+<h3>筛选成分桑基图</h3>
+<p><span class="tag">含义</span>前 16 成分 4×4 分面</p>
+<p><span class="tag how">怎么看</span>每个子图一个成分：药→靶→通路。</p>
+<p><span class="tag bio">生物学意义</span>适合逐成分讲「作用轴」，对应实验验证设计。</p>
+<p class="links"><a href="图片/网络图/筛选成分桑基图.png" target="_blank">PNG</a> · <a href="图片/网络图/筛选成分桑基图.svg" target="_blank">SVG</a></p>
+</div>
+</article>
+<article class="card">
+<div class="card-media"><a class="thumb" href="图片/PPI/string_vector_graphic.png" rel="noopener" target="_blank"><img alt="STRING PPI（vector）" loading="lazy" src="图片/PPI/string_vector_graphic.png"/></a></div>
+<div class="card-body">
+<h3>STRING PPI（vector）</h3>
+<p class="statline">边=1308 · 蛋白=261</p>
+<p><span class="tag">含义</span>STRING 蛋白互作网络</p>
+<p><span class="tag how">怎么看</span>看互作紧密模块。</p>
+<p><span class="tag bio">生物学意义</span>模块化提示共调控的炎症/凋亡蛋白群。</p>
+<p class="links"><a href="图片/PPI/string_vector_graphic.png" target="_blank">PNG</a> · <a href="图片/PPI/string_vector_graphic.svg" target="_blank">SVG</a></p>
+</div>
 </article>
 
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/网络图/药物有效成分疾病靶点通路网络图_椭圆布局.png" target="_blank" rel="noopener"><img src="图片/网络图/药物有效成分疾病靶点通路网络图_椭圆布局.png" alt="药物有效成分疾病靶点通路网络图（椭圆布局）" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>药物有效成分疾病靶点通路网络图（椭圆布局）</h3>
-    
-    <p><span class="tag">含义</span>同网络的椭圆分层布局</p>
-    <p><span class="tag how">怎么看</span>层次更清晰，便于答辩展示四层结构。</p>
-    <p><span class="tag bio">生物学意义</span>适合作为方法学/结果主图展示「分层作用」。</p>
-    
-    <p class="links"><a href="图片/网络图/药物有效成分疾病靶点通路网络图_椭圆布局.png" target="_blank">PNG</a> · <a href="图片/网络图/药物有效成分疾病靶点通路网络图_椭圆布局.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/PPI/Top20_PPI核心网络.png" rel="noopener" target="_blank"><img alt="Top20 PPI 核心网络" loading="lazy" src="图片/PPI/Top20_PPI核心网络.png"/></a></div>
+<div class="card-body">
+<h3>Top20 PPI 核心网络</h3>
+<p class="statline">Top20 hubs · 99 条诱导子网络边</p>
+<p><span class="tag">含义</span>Degree 最高的 20 个蛋白及相互作用</p>
+<p><span class="tag how">怎么看</span>3 环同心布局；节点大小和颜色=Degree，所有标签完整显示。</p>
+<p><span class="tag bio">生物学意义</span>用于论文主图讨论 TNF/IL6/STAT3/AKT1/NFKB1 等核心炎症枢纽。</p>
+<p class="links"><a href="图片/PPI/Top20_PPI核心网络.png" target="_blank">PNG</a> · <a href="图片/PPI/Top20_PPI核心网络.svg" target="_blank">SVG</a></p>
+</div>
+</article><article class="card">
+<div class="card-media"><a class="thumb" href="图片/PPI/PPI渐变图.png" rel="noopener" target="_blank"><img alt="PPI 渐变图" loading="lazy" src="图片/PPI/PPI渐变图.png"/></a></div>
+<div class="card-body">
+<h3>PPI 渐变图</h3>
+<p><span class="tag">含义</span>同心/渐变布局 PPI</p>
+<p><span class="tag how">怎么看</span>突出核心与外围结构。</p>
+<p><span class="tag bio">生物学意义</span>核心圈蛋白优先作为 hub 讨论。</p>
+<p class="links"><a href="图片/PPI/PPI渐变图.png" target="_blank">PNG</a> · <a href="图片/PPI/PPI渐变图.svg" target="_blank">SVG</a></p>
+</div>
 </article>
-
 <article class="card">
-  <div class="card-media"><a class="thumb" href="图片/网络图/药成分靶点通路桑基图.png" target="_blank" rel="noopener"><img src="图片/网络图/药成分靶点通路桑基图.png" alt="药成分靶点通路桑基图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>药成分靶点通路桑基图</h3>
-    
-    <p><span class="tag">含义</span>筛选后的四层流量总览（Top 成分/靶/通路）</p>
-    <p><span class="tag how">怎么看</span>带宽≈关联强度；色带随药味；分列着色。</p>
-    <p><span class="tag bio">生物学意义</span>直观讲述主要流量是否汇入 TNF/IL-17 等炎症轴。</p>
-    
-    <p class="links"><a href="图片/网络图/药成分靶点通路桑基图.png" target="_blank">PNG</a> · <a href="图片/网络图/药成分靶点通路桑基图.svg" target="_blank">SVG</a></p>
-  </div>
-</article>
-
-<article class="card">
-  <div class="card-media"><a class="thumb" href="图片/网络图/筛选成分桑基图.png" target="_blank" rel="noopener"><img src="图片/网络图/筛选成分桑基图.png" alt="筛选成分桑基图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>筛选成分桑基图</h3>
-    
-    <p><span class="tag">含义</span>前 16 成分 4×4 分面</p>
-    <p><span class="tag how">怎么看</span>每个子图一个成分：药→靶→通路。</p>
-    <p><span class="tag bio">生物学意义</span>适合逐成分讲「作用轴」，对应实验验证设计。</p>
-    
-    <p class="links"><a href="图片/网络图/筛选成分桑基图.png" target="_blank">PNG</a> · <a href="图片/网络图/筛选成分桑基图.svg" target="_blank">SVG</a></p>
-  </div>
-</article>
-
-<article class="card">
-  <div class="card-media"><a class="thumb" href="图片/PPI/string_vector_graphic.png" target="_blank" rel="noopener"><img src="图片/PPI/string_vector_graphic.png" alt="STRING PPI（vector）" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>STRING PPI（vector）</h3>
-    <p class="statline">边=1308 · 蛋白=261</p>
-    <p><span class="tag">含义</span>STRING 蛋白互作网络</p>
-    <p><span class="tag how">怎么看</span>看互作紧密模块。</p>
-    <p><span class="tag bio">生物学意义</span>模块化提示共调控的炎症/凋亡蛋白群。</p>
-    
-    <p class="links"><a href="图片/PPI/string_vector_graphic.png" target="_blank">PNG</a> · <a href="图片/PPI/string_vector_graphic.svg" target="_blank">SVG</a></p>
-  </div>
-</article>
-
-<article class="card">
-  <div class="card-media"><a class="thumb" href="图片/PPI/PPI渐变图.png" target="_blank" rel="noopener"><img src="图片/PPI/PPI渐变图.png" alt="PPI 渐变图" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>PPI 渐变图</h3>
-    
-    <p><span class="tag">含义</span>同心/渐变布局 PPI</p>
-    <p><span class="tag how">怎么看</span>突出核心与外围结构。</p>
-    <p><span class="tag bio">生物学意义</span>核心圈蛋白优先作为 hub 讨论。</p>
-    
-    <p class="links"><a href="图片/PPI/PPI渐变图.png" target="_blank">PNG</a> · <a href="图片/PPI/PPI渐变图.svg" target="_blank">SVG</a></p>
-  </div>
-</article>
-
-<article class="card">
-  <div class="card-media"><a class="thumb" href="图片/PPI/PPI渐变图_Degree.png" target="_blank" rel="noopener"><img src="图片/PPI/PPI渐变图_Degree.png" alt="PPI 渐变图（Degree）" loading="lazy" /></a></div>
-  <div class="card-body">
-    <h3>PPI 渐变图（Degree）</h3>
-    
-    <p><span class="tag">含义</span>按 Degree 强调中心性</p>
-    <p><span class="tag how">怎么看</span>节点越大/越突出，连接度越高。</p>
-    <p><span class="tag bio">生物学意义</span>高 Degree 靶点常为关键炎症转录/激酶节点。</p>
-    
-    <p class="links"><a href="图片/PPI/PPI渐变图_Degree.png" target="_blank">PNG</a> · <a href="图片/PPI/PPI渐变图_Degree.svg" target="_blank">SVG</a></p>
-  </div>
+<div class="card-media"><a class="thumb" href="图片/PPI/PPI渐变图_Degree.png" rel="noopener" target="_blank"><img alt="PPI 渐变图（Degree）" loading="lazy" src="图片/PPI/PPI渐变图_Degree.png"/></a></div>
+<div class="card-body">
+<h3>PPI 渐变图（Degree）</h3>
+<p><span class="tag">含义</span>按 Degree 强调中心性</p>
+<p><span class="tag how">怎么看</span>节点越大/越突出，连接度越高。</p>
+<p><span class="tag bio">生物学意义</span>高 Degree 靶点常为关键炎症转录/激酶节点。</p>
+<p class="links"><a href="图片/PPI/PPI渐变图_Degree.png" target="_blank">PNG</a> · <a href="图片/PPI/PPI渐变图_Degree.svg" target="_blank">SVG</a></p>
+</div>
 </article>
 </div>
 </section>
-
-
-    <section id="kegg">
-      <h2>5. KEGG 官方通路图（Top20）</h2>
-      <p class="blurb">富集 pvalue 排名前 20 的 KEGG 官网通路地图。对照 <code>数据/富集分析/KEGG.csv</code> 的 geneID 在图中定位本研究基因。学术使用请遵守 <a href="https://www.kegg.jp/kegg/legal.html" target="_blank" rel="noopener">KEGG 条款</a>。</p>
-      <div class="callout">
-        <p><strong>怎么用：</strong>在论文/答辩中选 2–4 条与 UC 最相关的通路（如 IL-17、TNF、TLR、HIF-1），
+<section id="kegg">
+<h2>5. KEGG 官方通路图（Top20）</h2>
+<p class="blurb">富集 pvalue 排名前 20 的 KEGG 官网通路地图。对照 <code>数据/富集分析/KEGG.csv</code> 的 geneID 在图中定位本研究基因。学术使用请遵守 <a href="https://www.kegg.jp/kegg/legal.html" rel="noopener" target="_blank">KEGG 条款</a>。</p>
+<div class="callout">
+<p><strong>怎么用：</strong>在论文/答辩中选 2–4 条与 UC 最相关的通路（如 IL-17、TNF、TLR、HIF-1），
         展示官方图并标出交集基因位置；其余感染/肿瘤类通路作「共享炎症模块」补充即可。</p>
-      </div>
-      <div class="kegg-grid">
+</div>
+<div class="kegg-grid">
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/01_hsa05417_Lipid_and_atherosclerosis.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/01_hsa05417_Lipid_and_atherosclerosis.png" alt="hsa05417" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#1 hsa05417</strong>
-    <span>Lipid and atherosclerosis</span>
-  </div>
+<a href="图片/KEGG官方通路图/01_hsa05417_Lipid_and_atherosclerosis.png" rel="noopener" target="_blank">
+<img alt="hsa05417" loading="lazy" src="图片/KEGG官方通路图/01_hsa05417_Lipid_and_atherosclerosis.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#1 hsa05417</strong>
+<span>Lipid and atherosclerosis</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/02_hsa04933_AGE-RAGE_signaling_pathway_in_diabetic_complications.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/02_hsa04933_AGE-RAGE_signaling_pathway_in_diabetic_complications.png" alt="hsa04933" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#2 hsa04933</strong>
-    <span>AGE-RAGE signaling pathway in diabetic complications</span>
-  </div>
+<a href="图片/KEGG官方通路图/02_hsa04933_AGE-RAGE_signaling_pathway_in_diabetic_complications.png" rel="noopener" target="_blank">
+<img alt="hsa04933" loading="lazy" src="图片/KEGG官方通路图/02_hsa04933_AGE-RAGE_signaling_pathway_in_diabetic_complications.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#2 hsa04933</strong>
+<span>AGE-RAGE signaling pathway in diabetic complications</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/03_hsa05161_Hepatitis_B.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/03_hsa05161_Hepatitis_B.png" alt="hsa05161" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#3 hsa05161</strong>
-    <span>Hepatitis B</span>
-  </div>
+<a href="图片/KEGG官方通路图/03_hsa05161_Hepatitis_B.png" rel="noopener" target="_blank">
+<img alt="hsa05161" loading="lazy" src="图片/KEGG官方通路图/03_hsa05161_Hepatitis_B.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#3 hsa05161</strong>
+<span>Hepatitis B</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/04_hsa05167_Kaposi_sarcoma-associated_herpesvirus_infection.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/04_hsa05167_Kaposi_sarcoma-associated_herpesvirus_infection.png" alt="hsa05167" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#4 hsa05167</strong>
-    <span>Kaposi sarcoma-associated herpesvirus infection</span>
-  </div>
+<a href="图片/KEGG官方通路图/04_hsa05167_Kaposi_sarcoma-associated_herpesvirus_infection.png" rel="noopener" target="_blank">
+<img alt="hsa05167" loading="lazy" src="图片/KEGG官方通路图/04_hsa05167_Kaposi_sarcoma-associated_herpesvirus_infection.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#4 hsa05167</strong>
+<span>Kaposi sarcoma-associated herpesvirus infection</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/05_hsa04657_IL-17_signaling_pathway.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/05_hsa04657_IL-17_signaling_pathway.png" alt="hsa04657" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#5 hsa04657</strong>
-    <span>IL-17 signaling pathway</span>
-  </div>
+<a href="图片/KEGG官方通路图/05_hsa04657_IL-17_signaling_pathway.png" rel="noopener" target="_blank">
+<img alt="hsa04657" loading="lazy" src="图片/KEGG官方通路图/05_hsa04657_IL-17_signaling_pathway.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#5 hsa04657</strong>
+<span>IL-17 signaling pathway</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/06_hsa04668_TNF_signaling_pathway.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/06_hsa04668_TNF_signaling_pathway.png" alt="hsa04668" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#6 hsa04668</strong>
-    <span>TNF signaling pathway</span>
-  </div>
+<a href="图片/KEGG官方通路图/06_hsa04668_TNF_signaling_pathway.png" rel="noopener" target="_blank">
+<img alt="hsa04668" loading="lazy" src="图片/KEGG官方通路图/06_hsa04668_TNF_signaling_pathway.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#6 hsa04668</strong>
+<span>TNF signaling pathway</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/07_hsa05205_Proteoglycans_in_cancer.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/07_hsa05205_Proteoglycans_in_cancer.png" alt="hsa05205" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#7 hsa05205</strong>
-    <span>Proteoglycans in cancer</span>
-  </div>
+<a href="图片/KEGG官方通路图/07_hsa05205_Proteoglycans_in_cancer.png" rel="noopener" target="_blank">
+<img alt="hsa05205" loading="lazy" src="图片/KEGG官方通路图/07_hsa05205_Proteoglycans_in_cancer.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#7 hsa05205</strong>
+<span>Proteoglycans in cancer</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/08_hsa05418_Fluid_shear_stress_and_atherosclerosis.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/08_hsa05418_Fluid_shear_stress_and_atherosclerosis.png" alt="hsa05418" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#8 hsa05418</strong>
-    <span>Fluid shear stress and atherosclerosis</span>
-  </div>
+<a href="图片/KEGG官方通路图/08_hsa05418_Fluid_shear_stress_and_atherosclerosis.png" rel="noopener" target="_blank">
+<img alt="hsa05418" loading="lazy" src="图片/KEGG官方通路图/08_hsa05418_Fluid_shear_stress_and_atherosclerosis.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#8 hsa05418</strong>
+<span>Fluid shear stress and atherosclerosis</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/09_hsa05215_Prostate_cancer.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/09_hsa05215_Prostate_cancer.png" alt="hsa05215" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#9 hsa05215</strong>
-    <span>Prostate cancer</span>
-  </div>
+<a href="图片/KEGG官方通路图/09_hsa05215_Prostate_cancer.png" rel="noopener" target="_blank">
+<img alt="hsa05215" loading="lazy" src="图片/KEGG官方通路图/09_hsa05215_Prostate_cancer.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#9 hsa05215</strong>
+<span>Prostate cancer</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/10_hsa04151_PI3K-Akt_signaling_pathway.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/10_hsa04151_PI3K-Akt_signaling_pathway.png" alt="hsa04151" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#10 hsa04151</strong>
-    <span>PI3K-Akt signaling pathway</span>
-  </div>
+<a href="图片/KEGG官方通路图/10_hsa04151_PI3K-Akt_signaling_pathway.png" rel="noopener" target="_blank">
+<img alt="hsa04151" loading="lazy" src="图片/KEGG官方通路图/10_hsa04151_PI3K-Akt_signaling_pathway.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#10 hsa04151</strong>
+<span>PI3K-Akt signaling pathway</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/11_hsa05160_Hepatitis_C.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/11_hsa05160_Hepatitis_C.png" alt="hsa05160" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#11 hsa05160</strong>
-    <span>Hepatitis C</span>
-  </div>
+<a href="图片/KEGG官方通路图/11_hsa05160_Hepatitis_C.png" rel="noopener" target="_blank">
+<img alt="hsa05160" loading="lazy" src="图片/KEGG官方通路图/11_hsa05160_Hepatitis_C.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#11 hsa05160</strong>
+<span>Hepatitis C</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/12_hsa01521_EGFR_tyrosine_kinase_inhibitor_resistance.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/12_hsa01521_EGFR_tyrosine_kinase_inhibitor_resistance.png" alt="hsa01521" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#12 hsa01521</strong>
-    <span>EGFR tyrosine kinase inhibitor resistance</span>
-  </div>
+<a href="图片/KEGG官方通路图/12_hsa01521_EGFR_tyrosine_kinase_inhibitor_resistance.png" rel="noopener" target="_blank">
+<img alt="hsa01521" loading="lazy" src="图片/KEGG官方通路图/12_hsa01521_EGFR_tyrosine_kinase_inhibitor_resistance.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#12 hsa01521</strong>
+<span>EGFR tyrosine kinase inhibitor resistance</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/13_hsa05235_PD-L1_expression_and_PD-1_checkpoint_pathway_in_cancer.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/13_hsa05235_PD-L1_expression_and_PD-1_checkpoint_pathway_in_cancer.png" alt="hsa05235" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#13 hsa05235</strong>
-    <span>PD-L1 expression and PD-1 checkpoint pathway in cancer</span>
-  </div>
+<a href="图片/KEGG官方通路图/13_hsa05235_PD-L1_expression_and_PD-1_checkpoint_pathway_in_cancer.png" rel="noopener" target="_blank">
+<img alt="hsa05235" loading="lazy" src="图片/KEGG官方通路图/13_hsa05235_PD-L1_expression_and_PD-1_checkpoint_pathway_in_cancer.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#13 hsa05235</strong>
+<span>PD-L1 expression and PD-1 checkpoint pathway in cancer</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/14_hsa05212_Pancreatic_cancer.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/14_hsa05212_Pancreatic_cancer.png" alt="hsa05212" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#14 hsa05212</strong>
-    <span>Pancreatic cancer</span>
-  </div>
+<a href="图片/KEGG官方通路图/14_hsa05212_Pancreatic_cancer.png" rel="noopener" target="_blank">
+<img alt="hsa05212" loading="lazy" src="图片/KEGG官方通路图/14_hsa05212_Pancreatic_cancer.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#14 hsa05212</strong>
+<span>Pancreatic cancer</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/15_hsa05208_Chemical_carcinogenesis_-_reactive_oxygen_species.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/15_hsa05208_Chemical_carcinogenesis_-_reactive_oxygen_species.png" alt="hsa05208" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#15 hsa05208</strong>
-    <span>Chemical carcinogenesis - reactive oxygen species</span>
-  </div>
+<a href="图片/KEGG官方通路图/15_hsa05208_Chemical_carcinogenesis_-_reactive_oxygen_species.png" rel="noopener" target="_blank">
+<img alt="hsa05208" loading="lazy" src="图片/KEGG官方通路图/15_hsa05208_Chemical_carcinogenesis_-_reactive_oxygen_species.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#15 hsa05208</strong>
+<span>Chemical carcinogenesis - reactive oxygen species</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/16_hsa05142_Chagas_disease.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/16_hsa05142_Chagas_disease.png" alt="hsa05142" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#16 hsa05142</strong>
-    <span>Chagas disease</span>
-  </div>
+<a href="图片/KEGG官方通路图/16_hsa05142_Chagas_disease.png" rel="noopener" target="_blank">
+<img alt="hsa05142" loading="lazy" src="图片/KEGG官方通路图/16_hsa05142_Chagas_disease.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#16 hsa05142</strong>
+<span>Chagas disease</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/17_hsa05163_Human_cytomegalovirus_infection.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/17_hsa05163_Human_cytomegalovirus_infection.png" alt="hsa05163" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#17 hsa05163</strong>
-    <span>Human cytomegalovirus infection</span>
-  </div>
+<a href="图片/KEGG官方通路图/17_hsa05163_Human_cytomegalovirus_infection.png" rel="noopener" target="_blank">
+<img alt="hsa05163" loading="lazy" src="图片/KEGG官方通路图/17_hsa05163_Human_cytomegalovirus_infection.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#17 hsa05163</strong>
+<span>Human cytomegalovirus infection</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/18_hsa01522_Endocrine_resistance.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/18_hsa01522_Endocrine_resistance.png" alt="hsa01522" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#18 hsa01522</strong>
-    <span>Endocrine resistance</span>
-  </div>
+<a href="图片/KEGG官方通路图/18_hsa01522_Endocrine_resistance.png" rel="noopener" target="_blank">
+<img alt="hsa01522" loading="lazy" src="图片/KEGG官方通路图/18_hsa01522_Endocrine_resistance.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#18 hsa01522</strong>
+<span>Endocrine resistance</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/19_hsa04620_Toll-like_receptor_signaling_pathway.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/19_hsa04620_Toll-like_receptor_signaling_pathway.png" alt="hsa04620" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#19 hsa04620</strong>
-    <span>Toll-like receptor signaling pathway</span>
-  </div>
+<a href="图片/KEGG官方通路图/19_hsa04620_Toll-like_receptor_signaling_pathway.png" rel="noopener" target="_blank">
+<img alt="hsa04620" loading="lazy" src="图片/KEGG官方通路图/19_hsa04620_Toll-like_receptor_signaling_pathway.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#19 hsa04620</strong>
+<span>Toll-like receptor signaling pathway</span>
 </div>
-
+</div>
 <div class="kegg-card">
-  <a href="图片/KEGG官方通路图/20_hsa04066_HIF-1_signaling_pathway.png" target="_blank" rel="noopener">
-    <img src="图片/KEGG官方通路图/20_hsa04066_HIF-1_signaling_pathway.png" alt="hsa04066" loading="lazy" />
-  </a>
-  <div class="kegg-meta">
-    <strong>#20 hsa04066</strong>
-    <span>HIF-1 signaling pathway</span>
-  </div>
+<a href="图片/KEGG官方通路图/20_hsa04066_HIF-1_signaling_pathway.png" rel="noopener" target="_blank">
+<img alt="hsa04066" loading="lazy" src="图片/KEGG官方通路图/20_hsa04066_HIF-1_signaling_pathway.png"/>
+</a>
+<div class="kegg-meta">
+<strong>#20 hsa04066</strong>
+<span>HIF-1 signaling pathway</span>
 </div>
 </div>
-    </section>
-
-    <section id="data">
-      <h2>6. 数据目录与写作建议</h2>
-      <table>
-        <thead><tr><th>目录</th><th>典型文件</th><th>用途</th></tr></thead>
-        <tbody>
-          <tr><td>数据/疾病/</td><td>疾病靶点按库、合并</td><td>多库来源与并集</td></tr>
-          <tr><td>数据/药物/</td><td>药物靶点、单药交集、成分边</td><td>成分归属与药病交集</td></tr>
-          <tr><td>数据/网络图/</td><td>network.csv、type.csv</td><td>HCTP 边与节点类型 A/B/C/D</td></tr>
-          <tr><td>数据/富集分析/</td><td>KEGG.csv、BPCCMF.csv</td><td>富集统计表（含 geneID）</td></tr>
-          <tr><td>数据/PPI/</td><td>string_interactions_short.tsv</td><td>高分互作边</td></tr>
-        </tbody>
-      </table>
-      <h3>建议写作顺序</h3>
-      <ol class="writing">
-        <li>疾病多库与药病交集（韦恩）→ 报出 291 个交集基因</li>
-        <li>单药/成分贡献（柱图、UpSet）→ 点名主贡献药味与共享成分</li>
-        <li>GO/KEGG 富集 → 点名 IL-17 / TNF / TLR 等</li>
-        <li>KEGG 官方通路图佐证关键通路基因位置</li>
-        <li>HCTP 网络 + 桑基总览 + 分面桑基</li>
-        <li>PPI 说明蛋白互作枢纽</li>
-      </ol>
-      <h3>重跑入口</h3>
-      <table>
-        <thead><tr><th>步骤</th><th>脚本</th></tr></thead>
-        <tbody>
-          <tr><td>汇总统计 JSON</td><td>代码文件/28_collect_report_stats.py</td></tr>
-          <tr><td>本 HTML 报告</td><td>代码文件/26_build_html_report.py</td></tr>
-          <tr><td>裁韦恩空白</td><td>代码文件/27_trim_venn_whitespace.py</td></tr>
-          <tr><td>打包轨 B</td><td>代码文件/11_pack_delivery_archive.py</td></tr>
-        </tbody>
-      </table>
-    </section>
-    <footer>由 26_build_html_report.py 生成 · 相对路径引用 图片/ 数据/ 报告/ · 请整夹分享</footer>
-  </main>
+</div>
+</section>
+<section id="data">
+<h2>6. 数据目录与写作建议</h2>
+<table>
+<thead><tr><th>目录</th><th>典型文件</th><th>用途</th></tr></thead>
+<tbody>
+<tr><td>数据/疾病/</td><td>疾病靶点按库、合并</td><td>多库来源与并集</td></tr>
+<tr><td>数据/药物/</td><td>药物靶点、单药交集、成分边</td><td>成分归属与药病交集</td></tr>
+<tr><td>数据/网络图/</td><td>network.csv、type.csv</td><td>HCTP 边与节点类型 A/B/C/D</td></tr>
+<tr><td>数据/富集分析/</td><td>KEGG.csv、BPCCMF.csv</td><td>富集统计表（含 geneID）</td></tr>
+<tr><td>数据/PPI/</td><td>string_interactions_short.tsv</td><td>高分互作边</td></tr>
+</tbody>
+</table>
+<h3>建议写作顺序</h3>
+<ol class="writing">
+<li>疾病多库与药病交集（韦恩）→ 报出 291 个交集基因</li>
+<li>单药/成分贡献（柱图、UpSet）→ 点名主贡献药味与共享成分</li>
+<li>GO/KEGG 富集 → 点名 IL-17 / TNF / TLR 等</li>
+<li>KEGG 官方通路图佐证关键通路基因位置</li>
+<li>HCTP 网络 + 桑基总览 + 分面桑基</li>
+<li>PPI 说明蛋白互作枢纽</li>
+</ol>
+<h3>重跑入口</h3>
+<table>
+<thead><tr><th>步骤</th><th>脚本</th></tr></thead>
+<tbody>
+<tr><td>汇总统计 JSON</td><td>代码文件/28_collect_report_stats.py</td></tr>
+<tr><td>本 HTML 报告</td><td>代码文件/26_build_html_report.py</td></tr>
+<tr><td>裁韦恩空白</td><td>代码文件/27_trim_venn_whitespace.py</td></tr>
+<tr><td>打包轨 B</td><td>代码文件/11_pack_delivery_archive.py</td></tr>
+</tbody>
+</table>
+</section>
+<footer>由 26_build_html_report.py 生成 · 相对路径引用 图片/ 数据/ 报告/ · 请整夹分享</footer>
+</main>
 </div>
 </body>
 </html>

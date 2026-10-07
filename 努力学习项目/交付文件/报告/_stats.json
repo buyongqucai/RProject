@@ -179,5 +179,9 @@
   },
   "n_network_edges": 1929,
   "n_ppi_edges": 1308,
-  "n_ppi_proteins": 261
+  "n_ppi_proteins": 261,
+  "n_kegg_top30_display": 30,
+  "n_ppi_top20_nodes": 20,
+  "n_ppi_top20_edges": 99,
+  "figure_fix": "KEGG Top30 complete labels; PPI concentric degree; Top20 hub network"
 }
