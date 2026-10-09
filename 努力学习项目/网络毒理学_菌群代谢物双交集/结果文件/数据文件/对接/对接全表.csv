@@ -1,0 +1,34 @@
+﻿metabolite,gene,uniprot,pdb,site,seed,exhaustiveness,box_A,affinity_kcal_mol,affinity_sd,affinity_kJ_mol,pass_threshold_kJ
+Butyrate,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),1,8,22.0,-3.917,,-16.39,False
+Butyrate,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),7,8,22.0,-3.939,,-16.48,False
+Butyrate,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),42,8,22.0,-3.946,,-16.51,False
+Phenylalanine,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),1,8,22.0,-6.305,,-26.38,True
+Phenylalanine,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),7,8,22.0,-6.286,,-26.3,True
+Phenylalanine,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),42,8,22.0,-6.298,,-26.35,True
+Tryptophan,MPO,P05164,1CXP,co-ligand:NAG(largest cluster 28/112),1,8,22.0,-5.448,,-22.79,True
+Tryptophan,MPO,P05164,1CXP,co-ligand:NAG(largest cluster 28/112),7,8,22.0,-5.418,,-22.67,True
+Tryptophan,MPO,P05164,1CXP,co-ligand:NAG(largest cluster 28/112),42,8,22.0,-5.172,,-21.64,True
+Indole,CYP1A1,P04798,4I8V,co-ligand:BHF(largest cluster 21/84),1,8,22.0,-7.095,,-29.69,True
+Indole,CYP1A1,P04798,4I8V,co-ligand:BHF(largest cluster 21/84),7,8,22.0,-7.096,,-29.69,True
+Indole,CYP1A1,P04798,4I8V,co-ligand:BHF(largest cluster 21/84),42,8,22.0,-7.095,,-29.69,True
+4-Hydroxyphenylacetic acid,CA2,P00918,1A42,co-ligand:BZU(largest cluster 22/23),1,8,22.0,-5.254,,-21.98,True
+4-Hydroxyphenylacetic acid,CA2,P00918,1A42,co-ligand:BZU(largest cluster 22/23),7,8,22.0,-5.272,,-22.06,True
+4-Hydroxyphenylacetic acid,CA2,P00918,1A42,co-ligand:BZU(largest cluster 22/23),42,8,22.0,-5.265,,-22.03,True
+Adenosine,ADA,P00813,3IAR,co-ligand:3D1(largest cluster 18/18),1,8,22.0,-6.575,,-27.51,True
+Adenosine,ADA,P00813,3IAR,co-ligand:3D1(largest cluster 18/18),7,8,22.0,-6.585,,-27.55,True
+Adenosine,ADA,P00813,3IAR,co-ligand:3D1(largest cluster 18/18),42,8,22.0,-6.601,,-27.62,True
+Tryptophan,MMP9,P14780,1GKD,co-ligand:STN(largest cluster 11/24),1,8,22.0,-8.36,,-34.98,True
+Tryptophan,MMP9,P14780,1GKD,co-ligand:STN(largest cluster 11/24),7,8,22.0,-8.391,,-35.11,True
+Tryptophan,MMP9,P14780,1GKD,co-ligand:STN(largest cluster 11/24),42,8,22.0,-8.373,,-35.03,True
+Indole-3-acetic acid,ACHE,P22303,13CO,co-ligand:NAG(largest cluster 28/224),1,8,22.0,-4.714,,-19.72,False
+Indole-3-acetic acid,ACHE,P22303,13CO,co-ligand:NAG(largest cluster 28/224),7,8,22.0,-4.731,,-19.79,False
+Indole-3-acetic acid,ACHE,P22303,13CO,co-ligand:NAG(largest cluster 28/224),42,8,22.0,-4.744,,-19.85,False
+Arginine,NOS3,P29476,1K2S,co-ligand:H4B(largest cluster 17/34),1,8,22.0,-6.257,,-26.18,True
+Arginine,NOS3,P29476,1K2S,co-ligand:H4B(largest cluster 17/34),7,8,22.0,-6.218,,-26.02,True
+Arginine,NOS3,P29476,1K2S,co-ligand:H4B(largest cluster 17/34),42,8,22.0,-6.222,,-26.03,True
+Tryptophan,MMP9,,4H3X,center-from:10B,1,8,22.0,-8.906,,-37.26,True
+Tryptophan,MMP9,,4H3X,center-from:10B,7,8,22.0,-8.884,,-37.17,True
+Tryptophan,MMP9,,4H3X,center-from:10B,42,8,22.0,-8.929,,-37.36,True
+Adenosine,ADA,,7RTG,center-from:ZN,1,8,22.0,-6.263,,-26.2,True
+Adenosine,ADA,,7RTG,center-from:ZN,7,8,22.0,-6.274,,-26.25,True
+Adenosine,ADA,,7RTG,center-from:ZN,42,8,22.0,-6.291,,-26.32,True

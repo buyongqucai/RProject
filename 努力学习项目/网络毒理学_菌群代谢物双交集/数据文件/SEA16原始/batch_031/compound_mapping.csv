@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,Tryptamine,1150.0,C1=CC=C2C(=C1)C(=CN2)CCN,excluded from main; retained in gutMGene human full-library sensitivity
+m0002,Tyramine,5610.0,C1=CC(=CC=C1CCN)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0003,Urea,1176.0,C(=O)(N)N,excluded from main; retained in gutMGene human full-library sensitivity
+m0004,Ursodiol,31401.0,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0005,Valerate,114781.0,CCCCC(=O)[O-],excluded from main; retained in gutMGene human full-library sensitivity
+m0006,Valeric acid,7991.0,CCCCC(=O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0007,Xanthine,1188.0,C1=NC2=C(N1)C(=O)NC(=O)N2,excluded from main; retained in gutMGene human full-library sensitivity
+m0008,beta-D-Gal-(1->4)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc,9831622.0,CC(=O)N[C@@H]1[C@H]([C@@H]([C@H](O[C@H]1O[C@H]2[C@H]([C@H](O[C@H]([C@@H]2O)O[C@@H]3[C@H](OC([C@@H]([C@H]3O)O)O)CO)CO)O)CO)O[C@H]4[C@@H]([C@H]([C@H]([C@H](O4)CO)O)O)O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0009,beta-D-fructofuranose,439709.0,C([C@@H]1[C@H]([C@@H]([C@](O1)(CO)O)O)O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0010,"n,n,n-Trimethyllysine",159660.0,C[N+](C)(C)CCCCC(C(=O)O)N,excluded from main; retained in gutMGene human full-library sensitivity

@@ -11,8 +11,8 @@ import pandas as pd
 from scipy.stats import hypergeom
 
 ROOT = Path(__file__).resolve().parents[1]
-DELIVERY = ROOT.parent / "交付文件" / "数据"
-DATA = ROOT / "数据"
+DELIVERY = ROOT.parent / "交付文件" / "数据文件"
+DATA = ROOT / "结果文件" / "数据文件"
 MET = DATA / "代谢物"
 
 F_PATH = DELIVERY / "药物" / "药物靶点_全药.csv"

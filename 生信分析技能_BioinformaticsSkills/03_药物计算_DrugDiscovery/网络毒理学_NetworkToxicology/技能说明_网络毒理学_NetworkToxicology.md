@@ -35,17 +35,9 @@ description: >-
 
 身份解析 → 策展互作（CTD 等）→ 可选预测靶点 → 与疾病/毒性基因交集 → PPI/通路/AOP → 可选对接。逐步见流水线摘要。
 
-## 5. R 包与软件栈
+## 5. 工具链
 
-| 步骤 | 工具 | 备注 |
-|------|------|------|
-| 身份 | PubChem PUG-REST | AUTO_API；遇 503 重试 |
-| 活性/疾病 | ChEMBL REST、Open Targets GraphQL | AUTO_API |
-| CTD | 本地 `CTD_*.csv` | 用户下载后读入 |
-| 富集/PPI/出图 | clusterProfiler、STRING、VizStandards | 与网药相同交付约束 |
-| 对接 | 分子对接技能 | 不在本技能内改 FROZEN 对接 |
-
-脚本目录现为说明占位；取数脚本在登记档位稳定后再加，不先写爬虫。
+本机程序与证据类型：[`文档_docs/工具链_Toolchain.md`](文档_docs/工具链_Toolchain.md)。脚本目录现为说明占位；取数脚本在登记档位稳定后再加，不先写爬虫。
 
 ## 6. 数据可视化
 

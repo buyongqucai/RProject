@@ -1,0 +1,11 @@
+molecule id,smiles
+m0010,COC1=C(C=C2C(=C1)C(=O)C(=CO2)C3=CC=C(C=C3)O)O
+m0006,C1=CC(=CC=C1C2=COC3=CC(=CC(=C3C2=O)O)O)O
+m0008,CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O)C)C)O)C)O)C
+m0002,C1=CC(=CC=C1C(=O)N[C@@H](CCC(=O)O)C(=O)O)NCC2=CN=C3C(=N2)C(=O)NC(=N3)N
+m0009,C(C(CO)O)O
+m0004,C(CC(=O)O)CN
+m0005,COC(=O)C1=CO[C@H]([C@H]2[C@@H]1CC=C2CO)O
+m0007,CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)CO)O)O)O)C)C)O)C)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)CO)O)O)O)C
+m0001,CCOC(=O)[C@H](CC1=CC=CC=C1)O
+m0003,C(=O)[O-]

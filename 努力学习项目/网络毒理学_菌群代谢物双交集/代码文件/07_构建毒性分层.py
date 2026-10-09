@@ -9,9 +9,9 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "数据"
+DATA = ROOT / "结果文件" / "数据文件"
 TOX = DATA / "毒性分层"
-CTD = ROOT / "准备文件" / "外部数据库" / "CTD"
+CTD = ROOT / "数据文件" / "外部数据库" / "CTD"
 
 EXPOSURES = [
     {"label":"TMAO","identity":"trimethylamine N-oxide","ctd_id":"MESH:C005855","class":"small_molecule","group":"harmful_candidate","outcomes":"intestinal inflammation;mucosal injury/cancer risk","direction_context":"abundance/context dependent"},
@@ -36,7 +36,7 @@ def main() -> None:
     TOX.mkdir(parents=True, exist_ok=True)
     i1 = set(pd.read_csv(DATA / "I2_main_evidence_priority_H_plus_M.csv")["gene"].astype(str).str.upper()) if False else set(pd.read_csv(DATA / "C_main_evidence_priority_H_plus_M.csv")["gene"].astype(str).str.upper())
     # C is the core shared target set; I1 is loaded separately below.
-    i1 = set(pd.read_csv(ROOT.parent / "交付文件" / "数据" / "药物" / "药物疾病交集.csv")["gene"].astype(str).str.upper())
+    i1 = set(pd.read_csv(ROOT.parent / "交付文件" / "数据文件" / "药物" / "药物疾病交集.csv")["gene"].astype(str).str.upper())
     c_main = set(pd.read_csv(DATA / "C_main_evidence_priority_H_plus_M.csv")["gene"].astype(str).str.upper())
 
     panel = pd.read_csv(DATA / "代谢物" / "代谢物面板_主分析与全库敏感性.csv")

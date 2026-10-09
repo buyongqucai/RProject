@@ -1,0 +1,25 @@
+# This file was created Thu Oct  8 11:52:46 2026
+# Created by:
+#               :-) GROMACS - gmx distance, 2026.3-conda_forge (-:
+# 
+# Executable:   /sessions/admiring-jolly-keller/mdenv/bin.AVX2_256/gmx
+# Data prefix:  /sessions/admiring-jolly-keller/mdenv
+# Working dir:  /sessions/admiring-jolly-keller/md_smoke/3HTB
+# Command line:
+#   gmx distance -s md.tpr -f md_center.xtc -n index_analysis.ndx -select 'com of group Protein plus com of group JZ4' -oav com_distance.xvg -tu ns
+# gmx distance is part of G R O M A C S:
+#
+# S  C  A  M  O  R  G
+#
+@    title "Average distance"
+@    xaxis  label "Time (ns)"
+@    yaxis  label "Distance (nm)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "com of group Protein plus com of group JZ4"
+      0.000    1.045

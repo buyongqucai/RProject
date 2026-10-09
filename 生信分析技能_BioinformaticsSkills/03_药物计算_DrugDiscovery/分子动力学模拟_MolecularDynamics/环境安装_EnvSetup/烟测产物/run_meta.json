@@ -1,0 +1,1 @@
+{"date":"2026-10-08","env":"sandbox conda-forge: gromacs 2026.3, acpype 2026.9.4, ambertools","system":"3HTB protein+JZ4, 33382 atoms, tip3p dodecahedron, 0.15M NaCl","smoke_params":{"em_nsteps":400,"nvt_nsteps":300,"npt_nsteps":300,"md_NS_ns":0.002},"result":"PASS (链路全通, exit=0, DONE)","notes":["EM未达emtol(烟测步数所限)","hbond无输出=JZ4无氢键供受体(设计内||true)","GROMACS2026.3 vs SOP登记2023.3"]}

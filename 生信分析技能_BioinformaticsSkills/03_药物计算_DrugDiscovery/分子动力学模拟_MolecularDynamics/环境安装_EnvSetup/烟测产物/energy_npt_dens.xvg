@@ -1,0 +1,26 @@
+# This file was created Thu Oct  8 11:52:46 2026
+# Created by:
+#                :-) GROMACS - gmx energy, 2026.3-conda_forge (-:
+# 
+# Executable:   /sessions/admiring-jolly-keller/mdenv/bin.AVX2_256/gmx
+# Data prefix:  /sessions/admiring-jolly-keller/mdenv
+# Working dir:  /sessions/admiring-jolly-keller/md_smoke/3HTB
+# Command line:
+#   gmx energy -f npt.edr -o energy_npt_dens.xvg
+# gmx energy is part of G R O M A C S:
+#
+# S  C  A  M  O  R  G
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kg/m^3)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Density"
+    0.000000  995.038086
+    0.600000  997.850769

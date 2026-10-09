@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,Stearic Acid,5281.0,CCCCCCCCCCCCCCCCCC(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,Succinic Acid,1110.0,C(CC(=O)O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,Sucrose,5988.0,C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@]2([C@H]([C@@H]([C@H](O2)CO)O)O)CO)O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0004,Taurine,1123.0,C(CS(=O)(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,Tryptophan,6305.0,C1=CC=C2C(=C1)C(=CN2)C[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0006,Uracil,1174.0,C1=CNC(=O)NC1=O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0007,Ureidosuccinic acid,279.0,C(C(C(=O)O)NC(=O)N)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0008,Uridine,6029.0,C1=CN(C(=O)NC1=O)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,Uridine-5'-diphosphate,6031.0,C1=CN(C(=O)NC1=O)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0010,Xanthosine,64959.0,C1=NC2=C(N1[C@H]3[C@@H]([C@@H]([C@H](O3)CO)O)O)NC(=O)NC2=O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

@@ -30,3 +30,7 @@ Issues 以本地 markdown 跟踪，目录 `.scratch/<功能名>/`。详见 `docs
 ### Domain docs（领域文档）
 
 单上下文：`CONTEXT.md` + `docs/架构决策_ADR/`。详见 `docs/agents/领域文档_domain.md`。
+
+### 全局邮件告警（跨项目）
+
+QQ SMTP：`E:\alert_kit\`；Cursor 技能 `~/.cursor/skills/qq-smtp-alert`。任意仓库发任务告警走此 kit，勿另写 SMTP。

@@ -10,11 +10,11 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "数据"
+DATA = ROOT / "结果文件" / "数据文件"
 MECH = DATA / "机制层"
 PAIRS = DATA / "代谢物"
-DELIVERY = ROOT.parent / "交付文件" / "数据"
-GUT = ROOT / "准备文件" / "外部数据库" / "gutMGene_v2" / "Gut Microbe-Microbial metabolite.csv"
+DELIVERY = ROOT.parent / "交付文件" / "数据文件"
+GUT = ROOT / "数据文件" / "外部数据库" / "gutMGene_v2" / "Gut Microbe-Microbial metabolite.csv"
 
 
 def mcode_modules(graph: nx.Graph, haircut: bool = True, degree_cutoff: int = 2,

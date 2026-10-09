@@ -9,11 +9,11 @@ source(delivery)
 source(file.path(skill, "脚本_scripts/03_STRING与网络图_StringNetwork.R"))
 source(file.path(skill, "脚本_scripts/04_交付网络布局_DeliveryNetworkLayouts.R"))
 
-data_dir <- file.path(root, "数据")
+data_dir <- file.path(root, "结果文件", "数据文件")
 met_dir <- file.path(data_dir, "代谢物")
 ppi_dir <- file.path(data_dir, "PPI")
 enrich_dir <- file.path(data_dir, "富集分析")
-fig_dir <- file.path(root, "图片")
+fig_dir <- file.path(root, "结果文件", "图片文件")
 dir.create(ppi_dir, recursive=TRUE, showWarnings=FALSE)
 dir.create(enrich_dir, recursive=TRUE, showWarnings=FALSE)
 dir.create(fig_dir, recursive=TRUE, showWarnings=FALSE)
@@ -24,7 +24,7 @@ read_genes <- function(path) {
 }
 main_genes <- read_genes(file.path(data_dir, "C_main_evidence_priority_H_plus_M.csv"))
 full_genes <- read_genes(file.path(data_dir, "C_full_gutmgene_human_H_plus_M.csv"))
-disease <- read.csv("E:/RProject/努力学习项目/交付文件/数据/疾病/疾病靶点合并.csv", stringsAsFactors=FALSE, check.names=FALSE, fileEncoding="UTF-8")
+disease <- read.csv("E:/RProject/努力学习项目/交付文件/数据文件/疾病/疾病靶点合并.csv", stringsAsFactors=FALSE, check.names=FALSE, fileEncoding="UTF-8")
 disease_genes <- sort(unique(toupper(trimws(as.character(disease$gene)))))
 
 fetch_and_plot_ppi <- function(genes, label, cache_name, plot_stem=NULL) {

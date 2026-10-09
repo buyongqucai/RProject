@@ -1,0 +1,11 @@
+molecule id,smiles
+m0010,C[C@@H](C(=O)[O-])O
+m0006,CC(C)CC(=O)O
+m0008,CC(C)C[C@@H](C(=O)O)O
+m0002,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC[C@@H]4[C@@]3(CC[C@@H](C4)O)C)C
+m0009,C(CO)[C@@H](C(=O)O)N
+m0004,C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O[C@H]4[C@@H]([C@H]([C@@H]([C@H](O4)CO)O)O)O)O)O
+m0005,CC(C)CC(=O)[O-]
+m0007,C1=CC(=CC=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O
+m0001,C1=CC=C2C(=C1)C(=CN2)OS(=O)(=O)O
+m0003,CC(C)C(=O)O

@@ -1,0 +1,68 @@
+{
+  "定位": "遗传支持/假设生成，非完整MR、非因果验证",
+  "数据访问": "GWAS Catalog v2 (MONDO_0005101) + MiBioGen allHits, 2026-10-07",
+  "UC_GWAS关联总数": 1361,
+  "UC_GWAS全基因组显著关联数": 813,
+  "UC_GWAS显著映射基因数": 503,
+  "超几何_背景D1517": {
+    "C_78": {
+      "overlap": 5,
+      "set_size": 78,
+      "universe_D": 1517,
+      "gw_genes_in_D": 157,
+      "hypergeom_p_background_D": 0.9217700476265922,
+      "genes": [
+        "AHR",
+        "CCL2",
+        "IL10",
+        "NOS2",
+        "TLR4"
+      ]
+    },
+    "I1_291": {
+      "overlap": 28,
+      "set_size": 291,
+      "universe_D": 1517,
+      "gw_genes_in_D": 157,
+      "hypergeom_p_background_D": 0.7080990185236189,
+      "genes": [
+        "ACTA2",
+        "AHR",
+        "CCL2",
+        "DNMT3A",
+        "FAS",
+        "IGF2",
+        "IL10",
+        "IL2",
+        "IRF1",
+        "JAK2",
+        "LRRK2",
+        "MAPK3",
+        "NFKB1",
+        "NOS2",
+        "NOTCH1",
+        "PLAU",
+        "PRKCB",
+        "PRKCQ",
+        "PROCR",
+        "PSEN2",
+        "PTPN2",
+        "PTPN22",
+        "RPS6KB1",
+        "STAT3",
+        "STAT4",
+        "TLR4",
+        "TNFSF15",
+        "VEGFA"
+      ]
+    }
+  },
+  "MiBioGen_IV清点": {
+    "file": "MBG.allHits.p1e4.txt",
+    "rows": 122110,
+    "n_genomewide_sig_P_lt_5e8": 1394,
+    "n_P_lt_1e4": 122110,
+    "n_traits_with_hits": 211,
+    "note": "bac 列为菌群性状（如 class.xxx.id.N）；行=性状×SNP 的 P<1e-4 命中"
+  }
+}

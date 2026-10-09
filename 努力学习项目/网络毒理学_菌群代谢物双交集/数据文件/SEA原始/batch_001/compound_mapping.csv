@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,2'-Deoxyguanosine,135398592.0,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,4-Hydroxyphenylacetic acid,127.0,C1=CC(=CC=C1CC(=O)O)O,gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05
+m0003,Agmatine,199.0,C(CCN=C(N)N)CN,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0004,Alanine,5950.0,C[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,Asparagine,6267.0,C([C@@H](C(=O)O)N)C(=O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0006,Aspartic Acid,5960.0,C([C@@H](C(=O)O)N)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0007,Butyrate,104775.0,CCCC(=O)[O-],gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05; predeclared UC mechanism anchor + GMMAD2 UC/IBD FDR<0.05
+m0008,Citrulline,9750.0,C(C[C@@H](C(=O)O)N)CNC(=O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,Cysteine,5862.0,C([C@@H](C(=O)O)N)S,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0010,Glutamic Acid,33032.0,C(CC(=O)O)[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

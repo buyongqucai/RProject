@@ -1,0 +1,28 @@
+{
+  "script_version": "run_validation.py v1.1 (2026-10-08; v1.0 -> v1.1 修复 guild 属水平成员匹配遗漏)",
+  "run_date": "2026-10-08",
+  "abundance_url": "https://g-227ca.190ebd.75bc.data.globus.org/ibdmdb/products/HMP2/MGX/2018-05-04/taxonomic_profiles.tsv.gz",
+  "metadata_url": "https://g-227ca.190ebd.75bc.data.globus.org/ibdmdb/metadata/hmp2_metadata_2018-08-20.csv",
+  "download_date": "2026-10-08",
+  "n_samples_matched": 1638,
+  "group_n": {
+    "UC": 459,
+    "nonIBD": 429,
+    "CD": 750
+  },
+  "test": "Mann-Whitney U two-sided (scipy.stats.mannwhitneyu)",
+  "fdr": "Benjamini-Hochberg over tested species (guild reported separately)",
+  "effect_size": "rank-biserial r = 2U/(n1*n2)-1; r>0 = higher in UC",
+  "n_preregistered_species": 15,
+  "n_tested": 14,
+  "n_not_detected": 1,
+  "guild_members": [
+    "Faecalibacterium_prausnitzii",
+    "Roseburia_intestinalis",
+    "Eubacterium_rectale",
+    "g__Anaerostipes",
+    "g__Butyricicoccus",
+    "Coprococcus_comes"
+  ],
+  "notes": "Multiple samples per participant; sample-level analysis (limitation)."
+}

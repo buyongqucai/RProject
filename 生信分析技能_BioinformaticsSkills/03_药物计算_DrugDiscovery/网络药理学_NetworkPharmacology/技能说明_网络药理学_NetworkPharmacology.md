@@ -38,14 +38,9 @@ description: >-
 快速网络预览：`01_样例_sample/代码文件/02_run_network_preview.R`。  
 布局代码 SSOT：`脚本_scripts/04_交付网络布局_DeliveryNetworkLayouts.R`。
 
-## 5. R 包与软件栈
+## 5. 工具链
 
-| 步骤 | 工具 | 备注 |
-|------|------|------|
-| 韦恩/柱/GO/KEGG 重绘 | ggplot2 + VizStandards | 表驱动 |
-| HCTP / STRING PPI | 本技能布局脚本 + STRING API | 交付默认代码出图 |
-| GO 原始 | Metascape（外部） | 样例可用预计算表 |
-| KEGG REST / 位图 | REST AUTO；官网位图可选 | |
+本机程序与路径：[`文档_docs/工具链_Toolchain.md`](文档_docs/工具链_Toolchain.md)。库表与瀑布不在此复述。
 
 ## 6. 数据可视化
 

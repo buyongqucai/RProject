@@ -65,20 +65,9 @@ description: >-
 8. **手调 detail 后**：按 SOP **§7.3** 截图导出 `detail-N.png`，再按 **§7.4** 拼 `result_N.png`（定稿路径见 SOP；入口不复述步骤）  
 9. 多组合可汇总 `可视化组合_Top10/`；项目根 git 管理
 
-## 5. R 包与软件栈
+## 5. 工具链
 
-| 步骤 | R包或CLI | 作用 | 备注 |
-|------|----------|------|------|
-| 分析 | `bio3d` | 核心 R 包 | |
-| 分析 | `ggplot2` | 结合能条图等 | |
-| 上游/主分析 | `AutoDock-GPU` | 对接打分（默认） | `E:\AutoDock-GPU\`；与 Vina 分表 |
-| 上游/可选 | `AutoDock Vina` | 对照打分 | 非 R |
-| 定心 | `AutoSite` / Meeko / P2Rank / Fpocket | 中心与盒子 | 见 CenterSourceRegistry |
-| 上游/主分析 | `Open Babel` | 格式/加氢/PDBQT | 非 R |
-| 3D 可视化 | `PyMOL` | ST/PT/CJ/QJ | `E:\pymol\python.exe` + `脚本_scripts/pymol_dock_viz_standard.py` |
-| detail 重导 | `PyMOLWin` + `-r` 钩子 | 每任务一次；细则 SOP §7.3 | `export_detail_png_from_pse.py` + `pymol_detail_export_hook.py` |
-| result 拼图 | Pillow | big+detail；细则 SOP §7.4 | `E:\PythonProject\分子对接\2.分子对接结果图组合.py` |
-| 出图 | `ggplot2` + 出版级出图_PublicationPlot.R | DPI≥600 | 强制可视化规范 |
+本机程序与路径：[`文档_docs/工具链_Toolchain.md`](文档_docs/工具链_Toolchain.md)。引擎与定心仍以 FROZEN 技术路线为准。
 
 ## 6. 数据可视化
 

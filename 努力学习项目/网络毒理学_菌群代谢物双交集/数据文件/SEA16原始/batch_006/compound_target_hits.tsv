@@ -1,0 +1,654 @@
+﻿compound_id	query_smiles	target_chembl_id	target_species	target_gene	target_name	uniprot_id	uniprot_accession	sea_z_score	sea_p_value	sea_minus_log10_p	max_tc	query_known_hit_tanimoto	known_hit_id	known_hit_smiles	sea_version
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other		3 beta-hydroxysteroid dehydrogenase/Delta 5-->4-isomerase	3BHS_MYCTU		74.2898	2.342e-42		0.3611	0.3611			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	NT5E	5'-nucleotidase	5NTD_HUMAN		10.3840	9.234e-07		0.3231	0.3231			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	NT5E	5'-nucleotidase	5NTD_HUMAN		23.7929	3.142e-14		0.4118	0.4118			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Nt5e	5'-nucleotidase	5NTD_RAT		10.6290	6.744e-07		0.3231	0.3231			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Nt5e	5'-nucleotidase	5NTD_RAT		16.5357	3.458e-10		0.5738	0.5738			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	birA	Bifunctional ligase/repressor BirA	A0A0E7NXW5_STAAU		136.5019	5.214e-77		0.3857	0.3857			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	birA	Bifunctional ligase/repressor BirA	A0A0E7NXW5_STAAU		28.5058	1.11e-16		0.3721	0.3721			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	UL23	Thymidine kinase	A3RLP8_CHV1		35.3126	1.202e-20		0.2931	0.2931			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	ADORA1	Adenosine receptor A1	AA1R_CHICK		177.2989	9.841e-100		0.3871	0.3871			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	ADORA1	Adenosine receptor A1	AA1R_CAVPO		132.5823	7.951e-75		0.4906	0.4906			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	ADORA1	Adenosine receptor A1	AA1R_CAVPO		23.2852	6.017e-14		0.3284	0.3284			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	ADORA1	Adenosine receptor A1	AA1R_BOVIN		15.8003	8.882e-10		0.4528	0.4528			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	ADORA1	Adenosine receptor A1	AA1R_RABIT		108.0213	3.81e-61		0.3108	0.3108			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	ADORA2A	Adenosine receptor A2a	AA2AR_CAVPO		30.9351	3.299e-18		0.4528	0.4528			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Adora1	Adenosine receptor A1	AA1R_RAT		230.7564	1.648e-129		0.4906	0.4906			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Adora1	Adenosine receptor A1	AA1R_RAT		41.6469	3.563e-24		0.3429	0.3429			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	ADORA1	Adenosine receptor A1	AA1R_HUMAN		84.8729	2.984e-48		0.4528	0.4528			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	ADORA1	Adenosine receptor A1	AA1R_HUMAN		16.6143	3.127e-10		0.4286	0.4286			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Adora2a	Adenosine receptor A2a	AA2AR_RAT		148.2002	1.589e-83		0.4808	0.4808			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Adora2a	Adenosine receptor A2a	AA2AR_RAT		36.4320	2.861e-21		0.3429	0.3429			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	ADORA2B	Adenosine receptor A2b	AA2BR_HUMAN		25.8599	2.22e-15		0.3968	0.3968			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	ADORA3	Adenosine receptor A3	AA3R_RABIT		112.1583	1.891e-63		0.3108	0.3108			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Adora3	Adenosine receptor A3	AA3R_RAT		67.3390	1.743e-38		0.4528	0.4528			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	ADORA2A	Adenosine receptor A2a	AA2AR_HUMAN		68.0021	7.445e-39		0.4545	0.4545			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	ABCB11	Bile salt export pump	ABCBB_HUMAN		55.6558	5.608e-32		0.8148	0.8148			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	ABCB11	Bile salt export pump	ABCBB_HUMAN		44.0056	1.73e-25		0.6452	0.6452			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	ADORA3	Adenosine receptor A3	AA3R_HUMAN		103.5766	1.139e-58		0.4545	0.4545			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	ADORA3	Adenosine receptor A3	AA3R_HUMAN		18.7813	1.941e-11		0.4286	0.4286			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	ACE2	Angiotensin-converting enzyme 2	ACE2_HUMAN		66.0189	9.473e-38		0.4118	0.4118			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	ACE	Angiotensin-converting enzyme	ACE_HUMAN		29.5804	1.875e-17		0.4167	0.4167			SEA16_ChEMBL27_rdkit_ecfp4
+m0006	C[N+](C)(C)CCO		Other	CHRNA1	Acetylcholine receptor subunit alpha	ACHA_TETCF		12.7879	4.231e-08		0.4375	0.4375			SEA16_ChEMBL27_rdkit_ecfp4
+m0006	C[N+](C)(C)CCO		Other	CHRNB1	Acetylcholine receptor subunit beta	ACHB_TETCF		21.1596	9.19e-13		0.4375	0.4375			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	CHRND	Acetylcholine receptor subunit delta	ACHD_HUMAN		20.6679	1.727e-12		0.2951	0.2951			SEA16_ChEMBL27_rdkit_ecfp4
+m0006	C[N+](C)(C)CCO		Other	chrnd	Acetylcholine receptor subunit delta	ACHD_TETCF		18.7194	2.101e-11		0.4375	0.4375			SEA16_ChEMBL27_rdkit_ecfp4
+m0006	C[N+](C)(C)CCO		Other	CHRNG	Acetylcholine receptor subunit gamma	ACHG_TETCF		21.1596	9.19e-13		0.4375	0.4375			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	ADA	Adenosine deaminase	ADA_BOVIN		57.2478	7.278e-33		0.4706	0.4706			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	ADA	Adenosine deaminase	ADA_BOVIN		10.9140	4.679e-07		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	ADA	Adenosine deaminase	ADA_HUMAN		43.0809	5.663e-25		0.4706	0.4706			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Ada	Adenosine deaminase	ADA_MOUSE		84.9343	2.758e-48		0.6047	0.6047			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Ada	Adenosine deaminase	ADA_MOUSE		54.1422	3.907e-31		0.3860	0.3860			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Adcy2	Adenylate cyclase type 2	ADCY2_RAT		17.2775	1.336e-10		0.2833	0.2833			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Adcy5	Adenylate cyclase type 5	ADCY5_RAT		9.4464	3.073e-06		0.2951	0.2951			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	ADH1A	Alcohol dehydrogenase 1A	ADH1A_HUMAN		24.5573	1.177e-14		0.4000	0.4000			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Adk	Adenosine kinase	ADK_RAT		15.8835	7.982e-10		0.3455	0.3455			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	adoK	Adenosine kinase	ADOK_MYCTO		304.0155	2.579e-170		0.4706	0.4706			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	adoK	Adenosine kinase	ADOK_MYCTO		83.7412	1.274e-47		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	AK	Adenosine kinase	ADK_TOXGO		244.7337	2.701e-137		0.4510	0.4510			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	AK	Adenosine kinase	ADK_TOXGO		26.1087	1.554e-15		0.2923	0.2923			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	ADK	Adenosine kinase	ADK_HUMAN		144.2088	2.657e-81		0.5306	0.5306			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	ADK	Adenosine kinase	ADK_HUMAN		48.2517	7.463e-28		0.4211	0.4211			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	ADRB2	Beta-2 adrenergic receptor	ADRB2_MESAU		71.0657	1.464e-40		0.3247	0.3247			SEA16_ChEMBL27_rdkit_ecfp4
+m0010	C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O		Other		Alpha-galactosidase	AGAL_COFAR		14.0723	8.147e-09		0.3125	0.3125			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other		Alpha-galactosidase	AGAL_COFAR		23.1279	7.361e-14		0.5085	0.5085			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Pam	Peptidylglycine alpha-amidating monooxygenase	AMD_RAT		93.6861	3.679e-53		0.3462	0.3462			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Rnpep	Aminopeptidase B	AMPB_RAT		11.6958	1.717e-07		0.3065	0.3065			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	AMPD1	AMP deaminase 1	AMPD1_RABIT		42.9463	6.731e-25		0.3065	0.3065			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	AMPD1	AMP deaminase 1	AMPD1_RABIT		110.9651	8.735e-63		0.4219	0.4219			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	AMPD	AMP deaminase	AMPD_ARATH		81.2734	3.018e-46		0.3676	0.3676			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	ANPEP	Aminopeptidase N	AMPN_HUMAN		16.7733	2.55e-10		0.3750	0.3750			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	ANPEP	Aminopeptidase N	AMPN_PIG		29.3925	2.385e-17		0.3725	0.3725			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Ar	Androgen receptor	ANDR_RAT		9.2817	3.796e-06		0.3750	0.3750			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	PRMT1	Protein arginine N-methyltransferase 1	ANM1_HUMAN		8.5807	9.329e-06		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	PRMT7	Protein arginine N-methyltransferase 7	ANM7_HUMAN		39.2905	7.318e-23		0.2805	0.2805			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	AR	Androgen receptor	ANDR_HUMAN		21.0633	1.04e-12		0.4118	0.4118			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	AR	Androgen receptor	ANDR_HUMAN		20.7736	1.508e-12		0.4381	0.4381			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	AOC1	Amiloride-sensitive amine oxidase [copper-containing]	AOC1_HUMAN		13.7679	1.204e-08		0.2979	0.2979			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	ATP12A	Potassium-transporting ATPase alpha chain 2	AT12A_HUMAN		124.4750	2.608e-70		0.3284	0.3284			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	ATP12A	Potassium-transporting ATPase alpha chain 2	AT12A_HUMAN		111.7026	3.392e-63		0.2917	0.2917			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	ASNS	Asparagine synthetase [glutamine-hydrolyzing]	ASNS_HUMAN		113.2280	4.796e-64		0.3590	0.3590			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	ATP1A1	Sodium/potassium-transporting ATPase subunit alpha-1	AT1A1_CANLF		93.3728	5.499e-53		0.3284	0.3284			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	ATP1A1	Sodium/potassium-transporting ATPase subunit alpha-1	AT1A1_CANLF		29.0626	3.642e-17		0.2917	0.2917			SEA16_ChEMBL27_rdkit_ecfp4
+m0010	C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O		Other		Lectin	B4EH87_BURCJ		31.5021	1.594e-18		0.3548	0.3548			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other		Lectin	B4EH87_BURCJ		79.7011	2.267e-45		0.3250	0.3250			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	100281352	Delta(14)-sterol reductase	B4FS76_MAIZE		19.8226	5.106e-12		0.3243	0.3243			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	100281352	Delta(14)-sterol reductase	B4FS76_MAIZE		18.7899	1.92e-11		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	B4GALT1	Beta-1,4-galactosyltransferase 1	B4GT1_BOVIN		79.5775	2.657e-45		0.3205	0.3205			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	B4GALT1	Beta-1,4-galactosyltransferase 1	B4GT1_BOVIN		35.1025	1.574e-20		0.3951	0.3951			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	B4GALT1	Beta-1,4-galactosyltransferase 1	B4GT1_HUMAN		126.7429	1.422e-71		0.4096	0.4096			SEA16_ChEMBL27_rdkit_ecfp4
+m0010	C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O		Other	GLB1	Beta-galactosidase	BGAL_BOVIN		26.5002	9.992e-16		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	lacZ	Beta-galactosidase	BGAL_ECOLX		13.6284	1.44e-08		0.5085	0.5085			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	HSPA5	Endoplasmic reticulum chaperone BiP	BIP_HUMAN		102.2761	6.04e-58		0.4340	0.4340			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	HSPA5	Endoplasmic reticulum chaperone BiP	BIP_HUMAN		83.9971	9.175e-48		0.5738	0.5738			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	birA	Bifunctional ligase/repressor BirA	BIRA_ECOLI		75.5421	4.699e-43		0.3418	0.3418			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	birA	Bifunctional ligase/repressor BirA	BIRA_ECOLI		82.2582	8.534e-47		0.3721	0.3721			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other		Metallo-beta-lactamase L1 type 3	BLA1_STEMA		15.7769	9.151e-10		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0006	C[N+](C)(C)CCO		Homo	BBOX1	Gamma-butyrobetaine dioxygenase	BODG_HUMAN		28.4748	1.11e-16		0.3478	0.3478			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other		Gamma-butyrobetaine dioxygenase	BODG_PSESK		21.6585	4.846e-13		0.2836	0.2836			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	HLCS	Biotin--protein ligase	BPL1_HUMAN		245.8099	6.795e-138		0.6923	0.6923			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	HLCS	Biotin--protein ligase	BPL1_HUMAN		42.7950	8.172e-25		0.3721	0.3721			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	botA	Botulinum neurotoxin type A	BXA1_CLOBO		21.4844	6.06e-13		0.3402	0.3402			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	botA	Botulinum neurotoxin type A	BXA1_CLOBO		75.8764	3.061e-43		0.4382	0.4382			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	C3AR1	C3a anaphylatoxin chemotactic receptor	C3AR_HUMAN		9.7918	1.974e-06		0.4028	0.4028			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	metJ	Met repressor	C3SIU2_ECOLX		75.4796	5.091e-43		0.3067	0.3067			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	metJ	Met repressor	C3SIU2_ECOLX		27.0393	4.441e-16		0.2857	0.2857			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	fabH	3-oxoacyl-[acyl-carrier-protein] synthase 3	C3TDZ2_ECOLX		12.5175	5.984e-08		0.4286	0.4286			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	fabH	3-oxoacyl-[acyl-carrier-protein] synthase 3	C3TDZ2_ECOLX		15.4503	1.391e-09		0.5254	0.5254			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CA13	Carbonic anhydrase 13	CAH13_HUMAN		9.6922	2.242e-06		0.3167	0.3167			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CA14	Carbonic anhydrase 14	CAH14_HUMAN		21.0850	1.011e-12		0.3906	0.3906			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CA12	Carbonic anhydrase 12	CAH12_HUMAN		18.6415	2.322e-11		0.3906	0.3906			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	CA4	Carbonic anhydrase 4	CAH4_BOVIN		124.2715	3.385e-70		0.6462	0.6462			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	CA4	Carbonic anhydrase 4	CAH4_BOVIN		118.6449	4.609e-67		0.6667	0.6667			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	CA4	Carbonic anhydrase 4	CAH4_BOVIN		9.5955	2.539e-06		0.5893	0.5893			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CA1	Carbonic anhydrase 1	CAH1_HUMAN		15.4615	1.371e-09		0.3966	0.3966			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	CA1	Carbonic anhydrase 1	CAH1_HUMAN		44.4382	9.932e-26		0.6462	0.6462			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	CA1	Carbonic anhydrase 1	CAH1_HUMAN		41.6924	3.361e-24		0.6571	0.6571			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CA2	Carbonic anhydrase 2	CAH2_HUMAN		12.8835	3.742e-08		0.3966	0.3966			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	CA2	Carbonic anhydrase 2	CAH2_HUMAN		45.3181	3.213e-26		0.6462	0.6462			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	CA2	Carbonic anhydrase 2	CAH2_HUMAN		43.1604	5.115e-25		0.6667	0.6667			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	CAPN1	Calpain-1 catalytic subunit	CAN1_HUMAN		11.4666	2.303e-07		0.4407	0.4407			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CA9	Carbonic anhydrase 9	CAH9_HUMAN		19.8202	5.121e-12		0.3966	0.3966			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	CTSB	Cathepsin B	CATB_BOVIN		9.4272	3.15e-06		0.4156	0.4156			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	SERPINA6	Corticosteroid-binding globulin	CBG_HUMAN		44.9817	4.947e-26		0.3750	0.3750			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	SERPINA6	Corticosteroid-binding globulin	CBG_HUMAN		33.4434	1.322e-19		0.3500	0.3500			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	CPA1	Carboxypeptidase A1	CBPA1_BOVIN		32.6600	3.611e-19		0.4118	0.4118			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	CPA1	Carboxypeptidase A1	CBPA1_HUMAN		37.3371	8.962e-22		0.3800	0.3800			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	CPB1	Carboxypeptidase B	CBPB1_HUMAN		29.5164	2.035e-17		0.4000	0.4000			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	CPB2	Carboxypeptidase B2	CBPB2_HUMAN		55.3276	8.543e-32		0.6905	0.6905			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CCNK	Cyclin-K	CCNK_HUMAN		18.5823	2.506e-11		0.3043	0.3043			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	CCNK	Cyclin-K	CCNK_HUMAN		19.2927	1.007e-11		0.3158	0.3158			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Cd36	Platelet glycoprotein 4	CD36_RAT		126.5015	1.938e-71		0.3671	0.3671			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	CD4	T-cell surface glycoprotein CD4	CD4_HUMAN		49.9683	8.256e-29		0.3563	0.3563			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	CD4	T-cell surface glycoprotein CD4	CD4_HUMAN		41.7383	3.169e-24		0.2979	0.2979			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CD69	Early activation antigen CD69	CD69_HUMAN		23.7969	3.12e-14		0.3509	0.3509			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CDC42	Cell division control protein 42 homolog	CDC42_HUMAN		17.7425	7.356e-11		0.3433	0.3433			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	CDC42	Cell division control protein 42 homolog	CDC42_HUMAN		30.5983	5.081e-18		0.5873	0.5873			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	CDC45	Cell division control protein 45 homolog	CDC45_HUMAN		86.5135	3.639e-49		0.3913	0.3913			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	CDC45	Cell division control protein 45 homolog	CDC45_HUMAN		77.6639	3.092e-44		0.3514	0.3514			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CDA	Cytidine deaminase	CDD_HUMAN		181.5255	4.354e-102		0.6047	0.6047			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	CDA	Cytidine deaminase	CDD_HUMAN		12.9908	3.261e-08		0.3860	0.3860			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Cda	Cytidine deaminase	CDD_MOUSE		216.5865	1.287e-121		0.6047	0.6047			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Cda	Cytidine deaminase	CDD_MOUSE		14.8341	3.067e-09		0.3860	0.3860			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	CDK12	Cyclin-dependent kinase 12	CDK12_HUMAN		42.6501	9.841e-25		0.3043	0.3043			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	CDK12	Cyclin-dependent kinase 12	CDK12_HUMAN		44.2611	1.246e-25		0.3158	0.3158			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	CFB	Complement factor B	CFAB_HUMAN		32.7458	3.234e-19		0.4118	0.4118			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	CISD1	CDGSH iron-sulfur domain-containing protein 1	CISD1_HUMAN		14.5848	4.222e-09		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	CISD1	CDGSH iron-sulfur domain-containing protein 1	CISD1_HUMAN		11.1967	3.256e-07		0.7778	0.7778			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	CHAT	Choline O-acetyltransferase	CLAT_HUMAN		8.7160	7.842e-06		0.3030	0.3030			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	CMA1	Chymase	CMA1_HUMAN		17.5111	9.899e-11		0.3148	0.3148			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	cyp125	Steroid C26-monooxygenase	CP125_MYCTU		55.3251	8.57e-32		0.3944	0.3944			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	cyp125	Steroid C26-monooxygenase	CP125_MYCTU		44.9262	5.312e-26		0.3205	0.3205			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	CYP17A1	Steroid 17-alpha-hydroxylase/17,20 lyase	CP17A_HUMAN		8.7188	7.814e-06		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	CYP51	Sterol 14-alpha demethylase	CP51_TRYCC		12.7785	4.282e-08		0.3088	0.3088			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Cpt1b	Carnitine O-palmitoyltransferase 1, muscle isoform	CPT1B_RAT		10.6874	6.257e-07		0.2941	0.2941			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	CRYAB	Alpha-crystallin B chain	CRYAB_HUMAN		53.3420	1.09e-30		0.3803	0.3803			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	CRYAB	Alpha-crystallin B chain	CRYAB_HUMAN		43.1210	5.379e-25		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	cya	Calmodulin-sensitive adenylate cyclase	CYAA_BACAN		13.8597	1.07e-08		0.4110	0.4110			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	cya	Calmodulin-sensitive adenylate cyclase	CYAA_BACAN		47.5390	1.862e-27		0.6377	0.6377			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	Cyth3	Cytohesin-3	CYH3_RAT		102.0703	7.865e-58		0.4615	0.4615			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	AMD1	S-adenosylmethionine decarboxylase proenzyme	DCAM_HUMAN		102.9983	2.392e-58		0.3220	0.3220			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	AMD1	S-adenosylmethionine decarboxylase proenzyme	DCAM_HUMAN		17.6744	8.027e-11		0.2941	0.2941			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Amd1	S-adenosylmethionine decarboxylase proenzyme	DCAM_RAT		22.6798	1.308e-13		0.3220	0.3220			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Hdc	Histidine decarboxylase	DCHS_RAT		105.7743	6.801e-60		0.4783	0.4783			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	ODC1	Ornithine decarboxylase	DCOR_HUMAN		11.9579	1.227e-07		0.2826	0.2826			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	DCPS	m7GpppX diphosphatase	DCPS_HUMAN		14.6272	3.999e-09		0.3529	0.3529			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	DCPS	m7GpppX diphosphatase	DCPS_HUMAN		22.5061	1.634e-13		0.5692	0.5692			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Hsd17b3	Testosterone 17-beta-dehydrogenase 3	DHB3_RAT		13.6426	1.414e-08		0.3387	0.3387			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	Hsd17b3	Testosterone 17-beta-dehydrogenase 3	DHB3_RAT		11.9771	1.197e-07		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	DHCR24	Delta(24)-sterol reductase	DHC24_HUMAN		121.9091	7.005e-69		0.4493	0.4493			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	DHCR24	Delta(24)-sterol reductase	DHC24_HUMAN		103.1771	1.902e-58		0.3684	0.3684			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Dhcr7	7-dehydrocholesterol reductase	DHCR7_RAT		52.6873	2.525e-30		0.3913	0.3913			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	Dhcr7	7-dehydrocholesterol reductase	DHCR7_RAT		42.5169	1.167e-24		0.3158	0.3158			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	GLUD1	Glutamate dehydrogenase 1, mitochondrial	DHE3_BOVIN		39.5106	5.518e-23		0.2821	0.2821			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	GLUD1	Glutamate dehydrogenase 1, mitochondrial	DHE3_BOVIN		116.4635	7.562e-66		0.4286	0.4286			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	DNMT3B	DNA (cytosine-5)-methyltransferase 3B	DNM3B_HUMAN		57.2249	7.496e-33		0.3538	0.3538			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	DNMT3B	DNA (cytosine-5)-methyltransferase 3B	DNM3B_HUMAN		9.1348	4.584e-06		0.3067	0.3067			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	DNMT1	DNA (cytosine-5)-methyltransferase 1	DNMT1_HUMAN		22.8872	1.003e-13		0.6364	0.6364			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	DNPH1	2'-deoxynucleoside 5'-phosphate N-hydrolase 1	DNPH1_HUMAN		87.3541	1.238e-49		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	DNPH1	2'-deoxynucleoside 5'-phosphate N-hydrolase 1	DNPH1_HUMAN		238.4535	8.506e-134		0.4167	0.4167			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Dnph1	2'-deoxynucleoside 5'-phosphate N-hydrolase 1	DNPH1_RAT		90.2072	3.188e-51		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Dnph1	2'-deoxynucleoside 5'-phosphate N-hydrolase 1	DNPH1_RAT		234.8348	8.817e-132		0.4167	0.4167			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	DOT1L	Histone-lysine N-methyltransferase, H3 lysine-79 specific	DOT1L_HUMAN		29.5392	1.976e-17		0.3043	0.3043			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	POLD1	DNA polymerase delta catalytic subunit	DPOD1_HUMAN		74.6318	1.51e-42		0.3377	0.3377			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	POLG	DNA polymerase subunit gamma-1	DPOG1_HUMAN		24.7215	9.548e-15		0.4032	0.4032			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	POLG	DNA polymerase subunit gamma-1	DPOG1_HUMAN		163.3567	5.74e-92		0.6441	0.6441			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	POLA1	DNA polymerase alpha catalytic subunit	DPOLA_HUMAN		13.8926	1.026e-08		0.4032	0.4032			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	POLA1	DNA polymerase alpha catalytic subunit	DPOLA_HUMAN		53.5647	8.195e-31		0.6441	0.6441			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	POLA1	DNA polymerase alpha catalytic subunit	DPOLA_HUMAN		22.6577	1.346e-13		0.4478	0.4478			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	POLA1	DNA polymerase alpha catalytic subunit	DPOLA_HUMAN		13.4459	1.819e-08		0.3649	0.3649			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	POLB	DNA polymerase beta	DPOLB_HUMAN		42.3330	1.478e-24		0.4407	0.4407			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	POLB	DNA polymerase beta	DPOLB_HUMAN		131.8907	1.93e-74		0.6441	0.6441			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Polb	DNA polymerase beta	DPOLB_RAT		24.6819	9.992e-15		0.7500	0.7500			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	Polb	DNA polymerase beta	DPOLB_RAT		19.9989	4.072e-12		0.6102	0.6102			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other		DNA polymerase catalytic subunit	DPOL_HHV11		25.8422	2.22e-15		0.3377	0.3377			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other		DNA polymerase catalytic subunit	DPOL_HHV1K		36.2416	3.652e-21		0.3377	0.3377			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other		DNA polymerase catalytic subunit	DPOL_VZVD		25.8422	2.22e-15		0.3377	0.3377			SEA16_ChEMBL27_rdkit_ecfp4
+m0006	C[N+](C)(C)CCO		Homo	DNM1	Dynamin-1	DYN1_HUMAN		34.0479	6.088e-20		0.3913	0.3913			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Ece1	Endothelin-converting enzyme 1	ECE1_RAT		18.2001	4.091e-11		0.3019	0.3019			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	EcR	Ecdysone receptor	ECR_DROME		29.1354	3.317e-17		0.3288	0.3288			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	EcR	Ecdysone receptor	ECR_DROME		13.6240	1.448e-08		0.2949	0.2949			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Ednra	Endothelin-1 receptor	EDNRA_MOUSE		15.0573	2.303e-09		0.2949	0.2949			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	EHMT1	Histone-lysine N-methyltransferase EHMT1	EHMT1_HUMAN		12.5307	5.884e-08		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	lasB	Elastase	ELAS_PSEAE		36.0782	4.504e-21		0.2899	0.2899			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	HSP90B1	Endoplasmin	ENPL_CANLF		8.8788	6.365e-06		0.3182	0.3182			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	HSP90B1	Endoplasmin	ENPL_CANLF		16.1146	5.935e-10		0.5645	0.5645			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	ENPP1	Ectonucleotide pyrophosphatase/phosphodiesterase family member 1	ENPP1_HUMAN		25.6639	2.887e-15		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	ENPP1	Ectonucleotide pyrophosphatase/phosphodiesterase family member 1	ENPP1_HUMAN		48.6214	4.645e-28		0.5692	0.5692			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Enpp1	Ectonucleotide pyrophosphatase/phosphodiesterase family member 1	ENPP1_RAT		68.5247	3.809e-39		0.3231	0.3231			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Enpp1	Ectonucleotide pyrophosphatase/phosphodiesterase family member 1	ENPP1_RAT		94.2284	1.835e-53		0.4627	0.4627			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	ENPP2	Ectonucleotide pyrophosphatase/phosphodiesterase family member 2	ENPP2_HUMAN		29.1278	3.35e-17		0.5915	0.5915			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	ENPP2	Ectonucleotide pyrophosphatase/phosphodiesterase family member 2	ENPP2_HUMAN		24.6183	1.088e-14		0.5128	0.5128			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	entE	Enterobactin synthase component E	ENTE_ECOLI		81.8586	1.425e-46		0.2933	0.2933			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	entE	Enterobactin synthase component E	ENTE_ECOLI		113.9178	1.98e-64		0.4079	0.4079			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	TMPRSS15	Enteropeptidase	ENTK_HUMAN		23.4731	4.73e-14		0.3043	0.3043			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	ENTPD1	Ectonucleoside triphosphate diphosphohydrolase 1	ENTP1_BOVIN		103.2062	1.832e-58		0.4667	0.4667			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHA1	Ephrin type-A receptor 1	EPHA1_HUMAN		16.9468	2.041e-10		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHA1	Ephrin type-A receptor 1	EPHA1_HUMAN		14.1970	6.943e-09		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHA3	Ephrin type-A receptor 3	EPHA3_HUMAN		13.3125	2.159e-08		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHA3	Ephrin type-A receptor 3	EPHA3_HUMAN		11.1225	3.581e-07		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Epha2	Ephrin type-A receptor 2	EPHA2_MOUSE		189.2149	2.269e-106		0.5873	0.5873			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	Epha2	Ephrin type-A receptor 2	EPHA2_MOUSE		164.3428	1.621e-92		0.4857	0.4857			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHA4	Ephrin type-A receptor 4	EPHA4_HUMAN		17.9875	5.373e-11		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHA4	Ephrin type-A receptor 4	EPHA4_HUMAN		15.0767	2.247e-09		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHA2	Ephrin type-A receptor 2	EPHA2_HUMAN		13.6447	1.41e-08		0.5286	0.5286			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHA2	Ephrin type-A receptor 2	EPHA2_HUMAN		10.3357	9.824e-07		0.4416	0.4416			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHA5	Ephrin type-A receptor 5	EPHA5_HUMAN		19.6435	6.424e-12		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHA5	Ephrin type-A receptor 5	EPHA5_HUMAN		16.4762	3.732e-10		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHA6	Ephrin type-A receptor 6	EPHA6_HUMAN		16.6309	3.061e-10		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHA6	Ephrin type-A receptor 6	EPHA6_HUMAN		13.9299	9.779e-09		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHA7	Ephrin type-A receptor 7	EPHA7_HUMAN		20.1174	3.498e-12		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHA7	Ephrin type-A receptor 7	EPHA7_HUMAN		16.8766	2.233e-10		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHA8	Ephrin type-A receptor 8	EPHA8_HUMAN		18.7717	1.965e-11		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHA8	Ephrin type-A receptor 8	EPHA8_HUMAN		15.7395	9.602e-10		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHB2	Ephrin type-B receptor 2	EPHB2_HUMAN		16.3287	4.51e-10		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHB2	Ephrin type-B receptor 2	EPHB2_HUMAN		13.6743	1.357e-08		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHB1	Ephrin type-B receptor 1	EPHB1_HUMAN		16.9468	2.041e-10		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHB1	Ephrin type-B receptor 1	EPHB1_HUMAN		14.1970	6.943e-09		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHB3	Ephrin type-B receptor 3	EPHB3_HUMAN		18.7717	1.965e-11		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHB3	Ephrin type-B receptor 3	EPHB3_HUMAN		15.7395	9.602e-10		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	EPHB6	Ephrin type-B receptor 6	EPHB6_HUMAN		14.9928	2.502e-09		0.4625	0.4625			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	EPHB6	Ephrin type-B receptor 6	EPHB6_HUMAN		12.5444	5.781e-08		0.3908	0.3908			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	ERAP1	Endoplasmic reticulum aminopeptidase 1	ERAP1_HUMAN		8.8563	6.551e-06		0.3220	0.3220			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	EZH1	Histone-lysine N-methyltransferase EZH1	EZH1_HUMAN		10.8531	5.06e-07		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	FANCF	Fanconi anemia group F protein	FANCF_HUMAN		63.7339	1.775e-36		0.2885	0.2885			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	FGF2	Fibroblast growth factor 2	FGF2_HUMAN		10.7833	5.533e-07		0.2833	0.2833			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	FGF2	Fibroblast growth factor 2	FGF2_HUMAN		22.4510	1.754e-13		0.2895	0.2895			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	FGF1	Fibroblast growth factor 1	FGF1_HUMAN		13.5780	1.536e-08		0.2833	0.2833			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	FGF1	Fibroblast growth factor 1	FGF1_HUMAN		16.0369	6.557e-10		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	fimH	Type 1 fimbrin D-mannose specific adhesin	FIMH_ECOLI		152.6536	5.255e-86		0.3889	0.3889			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	fimH	Type 1 fimbrin D-mannose specific adhesin	FIMH_ECOLI		9.4192	3.183e-06		0.2879	0.2879			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	FPGS	Folylpolyglutamate synthase, mitochondrial	FOLC_HUMAN		17.5375	9.569e-11		0.2917	0.2917			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	FOLH1	Glutamate carboxypeptidase 2	FOLH1_HUMAN		16.5183	3.536e-10		0.3200	0.3200			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Folh1	Glutamate carboxypeptidase 2	FOLH1_RAT		21.1333	9.505e-13		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	FOLR1	Folate receptor alpha	FOLR1_HUMAN		65.9657	1.014e-37		0.2973	0.2973			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	FOLR2	Folate receptor beta	FOLR2_HUMAN		86.7813	2.581e-49		0.2973	0.2973			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	FUT6	Alpha-(1,3)-fucosyltransferase 6	FUT6_HUMAN		135.7789	1.318e-76		0.3646	0.3646			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other		Glyceraldehyde-3-phosphate dehydrogenase, glycosomal	G3PG_TRYCR		25.8477	2.22e-15		0.2917	0.2917			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	GAPDH	Glyceraldehyde-3-phosphate dehydrogenase	G3P_HUMAN		56.8648	1.19e-32		0.4528	0.4528			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	GAPDH	Glyceraldehyde-3-phosphate dehydrogenase	G3P_HUMAN		29.7691	1.472e-17		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	G6PD	Glucose-6-phosphate 1-dehydrogenase	G6PD_HUMAN		77.1516	5.964e-44		0.3934	0.3934			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	G6PD	Glucose-6-phosphate 1-dehydrogenase	G6PD_HUMAN		62.0111	1.618e-35		0.3485	0.3485			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Gabbr1	Gamma-aminobutyric acid type B receptor subunit 1	GABR1_RAT		19.3672	9.156e-12		0.3898	0.3898			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	Gabbr1	Gamma-aminobutyric acid type B receptor subunit 1	GABR1_RAT		17.0141	1.872e-10		0.3438	0.3438			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Gabra4	Gamma-aminobutyric acid receptor subunit alpha-4	GBRA4_RAT		47.9385	1.115e-27		0.3125	0.3125			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	Gabra4	Gamma-aminobutyric acid receptor subunit alpha-4	GBRA4_RAT		45.7232	1.911e-26		0.3030	0.3030			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	GABRD	Gamma-aminobutyric acid receptor subunit delta	GBRD_HUMAN		16.6385	3.031e-10		0.3898	0.3898			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	GABRD	Gamma-aminobutyric acid receptor subunit delta	GBRD_HUMAN		14.6269	4e-09		0.3438	0.3438			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	NR3C1	Glucocorticoid receptor	GCR_HUMAN		17.1328	1.608e-10		0.7778	0.7778			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	NR3C1	Glucocorticoid receptor	GCR_HUMAN		18.6728	2.231e-11		0.6129	0.6129			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	GGTA1	N-acetyllactosaminide alpha-1,3-galactosyltransferase	GGTA1_BOVIN		70.8332	1.972e-40		0.3205	0.3205			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	GGTA1	N-acetyllactosaminide alpha-1,3-galactosyltransferase	GGTA1_BOVIN		87.3457	1.251e-49		0.3951	0.3951			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	GIGYF2	GRB10-interacting GYF protein 2	GGYF2_HUMAN		78.0161	1.968e-44		0.3529	0.3529			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	GBA	Lysosomal acid glucosylceramidase	GLCM_BOVIN		34.4152	3.801e-20		0.3208	0.3208			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	GNPAT	Dihydroxyacetone phosphate acyltransferase	GNPAT_HUMAN		37.2437	1.01e-21		0.3469	0.3469			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Gpbar1	G-protein coupled bile acid receptor 1	GPBAR_MOUSE		9.4754	2.961e-06		0.7778	0.7778			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	Gpbar1	G-protein coupled bile acid receptor 1	GPBAR_MOUSE		11.0985	3.693e-07		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	GPBAR1	G-protein coupled bile acid receptor 1	GPBAR_HUMAN		153.0862	3.017e-86		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	GPBAR1	G-protein coupled bile acid receptor 1	GPBAR_HUMAN		133.7615	1.752e-75		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	GPR17	Uracil nucleotide/cysteinyl leukotriene receptor	GPR17_HUMAN		34.9178	1.995e-20		0.3729	0.3729			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	GPR17	Uracil nucleotide/cysteinyl leukotriene receptor	GPR17_HUMAN		100.6252	5.019e-57		0.6545	0.6545			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	GRIA1	Glutamate receptor 1	GRIA1_HUMAN		25.1787	5.329e-15		0.3030	0.3030			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Gria1	Glutamate receptor 1	GRIA1_RAT		67.0582	2.498e-38		0.2903	0.2903			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	GRK1	Rhodopsin kinase GRK1	GRK1_HUMAN		11.6971	1.714e-07		0.4630	0.4630			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	GRPR	Gastrin-releasing peptide receptor	GRPR_HUMAN		8.6182	8.891e-06		0.3187	0.3187			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Grpr	Gastrin-releasing peptide receptor	GRPR_MOUSE		21.4311	6.488e-13		0.3500	0.3500			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	GSP	Glutathionylspermidine synthase	GSP_CRIFA		41.8600	2.711e-24		0.3103	0.3103			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	GSTK1	Glutathione S-transferase kappa 1	GSTK1_HUMAN		43.3179	4.179e-25		0.3091	0.3091			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	GSTP1	Glutathione S-transferase P	GSTP1_HUMAN		17.2368	1.407e-10		0.2923	0.2923			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Hdac1	Histone deacetylase 1	HDAC1_RAT		39.7527	4.045e-23		0.3000	0.3000			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	HEXA	Beta-hexosaminidase subunit alpha	HEXA_HUMAN		31.5377	1.523e-18		0.2941	0.2941			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	HEXB	Beta-hexosaminidase subunit beta	HEXB_HUMAN		41.2096	6.243e-24		0.2941	0.2941			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	HGFAC	Hepatocyte growth factor activator	HGFA_HUMAN		11.3932	2.531e-07		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	hisD	Histidinol dehydrogenase	HISX_ECOLI		45.3762	2.982e-26		0.4222	0.4222			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	folK	2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase	HPPK_ECOLI		8.6673	8.348e-06		0.4250	0.4250			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	HPRT1	Hypoxanthine-guanine phosphoribosyltransferase	HPRT_HUMAN		11.0156	4.107e-07		0.3651	0.3651			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	HPRT1	Hypoxanthine-guanine phosphoribosyltransferase	HPRT_HUMAN		14.9973	2.487e-09		0.4769	0.4769			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	HRH1	Histamine H1 receptor	HRH1_CAVPO		10.8180	5.292e-07		0.3898	0.3898			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	HRH2	Histamine H2 receptor	HRH2_CAVPO		23.1474	7.183e-14		0.4146	0.4146			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	HRH2	Histamine H2 receptor	HRH2_HUMAN		9.2493	3.958e-06		0.4146	0.4146			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	HRH3	Histamine H3 receptor	HRH3_CAVPO		20.8635	1.344e-12		0.3953	0.3953			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	HRH4	Histamine H4 receptor	HRH4_HUMAN		15.9802	7.052e-10		0.4146	0.4146			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	HSPA1A	Heat shock 70 kDa protein 1A	HS71A_HUMAN		9.8418	1.851e-06		0.3182	0.3182			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	HSPA1A	Heat shock 70 kDa protein 1A	HS71A_HUMAN		17.8053	6.787e-11		0.5645	0.5645			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	HSPA8	Heat shock cognate 71 kDa protein	HSP7C_BOVIN		71.4012	9.519e-41		0.3231	0.3231			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	HSPA8	Heat shock cognate 71 kDa protein	HSP7C_BOVIN		126.9296	1.119e-71		0.5738	0.5738			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	HSPA8	Heat shock cognate 71 kDa protein	HSP7C_HUMAN		103.9704	6.876e-59		0.4630	0.4630			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	HSPA8	Heat shock cognate 71 kDa protein	HSP7C_HUMAN		105.8078	6.515e-60		0.3371	0.3371			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	HSPA8	Heat shock cognate 71 kDa protein	HSP7C_HUMAN		36.7088	2.006e-21		0.5738	0.5738			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Ephx2	Bifunctional epoxide hydrolase 2	HYES_MOUSE		20.0600	3.765e-12		0.5614	0.5614			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	birA	Possible bifunctional protein BirA: biotin operon repressor + biotin--[acetyl-CoA-carboxylase] synthetase (Biotin--protein ligase)	I6YFP0_MYCTU		202.5351	8.638e-114		0.4000	0.4000			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	IDE	Insulin-degrading enzyme	IDE_HUMAN		16.6425	3.016e-10		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Eif4e	Eukaryotic translation initiation factor 4E	IF4E_MOUSE		185.1924	3.948e-104		0.3750	0.3750			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Eif4e	Eukaryotic translation initiation factor 4E	IF4E_MOUSE		249.2775	7.955e-140		0.5692	0.5692			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	EIF4E	Eukaryotic translation initiation factor 4E	IF4E_RABIT		160.6934	1.747e-90		0.3478	0.3478			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	EIF4E	Eukaryotic translation initiation factor 4E	IF4E_RABIT		223.0260	3.333e-125		0.5606	0.5606			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	EIF4E	Eukaryotic translation initiation factor 4E	IF4E_HUMAN		29.1851	3.113e-17		0.3478	0.3478			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	EIF4E	Eukaryotic translation initiation factor 4E	IF4E_HUMAN		53.0152	1.658e-30		0.5606	0.5606			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	IMPDH1	Inosine-5'-monophosphate dehydrogenase 1	IMDH1_HUMAN		117.9075	1.187e-66		0.4286	0.4286			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	IMPDH2	Inosine-5'-monophosphate dehydrogenase 2	IMDH2_HUMAN		60.2903	1.47e-34		0.4286	0.4286			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Impdh2	Inosine-5'-monophosphate dehydrogenase 2	IMDH2_MOUSE		30.2342	8.104e-18		0.2821	0.2821			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Impdh2	Inosine-5'-monophosphate dehydrogenase 2	IMDH2_MOUSE		126.7046	1.494e-71		0.4286	0.4286			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	INMT	Indolethylamine N-methyltransferase	INMT_HUMAN		10.8531	5.06e-07		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	ispE	4-diphosphocytidyl-2-C-methyl-D-erythritol kinase	ISPE_ECOLI		114.1621	1.447e-64		0.5161	0.5161			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	ispE	4-diphosphocytidyl-2-C-methyl-D-erythritol kinase	ISPE_ECOLI		98.2840	1.011e-55		0.4444	0.4444			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	ispH	4-hydroxy-3-methylbut-2-enyl diphosphate reductase	ISPH_AQUAE		25.7274	2.665e-15		0.2903	0.2903			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	ITGA2B	Integrin alpha-IIb	ITA2B_HUMAN		16.3027	4.663e-10		0.3833	0.3833			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	ITGB3	Integrin beta-3	ITB3_HUMAN		11.2825	2.917e-07		0.3833	0.3833			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Itpr1	Inositol 1,4,5-trisphosphate receptor type 1	ITPR1_RAT		43.6306	2.798e-25		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Itpr1	Inositol 1,4,5-trisphosphate receptor type 1	ITPR1_RAT		60.1563	1.746e-34		0.3243	0.3243			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Ak2	Adenylate kinase 2, mitochondrial	KAD2_RAT		66.2426	7.11e-38		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Ak2	Adenylate kinase 2, mitochondrial	KAD2_RAT		142.7921	1.635e-80		0.5161	0.5161			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Ak3	GTP:AMP phosphotransferase AK3, mitochondrial	KAD3_RAT		86.4457	3.969e-49		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Ak3	GTP:AMP phosphotransferase AK3, mitochondrial	KAD3_RAT		132.8151	5.899e-75		0.5161	0.5161			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	KDM2A	Lysine-specific demethylase 2A	KDM2A_HUMAN		14.2118	6.812e-09		0.3125	0.3125			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	KDM7A	Lysine-specific demethylase 7A	KDM7A_HUMAN		33.5235	1.193e-19		0.3125	0.3125			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	TK	Thymidine kinase	KITH_HHV1S		13.6646	1.374e-08		0.4000	0.4000			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	TK1	Thymidine kinase, cytosolic	KITH_HUMAN		34.3622	4.068e-20		0.3818	0.3818			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Tk1	Thymidine kinase, cytosolic	KITH_RAT		61.9055	1.852e-35		0.2879	0.2879			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Tk1	Thymidine kinase, cytosolic	KITH_RAT		98.9999	4.036e-56		0.5323	0.5323			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	TK	Thymidine kinase	KITH_VZVD		131.5637	2.936e-74		0.4000	0.4000			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	TK	Thymidine kinase	KITH_VZVO		93.8045	3.161e-53		0.3676	0.3676			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	TK2	Thymidine kinase 2, mitochondrial	KITM_HUMAN		12.7976	4.179e-08		0.2838	0.2838			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Klrb1a	Killer cell lectin-like receptor subfamily B member 1A	KLRBA_RAT		23.7969	3.12e-14		0.3509	0.3509			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	KMT2A	Histone-lysine N-methyltransferase 2A	KMT2A_HUMAN		13.4257	1.867e-08		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	KMT5C	Histone-lysine N-methyltransferase KMT5C	KMT5C_HUMAN		65.9590	1.023e-37		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	DTYMK	Thymidylate kinase	KTHY_HUMAN		123.6528	7.485e-70		0.4146	0.4146			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	LNPEP	Leucyl-cystinyl aminopeptidase	LCAP_HUMAN		54.5506	2.314e-31		0.3913	0.3913			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	LGALS9	Galectin-9	LEG9_HUMAN		10.3691	9.412e-07		0.2982	0.2982			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	GLO1	Lactoylglutathione lyase	LGUL_HUMAN		10.6034	6.969e-07		0.3433	0.3433			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	LMP1	Latent membrane protein 1	LMP1_EBVB9		6.1647	0.0002068		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	LY96	Lymphocyte antigen 96	LY96_HUMAN		27.0487	4.441e-16		0.3051	0.3051			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	LYPLA2	Acyl-protein thioesterase 2	LYPA2_HUMAN		19.1371	1.23e-11		0.2830	0.2830			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	inhA	Enoyl-[acyl-carrier-protein] reductase [NADH]	M9TGV3_MYCTX		18.5287	2.684e-11		0.3750	0.3750			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	MACROD1	ADP-ribose glycohydrolase MACROD1	MACD1_HUMAN		73.6729	5.166e-42		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	MACROD1	ADP-ribose glycohydrolase MACROD1	MACD1_HUMAN		107.2335	1.047e-60		0.4848	0.4848			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	MACROD2	ADP-ribose glycohydrolase MACROD2	MACD2_HUMAN		73.6729	5.166e-42		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	MACROD2	ADP-ribose glycohydrolase MACROD2	MACD2_HUMAN		107.2335	1.047e-60		0.4848	0.4848			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	IMA1	Oligo-1,6-glucosidase IMA1	MALX3_YEAST		51.7669	8.221e-30		0.2931	0.2931			SEA16_ChEMBL27_rdkit_ecfp4
+m0010	C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O		Other		Alpha-mannosidase	MANA_CANEN		94.6170	1.115e-53		0.2927	0.2927			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	MNAT1	CDK-activating kinase assembly factor MAT1	MAT1_HUMAN		9.7568	2.064e-06		0.3043	0.3043			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	MNAT1	CDK-activating kinase assembly factor MAT1	MAT1_HUMAN		10.1400	1.263e-06		0.3158	0.3158			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	mbtA	Salicyl-AMP ligase / salicyl-S-ArCP synthetase	MBTA_MYCTU		47.5761	1.775e-27		0.3151	0.3151			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	mbtA	Salicyl-AMP ligase / salicyl-S-ArCP synthetase	MBTA_MYCTU		213.2300	9.534e-120		0.3418	0.3418			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Mc3r	Melanocortin receptor 3	MC3R_MOUSE		85.5944	1.183e-48		0.3699	0.3699			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Mc4r	Melanocortin receptor 4	MC4R_MOUSE		80.3689	9.627e-46		0.4028	0.4028			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Mc5r	Melanocortin receptor 5	MC5R_MOUSE		103.8710	7.812e-59		0.4366	0.4366			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MC4R	Melanocortin receptor 4	MC4R_HUMAN		17.9518	5.625e-11		0.3924	0.3924			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	NR3C2	Mineralocorticoid receptor	MCR_HUMAN		10.8290	5.218e-07		0.3738	0.3738			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	NR3C2	Mineralocorticoid receptor	MCR_HUMAN		12.1534	9.546e-08		0.4381	0.4381			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MDM4	Protein Mdm4	MDM4_HUMAN		23.3308	5.673e-14		0.3600	0.3600			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	menB	1,4-dihydroxy-2-naphthoyl-CoA synthase	MENB_MYCTU		48.0129	1.014e-27		0.2857	0.2857			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Mat1a	S-adenosylmethionine synthase isoform type-1	METK1_RAT		70.2490	4.172e-40		0.3699	0.3699			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Mat2a	S-adenosylmethionine synthase isoform type-2	METK2_RAT		66.2896	6.694e-38		0.3000	0.3000			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Mat2a	S-adenosylmethionine synthase isoform type-2	METK2_RAT		102.5642	4.175e-58		0.4638	0.4638			SEA16_ChEMBL27_rdkit_ecfp4
+m0010	C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O		Homo	MGAM	Maltase-glucoamylase, intestinal	MGA_HUMAN		13.1632	2.614e-08		0.3143	0.3143			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MMEL1	Membrane metallo-endopeptidase-like 1	MMEL1_HUMAN		27.2745	3.331e-16		0.3148	0.3148			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MMP10	Stromelysin-2	MMP10_HUMAN		53.3215	1.119e-30		0.3281	0.3281			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	MMP13	Collagenase 3	MMP13_BOVIN		11.3460	2.689e-07		0.4143	0.4143			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MMP12	Macrophage metalloelastase	MMP12_HUMAN		64.5439	6.282e-37		0.4559	0.4559			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MMP13	Collagenase 3	MMP13_HUMAN		13.0110	3.178e-08		0.3281	0.3281			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MMP3	Stromelysin-1	MMP3_HUMAN		12.0087	1.149e-07		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MMP2	72 kDa type IV collagenase	MMP2_HUMAN		12.3464	7.453e-08		0.4143	0.4143			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MMP8	Neutrophil collagenase	MMP8_HUMAN		27.8078	2.22e-16		0.3281	0.3281			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	CDC25A	M-phase inducer phosphatase 1	MPIP1_HUMAN		61.6411	2.6e-35		0.4478	0.4478			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	CDC25A	M-phase inducer phosphatase 1	MPIP1_HUMAN		43.5841	2.97e-25		0.3649	0.3649			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	CDC25B	M-phase inducer phosphatase 2	MPIP2_HUMAN		21.8903	3.6e-13		0.3966	0.3966			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	IGF2R	Cation-independent mannose-6-phosphate receptor	MPRI_HUMAN		106.4256	2.95e-60		0.3448	0.3448			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	mraY	Phospho-N-acetylmuramoyl-pentapeptide-transferase	MRAY_ECOLI		37.9899	3.88e-22		0.3538	0.3538			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	mraY	Phospho-N-acetylmuramoyl-pentapeptide-transferase	MRAY_ECOLI		34.8008	2.318e-20		0.3243	0.3243			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	mraY	Phospho-N-acetylmuramoyl-pentapeptide-transferase	MRAY_BACSU		30.8228	3.809e-18		0.2875	0.2875			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	mraY	Phospho-N-acetylmuramoyl-pentapeptide-transferase	MRAY_BACSU		30.4546	6.109e-18		0.2841	0.2841			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	ABCC4	Multidrug resistance-associated protein 4	MRP4_HUMAN		77.9475	2.149e-44		0.5312	0.5312			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	ABCC4	Multidrug resistance-associated protein 4	MRP4_HUMAN		64.1369	1.059e-36		0.4366	0.4366			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	mshC	L-cysteine:1D-myo-inositol 2-amino-2-deoxy-alpha-D-glucopyranoside ligase	MSHC_MYCTU		67.9935	7.528e-39		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MC1R	Melanocyte-stimulating hormone receptor	MSHR_HUMAN		12.2419	8.521e-08		0.4697	0.4697			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Mc1r	Melanocyte-stimulating hormone receptor	MSHR_MOUSE		105.4602	1.017e-59		0.4697	0.4697			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Mtap	S-methyl-5'-thioadenosine phosphorylase	MTAP_MOUSE		124.6840	1.994e-70		0.3115	0.3115			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	NADK	NAD kinase	NADK_HUMAN		85.6851	1.053e-48		0.3115	0.3115			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	nadK1	NAD kinase 1	NADK1_LISMF		73.6729	5.166e-42		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	nadK	NAD kinase	NADK_STAAC		73.6729	5.166e-42		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	AMDHD2	N-acetylglucosamine-6-phosphate deacetylase	NAGA_HUMAN		68.8314	2.57e-39		0.3115	0.3115			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	NAALAD2	N-acetylated-alpha-linked acidic dipeptidase 2	NALD2_HUMAN		78.1292	1.702e-44		0.3529	0.3529			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	NCOA3	Nuclear receptor coactivator 3	NCOA3_HUMAN		6.9315	7.735e-05		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Mme	Neprilysin	NEP_MOUSE		21.4357	6.449e-13		0.2807	0.2807			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	MME	Neprilysin	NEP_HUMAN		24.9445	7.216e-15		0.4844	0.4844			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	MME	Neprilysin	NEP_PIG		123.2625	1.235e-69		0.3273	0.3273			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	MME	Neprilysin	NEP_RABIT		39.5610	5.172e-23		0.3214	0.3214			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Mme	Neprilysin	NEP_RAT		19.9055	4.591e-12		0.3103	0.3103			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	TACR1	Substance-P receptor	NK1R_CAVPO		8.9799	5.591e-06		0.3099	0.3099			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Tacr1	Substance-P receptor	NK1R_RAT		9.8300	1.879e-06		0.2830	0.2830			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Tacr2	Substance-K receptor	NK2R_RAT		16.5690	3.314e-10		0.3099	0.3099			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Nmbr	Neuromedin-B receptor	NMBR_RAT		44.6683	7.394e-26		0.3187	0.3187			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	NMT1	Glycylpeptide N-tetradecanoyltransferase	NMT_YEAST		41.7671	3.054e-24		0.2981	0.2981			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	NNMT	Nicotinamide N-methyltransferase	NNMT_HUMAN		20.6017	1.88e-12		0.3043	0.3043			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	NOD1	Nucleotide-binding oligomerization domain-containing protein 1	NOD1_HUMAN		9.9822	1.546e-06		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	NPC1	NPC intracellular cholesterol transporter 1	NPC1_HUMAN		63.2968	3.11e-36		0.3924	0.3924			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	NPC1	NPC intracellular cholesterol transporter 1	NPC1_HUMAN		28.8834	4.583e-17		0.3256	0.3256			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	NPC1L1	NPC1-like intracellular cholesterol transporter 1	NPCL1_HUMAN		112.7162	9.245e-64		0.4762	0.4762			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	NPC1L1	NPC1-like intracellular cholesterol transporter 1	NPCL1_HUMAN		67.4049	1.601e-38		0.3857	0.3857			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	NR1H3	Oxysterols receptor LXR-alpha	NR1H3_HUMAN		23.6830	3.608e-14		0.5645	0.5645			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	NR1H3	Oxysterols receptor LXR-alpha	NR1H3_HUMAN		15.5650	1.201e-09		0.4638	0.4638			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	NR1H4	Bile acid receptor	NR1H4_HUMAN		63.4458	2.569e-36		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	NR1H4	Bile acid receptor	NR1H4_HUMAN		50.1716	6.361e-29		0.7778	0.7778			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Nr1i3	Nuclear receptor subfamily 1 group I member 3	NR1I3_MOUSE		36.3548	3.159e-21		0.3387	0.3387			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	Nr1i3	Nuclear receptor subfamily 1 group I member 3	NR1I3_MOUSE		32.0119	8.29e-19		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	NR2E3	Photoreceptor-specific nuclear receptor	NR2E3_HUMAN		9.6126	2.484e-06		0.4545	0.4545			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	SLC10A2	Ileal sodium/bile acid cotransporter	NTCP2_HUMAN		98.6943	5.973e-56		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	SLC10A2	Ileal sodium/bile acid cotransporter	NTCP2_HUMAN		81.6864	1.777e-46		0.7778	0.7778			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Slc10a1	Sodium/bile acid cotransporter	NTCP_RAT		98.1415	1.214e-55		0.5588	0.5588			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	Slc10a1	Sodium/bile acid cotransporter	NTCP_RAT		125.1891	1.043e-70		0.7188	0.7188			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	SLC10A1	Sodium/bile acid cotransporter	NTCP_HUMAN		201.6048	2.848e-113		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	SLC10A1	Sodium/bile acid cotransporter	NTCP_HUMAN		172.0196	8.584e-97		0.7778	0.7778			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	NS5b	RNA-directed RNA polymerase	O39930_9HEPC		25.0686	6.106e-15		0.4500	0.4500			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	NS5b	RNA-directed RNA polymerase	O39930_9HEPC		74.8728	1.109e-42		0.7018	0.7018			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	OGA	Protein O-GlcNAcase	OGA_HUMAN		13.1935	2.515e-08		0.3019	0.3019			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	OGT	UDP-N-acetylglucosamine--peptide N-acetylglucosaminyltransferase 110 kDa subunit	OGT1_HUMAN		22.7862	1.141e-13		0.3729	0.3729			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	OGT	UDP-N-acetylglucosamine--peptide N-acetylglucosaminyltransferase 110 kDa subunit	OGT1_HUMAN		35.8988	5.669e-21		0.6545	0.6545			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Oxgr1	2-oxoglutarate receptor 1	OXGR1_RAT		10.9342	4.559e-07		0.2881	0.2881			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	P2RX1	P2X purinoceptor 1	P2RX1_HUMAN		64.0475	1.187e-36		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	P2RX1	P2X purinoceptor 1	P2RX1_HUMAN		131.5726	2.903e-74		0.5738	0.5738			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2rx1	P2X purinoceptor 1	P2RX1_RAT		29.4553	2.201e-17		0.3521	0.3521			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2rx1	P2X purinoceptor 1	P2RX1_RAT		43.5647	3.045e-25		0.5135	0.5135			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2rx2	P2X purinoceptor 2	P2RX2_RAT		13.5741	1.543e-08		0.3286	0.3286			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2rx2	P2X purinoceptor 2	P2RX2_RAT		28.9902	3.996e-17		0.5645	0.5645			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2rx4	P2X purinoceptor 4	P2RX4_MOUSE		36.4709	2.722e-21		0.3286	0.3286			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2rx4	P2X purinoceptor 4	P2RX4_MOUSE		83.5388	1.651e-47		0.5645	0.5645			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	P2RX4	P2X purinoceptor 4	P2RX4_HUMAN		24.0826	2.165e-14		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	P2RX4	P2X purinoceptor 4	P2RX4_HUMAN		60.4009	1.276e-34		0.5645	0.5645			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2rx4	P2X purinoceptor 4	P2RX4_RAT		31.4503	1.704e-18		0.3286	0.3286			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2rx4	P2X purinoceptor 4	P2RX4_RAT		72.1306	3.735e-41		0.5645	0.5645			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2rx5	P2X purinoceptor 5	P2RX5_RAT		69.6312	9.213e-40		0.3286	0.3286			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2rx5	P2X purinoceptor 5	P2RX5_RAT		121.3071	1.516e-68		0.5645	0.5645			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2rx6	P2X purinoceptor 6	P2RX6_RAT		69.6312	9.213e-40		0.3286	0.3286			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2rx6	P2X purinoceptor 6	P2RX6_RAT		121.3071	1.516e-68		0.5645	0.5645			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	P2RY1	P2Y purinoceptor 1	P2RY1_HUMAN		14.3185	5.941e-09		0.3433	0.3433			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	P2RY1	P2Y purinoceptor 1	P2RY1_HUMAN		34.8384	2.209e-20		0.5738	0.5738			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2RY1	P2Y purinoceptor 1	P2RY1_MELGA		73.1742	9.794e-42		0.3521	0.3521			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2RY1	P2Y purinoceptor 1	P2RY1_MELGA		192.5318	3.223e-108		0.5738	0.5738			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2ry1	P2Y purinoceptor 1	P2RY1_RAT		126.3569	2.333e-71		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2ry1	P2Y purinoceptor 1	P2RY1_RAT		214.2419	2.604e-120		0.5692	0.5692			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	P2RY2	P2Y purinoceptor 2	P2RY2_HUMAN		364.4725	5.452e-204		0.5517	0.5517			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	P2RY2	P2Y purinoceptor 2	P2RY2_HUMAN		648.0127	0		0.7547	0.7547			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2ry2	P2Y purinoceptor 2	P2RY2_RAT		79.7248	2.199e-45		0.3607	0.3607			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2ry2	P2Y purinoceptor 2	P2RY2_RAT		139.7342	8.256e-79		0.6316	0.6316			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2ry2	P2Y purinoceptor 2	P2RY2_MOUSE		24.4684	1.321e-14		0.3607	0.3607			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2ry2	P2Y purinoceptor 2	P2RY2_MOUSE		43.0729	5.722e-25		0.6316	0.6316			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2ry4	P2Y purinoceptor 4	P2RY4_RAT		109.1056	9.485e-62		0.3607	0.3607			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2ry4	P2Y purinoceptor 4	P2RY4_RAT		184.7290	7.153e-104		0.6316	0.6316			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	P2RY4	P2Y purinoceptor 4	P2RY4_HUMAN		281.9203	5.23e-158		0.4906	0.4906			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	P2RY4	P2Y purinoceptor 4	P2RY4_HUMAN		472.9978	1.939e-264		0.7143	0.7143			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2ry6	P2Y purinoceptor 6	P2RY6_RAT		51.5335	1.109e-29		0.3729	0.3729			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2ry6	P2Y purinoceptor 6	P2RY6_RAT		92.9055	1.001e-52		0.6545	0.6545			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	P2RY6	P2Y purinoceptor 6	P2RY6_HUMAN		380.9797	3.483e-213		0.4627	0.4627			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	P2RY6	P2Y purinoceptor 6	P2RY6_HUMAN		638.0215	0		0.7273	0.7273			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	P2RY11	P2Y purinoceptor 11	P2Y11_HUMAN		41.8806	2.64e-24		0.3231	0.3231			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	P2RY11	P2Y purinoceptor 11	P2Y11_HUMAN		160.1037	3.723e-90		0.5738	0.5738			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	P2ry12	P2Y purinoceptor 12	P2Y12_RAT		9.9457	1.62e-06		0.3286	0.3286			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	P2ry12	P2Y purinoceptor 12	P2Y12_RAT		18.0119	5.207e-11		0.5738	0.5738			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	P2RY14	P2Y purinoceptor 14	P2Y14_HUMAN		259.0319	2.934e-145		0.4333	0.4333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	P2RY14	P2Y purinoceptor 14	P2Y14_HUMAN		392.1576	2.069e-219		0.7143	0.7143			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	P2RY12	P2Y purinoceptor 12	P2Y12_HUMAN		12.2923	7.988e-08		0.5205	0.5205			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	birA	BirA bifunctional protein	P96884_MYCTO		133.6288	2.077e-75		0.3896	0.3896			SEA16_ChEMBL27_rdkit_ecfp4
+m0007	C[N+](C)(C)CCOP(=O)([O-])OC[C@@H](CO)O		Other	PLA2G1B	Phospholipase A2, major isoenzyme	PA21B_PIG		45.7435	1.862e-26		0.3519	0.3519			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	PADI6	Protein-arginine deiminase type-6	PADI6_HUMAN		33.1754	1.864e-19		0.3093	0.3093			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	panE	2-dehydropantoate 2-reductase	PANE_ECOLI		106.6141	2.316e-60		0.3793	0.3793			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	panC	Pantothenate synthetase	PANC_MYCTU		18.8823	1.705e-11		0.2875	0.2875			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	PARG	Poly(ADP-ribose) glycohydrolase	PARG_BOVIN		25.1421	5.551e-15		0.2838	0.2838			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	PARG	Poly(ADP-ribose) glycohydrolase	PARG_BOVIN		148.1702	1.651e-83		0.4459	0.4459			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	PARG	Poly(ADP-ribose) glycohydrolase	PARG_HUMAN		30.4214	6.375e-18		0.2838	0.2838			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	PARG	Poly(ADP-ribose) glycohydrolase	PARG_HUMAN		47.1191	3.19e-27		0.4384	0.4384			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Parg	Poly(ADP-ribose) glycohydrolase	PARG_RAT		11.3671	2.617e-07		0.2838	0.2838			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Parg	Poly(ADP-ribose) glycohydrolase	PARG_RAT		17.7708	7.094e-11		0.4384	0.4384			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	PARP3	Protein mono-ADP-ribosyltransferase PARP3	PARP3_HUMAN		10.9389	4.532e-07		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	SLC46A1	Proton-coupled folate transporter	PCFT_HUMAN		74.3859	2.07e-42		0.2973	0.2973			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	PDCD4	Programmed cell death protein 4	PDCD4_HUMAN		25.7387	2.554e-15		0.5306	0.5306			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	PDCD4	Programmed cell death protein 4	PDCD4_HUMAN		16.8175	2.409e-10		0.3492	0.3492			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	PTGER2	Prostaglandin E2 receptor EP2 subtype	PE2R2_HUMAN		12.1874	9.139e-08		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	PHF8	Histone lysine demethylase PHF8	PHF8_HUMAN		22.4778	1.694e-13		0.3125	0.3125			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	PIN1	Peptidyl-prolyl cis-trans isomerase NIMA-interacting 1	PIN1_HUMAN		47.0823	3.344e-27		0.3833	0.3833			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	PLCD1	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase delta-1	PLCD1_HUMAN		102.0703	7.865e-58		0.4615	0.4615			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	Plcd1	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase delta-1	PLCD1_RAT		102.0703	7.865e-58		0.4615	0.4615			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	PLCG1	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-1	PLCG1_HUMAN		27.2571	3.331e-16		0.3443	0.3443			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	PLCG1	1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-1	PLCG1_HUMAN		35.7393	6.956e-21		0.4603	0.4603			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	PNP	Purine nucleoside phosphorylase	PNPH_HUMAN		11.9079	1.308e-07		0.4490	0.4490			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other		Genome polyprotein	POLG_HCVBK		30.7823	4.013e-18		0.4000	0.4000			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other		Genome polyprotein	POLG_POL1M		80.3850	9.43e-46		0.3636	0.3636			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other		Genome polyprotein	POLG_POL1M		135.5975	1.663e-76		0.6129	0.6129			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	PPM1B	Protein phosphatase 1B	PPM1B_HUMAN		40.0405	2.797e-23		0.4107	0.4107			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	pqsA	Anthranilate--CoA ligase	PQSA_PSEAE		40.3019	2e-23		0.2877	0.2877			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	pqsA	Anthranilate--CoA ligase	PQSA_PSEAE		43.2547	4.532e-25		0.3086	0.3086			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	PRSS8	Prostasin	PRSS8_HUMAN		21.1017	9.899e-13		0.3718	0.3718			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	PRTN3	Myeloblastin	PRTN3_HUMAN		10.4255	8.755e-07		0.3820	0.3820			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Homo	PTPRF	Receptor-type tyrosine-protein phosphatase F	PTPRF_HUMAN		16.5548	3.375e-10		0.5000	0.5000			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Gart	Trifunctional purine biosynthetic protein adenosine-3	PUR2_MOUSE		33.3359	1.517e-19		0.2917	0.2917			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	GART	Trifunctional purine biosynthetic protein adenosine-3	PUR2_HUMAN		60.9167	6.584e-35		0.3594	0.3594			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	AIRC	Multifunctional protein ADE2	PUR6_CHICK		123.7385	6.705e-70		0.3500	0.3500			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	AIRC	Multifunctional protein ADE2	PUR6_CHICK		170.6492	4.977e-96		0.4918	0.4918			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	ATIC	Bifunctional purine biosynthesis protein PURH	PUR9_HUMAN		23.1258	7.383e-14		0.4182	0.4182			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	ATIC	Bifunctional purine biosynthesis protein PURH	PUR9_HUMAN		18.5448	2.629e-11		0.4179	0.4179			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	ADSS2	Adenylosuccinate synthetase isozyme 2	PURA2_HUMAN		30.1477	9.056e-18		0.2812	0.2812			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	PYGM	Glycogen phosphorylase, muscle form	PYGM_HUMAN		13.7334	1.258e-08		0.4314	0.4314			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	PYGM	Glycogen phosphorylase, muscle form	PYGM_RABIT		124.7309	1.878e-70		0.9730	0.9730			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	pyrF	Orotidine 5'-phosphate decarboxylase	PYRF_METTH		86.5284	3.57e-49		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	pyrF	Orotidine 5'-phosphate decarboxylase	PYRF_METTH		128.3389	1.837e-72		0.4516	0.4516			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	URA3	Orotidine 5'-phosphate decarboxylase	PYRF_YEAST		97.7867	1.913e-55		0.4400	0.4400			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	URA3	Orotidine 5'-phosphate decarboxylase	PYRF_YEAST		139.0666	1.944e-78		0.4762	0.4762			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	NS1	Non-structural protein 1	Q194T2_9INFA		221.3393	2.9e-124		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other		Sterol-8,7-isomerase	Q2TU57_MAIZE		19.8226	5.106e-12		0.3243	0.3243			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other		Sterol-8,7-isomerase	Q2TU57_MAIZE		18.7899	1.92e-11		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other		NS5B	Q3ZDS5_9HEPC		57.2300	7.447e-33		0.4079	0.4079			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other		Adenosine receptor A1	Q4VQ11_PIG		33.1781	1.858e-19		0.3898	0.3898			SEA16_ChEMBL27_rdkit_ecfp4
+m0007	C[N+](C)(C)CCOP(=O)([O-])OC[C@@H](CO)O		Other		Group VII phospholipase A2	Q6UB75_PIG		11.6418	1.84e-07		0.3051	0.3051			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	pol	Reverse transcriptase/RNaseH	Q72547_9HIV1		15.4458	1.399e-09		0.5532	0.5532			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	pol	Reverse transcriptase/RNaseH	Q72547_9HIV1		15.9525	7.306e-10		0.6441	0.6441			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other		Protease	Q82323_9DELA		10.0509	1.415e-06		0.3131	0.3131			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other		Serine/threonine-protein phosphatase 2A 55 kDa regulatory subunit B	Q8AWE3_CHICK		32.0216	8.187e-19		0.4107	0.4107			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other		M1-family alanyl aminopeptidase	Q8IEK1_PLAF7		16.1116	5.958e-10		1.0000	1.0000			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other		M1-family alanyl aminopeptidase	Q8IEK1_PLAF7		12.3913	7.036e-08		0.7778	0.7778			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	lgtC	Alpha 1,4 galactosyltransferase	Q8KHJ3_NEIME		70.8332	1.972e-40		0.3205	0.3205			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	lgtC	Alpha 1,4 galactosyltransferase	Q8KHJ3_NEIME		87.3457	1.251e-49		0.3951	0.3951			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	ompdc	Orotidine 5'-monophosphate decarboxylase	Q8T6J6_PLAFA		69.9813	5.881e-40		0.3167	0.3167			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	ompdc	Orotidine 5'-monophosphate decarboxylase	Q8T6J6_PLAFA		96.2992	1.289e-54		0.4355	0.4355			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	hda106	HD2 type histone deacetylase HDA106	Q94F81_MAIZE		30.6509	4.75e-18		0.3922	0.3922			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	LOC100912604	Spermidine synthase	Q99MI5_RAT		30.6299	4.879e-18		0.2857	0.2857			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other		Histone deacetylase 6	Q99P97_RAT		69.7870	7.545e-40		0.3158	0.3158			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other		IAG-nucleoside hydrolase	Q9GPQ4_TRYVI		26.5936	8.882e-16		0.3000	0.3000			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	g6pd	Glucose-6-phosphate 1-dehydrogenase	Q9GRG7_9TRYP		47.4884	1.986e-27		0.3387	0.3387			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	g6pd	Glucose-6-phosphate 1-dehydrogenase	Q9GRG7_9TRYP		41.8277	2.826e-24		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	pchD	Pyochelin biosynthesis protein PchD	Q9HWG3_PSEAE		68.2038	5.748e-39		0.3086	0.3086			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	cpg2	Carboxypeptidase G2	Q9I056_PSEAE		47.6106	1.698e-27		0.3333	0.3333			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	reverse transcriptase	Reverse transcriptase protein	Q9WJQ2_9HIV1		19.1499	1.21e-11		0.6964	0.6964			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	reverse transcriptase	Reverse transcriptase	Q9WKE8_9HIV1		16.6499	2.987e-10		0.6964	0.6964			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	RAB7A	Ras-related protein Rab-7a	RAB7A_HUMAN		17.9256	5.816e-11		0.3433	0.3433			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	RAB7A	Ras-related protein Rab-7a	RAB7A_HUMAN		31.0005	3.033e-18		0.5873	0.5873			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	RAC1	Ras-related C3 botulinum toxin substrate 1	RAC1_HUMAN		19.2035	1.129e-11		0.3433	0.3433			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	RAC1	Ras-related C3 botulinum toxin substrate 1	RAC1_HUMAN		33.0881	2.085e-19		0.5873	0.5873			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	KRAS	GTPase KRas	RASK_HUMAN		61.7235	2.339e-35		0.2949	0.2949			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	KRAS	GTPase KRas	RASK_HUMAN		128.1022	2.488e-72		0.4416	0.4416			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	resT	Telomere resolvase ResT	REST_BORBU		23.5874	4.086e-14		0.3478	0.3478			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	resT	Telomere resolvase ResT	REST_BORBU		39.4587	5.898e-23		0.5789	0.5789			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	resT	Telomere resolvase ResT	REST_BORBU		31.8913	9.676e-19		0.4688	0.4688			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	REN	Renin	RENI_HUMAN		15.5878	1.166e-09		0.4355	0.4355			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other		Ricin	RICI_RICCO		31.7167	1.211e-18		0.2958	0.2958			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	nrdE	Ribonucleoside-diphosphate reductase subunit alpha	RIR1_MYCTU		30.1952	8.52e-18		0.2817	0.2817			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	RNASEL	2-5A-dependent ribonuclease	RN5A_HUMAN		62.6977	6.705e-36		0.2838	0.2838			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	RNASEL	2-5A-dependent ribonuclease	RN5A_HUMAN		92.6301	1.425e-52		0.4189	0.4189			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Rnasel	2-5A-dependent ribonuclease	RN5A_MOUSE		79.4688	3.054e-45		0.2838	0.2838			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Rnasel	2-5A-dependent ribonuclease	RN5A_MOUSE		114.0350	1.704e-64		0.4189	0.4189			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	RNASE1	Ribonuclease pancreatic	RNAS1_BOVIN		150.5479	7.825e-85		0.7083	0.7083			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	RNASE1	Ribonuclease pancreatic	RNAS1_BOVIN		162.9146	1.012e-91		0.6140	0.6140			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	RNASE1	Ribonuclease pancreatic	RNAS1_HUMAN		43.3789	3.865e-25		0.3095	0.3095			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	RNASE1	Ribonuclease pancreatic	RNAS1_HUMAN		109.8655	3.579e-62		0.3953	0.3953			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	RNASE2	Non-secretory ribonuclease	RNAS2_HUMAN		43.3789	3.865e-25		0.3095	0.3095			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	RNASE2	Non-secretory ribonuclease	RNAS2_HUMAN		109.8655	3.579e-62		0.3953	0.3953			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	RORA	Nuclear receptor ROR-alpha	RORA_HUMAN		22.2035	2.409e-13		0.4615	0.4615			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	RORA	Nuclear receptor ROR-alpha	RORA_HUMAN		17.2638	1.359e-10		0.3562	0.3562			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	SLC15A2	Solute carrier family 15 member 2	S15A2_HUMAN		40.4132	1.734e-23		0.2885	0.2885			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Slc15a2	Solute carrier family 15 member 2	S15A2_RAT		72.8666	1.453e-41		0.4348	0.4348			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	SLC19A1	Reduced folate transporter	S19A1_HUMAN		33.7360	9.083e-20		0.2973	0.2973			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	Slc22a6	Solute carrier family 22 member 6	S22A6_MOUSE		15.9278	7.541e-10		0.2857	0.2857			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Slc28a2	Sodium/nucleoside cotransporter 2	S28A2_RAT		63.9581	1.332e-36		0.2895	0.2895			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	SLC28A2	Sodium/nucleoside cotransporter 2	S28A2_HUMAN		210.5025	3.151e-118		0.3529	0.3529			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	SLC29A1	Equilibrative nucleoside transporter 1	S29A1_HUMAN		267.7428	4.125e-150		0.4098	0.4098			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Slc29a1	Equilibrative nucleoside transporter 1	S29A1_RAT		49.7594	1.079e-28		0.3548	0.3548			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	SRD5A1	3-oxo-5-alpha-steroid 4-dehydrogenase 1	S5A1_HUMAN		45.0866	4.324e-26		0.3857	0.3857			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	SRD5A1	3-oxo-5-alpha-steroid 4-dehydrogenase 1	S5A1_HUMAN		14.6561	3.853e-09		0.3000	0.3000			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	SRD5A2	3-oxo-5-alpha-steroid 4-dehydrogenase 2	S5A2_HUMAN		44.5208	8.934e-26		0.3857	0.3857			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	SRD5A2	3-oxo-5-alpha-steroid 4-dehydrogenase 2	S5A2_HUMAN		17.5077	9.942e-11		0.3014	0.3014			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	AHCY	Adenosylhomocysteinase	SAHH_HUMAN		43.3353	4.086e-25		0.4706	0.4706			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	AHCY	Adenosylhomocysteinase	SAHH_HUMAN		12.0691	1.064e-07		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	Ahcy	Adenosylhomocysteinase	SAHH_RAT		19.9523	4.323e-12		0.2931	0.2931			SEA16_ChEMBL27_rdkit_ecfp4
+m0006	C[N+](C)(C)CCO		Other	Slc5a7	High affinity choline transporter 1	SC5A7_MOUSE		22.1881	2.457e-13		0.6250	0.6250			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	SLC5A2	Sodium/glucose cotransporter 2	SC5A2_HUMAN		34.3813	3.97e-20		0.4364	0.4364			SEA16_ChEMBL27_rdkit_ecfp4
+m0006	C[N+](C)(C)CCO		Other	Slc6a8	Sodium- and chloride-dependent creatine transporter 1	SC6A8_RAT		109.9917	3.044e-62		0.3913	0.3913			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	SETDB1	Histone-lysine N-methyltransferase SETDB1	SETB1_HUMAN		65.9590	1.023e-37		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	SETD7	Histone-lysine N-methyltransferase SETD7	SETD7_HUMAN		15.8674	8.149e-10		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	SHBG	Sex hormone-binding globulin	SHBG_HUMAN		29.9433	1.177e-17		0.4364	0.4364			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	SHBG	Sex hormone-binding globulin	SHBG_HUMAN		23.2255	6.495e-14		0.3833	0.3833			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Shbg	Sex hormone-binding globulin	SHBG_RAT		39.3978	6.377e-23		0.2812	0.2812			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	St3gal2	CMP-N-acetylneuraminate-beta-galactosamide-alpha-2,3-sialyltransferase 2	SIA4B_RAT		174.8369	2.314e-98		0.5205	0.5205			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	St3gal2	CMP-N-acetylneuraminate-beta-galactosamide-alpha-2,3-sialyltransferase 2	SIA4B_RAT		149.6178	2.58e-84		0.4557	0.4557			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Shh	Sonic hedgehog protein	SHH_MOUSE		12.0375	1.108e-07		0.3433	0.3433			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	ST3GAL1	CMP-N-acetylneuraminate-beta-galactosamide-alpha-2,3-sialyltransferase 1	SIA4A_HUMAN		81.7141	1.715e-46		0.5135	0.5135			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	ST3GAL1	CMP-N-acetylneuraminate-beta-galactosamide-alpha-2,3-sialyltransferase 1	SIA4A_HUMAN		70.4909	3.059e-40		0.4500	0.4500			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	ST3GAL1	CMP-N-acetylneuraminate-beta-galactosamide-alpha-2,3-sialyltransferase 1	SIA4A_HUMAN		30.5096	5.693e-18		0.3438	0.3438			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	ST6GAL1	Beta-galactoside alpha-2,6-sialyltransferase 1	SIAT1_HUMAN		106.4113	3.004e-60		0.5424	0.5424			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	ST6GAL1	Beta-galactoside alpha-2,6-sialyltransferase 1	SIAT1_HUMAN		189.6922	1.23e-106		0.6833	0.6833			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	ST6GAL1	Beta-galactoside alpha-2,6-sialyltransferase 1	SIAT1_HUMAN		12.5612	5.658e-08		0.4023	0.4023			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	ST6GAL1	Beta-galactoside alpha-2,6-sialyltransferase 1	SIAT1_HUMAN		10.5609	7.359e-07		0.3404	0.3404			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	St3gal3	CMP-N-acetylneuraminate-beta-1,4-galactoside alpha-2,3-sialyltransferase	SIAT6_RAT		49.0781	2.586e-28		0.3500	0.3500			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	SMT1	Cycloartenol-C-24-methyltransferase	SMT1_ARATH		108.8595	1.3e-61		0.4306	0.4306			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Other	SMT1	Cycloartenol-C-24-methyltransferase	SMT1_ARATH		38.0530	3.578e-22		0.3544	0.3544			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	AANAT	Serotonin N-acetyltransferase	SNAT_SHEEP		15.6426	1.087e-09		0.2807	0.2807			SEA16_ChEMBL27_rdkit_ecfp4
+m0002	C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2		Other	Slco2b1	Solute carrier organic anion transporter family member 2B1	SO2B1_RAT		40.6752	1.239e-23		0.2903	0.2903			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	SLCO4C1	Solute carrier organic anion transporter family member 4C1	SO4C1_HUMAN		31.8812	9.803e-19		0.2973	0.2973			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	SLCO4C1	Solute carrier organic anion transporter family member 4C1	SO4C1_HUMAN		33.8788	7.563e-20		0.3158	0.3158			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	SRM	Spermidine synthase	SPEE_HUMAN		50.8888	2.535e-29		0.2857	0.2857			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	SMS	Spermine synthase	SPSY_HUMAN		40.0264	2.847e-23		0.2857	0.2857			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	SREBF2	Sterol regulatory element-binding protein 2	SRBP2_HUMAN		12.7932	4.202e-08		0.3803	0.3803			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	SREBF2	Sterol regulatory element-binding protein 2	SRBP2_HUMAN		10.2696	1.069e-06		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	SULT1E1	Sulfotransferase 1E1	ST1E1_BOVIN		42.7084	9.132e-25		0.3048	0.3048			SEA16_ChEMBL27_rdkit_ecfp4
+m0010	C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O		Homo	SI	Sucrase-isomaltase, intestinal	SUIS_HUMAN		19.9470	4.353e-12		0.3143	0.3143			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	SUV39H1	Histone-lysine N-methyltransferase SUV39H1	SUV91_HUMAN		18.2197	3.989e-11		0.2985	0.2985			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	aspS	Aspartate--tRNA ligase	SYD_ECOLI		65.4693	1.917e-37		0.2963	0.2963			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	IARS1	Isoleucine--tRNA ligase, cytoplasmic	SYIC_HUMAN		17.2016	1.472e-10		0.2824	0.2824			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	leuS	Leucine--tRNA ligase	SYL_ECOLI		41.0076	8.089e-24		0.2927	0.2927			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	MARS1	Methionine--tRNA ligase, cytoplasmic	SYMC_HUMAN		22.9430	9.337e-14		0.3023	0.3023			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	QARS1	Glutamine--tRNA ligase	SYQ_HUMAN		30.4214	6.375e-18		0.2838	0.2838			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	QARS1	Glutamine--tRNA ligase	SYQ_HUMAN		76.2142	1.985e-43		0.4000	0.4000			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	serS	Serine--tRNA ligase	SYS_ECOLI		64.4438	7.142e-37		0.2917	0.2917			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	serS	Serine--tRNA ligase	SYS_ECOLI		67.1308	2.276e-38		0.3038	0.3038			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	RARS1	Arginine--tRNA ligase, cytoplasmic	SYRC_HUMAN		99.9012	1.27e-56		0.4051	0.4051			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	TARS1	Threonine--tRNA ligase 1, cytoplasmic	SYTC_HUMAN		17.9147	5.899e-11		0.2840	0.2840			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	thrS	Threonine--tRNA ligase	SYT_YERPE		8.7352	7.652e-06		0.2840	0.2840			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	YARS1	Tyrosine--tRNA ligase, cytoplasmic	SYYC_HUMAN		8.9853	5.552e-06		0.3019	0.3019			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	tyrS	Tyrosine--tRNA ligase	SYY_ECOLI		64.9867	3.56e-37		0.2941	0.2941			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Taar1	Trace amine-associated receptor 1	TAAR1_MOUSE		25.1119	5.773e-15		0.3600	0.3600			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	tetX	Tetanus toxin	TETX_CLOTE		26.5600	8.882e-16		0.4328	0.4328			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	thyX	Flavin-dependent thymidylate synthase	THYX_MYCTU		32.5208	4.316e-19		0.3194	0.3194			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	TKT	Transketolase	TKT_HUMAN		9.0961	4.816e-06		0.3026	0.3026			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	TOP1	DNA topoisomerase 1	TOP1_HUMAN		60.3050	1.443e-34		0.3478	0.3478			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	TPMT	Thiopurine S-methyltransferase	TPMT_HUMAN		20.8314	1.4e-12		0.3077	0.3077			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	TRPM2	Transient receptor potential cation channel subfamily M member 2	TRPM2_HUMAN		25.1356	5.662e-15		0.3704	0.3704			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Prss1	Anionic trypsin-1	TRY1_RAT		8.6812	8.201e-06		0.3750	0.3750			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Homo	PRSS1	Trypsin-1	TRY1_HUMAN		8.9155	6.072e-06		0.3043	0.3043			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	TYMP	Thymidine phosphorylase	TYPH_HUMAN		11.9472	1.244e-07		0.3833	0.3833			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	TYMP	Thymidine phosphorylase	TYPH_HUMAN		11.2175	3.171e-07		0.3099	0.3099			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	TYMS	Thymidylate synthase	TYSY_BOVIN		52.5983	2.83e-30		0.3750	0.3750			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	thyA	Thymidylate synthase	TYSY_LACCA		92.9881	9.006e-53		0.4444	0.4444			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	thyA	Thymidylate synthase ThyA	TYSY_MYCTU		67.2527	1.947e-38		0.3043	0.3043			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	TYMS	Thymidylate synthase	TYSY_HUMAN		8.7138	7.865e-06		0.4444	0.4444			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	Tyms	Thymidylate synthase	TYSY_MOUSE		17.8852	6.126e-11		0.4444	0.4444			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	UBA6	Ubiquitin-like modifier-activating enzyme 6	UBA6_HUMAN		39.5531	5.225e-23		0.2824	0.2824			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	UBA7	Ubiquitin-like modifier-activating enzyme 7	UBA7_HUMAN		62.3808	1.007e-35		0.2824	0.2824			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Homo	UMPS	Uridine 5'-monophosphate synthase	UMPS_HUMAN		29.0348	3.774e-17		0.3273	0.3273			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Homo	UMPS	Uridine 5'-monophosphate synthase	UMPS_HUMAN		99.1020	3.541e-56		0.3788	0.3788			SEA16_ChEMBL27_rdkit_ecfp4
+m0003	C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN		Other	Plaur	Urokinase plasminogen activator surface receptor	UPAR_RAT		8.6812	8.201e-06		0.3750	0.3750			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other		Nonstructural protein 5	V5TFZ2_9FLAV		26.4317	1.11e-15		0.4308	0.4308			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other		Nonstructural protein 5	V5TFZ2_9FLAV		156.5489	3.555e-88		0.5846	0.5846			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Homo	VDR	Vitamin D3 receptor	VDR_HUMAN		17.3366	1.238e-10		0.7500	0.7500			SEA16_ChEMBL27_rdkit_ecfp4
+m0005	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C		Homo	VDR	Vitamin D3 receptor	VDR_HUMAN		8.5889	9.231e-06		0.6102	0.6102			SEA16_ChEMBL27_rdkit_ecfp4
+m0004	C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C		Other	Vdr	Vitamin D3 receptor	VDR_RAT		14.7466	3.431e-09		0.3026	0.3026			SEA16_ChEMBL27_rdkit_ecfp4
+m0008	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O		Other	walK	Sensor protein kinase WalK	WALK_STAAU		71.4012	9.519e-41		0.3231	0.3231			SEA16_ChEMBL27_rdkit_ecfp4
+m0009	C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O		Other	walK	Sensor protein kinase WalK	WALK_STAAU		126.9296	1.119e-71		0.5738	0.5738			SEA16_ChEMBL27_rdkit_ecfp4

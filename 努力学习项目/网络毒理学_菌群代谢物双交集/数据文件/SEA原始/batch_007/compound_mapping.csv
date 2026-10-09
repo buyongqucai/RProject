@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,D-Galactose,6036.0,C([C@@H]1[C@@H]([C@@H]([C@H](C(O1)O)O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,D-Glucose,5793.0,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,D-Mannose,18950.0,C([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile; gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05
+m0004,Deoxycytidine 5'-monophosphate,13945.0,C1[C@@H]([C@H](O[C@H]1N2C=CC(=NC2=O)N)COP(=O)(O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,Dihydroorotic acid,648.0,C1C(NC(=O)NC1=O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0006,"Fructose 1,6-bisphosphate",5460765.0,C([C@@H]1[C@H]([C@@H]([C@](O1)(COP(=O)([O-])[O-])O)O)O)OP(=O)([O-])[O-],GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0007,Fructose-6-phosphate,69507.0,C([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)OP(=O)(O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0008,Fumaric Acid,444972.0,C(=C/C(=O)O)\C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,Glucosamine 6-phosphate,439217.0,C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O)N)O)O)OP(=O)(O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0010,Glucose 1-phosphate,439165.0,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)OP(=O)(O)O)O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,Betaine,247.0,C[N+](C)(C)CC(=O)[O-],GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,Biotin,171548.0,C1[C@H]2[C@@H]([C@@H](S1)CCCCC(=O)O)NC(=O)N2,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,Carnosine,439224.0,C1=C(NC=N1)C[C@@H](C(=O)O)NC(=O)CCN,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0004,Chenodeoxycholic acid,10133.0,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile; predeclared UC mechanism anchor + GMMAD2 UC/IBD FDR<0.05
+m0005,Cholic acid,221493.0,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C,predeclared UC mechanism anchor + GMMAD2 UC/IBD FDR<0.05
+m0006,Choline,305.0,C[N+](C)(C)CCO,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0007,Choline Alfoscerate,657272.0,C[N+](C)(C)CCOP(=O)([O-])OC[C@@H](CO)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0008,Cytidine,6175.0,C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)CO)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,Cytidine-5'-diphosphate,6132.0,C1=CN(C(=O)N=C1N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0010,D-Fructose,2723872.0,C1[C@H]([C@H]([C@@H](C(O1)(CO)O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

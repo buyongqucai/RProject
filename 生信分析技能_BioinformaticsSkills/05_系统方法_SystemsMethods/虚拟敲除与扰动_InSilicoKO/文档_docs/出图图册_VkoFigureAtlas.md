@@ -27,6 +27,15 @@
 | Fig 5 DR 相关诊断 | 可选附录 |
 | Fig 6 系统全基因敲除景观 | 本期单基因敲除不默认 |
 
+## 方法示意与部位示意（SSOT）
+
+| 图 | 规矩 |
+|----|------|
+| 方法示意 | **数形结合**（矩阵/张量/分布/阈值线），不画纯流程框。结构对齐对应论文：scTenifoldKnk = Osorio *Patterns* 2022 的 A/B/C 栏（A 建网流水→B 出边置零→C 流形对齐 + dRegulation + FDR）；GenKI = Yang *NAR* 2023 Fig.1 七步（WT scGRN → VGAE 二维高斯 → 边从/到置零 → KL → bagging hit 规则）。每栏给数值（nNet=10、K=3、HVG=3000、hit>95% 等）与几何对象。**琪乐无穷 `01_方法示意_scTenifoldKnkWorkflow.jpg` 是金标，禁止重绘**；其它课题照其结构自绘或共用同一文件。 |
+| 部位示意 | 写实解剖（器官/皮肤层次/细胞类型 + 取材部位），不是抽象色块；页脚横幅「假设示意，非定位实验结果」。 |
+
+自绘图脚本范例：婷婷 `12_统一方法示意_GeometryABC.py`（GenKI）、`13_部位示意_AcneSkin_AhrSites.py`。
+
 ## 备选线（regulon）
 
 若表单 `method` 含 regulon：附录使用旧样例式 **rescued DEG 计数柱图**；正文声明非 scTenifoldKnk。

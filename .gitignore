@@ -84,3 +84,14 @@ NA
 努力学习项目/**/KEGG*/**/*.svg
 努力学习项目/**/动画*/**
 努力学习项目/**/参考_交付原图/**
+
+# QQ SMTP 授权码与告警凭据（勿入库）
+生信分析技能_BioinformaticsSkills/QQ邮箱.txt
+生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/qq_auth_path.txt
+生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/.mail_device_code
+生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/mail_auth_qr.png
+生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/test_mail_body.txt
+
+# GitHub 100MB 限制：外部库原始大文件仅本地保留
+努力学习项目/**/外部数据库/CTD/CTD_chemicals_diseases.csv.gz
+努力学习项目/**/外部数据库/GMMAD2/disease_meta.csv

@@ -1,0 +1,51 @@
+{
+  "阈值": "结肠(横/乙状任一段) median TPM ≥ 1.0",
+  "数据源": "GTEx v8 gene median TPM (2026-10-07 访问)",
+  "I1_291": {
+    "n": 291,
+    "n_colon_expressed": 243,
+    "pct": 83.5
+  },
+  "C_main_78": {
+    "n": 78,
+    "n_colon_expressed": 65,
+    "pct": 83.3
+  },
+  "C_full_126": {
+    "n": 126,
+    "n_colon_expressed": 105,
+    "pct": 83.3
+  },
+  "I2_main": {
+    "n": 165,
+    "n_colon_expressed": 126,
+    "pct": 76.4
+  },
+  "主面板_TierA": {
+    "原A": 72,
+    "结肠过滤后仍A": 71,
+    "丢失A": [
+      "Nicotinic acid"
+    ],
+    "排名前10稳定": false
+  },
+  "全库敏感性_TierA": {
+    "原A": 151,
+    "结肠过滤后仍A": 139,
+    "丢失A": [
+      "(R)-3-(4-Hydroxyphenyl)lactate",
+      "2,3-Bis(3,4-dihydroxybenzyl)butyrolactone",
+      "3-(2,4-Dihydroxyphenyl)propanoic acid",
+      "3-(3',4'-Dihydroxyphenyl)-1-(2,4,6-trihydroxyphenyl)-propan-2-ol",
+      "3-Hydroxyphenethyl alcohol",
+      "6'-Hydroxy-O-desmethylangolensin",
+      "Dihydroresveratrol",
+      "Equol",
+      "Leucylproline",
+      "Lunularin",
+      "O-Desmethylangolensin",
+      "Phloroglucinol"
+    ],
+    "排名前10稳定": false
+  }
+}

@@ -15,10 +15,10 @@ import pandas as pd
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
-GMMAD2_DIR = ROOT / "准备文件" / "外部数据库" / "GMMAD2"
-GUT_DIR = ROOT / "准备文件" / "外部数据库" / "gutMGene_v2"
-OUT_DIR = ROOT / "数据" / "代谢物"
-INPUT_DIR = ROOT / "准备文件" / "预测输入"
+GMMAD2_DIR = ROOT / "数据文件" / "外部数据库" / "GMMAD2"
+GUT_DIR = ROOT / "数据文件" / "外部数据库" / "gutMGene_v2"
+OUT_DIR = ROOT / "结果文件" / "数据文件" / "代谢物"
+INPUT_DIR = ROOT / "数据文件" / "预测输入"
 
 CELL_RE = re.compile(r"<t[dh][^>]*>(.*?)</t[dh]>", re.I | re.S)
 ROW_RE = re.compile(r"<tr[^>]*>(.*?)</tr>", re.I | re.S)

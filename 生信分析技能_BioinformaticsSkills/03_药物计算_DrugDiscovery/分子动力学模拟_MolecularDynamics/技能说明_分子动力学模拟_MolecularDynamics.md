@@ -1,19 +1,20 @@
 ---
 name: bioinfo-molecular-dynamics
 description: >-
-  分子动力学模拟 / MolecularDynamics：对接后稳定性/结合自由能；山水 M17；勿假装纯 R 跑 MD。工具：bio3d, ggplot2, GROMACS, Amber。
-  触发：分子动力学, GROMACS, MD, RMSD。交付范式 FROZEN（2026-09-03）。
+  分子动力学模拟 / MolecularDynamics：对接后稳定性/结合自由能；山水 M17；勿假装纯 R 跑 MD。
+  工具栈：GROMACS GPU(CUDA)、UV(md-venv: acpype/gmx_MMPBSA)、conda env md-tools(仅 AmberTools)。
+  触发：分子动力学, GROMACS, MD, RMSD, acpype, MM-GBSA, AmberTools。交付范式 FROZEN（2026-09-03）。
 ---
 
 # 分子动力学模拟 / MolecularDynamics
 
 > **出图与交付 SSOT：** [`文档_docs/出图与交付约束_MdFigureStandards.md`](文档_docs/出图与交付约束_MdFigureStandards.md) — **`FROZEN`（2026-09-03）**。改图册序/Origin recipe/报告结构前须你说「解冻」。  
-> **进化：** 计算步骤回写 [`复合物MD流水线_GromacsSop.md`](文档_docs/复合物MD流水线_GromacsSop.md)；出图规则回写 FROZEN；本入口不复述长 SOP。  
+> **计算/环境 SSOT：** [`文档_docs/复合物MD流水线_GromacsSop.md`](文档_docs/复合物MD流水线_GromacsSop.md)（§9 流程、§9.8 安装、§10 本机登记）。本入口不复述长 SOP。  
 > 登记：[`已跑通范式登记_FrozenParadigms.md`](../../00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/已跑通范式登记_FrozenParadigms.md)。
 
 ## 1. 数据来源
 
-对接复合物或已知复合物
+实验复合物优先；没有目标配体共晶时用同口袋近缘结构作参照；两者都没有才用对接姿态。判据与口袋限制见 SOP §9.0.1。
 
 ## 2. 数据规范（判断是否可用）
 
@@ -24,35 +25,34 @@ description: >-
 - 对接后稳定性/结合自由能；山水 M17；勿假装纯 R 跑 MD
 - 山水用途层标签：药物-基因
 
-不适用：输入类型不匹配或仅需其它技能可覆盖的步骤。
+不适用：输入类型不匹配或仅需其它技能可覆盖的步骤。高斯不是必备（电荷默认可 AM1-BCC）。
 
 ## 4. 数据处理方法
 
-溶剂化→最小化→平衡→生产→RMSD/RMSF/氢键/MM-PBSA
+溶剂化→最小化→平衡→生产→RMSD/RMSF/氢键/MM-GBSA（细节见 SOP）
 
-## 5. R 包与软件栈
+## 5. 工具链（2026-10-09 现行）
 
-| 步骤 | R包或CLI | 作用 | 备注 |
-|------|----------|------|------|
-| 分析 | `bio3d` | 核心 R 包 | |
-| 分析 | `ggplot2` | 核心 R 包 | |
-| 上游/主分析 | `GROMACS` | CLI 工具 | 非 R |
-| 上游/主分析 | `Amber` | CLI 工具 | 非 R |
-| 出图 | Origin（`origin出图_plotMdOrigin.py` COM/LabTalk） | DPI≥600 PNG+SVG | 分析曲线/FEL/能量柱必须 Origin；R 只备 CSV |
+| 步骤 | 工具 | 作用 | 备注 |
+|------|------|------|------|
+| 激活 | `source ~/activate-md.sh` | 拼 PATH | **每次跑 MD 前** |
+| Python | UV `~/md-venv` | acpype、gmx_MMPBSA、impi-rt | Python≥3.12；**不用 conda 管 Python** |
+| 配体拓扑引擎 | conda env `md-tools` | AmberTools（antechamber 等） | 仅二进制隔离；禁止往里 pip acpype |
+| 动力学 | `~/gromacs-gpu/bin/gmx` | GROMACS **2024.4 CUDA** | 源码编；host **gcc-12**（Ubuntu 24.04） |
+| 分析 CSV | R `bio3d` 等 | xvg→表 | |
+| 出图 | Origin（`origin出图_plotMdOrigin.py`） | DPI≥600 PNG+SVG | 分析曲线/FEL/能量柱必须 Origin |
+
+安装步骤见 SOP §9.8；安装包在本技能 `环境安装_EnvSetup/`（联接 `E:\md_kit`）。
 
 ## 6. 数据可视化
 
-RMSD/RMSF 曲线；**DPI≥600；SVG+PNG；图面 English；防遮挡**。
-
-**对齐高分期刊范式：** 遵循 [期刊范式](../../00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/高分期刊出图范式_JournalFigureParadigm.md) + [PlotQA](../../00_基础_Foundation/统一可视化规范_VizStandards/文档_docs/出图后审核_PlotQA.md)；近邻折线/箱线。**本技能出图与交付已 FROZEN**（见 [`出图与交付约束_MdFigureStandards.md`](文档_docs/出图与交付约束_MdFigureStandards.md)）。网药视觉 **FROZEN**，勿改。
+RMSD/RMSF 曲线；**DPI≥600；SVG+PNG；图面 English；防遮挡**。本技能出图 **FROZEN**（见出图约束）。
 
 ## 7. 数据结果解读
 
-力场、时长和有无熵项决定能说什么。样例 HTML 必须把 **0.20 ns / 21 帧** 写在页首：可陈述本窗口内 RMSD/Rg/COM/MM-GBSA 数字，**禁止**写成发表级 ΔG、长期稳定结合或 FEL 能垒。
+力场、时长和有无熵项决定能说什么。短轨迹（如 0.2 ns）禁止写成发表级 ΔG / 长期稳定结合。
 
-报告金标：`01_样例_sample/代码文件/结果文件/报告文件/样例报告_SampleReport_v1.html`  
-生成器：同目录 `代码文件/03_写样例报告_writeSampleReport.R`（只写 HTML，不重跑 GROMACS/Origin）  
-版式范式：[统一交付规范 样例报告范式](../../00_基础_Foundation/统一交付规范_DeliveryStandards/文档_docs/样例报告范式_SampleReportParadigm.md)
+报告金标：`01_样例_sample/代码文件/结果文件/报告文件/样例报告_SampleReport_v1.html`
 
 ## 8. 能否结合其它生信
 
@@ -60,17 +60,22 @@ RMSD/RMSF 曲线；**DPI≥600；SVG+PNG；图面 English；防遮挡**。
 
 ## 9. 蛋白-配体复合物 MD 流水线
 
-**执行 SOP（强制）：** [`文档_docs/复合物MD流水线_GromacsSop.md`](文档_docs/复合物MD流水线_GromacsSop.md)（原技能说明 §9–§10：一键调用、拓扑、平衡、分析、环境与踩坑）。  
+**执行 SOP（强制）：** [`文档_docs/复合物MD流水线_GromacsSop.md`](文档_docs/复合物MD流水线_GromacsSop.md)。  
 **出图/交付 FROZEN：** [`文档_docs/出图与交付约束_MdFigureStandards.md`](文档_docs/出图与交付约束_MdFigureStandards.md)。
 
-摘要：`运行复合物MD_runComplexMd.sh` + mdp 模板；分析图走 Origin（见 FROZEN）；样例整理 `整理样例目录_layoutMdSample.py`。
-
 ```bash
-wsl -d Ubuntu-24.04 -- bash -c "cd <工作目录> && \
+wsl -d Ubuntu-24.04 -- bash -lc '
+  source ~/activate-md.sh
+  cd <工作目录> && \
   LIGAND_RES=JZ4 NET_CHARGE=0 NS=1 \
-  bash 运行复合物MD_runComplexMd.sh . protein.pdb jz4_h.mol2"
+  bash <技能根>/脚本_scripts/运行复合物MD_runComplexMd.sh . protein.pdb jz4_h.mol2
+'
 ```
+
+烟测：`source ~/activate-md.sh && bash /mnt/e/md_kit/04_烟测_3HTB.sh` → 期望 `SMOKE PASS` + `CUDA acceleration`。
+
+**过程监控 / 异常即停（正式长轨迹）：** SOP §9.5.1；`CHUNK_NS=1 MONITOR=1`。飞出则停并留 `md.cpt`，**不续跑同一对接初态**；按 §9.0.1 用实验位姿重搭后排队。口袋不要撑开再对接（§9.0.1「口袋不放大」）。过程草图在 `monitor/`（非 Origin 金标）；交付图仍为样例 **01–26**。
 
 ## 样例验证
 
-样例：`01_样例_sample/`（**范式 FROZEN 2026-09-03**；`STATUS=REAL`，`data_provenance=REAL`，2026-08-30 E2E）。入口 `代码文件/01_run_sample.R` → 检查 `工作文件_MdWork/3HTB/08_轨迹分析_Analysis/` xvg 后调 `02_分析出图_plotMdAnalysis.R`；仅更新 HTML：`03_写样例报告_writeSampleReport.R`。MD 计算侧见上述 SOP。工作目录布局见 `工作文件_MdWork/3HTB/00_目录说明_Layout.md`。
+样例：`01_样例_sample/`（**范式 FROZEN 2026-09-03**）。MD 计算侧见上述 SOP。

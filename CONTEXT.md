@@ -23,6 +23,7 @@
 | provenance | 样例/数据真实性：`REAL` / `TOY` / `BLOCKED`（契约桩用 BLOCKED，不用 toy） |
 | detail / result | 对接：`detail-N`=口袋特写；`result_N`=big+detail 拼图；定稿规则见对接 SOP §7.3/§7.4 |
 | intent-skill-router | `.cursor/skills/intent-skill-router`：未 @ 技能时按意图自动 Read 对应 `技能说明_*.md` |
+| alert_kit / qq-smtp-alert | 跨项目 QQ SMTP 告警：`E:\alert_kit\`；Cursor 全局技能 `~/.cursor/skills/qq-smtp-alert` |
 | 工单 / frontier | `.scratch/<功能>/issues/NN-*.md`；只做 Blocked by 已完成且 `待Agent处理` 的单（见 `docs/agents/工单工作流_WorkOrder.md`） |
 | 技能范式 | 新建/审计领域技能的勾选 SSOT：`docs/agents/技能范式清单_SkillParadigm.md` |
 | 接缝（seam） | 测试的公开边界；TDD 前须与用户书面确认 |

@@ -7,6 +7,7 @@ description: >-
 
 # 虚拟敲除与扰动 / InSilicoKO
 
+> **交付 SOP（先读这个跑交付）：** [`文档_docs/交付SOP_VkoDeliveryPlaybook.md`](文档_docs/交付SOP_VkoDeliveryPlaybook.md) — 文件存放 / 环境准备 / 数据选择 / 算法选择 / 数据筛选 / 各种分析，一次交付从头到尾。  
 > **接诊 SSOT：** [`文档_docs/接诊与确认表单_IntakeConfirmForm.md`](文档_docs/接诊与确认表单_IntakeConfirmForm.md) — 每次先抽字段出确认表；未确认禁止正式敲除。  
 > **方法默认 / 信源：** [`文档_docs/方法默认与信源登记_MethodDefaultsRegistry.md`](文档_docs/方法默认与信源登记_MethodDefaultsRegistry.md)  
 > **出图图册：** [`文档_docs/出图图册_VkoFigureAtlas.md`](文档_docs/出图图册_VkoFigureAtlas.md) — PDF 图种重绘；禁论文截图当结果。  

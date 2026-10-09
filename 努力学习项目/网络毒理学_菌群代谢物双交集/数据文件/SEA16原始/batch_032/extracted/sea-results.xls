@@ -1,0 +1,76 @@
+Query ID,Target ID,Affinity Threshold (nM),P-Value,Max Tc,Cut Sum,Z-Score,Name,Description,Query Smiles
+m0001,A0MJA4_CANLF,5,3.465e-64,0.4308,0.8074,113.4814,NPC1L1,Niemann-Pick C1-like 1 protein,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,A0MJA5_MACMU,5,3.465e-64,0.4308,0.8074,113.4814,NPC1L1,NPC1 like intracellular cholesterol transporter 1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,ADRB2_RAT,5,1.7e-07,0.2879,0.5758,11.7033,Adrb2,Beta-2 adrenergic receptor,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,AK1C2_HUMAN,5,7.714e-06,0.3415,0.9130,8.7289,AKR1C2,Aldo-keto reductase family 1 member C2,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,AL1A2_HUMAN,5,4.212e-10,0.3175,0.3175,16.3821,ALDH1A2,Retinal dehydrogenase 2,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,AL1B1_HUMAN,5,7.435e-11,0.3175,0.3175,17.7342,ALDH1B1,"Aldehyde dehydrogenase X, mitochondrial",CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,ALDR_RAT,5,1.494e-06,0.5000,3.0524,10.0087,Akr1b1,Aldo-keto reductase family 1 member B1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,AMYP_PIG,5,2.749e-07,0.3111,0.3111,11.3286,AMY2,Pancreatic alpha-amylase,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,B4EH87_BURCJ,5,3.352e-19,0.3684,0.3684,32.7179,,Lectin,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,B4GT1_BOVIN,5,1.792e-48,0.3220,0.9555,85.2704,B4GALT1,"Beta-1,4-galactosyltransferase 1",CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,BLA2_BACCE,5,1.362e-06,0.3256,0.3256,10.0810,blm,Metallo-beta-lactamase type 2,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,BLA2_BACCE,5,1.483e-06,0.3235,0.3235,10.0147,blm,Metallo-beta-lactamase type 2,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,CAH12_HUMAN,5,1.493e-07,0.3953,10.5647,11.8046,CA12,Carbonic anhydrase 12,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,CAH2_BOVIN,5,4.973e-09,0.3929,1.0027,14.4572,CA2,Carbonic anhydrase 2,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,CAH1_HUMAN,5,1.43e-06,0.4000,13.2698,10.0430,CA1,Carbonic anhydrase 1,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,CAH2_HUMAN,5,1.336e-07,0.4231,17.3969,11.8912,CA2,Carbonic anhydrase 2,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,CAH9_HUMAN,5,4.989e-09,0.4231,14.4300,14.4546,CA9,Carbonic anhydrase 9,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,CAN_CANAL,5,6.197e-07,0.3929,1.2894,10.6950,NCE103,Carbonic anhydrase,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,CD22_HUMAN,5,9.525e-20,0.3333,1.1977,33.6989,CD22,B-cell receptor CD22,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,CD22_MOUSE,5,4.515e-09,0.2824,0.2824,14.5325,Cd22,B-cell receptor CD22,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,EST1_HUMAN,5,7.616e-06,0.3846,1.6826,8.7389,CES1,Liver carboxylesterase 1,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,EST2_HUMAN,5,4.995e-09,0.3846,1.6826,14.4537,CES2,Cocaine esterase,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,EST1_RABIT,5,9.144e-07,0.3000,0.5973,10.3916,,Liver carboxylesterase 1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,EST1_RABIT,5,2.209e-14,0.3846,1.3405,24.0675,,Liver carboxylesterase 1,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,FABH_MYCTU,5,2.549e-25,0.3429,1.2694,43.7034,fabH,3-oxoacyl-[acyl-carrier-protein] synthase 3,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,FFAR4_HUMAN,5,2.2e-06,0.3256,2.1144,9.7070,FFAR4,Free fatty acid receptor 4,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,FFAR4_RAT,5,3.331e-16,0.3077,0.3077,27.2821,Ffar4,Free fatty acid receptor 4,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,FGF2_HUMAN,5,9.968e-10,0.4082,0.4082,15.7103,FGF2,Fibroblast growth factor 2,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,FGF1_HUMAN,5,1.322e-08,0.2857,0.2857,13.6951,FGF1,Fibroblast growth factor 1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,FIMH_ECOLI,5,5.508e-55,0.4792,8.2323,96.9621,fimH,Type 1 fimbrin D-mannose specific adhesin,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,FUT7_HUMAN,5,3.303e-32,0.3784,0.7284,56.0686,FUT7,"Alpha-(1,3)-fucosyltransferase 7",CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,GGTA1_PIG,5,1.474e-39,0.3134,0.3134,69.2650,GGTA1,"N-acetyllactosaminide alpha-1,3-galactosyltransferase",CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,GOB1_BRUMA,5,8.414e-45,0.3559,0.3559,78.6786,,Trehalose-phosphatase,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,IL2_HUMAN,5,1.069e-22,0.3333,1.3030,38.9949,IL2,Interleukin-2,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,IL5_MOUSE,5,1.049e-06,0.3548,0.3548,10.2848,Il5,Interleukin-5,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,LUCI_AQULA,5,8.09e-06,0.2826,0.2826,8.6918,,Luciferin 4-monooxygenase,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,METC_ECOLI,5,6e-09,0.3548,0.3548,14.3108,metC,Cystathionine beta-lyase MetC,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,MMP2_HUMAN,5,4.983e-07,0.3488,10.9180,10.8649,MMP2,72 kDa type IV collagenase,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,MMP9_HUMAN,5,9.056e-07,0.3488,8.5551,10.3992,MMP9,Matrix metalloproteinase-9,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,MRP2_HUMAN,5,8.352e-08,0.2895,0.2895,12.2576,ABCC2,Canalicular multispecific organic anion transporter 1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,MRP2_RAT,5,4.047e-36,0.4138,1.7558,63.0914,Abcc2,Canalicular multispecific organic anion transporter 1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,MRP3_RAT,5,4.627e-48,0.3824,0.3824,84.5308,Abcc3,Canalicular multispecific organic anion transporter 2,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,MRP4_HUMAN,5,3.484e-10,0.2963,0.2963,16.5300,ABCC4,Multidrug resistance-associated protein 4,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,NLRP1_HUMAN,5,9.504e-14,0.3000,0.3000,22.9286,NLRP1,"NACHT, LRR and PYD domains-containing protein 1",CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,NLRP1_HUMAN,5,3.442e-15,0.3333,0.3333,25.5073,NLRP1,"NACHT, LRR and PYD domains-containing protein 1",CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,NPCL1_HUMAN,5,9.581e-08,0.4308,1.1611,12.1505,NPC1L1,NPC1-like intracellular cholesterol transporter 1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,NPCL1_RAT,5,5.362e-29,0.4308,1.1611,50.3048,Npc1l1,NPC1-like intracellular cholesterol transporter 1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,NPCL1_MOUSE,5,1.605e-44,0.3537,0.3537,78.1750,Npc1l1,NPC1-like intracellular cholesterol transporter 1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,O39930_9HEPC,5,1.729e-08,0.3478,0.6957,13.4854,NS5b,RNA-directed RNA polymerase,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,O77078_PLAFA,5,2.829e-17,0.3095,0.6022,29.2596,fabH,Beta-ketoacyl-acyl carrier protein synthase III,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,O96394_LEIAM,5,3.463e-25,0.3175,0.8911,43.4645,,Arginase,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,P2Y14_HUMAN,5,2.376e-09,0.3188,0.9475,15.0329,P2RY14,P2Y purinoceptor 14,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,P79074_9AGAR,5,1.392e-46,0.3704,0.3704,81.8766,cppg1,Endopolygalacturonase,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,PDIA1_HUMAN,5,8.92e-10,0.3175,0.8911,15.7969,P4HB,Protein disulfide-isomerase,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,PIR_HUMAN,5,4.884e-10,0.2917,0.2917,16.2665,PIR,Pirin,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,PPBT_BOVIN,5,1.655e-08,0.3590,0.6733,13.5194,ALPL,"Alkaline phosphatase, tissue-nonspecific isozyme",CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,Q49PX0_9POXV,5,1.709e-08,0.3000,0.3000,13.4947,N1L,N1L,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,Q6FTL6_CANGA,5,1.44e-09,0.3929,1.2894,15.4237,NCE103,Carbonic anhydrase,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,Q96QA9_HUMAN,5,4.627e-48,0.3824,0.3824,84.5308,MRP3,Multidrug resistance associated protein,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,RPGF4_HUMAN,5,1.567e-06,0.3333,0.6577,9.9717,RAPGEF4,Rap guanine nucleotide exchange factor 4,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,S22A3_HUMAN,5,2.32e-06,0.2903,0.2903,9.6657,SLC22A3,Solute carrier family 22 member 3,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,S22A6_RAT,5,8.183e-10,0.3721,0.3721,15.8642,Slc22a6,Solute carrier family 22 member 6,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,S22A8_RAT,5,4.11e-42,0.3721,0.6858,73.8513,Slc22a8,Solute carrier family 22 member 8,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,SC5A1_RAT,5,4.661e-10,0.2923,0.2923,16.3030,Slc5a1,Sodium/glucose cotransporter 1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,SC5A1_HUMAN,5,1.083e-08,0.3387,6.0118,13.8504,SLC5A1,Sodium/glucose cotransporter 1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,SC5A2_HUMAN,5,4.582e-13,0.3704,10.8912,21.7023,SLC5A2,Sodium/glucose cotransporter 2,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,SC5A2_MOUSE,5,3.812e-12,0.2931,0.8577,20.0504,Slc5a2,Sodium/glucose cotransporter 2,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,SC5A4_HUMAN,5,3.777e-09,0.3231,0.6334,14.6716,SLC5A4,Solute carrier family 5 member 4,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,SC5A2_RAT,5,7.127e-08,0.2923,0.2923,12.3813,Slc5a2,Sodium/glucose cotransporter 2,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0001,SO1A1_RAT,5,1.226e-17,0.4444,0.7680,29.9118,Slco1a1,Solute carrier organic anion transporter family member 1A1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,SO1A1_RAT,5,2.043e-14,0.3137,0.6214,24.1273,Slco1a1,Solute carrier organic anion transporter family member 1A1,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,SO1B1_HUMAN,5,2.739e-07,0.3382,0.3382,11.3314,SLCO1B1,Solute carrier organic anion transporter family member 1B1,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O
+m0002,SO1B1_HUMAN,5,8.171e-07,0.3137,0.3137,10.4793,SLCO1B1,Solute carrier organic anion transporter family member 1B1,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0002,STS_HUMAN,5,1.902e-19,0.3939,7.0587,33.1595,STS,Steryl-sulfatase,CC1=CC=C(C=C1)OS(=O)(=O)O
+m0001,TYRO_HUMAN,5,1.956e-09,0.3273,0.9079,15.1848,TYR,Tyrosinase,CC1=CC=C(C=C1)O[C@H]2[C@@H]([C@H]([C@@H]([C@H](O2)C(=O)O)O)O)O

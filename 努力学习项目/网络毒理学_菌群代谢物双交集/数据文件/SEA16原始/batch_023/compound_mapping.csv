@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,"Ethyl phenyllactate, (-)-",9877619.0,CCOC(=O)[C@H](CC1=CC=CC=C1)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0002,Folic Acid,135398658.0,C1=CC(=CC=C1C(=O)N[C@@H](CCC(=O)O)C(=O)O)NCC2=CN=C3C(=N2)C(=O)NC(=N3)N,excluded from main; retained in gutMGene human full-library sensitivity
+m0003,Formate,283.0,C(=O)[O-],excluded from main; retained in gutMGene human full-library sensitivity
+m0004,Gamma-Aminobutyric Acid,119.0,C(CC(=O)O)CN,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,Genipin,442424.0,COC(=O)C1=CO[C@H]([C@H]2[C@@H]1CC=C2CO)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0006,Genistein,5280961.0,C1=CC(=CC=C1C2=COC3=CC(=CC(=C3C2=O)O)O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0007,Ginsenoside Rd,11679800.0,CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O[C@H]6[C@@H]([C@H]([C@@H]([C@H](O6)CO)O)O)O)C)C)O)C)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)CO)O)O)O)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0008,Ginsenoside Rh2,119307.0,CC(=CCC[C@@](C)([C@H]1CC[C@@]2([C@@H]1[C@@H](C[C@H]3[C@]2(CC[C@@H]4[C@@]3(CC[C@@H](C4(C)C)O[C@H]5[C@@H]([C@H]([C@@H]([C@H](O5)CO)O)O)O)C)C)O)C)O)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0009,Glycerin,753.0,C(C(CO)O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0010,Glycitein,5317750.0,COC1=C(C=C2C(=C1)C(=O)C(=CO2)C3=CC=C(C=C3)O)O,excluded from main; retained in gutMGene human full-library sensitivity

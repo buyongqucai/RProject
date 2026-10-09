@@ -1,0 +1,64 @@
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/remotes_2.5.0.zip'
+Content type 'application/zip' length 440214 bytes (429 KB)
+==================================================
+downloaded 429 KB
+
+also installing the dependencies 'credentials', 'zip', 'ini', 'fansi', 'diffobj', 'gert', 'gh', 'whisker', 'downlit', 'xopen', 'brio', 'praise', 'waldo', 'gitcreds', 'usethis', 'ellipsis', 'pak', 'pkgdown', 'profvis', 'rcmdcheck', 'rversions', 'sessioninfo', 'testthat', 'urlchecker'
+
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/credentials_2.0.3.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/zip_3.0.2.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/ini_0.3.1.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/fansi_1.0.7.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/diffobj_0.3.9.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/gert_2.4.1.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/gh_1.6.1.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/whisker_0.4.1.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/downlit_0.4.5.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/xopen_1.0.1.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/brio_1.1.5.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/praise_1.0.0.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/waldo_0.6.2.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/gitcreds_0.1.2.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/usethis_3.2.2.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/ellipsis_0.3.3.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/pak_0.11.1.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/pkgdown_2.2.1.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/profvis_0.4.0.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/rcmdcheck_1.4.0.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/rversions_3.0.0.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/sessioninfo_1.2.4.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/testthat_3.3.2.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/urlchecker_2.0.0.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/devtools_2.5.2.zip'
+Using github PAT from envvar GITHUB_TOKEN. Use `gitcreds::gitcreds_set()` and unset GITHUB_TOKEN in .Renviron (or elsewhere) if you want to use the more secure git credential store instead.
+Downloading GitHub repo MRCIEU/ieugwasr@HEAD
+Installing 3 packages: rlang, curl, httr
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/rlang_1.3.0.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/curl_8.0.0.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/httr_1.4.9.zip'
+Warning: cannot remove prior installation of package 'rlang'
+Warning: restored 'rlang'
+Warning: cannot remove prior installation of package 'curl'
+Warning: restored 'curl'
+* installing *source* package 'ieugwasr' ...
+** this is package 'ieugwasr' version '1.2.0'
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ieugwasr)
+Warning messages:
+1: In file.copy(savedcopy, lib, recursive = TRUE) :
+  problem copying E:\R-4.6.0\library\00LOCK\rlang\libs\x64\rlang.dll to E:\R-4.6.0\library\rlang\libs\x64\rlang.dll: Permission denied
+2: In file.copy(savedcopy, lib, recursive = TRUE) :
+  problem copying E:\R-4.6.0\library\00LOCK\curl\libs\x64\curl.dll to E:\R-4.6.0\library\curl\libs\x64\curl.dll: Permission denied
+Using github PAT from envvar GITHUB_TOKEN. Use `gitcreds::gitcreds_set()` and unset GITHUB_TOKEN in .Renviron (or elsewhere) if you want to use the more secure git credential store instead.
+Downloading GitHub repo MRCIEU/TwoSampleMR@HEAD
+Error in utils::download.file(url, path, method = method, quiet = quiet,  : 
+  download from 'https://api.github.com/repos/MRCIEU/TwoSampleMR/tarball/HEAD' failed

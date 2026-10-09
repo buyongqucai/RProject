@@ -1,0 +1,19 @@
+# This file was created Thu Oct  8 11:52:46 2026
+# Created by:
+#                 :-) GROMACS - gmx rms, 2026.3-conda_forge (-:
+# 
+# Executable:   /sessions/admiring-jolly-keller/mdenv/bin.AVX2_256/gmx
+# Data prefix:  /sessions/admiring-jolly-keller/mdenv
+# Working dir:  /sessions/admiring-jolly-keller/md_smoke/3HTB
+# Command line:
+#   gmx rms -s md.tpr -f md_center.xtc -n index_analysis.ndx -o rmsd_complex.xvg -tu ns
+# gmx rms is part of G R O M A C S:
+#
+# S  C  A  M  O  R  G
+#
+@    title "RMSD"
+@    xaxis  label "Time (ns)"
+@    yaxis  label "RMSD (nm)"
+@TYPE xy
+@ subtitle "Protein_Ligand after lsq fit to Backbone"
+   0.0000000    0.0005012

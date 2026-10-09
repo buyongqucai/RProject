@@ -1,0 +1,187 @@
+{
+  "n_disease_union": 1517,
+  "disease_by_db_venn_full": {
+    "GeneCards": 7720,
+    "CTD": 70,
+    "DrugBank": 68,
+    "TTD": 49,
+    "OMIM": 3
+  },
+  "disease_by_db_downstream": {
+    "GeneCards": 1451,
+    "CTD": 70,
+    "DrugBank": 68,
+    "TTD": 49,
+    "OMIM": 3
+  },
+  "genecards_full": 7720,
+  "genecards_filtered_ge40": 1451,
+  "genecards_relevance_cutoff": 40.0,
+  "disease_by_db": {
+    "GeneCards": 7720,
+    "CTD": 70,
+    "DrugBank": 68,
+    "TTD": 49,
+    "OMIM": 3
+  },
+  "n_drug_targets": 636,
+  "n_overlap": 291,
+  "overlap_pct_of_drug": 45.8,
+  "overlap_pct_of_disease": 19.2,
+  "n_herbs_nominal": 12,
+  "n_herbs_with_targets": 11,
+  "per_herb": [
+    {
+      "herb_zh": "香附",
+      "n_overlap": 230,
+      "n_targets": 386
+    },
+    {
+      "herb_zh": "淫羊藿",
+      "n_overlap": 99,
+      "n_targets": 192
+    },
+    {
+      "herb_zh": "黄连",
+      "n_overlap": 86,
+      "n_targets": 158
+    },
+    {
+      "herb_zh": "棕榈炭",
+      "n_overlap": 68,
+      "n_targets": 171
+    },
+    {
+      "herb_zh": "人参",
+      "n_overlap": 45,
+      "n_targets": 96
+    },
+    {
+      "herb_zh": "黄芩",
+      "n_overlap": 43,
+      "n_targets": 97
+    },
+    {
+      "herb_zh": "半夏",
+      "n_overlap": 29,
+      "n_targets": 76
+    },
+    {
+      "herb_zh": "干姜",
+      "n_overlap": 18,
+      "n_targets": 45
+    },
+    {
+      "herb_zh": "木香",
+      "n_overlap": 9,
+      "n_targets": 30
+    },
+    {
+      "herb_zh": "茯苓",
+      "n_overlap": 7,
+      "n_targets": 22
+    },
+    {
+      "herb_zh": "白术",
+      "n_overlap": 6,
+      "n_targets": 19
+    },
+    {
+      "herb_zh": "肉桂",
+      "n_overlap": 0,
+      "n_targets": 0
+    }
+  ],
+  "n_compounds": 130,
+  "n_herbs_with_comp": 11,
+  "n_herb_comp_edges": 150,
+  "n_kegg_terms": 183,
+  "n_kegg_padj05": 183,
+  "top_kegg": [
+    {
+      "id": "hsa05417",
+      "desc": "Lipid and atherosclerosis",
+      "pvalue": 8.69350654928301e-51,
+      "padj": 2.52981040584136e-48,
+      "count": 66
+    },
+    {
+      "id": "hsa04933",
+      "desc": "AGE-RAGE signaling pathway in diabetic complications",
+      "pvalue": 1.15971078208128e-38,
+      "padj": 1.68737918792827e-36,
+      "count": 42
+    },
+    {
+      "id": "hsa05161",
+      "desc": "Hepatitis B",
+      "pvalue": 4.36276265954269e-37,
+      "padj": 4.23187977975641e-35,
+      "count": 49
+    },
+    {
+      "id": "hsa05167",
+      "desc": "Kaposi sarcoma-associated herpesvirus infection",
+      "pvalue": 2.6135772288827398e-36,
+      "padj": 1.9013774340121898e-34,
+      "count": 52
+    },
+    {
+      "id": "hsa04657",
+      "desc": "IL-17 signaling pathway",
+      "pvalue": 7.13524011064139e-36,
+      "padj": 4.15270974439329e-34,
+      "count": 39
+    },
+    {
+      "id": "hsa04668",
+      "desc": "TNF signaling pathway",
+      "pvalue": 4.2146857109127996e-35,
+      "padj": 2.04412256979271e-33,
+      "count": 42
+    },
+    {
+      "id": "hsa05205",
+      "desc": "Proteoglycans in cancer",
+      "pvalue": 4.41157639754029e-33,
+      "padj": 1.8339553309774602e-31,
+      "count": 50
+    },
+    {
+      "id": "hsa05418",
+      "desc": "Fluid shear stress and atherosclerosis",
+      "pvalue": 1.80230604757003e-31,
+      "padj": 6.55588824803598e-30,
+      "count": 42
+    },
+    {
+      "id": "hsa05215",
+      "desc": "Prostate cancer",
+      "pvalue": 9.170690802514111e-31,
+      "padj": 2.9651900261462297e-29,
+      "count": 37
+    },
+    {
+      "id": "hsa04151",
+      "desc": "PI3K-Akt signaling pathway",
+      "pvalue": 1.26584866404429e-29,
+      "padj": 3.6836196123688797e-28,
+      "count": 60
+    }
+  ],
+  "n_go": 3603,
+  "go_by_ont": {},
+  "network_type_counts": {
+    "C": 290,
+    "B": 118,
+    "D": 20,
+    "A": 12
+  },
+  "n_network_edges": 1929,
+  "n_ppi_edges": 1308,
+  "n_ppi_proteins": 261,
+  "n_kegg_top30_display": 30,
+  "n_ppi_top20_nodes": 20,
+  "n_ppi_top20_edges": 99,
+  "figure_fix": "KEGG Top30 complete labels; PPI concentric degree; Top20 hub network"
+}

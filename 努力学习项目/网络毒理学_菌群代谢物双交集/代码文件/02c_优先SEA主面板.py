@@ -16,9 +16,9 @@ import pandas as pd
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
-INPUT = ROOT / "准备文件" / "预测输入" / "代谢物预测输入_主面板.csv"
-OUT = ROOT / "准备文件" / "SEA原始"
-STP_DIR = ROOT / "准备文件" / "STP原始"
+INPUT = ROOT / "数据文件" / "预测输入" / "代谢物预测输入_主面板.csv"
+OUT = ROOT / "数据文件" / "SEA原始"
+STP_DIR = ROOT / "数据文件" / "STP原始"
 BASE = "https://sea.docking.org"
 UA = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
