@@ -15,7 +15,7 @@
 | 类别 | 冻结内容 |
 |------|----------|
 | **图册顺序** | `01`–`26` 主题文件夹与图种顺序（见技能说明 §9.7 表）；禁止删图、乱序、用 ggplot 仿画替代 Origin 正式图 |
-| **Origin 分析图** | journal muted 柱色（`#5B8FA8/#C17B7B/#8B7BA8/#6B8F71/#D4A574`）；FEL **Viridis**；2D FEL `layer.cmap.lineN=0`（**禁止** `showLines(3)`）；3D FEL 填色曲面 + `hide_fel_contours`；**禁止** `set %C -pfb color()`；一图一 Origin 进程 |
+| **Origin 分析图** | journal muted 柱色（`#5B8FA8/#C17B7B/#8B7BA8/#6B8F71/#D4A574`）；2D FEL **Viridis** + `layer.cmap.lineN=0`（**禁止** `showLines(3)`）；3D FEL **漏斗+底板**（Jet、曲面无 mesh、ΔG 显示封顶 20 kJ/mol、底板投影；用户 2026-10-10）；**禁止** `set %C -pfb color()`；一图一 Origin 进程 |
 | **PyMOL / LigPlot** | 快照三帧 + 拼图；LigPlot 必须为官方 `ligplot.ps` 化学结构（**禁止**圆点+方框示意网）；LigPlot CPK/紫键/疏水砖红为图种惯例 |
 | **样例目录** | `工作文件_MdWork/3HTB/` 阶段夹（`01_输入`…`10_快照`/`99_日志`）；`一图一文件夹` + `{NN}_{中文}_{English}`；GROMACS 引擎原名（`topol.top`、`md.tpr`）不改名 |
 | **HTML 报告** | KPI 条 + 分组章节（平衡 → 稳定 → 结合 → FEL → MM-GBSA → 快照/LigPlot）+ 分条解读 + 页首 **0.20 ns / 21 帧** 警示；审计两列表（非 CSV `<pre>`） |
@@ -64,5 +64,7 @@ Rscript 01_样例_sample/代码文件/03_写样例报告_writeSampleReport.R
 
 | 日期 | 变更 |
 |------|------|
+| 2026-10-11 | 3D FEL **禁止** `set %C -czt`（会把漏斗压成底板平面）；色阶占位「Color Scale Title」用标签文本替换 / 导出后补字；OpenGL 图层勿套 `_layout` |
+| 2026-10-10 | 用户指定 3D FEL 漏斗+底板：Jet + ΔG 显示封顶 + 底板投影；曲面关闭黑色 mesh（2D 仍 Viridis） |
 | 2026-09-03 | 用户确认冻结：样例目录双语编号、`工作文件_MdWork` 归档、Origin 24 图 + PyMOL/LigPlot、分组 HTML 报告与分条解读 |
 | 2026-08-30 | 3HTB REAL E2E；BLOCKED 解除；`STATUS=REAL` |

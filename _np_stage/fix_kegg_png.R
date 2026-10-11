@@ -1,0 +1,5 @@
+root <- "E:/RProject/_np_stage"; source(file.path(root,"tools/PublicationPlot.R")); library(ggplot2)
+en <- file.path(root,"out/enrichment"); fig <- file.path(root,"out/figures")
+kegg <- read.csv(file.path(en,"Main_KEGG_full.csv"),stringsAsFactors=FALSE,check.names=FALSE,fileEncoding="UTF-8")
+p <- plot_enrich_dot_journal(kegg,top_n=20,title="KEGG enrichment"); p$labels$x <- "-log10(Padj)"; p <- p + guides(color=guide_colorbar(title="AdjP"),size=guide_legend(title="n"))
+png(file.path(fig,"03_KeggEnrichment_new.png"),width=7.2*600,height=7.2*600,res=600,bg="white"); print(p); dev.off()

@@ -1,0 +1,1 @@
+import{N as t}from"./index-89483b6d.js";const s=e=>t.request("post","/browse/getbrowsetable",{data:{data:e}}),a=e=>t.request("post","/browse/getbrowsemrtable",{data:{data:e}}),o=e=>t.request("post","/browse/getbrowsetablehumanmr",{data:{data:e}});export{a,o as b,s as g};

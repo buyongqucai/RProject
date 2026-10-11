@@ -1,0 +1,6082 @@
+{
+  "交付文件": [
+    {
+      "name": "README_轨B说明.txt",
+      "type": "file"
+    },
+    {
+      "name": "图注与解读说明.html",
+      "type": "file"
+    },
+    {
+      "name": "图片文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "KEGG官方通路图",
+          "type": "dir",
+          "children": [
+            {
+              "name": "00_Top20通路图清单.csv",
+              "type": "file"
+            },
+            {
+              "name": "01_hsa05417_Lipid_and_atherosclerosis.png",
+              "type": "file"
+            },
+            {
+              "name": "02_hsa04933_AGE-RAGE_signaling_pathway_in_diabetic_complications.png",
+              "type": "file"
+            },
+            {
+              "name": "03_hsa05161_Hepatitis_B.png",
+              "type": "file"
+            },
+            {
+              "name": "04_hsa05167_Kaposi_sarcoma-associated_herpesvirus_infection.png",
+              "type": "file"
+            },
+            {
+              "name": "05_hsa04657_IL-17_signaling_pathway.png",
+              "type": "file"
+            },
+            {
+              "name": "06_hsa04668_TNF_signaling_pathway.png",
+              "type": "file"
+            },
+            {
+              "name": "07_hsa05205_Proteoglycans_in_cancer.png",
+              "type": "file"
+            },
+            {
+              "name": "08_hsa05418_Fluid_shear_stress_and_atherosclerosis.png",
+              "type": "file"
+            },
+            {
+              "name": "09_hsa05215_Prostate_cancer.png",
+              "type": "file"
+            },
+            {
+              "name": "10_hsa04151_PI3K-Akt_signaling_pathway.png",
+              "type": "file"
+            },
+            {
+              "name": "11_hsa05160_Hepatitis_C.png",
+              "type": "file"
+            },
+            {
+              "name": "12_hsa01521_EGFR_tyrosine_kinase_inhibitor_resistance.png",
+              "type": "file"
+            },
+            {
+              "name": "13_hsa05235_PD-L1_expression_and_PD-1_checkpoint_pathway_in_cancer.png",
+              "type": "file"
+            },
+            {
+              "name": "14_hsa05212_Pancreatic_cancer.png",
+              "type": "file"
+            },
+            {
+              "name": "15_hsa05208_Chemical_carcinogenesis_-_reactive_oxygen_species.png",
+              "type": "file"
+            },
+            {
+              "name": "16_hsa05142_Chagas_disease.png",
+              "type": "file"
+            },
+            {
+              "name": "17_hsa05163_Human_cytomegalovirus_infection.png",
+              "type": "file"
+            },
+            {
+              "name": "18_hsa01522_Endocrine_resistance.png",
+              "type": "file"
+            },
+            {
+              "name": "19_hsa04620_Toll-like_receptor_signaling_pathway.png",
+              "type": "file"
+            },
+            {
+              "name": "20_hsa04066_HIF-1_signaling_pathway.png",
+              "type": "file"
+            },
+            {
+              "name": "README.txt",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "PPI",
+          "type": "dir",
+          "children": [
+            {
+              "name": "PPI渐变图.png",
+              "type": "file"
+            },
+            {
+              "name": "PPI渐变图.svg",
+              "type": "file"
+            },
+            {
+              "name": "PPI渐变图_Degree.png",
+              "type": "file"
+            },
+            {
+              "name": "PPI渐变图_Degree.svg",
+              "type": "file"
+            },
+            {
+              "name": "Top20_PPI核心网络.png",
+              "type": "file"
+            },
+            {
+              "name": "Top20_PPI核心网络.svg",
+              "type": "file"
+            },
+            {
+              "name": "string_vector_graphic.png",
+              "type": "file"
+            },
+            {
+              "name": "string_vector_graphic.svg",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "分子动力学图_MD",
+          "type": "dir",
+          "children": [
+            {
+              "name": "ADA_Adenosine_7RTG_A2",
+              "type": "dir",
+              "children": []
+            },
+            {
+              "name": "MMP9_Tryptophan_4H3X",
+              "type": "dir",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "富集分析",
+          "type": "dir",
+          "children": [
+            {
+              "name": "BPCCMF气泡图.png",
+              "type": "file"
+            },
+            {
+              "name": "BPCCMF气泡图.svg",
+              "type": "file"
+            },
+            {
+              "name": "KEGG圈图.png",
+              "type": "file"
+            },
+            {
+              "name": "KEGG圈图.svg",
+              "type": "file"
+            },
+            {
+              "name": "KEGG富集气泡图_Top30.png",
+              "type": "file"
+            },
+            {
+              "name": "KEGG富集气泡图_Top30.svg",
+              "type": "file"
+            },
+            {
+              "name": "KEGG柱状图.png",
+              "type": "file"
+            },
+            {
+              "name": "KEGG柱状图.svg",
+              "type": "file"
+            },
+            {
+              "name": "KEGG棒棒糖图.png",
+              "type": "file"
+            },
+            {
+              "name": "KEGG棒棒糖图.svg",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "网络图",
+          "type": "dir",
+          "children": [
+            {
+              "name": "筛选成分桑基图.png",
+              "type": "file"
+            },
+            {
+              "name": "筛选成分桑基图.svg",
+              "type": "file"
+            },
+            {
+              "name": "药成分靶点通路桑基图.png",
+              "type": "file"
+            },
+            {
+              "name": "药成分靶点通路桑基图.svg",
+              "type": "file"
+            },
+            {
+              "name": "药物有效成分疾病靶点通路网络图.png",
+              "type": "file"
+            },
+            {
+              "name": "药物有效成分疾病靶点通路网络图.svg",
+              "type": "file"
+            },
+            {
+              "name": "药物有效成分疾病靶点通路网络图_椭圆布局.png",
+              "type": "file"
+            },
+            {
+              "name": "药物有效成分疾病靶点通路网络图_椭圆布局.svg",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "补充_技能扩展",
+          "type": "dir",
+          "children": [
+            {
+              "name": "GO_BPCCMF柱状图.png",
+              "type": "file"
+            },
+            {
+              "name": "GO_BPCCMF柱状图.svg",
+              "type": "file"
+            },
+            {
+              "name": "单药疾病交集柱状图.png",
+              "type": "file"
+            },
+            {
+              "name": "单药疾病交集柱状图.svg",
+              "type": "file"
+            },
+            {
+              "name": "成分疾病交集按药柱状图.png",
+              "type": "file"
+            },
+            {
+              "name": "成分疾病交集按药柱状图.svg",
+              "type": "file"
+            },
+            {
+              "name": "成分疾病交集柱状图.png",
+              "type": "file"
+            },
+            {
+              "name": "成分疾病交集柱状图.svg",
+              "type": "file"
+            },
+            {
+              "name": "药味成分交集UpSet图.png",
+              "type": "file"
+            },
+            {
+              "name": "药味成分交集UpSet图.svg",
+              "type": "file"
+            },
+            {
+              "name": "药味通路覆盖热图.png",
+              "type": "file"
+            },
+            {
+              "name": "药味通路覆盖热图.svg",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "韦恩图",
+          "type": "dir",
+          "children": [
+            {
+              "name": "疾病数据库可视化韦恩图.png",
+              "type": "file"
+            },
+            {
+              "name": "疾病数据库可视化韦恩图.svg",
+              "type": "file"
+            },
+            {
+              "name": "疾病药物交集韦恩图.png",
+              "type": "file"
+            },
+            {
+              "name": "疾病药物交集韦恩图.svg",
+              "type": "file"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "报告文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "_stats.json",
+          "type": "file"
+        },
+        {
+          "name": "图注与解读说明.html",
+          "type": "file"
+        },
+        {
+          "name": "图注与解读说明.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "数据文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "PPI",
+          "type": "dir",
+          "children": [
+            {
+              "name": "Top20_PPI核心网络边.csv",
+              "type": "file"
+            },
+            {
+              "name": "string_interactions_short.tsv",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "分子动力学_MD",
+          "type": "dir",
+          "children": [
+            {
+              "name": "ADA_Adenosine_7RTG_A2",
+              "type": "dir",
+              "children": []
+            },
+            {
+              "name": "MMP9_Tryptophan_4H3X",
+              "type": "dir",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "富集分析",
+          "type": "dir",
+          "children": [
+            {
+              "name": "BPCCMF.csv",
+              "type": "file"
+            },
+            {
+              "name": "KEGG.csv",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "疾病",
+          "type": "dir",
+          "children": [
+            {
+              "name": "疾病靶点合并.csv",
+              "type": "file"
+            },
+            {
+              "name": "疾病靶点按库.csv",
+              "type": "file"
+            },
+            {
+              "name": "疾病靶点按库_下游.csv",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "网络图",
+          "type": "dir",
+          "children": [
+            {
+              "name": "network.csv",
+              "type": "file"
+            },
+            {
+              "name": "type.csv",
+              "type": "file"
+            },
+            {
+              "name": "药物疾病交集靶点.csv",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "药物",
+          "type": "dir",
+          "children": [
+            {
+              "name": "全量单药疾病交集.csv",
+              "type": "file"
+            },
+            {
+              "name": "单药",
+              "type": "dir",
+              "children": []
+            },
+            {
+              "name": "单药疾病交集汇总.csv",
+              "type": "file"
+            },
+            {
+              "name": "成分重命名.csv",
+              "type": "file"
+            },
+            {
+              "name": "成分靶点.csv",
+              "type": "file"
+            },
+            {
+              "name": "草药成分边.csv",
+              "type": "file"
+            },
+            {
+              "name": "药物疾病交集.csv",
+              "type": "file"
+            },
+            {
+              "name": "药物靶点_全药.csv",
+              "type": "file"
+            },
+            {
+              "name": "药物靶点合并.csv",
+              "type": "file"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "交付文件_修正版": [
+    {
+      "name": "README_归档说明.md",
+      "type": "file"
+    },
+    {
+      "name": "README_轨B说明.txt",
+      "type": "file"
+    },
+    {
+      "name": "图注与解读说明.html",
+      "type": "file"
+    },
+    {
+      "name": "图片文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "KEGG官方通路图",
+          "type": "dir",
+          "children": [
+            {
+              "name": "00_Top20通路图清单.csv",
+              "type": "file"
+            },
+            {
+              "name": "01_hsa05417_Lipid_and_atherosclerosis.png",
+              "type": "file"
+            },
+            {
+              "name": "02_hsa04933_AGE-RAGE_signaling_pathway_in_diabetic_complications.png",
+              "type": "file"
+            },
+            {
+              "name": "03_hsa05161_Hepatitis_B.png",
+              "type": "file"
+            },
+            {
+              "name": "04_hsa05167_Kaposi_sarcoma-associated_herpesvirus_infection.png",
+              "type": "file"
+            },
+            {
+              "name": "05_hsa04657_IL-17_signaling_pathway.png",
+              "type": "file"
+            },
+            {
+              "name": "06_hsa04668_TNF_signaling_pathway.png",
+              "type": "file"
+            },
+            {
+              "name": "07_hsa05205_Proteoglycans_in_cancer.png",
+              "type": "file"
+            },
+            {
+              "name": "08_hsa05418_Fluid_shear_stress_and_atherosclerosis.png",
+              "type": "file"
+            },
+            {
+              "name": "09_hsa05215_Prostate_cancer.png",
+              "type": "file"
+            },
+            {
+              "name": "10_hsa04151_PI3K-Akt_signaling_pathway.png",
+              "type": "file"
+            },
+            {
+              "name": "11_hsa05160_Hepatitis_C.png",
+              "type": "file"
+            },
+            {
+              "name": "12_hsa01521_EGFR_tyrosine_kinase_inhibitor_resistance.png",
+              "type": "file"
+            },
+            {
+              "name": "13_hsa05235_PD-L1_expression_and_PD-1_checkpoint_pathway_in_cancer.png",
+              "type": "file"
+            },
+            {
+              "name": "14_hsa05212_Pancreatic_cancer.png",
+              "type": "file"
+            },
+            {
+              "name": "15_hsa05208_Chemical_carcinogenesis_-_reactive_oxygen_species.png",
+              "type": "file"
+            },
+            {
+              "name": "16_hsa05142_Chagas_disease.png",
+              "type": "file"
+            },
+            {
+              "name": "17_hsa05163_Human_cytomegalovirus_infection.png",
+              "type": "file"
+            },
+            {
+              "name": "18_hsa01522_Endocrine_resistance.png",
+              "type": "file"
+            },
+            {
+              "name": "19_hsa04620_Toll-like_receptor_signaling_pathway.png",
+              "type": "file"
+            },
+            {
+              "name": "20_hsa04066_HIF-1_signaling_pathway.png",
+              "type": "file"
+            },
+            {
+              "name": "README.txt",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "PPI",
+          "type": "dir",
+          "children": [
+            {
+              "name": "PPI渐变图.png",
+              "type": "file"
+            },
+            {
+              "name": "PPI渐变图.svg",
+              "type": "file"
+            },
+            {
+              "name": "PPI渐变图_Degree.png",
+              "type": "file"
+            },
+            {
+              "name": "PPI渐变图_Degree.svg",
+              "type": "file"
+            },
+            {
+              "name": "Top20_PPI核心网络.png",
+              "type": "file"
+            },
+            {
+              "name": "Top20_PPI核心网络.svg",
+              "type": "file"
+            },
+            {
+              "name": "string_vector_graphic.png",
+              "type": "file"
+            },
+            {
+              "name": "string_vector_graphic.svg",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "富集分析",
+          "type": "dir",
+          "children": [
+            {
+              "name": "BPCCMF气泡图.png",
+              "type": "file"
+            },
+            {
+              "name": "BPCCMF气泡图.svg",
+              "type": "file"
+            },
+            {
+              "name": "KEGG圈图.png",
+              "type": "file"
+            },
+            {
+              "name": "KEGG圈图.svg",
+              "type": "file"
+            },
+            {
+              "name": "KEGG富集气泡图_Top30.png",
+              "type": "file"
+            },
+            {
+              "name": "KEGG富集气泡图_Top30.svg",
+              "type": "file"
+            },
+            {
+              "name": "KEGG柱状图.png",
+              "type": "file"
+            },
+            {
+              "name": "KEGG柱状图.svg",
+              "type": "file"
+            },
+            {
+              "name": "KEGG棒棒糖图.png",
+              "type": "file"
+            },
+            {
+              "name": "KEGG棒棒糖图.svg",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "网络图",
+          "type": "dir",
+          "children": [
+            {
+              "name": "筛选成分桑基图.png",
+              "type": "file"
+            },
+            {
+              "name": "筛选成分桑基图.svg",
+              "type": "file"
+            },
+            {
+              "name": "药成分靶点通路桑基图.png",
+              "type": "file"
+            },
+            {
+              "name": "药成分靶点通路桑基图.svg",
+              "type": "file"
+            },
+            {
+              "name": "药物有效成分疾病靶点通路网络图.png",
+              "type": "file"
+            },
+            {
+              "name": "药物有效成分疾病靶点通路网络图.svg",
+              "type": "file"
+            },
+            {
+              "name": "药物有效成分疾病靶点通路网络图_椭圆布局.png",
+              "type": "file"
+            },
+            {
+              "name": "药物有效成分疾病靶点通路网络图_椭圆布局.svg",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "补充_技能扩展",
+          "type": "dir",
+          "children": [
+            {
+              "name": "GO_BPCCMF柱状图.png",
+              "type": "file"
+            },
+            {
+              "name": "GO_BPCCMF柱状图.svg",
+              "type": "file"
+            },
+            {
+              "name": "单药疾病交集柱状图.png",
+              "type": "file"
+            },
+            {
+              "name": "单药疾病交集柱状图.svg",
+              "type": "file"
+            },
+            {
+              "name": "成分疾病交集按药柱状图.png",
+              "type": "file"
+            },
+            {
+              "name": "成分疾病交集按药柱状图.svg",
+              "type": "file"
+            },
+            {
+              "name": "成分疾病交集柱状图.png",
+              "type": "file"
+            },
+            {
+              "name": "成分疾病交集柱状图.svg",
+              "type": "file"
+            },
+            {
+              "name": "药味成分交集UpSet图.png",
+              "type": "file"
+            },
+            {
+              "name": "药味成分交集UpSet图.svg",
+              "type": "file"
+            },
+            {
+              "name": "药味通路覆盖热图.png",
+              "type": "file"
+            },
+            {
+              "name": "药味通路覆盖热图.svg",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "韦恩图",
+          "type": "dir",
+          "children": [
+            {
+              "name": "疾病数据库可视化韦恩图.png",
+              "type": "file"
+            },
+            {
+              "name": "疾病数据库可视化韦恩图.svg",
+              "type": "file"
+            },
+            {
+              "name": "疾病药物交集韦恩图.png",
+              "type": "file"
+            },
+            {
+              "name": "疾病药物交集韦恩图.svg",
+              "type": "file"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "报告文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "_stats.json",
+          "type": "file"
+        },
+        {
+          "name": "图注与解读说明.html",
+          "type": "file"
+        },
+        {
+          "name": "图注与解读说明.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "数据文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "PPI",
+          "type": "dir",
+          "children": [
+            {
+              "name": "Top20_PPI核心网络边.csv",
+              "type": "file"
+            },
+            {
+              "name": "string_interactions_short.tsv",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "富集分析",
+          "type": "dir",
+          "children": [
+            {
+              "name": "BPCCMF.csv",
+              "type": "file"
+            },
+            {
+              "name": "KEGG.csv",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "疾病",
+          "type": "dir",
+          "children": [
+            {
+              "name": "疾病靶点合并.csv",
+              "type": "file"
+            },
+            {
+              "name": "疾病靶点按库.csv",
+              "type": "file"
+            },
+            {
+              "name": "疾病靶点按库_下游.csv",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "网络图",
+          "type": "dir",
+          "children": [
+            {
+              "name": "network.csv",
+              "type": "file"
+            },
+            {
+              "name": "type.csv",
+              "type": "file"
+            },
+            {
+              "name": "药物疾病交集靶点.csv",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "药物",
+          "type": "dir",
+          "children": [
+            {
+              "name": "全量单药疾病交集.csv",
+              "type": "file"
+            },
+            {
+              "name": "单药",
+              "type": "dir",
+              "children": []
+            },
+            {
+              "name": "单药疾病交集汇总.csv",
+              "type": "file"
+            },
+            {
+              "name": "成分重命名.csv",
+              "type": "file"
+            },
+            {
+              "name": "成分靶点.csv",
+              "type": "file"
+            },
+            {
+              "name": "草药成分边.csv",
+              "type": "file"
+            },
+            {
+              "name": "药物疾病交集.csv",
+              "type": "file"
+            },
+            {
+              "name": "药物靶点_全药.csv",
+              "type": "file"
+            },
+            {
+              "name": "药物靶点合并.csv",
+              "type": "file"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "网络毒理学_菌群代谢物双交集": [
+    {
+      "name": ".gitignore",
+      "type": "file"
+    },
+    {
+      "name": "代码文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "01_构建代谢物面板.py",
+          "type": "file"
+        },
+        {
+          "name": "02_批量SEA预测.py",
+          "type": "file"
+        },
+        {
+          "name": "02b_恢复SEA结果.py",
+          "type": "file"
+        },
+        {
+          "name": "02c_优先SEA主面板.py",
+          "type": "file"
+        },
+        {
+          "name": "02d_批量SEA16.py",
+          "type": "file"
+        },
+        {
+          "name": "03_整合M靶点.py",
+          "type": "file"
+        },
+        {
+          "name": "04_双交集与统计.py",
+          "type": "file"
+        },
+        {
+          "name": "05_PPI与富集分析.R",
+          "type": "file"
+        },
+        {
+          "name": "06_构建机制层网络数据.py",
+          "type": "file"
+        },
+        {
+          "name": "07_构建毒性分层.py",
+          "type": "file"
+        },
+        {
+          "name": "08_GEO外部一致性分析.R",
+          "type": "file"
+        },
+        {
+          "name": "09_毒性分层图表.R",
+          "type": "file"
+        },
+        {
+          "name": "10_复方干预代谢物预测.py",
+          "type": "file"
+        },
+        {
+          "name": "11_结肠表达过滤.py",
+          "type": "file"
+        },
+        {
+          "name": "12_分子对接.py",
+          "type": "file"
+        },
+        {
+          "name": "13_论文图表_Fig1237.py",
+          "type": "file"
+        },
+        {
+          "name": "14_MR轻量遗传支持.py",
+          "type": "file"
+        },
+        {
+          "name": "15_P0_投稿前加固.py",
+          "type": "file"
+        },
+        {
+          "name": "16_方向一致性分析.py",
+          "type": "file"
+        },
+        {
+          "name": "17_补充对接_新结构.py",
+          "type": "file"
+        },
+        {
+          "name": "__pycache__",
+          "type": "dir",
+          "children": [
+            {
+              "name": "01_构建代谢物面板.cpython-313.pyc",
+              "type": "file"
+            },
+            {
+              "name": "02_批量SEA预测.cpython-313.pyc",
+              "type": "file"
+            },
+            {
+              "name": "02b_恢复SEA结果.cpython-313.pyc",
+              "type": "file"
+            },
+            {
+              "name": "02c_优先SEA主面板.cpython-313.pyc",
+              "type": "file"
+            },
+            {
+              "name": "02d_批量SEA16.cpython-313.pyc",
+              "type": "file"
+            },
+            {
+              "name": "03_整合M靶点.cpython-313.pyc",
+              "type": "file"
+            },
+            {
+              "name": "04_双交集与统计.cpython-313.pyc",
+              "type": "file"
+            },
+            {
+              "name": "06_构建机制层网络数据.cpython-313.pyc",
+              "type": "file"
+            },
+            {
+              "name": "07_构建毒性分层.cpython-313.pyc",
+              "type": "file"
+            },
+            {
+              "name": "12_分子对接.cpython-310.pyc",
+              "type": "file"
+            },
+            {
+              "name": "13_论文图表_Fig1237.cpython-310.pyc",
+              "type": "file"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "存放规范_ProjectLayout.md",
+      "type": "file"
+    },
+    {
+      "name": "数据文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "DATA_SOURCE.md",
+          "type": "file"
+        },
+        {
+          "name": "MD环境",
+          "type": "dir",
+          "children": []
+        },
+        {
+          "name": "PROVENANCE.json",
+          "type": "file"
+        },
+        {
+          "name": "README_MD环境已迁出.md",
+          "type": "file"
+        },
+        {
+          "name": "SEA16原始",
+          "type": "dir",
+          "children": [
+            {
+              "name": "SEA16批量摘要.json",
+              "type": "file"
+            },
+            {
+              "name": "batch_001",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_002",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_003",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_004",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_005",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_006",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_007",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_008",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_009",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_010",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_011",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_012",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_013",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_014",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_015",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_016",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_017",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_018",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_019",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_020",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_021",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_022",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_023",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_024",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_025",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_026",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_027",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_028",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_029",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_030",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_031",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_032",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "extracted",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea16_download.zip",
+                  "type": "file"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "SEA原始",
+          "type": "dir",
+          "children": [
+            {
+              "name": "SEA批量摘要.json",
+              "type": "file"
+            },
+            {
+              "name": "batch_001",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea_result.tsv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_002",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea_result.tsv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_003",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "compound_target_hits.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                },
+                {
+                  "name": "sea_result.tsv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_004",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_005",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_006",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_007",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_008",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_009",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_010",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_011",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_012",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_013",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_014",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "manifest.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_015",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_016",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "batch_017",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "compound_mapping.csv",
+                  "type": "file"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "STP原始",
+          "type": "dir",
+          "children": [
+            {
+              "name": "1-18_1-lysoPE_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "1-18_1-lysoPE_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "1-O-Caffeoylglycerol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "1-O-Caffeoylglycerol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "10-Oxo-11-octadecenoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "10-Oxo-11-octadecenoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "10-keto-12Z-octadecenoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "10-keto-12Z-octadecenoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "11-Methoxycurvularin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "11-Methoxycurvularin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "1_3-Diphenylpropan-2-ol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "1_3-Diphenylpropan-2-ol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "1_4-Diaminobutane_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "1_4-Diaminobutane_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "1_6-di-O-phosphono-beta-D-fructofuranose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "1_6-di-O-phosphono-beta-D-fructofuranose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Acetoxypropanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Acetoxypropanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Amino-1-methyl-6-phenylimidazo_4_5-b_pyridine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Amino-1-methyl-6-phenylimidazo_4_5-b_pyridine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Dehydropantoate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Dehydropantoate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Hydroxy-3-_4-hydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Hydroxy-3-_4-hydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Methylbutanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Methylbutanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Methylbutyrate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Methylbutyrate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Oxobutanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Oxobutanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Oxoglutaric_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-Oxoglutaric_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-_4-Hydroxyphenyl_propionic_acid_2S_-_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-_4-Hydroxyphenyl_propionic_acid_2S_-_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-hydroxy-3-_5-hydroxy-1H-indol-3-yl_propanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2-hydroxy-3-_5-hydroxy-1H-indol-3-yl_propanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "20_R_-Ginsenoside_Rh2_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "20_R_-Ginsenoside_Rh2_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyadenosine-5_-monophosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyadenosine-5_-monophosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyadenosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyadenosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyguanosine_5_-phosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyguanosine_5_-phosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyguanosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyguanosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyinosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyinosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyuridine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_-Deoxyuridine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_3-Bis_3_4-dihydroxybenzyl_butyrolactone_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_3-Bis_3_4-dihydroxybenzyl_butyrolactone_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_3-Butanediol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_3-Butanediol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_3-Butanedione_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_3-Butanedione_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_4-Dioxopentanedioic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "2_4-Dioxopentanedioic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Dehydroquinate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Dehydroquinate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Dehydroshikimate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Dehydroshikimate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Hydroxy-2-methylbutanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Hydroxy-2-methylbutanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Hydroxy-4-methoxybenzenepropanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Hydroxy-4-methoxybenzenepropanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Hydroxybenzoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Hydroxybenzoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Hydroxyphenethyl_alcohol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Hydroxyphenethyl_alcohol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Indolepropionic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Indolepropionic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Phenylpropionic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Phenylpropionic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Phosphoglyceric_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-Phosphoglyceric_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_1H-indol-3-yl_propanoate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_1H-indol-3-yl_propanoate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_2_4-Dihydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_2_4-Dihydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_3-Hydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_3-Hydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_3_4-Dihydroxyphenyl_-2-hydroxypropanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_3_4-Dihydroxyphenyl_-2-hydroxypropanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_3_4_-Dihydroxyphenyl_-1-_2_4_6-trihydroxyphenyl_-propan-2-ol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_3_4_-Dihydroxyphenyl_-1-_2_4_6-trihydroxyphenyl_-propan-2-ol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_4-Hydroxyphenyl_propionic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-_4-Hydroxyphenyl_propionic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-deoxy-D-arabino-heptulosonate-7-phosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3-deoxy-D-arabino-heptulosonate-7-phosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3_4-Dihydroxy-trans-stilbene_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3_4-Dihydroxy-trans-stilbene_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3_4-Dihydroxybenzoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3_4-Dihydroxybenzoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3_4-Dihydroxyphenylacetic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3_4-Dihydroxyphenylacetic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "3_9-dihydroxy-6H-benzo_c_chromen-6-one_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "3_9-dihydroxy-6H-benzo_c_chromen-6-one_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Hydroxybenzoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Hydroxybenzoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Hydroxyphenylacetic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Hydroxyphenylacetic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Methyl-2-oxopentanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Methyl-2-oxopentanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Methyl-5-_2-phosphoethyl_-thiazole_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Methyl-5-_2-phosphoethyl_-thiazole_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Methylpentanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Methylpentanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Pyridoxic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-Pyridoxic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-_Phosphonooxy_-L-threonine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-_Phosphonooxy_-L-threonine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-_Z_-15_16-dihydroxydotriacont-19-enyl_-2-methyl-2H-uran-5-one_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "4-_Z_-15_16-dihydroxydotriacont-19-enyl_-2-methyl-2H-uran-5-one_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-Hydroxyindole-3-acetic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-Hydroxyindole-3-acetic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-Methoxyindole-3-acetic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-Methoxyindole-3-acetic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-O-_1-carboxylatovinyl_-3-phosphonatoshikimate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-O-_1-carboxylatovinyl_-3-phosphonatoshikimate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-_3-hydroxyphenyl_pentanoic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-_3-hydroxyphenyl_pentanoic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-_3_4-Dihydroxyphenyl_-4-hydroxypentanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-_3_4-Dihydroxyphenyl_-4-hydroxypentanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-_3_4-Dihydroxyphenyl_-valerolactone_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-_3_4-Dihydroxyphenyl_-valerolactone_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-_3_4-Dihydroxyphenyl_pentanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-_3_4-Dihydroxyphenyl_pentanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-hydroxy-1H-imidazole-4-carboxamide_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5-hydroxy-1H-imidazole-4-carboxamide_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5_-Deoxy-5_-methylthioadenosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5_-Deoxy-5_-methylthioadenosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5_-Deoxyadenosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5_-Deoxyadenosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "5_7-Dihydroxy-2-_4-hydroxyphenyl_chroman-4-one_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "5_7-Dihydroxy-2-_4-hydroxyphenyl_chroman-4-one_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "6-_4R_5S_-5-methyl-2-oxoimidazolidin-4-yl_hexanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "6-_4R_5S_-5-methyl-2-oxoimidazolidin-4-yl_hexanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "6_-Hydroxy-O-desmethylangolensin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "6_-Hydroxy-O-desmethylangolensin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "6_7_4_-Trihydroxyisoflavone_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "6_7_4_-Trihydroxyisoflavone_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "7-Aminoheptanoic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "7-Aminoheptanoic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "8-Prenylnaringenin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "8-Prenylnaringenin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Acacetin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Acacetin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Acetoin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Acetoin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Acetyl_phosphate_2-__Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Acetyl_phosphate_2-__Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Adenine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Adenine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Adenosine_Phosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Adenosine_Phosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Adenosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Adenosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Aglycone_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Aglycone_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Agmatine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Agmatine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Alanine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Alanine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Allocholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Allocholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Amylotriose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Amylotriose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Anthranilic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Anthranilic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Apigenin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Apigenin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Arachidonic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Arachidonic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Arctigenin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Arctigenin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Arginine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Arginine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ascorbic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ascorbic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Asparagine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Asparagine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Aspartic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Aspartic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Baohuoside_I_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Baohuoside_I_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Benzoate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Benzoate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Betaine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Betaine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Bile_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Bile_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Biotin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Biotin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Butyrate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Butyrate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Caffeic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Caffeic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Capric_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Capric_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Caproic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Caproic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Carnosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Carnosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Chenodeoxycholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Chenodeoxycholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Chenodiol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Chenodiol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Choline_Alfoscerate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Choline_Alfoscerate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Choline_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Choline_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Chrysin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Chrysin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Citric_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Citric_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Citrulline_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Citrulline_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cohibin_B_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cohibin_B_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Colibactin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Colibactin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Coumarin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Coumarin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Creatine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Creatine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cysteine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cysteine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cystine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cystine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cytidine-5_-diphosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cytidine-5_-diphosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cytidine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Cytidine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Fructose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Fructose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Galactose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Galactose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Glucose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Glucose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Glucuronic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Glucuronic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Lactic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Lactic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Mannose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Mannose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Methionine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Methionine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Xylose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "D-Xylose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "DL-Alanine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "DL-Alanine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "DL-Aspartic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "DL-Aspartic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "DL-Norvaline_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "DL-Norvaline_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "DL-Tartaric_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "DL-Tartaric_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Daidzein_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Daidzein_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Deoxycholic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Deoxycholic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Deoxycytidine_5_-monophosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Deoxycytidine_5_-monophosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydrocaffeic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydrocaffeic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydrodaidzein_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydrodaidzein_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydrogenistein_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydrogenistein_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydroglycitein_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydroglycitein_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydroorotic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydroorotic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydroresveratrol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dihydroresveratrol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Diosmetin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Diosmetin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Doconexent_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Doconexent_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dopamine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Dopamine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Enterodiol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Enterodiol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Equol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Equol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ethyl_phenyllactate_-_-_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ethyl_phenyllactate_-_-_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Folic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Folic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Fructose-6-phosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Fructose-6-phosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Fructose_1_6-bisphosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Fructose_1_6-bisphosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Fumaric_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Fumaric_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Gamma-Aminobutyric_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Gamma-Aminobutyric_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Genipin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Genipin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Genistein_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Genistein_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ginsenoside_Rh2_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ginsenoside_Rh2_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glucosamine_6-phosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glucosamine_6-phosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glucose_1-phosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glucose_1-phosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glucose_6-phosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glucose_6-phosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glutamic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glutamic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glutamine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glutamine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glutathione_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glutathione_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glyceric_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glyceric_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycerin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycerin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycitein_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycitein_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycochenodeoxycholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycochenodeoxycholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycocholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycocholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycoursodeoxycholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Glycoursodeoxycholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Gondoic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Gondoic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Guanosine-5_-monophosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Guanosine-5_-monophosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Guanosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Guanosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Hesperetin_dihydrochalcone_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Hesperetin_dihydrochalcone_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Hexanoate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Hexanoate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Histidine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Histidine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Hydroquinone_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Hydroquinone_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Hydroxyquercitrin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Hydroxyquercitrin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Hypoxanthine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Hypoxanthine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Icaritin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Icaritin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Indole-3-acetic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Indole-3-acetic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Indole-3-lactic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Indole-3-lactic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Indole_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Indole_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Indoxyl_sulfate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Indoxyl_sulfate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Inosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Inosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Inosinic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Inosinic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isoallolithocholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isoallolithocholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isobutyric_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isobutyric_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isocitric_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isocitric_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isoquercetin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isoquercetin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isovalerate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isovalerate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isovaleric_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Isovaleric_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Kaempferol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Kaempferol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "L-Homocysteine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "L-Homocysteine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "L-Leucic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "L-Leucic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "L-homoserine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "L-homoserine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "L-lactate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "L-lactate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "L-ornithine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "L-ornithine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lactate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lactate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lacto-N-tetraose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lacto-N-tetraose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lariciresinol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lariciresinol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Leucine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Leucine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Leucocyanidin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Leucocyanidin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Leucylproline_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Leucylproline_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Levodopa_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Levodopa_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Linoleic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Linoleic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lithocholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lithocholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Loganetin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Loganetin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lunularin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lunularin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Luteolin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Luteolin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lysine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Lysine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Maltose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Maltose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Maltotriose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Maltotriose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Mannose-6-phosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Mannose-6-phosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Melezitose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Melezitose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Methionine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Methionine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Myricetin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Myricetin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Myristic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Myristic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "N-Acetyl-D-Glucosamine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "N-Acetyl-D-Glucosamine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "N-Acetyl-L-aspartic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "N-Acetyl-L-aspartic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "N-Acetyl-L-glutamic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "N-Acetyl-L-glutamic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "N-acetylornithine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "N-acetylornithine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "N-acetylputrescine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "N-acetylputrescine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "N_O-Bis-_trimethylsilyl_phenylalanine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "N_O-Bis-_trimethylsilyl_phenylalanine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Naringenin_chalcone_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Naringenin_chalcone_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Nicotinamide_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Nicotinamide_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Nicotinic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Nicotinic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Norathyriol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Norathyriol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "O-Desmethylangolensin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "O-Desmethylangolensin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Oleic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Oleic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Orotic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Orotic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Orotidine-5_-monophosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Orotidine-5_-monophosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Oxalacetic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Oxalacetic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Palmitic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Palmitic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Palmitoleic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Palmitoleic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Palmitoylethanolamide_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Palmitoylethanolamide_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Pantothenic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Pantothenic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Phenylacetic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Phenylacetic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Phenylalanine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Phenylalanine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Phloretin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Phloretin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Phloroglucinol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Phloroglucinol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Phosphoserine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Phosphoserine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Pipecolic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Pipecolic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ponciretin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ponciretin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Proline_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Proline_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Propionate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Propionate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Propylene_Glycol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Propylene_Glycol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Protopanaxadiol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Protopanaxadiol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Pyridoxamine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Pyridoxamine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Pyruvate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Pyruvate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Pyruvic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Pyruvic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Quercetin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Quercetin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Quercimeritrin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Quercimeritrin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Quercitrin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Quercitrin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Quinic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Quinic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Raffinose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Raffinose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Riboflavin_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Riboflavin_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "S-Ribosylhomocysteine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "S-Ribosylhomocysteine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "S-adenosyl-L-homocysteine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "S-adenosyl-L-homocysteine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "S-adenosylmethionine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "S-adenosylmethionine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Secoisolariciresinol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Secoisolariciresinol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Sedoheptulose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Sedoheptulose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Serine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Serine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Spermidine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Spermidine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Stearic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Stearic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Succinate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Succinate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Succinic_Acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Succinic_Acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Sucrose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Sucrose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Sulfate_Ion_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Sulfate_Ion_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Taurine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Taurine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Taurocholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Taurocholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Taurodeoxycholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Taurodeoxycholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Taurolithocholic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Taurolithocholic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Threonine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Threonine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Thymine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Thymine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Tricarballylic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Tricarballylic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Trimethylamine_oxide_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Trimethylamine_oxide_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Tryptamine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Tryptamine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Tryptophan_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Tryptophan_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Tyramine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Tyramine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Tyrosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Tyrosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Uracil_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Uracil_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ureidosuccinic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ureidosuccinic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Uridine-5_-diphosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Uridine-5_-diphosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Uridine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Uridine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ursodiol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Ursodiol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Valerate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Valerate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Valeric_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Valeric_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Valine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Valine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Xanthine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Xanthine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "Xanthosine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "Xanthosine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "_10-_Acetyloxy_methyl_-9-anthryl_methyl_acetate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "_10-_Acetyloxy_methyl_-9-anthryl_methyl_acetate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "_20S_-Protopanaxadiol_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "_20S_-Protopanaxadiol_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "_2S_6S_-2_6-diaminoheptanedioic_acid_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "_2S_6S_-2_6-diaminoheptanedioic_acid_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "_R_-3-_4-Hydroxyphenyl_lactate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "_R_-3-_4-Hydroxyphenyl_lactate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "_R_-_-Lactamide_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "_R_-_-Lactamide_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "_logs",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "chunk_1.err.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_1.out.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_1.rerun2.err.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_1.rerun2.out.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_1.retry.err.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_1.retry.out.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_2.err.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_2.out.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_2.rerun2.err.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_2.rerun2.out.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_2.retry.err.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_2.retry.out.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_3.err.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_3.out.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_3.retry.err.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_3.retry.out.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_4.err.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_4.out.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_4.retry.err.log",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_4.retry.out.log",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "beta-Alanine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "beta-Alanine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "beta-D-Gal-_1-_4_-beta-D-GlcNAc-_1-_3_-beta-D-Gal-_1-_4_-D-Glc_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "beta-D-Gal-_1-_4_-beta-D-GlcNAc-_1-_3_-beta-D-Gal-_1-_4_-D-Glc_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "beta-D-fructofuranose_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "beta-D-fructofuranose_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "l-Histidinol_phosphate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "l-Histidinol_phosphate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "l-Isoleucine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "l-Isoleucine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "n_n_n-Trimethyllysine_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "n_n_n-Trimethyllysine_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "p-Cresol_glucuronide_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "p-Cresol_glucuronide_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "p-Cresol_sulfate_Swiss预测靶点_筛选前.csv",
+              "type": "file"
+            },
+            {
+              "name": "p-Cresol_sulfate_Swiss预测靶点_筛选后.csv",
+              "type": "file"
+            },
+            {
+              "name": "异常清单_CompoundTargetExceptions.csv",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "外部数据库",
+          "type": "dir",
+          "children": [
+            {
+              "name": "CTD",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "CTD_chem_gene_ixns.csv.gz",
+                  "type": "file"
+                },
+                {
+                  "name": "CTD_chemicals.csv.gz",
+                  "type": "file"
+                },
+                {
+                  "name": "CTD_chemicals_diseases.csv.gz",
+                  "type": "file"
+                },
+                {
+                  "name": "CTD_chemicals_diseases.csv.gz.part00",
+                  "type": "file"
+                },
+                {
+                  "name": "CTD_chemicals_diseases.csv.gz.part01",
+                  "type": "file"
+                },
+                {
+                  "name": "CTD_chemicals_diseases.csv.gz.part02",
+                  "type": "file"
+                },
+                {
+                  "name": "CTD_chemicals_diseases.csv.gz.part03",
+                  "type": "file"
+                },
+                {
+                  "name": "CTD_chemicals_diseases.csv.gz.part04",
+                  "type": "file"
+                },
+                {
+                  "name": "CTD_chemicals_diseases.csv.gz.part05",
+                  "type": "file"
+                },
+                {
+                  "name": "CTD_chemicals_diseases.csv.gz.part06",
+                  "type": "file"
+                },
+                {
+                  "name": "CTD_chemicals_diseases.csv.gz.part07",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "GEO",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "GPL13158.annot.gz",
+                  "type": "file"
+                },
+                {
+                  "name": "GPL6244.annot.gz",
+                  "type": "file"
+                },
+                {
+                  "name": "GSE75214_series_matrix.txt.gz",
+                  "type": "file"
+                },
+                {
+                  "name": "GSE92415_series_matrix.txt.gz",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "GMMAD2",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "browse3_D003093.html",
+                  "type": "file"
+                },
+                {
+                  "name": "browse3_D015212.html",
+                  "type": "file"
+                },
+                {
+                  "name": "disease_meta.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "GTEx",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "GWAS",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "MBG.allHits.p1e4.txt",
+                  "type": "file"
+                },
+                {
+                  "name": "UC_gwas_associations.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "UC_trans_ethnic_association_summ_stats_b37.txt.gz",
+                  "type": "file"
+                },
+                {
+                  "name": "_install_mr_pkgs.R",
+                  "type": "file"
+                },
+                {
+                  "name": "finngen_R12_K11_UC_STRICT2_pheweb.gz",
+                  "type": "file"
+                },
+                {
+                  "name": "install_TwoSampleMR.log",
+                  "type": "file"
+                },
+                {
+                  "name": "install_TwoSampleMR.log.err",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "gutMGene_v2",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "Gut Microbe-Host Gene.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "Gut Microbe-Microbial metabolite.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "Microbial metabolite-Host Gene.csv",
+                  "type": "file"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "对接工作区",
+          "type": "dir",
+          "children": [
+            {
+              "name": "13CO.pdb",
+              "type": "file"
+            },
+            {
+              "name": "13CO.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1A42.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1A42.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1CXP.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1CXP.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1D5L.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1D5L.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1FM6.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1FM6.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1FM9.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1FM9.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1GKD.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1GKD.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1K2S.pdb",
+              "type": "file"
+            },
+            {
+              "name": "1K2S.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "3IAR.pdb",
+              "type": "file"
+            },
+            {
+              "name": "3IAR.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "4I8V.pdb",
+              "type": "file"
+            },
+            {
+              "name": "4I8V.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "ACHE__Indole3aceticacid.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ACHE__Indole3aceticacid.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ACHE__Indole3aceticacid_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "ACHE__Indole3aceticacid_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ACHE__Indole3aceticacid_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "ACHE__Indole3aceticacid_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ACHE__Indole3aceticacid_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "ACHE__Indole3aceticacid_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_7RTG.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_7RTG.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_7RTG.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_7RTG_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_7RTG_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_7RTG_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_7RTG_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_7RTG_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_7RTG_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "ADA__Adenosine_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "CA2__4Hydroxyphenylacetic.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "CA2__4Hydroxyphenylacetic.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "CA2__4Hydroxyphenylacetic_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "CA2__4Hydroxyphenylacetic_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "CA2__4Hydroxyphenylacetic_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "CA2__4Hydroxyphenylacetic_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "CA2__4Hydroxyphenylacetic_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "CA2__4Hydroxyphenylacetic_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "CYP1A1__Indole.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "CYP1A1__Indole.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "CYP1A1__Indole_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "CYP1A1__Indole_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "CYP1A1__Indole_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "CYP1A1__Indole_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "CYP1A1__Indole_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "CYP1A1__Indole_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_4H3X.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_4H3X.rec.pdb",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_4H3X.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_4H3X_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_4H3X_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_4H3X_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_4H3X_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_4H3X_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_4H3X_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "MMP9__Tryptophan_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MPO__Tryptophan.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MPO__Tryptophan.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MPO__Tryptophan_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "MPO__Tryptophan_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MPO__Tryptophan_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "MPO__Tryptophan_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "MPO__Tryptophan_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "MPO__Tryptophan_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "NOS3__Arginine.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "NOS3__Arginine.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "NOS3__Arginine_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "NOS3__Arginine_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "NOS3__Arginine_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "NOS3__Arginine_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "NOS3__Arginine_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "NOS3__Arginine_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Butyrate.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Butyrate.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Butyrate_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Butyrate_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Butyrate_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Butyrate_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Butyrate_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Butyrate_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Phenylalanine.lig.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Phenylalanine.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Phenylalanine_s1.log",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Phenylalanine_s1.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Phenylalanine_s42.log",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Phenylalanine_s42.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Phenylalanine_s7.log",
+              "type": "file"
+            },
+            {
+              "name": "PPARG__Phenylalanine_s7.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "bad_pdb.txt",
+              "type": "file"
+            },
+            {
+              "name": "structure_cache.json",
+              "type": "file"
+            },
+            {
+              "name": "t.rec.pdbqt",
+              "type": "file"
+            },
+            {
+              "name": "test_but.pdbqt",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "预测输入",
+          "type": "dir",
+          "children": [
+            {
+              "name": "_chunks",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "chunk_1.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_2.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_3.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "chunk_4.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "代谢物预测输入_主面板.csv",
+              "type": "file"
+            },
+            {
+              "name": "代谢物预测输入_全库与主面板并集.csv",
+              "type": "file"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "研究计划",
+      "type": "dir",
+      "children": [
+        {
+          "name": "代谢物纳入规则.md",
+          "type": "file"
+        },
+        {
+          "name": "文献调研_代谢物选择与网药网毒结合.md",
+          "type": "file"
+        },
+        {
+          "name": "文献调研_推荐修改证据与审稿风险.md",
+          "type": "file"
+        },
+        {
+          "name": "研究计划_复方UC菌群代谢物双交集.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "结果文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "图片文件",
+          "type": "dir",
+          "children": [
+            {
+              "name": "GEO验证",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "01_GEO验证_GSE92415火山图_Gse92415Volcano.png",
+                  "type": "file"
+                },
+                {
+                  "name": "01_GEO验证_GSE92415火山图_Gse92415Volcano.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "02_GEO验证_GSE75214火山图_Gse75214Volcano.png",
+                  "type": "file"
+                },
+                {
+                  "name": "02_GEO验证_GSE75214火山图_Gse75214Volcano.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "03_GEO验证_核心基因热图_GeoCoreGeneHeatmaps.png",
+                  "type": "file"
+                },
+                {
+                  "name": "03_GEO验证_核心基因热图_GeoCoreGeneHeatmaps.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "04_GEO验证_基因AUC森林图_GeoGeneAucForest.png",
+                  "type": "file"
+                },
+                {
+                  "name": "04_GEO验证_基因AUC森林图_GeoGeneAucForest.svg",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "分子动力学图_MD",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "ADA_Adenosine_7RTG_A2",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "MMP9_Tryptophan_4H3X",
+                  "type": "dir",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "总图",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "01_研究流程图_双交集设计_StudyDesignFlow.png",
+                  "type": "file"
+                },
+                {
+                  "name": "01_研究流程图_双交集设计_StudyDesignFlow.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "02_三源交集与置换检验_VennPermutation.png",
+                  "type": "file"
+                },
+                {
+                  "name": "02_三源交集与置换检验_VennPermutation.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "03_敏感性分析面板_SensitivityPanels.png",
+                  "type": "file"
+                },
+                {
+                  "name": "03_敏感性分析面板_SensitivityPanels.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "04_对接亲和力热图_DockingAffinityHeatmap.png",
+                  "type": "file"
+                },
+                {
+                  "name": "04_对接亲和力热图_DockingAffinityHeatmap.svg",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "机制层",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "01_PPI网络_核心三源靶点_PpiCoreNetwork.png",
+                  "type": "file"
+                },
+                {
+                  "name": "01_PPI网络_核心三源靶点_PpiCoreNetwork.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "02_GO富集_核心三源靶点_GoEnrichment.png",
+                  "type": "file"
+                },
+                {
+                  "name": "02_GO富集_核心三源靶点_GoEnrichment.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "03_KEGG富集_核心三源靶点_KeggEnrichment.png",
+                  "type": "file"
+                },
+                {
+                  "name": "03_KEGG富集_核心三源靶点_KeggEnrichment.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "04_PPI网络_全库敏感性_PpiSensitivityNetwork.png",
+                  "type": "file"
+                },
+                {
+                  "name": "04_PPI网络_全库敏感性_PpiSensitivityNetwork.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "05_五层网络_GCTPM_GctpmNetwork.png",
+                  "type": "file"
+                },
+                {
+                  "name": "05_五层网络_GCTPM_GctpmNetwork.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "06_PPI核心靶点_MCC排序_PpiHubBar.png",
+                  "type": "file"
+                },
+                {
+                  "name": "06_PPI核心靶点_MCC排序_PpiHubBar.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "07_机制层组合图_MechanismOverview.png",
+                  "type": "file"
+                },
+                {
+                  "name": "07_机制层组合图_MechanismOverview.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "08_PPI核心靶点网络_PpiHubNetwork.png",
+                  "type": "file"
+                },
+                {
+                  "name": "08_PPI核心靶点网络_PpiHubNetwork.svg",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "毒性分层",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "01_毒性线索_暴露物覆盖_ToxicExposureCoverage.png",
+                  "type": "file"
+                },
+                {
+                  "name": "01_毒性线索_暴露物覆盖_ToxicExposureCoverage.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "02_毒性线索_暴露物靶点网络_ToxicExposureTargetNetwork.png",
+                  "type": "file"
+                },
+                {
+                  "name": "02_毒性线索_暴露物靶点网络_ToxicExposureTargetNetwork.svg",
+                  "type": "file"
+                },
+                {
+                  "name": "03_毒性线索_方向证据热图_ToxicDirectionHeatmap.png",
+                  "type": "file"
+                },
+                {
+                  "name": "03_毒性线索_方向证据热图_ToxicDirectionHeatmap.svg",
+                  "type": "file"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "报告文件",
+          "type": "dir",
+          "children": [
+            {
+              "name": "报告_MR轻量遗传支持.md",
+              "type": "file"
+            },
+            {
+              "name": "报告_P0_投稿前加固.md",
+              "type": "file"
+            },
+            {
+              "name": "报告_P1-2_方向一致性.md",
+              "type": "file"
+            },
+            {
+              "name": "报告_P1-3_MD环境与烟测.md",
+              "type": "file"
+            },
+            {
+              "name": "报告_Phase2_结肠表达过滤.md",
+              "type": "file"
+            },
+            {
+              "name": "报告_Phase3机制层.md",
+              "type": "file"
+            },
+            {
+              "name": "报告_Phase4毒性分层.md",
+              "type": "file"
+            },
+            {
+              "name": "报告_Phase5_GEO验证.md",
+              "type": "file"
+            },
+            {
+              "name": "报告_Phase5_分子对接.md",
+              "type": "file"
+            },
+            {
+              "name": "报告_复方干预代谢物预测.md",
+              "type": "file"
+            },
+            {
+              "name": "报告_阶段0-2.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "数据文件",
+          "type": "dir",
+          "children": [
+            {
+              "name": "C_full_gutmgene_human_H_only.csv",
+              "type": "file"
+            },
+            {
+              "name": "C_full_gutmgene_human_H_plus_M.csv",
+              "type": "file"
+            },
+            {
+              "name": "C_main_evidence_priority_H_only.csv",
+              "type": "file"
+            },
+            {
+              "name": "C_main_evidence_priority_H_plus_M.csv",
+              "type": "file"
+            },
+            {
+              "name": "GEO验证",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "GEO_analysis_summary.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "GEO_core_gene_consistency.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "GEO_gene_AUC.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "GEO_panel_AUC.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "GEO_sample_audit.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "GWAS遗传支持",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "MR轻量_摘要.json",
+                  "type": "file"
+                },
+                {
+                  "name": "MiBioGen_top10_instruments.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "UC_GWAS_genomewide_significant.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "I2_full_gutmgene_human_H_only.csv",
+              "type": "file"
+            },
+            {
+              "name": "I2_full_gutmgene_human_H_plus_M.csv",
+              "type": "file"
+            },
+            {
+              "name": "I2_main_evidence_priority_H_only.csv",
+              "type": "file"
+            },
+            {
+              "name": "I2_main_evidence_priority_H_plus_M.csv",
+              "type": "file"
+            },
+            {
+              "name": "P0加固",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "C_HC_D子集.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "P0_加固结果.json",
+                  "type": "file"
+                },
+                {
+                  "name": "UC_CD_OT靶点集.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "代谢物",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "GMMAD2_IBD_D015212.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "GMMAD2_UC_D003093.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "M_主面板靶点.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "M_全库敏感性靶点.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "M_全部靶点.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "M_构建摘要.json",
+                  "type": "file"
+                },
+                {
+                  "name": "M_阈值敏感性.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "M_靶点异常清单.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "代谢物主面板.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "代谢物全库敏感性.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "代谢物纳入排除清单.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "代谢物面板_主分析与全库敏感性.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "代谢物面板构建摘要.json",
+                  "type": "file"
+                },
+                {
+                  "name": "特殊暴露物_不进入小分子预测.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "分子动力学_MD",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "ADA_Adenosine_7RTG_A2",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "MMP9_Tryptophan_4H3X",
+                  "type": "dir",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "双交集统计摘要.json",
+              "type": "file"
+            },
+            {
+              "name": "双交集统计汇总.csv",
+              "type": "file"
+            },
+            {
+              "name": "对接",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "对接_摘要.json",
+                  "type": "file"
+                },
+                {
+                  "name": "对接全表.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "对接失败清单.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "对接汇总.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "敏感性",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "结肠表达过滤_基因表.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "结肠表达过滤_干预候选稳定性_主面板.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "结肠表达过滤_干预候选稳定性_全库敏感性.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "结肠过滤_摘要.json",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "方向一致性",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "方向一致性_代谢物汇总.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "方向一致性_摘要.json",
+                  "type": "file"
+                },
+                {
+                  "name": "方向一致性_配对明细.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "机制层",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "Full_STRING_edges.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "Main_STRING_edges.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "PPI_MCODE模块.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "PPI_enrichment_summary.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "PPI网络指标_MCC排序.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "STRING_Full_score900.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "STRING_Main_score900.tsv",
+                  "type": "file"
+                },
+                {
+                  "name": "Top20_STRING_edges.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "五层网络节点.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "五层网络边.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "富集分析",
+                  "type": "dir",
+                  "children": []
+                },
+                {
+                  "name": "机制层构建摘要.json",
+                  "type": "file"
+                },
+                {
+                  "name": "核心代谢物靶点配对.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "毒性分层",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "CTD_有害暴露物基因互作.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "代谢物有益有害分层.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "有害暴露物清单.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "毒性分层构建摘要.json",
+                  "type": "file"
+                },
+                {
+                  "name": "毒性线索_暴露物靶点不良结局.csv",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "菌群臂验证",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "guild_summary.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "hmp2_metadata.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "microbiome_validation_report.md",
+                  "type": "file"
+                },
+                {
+                  "name": "run_meta.json",
+                  "type": "file"
+                },
+                {
+                  "name": "run_validation.py",
+                  "type": "file"
+                },
+                {
+                  "name": "species_test_results.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "taxonomic_profiles.tsv.gz",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "预测",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "复方候选干预代谢物_主面板.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "复方候选干预代谢物_全库敏感性.csv",
+                  "type": "file"
+                },
+                {
+                  "name": "干预代谢物预测_摘要.json",
+                  "type": "file"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "网络药理学": [
+    {
+      "name": "README_目录角色.md",
+      "type": "file"
+    },
+    {
+      "name": "交付文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "图片文件",
+          "type": "dir",
+          "children": [
+            {
+              "name": "KEGG官方通路图",
+              "type": "dir",
+              "children": [
+                {
+                  "name": "00_全部通路图清单.csv",
+                  "type": "file"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "代码文件",
+      "type": "dir",
+      "children": [
+        {
+          "name": "50_download_kegg_official_pngs.py",
+          "type": "file"
+        },
+        {
+          "name": "51_extend_kegg_mapping.py",
+          "type": "file"
+        },
+        {
+          "name": "52_sync_kegg_mapping_and_manifest.py",
+          "type": "file"
+        },
+        {
+          "name": "kegg_zh_names.py",
+          "type": "file"
+        }
+      ]
+    }
+  ]
+}

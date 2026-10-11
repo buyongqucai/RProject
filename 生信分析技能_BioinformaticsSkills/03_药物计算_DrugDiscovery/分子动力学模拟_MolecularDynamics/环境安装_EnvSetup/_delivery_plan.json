@@ -1,0 +1,432 @@
+{
+  "trees": {
+    "交付文件_修正版": {
+      "图片文件": {
+        "KEGG官方通路图": {
+          "00_Top20通路图清单.csv": 2606,
+          "01_hsa05417_Lipid_and_atherosclerosis.png": 330119,
+          "02_hsa04933_AGE-RAGE_signaling_pathway_in_diabetic_complications.png": 103843,
+          "03_hsa05161_Hepatitis_B.png": 192186,
+          "04_hsa05167_Kaposi_sarcoma-associated_herpesvirus_infection.png": 165423,
+          "05_hsa04657_IL-17_signaling_pathway.png": 142021,
+          "06_hsa04668_TNF_signaling_pathway.png": 98273,
+          "07_hsa05205_Proteoglycans_in_cancer.png": 282588,
+          "08_hsa05418_Fluid_shear_stress_and_atherosclerosis.png": 129104,
+          "09_hsa05215_Prostate_cancer.png": 143892,
+          "10_hsa04151_PI3K-Akt_signaling_pathway.png": 135370,
+          "11_hsa05160_Hepatitis_C.png": 125272,
+          "12_hsa01521_EGFR_tyrosine_kinase_inhibitor_resistance.png": 122747,
+          "13_hsa05235_PD-L1_expression_and_PD-1_checkpoint_pathway_in_cancer.png": 96333,
+          "14_hsa05212_Pancreatic_cancer.png": 109872,
+          "15_hsa05208_Chemical_carcinogenesis_-_reactive_oxygen_species.png": 344349,
+          "16_hsa05142_Chagas_disease.png": 122291,
+          "17_hsa05163_Human_cytomegalovirus_infection.png": 184431,
+          "18_hsa01522_Endocrine_resistance.png": 139779,
+          "19_hsa04620_Toll-like_receptor_signaling_pathway.png": 113345,
+          "20_hsa04066_HIF-1_signaling_pathway.png": 102266,
+          "README.txt": 198
+        },
+        "PPI": {
+          "PPI渐变图.png": 11070924,
+          "PPI渐变图.svg": 3323277,
+          "PPI渐变图_Degree.png": 11070924,
+          "PPI渐变图_Degree.svg": 3323277,
+          "Top20_PPI核心网络.png": 1062926,
+          "Top20_PPI核心网络.svg": 433083,
+          "string_vector_graphic.png": 15956624,
+          "string_vector_graphic.svg": 15484143
+        },
+        "富集分析": {
+          "BPCCMF气泡图.png": 416227,
+          "BPCCMF气泡图.svg": 26991,
+          "KEGG圈图.png": 3579141,
+          "KEGG圈图.svg": 2418872,
+          "KEGG富集气泡图_Top30.png": 707716,
+          "KEGG富集气泡图_Top30.svg": 3014559,
+          "KEGG柱状图.png": 294163,
+          "KEGG柱状图.svg": 19611,
+          "KEGG棒棒糖图.png": 344583,
+          "KEGG棒棒糖图.svg": 23582
+        },
+        "网络图": {
+          "筛选成分桑基图.png": 1947389,
+          "筛选成分桑基图.svg": 3964537,
+          "药成分靶点通路桑基图.png": 2080284,
+          "药成分靶点通路桑基图.svg": 20143186,
+          "药物有效成分疾病靶点通路网络图.png": 3974605,
+          "药物有效成分疾病靶点通路网络图.svg": 661254,
+          "药物有效成分疾病靶点通路网络图_椭圆布局.png": 4988998,
+          "药物有效成分疾病靶点通路网络图_椭圆布局.svg": 674082
+        },
+        "补充_技能扩展": {
+          "GO_BPCCMF柱状图.png": 446660,
+          "GO_BPCCMF柱状图.svg": 23591,
+          "单药疾病交集柱状图.png": 104996,
+          "单药疾病交集柱状图.svg": 12144,
+          "成分疾病交集按药柱状图.png": 1645303,
+          "成分疾病交集按药柱状图.svg": 146366,
+          "成分疾病交集柱状图.png": 1376713,
+          "成分疾病交集柱状图.svg": 126214,
+          "药味成分交集UpSet图.png": 54671,
+          "药味成分交集UpSet图.svg": 48248,
+          "药味通路覆盖热图.png": 220040,
+          "药味通路覆盖热图.svg": 81595
+        },
+        "韦恩图": {
+          "疾病数据库可视化韦恩图.png": 86301,
+          "疾病数据库可视化韦恩图.svg": 12475,
+          "疾病药物交集韦恩图.png": 49982,
+          "疾病药物交集韦恩图.svg": 7140
+        }
+      },
+      "报告文件": {
+        "_stats.json": 4160,
+        "图注与解读说明.html": 310,
+        "图注与解读说明.md": 6347
+      },
+      "数据文件": {
+        "PPI": {
+          "Top20_PPI核心网络边.csv": 9862,
+          "string_interactions_short.tsv": 118531
+        },
+        "富集分析": {
+          "BPCCMF.csv": 312383,
+          "KEGG.csv": 59934
+        },
+        "疾病": {
+          "疾病靶点合并.csv": 10738,
+          "疾病靶点按库.csv": 146388,
+          "疾病靶点按库_下游.csv": 27212
+        },
+        "网络图": {
+          "network.csv": 25605,
+          "type.csv": 3735,
+          "药物疾病交集靶点.csv": 84199
+        },
+        "药物": {
+          "单药": "...",
+          "全量单药疾病交集.csv": 15765,
+          "单药疾病交集汇总.csv": 335,
+          "成分重命名.csv": 7398,
+          "成分靶点.csv": 113594,
+          "草药成分边.csv": 3992,
+          "药物疾病交集.csv": 7470,
+          "药物靶点_全药.csv": 4308,
+          "药物靶点合并.csv": 4308
+        }
+      },
+      "README_归档说明.md": 338,
+      "README_轨B说明.txt": 518,
+      "图注与解读说明.html": 47042
+    },
+    "交付文件": {
+      "图片文件": {
+        "KEGG官方通路图": {
+          "00_Top20通路图清单.csv": 2606,
+          "01_hsa05417_Lipid_and_atherosclerosis.png": 330119,
+          "02_hsa04933_AGE-RAGE_signaling_pathway_in_diabetic_complications.png": 103843,
+          "03_hsa05161_Hepatitis_B.png": 192186,
+          "04_hsa05167_Kaposi_sarcoma-associated_herpesvirus_infection.png": 165423,
+          "05_hsa04657_IL-17_signaling_pathway.png": 142021,
+          "06_hsa04668_TNF_signaling_pathway.png": 98273,
+          "07_hsa05205_Proteoglycans_in_cancer.png": 282588,
+          "08_hsa05418_Fluid_shear_stress_and_atherosclerosis.png": 129104,
+          "09_hsa05215_Prostate_cancer.png": 143892,
+          "10_hsa04151_PI3K-Akt_signaling_pathway.png": 135370,
+          "11_hsa05160_Hepatitis_C.png": 125272,
+          "12_hsa01521_EGFR_tyrosine_kinase_inhibitor_resistance.png": 122747,
+          "13_hsa05235_PD-L1_expression_and_PD-1_checkpoint_pathway_in_cancer.png": 96333,
+          "14_hsa05212_Pancreatic_cancer.png": 109872,
+          "15_hsa05208_Chemical_carcinogenesis_-_reactive_oxygen_species.png": 344349,
+          "16_hsa05142_Chagas_disease.png": 122291,
+          "17_hsa05163_Human_cytomegalovirus_infection.png": 184431,
+          "18_hsa01522_Endocrine_resistance.png": 139779,
+          "19_hsa04620_Toll-like_receptor_signaling_pathway.png": 113345,
+          "20_hsa04066_HIF-1_signaling_pathway.png": 102266,
+          "README.txt": 198
+        },
+        "PPI": {
+          "PPI渐变图.png": 11070924,
+          "PPI渐变图.svg": 3323277,
+          "PPI渐变图_Degree.png": 11070924,
+          "PPI渐变图_Degree.svg": 3323277,
+          "Top20_PPI核心网络.png": 1062926,
+          "Top20_PPI核心网络.svg": 433083,
+          "string_vector_graphic.png": 15956624,
+          "string_vector_graphic.svg": 15484143
+        },
+        "分子动力学图_MD": {
+          "ADA_Adenosine_7RTG_A2": "...",
+          "MMP9_Tryptophan_4H3X": "..."
+        },
+        "富集分析": {
+          "BPCCMF气泡图.png": 416227,
+          "BPCCMF气泡图.svg": 26991,
+          "KEGG圈图.png": 3579141,
+          "KEGG圈图.svg": 2418872,
+          "KEGG富集气泡图_Top30.png": 707716,
+          "KEGG富集气泡图_Top30.svg": 3014559,
+          "KEGG柱状图.png": 294163,
+          "KEGG柱状图.svg": 19611,
+          "KEGG棒棒糖图.png": 344583,
+          "KEGG棒棒糖图.svg": 23582
+        },
+        "网络图": {
+          "筛选成分桑基图.png": 1947389,
+          "筛选成分桑基图.svg": 3964537,
+          "药成分靶点通路桑基图.png": 2080284,
+          "药成分靶点通路桑基图.svg": 20143186,
+          "药物有效成分疾病靶点通路网络图.png": 3974605,
+          "药物有效成分疾病靶点通路网络图.svg": 661254,
+          "药物有效成分疾病靶点通路网络图_椭圆布局.png": 4988998,
+          "药物有效成分疾病靶点通路网络图_椭圆布局.svg": 674082
+        },
+        "补充_技能扩展": {
+          "GO_BPCCMF柱状图.png": 446660,
+          "GO_BPCCMF柱状图.svg": 23591,
+          "单药疾病交集柱状图.png": 104996,
+          "单药疾病交集柱状图.svg": 12144,
+          "成分疾病交集按药柱状图.png": 1645303,
+          "成分疾病交集按药柱状图.svg": 146366,
+          "成分疾病交集柱状图.png": 1376713,
+          "成分疾病交集柱状图.svg": 126214,
+          "药味成分交集UpSet图.png": 54671,
+          "药味成分交集UpSet图.svg": 48248,
+          "药味通路覆盖热图.png": 220040,
+          "药味通路覆盖热图.svg": 81595
+        },
+        "韦恩图": {
+          "疾病数据库可视化韦恩图.png": 86301,
+          "疾病数据库可视化韦恩图.svg": 12475,
+          "疾病药物交集韦恩图.png": 49982,
+          "疾病药物交集韦恩图.svg": 7140
+        }
+      },
+      "报告文件": {
+        "_stats.json": 4160,
+        "图注与解读说明.html": 48287,
+        "图注与解读说明.md": 6347
+      },
+      "数据文件": {
+        "PPI": {
+          "Top20_PPI核心网络边.csv": 9862,
+          "string_interactions_short.tsv": 118531
+        },
+        "分子动力学_MD": {
+          "ADA_Adenosine_7RTG_A2": "...",
+          "MMP9_Tryptophan_4H3X": "..."
+        },
+        "富集分析": {
+          "BPCCMF.csv": 312383,
+          "KEGG.csv": 59934
+        },
+        "疾病": {
+          "疾病靶点合并.csv": 10738,
+          "疾病靶点按库.csv": 146388,
+          "疾病靶点按库_下游.csv": 27212
+        },
+        "网络图": {
+          "network.csv": 25605,
+          "type.csv": 3735,
+          "药物疾病交集靶点.csv": 84199
+        },
+        "药物": {
+          "单药": "...",
+          "全量单药疾病交集.csv": 15765,
+          "单药疾病交集汇总.csv": 335,
+          "成分重命名.csv": 7398,
+          "成分靶点.csv": 113594,
+          "草药成分边.csv": 3992,
+          "药物疾病交集.csv": 7470,
+          "药物靶点_全药.csv": 4308,
+          "药物靶点合并.csv": 4308
+        }
+      },
+      "README_轨B说明.txt": 547,
+      "图注与解读说明.html": 47906
+    },
+    "毒理_结果文件": {
+      "图片文件": {
+        "GEO验证": {
+          "01_GEO验证_GSE92415火山图_Gse92415Volcano.png": 335240,
+          "01_GEO验证_GSE92415火山图_Gse92415Volcano.svg": 478786,
+          "02_GEO验证_GSE75214火山图_Gse75214Volcano.png": 336731,
+          "02_GEO验证_GSE75214火山图_Gse75214Volcano.svg": 456476,
+          "03_GEO验证_核心基因热图_GeoCoreGeneHeatmaps.png": 473046,
+          "03_GEO验证_核心基因热图_GeoCoreGeneHeatmaps.svg": 1521706,
+          "04_GEO验证_基因AUC森林图_GeoGeneAucForest.png": 755985,
+          "04_GEO验证_基因AUC森林图_GeoGeneAucForest.svg": 1222268
+        },
+        "分子动力学图_MD": {
+          "ADA_Adenosine_7RTG_A2": "...",
+          "MMP9_Tryptophan_4H3X": "..."
+        },
+        "总图": {
+          "01_研究流程图_双交集设计_StudyDesignFlow.png": 327863,
+          "01_研究流程图_双交集设计_StudyDesignFlow.svg": 73647,
+          "02_三源交集与置换检验_VennPermutation.png": 285280,
+          "02_三源交集与置换检验_VennPermutation.svg": 51625,
+          "03_敏感性分析面板_SensitivityPanels.png": 199007,
+          "03_敏感性分析面板_SensitivityPanels.svg": 48686,
+          "04_对接亲和力热图_DockingAffinityHeatmap.png": 297864,
+          "04_对接亲和力热图_DockingAffinityHeatmap.svg": 95227
+        },
+        "机制层": {
+          "01_PPI网络_核心三源靶点_PpiCoreNetwork.png": 1597072,
+          "01_PPI网络_核心三源靶点_PpiCoreNetwork.svg": 1026375,
+          "02_GO富集_核心三源靶点_GoEnrichment.png": 357675,
+          "02_GO富集_核心三源靶点_GoEnrichment.svg": 1859721,
+          "03_KEGG富集_核心三源靶点_KeggEnrichment.png": 576298,
+          "03_KEGG富集_核心三源靶点_KeggEnrichment.svg": 2282573,
+          "04_PPI网络_全库敏感性_PpiSensitivityNetwork.png": 2356872,
+          "04_PPI网络_全库敏感性_PpiSensitivityNetwork.svg": 1713968,
+          "05_五层网络_GCTPM_GctpmNetwork.png": 2970565,
+          "05_五层网络_GCTPM_GctpmNetwork.svg": 3791381,
+          "06_PPI核心靶点_MCC排序_PpiHubBar.png": 196903,
+          "06_PPI核心靶点_MCC排序_PpiHubBar.svg": 426032,
+          "07_机制层组合图_MechanismOverview.png": 991000,
+          "07_机制层组合图_MechanismOverview.svg": 4234209,
+          "08_PPI核心靶点网络_PpiHubNetwork.png": 763753,
+          "08_PPI核心靶点网络_PpiHubNetwork.svg": 438504
+        },
+        "毒性分层": {
+          "01_毒性线索_暴露物覆盖_ToxicExposureCoverage.png": 262528,
+          "01_毒性线索_暴露物覆盖_ToxicExposureCoverage.svg": 877509,
+          "02_毒性线索_暴露物靶点网络_ToxicExposureTargetNetwork.png": 2099850,
+          "02_毒性线索_暴露物靶点网络_ToxicExposureTargetNetwork.svg": 1350310,
+          "03_毒性线索_方向证据热图_ToxicDirectionHeatmap.png": 299055,
+          "03_毒性线索_方向证据热图_ToxicDirectionHeatmap.svg": 1017939
+        }
+      },
+      "报告文件": {
+        "报告_MR轻量遗传支持.md": 2594,
+        "报告_P0_投稿前加固.md": 6142,
+        "报告_P1-2_方向一致性.md": 2927,
+        "报告_P1-3_MD环境与烟测.md": 7230,
+        "报告_Phase2_结肠表达过滤.md": 1427,
+        "报告_Phase3机制层.md": 3311,
+        "报告_Phase4毒性分层.md": 1857,
+        "报告_Phase5_GEO验证.md": 1677,
+        "报告_Phase5_分子对接.md": 3032,
+        "报告_复方干预代谢物预测.md": 5243,
+        "报告_阶段0-2.md": 2379
+      },
+      "数据文件": {
+        "GEO验证": {
+          "GEO_analysis_summary.csv": 259,
+          "GEO_core_gene_consistency.csv": 18224,
+          "GEO_gene_AUC.csv": 11760,
+          "GEO_panel_AUC.csv": 228,
+          "GEO_sample_audit.csv": 9177
+        },
+        "GWAS遗传支持": {
+          "MR轻量_摘要.json": 1528,
+          "MiBioGen_top10_instruments.csv": 782,
+          "UC_GWAS_genomewide_significant.csv": 106709
+        },
+        "P0加固": {
+          "C_HC_D子集.csv": 112,
+          "P0_加固结果.json": 3345,
+          "UC_CD_OT靶点集.json": 12504
+        },
+        "代谢物": {
+          "GMMAD2_IBD_D015212.csv": 296305,
+          "GMMAD2_UC_D003093.csv": 296978,
+          "M_主面板靶点.csv": 312013,
+          "M_全库敏感性靶点.csv": 471581,
+          "M_全部靶点.csv": 722432,
+          "M_构建摘要.json": 400,
+          "M_阈值敏感性.csv": 938626,
+          "M_靶点异常清单.csv": 5315,
+          "代谢物主面板.csv": 40078,
+          "代谢物全库敏感性.csv": 82787,
+          "代谢物纳入排除清单.csv": 435169,
+          "代谢物面板_主分析与全库敏感性.csv": 114219,
+          "代谢物面板构建摘要.json": 694,
+          "特殊暴露物_不进入小分子预测.csv": 373
+        },
+        "分子动力学_MD": {
+          "ADA_Adenosine_7RTG_A2": "...",
+          "MMP9_Tryptophan_4H3X": "..."
+        },
+        "对接": {
+          "对接_摘要.json": 79,
+          "对接全表.csv": 3140,
+          "对接失败清单.csv": 112,
+          "对接汇总.csv": 1205
+        },
+        "敏感性": {
+          "结肠表达过滤_基因表.csv": 13207,
+          "结肠表达过滤_干预候选稳定性_主面板.csv": 31370,
+          "结肠表达过滤_干预候选稳定性_全库敏感性.csv": 70226,
+          "结肠过滤_摘要.json": 1168
+        },
+        "方向一致性": {
+          "方向一致性_代谢物汇总.csv": 9686,
+          "方向一致性_摘要.json": 421,
+          "方向一致性_配对明细.csv": 48717
+        },
+        "机制层": {
+          "富集分析": "...",
+          "Full_STRING_edges.csv": 31432,
+          "Main_STRING_edges.csv": 8938,
+          "PPI_MCODE模块.csv": 712,
+          "PPI_enrichment_summary.csv": 157,
+          "PPI网络指标_MCC排序.csv": 3095,
+          "STRING_Full_score900.tsv": 28862,
+          "STRING_Main_score900.tsv": 8192,
+          "Top20_STRING_edges.csv": 5366,
+          "五层网络节点.csv": 2965,
+          "五层网络边.csv": 4128,
+          "机制层构建摘要.json": 247,
+          "核心代谢物靶点配对.csv": 112391
+        },
+        "毒性分层": {
+          "CTD_有害暴露物基因互作.csv": 3503345,
+          "代谢物有益有害分层.csv": 1169,
+          "有害暴露物清单.csv": 2662,
+          "毒性分层构建摘要.json": 510,
+          "毒性线索_暴露物靶点不良结局.csv": 1083915
+        },
+        "菌群臂验证": {
+          "guild_summary.csv": 442,
+          "hmp2_metadata.csv": 9074342,
+          "microbiome_validation_report.md": 1839,
+          "run_meta.json": 1076,
+          "run_validation.py": 9884,
+          "species_test_results.csv": 2556,
+          "taxonomic_profiles.tsv.gz": 666634
+        },
+        "预测": {
+          "复方候选干预代谢物_主面板.csv": 31412,
+          "复方候选干预代谢物_全库敏感性.csv": 70256,
+          "干预代谢物预测_摘要.json": 970
+        },
+        "C_full_gutmgene_human_H_only.csv": 224,
+        "C_full_gutmgene_human_H_plus_M.csv": 827,
+        "C_main_evidence_priority_H_only.csv": 130,
+        "C_main_evidence_priority_H_plus_M.csv": 500,
+        "I2_full_gutmgene_human_H_only.csv": 390,
+        "I2_full_gutmgene_human_H_plus_M.csv": 1703,
+        "I2_main_evidence_priority_H_only.csv": 251,
+        "I2_main_evidence_priority_H_plus_M.csv": 1095,
+        "双交集统计摘要.json": 195,
+        "双交集统计汇总.csv": 1138
+      }
+    },
+    "药理_交付": {
+      "图片文件": {
+        "KEGG官方通路图": {
+          "00_全部通路图清单.csv": 75187
+        }
+      }
+    }
+  },
+  "docs": {
+    "存放规范_ProjectLayout.md": "# 努力学习项目 · 存放规范\n\n> 对齐 `统一交付规范_DeliveryStandards` **课题交付目录** + 婷婷桌面树。  \n> 更新日期：2026-10-09（修正：强制 `*文件` 全称）\n\n## 1. 顶层角色\n\n| 路径 | 角色 | 放什么 |\n|------|------|--------|\n| `网络毒理学_菌群代谢物双交集/` | 主工作树（网毒 UC） | 见 §2 |\n| `网络药理学/` | 网药工作树（暂薄） | 自有 `代码文件/`；勿混入网毒产物 |\n| `交付文件/` | 对外交付包（轨 B） | `数据文件/` `图片文件/` `报告文件/` |\n| `交付文件_修正版/` | 历史快照（勿再写） | 同上三夹名 |\n\n## 2. 主工作树（网毒 UC）— 强制\n\n```text\n网络毒理学_菌群代谢物双交集/\n  数据文件/                 # RAW：外部库、预测输入、对接工作区、缓存\n  代码文件/                 # 仅脚本\n  结果文件/                 # 与代码、数据平级\n    数据文件/               # 分析产物表\n    图片文件/               # 出版图（总图/机制层/…）\n    报告文件/               # 阶段报告 *.md / HTML\n  研究计划/                 # 研究计划、文献调研、纳入规则\n  存放规范_ProjectLayout.md\n```\n\n| 旧名（禁止） | 现名 |\n|--------------|------|\n| `准备文件/` | `数据文件/` |\n| `数据/` | `结果文件/数据文件/` |\n| `图片/` | `结果文件/图片文件/` |\n| 根目录 `报告_*.md` | `结果文件/报告文件/` |\n| 根目录 `研究计划_*.md` | `研究计划/` |\n\n## 3. 交付包（轨 B）\n\n```text\n交付文件/\n  数据文件/\n  图片文件/\n  报告文件/\n  README_轨B说明.txt\n```\n\n只维护一份活动交付：`交付文件/`。新图同步到主工作树 `结果文件/图片文件/` 与本包 `图片文件/`。\n\n## 4. 脚本路径约定\n\n- raw → `ROOT / \"数据文件\" / ...`\n- 结果表/图/报告 → `ROOT / \"结果文件\" / {\"数据文件\",\"图片文件\",\"报告文件\"} / ...`\n- 轨 B → `努力学习项目/交付文件/数据文件/...`\n\n## 5. 出图禁则\n\n禁止 draw.io / diagrams.net。流程图与统计图用课题脚本或技能仓约定引擎（Origin / PyMOL / R+ggplot），DPI≥600，PNG+SVG。\n",
+    "网络毒理学_菌群代谢物双交集\\存放规范_ProjectLayout.md": "# 存放规范 / Project Layout\n\n对齐：`统一交付规范_DeliveryStandards` → `样例目录与命名_SampleLayoutNaming.md` **课题交付目录**（2026-09-29）。\n\n## 强制树\n\n```text\n网络毒理学_菌群代谢物双交集/\n  数据文件/                 # RAW only：外部库、预测输入、对接工作区、缓存\n  代码文件/                 # 仅脚本（*.py / *.R）\n  结果文件/                 # 与代码文件、数据文件平级\n    数据文件/               # 分析产物表\n    图片文件/               # 出版图\n    报告文件/               # 阶段报告 *.md / HTML\n  研究计划/                 # 研究计划、文献调研、纳入规则\n```\n\n轨 B 客户包 `努力学习项目/交付文件/`：\n\n```text\n交付文件/\n  数据文件/\n  图片文件/\n  报告文件/\n```\n\n## 禁止\n\n| 旧名（已废弃） | 应用 |\n|----------------|------|\n| `图片/` `数据/` `报告/` | 必须用 `*文件` 全称 |\n| 根目录散落 `报告_*.md` | 一律进 `结果文件/报告文件/` |\n| 根目录 `研究计划_*.md` | 进 `研究计划/` |\n| `准备文件/` | 已并入 `数据文件/`（raw） |\n\n## 钩稽\n\n- 脚本读 raw → `ROOT/数据文件/...`\n- 脚本写表/图/报告 → `ROOT/结果文件/{数据文件,图片文件,报告文件}/...`\n- 复用网药交付 → `努力学习项目/交付文件/数据文件/...`\n",
+    "交付文件_修正版\\README_归档说明.md": "# 归档说明（2026-10-09）\n\n本目录与 `../交付文件/` 内容完全一致（核验：111 文件、0 差异）。\n\n**活动交付只维护 `交付文件/`。** 本夹视为历史快照，勿再写入新结果。\n\n全项目存放规范：`../存放规范_ProjectLayout.md`  \n审查报告：`../报告_存放审查_对齐婷婷.md`\n",
+    "交付文件\\README_轨B说明.txt": "轨 B 客户归档。\n目录：图片文件/、数据文件/、报告文件/；入口可用根目录或报告文件内的「图注与解读说明.html」。\n\n【发给别人】请打包整个「交付文件」文件夹，对方打开：\n  图注与解读说明.html\n图片与数据均为相对路径（图片文件/...、数据文件/...），勿只发送单个 HTML。\n\n规范：努力学习项目/存放规范_ProjectLayout.md（对齐 DeliveryStandards 课题交付：*文件 全称）。\n禁止把本目录当作桌面写出路径。\n",
+    "交付文件_修正版\\README_轨B说明.txt": "轨 B 客户归档（由 11_pack_delivery_archive.py 从轨 A / 数据文件 复制）。\n目录：图片/、数据/、报告/，以及根目录图注与解读说明.html。\n\n【发给别人】请打包整个「交付文件」文件夹，对方打开：\n  图注与解读说明.html\n图片与数据均为相对路径（图片/...、数据/...），勿只发送单个 HTML。\n\nMarkdown 说明：报告/图注与解读说明.md\n规范状态：PENDING_USER_REVIEW。禁止把本目录当作桌面写出路径。\n"
+  }
+}

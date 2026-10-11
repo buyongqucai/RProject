@@ -10,7 +10,9 @@
     E:\\Origin_Data\\\"E:/Origin_Data/3HTB/xxx.opju\\\".opju）。
 
 配色对齐 VizStandards journal muted。
-FEL：2D 用 plotxyz 243（XYZ 等值线）；3D 用 xyz_regular → plotm 103 + Viridis。
+FEL：2D 用 plotxyz 243（XYZ 等值线）+ Viridis；3D 对齐论文常见「漏斗+底板」样式：
+  matrix → plotm 103 OpenGL glcmap + Jet，显示层 ΔG 封顶（默认 20 kJ/mol）、4× 双线性、
+  曲面填色关 mesh、底板投影。不改 kde2d 带宽 / 不改色板逻辑。
 柱图：单列数值 + 逐柱着色（禁止对角空表多 series）。
 
 用法：
@@ -39,6 +41,8 @@ SAMPLE_RESULT = Path(
 )
 SAMPLE_FIG = SAMPLE_RESULT / "图片文件"  # 旧路径，layout 时迁走
 OC_HIDE_CONTOURS = Path(__file__).resolve().parent / "origin隐藏FEL等值线_hideFelContours.c"
+# 3D FEL 显示封顶（kJ/mol）：对齐论文 H 面板常见 0–16 量级；不改原始 CSV/KDE
+FEL_DG_CLIP_KJ = 20.0
 
 def _load_md_layout():
     import importlib.util
@@ -287,17 +291,16 @@ def _col(row: dict, *names: str):
 
 
 def _floats(path: Path, *names: str) -> list[float]:
-    """Collect numeric values from every named column (not just the first hit)."""
+    """每行只取 names 中第一个命中的列（避免 time_ns+residue 双列拼进同一轴）。"""
     out = []
     for r in _read_csv(path):
-        for n in names:
-            v = _col(r, n)
-            if v is None:
-                continue
-            try:
-                out.append(float(v))
-            except ValueError:
-                continue
+        v = _col(r, *names)
+        if v is None:
+            continue
+        try:
+            out.append(float(v))
+        except ValueError:
+            continue
     return out
 
 
@@ -379,38 +382,68 @@ def prepare_inputs(data_dir: Path, work: Path) -> dict[str, Path]:
     if tri.exists():
         rows = _read_csv(tri)
         by_t: dict[str, dict[str, str]] = {}
+        wide_direct: list[list] = []
         for r in rows:
             t = _col(r, "time_ns")
+            if t is None:
+                continue
+            # 宽表：已有 Protein/Ligand/Complex 列
+            pcol = _col(r, "Protein", "protein")
+            lcol = _col(r, "Ligand", "ligand")
+            ccol = _col(r, "Complex", "complex")
+            if pcol is not None or lcol is not None:
+                wide_direct.append([t, pcol or "", lcol or "", ccol or ""])
+                continue
+            # 长表：series + rmsd_nm
             s = (_col(r, "series") or "").strip()
             v = _col(r, "rmsd_nm")
-            if t is None or not s:
+            if not s or v is None:
                 continue
             by_t.setdefault(t, {})[s] = v
-        wide = []
-        for t in sorted(by_t, key=lambda x: float(x)):
-            d = by_t[t]
-            wide.append([t, d.get("Protein", ""), d.get("Ligand", ""), d.get("Complex", "")])
+        if wide_direct:
+            wide = wide_direct
+        else:
+            wide = []
+            for t in sorted(by_t, key=lambda x: float(x)):
+                d = by_t[t]
+                wide.append([t, d.get("Protein", ""), d.get("Ligand", ""), d.get("Complex", "")])
+        if wide:
+            try:
+                tmax = max(float(r[0]) for r in wide if r[0] not in ("", None))
+            except ValueError:
+                tmax = 0.0
+            if tmax > 500:
+                print(f"[prep] RMSD_tri: time looks like ps (max={tmax:.4g}) → /1000 → ns")
+                wide = [[f"{float(r[0])/1000:.8g}", r[1], r[2], r[3]] for r in wide]
+        # 统计非空系列，供出图只画有数据的列（禁止空 Complex 列进 plotxy）
+        has_p = any((r[1] not in ("", None)) for r in wide)
+        has_l = any((r[2] not in ("", None)) for r in wide)
+        has_c = any((r[3] not in ("", None)) for r in wide)
         p = work / "RMSD_tri_wide.csv"
         _write_csv(p, ["time_ns", "Protein", "Ligand", "Complex"], wide)
         out["rmsd_tri"] = p
+        out["_rmsd_tri_cols"] = {  # type: ignore[assignment]
+            "Protein": has_p, "Ligand": has_l, "Complex": has_c,
+        }
 
+    # y 列名同时兼容样例（rmsd_nm…）与生产导出（Backbone/SASA/Rg…）
     simple = [
         ("rmsd_bb", "RMSD_backbone.csv", ["time_ns", "Backbone"],
-         ("time_ns",), ("rmsd_nm",)),
+         ("time_ns",), ("rmsd_nm", "Backbone", "backbone")),
         ("rmsf", "RMSF_calpha.csv", ["residue", "RMSF"],
-         ("residue",), ("rmsf_nm",)),
+         ("residue",), ("rmsf_nm", "RMSF", "rmsf")),
         ("hbond", "HBonds_protein_ligand.csv", ["time_ns", "Hbonds"],
-         ("time_ns",), ("n_hbond",)),
+         ("time_ns",), ("n_hbond", "Hbonds", "hbonds")),
         ("rg", "Rg.csv", ["time_ns", "Rg"],
-         ("time_ns",), ("rg_nm",)),
+         ("time_ns",), ("rg_nm", "Rg", "rg")),
         ("sasa", "SASA.csv", ["time_ns", "SASA"],
-         ("time_ns",), ("sasa_nm2",)),
+         ("time_ns",), ("sasa_nm2", "SASA", "sasa")),
         ("com", "COM_distance.csv", ["time_ns", "COM"],
-         ("time_ns",), ("dist_nm", "com_nm")),
+         ("time_ns",), ("dist_nm", "com_nm", "COM", "com")),
         ("nvt", "NVT_temperature.csv", ["time_ns", "Temperature"],
-         ("time_ns",), ("temp_K",)),
+         ("time_ns",), ("temp_K", "Temperature", "temperature")),
         ("pe", "MD_potential.csv", ["time_ns", "Potential"],
-         ("time_ns",), ("pot_kj",)),
+         ("time_ns",), ("pot_kj", "Potential", "potential")),
     ]
 
     for key, fname, header, xnames, ynames in simple:
@@ -425,8 +458,20 @@ def prepare_inputs(data_dir: Path, work: Path) -> dict[str, Path]:
             if x is None or y is None:
                 continue
             body.append([x, y])
+        # 防呆：time_ns 若仍是 ps（>500），统一 /1000
+        if body and "time_ns" in header:
+            try:
+                tmax = max(float(r[0]) for r in body if r[0] not in ("", None))
+            except ValueError:
+                tmax = 0.0
+            if tmax > 500:
+                print(f"[prep] {fname}: time looks like ps (max={tmax:.4g}) → /1000 → ns")
+                body = [[f"{float(r[0])/1000:.8g}", r[1]] for r in body]
         p = work / f"{key}.csv"
         _write_csv(p, header, body)
+        if not body:
+            print(f"[prep] WARN {fname}: 0 rows after column map (check header names) — skip plot")
+            continue
         out[key] = p
 
     npt = data_dir / "NPT_equilibration.csv"
@@ -439,14 +484,21 @@ def prepare_inputs(data_dir: Path, work: Path) -> dict[str, Path]:
                 continue
             body.append([
                 t,
-                _col(r, "temp_K") or "",
-                _col(r, "press_bar") or "",
-                _col(r, "density") or "",
+                _col(r, "temp_K", "Temperature", "temperature") or "",
+                _col(r, "press_bar", "Pressure", "pressure") or "",
+                _col(r, "density", "Density") or "",
             ])
+        if body:
+            try:
+                tmax = max(float(r[0]) for r in body if r[0] not in ("", None))
+            except ValueError:
+                tmax = 0.0
+            if tmax > 500:
+                print(f"[prep] NPT_equilibration.csv: time looks like ps (max={tmax:.4g}) → /1000 → ns")
+                body = [[f"{float(r[0])/1000:.8g}", r[1], r[2], r[3]] for r in body]
         p = work / "npt.csv"
         _write_csv(p, ["time_ns", "Temperature", "Pressure", "Density"], body)
         out["npt"] = p
-
     fel_meta: dict[str, dict] = {}
     for key, fname in [
         ("fel_rg", "FEL3D_RMSD_Rg_kJmol.csv"),
@@ -483,14 +535,28 @@ def prepare_inputs(data_dir: Path, work: Path) -> dict[str, Path]:
         p_mat = work / f"{key}_mat.csv"
         _write_raw(p_mat, mat)
         out[key] = p_mat
+        # 显示加密：不改 kde2d 带宽（SOP）；2D×2、3D×4 减轻 OpenGL 面片折角
         mat2d = _bilinear_zoom(mat, 2, 2)
         p_2d = work / f"{key}_mat2d.csv"
         _write_raw(p_2d, mat2d)
         out[key + "_2d"] = p_2d
+        mat3d = _bilinear_zoom(mat, 4, 4)
+        # 显示封顶：稀有区 ΔG 飙到数百会压扁漏斗；原始 FEL_*.csv 不动
+        clip = float(FEL_DG_CLIP_KJ)
+        mat3d = [
+            [_lt_num(min(float(v), clip)) for v in row]
+            for row in mat3d
+        ]
+        p_3d = work / f"{key}_mat3d.csv"
+        _write_raw(p_3d, mat3d)
+        out[key + "_3d"] = p_3d
         fel_meta[key] = {
             "nx": len(xs), "ny": len(ys),
+            "nx3": len(mat3d[0]) if mat3d else 0,
+            "ny3": len(mat3d),
             "xmin": xs[0], "xmax": xs[-1],
             "ymin": ys[0], "ymax": ys[-1],
+            "zmax_clip": clip,
         }
     out["_fel_meta"] = fel_meta  # type: ignore[assignment]
 
@@ -585,6 +651,7 @@ def _export(png_dir: Path, stem: str) -> list[str]:
     return [
         f'page.longname$ = "{stem}";',
         "sec -p 0.4;",
+        # 勿加 trimming:=0：Origin 2024 会 LT_OK 但不落盘（NO_PNG）
         f'run -xf expG2img type:=0 path:="{out}/" name:="{stem}" res:=600;',
         f'run -xf expG2img type:=5 path:="{out}/" name:="{stem}" ratio:=100;',
         "sec -p 0.8;",
@@ -606,11 +673,11 @@ def _line_color_cmds(n_series: int, colors: list[str], width: int = 1800,
 
 
 def _hide_legend() -> list[str]:
+    # OriginPro 2024：legend.hide / legendend 常弹 TYPE.ERRORS；只删 legend 标签
     return [
-        "legend.hide = 1;",
-        "legendend;",
         "label -r Legend;",
         "label -r legend;",
+        "label -r legend1;",
     ]
 
 
@@ -661,6 +728,23 @@ def _bar_axis_bottom(y0: float, y1: float, n_bars: int) -> list[str]:
     ]
 
 
+def _fix_color_scale_title(clab: str, *, use_czt: bool = True) -> list[str]:
+    """把模板占位「Color Scale Title」改成单位标题。
+
+    注意：OpenGL 3D FEL 不要 ``set %C -czt``——会把漏斗曲面压成底板平面。
+    """
+    L = [f'label -cl "{clab}";']
+    if use_czt:
+        L.append(f'set %C -czt "{clab}";')
+    L += [
+        f'doc -e L {{if (instr(%H.text$, "Color Scale Title") > 0) %H.text$ = "{clab}";}};',
+        f'doc -e L {{if (instr(%H.text$, "Color Scale") > 0) %H.text$ = "{clab}";}};',
+        f'doc -e L {{if (instr(%H.text$, "Scale Title") > 0) %H.text$ = "{clab}";}};',
+        "sec -p 0.3;",
+    ]
+    return L
+
+
 def _set_axis_titles(xlab: str, ylab: str, zlab: str = "", clab: str = "",
                     *, make_xy: bool = True) -> list[str]:
     """替换模板占位符。3D OpenGL 禁止 label -xb/-yl（会在左上角再叠一套字）。"""
@@ -682,11 +766,7 @@ def _set_axis_titles(xlab: str, ylab: str, zlab: str = "", clab: str = "",
             f'doc -e L {{if (instr(%H.text$, "Z Axis Title") > 0) %H.text$ = "{zlab}";}};',
         ]
     if clab:
-        L += [
-            f'label -cl "{clab}";',
-            f'doc -e L {{if (instr(%H.text$, "Scale Title") > 0) %H.text$ = "{clab}";}};',
-            f'doc -e L {{if (instr(%H.text$, "Color Scale") > 0) %H.text$ = "{clab}";}};',
-        ]
+        L += _fix_color_scale_title(clab)
     return L
 
 
@@ -703,6 +783,11 @@ def _viridis() -> list[str]:
     # 禁止 layer.cmap.shown / ztitle：热图与 OpenGL 曲面没有该属性，
     # COM Execute 会弹出 LAYER.CMAP.SHOWN: error setting property value
     return ["set %C -cpal Viridis;"]
+
+
+def _fel3d_cmap() -> list[str]:
+    """3D FEL：论文 H 面板常见蓝(低)→红(高) Jet（soft；失败保留 glcmap 默认）。"""
+    return ["set %C -cpal Jet;"]
 
 
 CMAP_PATCHER = r'''from pathlib import Path
@@ -787,21 +872,27 @@ def patch_fel_cmap_xml(path: Path) -> int:
 
 
 OC_HIDE_SRC = r'''#include <origin.h>
+#pragma labtalk(1)
 
 void hide_fel_contours()
 {
     GraphLayer gl = Project.ActiveLayer();
-    DataPlot dp = gl.DataPlots(0);
-    Tree tr;
-    tr = dp.GetFormat(FPB_ALL, FOB_ALL, true, true);
-    tr.Root.EnableContour.nVal = 0;
-    tr.Root.ColorMap.MajorLines.nVal = 0;
-    tr.Root.ColorMap.ShowGridLines.nVal = 0;
-    tr.Root.Grids.Enable.nVal = 0;
-    tr.Root.Grids.Width.dVal = 0;
-    tr.Root.Grids.GridsCntrl.nVal = 0;
-    dp.UpdateThemeIDs(tr.Root);
-    dp.ApplyFormat(tr, true, true);
+    int n = gl.DataPlots.Count();
+    for (int i = 0; i < n; i++)
+    {
+        DataPlot dp = gl.DataPlots(i);
+        if (!dp.IsValid())
+            continue;
+        Tree trf;
+        trf = dp.GetFormat(FPB_ALL, FOB_ALL, true, true);
+        trf.Root.Surface.Mesh.Enable.nVal = 0;
+        trf.Root.Surface.ColorMap.Contours.Enable.nVal = 0;
+        trf.Root.ColorMap.Contours.Enable.nVal = 0;
+        trf.Root.ColorMap.ShowGridLines.nVal = 0;
+        trf.Root.EnableContour.nVal = 0;
+        dp.UpdateThemeIDs(trf.Root);
+        dp.ApplyFormat(trf, true, true);
+    }
 }
 '''
 
@@ -817,19 +908,23 @@ def _install_hide_oc(work: Path) -> None:
 
 
 def _fel3d_hide_lines(work: Path) -> list[str]:
-    """OpenGL 3D Z 等值线：OriginC GetFormat.ShowLines=0，文件放在 OriginC 目录以便 LoadOC。"""
+    """只关曲面上黑色 mesh/等高线，不动 Jet 色板。"""
     _install_hide_oc(work)
-    L = [
+    return [
         'run.LoadOC("hideFelContours.c", 16);',
         "hide_fel_contours;",
+        "layer.plot = 1;",
+        "set %C -b3m 0;",
+        "set %C -b3t 1;",
+        "layer.mesh.enable = 0;",
         "layer.plot1.contlines = 0;",
-        "layer.cmap.showLines(3);",
-        "layer.cmap.showLabels(3);",
-        "layer.cmap.updateScale();",
+        "layer.plot = 2;",
+        "set %C -b3m 0;",
+        "layer.plot2.contlines = 0;",
+        "layer.plot = 1;",
+        "set %C -b3m 0;",
+        "hide_fel_contours;",
     ]
-    L += [f"layer.cmap.line{i} = 0;" for i in range(1, 33)]
-    L += [f"layer.CMap.lineWidth{i} = 0;" for i in range(1, 33)]
-    return L
 
 
 def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[str]]]:
@@ -843,7 +938,13 @@ def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[st
                  ynames: tuple[str, ...] = (), floor0: bool = False,
                  right: int = 8) -> None:
         iy = ",".join(f"(1,{c})" for c in ycols)
-        xs = _floats(csv_path, *xnames)
+        # X：时间序列只用 time_ns；残基图只用 residue（勿混进同一个 names 列表）
+        if "time" in xlab.lower():
+            xs = _floats(csv_path, "time_ns")
+        elif "residue" in xlab.lower():
+            xs = _floats(csv_path, "residue")
+        else:
+            xs = _floats(csv_path, *xnames)
         if ynames:
             ys = _floats(csv_path, *ynames)
         else:
@@ -857,8 +958,18 @@ def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[st
                             ys.append(float(vals[c - 1]))
                         except ValueError:
                             pass
+        if len(xs) < 2 or len(ys) < 2:
+            print(f"[jobs] SKIP {stem}: need >=2 points (nx={len(xs)} ny={len(ys)}) in {csv_path.name}")
+            return
         x0, x1 = _span(xs, pad=0.02, floor0=("time" in xlab.lower()))
         y0, y1 = _span(ys, pad=0.08, floor0=floor0)
+        if abs(x1 - x0) < 1e-9 or abs(y1 - y0) < 1e-12:
+            print(f"[jobs] SKIP {stem}: degenerate axis x=[{x0},{x1}] y=[{y0},{y1}]")
+            return
+        # 时间轴若仍落在 ~1 ns 而数据跨度更大，说明读错列——拒画
+        if "time" in xlab.lower() and max(xs) > 2.0 and x1 <= 1.0 + 1e-6:
+            print(f"[jobs] SKIP {stem}: x-axis capped at 1 but data max={max(xs):.3g}")
+            return
         L = [
             f'newbook name:="{key}" option:=lsname;',
             f'impASC fname:="{_p(csv_path)}" options.names.FNameToBk:=0 options.names.FNameToSht:=0;',
@@ -875,12 +986,11 @@ def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[st
         L += _style_xy(xlab, ylab)
         if legend:
             L.append("legendupdate;")
-            L.append("legend.show = 1;")
+            # legend.show 在部分版本也弹 TYPE.ERRORS；有多系列时保留 legendupdate 即可
         else:
             L += _hide_legend()
         L += _export(png_dir, stem)
         jobs.append((stem, L))
-
     def add_simple_bar(key: str, csv_path: Path, stem: str, xlab: str, ylab: str,
                        *, rotate_x: int = 0, labeled: bool = False,
                        horizontal: bool = False, single: str | None = None) -> None:
@@ -952,67 +1062,105 @@ def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[st
             "layer.CMap.lineColorLink = 1;",
         ]
         L += _viridis()
-        L += _layout(left=20, right=26, top=12, bottom=20)
+        # 右缘必须够宽，否则色阶数字与标题被 export 裁掉
+        L += _layout(left=30, right=36, top=16, bottom=26)
         L += _style_xy(xlab, ylab)
         L += [
             "layer.x.label.rotate = 0;",
             "layer.x.showAxes = 3;",
             "layer.y.showAxes = 3;",
+            "layer.x.ptitlesize = 22;",
+            "layer.y.ptitlesize = 22;",
         ]
         L += _set_axis_titles(xlab, ylab, clab="dG (kJ/mol)", make_xy=True)
-        L.append('ColorScale1.title$ = "dG (kJ/mol)";')
+        L += _fix_color_scale_title("dG (kJ/mol)")
         L += _export(png_dir, stem)
         jobs.append((stem, L))
 
     def add_fel3d(key: str, csv_path: Path, stem: str, xlab: str, ylab: str,
                   meta: dict) -> None:
+        """漏斗曲面 + 底板投影 + ΔG 封顶；曲面上不画黑色 mesh 条纹。"""
         xmin, xmax = meta["xmin"], meta["xmax"]
         ymin, ymax = meta["ymin"], meta["ymax"]
+        zclip = float(meta.get("zmax_clip") or FEL_DG_CLIP_KJ)
         L = [
             f'newbook name:="{key}" mat:=1 option:=lsname;',
             f'impASC fname:="{_p(csv_path)}" options.names.FNameToBk:=0 options.names.FNameToSht:=0;',
             "sec -p 0.5;",
             f"matrix -ps X {_lt_num(xmin)} {_lt_num(xmax)};",
             f"matrix -ps Y {_lt_num(ymin)} {_lt_num(ymax)};",
+            # 固定：OpenGL glcmap + Jet（勿改非 OpenGL，会丢色阶）
             "plotm im:=<active> plot:=103 ogl:=<new template:=glcmap>;",
             "sec -p 1;",
         ]
-        L += _viridis()
+        L += _fel3d_cmap()
         L += [
             "set %C -b3m 0;",
             "set %C -b3t 1;",
             "set %C -t 0;",
             "layer.plot1.transparency = 0;",
             "layer.mesh.enable = 0;",
-        ]
-        L += _fel3d_hide_lines(csv_path.parent)
-        L += [
+            "layer.plot1.contlines = 0;",
+            "page.aa = 1;",
+            # 底板投影（填色等高，同样关 mesh）
+            "layer -ip103 %C;",
+            "sec -p 0.3;",
+            "layer.plot = 2;",
+            "set %C -spf 1;",
+            "set %C -spz 0;",
+            "set %C -b3t 1;",
+            "set %C -b3m 0;",
+            "layer.plot = 1;",
+            "set %C -b3m 0;",
+            "set %C -b3t 1;",
+            # 勿对 OpenGL 图层套 _layout：会压扁/丢掉漏斗曲面，只剩底板
+            "layer.view.horizontal = 35;",
+            "layer.view.vertical = 25;",
+            f"layer.z.from = 0;",
+            f"layer.z.to = {_lt_num(zclip)};",
             "layer.x.showGrids = 1;",
             "layer.y.showGrids = 1;",
             "layer.z.showGrids = 1;",
-            "page.aa = 1;",
             "label -r gbTitle;",
         ]
-        L += _set_axis_titles(xlab, ylab, zlab="dG (kJ/mol)", clab="dG (kJ/mol)",
+        L += _fel3d_hide_lines(csv_path.parent)
+        # 3D：轴标题可写，但色阶标题勿用 -czt（会压扁曲面）
+        L += _set_axis_titles(xlab, ylab, zlab="G (kJ/mol)", clab="",
                              make_xy=False)
         L += [
             "sec -p 0.4;",
+            "layer.plot = 1;",
+            "set %C -cpal Jet;",
             "set %C -b3m 0;",
             "set %C -b3t 1;",
             "layer.mesh.enable = 0;",
             "layer.plot1.contlines = 0;",
-            "layer.cmap.showLines(3);",
-            "layer.plot1.transparency = 0;",
+            "page.aa = 1;",
         ]
+        L += _fix_color_scale_title("G (kJ/mol)", use_czt=False)
         L += _export(png_dir, stem)
         jobs.append((stem, L))
 
     if "rmsd_tri" in files:
-        add_line("RMSDtri", files["rmsd_tri"], [2, 3, 4],
-                 [C_PROTEIN, C_LIGAND, C_COMPLEX],
-                 "RmsdProteinLigandComplex",
-                 "Time (ns)", "RMSD (nm)", legend=True, floor0=True,
-                 ynames=("Protein", "Ligand", "Complex"), right=18)
+        flags = files.get("_rmsd_tri_cols") or {}  # type: ignore[assignment]
+        series_spec = [
+            (2, C_PROTEIN, "Protein"),
+            (3, C_LIGAND, "Ligand"),
+            (4, C_COMPLEX, "Complex"),
+        ]
+        ycols, colors, ynames = [], [], []
+        for col, color, name in series_spec:
+            # flags 缺失时默认画（兼容旧 prep）
+            if flags and not flags.get(name, False):
+                continue
+            ycols.append(col)
+            colors.append(color)
+            ynames.append(name)
+        if ycols:
+            add_line("RMSDtri", files["rmsd_tri"], ycols, colors,
+                     "RmsdProteinLigandComplex",
+                     "Time (ns)", "RMSD (nm)", legend=True, floor0=True,
+                     ynames=tuple(ynames), right=18)
     if "rmsd_bb" in files:
         add_line("RMSDbb", files["rmsd_bb"], [2], [C_PROTEIN],
                  "RmsdBackbone", "Time (ns)", "RMSD (nm)",
@@ -1068,7 +1216,7 @@ def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[st
             continue
         meta = fel_meta.get(key) or {}
         add_fel2d(key + "2", files.get(key + "_2d") or files[key], stem2, xlab, ylab, meta)
-        add_fel3d(key + "3", files[key], stem3, xlab, ylab, meta)
+        add_fel3d(key + "3", files.get(key + "_3d") or files[key], stem3, xlab, ylab, meta)
 
     if "decomp" in files:
         add_simple_bar("Decomp", files["decomp"], "BindingEnergyDecomp",
@@ -1087,8 +1235,8 @@ def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[st
 
 def write_job_ogs(work: Path, stem: str, lines: list[str]) -> Path:
     ogs = work / f"plot_{stem}.ogs"
-    quiet = ["type.errors = 0;"]
-    body = ["[Main]", f"// one Origin session → {stem}"] + quiet + lines
+    # 勿写 type.errors=0：OriginPro 2024 会弹 TYPE.ERRORS: error setting property value
+    body = ["[Main]", f"// one Origin session → {stem}"] + lines
     ogs.write_text("\n".join(body) + "\n", encoding="utf-8")
     return ogs
 
@@ -1110,6 +1258,14 @@ def kill_origin() -> None:
 
 
 def _ps_one_plot(ogs: Path) -> str:
+    """COM 桥：捕获 Execute 布尔值 / COM 异常 / LabTalk vErr（@NOE 抑弹窗）。
+
+    官方约定（docs.originlab.com）：
+      - Application.Execute → Boolean（False=脚本失败）
+      - 花括号 + @NOE=0 + vErr 标志可吞错误并汇报（Error Handling）
+      - LTVar('vErr') 读回 LabTalk 数值变量
+    Soft 行（删 legend 标签等）失败不计；Hard 行失败则 exit 3。
+    """
     ogs_win = str(ogs.resolve())
     exe = str(ORIGIN_EXE)
     py = sys.executable
@@ -1118,6 +1274,39 @@ $ErrorActionPreference = 'Continue'
 $exe = '{exe}'
 $ogs = '{ogs_win}'
 $py = '{py}'
+function Test-SoftLt([string]$line) {{
+  # 装饰/可选：失败不删图。核心仍 hard（impASC/plotxy/expG2img/轴范围等）
+  if ($line -match '^label\s+-r\s+(Legend|legend|legend1)\s*;?\s*$') {{ return $true }}
+  if ($line -match '^legendupdate\s*;?\s*$') {{ return $true }}
+  if ($line -match '^ColorScale\d*\.title\$') {{ return $true }}
+  if ($line -match '^ColorScale\.title\$') {{ return $true }}
+  if ($line -match '^layer\.cmap\.zTitle\$') {{ return $true }}
+  if ($line -match '^set %C -czt') {{ return $true }}
+  if ($line -match '^FelCBarUnit\.') {{ return $true }}
+  if ($line -match '^label -r FelCBarUnit') {{ return $true }}
+  if ($line -match '^label -s FelCBarUnit') {{ return $true }}
+  if ($line -match '^export\.trimming') {{ return $true }}
+  if ($line -match '^hide_fel_contours\s*;?\s*$') {{ return $true }}
+  if ($line -match '^run\.LoadOC\(') {{ return $true }}
+  if ($line -match '^layer\.plot\d*\.contlines\s*=') {{ return $true }}
+  if ($line -match '^layer\.plot1\.mesh\s*=') {{ return $true }}
+  if ($line -match '^layer\.mesh\.enable\s*=') {{ return $true }}
+  if ($line -match '^layer\.cmap\.numMajorLevels\s*=') {{ return $true }}
+  if ($line -match '^layer\.cmap\.showLines\(') {{ return $true }}
+  if ($line -match '^layer\.light\.enable\s*=') {{ return $true }}
+  if ($line -match '^page\.antialias\s*=') {{ return $true }}
+  if ($line -match '^layer\.cmap\.') {{ return $true }}
+  if ($line -match '^layer\.CMap\.') {{ return $true }}
+  if ($line -match '^set %C -cm') {{ return $true }}
+  if ($line -match '^set %C -cpal Jet\s*;?\s*$') {{ return $true }}
+  if ($line -match '^layer\s+-ip103') {{ return $true }}
+  if ($line -match '^layer\.plot\s*=') {{ return $true }}
+  if ($line -match '^set %C -sp[fz]\s+') {{ return $true }}
+  if ($line -match '^layer\.view\.') {{ return $true }}
+  if ($line -match '^layer\.z\.(from|to)\s*=') {{ return $true }}
+  if ($line -match '^ColorScale\d*\.title\$') {{ return $true }}
+  return $false
+}}
 Get-Process Origin64,OriginC,Origin -ErrorAction SilentlyContinue | Stop-Process -Force
 Start-Sleep -Seconds 1
 Start-Process -FilePath $exe
@@ -1135,8 +1324,11 @@ if ($null -eq $app) {{
   exit 2
 }}
 try {{ $app.Visible = 1 }} catch {{}}
+# 关闭错误弹窗强制弹出（仍写 Message Log）；属性非法时靠 Execute=False / vErr 捕获
+try {{ [void]$app.Execute('@NOE = 0;') }} catch {{}}
 $nOk = 0
 $nFail = 0
+$hardFail = 0
 Get-Content -LiteralPath $ogs -Encoding UTF8 | ForEach-Object {{
   $line = $_.Trim()
   if (-not $line) {{ return }}
@@ -1149,21 +1341,38 @@ Get-Content -LiteralPath $ogs -Encoding UTF8 | ForEach-Object {{
     return
   }}
   if ($line.StartsWith('//')) {{ return }}
+  $soft = Test-SoftLt $line
+  # 花括号 + vErr：出错则跳到 }}，vErr 保持 1（官方 Error Handling）
+  $wrapped = "vErr=1; {{ $line `n vErr=0; }}"
   try {{
-    $ok = $app.Execute($line)
-    Write-Output ("LT " + $ok + " | " + $line)
-    if ($ok) {{ $script:nOk++ }} else {{ $script:nFail++ }}
+    $ok = $app.Execute($wrapped)
+    $verr = $null
+    try {{ $verr = [double]$app.LTVar('vErr') }} catch {{ $verr = -1 }}
+    $failed = (-not $ok) -or ($verr -eq 1)
+    if ($failed) {{
+      Write-Output ("LT_FAIL ok=" + $ok + " vErr=" + $verr + " soft=" + $soft + " | " + $line)
+      $script:nFail++
+      if (-not $soft) {{ $script:hardFail++ }}
+    }} else {{
+      Write-Output ("LT_OK | " + $line)
+      $script:nOk++
+    }}
   }} catch {{
-    Write-Output ("LT_EXC | " + $line + " | " + $_)
+    Write-Output ("LT_EXC soft=" + $soft + " | " + $line + " | " + $_)
     $script:nFail++
+    if (-not $soft) {{ $script:hardFail++ }}
   }}
 }}
-Write-Output ("COM_DONE ok=" + $nOk + " fail=" + $nFail)
+Write-Output ("COM_DONE ok=" + $nOk + " fail=" + $nFail + " hardFail=" + $hardFail)
 Start-Sleep -Seconds 2
 try {{ $app.Execute('doc.saved = 1') }} catch {{}}
 try {{ $app.Exit() }} catch {{}}
 Start-Sleep -Seconds 3
 Get-Process Origin64,OriginC,Origin -ErrorAction SilentlyContinue | Stop-Process -Force
+if ($hardFail -gt 0) {{
+  Write-Output ('COM_LT_FAIL hardFail=' + $hardFail)
+  exit 3
+}}
 Write-Output 'COM_EXIT'
 """
 
@@ -1201,10 +1410,26 @@ def run_one_plot(ogs: Path, png_path: Path, timeout_s: int = 90) -> str:
             and png_path.stat().st_size > 2000
             and png_path.stat().st_mtime >= t0 - 2
         )
-        if fresh:
-            return f"OK {png_path.name} {png_path.stat().st_size}"
+        # 有 LabTalk hard 失败时：即使出了 PNG 也判失败（避免带错轴/错属性的图蒙混过关）
+        import re as _re
+        m = _re.search(r"hardFail=(\d+)", msg)
+        hf = int(m.group(1)) if m else (1 if ("COM_LT_FAIL" in msg or r.returncode == 3) else 0)
+        if hf > 0 or "COM_LT_FAIL" in msg or r.returncode == 3:
+            if fresh:
+                try:
+                    png_path.unlink()
+                    svg = png_path.with_suffix(".svg")
+                    if svg.exists():
+                        svg.unlink()
+                except OSError:
+                    pass
+            return f"LT_FAIL hardFail={hf} exit={r.returncode}"
         if "COM_FAIL" in msg:
             return "COM_FAIL"
+        if fresh and r.returncode == 0:
+            return f"OK {png_path.name} {png_path.stat().st_size}"
+        if fresh:
+            return f"PNG_BUT_BAD_EXIT exit={r.returncode}"
         return f"NO_PNG exit={r.returncode}"
     except subprocess.TimeoutExpired:
         kill_origin()

@@ -14,7 +14,9 @@
 #   CHUNK_NS=1          生产分块长度 ns（块间过程监控；断点 -cpi 续跑）
 #   MONITOR=1           1=每块结束后跑 过程监控_monitorMdRun.sh；异常 exit 2 即停
 #   CHECK_MMGBSA=0      传给监控：1=按间隔抽查 MM-GBSA，ΔG>0 即停
+#   GMX_MAXBACKUP=5     同名输出备份上限（默认 5；-1=覆盖不备份）。chunk 反复写 md.gro，勿用官方默认 99
 #   COFACTORS_PDB=      可选；ZN/CA 等 HETATM（§9.10.3 非键合 +2，晶体坐标）
+#   USE_PREBUILT_COMPLEX=0  1=已有 complex.gro+topol.top（CYP HEME tleap/ParmEd），跳过 01–03
 #   MDP_DIR=...         mdp 模板目录(默认取脚本同目录 mdp模板_mdps)
 #   ACPYPE_BIN=~/md-venv/bin   acpype（UV）；antechamber 须已在 PATH（conda env md-tools）
 #
@@ -31,16 +33,27 @@ CHUNK_NS=${CHUNK_NS:-1}
 MONITOR=${MONITOR:-1}
 CHECK_MMGBSA=${CHECK_MMGBSA:-0}
 COFACTORS_PDB=${COFACTORS_PDB:-}
+USE_PREBUILT_COMPLEX=${USE_PREBUILT_COMPLEX:-0}
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 MDP_DIR=${MDP_DIR:-"$SCRIPT_DIR/mdp模板_mdps"}
 ACPYPE_BIN=${ACPYPE_BIN:-$HOME/md-venv/bin}
 # UV acpype first; AmberTools (conda md-tools) + GPU gmx must already be on PATH via ~/activate-md.sh
 export PATH="$ACPYPE_BIN:$HOME/gromacs-gpu/bin:$PATH"
+# 分块 -deffnm md 会反复写 md.gro；保留少量备份即可（续跑靠 md.cpt，不靠 #md.gro.N#）
+export GMX_MAXBACKUP="${GMX_MAXBACKUP:-5}"
 NDX_ARG=()   # 有金属时填 -n index.ndx，使 ZN/CA 并入 Water_and_ions 温控组
 
 log(){ echo "[$(date +%H:%M:%S)] $*"; }
 cd "$WORK_DIR"
 
+if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then
+  [[ -f complex.gro && -f topol.top ]] || {
+    log "FAIL: USE_PREBUILT_COMPLEX=1 但缺 complex.gro / topol.top"; exit 1
+  }
+  log "00 预构建复合物（跳过 01–03）：complex.gro + topol.top"
+  grep -Eiq "LIG|${LIGAND_RES}" topol.top \
+    || { log "FAIL: topol.top 未见配体 ${LIGAND_RES}/LIG"; exit 1; }
+else
 # ---- 01 配体 GAFF2 拓扑(acpype → antechamber AM1-BCC + parmchk2) ----
 if [[ ! -f ligand.acpype/ligand_GMX.itp ]]; then
   log "01 acpype 配体拓扑 (GAFF2, 净电荷 $NET_CHARGE)"
@@ -176,16 +189,76 @@ if ! grep -q "ligand_GMX.itp" topol.top; then
   printf '%-20s %s\n' "$LIGAND_RES" "1" >> topol.top
 fi
 grep -q "$LIGAND_RES" topol.top || { log "FAIL: topol.top 未登记配体"; exit 1; }
+fi  # end USE_PREBUILT_COMPLEX else
+
+# ParmEd 拓扑常无离子 atomtype/moleculetype；补 amber99 风格 NA/CL（与 tip3p 兼容）
+ensure_ion_types() {
+  if grep -Eq '^[[:space:]]*NA[[:space:]]+[0-9]' topol.top 2>/dev/null; then
+    return 0
+  fi
+  log "04+ 注入 NA/CL atomtypes + moleculetypes（预构建拓扑）"
+  python3 - <<'PY'
+from pathlib import Path
+p = Path("topol.top")
+t = p.read_text(errors="replace")
+block_at = """
+; --- ions for genion (injected) ---
+[ atomtypes ]
+; name  at.num   mass     charge  ptype     sigma      epsilon
+NA          11   22.98977  0.0000  A   3.32840e-01  1.15897e-02
+CL          17   35.45300  0.0000  A   4.40104e-01  4.18400e-01
+
+"""
+block_mol = """
+[ moleculetype ]
+; name  nrexcl
+NA               1
+[ atoms ]
+;  nr  type  resnr  resid  atom  cgnr  charge   mass
+   1   NA     1     NA     NA    1     1.0000   22.98977
+
+[ moleculetype ]
+; name  nrexcl
+CL               1
+[ atoms ]
+;  nr  type  resnr  resid  atom  cgnr  charge   mass
+   1   CL     1     CL     CL    1    -1.0000   35.45300
+
+"""
+if "[ atomtypes ]" in t and "NA" not in t.split("[ atomtypes ]", 1)[1][:800]:
+    t = t.replace("[ atomtypes ]", "[ atomtypes ]\nNA          11   22.98977  0.0000  A   3.32840e-01  1.15897e-02\nCL          17   35.45300  0.0000  A   4.40104e-01  4.18400e-01\n", 1)
+else:
+    # 插到第一个 [ moleculetype ] 前
+    idx = t.find("[ moleculetype ]")
+    if idx < 0:
+        raise SystemExit("no [ moleculetype ] in topol.top")
+    t = t[:idx] + block_at + t[idx:]
+if "\nNA               1\n" not in t and "[ moleculetype ]\n; name  nrexcl\nNA" not in t:
+    idx = t.find("[ system ]")
+    if idx < 0:
+        raise SystemExit("no [ system ]")
+    t = t[:idx] + block_mol + t[idx:]
+p.write_text(t)
+print("ion types injected")
+PY
+}
 
 # ---- 04 盒子 + 溶剂化 + 离子 ----
 if [[ ! -f solv_ions.gro ]]; then
   log "04 editconf/solvate/genion (0.15 M NaCl 中和)"
   # 防重入：solvate/genion 会向 topol.top 追加 SOL/NA/CL 行，重跑前剔除旧行
   sed -i '/^SOL[ \t]/d; /^NA[ \t]/d; /^CL[ \t]/d' topol.top
-  gmx editconf -f complex.gro -o newbox.gro -bt dodecahedron -d 1.0 > editconf.log 2>&1
-  gmx solvate -cp newbox.gro -cs spc216 -p topol.top -o solv.gro > solvate.log 2>&1
-  # -maxwarn 1: 加离子前体系净电荷非零是预期状态（genion 随即中和），仅此步放行该警告
-  gmx grompp -f "$MDP_DIR/ions.mdp" -c solv.gro -p topol.top -o ions.tpr -maxwarn 1 > grompp_ions.log 2>&1
+  MAXWARN_IONS=1
+  if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then
+    MAXWARN_IONS=10
+    ensure_ion_types
+  fi
+  if [[ ! -f solv.gro ]]; then
+    gmx editconf -f complex.gro -o newbox.gro -bt dodecahedron -d 1.0 > editconf.log 2>&1
+    gmx solvate -cp newbox.gro -cs spc216 -p topol.top -o solv.gro > solvate.log 2>&1
+  fi
+  if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then ensure_ion_types; fi
+  gmx grompp -f "$MDP_DIR/ions.mdp" -c solv.gro -p topol.top -o ions.tpr -maxwarn "$MAXWARN_IONS" > grompp_ions.log 2>&1
   echo SOL | gmx genion -s ions.tpr -o solv_ions.gro -p topol.top \
       -pname NA -nname CL -neutral -conc 0.15 > genion.log 2>&1
 fi
@@ -238,11 +311,14 @@ if [[ -f index.ndx ]]; then
   NDX_ARG=(-n index.ndx)
 fi
 
+MAXWARN_GMX=1
+if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then MAXWARN_GMX=10; fi
+
 # ---- 05 能量最小化 ----
 if [[ ! -f em.gro ]]; then
   log "05 能量最小化"
   gmx grompp -f "$MDP_DIR/em.mdp" -c solv_ions.gro -p topol.top -o em.tpr \
-      "${NDX_ARG[@]}" > grompp_em.log 2>&1
+      "${NDX_ARG[@]}" -maxwarn "$MAXWARN_GMX" > grompp_em.log 2>&1
   gmx mdrun -v -deffnm em > mdrun_em.log 2>&1
 fi
 
@@ -255,7 +331,7 @@ done
 if [[ ! -f nvt.gro ]]; then
   log "07 NVT 100 ps"
   gmx grompp -f run_nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr \
-      "${NDX_ARG[@]}" > grompp_nvt.log 2>&1
+      "${NDX_ARG[@]}" -maxwarn "$MAXWARN_GMX" > grompp_nvt.log 2>&1
   gmx mdrun -v -deffnm nvt > mdrun_nvt.log 2>&1
 fi
 
@@ -263,7 +339,7 @@ fi
 if [[ ! -f npt.gro ]]; then
   log "08 NPT 100 ps"
   gmx grompp -f run_npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr \
-      "${NDX_ARG[@]}" > grompp_npt.log 2>&1
+      "${NDX_ARG[@]}" -maxwarn "$MAXWARN_GMX" > grompp_npt.log 2>&1
   gmx mdrun -v -deffnm npt > mdrun_npt.log 2>&1
 fi
 
@@ -292,7 +368,7 @@ if [[ "$NEED_PROD" == "1" ]]; then
   sed -i "s/^nsteps .*/nsteps          = $NSTEPS/" run_md.mdp
   if [[ ! -f md.tpr ]]; then
     gmx grompp -f run_md.mdp -c npt.gro -t npt.cpt -p topol.top -o md.tpr \
-        "${NDX_ARG[@]}" > grompp_md.log 2>&1
+        "${NDX_ARG[@]}" -maxwarn "$MAXWARN_GMX" > grompp_md.log 2>&1
   fi
   while true; do
     CUR=$(done_ns)
@@ -324,11 +400,24 @@ if [[ "$NEED_PROD" == "1" ]]; then
         }
     fi
   done
+  # 终态坐标：优先从轨迹抽末帧（避免再触发 gro 备份上限）
+  if [[ ! -f md.gro && -f md.xtc && -f md.tpr ]]; then
+    END_PS=$(awk -v ns="$NS" 'BEGIN{printf "%.3f", ns*1000}')
+    log "09 trjconv dump ${END_PS} ps → md.gro (GMX_MAXBACKUP=$GMX_MAXBACKUP)"
+    echo 0 | gmx trjconv -s md.tpr -f md.xtc -o md.gro -dump "$END_PS" \
+      > trjconv_final_gro.log 2>&1 || true
+  fi
   if [[ ! -f md.gro && -f md.cpt ]]; then
     gmx mdrun -v -deffnm md -cpi md.cpt -cpo md.cpt -nsteps 0 >> mdrun_md.log 2>&1 || true
   fi
 else
   log "09 生产已满 ${CUR0} ns >= ${NS} ns，跳过"
+  if [[ ! -f md.gro && -f md.xtc && -f md.tpr ]]; then
+    END_PS=$(awk -v c="$CUR0" 'BEGIN{printf "%.3f", c*1000}')
+    log "09 trjconv dump ${END_PS} ps → md.gro (post-hoc finalize)"
+    echo 0 | gmx trjconv -s md.tpr -f md.xtc -o md.gro -dump "$END_PS" \
+      > trjconv_final_gro.log 2>&1 || true
+  fi
 fi
 
 # ---- 10 PBC 校正 + 分析（默认组：Backbone/C-alpha/Protein/$LIGAND_RES） ----
@@ -342,10 +431,30 @@ printf 'Backbone\nBackbone\n' | gmx rms -s md.tpr -f md_center.xtc \
     -o rmsd_backbone.xvg -tu ns > rms.log 2>&1 || true
 printf 'C-alpha\n' | gmx rmsf -s md.tpr -f md_center.xtc \
     -o rmsf_calpha.xvg -res > rmsf.log 2>&1 || true
-printf "Protein\n$LIGAND_RES\n" | gmx hbond -s md.tpr -f md_center.xtc \
-    -num hbond_num.xvg > hbond.log 2>&1 || true
+# GROMACS 2024+ 新 hbond 对 GAFF 配体常失败；优先 legacy
+if ! printf "Protein\n$LIGAND_RES\n" | gmx hbond-legacy -s md.tpr -f md_center.xtc \
+    -num hbond_num.xvg > hbond.log 2>&1; then
+  printf "Protein\n$LIGAND_RES\n" | gmx hbond -s md.tpr -f md_center.xtc \
+      -num hbond_num.xvg >> hbond.log 2>&1 || true
+fi
 printf 'Protein\n' | gmx gyrate -s md.tpr -f md_center.xtc \
     -o gyrate.xvg > gyrate.log 2>&1 || true
 
+# 可选终检（不改生产轨迹；失败只记日志，不撤销 DONE）
+if [[ "$MONITOR" == "1" && -f md.xtc ]]; then
+  log "10 final monitor on full trajectory"
+  LIGAND_RES="$LIGAND_RES" CHECK_MMGBSA="$CHECK_MMGBSA" \
+    bash "$SCRIPT_DIR/过程监控_monitorMdRun.sh" . \
+    && log "10 final MONITOR_OK" \
+    || log "WARN final monitor exit=$? — see monitor/ABORT_REASON.txt"
+fi
+
+FINAL_NS=$(done_ns); FINAL_NS=${FINAL_NS:-$CUR0}
+{
+  echo "DONE: production ${FINAL_NS} ns (target ${NS} ns); GMX_MAXBACKUP=$GMX_MAXBACKUP"
+  date -Iseconds
+  ls *.xvg 2>/dev/null | tr '\n' ' '
+  echo
+} | tee DONE.txt
 log "DONE: $(ls *.xvg 2>/dev/null | tr '\n' ' ')"
 log "样例归档（分类目录+中英对照）: python 整理样例目录_layoutMdSample.py"

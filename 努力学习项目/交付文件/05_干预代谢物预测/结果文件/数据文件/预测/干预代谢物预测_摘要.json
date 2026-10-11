@@ -1,0 +1,45 @@
+{
+  "口径": "D=1517 冻结；C=I₁∩I₂；预测=候选/提示，无疗效结论",
+  "主面板": {
+    "n_metabolites": 105,
+    "tier_A": 72,
+    "tier_B": 14,
+    "tier_C": 19,
+    "A_with_experimental_H": 6,
+    "A_gmmad2_significant": 72,
+    "A_harmful": 0,
+    "A_top10": [
+      "Butyrate",
+      "Phenylalanine",
+      "Maltose",
+      "Maltotriose",
+      "4-Hydroxyphenylacetic acid",
+      "Inosine",
+      "Tryptophan",
+      "Indole-3-acetic acid",
+      "Tyrosine",
+      "Guanosine"
+    ]
+  },
+  "全库敏感性": {
+    "n_metabolites": 198,
+    "tier_A": 151,
+    "tier_B": 21,
+    "tier_C": 26,
+    "A_with_experimental_H": 18,
+    "A_gmmad2_significant": 41,
+    "A_harmful": 3,
+    "A_top10": [
+      "Quercetin",
+      "Caffeic Acid",
+      "Ethyl phenyllactate, (-)-",
+      "Luteolin",
+      "Apigenin",
+      "Myricetin",
+      "Butyrate",
+      "Naringenin chalcone",
+      "3,4-Dihydroxy-trans-stilbene",
+      "Phenylalanine"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "top": [
+    "交付文件",
+    "网络毒理学_菌群代谢物双交集",
+    "网络药理学"
+  ],
+  "delivery_children": [
+    "README_轨B说明.txt",
+    "网络毒理学_菌群代谢物双交集",
+    "网络药理学"
+  ],
+  "pharma": [
+    "README_轨B说明.txt",
+    "图注与解读说明.html",
+    "图片文件",
+    "报告文件",
+    "数据文件"
+  ],
+  "tox_pic": [
+    "GEO验证",
+    "分子动力学图_MD",
+    "总图",
+    "机制层",
+    "毒性分层"
+  ],
+  "md_systems": [
+    "ADA_Adenosine_7RTG_A2",
+    "MMP9_Tryptophan_4H3X"
+  ],
+  "has_修正版": false,
+  "has_旧版": false
+}

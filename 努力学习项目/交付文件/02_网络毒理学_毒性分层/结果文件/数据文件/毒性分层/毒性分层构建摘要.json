@@ -1,0 +1,16 @@
+{
+  "selected_exposures": 7,
+  "small_molecule_exposures": 5,
+  "special_exposures": 2,
+  "ctd_human_interactions": 14302,
+  "ctd_unique_genes": 4188,
+  "exposures_with_ctd_genes": 7,
+  "overlap_C_exposure_rows": 97,
+  "adverse_outcomes": [
+    "intestinal barrier injury",
+    "intestinal inflammation",
+    "mucosal injury/cancer risk"
+  ],
+  "interpretation": "toxicity线索/共同调控假设；not antagonism or mitigation",
+  "ctd_source": "CTD official bulk files, accessed 2026-10-07"
+}

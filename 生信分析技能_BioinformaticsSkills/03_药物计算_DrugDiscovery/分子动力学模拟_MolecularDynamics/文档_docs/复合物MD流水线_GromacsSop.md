@@ -155,7 +155,9 @@ wsl -d Ubuntu-24.04 -- bash -lc '
 
 监控 `abort` 时由 `E:\md_kit\notify_md_alert.sh` 拼装 MD 正文后调用全局 `E:\alert_kit\`（QQ SMTP `smtp.qq.com:587`）发纯文本告警。授权码只放在本地 `QQ邮箱.txt`（指针 `E:\alert_kit\qq_auth_path.txt`），脚本不回显。同一目录、同一原因只发一次。其它项目直接用 `alert_kit` / Cursor 技能 `qq-smtp-alert`。  
 
-飞出、温度、势能这些判定在监控脚本的 Python 段里，原先 `sys.exit(2)` 后直接结束，**没有调用**发信的 `abort()`。2026-10-09 ADA 约 42 ns 停机因此没有邮件，`alert.log` 也不存在。Python 退出码为 2 时必须再调用 `abort()`。  
+分块 `-deffnm md` 会反复写 `md.gro`；流水线默认 `GMX_MAXBACKUP=5`（可用环境变量覆盖；`-1`=覆盖不备份）。官方默认 99 在 100×1 ns 块时会在写第 100 个 gro 备份时 Fatal——**轨迹与 `md.cpt` 往往已到终点**，用 `finalize_100ns_wrap.sh` / `trjconv -dump` 收尾，勿整段重跑（见 `终态收尾与备份上限_调研.md`）。监控忽略此类备份上限 Fatal。  
+
+飞出、温度、势能这些判定在监控脚本的 Python 段里，原先 `sys.exit(2)` 后直接结束，**没有调用**发信的 `abort()`。2026-10-09 ADA 约 42 ns、2026-10-10 CYP 约 1 ns 飞出因此没有邮件。根因还有一层：脚本顶部 `set -e` 时，Python `exit 2` 会在 `MON_RC=$?` 之前就整脚本退出，后面的 `abort()` 补丁仍跑不到。正确写法：Python 段外包 `set +e` … `MON_RC=$?` … `set -e`，再在 `MON_RC==2` 时调用 `abort()`。  
 
 查因后再续跑：修正拓扑/盒子/初态后，同目录保留 `md.cpt` 时主脚本会从检查点继续（勿删 `md.tpr`/`md.cpt`）。
 
@@ -270,7 +272,7 @@ VizStandards：DPI≥600、PNG+SVG、图面英文、PlotQA 逐图审核 → 审�
 
 **Origin 出图（强制，分析图）**：用户侧 Origin 装于 `E:\Origin`（`Origin64.exe`）。每图数据以英文列名 CSV 落在 `E:\Origin_Data\<项目名>\`（样例 `E:\Origin_Data\3HTB\`，LabTalk 不能走中文样例路径）；由 `origin出图_plotMdOrigin.py` **启动并操作 Origin** 绘图、导出 `E:\Origin_Data\<项目>\OriginFigures\*.png/.svg`（DPI≥600），再拷到样例 `{NN}_{主题}图/`。**每图独立 Origin 进程**（导出后关闭），不批量堆在同一项目里。R/Python 只做数据准备与备图，**不得替代 Origin 成为 FEL/曲线/能量柱的正式出图引擎**。
 
-仅重组目录、不重画：`python origin出图_plotMdOrigin.py --layout-only`。FEL 热图/OpenGL 曲面禁止设置 `layer.cmap.shown`（会弹 `LAYER.CMAP.SHOWN: error setting property value`），只用 `set %C -cpal Viridis`。禁止 `set %C -pfb color()`（大整数当色板索引会变黑）。2D FEL 棋盘条纹来自 60×60 KDE 格子被画成热图单元格；显示改为填色等值线 + 2× 双线性加密，不改 kde2d 带宽。2D 等值黑线用 `layer.cmap.lineN = 0`（勿用 `showLines(3)`，会抹掉填色）。3D OpenGL 等值线：`run.LoadOC("hideFelContours.c", 16)` 后 `hide_fel_contours` 把 `EnableContour/MajorLines` 置 0，且 `set %C -b3t 1`（填色）+ `-b3m 0`；XYZ 墙面网格保留。多色柱：Energy 右侧 `Rgb` 列 + `layer.plot1.color = color(1, r)` Direct RGB，对齐 journal muted。单色柱：`layer.plot1.color = color(R,G,B)`。
+仅重组目录、不重画：`python origin出图_plotMdOrigin.py --layout-only`。FEL 热图/OpenGL 曲面禁止设置 `layer.cmap.shown`（会弹 `LAYER.CMAP.SHOWN: error setting property value`），只用 `set %C -cpal Viridis`。禁止 `set %C -pfb color()`（大整数当色板索引会变黑）。2D FEL 棋盘条纹来自 60×60 KDE 格子被画成热图单元格；显示改为填色等值线 + 2× 双线性加密，不改 kde2d 带宽。3D FEL（漏斗+底板）：同网格 **4× 双线性** + 显示 ΔG 封顶 20 kJ/mol + Jet + 曲面填色无 mesh + `layer -ip103` 底板投影（仍不改 kde2d/原始 CSV）。2D 等值黑线用 `layer.cmap.lineN = 0`（勿用 `showLines(3)`，会抹掉填色）。3D OpenGL 等值线：`run.LoadOC("hideFelContours.c", 16)` 后 `hide_fel_contours` 把 `EnableContour/MajorLines` 置 0，且 `set %C -b3t 1`（填色）+ `-b3m 0`；XYZ 墙面网格保留。多色柱：Energy 右侧 `Rgb` 列 + `layer.plot1.color = color(1, r)` Direct RGB，对齐 journal muted。单色柱：`layer.plot1.color = color(R,G,B)`。
 
 ### 9.8 本机环境安装（WSL2 · **2026-10-09 现行：UV Python + conda `md-tools`(仅 AmberTools) + GPU GROMACS**）
 
@@ -329,7 +331,7 @@ VizStandards：DPI≥600、PNG+SVG、图面英文、PlotQA 逐图审核 → 审�
 ### 9.10 辅因子与金属酶体系扩展（**2026-10-09 新增**；课题 top3 MD 用，源自 UC 课题 P1-3）
 
 > 适用：受体含金属离子（Zn²⁺/Ca²⁺/Ni²⁺）或血红素（HEME）时，§9.1–9.6 的参数补丁。  
-> **初态走哪条场景以 §9.0.1 为准**（金属 ≠ 必须共晶）。本轮体系：MMP9/4H3X（2 ZN+3 CA，口袋有共晶配体 → 配体按 A1/A2）、CYP1A1/4I8V（HEME）、ADA 若问结合稳定性则按 A4 重选初态（7RTG 空口袋对接只作对照）。
+> **初态走哪条场景以 §9.0.1 为准**（金属 ≠ 必须共晶）。本轮正式体系：MMP9/4H3X（2 ZN+3 CA，口袋有共晶配体 → 配体按 A1/A2）、ADA_Adenosine_7RTG_A2（7RTG Zn + 3IAR 脱氧腺苷位姿；空口袋对接约 42 ns 飞出只作对照）。**CYP1A1_Indole_4I8V 已取消（2026-10-10）**，约 1 ns 飞出后不重搭、不续跑。
 
 **9.10.1 结构选择政策（先于一切）**
 1. **优先野生型**：下载后必查 `SEQADV`——`ENGINEERED MUTATION` 在活性位点 → 换结构（本课题：1GKD=E402Q → 换 **4H3X**，1.76 Å WT；3IAR 催化位为 Ni 取代 → 人 ADA1 用实验 Zn 结构）；仅表达标签突变可保留。

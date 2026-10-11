@@ -1,0 +1,21 @@
+root <- "E:/RProject/_np_stage"
+source(file.path(root,"tools/PublicationPlot.R"))
+source(file.path(root,"tools/PlotQA.R"))
+library(patchwork)
+fig <- file.path(root,"out/figures"); en <- file.path(root,"out/enrichment"); mech <- file.path(root,"mech")
+go <- read.csv(file.path(en,"Main_GO_full.csv"),stringsAsFactors=FALSE,check.names=FALSE,fileEncoding="UTF-8")
+kegg <- read.csv(file.path(en,"Main_KEGG_full.csv"),stringsAsFactors=FALSE,check.names=FALSE,fileEncoding="UTF-8")
+metrics <- read.csv(file.path(mech,"ppi_metrics.csv"),stringsAsFactors=FALSE,check.names=FALSE,fileEncoding="UTF-8")
+pgo <- plot_enrich_hbar_facet(go,top_n=8,title="GO enrichment")
+pgo$labels$x <- "-log10(Padj)"
+pkegg <- plot_enrich_dot_journal(kegg,top_n=20,title="KEGG enrichment")
+pkegg$labels$x <- "-log10(Padj)"
+pkegg <- pkegg + ggplot2::guides(color=ggplot2::guide_colorbar(title="AdjP"),size=ggplot2::guide_legend(title="n"))
+top <- head(metrics[order(-metrics$mcc_like_degree_x_triangles,-metrics$degree),],20)
+top$gene <- factor(top$gene,levels=rev(top$gene))
+ph <- ggplot2::ggplot(top,ggplot2::aes(x=mcc_like_degree_x_triangles,y=gene,fill=degree))+ggplot2::geom_col(width=0.72)+ggplot2::scale_fill_gradientn(colours=c("#FFFFCC","#78C679","#006837"),name="Degree")+ggplot2::labs(title="Top PPI hubs",x="MCC-like score",y=NULL)+theme_journal()+ggplot2::theme(legend.position="right")
+save_plot_pub(pgo,stem="02_GoEnrichment",width=7.2,height=8.2,dpi=600,out_dir=fig);viz_qa_after_plot(pgo,plot_id="GO2",hard_fail=FALSE)
+save_plot_pub(pkegg,stem="03_KeggEnrichment",width=7.2,height=7.2,dpi=600,out_dir=fig);viz_qa_after_plot(pkegg,plot_id="KEGG2",hard_fail=FALSE)
+save_plot_pub(ph,stem="06_PpiHubBar",width=6.8,height=6.2,dpi=600,out_dir=fig);viz_qa_after_plot(ph,plot_id="PPIHUB2",hard_fail=FALSE)
+composite <- (ph | pkegg) / pgo + patchwork::plot_layout(heights=c(1,1.35)) + patchwork::plot_annotation(tag_levels="A")
+save_plot_pub(composite,stem="07_MechanismOverview",width=12.0,height=10.0,dpi=600,out_dir=fig);viz_qa_after_plot(composite,plot_id="MechanismOverview",hard_fail=FALSE)

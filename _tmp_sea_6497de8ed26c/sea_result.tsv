@@ -1,0 +1,10 @@
+Target_Chembl_ID	Target_Species	Z_score	p_value	p(P_value)	Target_Name	MaxTc	Uniprot_ID	Uniprot_Accession
+CHEMBL2163175	Homo	8.08	1.2972e-09	8.887	Gamma-butyrobetaine dioxygenase	0.44	BODG_HUMAN	O75936
+CHEMBL2265	Homo	7.21	6.6527e-08	7.177	Liver carboxylesterase 1	0.62	EST1_HUMAN	P23141
+CHEMBL3180	Homo	7.03	1.3457e-07	6.871	Cocaine esterase	0.62	EST2_HUMAN	O00748
+CHEMBL2623	Oryctolagus	5.89	5.8611e-06	5.232	Liver carboxylesterase 1	0.47	EST1_RABIT	P12337
+CHEMBL3886125	Rattus	3.91	7.7368e-04	3.1114	Free fatty acid receptor 3	0.67	FFAR3_RAT	B2GV46
+CHEMBL3344	Homo	3.41	2.1220e-03	2.6732	Fatty acid-binding protein, heart	0.46	FABPH_HUMAN	P05413
+CHEMBL6100	Vibrio	3.02	4.4830e-03	2.3484	Autoinducer 2-binding periplasmic protein LuxP	0.4	LUXP_VIBHA	P54300
+CHEMBL2863	Rattus	2.83	6.2932e-03	2.2011	Transient receptor potential cation channel subfamily V member 2	0.35	TRPV2_RAT	Q9WUD2
+CHEMBL1829	Homo	0.1	3.6302e-01	0.4401	Histone deacetylase 3	1.0	HDAC3_HUMAN	O15379

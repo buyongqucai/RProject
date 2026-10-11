@@ -53,10 +53,14 @@ command -v gmx >/dev/null || { echo "FAIL: gmx not on PATH (source ~/activate-md
 # ---- log hard fails ----
 # 只扫 "Started mdrun" 之后。文件开头会回显 mdp，lincs-warnangle 含子串 nan，
 # 全文件 grep 会把正常 1 ns 块误判成 NaN（ADA 7RTG 2026-10-09 实测）。
+# GMX_MAXBACKUP 写 gro 失败也是 Fatal，但轨迹/检查点已完整（2026-10-10）——忽略。
 if [[ -f md.log ]]; then
   if awk '
     /Started mdrun/ {on=1}
-    on && /Fatal error|Segmentation fault/ {bad=1}
+    on && /Fatal error|Segmentation fault/ { bad=1; fatal_at=NR }
+    on && /(backups of|GMX_MAXBACKUP|more than [0-9]+ backups)/ {
+      if (fatal_at && NR <= fatal_at + 20) bad=0
+    }
     on && (/(^|[^A-Za-z])[Nn][Aa][Nn]([^A-Za-z]|$)/ || /-nan/ || /#IND/) {bad=1}
     END {exit bad?2:0}
   ' md.log; then
@@ -98,6 +102,8 @@ fi
 
 # ---- threshold checks (python) ----
 export MON LIGAND_RES COM_MAX_NM COM_JUMP_NM LIG_RMSD_MAX_NM BB_RMSD_MAX_NM TEMP_MIN_K TEMP_MAX_K PLOT_MONITOR
+# set -e 下 python exit 2 会整脚本退出，后面的 abort()/发信永远跑不到（CYP 1 ns 飞出无邮件，2026-10-10）
+set +e
 python3 - <<'PY'
 import os, sys, re
 from pathlib import Path
@@ -261,11 +267,15 @@ print("MONITOR_OK", "; ".join(lines))
 sys.exit(0)
 PY
 MON_RC=$?
+set -e
 
-# Python 判定飞出时直接 sys.exit(2)，不会经过上面的 abort()。
-# 不在这里补叫，42 ns 那次就不会发信（2026-10-09 ADA）。
+# Python 飞出判定走 sys.exit(2)；必须在 set +e 下接住再调 abort() 发信。
 if [[ "$MON_RC" -eq 2 && -f "$MON/ABORT_REASON.txt" ]]; then
   abort "$(cat "$MON/ABORT_REASON.txt")"
+fi
+if [[ "$MON_RC" -ne 0 && "$MON_RC" -ne 2 ]]; then
+  echo "FAIL: monitor python exit=$MON_RC"
+  exit "$MON_RC"
 fi
 
 # ---- optional MM-GBSA probe (positive ΔG => abort) ----

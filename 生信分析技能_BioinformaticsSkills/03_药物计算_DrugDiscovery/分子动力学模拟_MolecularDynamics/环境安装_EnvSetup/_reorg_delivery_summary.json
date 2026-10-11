@@ -1,0 +1,25 @@
+{
+  "delivery": "E:\\RProject\\努力学习项目\\交付文件",
+  "children": [
+    "README_轨B说明.txt",
+    "网络毒理学_菌群代谢物双交集",
+    "网络药理学"
+  ],
+  "pharma_dirs": [
+    "README_归档说明.md",
+    "README_轨B说明.txt",
+    "图注与解读说明.html",
+    "图片文件",
+    "报告文件",
+    "数据文件"
+  ],
+  "tox_dirs": [
+    "图片文件",
+    "报告文件",
+    "数据文件"
+  ],
+  "md_pic": true,
+  "md_data": true,
+  "old_bak": "E:\\RProject\\努力学习项目\\交付文件_旧版待删",
+  "old_bak_exists": true
+}
