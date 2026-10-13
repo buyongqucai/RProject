@@ -98,6 +98,15 @@ NA
 生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/mail_auth_qr.png
 生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/test_mail_body.txt
 
+# 课题沙箱：MD 原始轨迹/运行数据仅本地保留（结果图、报告仍入库）
+昱阳项目/**/05_分子动力学_MD/01_数据文件_Data/**
+# 动画打包 zip 与动画目录同规（仅本地保留）
+努力学习项目/**/动画*.zip
+昱阳项目/**/动画*/**
+昱阳项目/**/动画*.zip
+# 课题原始组学大文件（GEO 原始矩阵等）仅本地保留
+.scratch/*_InSilicoKOIntake/data/**
+
 # GitHub 100MB 限制：外部库原始大文件仅本地保留
 努力学习项目/**/外部数据库*/CTD/CTD_chemicals_diseases.csv.gz
 努力学习项目/**/外部数据库*/CTD/CTD_chemicals_diseases.csv.gz.part*

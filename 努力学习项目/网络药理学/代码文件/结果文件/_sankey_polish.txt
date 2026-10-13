@@ -1,0 +1,10 @@
+=== 17 polished overview Sankey ===
+[PlotQA:17_桑基图_HerbCompoundTargetPathway_Sankey] overall=WARN
+  - label_length: WARN | max_len=43 n_long(>28)=2/55 (3.6%)
+  - label_overlap: PASS | overlap_pairs=17/1378 (1.23%) deep=0
+OK 17
+=== 18 Top-16 4×4 ===
+[PlotQA:18_桑基图_PerCompound_Filtered_Sankey] overall=WARN
+  - label_length: WARN | max_len=61 n_long(>28)=2/187 (1.1%)
+  - label_overlap: PASS | overlap_pairs=906/17020 (5.32%) deep=0
+OK 18 DONE

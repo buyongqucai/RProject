@@ -1,0 +1,318 @@
+"target_chembl_id","activity_id","assay_chembl_id","standard_type","standard_relation","standard_value","standard_units","pchembl_value","bao_label","data_validity_comment","pref_name","target_type","organism","gene_symbols","org_ok"
+"CHEMBL1075138",12781766,"CHEMBL2354221","Potency","",5804.8,"nM",NA,"assay format","","Tyrosyl-DNA phosphodiesterase 1","SINGLE PROTEIN","Homo sapiens","TDP1",TRUE
+"CHEMBL1075138",13036378,"CHEMBL2354254","Potency","",1835.6,"nM",NA,"assay format","","Tyrosyl-DNA phosphodiesterase 1","SINGLE PROTEIN","Homo sapiens","TDP1",TRUE
+"CHEMBL1075214",3122313,"CHEMBL1065670","Ki","=",45.3,"nM",7.34,"cell-based format","","5'-nucleotidase","SINGLE PROTEIN","Rattus norvegicus","Nt5e",FALSE
+"CHEMBL1075270",2139907,"CHEMBL936590","IC50","=",6900,"nM",5.16,"single protein format","","Aldo-keto reductase family 1 member C21","SINGLE PROTEIN","Mus musculus","Akr1c21",FALSE
+"CHEMBL1250375",3435967,"CHEMBL1249158","IC50","=",680,"nM",6.17,"cell-based format","","NADPH oxidase 4","SINGLE PROTEIN","Homo sapiens","NOX4",TRUE
+"CHEMBL1250379",18085318,"CHEMBL4018388","IC50","=",1400,"nM",5.85,"single protein format","","ELAV-like protein 1","SINGLE PROTEIN","Homo sapiens","ELAVL1",TRUE
+"CHEMBL1250411",19143359,"CHEMBL4377092","IC50","=",6500,"nM",5.19,"cell-based format","","Short transient receptor potential channel 5","SINGLE PROTEIN","Homo sapiens","TRPC5",TRUE
+"CHEMBL1293224",4024094,"CHEMBL1614421","Potency","=",8912.5,"nM",5.05,"single protein format","","Microtubule-associated protein tau","SINGLE PROTEIN","Homo sapiens","MAPT",TRUE
+"CHEMBL1293224",4041556,"CHEMBL1614421","Potency","=",7079.5,"nM",5.15,"single protein format","","Microtubule-associated protein tau","SINGLE PROTEIN","Homo sapiens","MAPT",TRUE
+"CHEMBL1293224",3943376,"CHEMBL1614502","Potency","=",5011.9,"nM",5.3,"assay format","","Microtubule-associated protein tau","SINGLE PROTEIN","Homo sapiens","MAPT",TRUE
+"CHEMBL1293224",4068192,"CHEMBL1614421","Potency","=",7079.5,"nM",5.15,"single protein format","","Microtubule-associated protein tau","SINGLE PROTEIN","Homo sapiens","MAPT",TRUE
+"CHEMBL1293224",4030528,"CHEMBL1614421","Potency","=",3162.3,"nM",5.5,"single protein format","","Microtubule-associated protein tau","SINGLE PROTEIN","Homo sapiens","MAPT",TRUE
+"CHEMBL1293224",3959158,"CHEMBL1614502","Potency","=",10000,"nM",5,"assay format","","Microtubule-associated protein tau","SINGLE PROTEIN","Homo sapiens","MAPT",TRUE
+"CHEMBL1293224",4009927,"CHEMBL1614421","Potency","=",2511.9,"nM",5.6,"single protein format","","Microtubule-associated protein tau","SINGLE PROTEIN","Homo sapiens","MAPT",TRUE
+"CHEMBL1293226",3709448,"CHEMBL1613914","Potency","=",8912.5,"nM",5.05,"assay format","","Lysine-specific demethylase 4E","SINGLE PROTEIN","Homo sapiens","KDM4E",TRUE
+"CHEMBL1293226",3742923,"CHEMBL1613914","Potency","=",8912.5,"nM",5.05,"assay format","","Lysine-specific demethylase 4E","SINGLE PROTEIN","Homo sapiens","KDM4E",TRUE
+"CHEMBL1293226",3724576,"CHEMBL1613914","Potency","=",10000,"nM",5,"assay format","","Lysine-specific demethylase 4E","SINGLE PROTEIN","Homo sapiens","KDM4E",TRUE
+"CHEMBL1293236",3675315,"CHEMBL1613829","Potency","=",1122,"nM",5.95,"assay format","","ATP-dependent DNA helicase Q1","SINGLE PROTEIN","Homo sapiens","RECQL",TRUE
+"CHEMBL1293236",3696429,"CHEMBL1613829","Potency","=",1778.3,"nM",5.75,"assay format","","ATP-dependent DNA helicase Q1","SINGLE PROTEIN","Homo sapiens","RECQL",TRUE
+"CHEMBL1293236",3673893,"CHEMBL1613829","Potency","=",3162.3,"nM",5.5,"assay format","","ATP-dependent DNA helicase Q1","SINGLE PROTEIN","Homo sapiens","RECQL",TRUE
+"CHEMBL1293236",3673100,"CHEMBL1613829","Potency","=",1000,"nM",6,"assay format","","ATP-dependent DNA helicase Q1","SINGLE PROTEIN","Homo sapiens","RECQL",TRUE
+"CHEMBL1293236",3698570,"CHEMBL1613829","Potency","=",2511.9,"nM",5.6,"assay format","","ATP-dependent DNA helicase Q1","SINGLE PROTEIN","Homo sapiens","RECQL",TRUE
+"CHEMBL1293236",3675060,"CHEMBL1613829","Potency","=",1122,"nM",5.95,"assay format","","ATP-dependent DNA helicase Q1","SINGLE PROTEIN","Homo sapiens","RECQL",TRUE
+"CHEMBL1293236",4727400,"CHEMBL1614330","Potency","=",631,"nM",6.2,"assay format","","ATP-dependent DNA helicase Q1","SINGLE PROTEIN","Homo sapiens","RECQL",TRUE
+"CHEMBL1293238",4416744,"CHEMBL1614234","Potency","=",10000,"nM",5,"assay format","","Inositol monophosphatase 1","SINGLE PROTEIN","Rattus norvegicus","Impa1",FALSE
+"CHEMBL1293255",4763831,"CHEMBL1614038","Potency","=",8912.5,"nM",5.05,"assay format","","15-hydroxyprostaglandin dehydrogenase [NAD(+)]","SINGLE PROTEIN","Homo sapiens","HPGD",TRUE
+"CHEMBL1293267",10907180,"CHEMBL2039370","EC50","=",8020,"nM",5.1,"cell-based format","","G-protein coupled receptor 35","SINGLE PROTEIN","Homo sapiens","GPR35",TRUE
+"CHEMBL1293267",10907195,"CHEMBL2039371","EC50","=",5930,"nM",5.23,"cell-based format","","G-protein coupled receptor 35","SINGLE PROTEIN","Homo sapiens","GPR35",TRUE
+"CHEMBL1743124",25098606,"CHEMBL5260629","IC50","=",7244.36,"nM",5.14,"cell-based format","","Solute carrier organic anion transporter family member 2B1","SINGLE PROTEIN","Homo sapiens","SLCO2B1",TRUE
+"CHEMBL1743124",25098582,"CHEMBL5260629","IC50","=",7300,"nM",5.14,"cell-based format","","Solute carrier organic anion transporter family member 2B1","SINGLE PROTEIN","Homo sapiens","SLCO2B1",TRUE
+"CHEMBL1790",12654625,"CHEMBL2329908","IC50","=",7000,"nM",5.16,"cell-based format","","Vasopressin V2 receptor","SINGLE PROTEIN","Homo sapiens","AVPR2",TRUE
+"CHEMBL1790",12654626,"CHEMBL2329908","IC50","=",6309.57,"nM",5.2,"cell-based format","","Vasopressin V2 receptor","SINGLE PROTEIN","Homo sapiens","AVPR2",TRUE
+"CHEMBL1812",25485010,"CHEMBL5328237","IC50","=",1530,"nM",5.82,"single protein format","","Pancreatic triacylglycerol lipase","SINGLE PROTEIN","Homo sapiens","PNLIP",TRUE
+"CHEMBL1865",23141032,"CHEMBL4808152","IC50","=",816.6,"nM",6.09,"single protein format","","Protein deacetylase HDAC6","SINGLE PROTEIN","Homo sapiens","HDAC6",TRUE
+"CHEMBL1867",25220966,"CHEMBL5291734","AC50",">",10000,"nM",NA,"cell-based format","","Alpha-2A adrenergic receptor","SINGLE PROTEIN","Homo sapiens","ADRA2A",TRUE
+"CHEMBL1867",25155900,"CHEMBL5291893","AC50",">",10000,"nM",NA,"single protein format","","Alpha-2A adrenergic receptor","SINGLE PROTEIN","Homo sapiens","ADRA2A",TRUE
+"CHEMBL1882",25125978,"CHEMBL5291770","AC50",">",10000,"nM",NA,"single protein format","","Neuronal acetylcholine receptor subunit alpha-4","SINGLE PROTEIN","Homo sapiens","CHRNA4",TRUE
+"CHEMBL1900",2139908,"CHEMBL936594","IC50","=",2200,"nM",5.66,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Homo sapiens","AKR1B1",TRUE
+"CHEMBL1900",15066118,"CHEMBL3362499","IC50","=",2900,"nM",5.54,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Homo sapiens","AKR1B1",TRUE
+"CHEMBL1900",2481523,"CHEMBL984565","IC50","=",14.8,"nM",7.83,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Homo sapiens","AKR1B1",TRUE
+"CHEMBL1900",7999737,"CHEMBL1942674","IC50","=",2200,"nM",5.66,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Homo sapiens","AKR1B1",TRUE
+"CHEMBL1900",29120211,"CHEMBL6091440","IC50","=",230,"nM",6.64,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Homo sapiens","AKR1B1",TRUE
+"CHEMBL1900",5199241,"CHEMBL1670631","IC50","=",2850,"nM",5.54,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Homo sapiens","AKR1B1",TRUE
+"CHEMBL1916",25147750,"CHEMBL5291738","AC50",">",10000,"nM",NA,"assay format","","Alpha-2C adrenergic receptor","SINGLE PROTEIN","Homo sapiens","ADRA2C",TRUE
+"CHEMBL1929",2313937,"CHEMBL1014040","IC50","=",3000,"nM",5.52,"single protein format","","Xanthine dehydrogenase/oxidase","SINGLE PROTEIN","Homo sapiens","XDH",TRUE
+"CHEMBL1929",15008223,"CHEMBL3370870","Ki","=",280,"nM",6.55,"single protein format","","Xanthine dehydrogenase/oxidase","SINGLE PROTEIN","Homo sapiens","XDH",TRUE
+"CHEMBL1929",16639497,"CHEMBL3826549","IC50","=",3500,"nM",5.46,"single protein format","","Xanthine dehydrogenase/oxidase","SINGLE PROTEIN","Homo sapiens","XDH",TRUE
+"CHEMBL1929",25726936,"CHEMBL5392204","IC50","=",400,"nM",6.4,"single protein format","","Xanthine dehydrogenase/oxidase","SINGLE PROTEIN","Homo sapiens","XDH",TRUE
+"CHEMBL1929",28360289,"CHEMBL5736870","IC50","=",6000,"nM",5.22,"single protein format","","Xanthine dehydrogenase/oxidase","SINGLE PROTEIN","Homo sapiens","XDH",TRUE
+"CHEMBL1929",2331848,"CHEMBL1023248","IC50","=",2620,"nM",5.58,"single protein format","","Xanthine dehydrogenase/oxidase","SINGLE PROTEIN","Homo sapiens","XDH",TRUE
+"CHEMBL1941",25114402,"CHEMBL5291811","AC50",">",10000,"nM",NA,"assay format","","Histamine H2 receptor","SINGLE PROTEIN","Homo sapiens","HRH2",TRUE
+"CHEMBL1942",25143579,"CHEMBL5291737","AC50",">",10000,"nM",NA,"single protein format","","Alpha-2B adrenergic receptor","SINGLE PROTEIN","Homo sapiens","ADRA2B",TRUE
+"CHEMBL1951",25159553,"CHEMBL5291895","AC50","=",5600,"nM",5.25,"assay format","","Amine oxidase [flavin-containing] A","SINGLE PROTEIN","Homo sapiens","MAOA",TRUE
+"CHEMBL1951",18195370,"CHEMBL4042110","IC50","=",2440,"nM",5.61,"single protein format","","Amine oxidase [flavin-containing] A","SINGLE PROTEIN","Homo sapiens","MAOA",TRUE
+"CHEMBL1951",3100876,"CHEMBL1071605","IC50","=",2800,"nM",5.55,"single protein format","","Amine oxidase [flavin-containing] A","SINGLE PROTEIN","Homo sapiens","MAOA",TRUE
+"CHEMBL1951",25076267,"CHEMBL5254631","IC50","=",2800,"nM",5.55,"single protein format","","Amine oxidase [flavin-containing] A","SINGLE PROTEIN","Homo sapiens","MAOA",TRUE
+"CHEMBL1951",24995656,"CHEMBL5231663","IC50","=",1520,"nM",5.82,"single protein format","","Amine oxidase [flavin-containing] A","SINGLE PROTEIN","Homo sapiens","MAOA",TRUE
+"CHEMBL1957",13878407,"CHEMBL3108323","IC50","=",300,"nM",6.52,"single protein format","","Insulin-like growth factor 1 receptor","SINGLE PROTEIN","Homo sapiens","IGF1R",TRUE
+"CHEMBL1963",4617440,"CHEMBL1614281","Potency","=",10000,"nM",5,"assay format","","Thyrotropin receptor","SINGLE PROTEIN","Homo sapiens","TSHR",TRUE
+"CHEMBL1963",3919813,"CHEMBL1614361","Potency","=",10000,"nM",5,"assay format","","Thyrotropin receptor","SINGLE PROTEIN","Homo sapiens","TSHR",TRUE
+"CHEMBL1974",12690596,"CHEMBL2342404","IC50","=",590,"nM",6.23,"single protein format","","Receptor-type tyrosine-protein kinase FLT3","SINGLE PROTEIN","Homo sapiens","FLT3",TRUE
+"CHEMBL1978",3290710,"CHEMBL1105634","IC50","=",12,"nM",7.92,"assay format","","Aromatase","SINGLE PROTEIN","Homo sapiens","CYP19A1",TRUE
+"CHEMBL2026",956530,"CHEMBL653277","IC50","=",4000,"nM",5.4,"single protein format","","Beta-lactamase","SINGLE PROTEIN","Escherichia coli K-12","ampC",FALSE
+"CHEMBL2026",1248165,"CHEMBL818874","IC50","=",4000,"nM",5.4,"single protein format","","Beta-lactamase","SINGLE PROTEIN","Escherichia coli K-12","ampC",FALSE
+"CHEMBL2026",956527,"CHEMBL877274","IC50","=",4000,"nM",5.4,"single protein format","","Beta-lactamase","SINGLE PROTEIN","Escherichia coli K-12","ampC",FALSE
+"CHEMBL203",2655735,"CHEMBL1029460","IC50","=",900,"nM",6.05,"single protein format","","Epidermal growth factor receptor","SINGLE PROTEIN","Homo sapiens","EGFR",TRUE
+"CHEMBL204",13442142,"CHEMBL2428686","Kd","=",38.7,"nM",7.41,"single protein format","","Prothrombin","SINGLE PROTEIN","Homo sapiens","F2",TRUE
+"CHEMBL204",13442215,"CHEMBL2428849","IC50","=",1500,"nM",5.82,"single protein format","","Prothrombin","SINGLE PROTEIN","Homo sapiens","F2",TRUE
+"CHEMBL205",3116706,"CHEMBL1074266","Ki","=",2540,"nM",5.59,"single protein format","","Carbonic anhydrase 2","SINGLE PROTEIN","Homo sapiens","CA2",TRUE
+"CHEMBL2056",5508737,"CHEMBL1738565","Potency","",4466.8,"nM",NA,"assay format","","D(1A) dopamine receptor","SINGLE PROTEIN","Homo sapiens","DRD1",TRUE
+"CHEMBL2056",25114689,"CHEMBL5291902","AC50",">",10000,"nM",NA,"single protein format","","D(1A) dopamine receptor","SINGLE PROTEIN","Homo sapiens","DRD1",TRUE
+"CHEMBL2056",5571106,"CHEMBL1738091","Potency","",4109.2,"nM",NA,"assay format","","D(1A) dopamine receptor","SINGLE PROTEIN","Homo sapiens","DRD1",TRUE
+"CHEMBL2056",25180397,"CHEMBL5291777","AC50",">",10000,"nM",NA,"cell-based format","","D(1A) dopamine receptor","SINGLE PROTEIN","Homo sapiens","DRD1",TRUE
+"CHEMBL2073",20627811,"CHEMBL4610178","Ki","=",472,"nM",6.33,"single protein format","","Tyrosine-protein kinase Yes","SINGLE PROTEIN","Homo sapiens","YES1",TRUE
+"CHEMBL2073718",11000515,"CHEMBL2076210","IC50","=",5000,"nM",5.3,"cell-based format","","Monocarboxylate transporter 2","SINGLE PROTEIN","Rattus norvegicus","Slc16a7",FALSE
+"CHEMBL2093861",3615585,"CHEMBL1614531","Potency","=",10000,"nM",5,"assay format","","Menin/Histone-lysine N-methyltransferase MLL","PROTEIN-PROTEIN INTERACTION","Homo sapiens","MEN1|KMT2A",TRUE
+"CHEMBL2095188",1407671,"CHEMBL832706","IC50","=",2100,"nM",5.68,"protein format","","Glycogen synthase kinase-3","PROTEIN FAMILY","Homo sapiens","GSK3A|GSK3B",TRUE
+"CHEMBL2095191",13504663,"CHEMBL2447762","IC50","=",550,"nM",6.26,"protein complex format","","Casein kinase II","PROTEIN COMPLEX GROUP","Homo sapiens","CSNK2B|CSNK2A1|CSNK2A2",TRUE
+"CHEMBL2095191",5313003,"CHEMBL1694388","IC50","=",550,"nM",6.26,"protein complex format","","Casein kinase II","PROTEIN COMPLEX GROUP","Homo sapiens","CSNK2B|CSNK2A1|CSNK2A2",TRUE
+"CHEMBL2095191",15726516,"CHEMBL3620068","IC50","<",1000,"nM",NA,"assay format","","Casein kinase II","PROTEIN COMPLEX GROUP","Homo sapiens","CSNK2B|CSNK2A1|CSNK2A2",TRUE
+"CHEMBL2095191",10964260,"CHEMBL2065181","IC50","=",5600,"nM",5.25,"protein complex format","","Casein kinase II","PROTEIN COMPLEX GROUP","Homo sapiens","CSNK2B|CSNK2A1|CSNK2A2",TRUE
+"CHEMBL210",25122775,"CHEMBL5291742","AC50",">",10000,"nM",NA,"single protein format","","Beta-2 adrenergic receptor","SINGLE PROTEIN","Homo sapiens","ADRB2",TRUE
+"CHEMBL211",25213619,"CHEMBL5291765","AC50","=",10000,"nM",5,"cell-based format","","Muscarinic acetylcholine receptor M2","SINGLE PROTEIN","Homo sapiens","CHRM2",TRUE
+"CHEMBL211",25214818,"CHEMBL5291764","AC50",">",10000,"nM",NA,"cell-based format","","Muscarinic acetylcholine receptor M2","SINGLE PROTEIN","Homo sapiens","CHRM2",TRUE
+"CHEMBL211",25195232,"CHEMBL5291900","AC50",">",10000,"nM",NA,"single protein format","","Muscarinic acetylcholine receptor M2","SINGLE PROTEIN","Homo sapiens","CHRM2",TRUE
+"CHEMBL213",25121655,"CHEMBL5291740","AC50",">",10000,"nM",NA,"assay format","","Beta-1 adrenergic receptor","SINGLE PROTEIN","Homo sapiens","ADRB1",TRUE
+"CHEMBL214",25215929,"CHEMBL5291814","AC50",">",10000,"nM",NA,"cell-based format","","5-hydroxytryptamine receptor 1A","SINGLE PROTEIN","Homo sapiens","HTR1A",TRUE
+"CHEMBL214",25164462,"CHEMBL5291896","AC50",">",10000,"nM",NA,"single protein format","","5-hydroxytryptamine receptor 1A","SINGLE PROTEIN","Homo sapiens","HTR1A",TRUE
+"CHEMBL2147",2279678,"CHEMBL960123","IC50","=",1100,"nM",5.96,"single protein format","","Serine/threonine-protein kinase pim-1","SINGLE PROTEIN","Homo sapiens","PIM1",TRUE
+"CHEMBL2147",13878372,"CHEMBL3108318","IC50","=",500,"nM",6.3,"single protein format","","Serine/threonine-protein kinase pim-1","SINGLE PROTEIN","Homo sapiens","PIM1",TRUE
+"CHEMBL2147",1655426,"CHEMBL862677","IC50","=",43,"nM",7.37,"single protein format","","Serine/threonine-protein kinase pim-1","SINGLE PROTEIN","Homo sapiens","PIM1",TRUE
+"CHEMBL2147",12139752,"CHEMBL2184780","IC50","=",1100,"nM",5.96,"single protein format","","Serine/threonine-protein kinase pim-1","SINGLE PROTEIN","Homo sapiens","PIM1",TRUE
+"CHEMBL2147",1657782,"CHEMBL864489","Kd","=",25,"nM",7.6,"single protein format","","Serine/threonine-protein kinase pim-1","SINGLE PROTEIN","Homo sapiens","PIM1",TRUE
+"CHEMBL215",19223748,"CHEMBL4395600","IC50","=",3000,"nM",5.52,"cell-based format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Homo sapiens","ALOX5",TRUE
+"CHEMBL215",25036212,"CHEMBL5243336","IC50","=",3340,"nM",5.48,"single protein format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Homo sapiens","ALOX5",TRUE
+"CHEMBL215",1880661,"CHEMBL905752","IC50","=",3000,"nM",5.52,"assay format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Homo sapiens","ALOX5",TRUE
+"CHEMBL215",13878654,"CHEMBL3107776","IC50","=",4000,"nM",5.4,"single protein format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Homo sapiens","ALOX5",TRUE
+"CHEMBL215",1864233,"CHEMBL916998","IC50","=",790,"nM",6.1,"single protein format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Homo sapiens","ALOX5",TRUE
+"CHEMBL216",25135326,"CHEMBL5291763","AC50",">",10000,"nM",NA,"assay format","","Muscarinic acetylcholine receptor M1","SINGLE PROTEIN","Homo sapiens","CHRM1",TRUE
+"CHEMBL2163182",24986107,"CHEMBL5227962","IC50","=",1900,"nM",5.72,"single protein format","","NAD-dependent protein deacylase sirtuin-6","SINGLE PROTEIN","Homo sapiens","SIRT6",TRUE
+"CHEMBL217",25140205,"CHEMBL5291781","AC50",">",10000,"nM",NA,"assay format","","D(2) dopamine receptor","SINGLE PROTEIN","Homo sapiens","DRD2",TRUE
+"CHEMBL218",25181556,"CHEMBL5291773","AC50",">",10000,"nM",NA,"assay format","","Cannabinoid receptor 1","SINGLE PROTEIN","Homo sapiens","CNR1",TRUE
+"CHEMBL2185",13878428,"CHEMBL3108326","IC50","=",910,"nM",6.04,"single protein format","","Aurora kinase B","SINGLE PROTEIN","Homo sapiens","AURKB",TRUE
+"CHEMBL2186",3116822,"CHEMBL1074275","Ki","=",9030,"nM",5.04,"single protein format","","Carbonic anhydrase 13","SINGLE PROTEIN","Mus musculus","Ca13",FALSE
+"CHEMBL219",3285822,"CHEMBL1120975","Ki","=",7846,"nM",5.11,"single protein format","","D(4) dopamine receptor","SINGLE PROTEIN","Homo sapiens","DRD4",TRUE
+"CHEMBL220",25030820,"CHEMBL5241709","IC50","=",2910,"nM",5.54,"single protein format","","Acetylcholinesterase","SINGLE PROTEIN","Homo sapiens","ACHE",TRUE
+"CHEMBL2203",25189066,"CHEMBL5291833","AC50",">",10000,"nM",NA,"single protein format","","Motilin receptor","SINGLE PROTEIN","Homo sapiens","MLNR",TRUE
+"CHEMBL2231",3409852,"CHEMBL1225717","IC50","=",1191,"nM",5.92,"single protein format","","Cytochrome P450 1A1","SINGLE PROTEIN","Homo sapiens","CYP1A1",TRUE
+"CHEMBL2231",18486164,"CHEMBL4186316","IC50","=",9900,"nM",5,"cell-based format","","Cytochrome P450 1A1","SINGLE PROTEIN","Homo sapiens","CYP1A1",TRUE
+"CHEMBL2231",6207655,"CHEMBL1780345","Ki","=",660,"nM",6.18,"single protein format","","Cytochrome P450 1A1","SINGLE PROTEIN","Homo sapiens","CYP1A1",TRUE
+"CHEMBL2231",18068930,"CHEMBL4014750","IC50","=",1191,"nM",5.92,"single protein format","","Cytochrome P450 1A1","SINGLE PROTEIN","Homo sapiens","CYP1A1",TRUE
+"CHEMBL2231",18486188,"CHEMBL4186325","IC50","=",9900,"nM",5,"cell-based format","","Cytochrome P450 1A1","SINGLE PROTEIN","Homo sapiens","CYP1A1",TRUE
+"CHEMBL2231",18486185,"CHEMBL4186324","EC50","=",8800,"nM",5.06,"cell-based format","","Cytochrome P450 1A1","SINGLE PROTEIN","Homo sapiens","CYP1A1",TRUE
+"CHEMBL224",25173567,"CHEMBL5291818","AC50",">",10000,"nM",NA,"assay format","","5-hydroxytryptamine receptor 2A","SINGLE PROTEIN","Homo sapiens","HTR2A",TRUE
+"CHEMBL2288",5962495,"CHEMBL1738600","Potency","",2685.5,"nM",NA,"assay format","","Peptidyl-prolyl cis-trans isomerase NIMA-interacting 1","SINGLE PROTEIN","Homo sapiens","PIN1",TRUE
+"CHEMBL2295561",18064499,"CHEMBL4013924","IC50","=",6100,"nM",5.21,"single protein format","","Lactoperoxidase","SINGLE PROTEIN","Bos taurus","LPO",FALSE
+"CHEMBL230",25166071,"CHEMBL5291870","AC50","=",1070,"nM",5.97,"assay format","","Prostaglandin G/H synthase 2","SINGLE PROTEIN","Homo sapiens","PTGS2",TRUE
+"CHEMBL231",25212383,"CHEMBL5291809","AC50",">",10000,"nM",NA,"single protein format","","Histamine H1 receptor","SINGLE PROTEIN","Homo sapiens","HRH1",TRUE
+"CHEMBL2326",3116819,"CHEMBL1074272","Ki","=",4840,"nM",5.32,"single protein format","","Carbonic anhydrase 7","SINGLE PROTEIN","Homo sapiens","CA7",TRUE
+"CHEMBL2331065",29181987,"CHEMBL6112814","IC50","=",9500,"nM",5.02,"single protein format","","Alpha-ketoglutarate-dependent dioxygenase FTO","SINGLE PROTEIN","Homo sapiens","FTO",TRUE
+"CHEMBL2366488",12599566,"CHEMBL3074976","Ki","=",4300,"nM",5.37,"single protein format","","D-alanine--D-alanine ligase","SINGLE PROTEIN","Helicobacter pylori (strain HPAG1)","ddl",FALSE
+"CHEMBL2392",5043440,"CHEMBL1614079","Potency","=",199.5,"nM",6.7,"assay format","","DNA polymerase beta","SINGLE PROTEIN","Homo sapiens","POLB",TRUE
+"CHEMBL2414",12654669,"CHEMBL2329947","IC50","=",10000,"nM",5,"cell-based format","","C-C chemokine receptor type 4","SINGLE PROTEIN","Homo sapiens","CCR4",TRUE
+"CHEMBL2424",2196842,"CHEMBL967534","IC50","=",3200,"nM",5.5,"assay format","","Lactoylglutathione lyase","SINGLE PROTEIN","Homo sapiens","GLO1",TRUE
+"CHEMBL2439",12112445,"CHEMBL2174301","IC50","=",1270,"nM",5.9,"single protein format","","Myeloperoxidase","SINGLE PROTEIN","Homo sapiens","MPO",TRUE
+"CHEMBL2439",18064451,"CHEMBL4013920","IC50","=",3100,"nM",5.51,"single protein format","","Myeloperoxidase","SINGLE PROTEIN","Homo sapiens","MPO",TRUE
+"CHEMBL2439",18064396,"CHEMBL4013915","IC50","=",1150,"nM",5.94,"single protein format","","Myeloperoxidase","SINGLE PROTEIN","Homo sapiens","MPO",TRUE
+"CHEMBL2439",18877009,"CHEMBL4311135","IC50","=",1270,"nM",5.9,"single protein format","","Myeloperoxidase","SINGLE PROTEIN","Homo sapiens","MPO",TRUE
+"CHEMBL2487",25515604,"CHEMBL5336021","IC50","=",820,"nM",6.09,"single protein format","","Amyloid-beta precursor protein","SINGLE PROTEIN","Homo sapiens","APP",TRUE
+"CHEMBL2487",25076213,"CHEMBL5254617","IC50","=",2400,"nM",5.62,"single protein format","","Amyloid-beta precursor protein","SINGLE PROTEIN","Homo sapiens","APP",TRUE
+"CHEMBL2487",16841926,"CHEMBL3876903","IC50","=",7940,"nM",5.1,"assay format","","Amyloid-beta precursor protein","SINGLE PROTEIN","Homo sapiens","APP",TRUE
+"CHEMBL2506",2137289,"CHEMBL936779","IC50","=",3800,"nM",5.42,"single protein format","","Phosphatidylinositol 3-kinase regulatory subunit alpha","SINGLE PROTEIN","Homo sapiens","PIK3R1",TRUE
+"CHEMBL2558",15726499,"CHEMBL3620066","IC50","=",8900,"nM",5.05,"single protein format","","Death-associated protein kinase 1","SINGLE PROTEIN","Homo sapiens","DAPK1",TRUE
+"CHEMBL256",25134086,"CHEMBL5291727","AC50","=",4200,"nM",5.38,"single protein format","","Adenosine receptor A3","SINGLE PROTEIN","Homo sapiens","ADORA3",TRUE
+"CHEMBL2568",15034287,"CHEMBL3378175","IC50","=",4800,"nM",5.32,"single protein format","","Glycogen phosphorylase, liver form","SINGLE PROTEIN","Homo sapiens","PYGL",TRUE
+"CHEMBL261",3116707,"CHEMBL1074265","Ki","=",2680,"nM",5.57,"single protein format","","Carbonic anhydrase 1","SINGLE PROTEIN","Homo sapiens","CA1",TRUE
+"CHEMBL262",12591448,"CHEMBL3071785","IC50","=",2000,"nM",5.7,"single protein format","","Glycogen synthase kinase-3 beta","SINGLE PROTEIN","Homo sapiens","GSK3B",TRUE
+"CHEMBL2622",99646,"CHEMBL642975","IC50","=",8320,"nM",5.08,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Rattus norvegicus","Akr1b1",FALSE
+"CHEMBL2622",99647,"CHEMBL642975","IC50","=",7810,"nM",5.11,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Rattus norvegicus","Akr1b1",FALSE
+"CHEMBL2622",369072,"CHEMBL644306","IC50","=",7700,"nM",5.11,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Rattus norvegicus","Akr1b1",FALSE
+"CHEMBL2622",369073,"CHEMBL702216","IC50","=",1000,"nM",6,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Rattus norvegicus","Akr1b1",FALSE
+"CHEMBL2622",301511,"CHEMBL644300","IC50","=",7810,"nM",5.11,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Rattus norvegicus","Akr1b1",FALSE
+"CHEMBL2622",1924162,"CHEMBL895328","IC50","=",2320,"nM",5.63,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Rattus norvegicus","Akr1b1",FALSE
+"CHEMBL2622",1924125,"CHEMBL895327","IC50","=",7810,"nM",5.11,"tissue-based format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Rattus norvegicus","Akr1b1",FALSE
+"CHEMBL2622",2213746,"CHEMBL980608","IC50","=",7210,"nM",5.14,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Rattus norvegicus","Akr1b1",FALSE
+"CHEMBL264",25200490,"CHEMBL5291921","AC50",">",10000,"nM",NA,"single protein format","","Histamine H3 receptor","SINGLE PROTEIN","Homo sapiens","HRH3",TRUE
+"CHEMBL267",13878351,"CHEMBL3108316","IC50","=",120,"nM",6.92,"single protein format","","Proto-oncogene tyrosine-protein kinase Src","SINGLE PROTEIN","Homo sapiens","SRC",TRUE
+"CHEMBL2695",13878414,"CHEMBL3108325","IC50","=",1200,"nM",5.92,"single protein format","","Focal adhesion kinase 1","SINGLE PROTEIN","Homo sapiens","PTK2",TRUE
+"CHEMBL276",4803500,"CHEMBL1613997","Potency","=",3162.3,"nM",5.5,"assay format","","Muscarinic acetylcholine receptor M1","SINGLE PROTEIN","Rattus norvegicus","Chrm1",FALSE
+"CHEMBL2789",18451086,"CHEMBL4178552","IC50","=",1540,"nM",5.81,"assay format","","17-beta-hydroxysteroid dehydrogenase type 2","SINGLE PROTEIN","Homo sapiens","HSD17B2",TRUE
+"CHEMBL2789",2465281,"CHEMBL958789","IC50","=",1540,"nM",5.81,"cell-based format","","17-beta-hydroxysteroid dehydrogenase type 2","SINGLE PROTEIN","Homo sapiens","HSD17B2",TRUE
+"CHEMBL279",18656476,"CHEMBL4231194","IC50","=",1660,"nM",5.78,"single protein format","","Vascular endothelial growth factor receptor 2","SINGLE PROTEIN","Homo sapiens","KDR",TRUE
+"CHEMBL279",13878344,"CHEMBL3108315","IC50","=",280,"nM",6.55,"single protein format","","Vascular endothelial growth factor receptor 2","SINGLE PROTEIN","Homo sapiens","KDR",TRUE
+"CHEMBL280",10950095,"CHEMBL2051217","IC50","=",8460,"nM",5.07,"single protein format","","Collagenase 3","SINGLE PROTEIN","Homo sapiens","MMP13",TRUE
+"CHEMBL283",10950032,"CHEMBL2051214","IC50","=",5570,"nM",5.25,"single protein format","","Stromelysin-1","SINGLE PROTEIN","Homo sapiens","MMP3",TRUE
+"CHEMBL284",18662274,"CHEMBL4232373","IC50","=",2920,"nM",5.54,"single protein format","","Dipeptidyl peptidase 4","SINGLE PROTEIN","Homo sapiens","DPP4",TRUE
+"CHEMBL288",25185199,"CHEMBL5291858","AC50",">",10000,"nM",NA,"assay format","","3',5'-cyclic-AMP phosphodiesterase 4D","SINGLE PROTEIN","Homo sapiens","PDE4D",TRUE
+"CHEMBL2885",3116705,"CHEMBL1074267","Ki","=",8100,"nM",5.09,"single protein format","","Carbonic anhydrase 3","SINGLE PROTEIN","Homo sapiens","CA3",TRUE
+"CHEMBL2903",4466547,"CHEMBL1614240","Potency","=",794.3,"nM",6.1,"assay format","","Polyunsaturated fatty acid lipoxygenase ALOX15","SINGLE PROTEIN","Homo sapiens","ALOX15",TRUE
+"CHEMBL2903",2046499,"CHEMBL924095","IC50","=",2200,"nM",5.66,"single protein format","","Polyunsaturated fatty acid lipoxygenase ALOX15","SINGLE PROTEIN","Homo sapiens","ALOX15",TRUE
+"CHEMBL3004",11003282,"CHEMBL2077005","Ki","=",8100,"nM",5.09,"cell membrane format","","Multidrug resistance-associated protein 1","SINGLE PROTEIN","Homo sapiens","ABCC1",TRUE
+"CHEMBL3004",2692686,"CHEMBL1062294","Ki","=",2400,"nM",5.62,"cell-based format","","Multidrug resistance-associated protein 1","SINGLE PROTEIN","Homo sapiens","ABCC1",TRUE
+"CHEMBL302",1042216,"CHEMBL641349","Ki","=",6990,"nM",5.16,"cell membrane format","","Adenosine receptor A2a","SINGLE PROTEIN","Rattus norvegicus","Adora2a",FALSE
+"CHEMBL3024",13878365,"CHEMBL3108319","IC50","=",5750,"nM",5.24,"single protein format","","Serine/threonine-protein kinase PLK1","SINGLE PROTEIN","Homo sapiens","PLK1",TRUE
+"CHEMBL3025",3116818,"CHEMBL1074271","Ki","=",6170,"nM",5.21,"single protein format","","Carbonic anhydrase 6","SINGLE PROTEIN","Homo sapiens","CA6",TRUE
+"CHEMBL308",3438056,"CHEMBL1246064","IC50","=",450,"nM",6.35,"single protein format","","Cyclin-dependent kinase 1","SINGLE PROTEIN","Homo sapiens","CDK1",TRUE
+"CHEMBL3081",13381680,"CHEMBL2410165","IC50","=",2850,"nM",5.54,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Bos taurus","AKR1B1",FALSE
+"CHEMBL3081",3289265,"CHEMBL1109118","IC50","=",2850,"nM",5.54,"single protein format","","Aldo-keto reductase family 1 member B1","SINGLE PROTEIN","Bos taurus","AKR1B1",FALSE
+"CHEMBL312",247235,"CHEMBL619999","IC50","=",300,"nM",6.52,"cell-based format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Rattus norvegicus","Alox5",FALSE
+"CHEMBL312",1253219,"CHEMBL618054","IC50","=",500,"nM",6.3,"assay format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Rattus norvegicus","Alox5",FALSE
+"CHEMBL312",1253218,"CHEMBL619245","IC50","=",400,"nM",6.4,"assay format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Rattus norvegicus","Alox5",FALSE
+"CHEMBL312",483148,"CHEMBL781694","IC50","=",10000,"nM",5,"assay format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Rattus norvegicus","Alox5",FALSE
+"CHEMBL312",1270640,"CHEMBL619914","IC50","=",300,"nM",6.52,"cell-based format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Rattus norvegicus","Alox5",FALSE
+"CHEMBL312",842488,"CHEMBL619924","IC50","=",200,"nM",6.7,"cell-based format","","Polyunsaturated fatty acid 5-lipoxygenase","SINGLE PROTEIN","Rattus norvegicus","Alox5",FALSE
+"CHEMBL318",1042215,"CHEMBL641720","Ki","=",2470,"nM",5.61,"cell membrane format","","Adenosine receptor A1","SINGLE PROTEIN","Rattus norvegicus","Adora1",FALSE
+"CHEMBL321",10950053,"CHEMBL2051215","IC50","=",1610,"nM",5.79,"single protein format","","Matrix metalloproteinase-9","SINGLE PROTEIN","Homo sapiens","MMP9",TRUE
+"CHEMBL321",23231071,"CHEMBL4826790","IC50","=",173.8,"nM",6.76,"single protein format","","Matrix metalloproteinase-9","SINGLE PROTEIN","Homo sapiens","MMP9",TRUE
+"CHEMBL3242",3116821,"CHEMBL1074274","Ki","=",9390,"nM",5.03,"single protein format","","Carbonic anhydrase 12","SINGLE PROTEIN","Homo sapiens","CA12",TRUE
+"CHEMBL3251",3671900,"CHEMBL1613823","Potency","=",5623.4,"nM",5.25,"assay format","","Nuclear factor NF-kappa-B p105 subunit","SINGLE PROTEIN","Homo sapiens","NFKB1",TRUE
+"CHEMBL3251",4585182,"CHEMBL1614274","Potency","=",5623.4,"nM",5.25,"assay format","","Nuclear factor NF-kappa-B p105 subunit","SINGLE PROTEIN","Homo sapiens","NFKB1",TRUE
+"CHEMBL3254",2543849,"CHEMBL977538","IC50","=",10,"nM",8,"single protein format","","Amine oxidase [flavin-containing] A","SINGLE PROTEIN","Bos taurus","MAOA",FALSE
+"CHEMBL330",25120499,"CHEMBL5291805","AC50",">",10000,"nM",NA,"assay format","","Glutamate receptor ionotropic, NMDA 1","SINGLE PROTEIN","Rattus norvegicus","Grin1",FALSE
+"CHEMBL333",10949412,"CHEMBL2051213","IC50","=",6680,"nM",5.17,"single protein format","","72 kDa type IV collagenase","SINGLE PROTEIN","Homo sapiens","MMP2",TRUE
+"CHEMBL3356",3409838,"CHEMBL1225716","IC50","=",4097,"nM",5.39,"single protein format","","Cytochrome P450 1A2","SINGLE PROTEIN","Homo sapiens","CYP1A2",TRUE
+"CHEMBL3356",15447388,"CHEMBL3530852","IC50","=",1550,"nM",5.81,"assay format","","Cytochrome P450 1A2","SINGLE PROTEIN","Homo sapiens","CYP1A2",TRUE
+"CHEMBL3356",6046862,"CHEMBL1741322","AC50","=",316.23,"nM",6.5,"assay format","","Cytochrome P450 1A2","SINGLE PROTEIN","Homo sapiens","CYP1A2",TRUE
+"CHEMBL3384",13878358,"CHEMBL3108317","IC50","=",5800,"nM",5.24,"single protein format","","Serine/threonine-protein kinase N1","SINGLE PROTEIN","Homo sapiens","PKN1",TRUE
+"CHEMBL3397",5037513,"CHEMBL1614027","Potency","=",7943.3,"nM",5.1,"single protein format","","Cytochrome P450 2C9","SINGLE PROTEIN","Homo sapiens","CYP2C9",TRUE
+"CHEMBL3397",5057547,"CHEMBL1614027","Potency","=",7943.3,"nM",5.1,"single protein format","","Cytochrome P450 2C9","SINGLE PROTEIN","Homo sapiens","CYP2C9",TRUE
+"CHEMBL340",5009918,"CHEMBL1614108","Potency","=",6309.6,"nM",5.2,"single protein format","","Cytochrome P450 3A4","SINGLE PROTEIN","Homo sapiens","CYP3A4",TRUE
+"CHEMBL340",15445903,"CHEMBL3534776","IC50","=",2110,"nM",5.68,"assay format","","Cytochrome P450 3A4","SINGLE PROTEIN","Homo sapiens","CYP3A4",TRUE
+"CHEMBL340",5074585,"CHEMBL1613886","Potency","=",6309.6,"nM",5.2,"single protein format","","Cytochrome P450 3A4","SINGLE PROTEIN","Homo sapiens","CYP3A4",TRUE
+"CHEMBL343",25130476,"CHEMBL5291801","AC50",">",10000,"nM",NA,"assay format","","Gamma-aminobutyric acid receptor subunit alpha-1","SINGLE PROTEIN","Rattus norvegicus","Gabra1",FALSE
+"CHEMBL343",25127929,"CHEMBL5291798","AC50",">",10000,"nM",NA,"assay format","","Gamma-aminobutyric acid receptor subunit alpha-1","SINGLE PROTEIN","Rattus norvegicus","Gabra1",FALSE
+"CHEMBL3471",14714982,"CHEMBL3294262","IC50","=",8000,"nM",5.1,"single protein format","","Human immunodeficiency virus type 1 integrase","SINGLE PROTEIN","Human immunodeficiency virus 1","pol",FALSE
+"CHEMBL3471",14714993,"CHEMBL3294266","IC50","=",600,"nM",6.22,"single protein format","","Human immunodeficiency virus type 1 integrase","SINGLE PROTEIN","Human immunodeficiency virus 1","pol",FALSE
+"CHEMBL3510",3116823,"CHEMBL1074276","Ki","=",5410,"nM",5.27,"single protein format","","Carbonic anhydrase 14","SINGLE PROTEIN","Homo sapiens","CA14",TRUE
+"CHEMBL3587",13878400,"CHEMBL3108324","IC50",">",10000,"nM",NA,"single protein format","","Dual specificity mitogen-activated protein kinase kinase 1","SINGLE PROTEIN","Homo sapiens","MAP2K1",TRUE
+"CHEMBL3594",3116820,"CHEMBL1074273","Ki","=",7000,"nM",5.16,"single protein format","","Carbonic anhydrase 9","SINGLE PROTEIN","Homo sapiens","CA9",TRUE
+"CHEMBL3629",18971723,"CHEMBL4336765","Ki","=",1180,"nM",5.93,"single protein format","","Casein kinase II subunit alpha","SINGLE PROTEIN","Homo sapiens","CSNK2A1",TRUE
+"CHEMBL3629",2897094,"CHEMBL1061117","Ki","=",1180,"nM",5.93,"single protein format","","Casein kinase II subunit alpha","SINGLE PROTEIN","Homo sapiens","CSNK2A1",TRUE
+"CHEMBL3649",2668470,"CHEMBL1025396","Ki","=",1200,"nM",5.92,"single protein format","","Xanthine dehydrogenase/oxidase","SINGLE PROTEIN","Bos taurus","XDH",FALSE
+"CHEMBL3687",2046449,"CHEMBL924094","IC50","=",440,"nM",6.36,"single protein format","","Polyunsaturated fatty acid lipoxygenase ALOX12","SINGLE PROTEIN","Homo sapiens","ALOX12",TRUE
+"CHEMBL3687",4526374,"CHEMBL1614252","Potency","=",1122,"nM",5.95,"assay format","","Polyunsaturated fatty acid lipoxygenase ALOX12","SINGLE PROTEIN","Homo sapiens","ALOX12",TRUE
+"CHEMBL3687",4526255,"CHEMBL1614252","Potency","=",1000,"nM",6,"assay format","","Polyunsaturated fatty acid lipoxygenase ALOX12","SINGLE PROTEIN","Homo sapiens","ALOX12",TRUE
+"CHEMBL3717",13878393,"CHEMBL3108321","IC50","=",580,"nM",6.24,"single protein format","","Hepatocyte growth factor receptor","SINGLE PROTEIN","Homo sapiens","MET",TRUE
+"CHEMBL3721",17718297,"CHEMBL3887495","IC50","=",3500,"nM",5.46,"single protein format","","Cytochrome P450 2C8","SINGLE PROTEIN","Homo sapiens","CYP2C8",TRUE
+"CHEMBL3721",19315060,"CHEMBL4416916","IC50","=",7000,"nM",5.16,"single protein format","","Cytochrome P450 2C8","SINGLE PROTEIN","Homo sapiens","CYP2C8",TRUE
+"CHEMBL3721",17692372,"CHEMBL3887126","IC50","=",3500,"nM",5.46,"single protein format","","Cytochrome P450 2C8","SINGLE PROTEIN","Homo sapiens","CYP2C8",TRUE
+"CHEMBL3721",15447389,"CHEMBL3530853","IC50","=",1390,"nM",5.86,"assay format","","Cytochrome P450 2C8","SINGLE PROTEIN","Homo sapiens","CYP2C8",TRUE
+"CHEMBL3721",18015049,"CHEMBL4004665","IC50","=",1200,"nM",5.92,"assay format","","Cytochrome P450 2C8","SINGLE PROTEIN","Homo sapiens","CYP2C8",TRUE
+"CHEMBL3729",3116704,"CHEMBL1074268","Ki","=",7890,"nM",5.1,"single protein format","","Carbonic anhydrase 4","SINGLE PROTEIN","Homo sapiens","CA4",TRUE
+"CHEMBL3762",25119494,"CHEMBL5291755","AC50",">",10000,"nM",NA,"assay format","","Voltage-dependent L-type calcium channel subunit alpha-1C","SINGLE PROTEIN","Rattus norvegicus","Cacna1c",FALSE
+"CHEMBL3769",1228055,"CHEMBL817756","IC50","=",7100,"nM",5.15,"single protein format","","Serine protease 1","SINGLE PROTEIN","Bos taurus","PRSS1",FALSE
+"CHEMBL3832943",19112030,"CHEMBL4370675","IC50","=",550,"nM",6.26,"assay format","","Casein kinase 2","PROTEIN FAMILY","Homo sapiens","CSNK2B|CSNK2A1|CSNK2A2|CSNK2A3",TRUE
+"CHEMBL3832943",23144391,"CHEMBL4809012","Ki","=",1180,"nM",5.93,"protein format","","Casein kinase 2","PROTEIN FAMILY","Homo sapiens","CSNK2B|CSNK2A1|CSNK2A2|CSNK2A3",TRUE
+"CHEMBL3833502",18481190,"CHEMBL4184972","IC50","=",7800,"nM",5.11,"protein format","","Alpha glucosidase","PROTEIN FAMILY","Homo sapiens","MGAM|GAA|SI|MGAM2",TRUE
+"CHEMBL3835",13878386,"CHEMBL3108322","IC50","=",5730,"nM",5.24,"single protein format","","Serine/threonine-protein kinase Nek2","SINGLE PROTEIN","Homo sapiens","NEK2",TRUE
+"CHEMBL3871",99648,"CHEMBL644880","IC50","=",2320,"nM",5.63,"single protein format","","Aldo-keto reductase family 1 member A1","SINGLE PROTEIN","Rattus norvegicus","Akr1a1",FALSE
+"CHEMBL3885525",25557007,"CHEMBL5347482","IC50","=",10070,"nM",5,"protein complex format","","beta-catenin-B-cell lymphoma 9 protein complex","PROTEIN COMPLEX","Homo sapiens","CTNNB1|BCL9",TRUE
+"CHEMBL3885525",25556962,"CHEMBL5347479","IC50","=",10080,"nM",5,"protein complex format","","beta-catenin-B-cell lymphoma 9 protein complex","PROTEIN COMPLEX","Homo sapiens","CTNNB1|BCL9",TRUE
+"CHEMBL3885525",25600595,"CHEMBL5358449","IC50","=",10080,"nM",5,"protein complex format","","beta-catenin-B-cell lymphoma 9 protein complex","PROTEIN COMPLEX","Homo sapiens","CTNNB1|BCL9",TRUE
+"CHEMBL3885651",24774685,"CHEMBL5127434","Ki","=",9340,"nM",5.03,"protein complex format","","Urease subunit alpha/Urease subunit beta","PROTEIN COMPLEX","Helicobacter pylori (strain ATCC 700392 / 26695) (Campylobacterpylori)","ureB|ureA",FALSE
+"CHEMBL3988629",25690590,"CHEMBL5382173","IC50","=",550,"nM",6.26,"assay format","","Casein kinase 2","PROTEIN COMPLEX","Rattus norvegicus","Csnk2b|Csnk2a1",FALSE
+"CHEMBL4029",12654647,"CHEMBL2329944","IC50","=",4500,"nM",5.35,"cell-based format","","C-X-C chemokine receptor type 1","SINGLE PROTEIN","Homo sapiens","CXCR1",TRUE
+"CHEMBL4029",12654648,"CHEMBL2329944","IC50","=",5011.87,"nM",5.3,"cell-based format","","C-X-C chemokine receptor type 1","SINGLE PROTEIN","Homo sapiens","CXCR1",TRUE
+"CHEMBL4096",4858016,"CHEMBL1613992","Potency","=",1000,"nM",6,"assay format","","Cellular tumor antigen p53","SINGLE PROTEIN","Homo sapiens","TP53",TRUE
+"CHEMBL4096",4882528,"CHEMBL1613995","Potency","=",2511.9,"nM",5.6,"assay format","","Cellular tumor antigen p53","SINGLE PROTEIN","Homo sapiens","TP53",TRUE
+"CHEMBL4105924",18085319,"CHEMBL4018387","IC50","=",1800,"nM",5.75,"single protein format","","ELAV-like protein 3","SINGLE PROTEIN","Homo sapiens","ELAVL3",TRUE
+"CHEMBL4106140",26117539,"CHEMBL5611644","IC50","=",2730,"nM",5.56,"protein complex format","","METTL3/METTL14","PROTEIN COMPLEX","Homo sapiens","METTL3|METTL14",TRUE
+"CHEMBL4106140",26037607,"CHEMBL5585091","IC50","=",2700,"nM",5.57,"assay format","","METTL3/METTL14","PROTEIN COMPLEX","Homo sapiens","METTL3|METTL14",TRUE
+"CHEMBL4106140",25528242,"CHEMBL5339855","IC50","=",2730,"nM",5.56,"protein complex format","","METTL3/METTL14","PROTEIN COMPLEX","Homo sapiens","METTL3|METTL14",TRUE
+"CHEMBL4121",10964262,"CHEMBL2065182","IC50","=",3000,"nM",5.52,"single protein format","","Calcium/calmodulin-dependent protein kinase type II subunit beta","SINGLE PROTEIN","Homo sapiens","CAMK2B",TRUE
+"CHEMBL4150",1816207,"CHEMBL910789","Ki","=",22,"nM",7.66,"single protein format","","Enoyl-acyl-carrier protein reductase","SINGLE PROTEIN","Plasmodium falciparum","fabI",FALSE
+"CHEMBL4150",1719452,"CHEMBL859170","IC50","=",1500,"nM",5.82,"single protein format","","Enoyl-acyl-carrier protein reductase","SINGLE PROTEIN","Plasmodium falciparum","fabI",FALSE
+"CHEMBL4150",1816188,"CHEMBL910785","IC50","=",2500,"nM",5.6,"single protein format","","Enoyl-acyl-carrier protein reductase","SINGLE PROTEIN","Plasmodium falciparum","fabI",FALSE
+"CHEMBL4150",3381324,"CHEMBL1211147","IC50","=",1500,"nM",5.82,"single protein format","","Enoyl-acyl-carrier protein reductase","SINGLE PROTEIN","Plasmodium falciparum","fabI",FALSE
+"CHEMBL4150",1816203,"CHEMBL910788","Ki","=",473,"nM",6.33,"single protein format","","Enoyl-acyl-carrier protein reductase","SINGLE PROTEIN","Plasmodium falciparum","fabI",FALSE
+"CHEMBL4150",1816199,"CHEMBL910787","Ki","=",1090,"nM",5.96,"single protein format","","Enoyl-acyl-carrier protein reductase","SINGLE PROTEIN","Plasmodium falciparum","fabI",FALSE
+"CHEMBL4159",4837177,"CHEMBL1614227","Potency","=",125.9,"nM",6.9,"assay format","","3-hydroxyacyl-CoA dehydrogenase type-2","SINGLE PROTEIN","Homo sapiens","HSD17B10",TRUE
+"CHEMBL4159",4869407,"CHEMBL1614227","Potency","=",251.2,"nM",6.6,"assay format","","3-hydroxyacyl-CoA dehydrogenase type-2","SINGLE PROTEIN","Homo sapiens","HSD17B10",TRUE
+"CHEMBL4159",4865282,"CHEMBL1614227","Potency","=",1000,"nM",6,"assay format","","3-hydroxyacyl-CoA dehydrogenase type-2","SINGLE PROTEIN","Homo sapiens","HSD17B10",TRUE
+"CHEMBL4159",3690176,"CHEMBL1613910","Potency","=",7943.3,"nM",5.1,"assay format","","3-hydroxyacyl-CoA dehydrogenase type-2","SINGLE PROTEIN","Homo sapiens","HSD17B10",TRUE
+"CHEMBL4159",4829684,"CHEMBL1614227","Potency","=",158.5,"nM",6.8,"assay format","","3-hydroxyacyl-CoA dehydrogenase type-2","SINGLE PROTEIN","Homo sapiens","HSD17B10",TRUE
+"CHEMBL4247",13878442,"CHEMBL3108330","IC50","=",3320,"nM",5.48,"single protein format","","ALK tyrosine kinase receptor","SINGLE PROTEIN","Homo sapiens","ALK",TRUE
+"CHEMBL4255",1022799,"CHEMBL712992","IC50","=",6000,"nM",5.22,"single protein format","","Malate dehydrogenase","SINGLE PROTEIN","Thermus thermophilus","mdh",FALSE
+"CHEMBL4261",4519248,"CHEMBL1613803","Potency","=",10000,"nM",5,"assay format","","Hypoxia-inducible factor 1-alpha","SINGLE PROTEIN","Homo sapiens","HIF1A",TRUE
+"CHEMBL4261",4131725,"CHEMBL1614456","Potency","=",10000,"nM",5,"assay format","","Hypoxia-inducible factor 1-alpha","SINGLE PROTEIN","Homo sapiens","HIF1A",TRUE
+"CHEMBL4282",13878449,"CHEMBL3108329","IC50","=",5390,"nM",5.27,"single protein format","","RAC-alpha serine/threonine-protein kinase","SINGLE PROTEIN","Homo sapiens","AKT1",TRUE
+"CHEMBL4302",6342719,"CHEMBL1827948","Kd","=",7079.46,"nM",5.15,"single protein format","","ATP-dependent translocase ABCB1","SINGLE PROTEIN","Homo sapiens","ABCB1",TRUE
+"CHEMBL4309",13878379,"CHEMBL3108320","IC50","=",4230,"nM",5.37,"single protein format","","Serine/threonine-protein kinase Nek6","SINGLE PROTEIN","Homo sapiens","NEK6",TRUE
+"CHEMBL4358",1864241,"CHEMBL916999","IC50","=",430,"nM",6.37,"cell-based format","","Polyunsaturated fatty acid lipoxygenase ALOX15","SINGLE PROTEIN","Oryctolagus cuniculus","ALOX15",FALSE
+"CHEMBL4394",24984004,"CHEMBL5227004","IC50","=",2800,"nM",5.55,"assay format","","Sphingosine kinase 1","SINGLE PROTEIN","Homo sapiens","SPHK1",TRUE
+"CHEMBL4426",2137290,"CHEMBL939208","IC50","=",2000,"nM",5.7,"single protein format","","Phospholipase A2","SINGLE PROTEIN","Homo sapiens","PLA2G1B",TRUE
+"CHEMBL4512",1719450,"CHEMBL859169","IC50","=",1500,"nM",5.82,"single protein format","","Fatty acid synthase","SINGLE PROTEIN","Plasmodium falciparum","fabZ",FALSE
+"CHEMBL4513",1719453,"CHEMBL859171","IC50","=",5400,"nM",5.27,"single protein format","","3-oxoacyl-acyl-carrier protein reductase","SINGLE PROTEIN","Plasmodium falciparum","fabG",FALSE
+"CHEMBL4523401",19108996,"CHEMBL4370054","IC50","=",2300,"nM",5.64,"single protein format","","Inositol polyphosphate multikinase","SINGLE PROTEIN","Homo sapiens","IPMK",TRUE
+"CHEMBL4523488",19108979,"CHEMBL4370053","IC50","=",700,"nM",6.16,"single protein format","","Inositol hexakisphosphate kinase 2","SINGLE PROTEIN","Homo sapiens","IP6K2",TRUE
+"CHEMBL4523582",24980820,"CHEMBL5225957","IC50","=",6900,"nM",5.16,"single protein format","","Replicase polyprotein 1ab","SINGLE PROTEIN","Severe acute respiratory syndrome coronavirus 2","rep",FALSE
+"CHEMBL4662",19449340,"CHEMBL4433374","IC50","=",3500,"nM",5.46,"cell-based format","","Proteasome Macropain subunit MB1","SINGLE PROTEIN","Homo sapiens","PSMB5",TRUE
+"CHEMBL4662",19449312,"CHEMBL4433375","IC50","=",2000,"nM",5.7,"cell-based format","","Proteasome Macropain subunit MB1","SINGLE PROTEIN","Homo sapiens","PSMB5",TRUE
+"CHEMBL4693",19261342,"CHEMBL4404232","IC50","=",9000,"nM",5.05,"assay format","","Sarcoplasmic/endoplasmic reticulum calcium ATPase 1","SINGLE PROTEIN","Oryctolagus cuniculus","ATP2A1",FALSE
+"CHEMBL4789",3116816,"CHEMBL1074269","Ki","=",6810,"nM",5.17,"single protein format","","Carbonic anhydrase 5A, mitochondrial","SINGLE PROTEIN","Homo sapiens","CA5A",TRUE
+"CHEMBL4822",25030877,"CHEMBL5241710","IC50","=",550,"nM",6.26,"single protein format","","Beta-secretase 1","SINGLE PROTEIN","Homo sapiens","BACE1",TRUE
+"CHEMBL4822",12591455,"CHEMBL3071786","IC50","=",5400,"nM",5.27,"single protein format","","Beta-secretase 1","SINGLE PROTEIN","Homo sapiens","BACE1",TRUE
+"CHEMBL4822",18255056,"CHEMBL4055495","IC50","=",5600,"nM",5.25,"single protein format","","Beta-secretase 1","SINGLE PROTEIN","Homo sapiens","BACE1",TRUE
+"CHEMBL4822",15628466,"CHEMBL3588505","IC50","=",6500,"nM",5.19,"single protein format","","Beta-secretase 1","SINGLE PROTEIN","Homo sapiens","BACE1",TRUE
+"CHEMBL4878",18486152,"CHEMBL4186312","IC50","=",1000,"nM",6,"cell membrane format","","Cytochrome P450 1B1","SINGLE PROTEIN","Homo sapiens","CYP1B1",TRUE
+"CHEMBL4878",18157566,"CHEMBL4035332","Ki","=",23,"nM",7.64,"single protein format","","Cytochrome P450 1B1","SINGLE PROTEIN","Homo sapiens","CYP1B1",TRUE
+"CHEMBL4878",18486179,"CHEMBL4186321","IC50","=",2200,"nM",5.66,"cell-based format","","Cytochrome P450 1B1","SINGLE PROTEIN","Homo sapiens","CYP1B1",TRUE
+"CHEMBL4878",6207669,"CHEMBL1780346","Ki","=",23,"nM",7.64,"single protein format","","Cytochrome P450 1B1","SINGLE PROTEIN","Homo sapiens","CYP1B1",TRUE
+"CHEMBL4878",18068932,"CHEMBL4014751","IC50","=",77,"nM",7.11,"single protein format","","Cytochrome P450 1B1","SINGLE PROTEIN","Homo sapiens","CYP1B1",TRUE
+"CHEMBL4878",18486167,"CHEMBL4186317","IC50","=",2200,"nM",5.66,"cell-based format","","Cytochrome P450 1B1","SINGLE PROTEIN","Homo sapiens","CYP1B1",TRUE
+"CHEMBL4878",3409870,"CHEMBL1225718","IC50","=",77,"nM",7.11,"single protein format","","Cytochrome P450 1B1","SINGLE PROTEIN","Homo sapiens","CYP1B1",TRUE
+"CHEMBL4878",18486182,"CHEMBL4186322","EC50","=",1100,"nM",5.96,"cell-based format","","Cytochrome P450 1B1","SINGLE PROTEIN","Homo sapiens","CYP1B1",TRUE
+"CHEMBL4886",25029744,"CHEMBL5241281","IC50","=",290,"nM",6.54,"assay format","","Sulfotransferase 1A1","SINGLE PROTEIN","Rattus norvegicus","Sult1a1",FALSE
+"CHEMBL4895",13878421,"CHEMBL3108327","IC50","=",960,"nM",6.02,"single protein format","","Tyrosine-protein kinase receptor UFO","SINGLE PROTEIN","Homo sapiens","AXL",TRUE
+"CHEMBL5027",6853508,"CHEMBL1794486","Potency","",2377.8,"nM",NA,"assay format","","Flap endonuclease 1","SINGLE PROTEIN","Homo sapiens","FEN1",TRUE
+"CHEMBL5027",5983798,"CHEMBL1613922","Potency","",2377.8,"nM",NA,"assay format","","Flap endonuclease 1","SINGLE PROTEIN","Homo sapiens","FEN1",TRUE
+"CHEMBL5107",25139585,"CHEMBL5291754","AC50",">",10000,"nM",NA,"assay format","","Voltage-dependent N-type calcium channel subunit alpha-1B","SINGLE PROTEIN","Rattus norvegicus","Cacna1b",FALSE
+"CHEMBL5118",2702549,"CHEMBL1057306","IC50","=",8100,"nM",5.09,"single protein format","","Replicase polyprotein 1ab","SINGLE PROTEIN","Severe acute respiratory syndrome-related coronavirus","rep",FALSE
+"CHEMBL5145",18745578,"CHEMBL4262904","IC50","=",7589,"nM",5.12,"single protein format","","Serine/threonine-protein kinase B-raf","SINGLE PROTEIN","Homo sapiens","BRAF",TRUE
+"CHEMBL5162",4885195,"CHEMBL1614052","Potency","=",158.5,"nM",6.8,"assay format","","Neuropeptide S receptor","SINGLE PROTEIN","Homo sapiens","NPSR1",TRUE
+"CHEMBL5189",3067857,"CHEMBL1065350","IC50","=",1700,"nM",5.77,"single protein format","","Sialidase","SINGLE PROTEIN","Clostridium perfringens","nanH",FALSE
+"CHEMBL5189",6376968,"CHEMBL1838287","IC50","=",10060,"nM",5,"single protein format","","Sialidase","SINGLE PROTEIN","Clostridium perfringens","nanH",FALSE
+"CHEMBL5189",2409668,"CHEMBL960043","IC50","=",2700,"nM",5.57,"single protein format","","Sialidase","SINGLE PROTEIN","Clostridium perfringens","nanH",FALSE
+"CHEMBL5189",3409892,"CHEMBL1225721","IC50","=",9800,"nM",5.01,"single protein format","","Sialidase","SINGLE PROTEIN","Clostridium perfringens","nanH",FALSE
+"CHEMBL5365",7063134,"CHEMBL1794536","Potency","",2818.4,"nM",NA,"assay format","","DNA polymerase kappa","SINGLE PROTEIN","Homo sapiens","POLK",TRUE
+"CHEMBL5365",7044709,"CHEMBL1794536","Potency","",199.5,"nM",NA,"assay format","","DNA polymerase kappa","SINGLE PROTEIN","Homo sapiens","POLK",TRUE
+"CHEMBL5365",7044578,"CHEMBL1794536","Potency","",1122,"nM",NA,"assay format","","DNA polymerase kappa","SINGLE PROTEIN","Homo sapiens","POLK",TRUE
+"CHEMBL5365",7021794,"CHEMBL1794536","Potency","",946.6,"nM",NA,"assay format","","DNA polymerase kappa","SINGLE PROTEIN","Homo sapiens","POLK",TRUE
+"CHEMBL5365",7025610,"CHEMBL1794536","Potency","",446.7,"nM",NA,"assay format","","DNA polymerase kappa","SINGLE PROTEIN","Homo sapiens","POLK",TRUE
+"CHEMBL5365",7025799,"CHEMBL1794536","Potency","",281.8,"nM",NA,"assay format","","DNA polymerase kappa","SINGLE PROTEIN","Homo sapiens","POLK",TRUE
+"CHEMBL5365",7055611,"CHEMBL1794536","Potency","",199.5,"nM",NA,"assay format","","DNA polymerase kappa","SINGLE PROTEIN","Homo sapiens","POLK",TRUE
+"CHEMBL5391",6915706,"CHEMBL1794483","Potency","",562.3,"nM",NA,"assay format","","DNA polymerase iota","SINGLE PROTEIN","Homo sapiens","POLI",TRUE
+"CHEMBL5393",18225509,"CHEMBL4048749","EC50","=",30,"nM",7.52,"assay format","","Broad substrate specificity ATP-binding cassette transporter ABCG2","SINGLE PROTEIN","Homo sapiens","ABCG2",TRUE
+"CHEMBL5393",5250889,"CHEMBL1687393","IC50","=",6900,"nM",5.16,"cell-based format","","Broad substrate specificity ATP-binding cassette transporter ABCG2","SINGLE PROTEIN","Homo sapiens","ABCG2",TRUE
+"CHEMBL5393",5250922,"CHEMBL1687394","IC50","=",7600,"nM",5.12,"cell-based format","","Broad substrate specificity ATP-binding cassette transporter ABCG2","SINGLE PROTEIN","Homo sapiens","ABCG2",TRUE
+"CHEMBL5393",18315218,"CHEMBL4132975","EC50","=",278,"nM",6.56,"assay format","","Broad substrate specificity ATP-binding cassette transporter ABCG2","SINGLE PROTEIN","Homo sapiens","ABCG2",TRUE
+"CHEMBL5393",18072656,"CHEMBL4015708","EC50","=",278,"nM",6.56,"assay format","","Broad substrate specificity ATP-binding cassette transporter ABCG2","SINGLE PROTEIN","Homo sapiens","ABCG2",TRUE
+"CHEMBL5401",4898041,"CHEMBL1614070","Potency","=",2511.9,"nM",5.6,"assay format","","Signal transducer and activator of transcription 6","SINGLE PROTEIN","Homo sapiens","STAT6",TRUE
+"CHEMBL5401",4711922,"CHEMBL1614338","Potency","=",2511.9,"nM",5.6,"assay format","","Signal transducer and activator of transcription 6","SINGLE PROTEIN","Homo sapiens","STAT6",TRUE
+"CHEMBL5542",6985478,"CHEMBL1794569","Potency","",794.3,"nM",NA,"assay format","","DNA polymerase eta","SINGLE PROTEIN","Homo sapiens","POLH",TRUE
+"CHEMBL5619",14427544,"CHEMBL1614211","Potency","",707.9,"nM",NA,"assay format","","DNA repair nuclease/redox regulator APEX1","SINGLE PROTEIN","Homo sapiens","APEX1",TRUE
+"CHEMBL5619",14370933,"CHEMBL1614211","Potency","",1000,"nM",NA,"assay format","","DNA repair nuclease/redox regulator APEX1","SINGLE PROTEIN","Homo sapiens","APEX1",TRUE
+"CHEMBL5619",14329872,"CHEMBL1614211","Potency","",1412.5,"nM",NA,"assay format","","DNA repair nuclease/redox regulator APEX1","SINGLE PROTEIN","Homo sapiens","APEX1",TRUE
+"CHEMBL5619",14431223,"CHEMBL1614211","Potency","",891.3,"nM",NA,"assay format","","DNA repair nuclease/redox regulator APEX1","SINGLE PROTEIN","Homo sapiens","APEX1",TRUE
+"CHEMBL5619",14344858,"CHEMBL1614211","Potency","",891.3,"nM",NA,"assay format","","DNA repair nuclease/redox regulator APEX1","SINGLE PROTEIN","Homo sapiens","APEX1",TRUE
+"CHEMBL5619",14386288,"CHEMBL1614211","Potency","",1258.9,"nM",NA,"assay format","","DNA repair nuclease/redox regulator APEX1","SINGLE PROTEIN","Homo sapiens","APEX1",TRUE
+"CHEMBL5619",14360049,"CHEMBL1614211","Potency","",1000,"nM",NA,"assay format","","DNA repair nuclease/redox regulator APEX1","SINGLE PROTEIN","Homo sapiens","APEX1",TRUE
+"CHEMBL5686",5777035,"CHEMBL1614279","Potency","",6745.6,"nM",NA,"assay format","","ATP-dependent 6-phosphofructokinase","SINGLE PROTEIN","Trypanosoma brucei","pfk",FALSE
+"CHEMBL5784",13878435,"CHEMBL3108328","IC50","=",5090,"nM",5.29,"single protein format","","NUAK family SNF1-like kinase 1","SINGLE PROTEIN","Homo sapiens","NUAK1",TRUE
+"CHEMBL5866",25600651,"CHEMBL5358454","Kd","=",4990,"nM",5.3,"single protein format","","Catenin beta-1","SINGLE PROTEIN","Homo sapiens","CTNNB1",TRUE
+"CHEMBL5866",25557009,"CHEMBL5347483","Kd","=",5580,"nM",5.25,"assay format","","Catenin beta-1","SINGLE PROTEIN","Homo sapiens","CTNNB1",TRUE
+"CHEMBL5983",29120165,"CHEMBL6091439","IC50","=",1900,"nM",5.72,"single protein format","","Aldo-keto reductase family 1 member B10","SINGLE PROTEIN","Homo sapiens","AKR1B10",TRUE
+"CHEMBL6066863",25446662,"CHEMBL5317878","IC50","=",8210,"nM",5.09,"assay format","","Alpha amylase","PROTEIN FAMILY","Homo sapiens","AMY1A",TRUE
+"CHEMBL6136",18878404,"CHEMBL4311551","IC50","=",1260,"nM",5.9,"single protein format","","Lysine-specific histone demethylase 1A","SINGLE PROTEIN","Homo sapiens","KDM1A",TRUE

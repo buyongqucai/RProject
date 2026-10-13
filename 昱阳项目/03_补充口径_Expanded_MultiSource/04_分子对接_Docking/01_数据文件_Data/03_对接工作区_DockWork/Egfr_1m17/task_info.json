@@ -1,0 +1,20 @@
+{
+  "gene_mouse": "Egfr",
+  "gene_human": "EGFR",
+  "pdb": "1m17",
+  "center_source": "cocrystal",
+  "center_detail": "EGFR TK domain AQ4 site (1M17)",
+  "engine": "vina",
+  "ligand": "quercetin_CID5280343",
+  "status": "pending",
+  "center": [
+    22.0,
+    0.5,
+    53.0
+  ],
+  "size": [
+    22,
+    22,
+    22
+  ]
+}

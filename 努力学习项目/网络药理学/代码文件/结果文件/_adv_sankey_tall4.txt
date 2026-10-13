@@ -1,0 +1,7 @@
+=== 17 Sankey HCTP flow (tall, full compound labels) ===
+Sankey canvas 18 x 42 in (compounds=24)
+[PlotQA:17_桑基图_HerbCompoundTargetPathway_Sankey] overall=WARN
+  - label_length: WARN | max_len=58 n_long(>28)=2/57 (3.5%)
+  - label_overlap: PASS | overlap_pairs=20/1485 (1.35%) deep=0
+OK 17
+DONE sankey tall

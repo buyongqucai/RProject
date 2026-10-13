@@ -1,0 +1,5 @@
+"rule","n_DEG","n_disease_union","n_overlap_drug_x_disease","adopted_main"
+"main_|logFC|>=1_P<0.05",120,298,57,TRUE
+"strict_adjP<0.05_|logFC|>=1",0,178,53,FALSE
+"strict_adjP<0.05_|logFC|>=0.58",0,178,53,FALSE
+"loose_|logFC|>=0.58_P<0.05",441,615,69,FALSE

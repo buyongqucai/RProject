@@ -1,0 +1,8 @@
+STATUS: DONE
+step: 03_EnrichPPI
+phase: C
+enrich_viz: NetworkPharm FROZEN (BPCCMF bubble/bar + KEGG lollipop/bar/circos)
+ora_mode=Overlap n_ora=57 n_overlap=57
+enrich_figs=GO_bubble,GO_bar,KEGG_lollipop,KEGG_bar,KEGG_circos
+ppi_genes=57 string_edges=712 hubs=55
+updated: 2026-10-11 22:51

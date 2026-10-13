@@ -1,0 +1,9 @@
+STATUS: DONE
+step: 04_Docking
+arm: expanded
+viz: PyMOL standard (big/surface/detail.pse) + FROZEN heatmap
+pymol_rc: 0
+fig_files_copied: 25
+jobs_root: E:\dock_yuyang\viz_jobs_expanded
+note: detail PNG needs hand screenshot export (SOP §7.3); result collage §7.4
+updated: 2026-10-11T21:47

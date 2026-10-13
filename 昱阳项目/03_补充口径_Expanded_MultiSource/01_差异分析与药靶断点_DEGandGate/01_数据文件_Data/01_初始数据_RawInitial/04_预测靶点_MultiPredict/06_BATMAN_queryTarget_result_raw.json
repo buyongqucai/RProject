@@ -1,0 +1,1579 @@
+{
+  "status": 200,
+  "result": {
+    "table": [
+      {
+        "clusterName": "quercetin",
+        "clusterId": "cluster1",
+        "info": "This query contains <a class='tableHref' href=\"http://batman2.cloudna.cn/downloadApi/data/query_TARGET_result/batman-yuyang-quercetin-1791705615/cluster1/allcompound.txt\" target=\"_blank\">1</a> compounds",
+        "table": [
+          [
+            "Quercetin",
+            "5280343",
+            [
+              [
+                "2548",
+                "GAA",
+                "known target in HIT"
+              ],
+              [
+                "7295",
+                "TXN",
+                "known target in HIT"
+              ],
+              [
+                "959",
+                "CD40LG",
+                "known target in HIT"
+              ],
+              [
+                "6347",
+                "CCL2",
+                "known target in HIT"
+              ],
+              [
+                "3949",
+                "LDLR",
+                "known target in HIT"
+              ],
+              [
+                "200959",
+                "GABRR3",
+                "known target in HIT"
+              ],
+              [
+                "1950",
+                "EGF",
+                "known target in HIT"
+              ],
+              [
+                "6590",
+                "SLPI",
+                "known target in HIT"
+              ],
+              [
+                "891",
+                "CCNB1",
+                "known target in HIT"
+              ],
+              [
+                "5578",
+                "PRKCA",
+                "known target in HIT"
+              ],
+              [
+                "5327",
+                "PLAT",
+                "known target in HIT"
+              ],
+              [
+                "1543",
+                "CYP1A1",
+                "known target in HIT"
+              ],
+              [
+                "5290",
+                "PIK3CA",
+                "known target in text mining"
+              ],
+              [
+                "1364",
+                "CLDN4",
+                "known target in HIT"
+              ],
+              [
+                "1312",
+                "COMT",
+                "known target in HIT"
+              ],
+              [
+                "3558",
+                "IL2",
+                "known target in HIT"
+              ],
+              [
+                "842",
+                "CASP9",
+                "known target in HIT"
+              ],
+              [
+                "4170",
+                "MCL1",
+                "known target in HIT"
+              ],
+              [
+                "9212",
+                "AURKB",
+                "known target in HIT"
+              ],
+              [
+                "5447",
+                "POR",
+                "known target in HIT"
+              ],
+              [
+                "5444",
+                "PON1",
+                "known target in HIT"
+              ],
+              [
+                "8312",
+                "AXIN1",
+                "known target in HIT"
+              ],
+              [
+                "2932",
+                "GSK3B",
+                "known target in HIT"
+              ],
+              [
+                "5054",
+                "SERPINE1",
+                "known target in HIT"
+              ],
+              [
+                "3315",
+                "HSPB1",
+                "known target in HIT"
+              ],
+              [
+                "1870",
+                "E2F2",
+                "known target in HIT"
+              ],
+              [
+                "3795",
+                "KHK",
+                "known target in HIT"
+              ],
+              [
+                "23373",
+                "CRTC1",
+                "known target in HIT"
+              ],
+              [
+                "3178",
+                "HNRNPA1",
+                "known target in HIT"
+              ],
+              [
+                "4729",
+                "NDUFV2",
+                "known target in HIT"
+              ],
+              [
+                "80331",
+                "DNAJC5",
+                "known target in HIT"
+              ],
+              [
+                "1958",
+                "EGR1",
+                "known target in HIT"
+              ],
+              [
+                "5562",
+                "PRKAA1",
+                "known target in HIT"
+              ],
+              [
+                "1392",
+                "CRH",
+                "known target in HIT"
+              ],
+              [
+                "7082",
+                "TJP1",
+                "known target in HIT"
+              ],
+              [
+                "7057",
+                "THBS1",
+                "known target in HIT"
+              ],
+              [
+                "3725",
+                "JUN",
+                "known target in HIT"
+              ],
+              [
+                "4609",
+                "MYC",
+                "known target in HIT"
+              ],
+              [
+                "4313",
+                "MMP2",
+                "known target in HIT"
+              ],
+              [
+                "348",
+                "APOE",
+                "known target in HIT"
+              ],
+              [
+                "1509",
+                "CTSD",
+                "known target in HIT"
+              ],
+              [
+                "79888",
+                "LPCAT1",
+                "known target in TTD"
+              ],
+              [
+                "627",
+                "BDNF",
+                "known target in HIT"
+              ],
+              [
+                "1558",
+                "CYP2C8",
+                "known target in HIT"
+              ],
+              [
+                "2194",
+                "FASN",
+                "known target in HIT"
+              ],
+              [
+                "9100",
+                "USP10",
+                "known target in HIT"
+              ],
+              [
+                "2002",
+                "ELK1",
+                "known target in HIT"
+              ],
+              [
+                "1374",
+                "CPT1A",
+                "known target in text mining"
+              ],
+              [
+                "847",
+                "CAT",
+                "known target in HIT"
+              ],
+              [
+                "283871",
+                "PGP",
+                "known target in HIT"
+              ],
+              [
+                "3091",
+                "HIF1A",
+                "known target in HIT"
+              ],
+              [
+                "367",
+                "AR",
+                "known target in HIT"
+              ],
+              [
+                "9970",
+                "NR1I3",
+                "known target in HIT"
+              ],
+              [
+                "4217",
+                "MAP3K5",
+                "known target in HIT"
+              ],
+              [
+                "43",
+                "ACHE",
+                "known target in HIT"
+              ],
+              [
+                "1029",
+                "CDKN2A",
+                "known target in HIT"
+              ],
+              [
+                "3659",
+                "IRF1",
+                "known target in HIT"
+              ],
+              [
+                "7498",
+                "XDH",
+                "known target in HIT"
+              ],
+              [
+                "5599",
+                "MAPK8",
+                "known target in HIT"
+              ],
+              [
+                "7122",
+                "CLDN5",
+                "known target in HIT"
+              ],
+              [
+                "6517",
+                "SLC2A4",
+                "known target in HIT"
+              ],
+              [
+                "1728",
+                "NQO1",
+                "known target in HIT"
+              ],
+              [
+                "4360",
+                "MRC1",
+                "known target in text mining"
+              ],
+              [
+                "5894",
+                "RAF1",
+                "known target in HIT"
+              ],
+              [
+                "1147",
+                "CHUK",
+                "known target in HIT"
+              ],
+              [
+                "29126",
+                "CD274",
+                "known target in text mining"
+              ],
+              [
+                "598",
+                "BCL2L1",
+                "known target in HIT"
+              ],
+              [
+                "4353",
+                "MPO",
+                "known target in HIT"
+              ],
+              [
+                "3162",
+                "HMOX1",
+                "known target in HIT"
+              ],
+              [
+                "595",
+                "CCND1",
+                "known target in HIT"
+              ],
+              [
+                "999",
+                "CDH1",
+                "known target in HIT"
+              ],
+              [
+                "5328",
+                "PLAU",
+                "known target in HIT"
+              ],
+              [
+                "10628",
+                "TXNIP",
+                "known target in HIT"
+              ],
+              [
+                "841",
+                "CASP8",
+                "known target in HIT"
+              ],
+              [
+                "1401",
+                "CRP",
+                "known target in HIT"
+              ],
+              [
+                "5970",
+                "RELA",
+                "known target in HIT"
+              ],
+              [
+                "1277",
+                "COL1A1",
+                "known target in HIT"
+              ],
+              [
+                "3956",
+                "LGALS1",
+                "known target in text mining"
+              ],
+              [
+                "3586",
+                "IL10",
+                "known target in HIT"
+              ],
+              [
+                "1571",
+                "CYP2E1",
+                "known target in HIT"
+              ],
+              [
+                "6622",
+                "SNCA",
+                "known target in text mining"
+              ],
+              [
+                "7421",
+                "VDR",
+                "known target in HIT"
+              ],
+              [
+                "3627",
+                "CXCL10",
+                "known target in HIT"
+              ],
+              [
+                "3308",
+                "HSPA4",
+                "known target in HIT"
+              ],
+              [
+                "5579",
+                "PRKCB",
+                "known target in HIT"
+              ],
+              [
+                "6772",
+                "STAT1",
+                "known target in HIT"
+              ],
+              [
+                "2710",
+                "GK",
+                "known target in HIT"
+              ],
+              [
+                "4824",
+                "NKX3-1",
+                "known target in HIT"
+              ],
+              [
+                "4204",
+                "MECP2",
+                "known target in HIT"
+              ],
+              [
+                "2950",
+                "GSTP1",
+                "known target in HIT"
+              ],
+              [
+                "3383",
+                "ICAM1",
+                "known target in HIT"
+              ],
+              [
+                "1440",
+                "CSF3",
+                "known target in text mining"
+              ],
+              [
+                "5728",
+                "PTEN",
+                "known target in HIT"
+              ],
+              [
+                "5806",
+                "PTX3",
+                "known target in HIT"
+              ],
+              [
+                "5781",
+                "PTPN11",
+                "known target in HIT"
+              ],
+              [
+                "8313",
+                "AXIN2",
+                "known target in HIT"
+              ],
+              [
+                "581",
+                "BAX",
+                "known target in HIT"
+              ],
+              [
+                "5742",
+                "PTGS1",
+                "known target in HIT"
+              ],
+              [
+                "2065",
+                "ERBB3",
+                "known target in HIT"
+              ],
+              [
+                "1385",
+                "CREB1",
+                "known target in HIT"
+              ],
+              [
+                "2946",
+                "GSTM2",
+                "known target in HIT"
+              ],
+              [
+                "7384",
+                "UQCRC1",
+                "known target in HIT"
+              ],
+              [
+                "2353",
+                "FOS",
+                "known target in HIT"
+              ],
+              [
+                "4803",
+                "NGF",
+                "known target in HIT"
+              ],
+              [
+                "1576",
+                "CYP3A4",
+                "known target in HIT"
+              ],
+              [
+                "1051",
+                "CEBPB",
+                "known target in HIT"
+              ],
+              [
+                "3569",
+                "IL6",
+                "known target in HIT"
+              ],
+              [
+                "7494",
+                "XBP1",
+                "known target in HIT"
+              ],
+              [
+                "59272",
+                "ACE2",
+                "known target in text mining"
+              ],
+              [
+                "3605",
+                "IL17A",
+                "known target in HIT"
+              ],
+              [
+                "4780",
+                "NFE2L2",
+                "known target in HIT"
+              ],
+              [
+                "836",
+                "CASP3",
+                "known target in HIT"
+              ],
+              [
+                "942",
+                "CD86",
+                "known target in text mining"
+              ],
+              [
+                "1026",
+                "CDKN1A",
+                "known target in HIT"
+              ],
+              [
+                "3552",
+                "IL1A",
+                "known target in HIT"
+              ],
+              [
+                "1432",
+                "MAPK14",
+                "known target in HIT"
+              ],
+              [
+                "2152",
+                "F3",
+                "known target in HIT"
+              ],
+              [
+                "1499",
+                "CTNNB1",
+                "known target in HIT"
+              ],
+              [
+                "7448",
+                "VTN",
+                "known target in text mining"
+              ],
+              [
+                "10595",
+                "ERN2",
+                "known target in HIT"
+              ],
+              [
+                "4790",
+                "NFKB1",
+                "known target in HIT"
+              ],
+              [
+                "1545",
+                "CYP1B1",
+                "known target in HIT"
+              ],
+              [
+                "2147",
+                "F2",
+                "known target in HIT"
+              ],
+              [
+                "468",
+                "ATF4",
+                "known target in HIT"
+              ],
+              [
+                "9963",
+                "SLC23A1",
+                "known target in HIT"
+              ],
+              [
+                "6401",
+                "SELE",
+                "known target in HIT"
+              ],
+              [
+                "3309",
+                "HSPA5",
+                "known target in HIT"
+              ],
+              [
+                "7190",
+                "HSP90B2P",
+                "known target in HIT"
+              ],
+              [
+                "857",
+                "CAV1",
+                "known target in HIT"
+              ],
+              [
+                "100130535",
+                "VIM2P",
+                "known target in HIT"
+              ],
+              [
+                "672",
+                "BRCA1",
+                "known target in HIT"
+              ],
+              [
+                "7422",
+                "VEGFA",
+                "known target in HIT"
+              ],
+              [
+                "4953",
+                "ODC1",
+                "known target in HIT"
+              ],
+              [
+                "983",
+                "CDK1",
+                "known target in HIT"
+              ],
+              [
+                "51176",
+                "LEF1",
+                "known target in HIT"
+              ],
+              [
+                "54600",
+                "UGT1A9",
+                "known target in HIT"
+              ],
+              [
+                "3576",
+                "CXCL8",
+                "known target in HIT"
+              ],
+              [
+                "2185",
+                "PTK2B",
+                "known target in HIT"
+              ],
+              [
+                "7412",
+                "VCAM1",
+                "known target in HIT"
+              ],
+              [
+                "11200",
+                "CHEK2",
+                "known target in HIT"
+              ],
+              [
+                "8061",
+                "FOSL1",
+                "known target in HIT"
+              ],
+              [
+                "8856",
+                "NR1I2",
+                "known target in HIT"
+              ],
+              [
+                "5563",
+                "PRKAA2",
+                "known target in HIT"
+              ],
+              [
+                "860",
+                "RUNX2",
+                "known target in HIT"
+              ],
+              [
+                "9429",
+                "ABCG2",
+                "known target in HIT"
+              ],
+              [
+                "9520",
+                "NPEPPS",
+                "known target in HIT"
+              ],
+              [
+                "6319",
+                "SCD",
+                "known target in HIT"
+              ],
+              [
+                "10062",
+                "NR1H3",
+                "known target in HIT"
+              ],
+              [
+                "54659",
+                "UGT1A3",
+                "known target in text mining"
+              ],
+              [
+                "650",
+                "BMP2",
+                "known target in HIT"
+              ],
+              [
+                "6696",
+                "SPP1",
+                "known target in HIT"
+              ],
+              [
+                "5925",
+                "RB1",
+                "known target in HIT"
+              ],
+              [
+                "84329",
+                "HVCN1",
+                "known target in HIT"
+              ],
+              [
+                "653361",
+                "NCF1",
+                "known target in HIT"
+              ],
+              [
+                "596",
+                "BCL2",
+                "known target in HIT"
+              ],
+              [
+                "51085",
+                "MLXIPL",
+                "known target in HIT"
+              ],
+              [
+                "9370",
+                "ADIPOQ",
+                "known target in HIT"
+              ],
+              [
+                "4846",
+                "NOS3",
+                "known target in HIT"
+              ],
+              [
+                "1956",
+                "EGFR",
+                "known target in HIT"
+              ],
+              [
+                "3643",
+                "INSR",
+                "known target in HIT"
+              ],
+              [
+                "4792",
+                "NFKBIA",
+                "known target in HIT"
+              ],
+              [
+                "3099",
+                "HK2",
+                "known target in HIT"
+              ],
+              [
+                "6566",
+                "SLC16A1",
+                "known target in HIT"
+              ],
+              [
+                "4843",
+                "NOS2",
+                "known target in HIT"
+              ],
+              [
+                "114548",
+                "NLRP3",
+                "known target in HIT"
+              ],
+              [
+                "2475",
+                "MTOR",
+                "known target in HIT"
+              ],
+              [
+                "54947",
+                "LPCAT2",
+                "known target in TTD"
+              ],
+              [
+                "6513",
+                "SLC2A1",
+                "known target in HIT"
+              ],
+              [
+                "7157",
+                "TP53",
+                "known target in HIT"
+              ],
+              [
+                "3297",
+                "HSF1",
+                "known target in HIT"
+              ],
+              [
+                "2064",
+                "ERBB2",
+                "known target in HIT"
+              ],
+              [
+                "7299",
+                "TYR",
+                "known target in HIT"
+              ],
+              [
+                "3553",
+                "IL1B",
+                "known target in HIT"
+              ],
+              [
+                "4067",
+                "LYN",
+                "known target in HIT"
+              ],
+              [
+                "23028",
+                "KDM1A",
+                "known target in HIT"
+              ],
+              [
+                "4586",
+                "MUC5AC",
+                "known target in HIT"
+              ],
+              [
+                "4899",
+                "NRF1",
+                "known target in HIT"
+              ],
+              [
+                "3486",
+                "IGFBP3",
+                "known target in HIT"
+              ],
+              [
+                "3458",
+                "IFNG",
+                "known target in HIT"
+              ],
+              [
+                "23411",
+                "SIRT1",
+                "known target in HIT"
+              ],
+              [
+                "142",
+                "PARP1",
+                "known target in HIT"
+              ],
+              [
+                "207",
+                "AKT1",
+                "known target in HIT"
+              ],
+              [
+                "4312",
+                "MMP1",
+                "known target in HIT"
+              ],
+              [
+                "7431",
+                "VIM",
+                "known target in HIT"
+              ],
+              [
+                "5743",
+                "PTGS2",
+                "known target in HIT"
+              ],
+              [
+                "2645",
+                "GCK",
+                "known target in HIT"
+              ],
+              [
+                "1544",
+                "CYP1A2",
+                "known target in HIT"
+              ],
+              [
+                "4128",
+                "MAOA",
+                "known target in HIT"
+              ],
+              [
+                "5594",
+                "MAPK1",
+                "known target in HIT"
+              ],
+              [
+                "19",
+                "ABCA1",
+                "known target in HIT"
+              ],
+              [
+                "54658",
+                "UGT1A1",
+                "known target in text mining"
+              ],
+              [
+                "4318",
+                "MMP9",
+                "known target in HIT"
+              ],
+              [
+                "6783",
+                "SULT1E1",
+                "known target in HIT"
+              ],
+              [
+                "11186",
+                "RASSF1",
+                "known target in HIT"
+              ],
+              [
+                "2920",
+                "CXCL2",
+                "known target in HIT"
+              ],
+              [
+                "7153",
+                "TOP2A",
+                "known target in HIT"
+              ],
+              [
+                "5580",
+                "PRKCD",
+                "known target in HIT"
+              ],
+              [
+                "3717",
+                "JAK2",
+                "known target in HIT"
+              ],
+              [
+                "3320",
+                "HSP90AA1",
+                "known target in HIT"
+              ],
+              [
+                "2944",
+                "GSTM1",
+                "known target in HIT"
+              ],
+              [
+                "6774",
+                "STAT3",
+                "known target in HIT"
+              ],
+              [
+                "7150",
+                "TOP1",
+                "known target in HIT"
+              ],
+              [
+                "5025",
+                "P2RX4",
+                "known target in HIT"
+              ],
+              [
+                "7124",
+                "TNF",
+                "known target in HIT"
+              ],
+              [
+                "7040",
+                "TGFB1",
+                "known target in HIT"
+              ],
+              [
+                "29110",
+                "TBK1",
+                "known target in text mining"
+              ],
+              [
+                "8795",
+                "TNFRSF10B",
+                "known target in HIT"
+              ],
+              [
+                "5465",
+                "PPARA",
+                "known target in HIT"
+              ],
+              [
+                "1437",
+                "CSF2",
+                "known target in text mining"
+              ],
+              [
+                "5291",
+                "PIK3CB",
+                "known target in HIT"
+              ],
+              [
+                "5595",
+                "MAPK3",
+                "known target in HIT"
+              ],
+              [
+                "1557",
+                "CYP2C19",
+                "known target in HIT"
+              ],
+              [
+                "1869",
+                "E2F1",
+                "known target in HIT"
+              ],
+              [
+                "1965",
+                "EIF2S1",
+                "known target in HIT"
+              ],
+              [
+                "196",
+                "AHR",
+                "known target in HIT"
+              ],
+              [
+                "2101",
+                "ESRRA",
+                "0.96"
+              ],
+              [
+                "2103",
+                "ESRRB",
+                "0.96"
+              ],
+              [
+                "1816",
+                "DRD5",
+                "0.72"
+              ],
+              [
+                "152",
+                "ADRA2C",
+                "0.72"
+              ],
+              [
+                "3358",
+                "HTR2C",
+                "0.72"
+              ],
+              [
+                "3350",
+                "HTR1A",
+                "0.72"
+              ],
+              [
+                "1814",
+                "DRD3",
+                "0.72"
+              ],
+              [
+                "3352",
+                "HTR1D",
+                "0.72"
+              ],
+              [
+                "151",
+                "ADRA2B",
+                "0.72"
+              ],
+              [
+                "3356",
+                "HTR2A",
+                "0.72"
+              ],
+              [
+                "1813",
+                "DRD2",
+                "0.72"
+              ],
+              [
+                "1812",
+                "DRD1",
+                "0.72"
+              ],
+              [
+                "3351",
+                "HTR1B",
+                "0.72"
+              ],
+              [
+                "1815",
+                "DRD4",
+                "0.72"
+              ],
+              [
+                "150",
+                "ADRA2A",
+                "0.72"
+              ],
+              [
+                "3357",
+                "HTR2B",
+                "0.72"
+              ],
+              [
+                "5423",
+                "POLB",
+                "0.7"
+              ],
+              [
+                "51327",
+                "AHSP",
+                "0.7"
+              ],
+              [
+                "2556",
+                "GABRA3",
+                "0.7"
+              ],
+              [
+                "2395",
+                "FXN",
+                "0.7"
+              ],
+              [
+                "9177",
+                "HTR3B",
+                "0.7"
+              ],
+              [
+                "3762",
+                "KCNJ5",
+                "0.7"
+              ],
+              [
+                "3765",
+                "KCNJ9",
+                "0.7"
+              ],
+              [
+                "3040",
+                "HBA2",
+                "0.7"
+              ],
+              [
+                "55584",
+                "CHRNA9",
+                "0.7"
+              ],
+              [
+                "2561",
+                "GABRB2",
+                "0.7"
+              ],
+              [
+                "116443",
+                "GRIN3A",
+                "0.7"
+              ],
+              [
+                "2890",
+                "GRIA1",
+                "0.7"
+              ],
+              [
+                "89832",
+                "CHRFAM7A",
+                "0.7"
+              ],
+              [
+                "776",
+                "CACNA1D",
+                "0.7"
+              ],
+              [
+                "2567",
+                "GABRG3",
+                "0.7"
+              ],
+              [
+                "131",
+                "ADH7",
+                "0.7"
+              ],
+              [
+                "1135",
+                "CHRNA2",
+                "0.7"
+              ],
+              [
+                "2893",
+                "GRIA4",
+                "0.7"
+              ],
+              [
+                "2563",
+                "GABRD",
+                "0.7"
+              ],
+              [
+                "2677",
+                "GGCX",
+                "0.7"
+              ],
+              [
+                "2557",
+                "GABRA4",
+                "0.7"
+              ],
+              [
+                "54583",
+                "EGLN1",
+                "0.7"
+              ],
+              [
+                "3763",
+                "KCNJ6",
+                "0.7"
+              ],
+              [
+                "2495",
+                "FTH1",
+                "0.7"
+              ],
+              [
+                "786",
+                "CACNG1",
+                "0.7"
+              ],
+              [
+                "1138",
+                "CHRNA5",
+                "0.7"
+              ],
+              [
+                "170572",
+                "HTR3C",
+                "0.7"
+              ],
+              [
+                "2741",
+                "GLRA1",
+                "0.7"
+              ],
+              [
+                "10369",
+                "CACNG2",
+                "0.7"
+              ],
+              [
+                "2237",
+                "FEN1",
+                "0.7"
+              ],
+              [
+                "1139",
+                "CHRNA7",
+                "0.7"
+              ],
+              [
+                "1356",
+                "CP",
+                "0.7"
+              ],
+              [
+                "2892",
+                "GRIA3",
+                "0.7"
+              ],
+              [
+                "2562",
+                "GABRB3",
+                "0.7"
+              ],
+              [
+                "5624",
+                "PROC",
+                "0.7"
+              ],
+              [
+                "252969",
+                "NEIL2",
+                "0.7"
+              ],
+              [
+                "2568",
+                "GABRP",
+                "0.7"
+              ],
+              [
+                "2558",
+                "GABRA5",
+                "0.7"
+              ],
+              [
+                "2564",
+                "GABRE",
+                "0.7"
+              ],
+              [
+                "1143",
+                "CHRNB4",
+                "0.7"
+              ],
+              [
+                "2030",
+                "SLC29A1",
+                "0.7"
+              ],
+              [
+                "154807",
+                "VKORC1L1",
+                "0.7"
+              ],
+              [
+                "55879",
+                "GABRQ",
+                "0.7"
+              ],
+              [
+                "775",
+                "CACNA1C",
+                "0.7"
+              ],
+              [
+                "779",
+                "CACNA1S",
+                "0.7"
+              ],
+              [
+                "3177",
+                "SLC29A2",
+                "0.7"
+              ],
+              [
+                "55869",
+                "HDAC8",
+                "0.7"
+              ],
+              [
+                "79661",
+                "NEIL1",
+                "0.7"
+              ],
+              [
+                "2559",
+                "GABRA6",
+                "0.7"
+              ],
+              [
+                "57053",
+                "CHRNA10",
+                "0.7"
+              ],
+              [
+                "2742",
+                "GLRA2",
+                "0.7"
+              ],
+              [
+                "2565",
+                "GABRG1",
+                "0.7"
+              ],
+              [
+                "2158",
+                "F9",
+                "0.7"
+              ],
+              [
+                "3039",
+                "HBA1",
+                "0.7"
+              ],
+              [
+                "1142",
+                "CHRNB3",
+                "0.7"
+              ],
+              [
+                "4835",
+                "NQO2",
+                "0.7"
+              ],
+              [
+                "79001",
+                "VKORC1",
+                "0.7"
+              ],
+              [
+                "873",
+                "CBR1",
+                "0.7"
+              ],
+              [
+                "285242",
+                "HTR3E",
+                "0.7"
+              ],
+              [
+                "1137",
+                "CHRNA4",
+                "0.7"
+              ],
+              [
+                "2555",
+                "GABRA2",
+                "0.7"
+              ],
+              [
+                "3760",
+                "KCNJ3",
+                "0.7"
+              ],
+              [
+                "5627",
+                "PROS1",
+                "0.7"
+              ],
+              [
+                "632",
+                "BGLAP",
+                "0.7"
+              ],
+              [
+                "8973",
+                "CHRNA6",
+                "0.7"
+              ],
+              [
+                "200909",
+                "HTR3D",
+                "0.7"
+              ],
+              [
+                "2554",
+                "GABRA1",
+                "0.7"
+              ],
+              [
+                "2560",
+                "GABRB1",
+                "0.7"
+              ],
+              [
+                "1136",
+                "CHRNA3",
+                "0.7"
+              ],
+              [
+                "1141",
+                "CHRNB2",
+                "0.7"
+              ],
+              [
+                "2891",
+                "GRIA2",
+                "0.7"
+              ],
+              [
+                "7018",
+                "TF",
+                "0.7"
+              ],
+              [
+                "7037",
+                "TFRC",
+                "0.7"
+              ],
+              [
+                "2104",
+                "ESRRG",
+                "0.7"
+              ],
+              [
+                "8644",
+                "AKR1C3",
+                "0.7"
+              ],
+              [
+                "782",
+                "CACNB1",
+                "0.7"
+              ],
+              [
+                "3359",
+                "HTR3A",
+                "0.7"
+              ],
+              [
+                "3897",
+                "L1CAM",
+                "0.7"
+              ],
+              [
+                "4891",
+                "SLC11A2",
+                "0.68"
+              ],
+              [
+                "3690",
+                "ITGB3",
+                "0.68"
+              ]
+            ],
+            "*"
+          ]
+        ],
+        "warningsInfo": ""
+      }
+    ],
+    "venn": null,
+    "tab2": true
+  }
+}

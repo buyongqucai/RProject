@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="witdh=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/pharmmapper/media/lp.ico"/>
+	<link rel="bookmark" href="/pharmmapper/media/lp.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="/pharmmapper/css/bootstrap.css"/>
+	<script src="/pharmmapper/js/jquery331.js"></script>
+	<script src="/pharmmapper/js/bootstrap.js"></script>
+	<!-- We use google analytics to count the visitors' number and region. -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110881897-1"></script>
+	<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-110881897-1');</script>
+	<script src="js/submitjob.js"></script>
+	<title>PM - Submit Job</title>
+</head>
+<body>
+	<div class="container" style="padding-top:2em;"><div class="row">
+	<div class="col-md-6"><img src="/pharmmapper/media/logo_work.jpg" style="height:166px;"/></div>
+	<div class="col-md-6 d-none d-lg-block"><img src="/pharmmapper/media/molecule_logo.jpg" style="float:right;height:166px;"/></div>
+</div></div>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark col-md-12" style="background-color:#0074E8;font-size:1.2em;"><div class="container">
+	<a class="navbar-brand" href="/pharmmapper"><b>PharmMapper</b></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navPM" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navPM">
+		<ul class="navbar-nav mr-auto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<li class="nav-item"><a class="nav-link" href="/pharmmapper/index.html"><b>&nbsp;Introduction&nbsp;</b></a></li>
+			<li class="nav-item"><a class="nav-link" href="/pharmmapper/submitfile.html"><b>&nbsp;Submit Job&nbsp;</b></a></li>
+			<li class="nav-item"><a class="nav-link" href="/pharmmapper/check.html"><b>&nbsp;Check Job&nbsp;</b></a></li>
+			<li class="nav-item"><a class="nav-link" href="/pharmmapper/getres.html"><b>&nbsp;Get Result&nbsp;</b></a></li>
+			<li class="nav-item"><a class="nav-link" href="/pharmmapper/help.html"><b>Help Doc</b></a></li>
+		</ul>
+	</div>
+</div></nav>
+	<div class="container" style="padding-top:1em;padding-bottom:1em;">
+		<div class="card" style="padding:1em 1em 1em 1em;font-size:1.2em;">
+				<form id="SA2" class="needs-validation" novalidate>
+			<h3 style="margin-bottom:0.5em;">Step 2: Parameter set</h3>
+			<table class="table form-group">
+				<thead><th style="background-color:#E0ECFF;" colspan="2">A. Conformation Generation</th></thead><tbody>
+				<tr><td width="45%" data-toggle="tooltip" data-placement="left" title="Perform semi-flexible or rigid pharmacophore mapping">Generate Conformers</td><td class="form-group"><div class="custom-control custom-radio custom-control-inline"><input id="i0" type="radio" class="custom-control-input" name="s0" checked value="Y"><label class="custom-control-label" for="i0">Yes</label></div><div class="custom-control custom-radio custom-control-inline"><input id="i1" type="radio" class="custom-control-input" name="s0" value="N"><label class="custom-control-label" for="i1">No</label></div></td></tr>
+				<tr><td data-toggle="tooltip" data-placement="left" title="Maximum conformations to be generated with Cyndi">Maximum Generated Conformations</td><td class="form-group"><input id="i2" type="number" required min="1" step="1" class="form-control form-control-sm" style="max-width:15em;" value="300"></td></tr>
+				<tr style="background-color:#EFEFEF;"><td>Advanced Options</td><td><div class="custom-control custom-switch"><input type="checkbox" class="custom-control-input" id="a0"><label class="custom-control-label" for="a0"></label></div></td></tr>
+				<tr data-adv="A" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Number of objectives used in multi-objective evolution algorithm in Cyndi">- Number of Objectives used in MOGA</td><td class="form-group"><input id="i3" type="number" required min="1" step="1" class="form-control form-control-sm" style="max-width:15em;" value="4"></td></tr>
+				<tr data-adv="A" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Maximum optimization generations of MOGA in Cyndi">- Maximum GA Generation</td><td class="form-group"><input id="i4" type="number" required min="1" max="1000" step="1" class="form-control form-control-sm" style="max-width:15em;" value="500"></td></tr>
+				<tr data-adv="A" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Maximum independent runs of MOGA in Cyndi">- Number of Independent GA Run</td><td class="form-group"><input id="i5" type="number" required min="0" step="1" class="form-control form-control-sm" style="max-width:15em;" value="1"></td></tr>
+				<tr data-adv="A" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Population size of MOGA in Cyndi">- GA Population Size</td><td class="form-group"><input id="i6" type="number" required min="1" step="1" class="form-control form-control-sm" style="max-width:15em;" value="500"></td></tr>
+				<tr data-adv="A" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Perform energy minimization to the conformations generated by Cyndi">- Energy Minimization</td><td class="form-group"><div class="custom-control custom-radio custom-control-inline"><input id="i7" type="radio" class="custom-control-input" name="s1" value="Y"><label class="custom-control-label" for="i7">Yes</label></div><div class="custom-control custom-radio custom-control-inline"><input id="i8" type="radio" class="custom-control-input" name="s1" checked value="N"><label class="custom-control-label" for="i8">No</label></div></td></tr>
+				<tr data-adv="A" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Force field used in Cyndi: MMFF94 or Tripos force field">- Force Field Type</td><td class="form-group"><select class="custom-select custom-select-sm" id="i9" style="max-width:15em;"><option value="MMFF94" selected>MMFF94</option><option value="TAFF">TAFF</option></select></td></tr>
+			</tbody><thead><th style="background-color:#E0ECFF;" colspan="2">B. Pharmacophore Mapping</th></thead><tbody>
+				<tr><td style="vertical-align:middle;" data-toggle="tooltip" data-placement="left" title="Select the target subset: All targets or only targets of human">Select Targets Set</td><td class="form-group"><div class="custom-control custom-radio"><input id="i10" type="radio" class="custom-control-input" name="s2"  value="1"><label class="custom-control-label" for="i10">Human Protein Targets Only (v2010, 2241)</label>&nbsp;<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="Very fast, calculation time: ~1 hour">?</span></div><div class="custom-control custom-radio"><input id="i11" type="radio" class="custom-control-input" name="s2" value="0"><label class="custom-control-label" for="i11">All Targets (v2010, 7302)</label>&nbsp;<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="Fast, calculation time: 1-2 hours">?</span></div><div class="custom-control custom-radio"><input id="i12" type="radio" class="custom-control-input" name="s2" value="2" checked><label class="custom-control-label" for="i12">Druggable Pharmacophore Models (v2017, 16159)</label>&nbsp;<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="Slow, calculation time: 4-6 hours">?</span></div><div class="custom-control custom-radio"><input id="i13" type="radio" class="custom-control-input" name="s2" value="3"><label class="custom-control-label" for="i13">Pharmacophore Models whose p<i>K</i><sub>d</sub> &gt;= 6.0 (v2017, 52431)</label>&nbsp;<span class="badge badge-secondary" data-toggle="tooltip" data-placement="right" title="Very slow, calculation time: 20-24 hours">?</span></div></td></tr>
+				<tr><td data-toggle="tooltip" data-placement="left" title="Maximum reservered targets number in the result list">Number of Reserved Matched Targets (Max 1,000)</td><td class="form-group"><input id="i14" type="number" required min="1" max="1000" step="1" class="form-control form-control-sm" style="max-width:15em;" value="300"></td></tr>
+				<tr style="background-color:#EFEFEF;"><td>Advanced Options</td><td><div class="custom-control custom-switch"><input type="checkbox" class="custom-control-input" id="a1"><label class="custom-control-label" for="a1"></label></div></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Perform Genetic Algorithm post optimization to the alignment poses">- Perform GA Match</td><td class="form-group"><div class="custom-control custom-radio custom-control-inline"><input id="i15" type="radio" class="custom-control-input" name="s3" value="Y"><label class="custom-control-label" for="i15">Yes</label></div><div class="custom-control custom-radio custom-control-inline"><input id="i16" type="radio" class="custom-control-input" name="s3" checked value="N"><label class="custom-control-label" for="i16">No</label></div></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Incoporate the exclude volume in mapping process to restrain the alignment poses in the binding site">- Include Exclude Volume</td><td class="form-group"><div class="custom-control custom-radio custom-control-inline"><input id="i17" type="radio" class="custom-control-input" name="s4" value="Y" checked><label class="custom-control-label" for="i17">Yes</label></div><div class="custom-control custom-radio custom-control-inline"><input id="i18" type="radio" class="custom-control-input" name="s4" value="N"><label class="custom-control-label" for="i18">No</label></div></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="All alignment poses with fit value below this cutoff will be discarded">- Fit Value Cutoff</td><td class="form-group"><input id="i19" type="number" required min="0.0" step="0.1" class="form-control form-control-sm" style="max-width:15em;" value="2.0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Angle cutoff for vector features (0-180 degree)">- Vector Angle Cutoff</td><td class="form-group"><input id="i20" type="number" required min="0" max="180" step="1" class="form-control form-control-sm" style="max-width:15em;" value="90"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Scoring weight for hydrophobic features">- Weight of Hydrophobic Score</td><td class="form-group"><input id="i21" type="number" min="0" step="0.1" required class="form-control form-control-sm" style="max-width:15em;" value="1.0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Scoring weight for HB Acceptor features">- Weight of HBA Score</td><td class="form-group"><input id="i22" type="number" required min="0" step="0.1" class="form-control form-control-sm" style="max-width:15em;" value="1.0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Scoring weight for HB Acceptor features">- Weight of HBD Score</td><td class="form-group"><input id="i23" type="number" required min="0" step="0.1" class="form-control form-control-sm" style="max-width:15em;" value="1.0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Scoring weight for Positive features">- Weight of Positive Score</td><td class="form-group"><input id="i24" type="number" required min="0" step="0.1" class="form-control form-control-sm" style="max-width:15em;" value="1.0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Scoring weight for Negative features">- Weight of Negative Score</td><td class="form-group"><input id="i25" type="number" required min="0" step="0.1" class="form-control form-control-sm" style="max-width:15em;" value="1.0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="Scoring weight for Aromatic Ring features">- Weight of Aromatic Ring Score</td><td class="form-group"><input id="i26" type="number" required min="0" step="0.1" class="form-control form-control-sm" style="max-width:15em;" value="1.0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="All the target pharmacophores with number of hydrophobic centers below this cutoff will be skipped">- Minimum Number of Hydrophobic Center</td><td class="form-group"><input id="i27" type="number" required min="0" step="1" class="form-control form-control-sm" style="max-width:15em;" value="0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="All the target pharmacophores with number of HB Donors below this cutoff will be skipped">- Minimum Number of Hydrogen Bond Donor</td><td class="form-group"><input id="i28" type="number" required min="0" step="1" class="form-control form-control-sm" style="max-width:15em;" value="0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="All the target pharmacophores with number of HB Acceptors below this cutoff will be skipped">- Minimum Number of Hydrogen Bond Acceptor</td><td class="form-group"><input id="i29" type="number" required min="0" step="1" class="form-control form-control-sm" style="max-width:15em;" value="0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="All the target pharmacophores with number of positive charged centers below this cutoff will be skipped">- Minimum Number of Positive Charged Center</td><td class="form-group"><input id="i30" type="number" required min="0" step="1" class="form-control form-control-sm" style="max-width:15em;" value="0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="All the target pharmacophores with number of negative charged centers below this cutoff will be skipped">- Minimum Number of Negative Charged Center</td><td class="form-group"><input id="i31" type="number" required min="0" step="1" class="form-control form-control-sm" style="max-width:15em;" value="0"></td></tr>
+				<tr data-adv="B" style="display:none;"><td data-toggle="tooltip" data-placement="left" title="All the target pharmacophores with number of aromatic rings below this cutoff will be skipped">- Minimum Number of Aromatic Ring</td><td class="form-group"><input id="i32" type="number" required min="0" step="1" class="form-control form-control-sm" style="max-width:15em;" value="0"></td></tr>
+			</tbody></table>
+
+			<div class="form-group text-center">
+				<label class="col-form-label" style="color:red;margin-top:2em;"><strong>Please do not submit more than 10 jobs once !</strong></label>
+			</div>
+			<div class="form-group col-md-4 offset-md-4">
+				<button type="btn" class="btn btn-primary btn-block"><strong>Submit</strong></button>
+				<button type="btnd" class="btn btn-primary btn-block" disabled="" style="display:none;"><span role="status" aria-hidden="true" class="spinner-border spinner-border-sm"></span></button>
+			</div>
+		</form>
+		<div class="alert alert-success" role="alert" id="pres" style="display:none;">
+			<h4 class="alert-heading">Submit complete !</h4>
+			<p>Your job has been submitted.<br>Please wait while we are processing the tasks.</p>
+			<div class="input-group col-sm-6">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Your&nbsp;<strong>JOB ID</strong>&nbsp;is&nbsp;:&nbsp;</span>
+				</div>
+				<input type="text" class="form-control" readonly="" value="" id="mid">
+				<div class="input-group-append">
+					<button class="btn btn-outline-success" type="button" id="cp">COPY</button>
+				</div>
+			</div>
+			<hr>
+			<p class="mb-0">Please <a href="mailto:lilab_ecust@163.com" class="alert-link" style="font-weight:normal;">contact us</a> if you have any questions.</p>
+			<p class="mb-0">If you can't receive our email, please try to add our email address to the whitelist.</p>
+		</div>
+		&nbsp;<hr style="margin-top:3em;">
+		<div class="col-md-12" style="padding-top:0.5em;">
+			<strong>Notes</strong>:<ul>
+			<li><strong>For Conformation Generation</strong>: Increasing "Maximum Generated Conformations" may enlarge the conformational ensemble and increasing the computation cost in the Pharmacophore Mapping stage.</li>
+			<li><strong>For Pharmacophore Mapping</strong>: Toggle on "Perform GA Match" to use Genetic Algorithm for matching post optimization may increas the computation cost significantly. For the limited mapping accuracy improvement by using GA post optimization comparing with triangle hashing alone, this switch is recommended to be toggled off.</li>
+			<li>Please notice that only the first two databases provide z'-score column.</li>
+			<li>The time cost listed is an estimated calculation time. It does not contain the queue time.</li>
+		</ul></div>
+		</div>
+	</div>
+	<div class="container-fluid" style="background-color:#0074E8;color:white;"><div class="container">
+	<div class="col-md-12 text-center" style="padding-top:0.5em;">
+		<strong>- Requires browser supporting HTML5 -</strong><br/>
+		<strong>Contact us: </strong><a href="mailto:lilab_ecust@163.com" style="color:white;">lilab_ecust@163.com</a><br/>
+		<strong>Updated:</strong> 2024-11-12 | <strong>Local time:</strong> 2026-10-11 | <a style="color:white;" href="/pharmmapper/queue_status.html"><strong>Queue Status</strong></a><br/><br/>
+		<strong>Copyright &copy; 2008-2026, <a href="http://www.dddc.ac.cn" style="color:white;" target="_blank">DDDC</a> and <a href="http://www.lilab-ecust.cn" style="color:white;" target="_blank">ECUST</a>, all rights reserved.</strong>
+		<br/>&nbsp;
+	</div>
+</div></div>
+</body>
+</html>

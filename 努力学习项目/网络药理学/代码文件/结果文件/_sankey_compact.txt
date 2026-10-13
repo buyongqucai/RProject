@@ -1,0 +1,5 @@
+Sankey compact 14x9 compounds=10
+[PlotQA:17_桑基图_HerbCompoundTargetPathway_Sankey] overall=WARN
+  - label_length: WARN | max_len=60 n_long(>28)=2/36 (5.6%)
+  - label_overlap: PASS | overlap_pairs=6/561 (1.07%) deep=0
+OK 17 compact

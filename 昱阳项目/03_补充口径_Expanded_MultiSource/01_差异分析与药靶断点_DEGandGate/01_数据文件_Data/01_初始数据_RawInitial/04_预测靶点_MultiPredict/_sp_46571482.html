@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Shared imports and settings file-->
+    <!-- A NOTE ON IMPORTS:
+There are many options, all with their drawbacks. 
+
+-JS includes are powerful, but loading order can be a problem - especially if you have to fetch via ajax from a file. 
+This works for page content itself if you just use defer, but it does NOT work well for headers, at least not to my experiences so far.
+
+So you need to take at least one other method
+
+-PHP is the easiest by far if you use apache/php. This has been chosen here. For other servers, analogs exist.
+
+-For a more generalized solution : pick a preprocessor (like sergey) and/or a templating language. Most "modern" HTML is pre-processed anyhow
+(just as you might need a preprocessor for SASS). 
+
+But then you almost can move to a "modern" web framework toolchain anyhow, be it react, angular, vue or similar, and reap the many other benefits
+
+Though if you do preprocessing ONLY for that...there's an option like Sergey that is basically just HTML + partials, adding tiny bits to your static sites.
+
+If you want to use npm to install the dependencies, the main ones are bootstrap (~4), bootstrap-icons, jquery
+
+Use if you need a different tree vis (javascript object based input, used for atc tree), you can give bstreeview a shake (though I dislike its icon handling)
+
+-->
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!--Responsive meta tag-->
+
+<!--This needs to be included via php/server-side/preprocessor, otherwise we run into issues-->
+<!--IMPORTANT : IF YOU CHANGE YOUR SERVER, ADJUST THIS LINE TO MATCH!!!!!!! That's the only server-specific adjustment essential-->
+<base href="https://prediction.charite.de/index.html"> <!--Set BASE Url as common ground for checks, so you don't have to care where you are.-->
+
+<!--NOTE : All those mins are okay. Just make sure you have "enable source maps" settings enabled in browser.-->
+<link rel="stylesheet" href="include/bootstrap/dist/css/bootstrap.min.css"> <!-- This includes ALL bootstrap. grid only includes grid and flex utils, reboot only reboot-->
+<script src="include/jquery/dist/jquery.min.js"></script>  
+<script src="include/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/main.css">
+
+<!--Deferred javascript loads - these only loads once the page is completed, making sure the queried ID's exist-->
+<script src="js/load_ajax.js"></script> <!--We want this one immediately available-->
+<script src="js/load_templates.js" defer></script>  <!--defer other things, so page elements load first.-->
+<script src="js/common.js" defer></script>
+<script type="text/javascript" src="js/bootstrap_themes.js"></script>
+ <!--If you are NOT using php, use your server equivalent. For exampüle for node, %include ..., and rename php to html -->
+</head>
+
+<body>
+    <header class="header" data-active="nav_home"></header> <!--Just specify the page you used it on for auto "active" state-->
+    
+    <div class="container">
+
+        <div class="row row-eq-height justify-content-center"> <!--row-eq-height is still needed to equalize container-->
+            <div class="col-sm-6"> <!--using my-auto in column will equally distribute the contents. -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">About SuperPred</h5>
+                        <p class="card-text">
+                            Here, we present SuperPred, which is a prediction webserver for ATC code and target predicition of compounds.
+                            Predicting ATC codes or targets of small molecules and thus gaining information about the compounds offers assistance in the drug development process.
+                            The webserver's ATC predicition as well as target prediction is based on a machine learning model, using logistic regression and Morgan fingerprints of length 2048.
+                            <br><br>
+                            The drug classification for a compound can be performed at the <a href="./subpages/classification.php">Drug Classification</a> site. Target prediction for an input compound can be executed at the <a href="./subpages/target_prediction.php">Target-Prediction</a> site.
+                            <br><br>
+							The <a href="./subpages/tree.php">ATC-Tree</a> offers a browsable overview over all ATC 
+							categories and codes from the WHO, including a ChEMBL mapping and linking for 
+all contained small molecule drugs.							
+							<br><br>
+                            Information to data filtering and training sets can be found on the <a href="./subpages/statistics.php">statistics</a> page.
+                            <br><br>
+							CSV files containing the 
+							<a href="./subpages/faq.php/#2_2">training dataset for the ATC prediction </a>
+							and an 
+							<a href="./subpages/faq.php/#3">overview over the most important performance metrics </a>
+							can be downloaded at their respective FAQ categories.
+							<br><br>
+                            If you have any questions please see the <a href="./subpages/faq.php">FAQs</a> or feel free to <a href="./subpages/contact.php">contact us</a>!
+                            <br><br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">ATC Prediction</h5>
+                        <p class="card-text">
+                            The ATC code prediction is based on machine learning, using a linear logistic regression model. It is trained on Morgan fingerprints from 1552 different drugs in 233 
+							different level 4 ATC classes. Query compounds are evaluated and scored by the machine learning model, ranking each ATC class and returning the highest scoring classes.
+							
+                        </p>
+                        <br>
+                        <!--<img class="card-img" src="img/index_pipeline.png" alt="Prediction pipeline">-->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+            <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">ATC</h5>
+                        <p class="card-text">
+                            The Anatomical Therapeutic Chemical (ATC) classification system is used for the classification of drugs. It is published by the World Health Organization (WHO). The classification is based on therapeutic and chemical characteristics of the drugs. Each ATC code is divided into 5 levels:
+<br><br>
+                            1. level: Anatomical main group<br>
+                            2. level: Therapeutic main group<br>
+                            3. level: Therapeutic/pharmacological subgroup<br>
+                            4. level: Chemical/therapeutic/pharmacological subgroup<br>
+                            5. level: Chemical substance<br><br>
+                            Substances or combination of substances in the 5th level refer to a single indication. Drugs having more than one indication belong to more than one ATC code. Aspirine for example has 3 ATC codes assigned.
+                        </p>
+                        <img class="card-img" src="img/index_aspirin_atc.png" alt="Aspirine molecule ATC example">
+                    </div>
+                </div>
+
+                <!--<div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Target prediction</h5>
+                        <p class="card-text">
+                            The target prediction is based on the similarity distribution among the targets’ ligands. The distributions are utilized for estimating individual thresholds and probabilities for a specific target. By means of these individual thresholds and probabilities the input compound is screened against a database containing about 341,000 compounds, 1,800 targets and 665,000 compound-target interactions.
+                        </p>
+                    </div>
+                </div>-->
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="footer">test</footer>
+
+</body>
+
+</html>

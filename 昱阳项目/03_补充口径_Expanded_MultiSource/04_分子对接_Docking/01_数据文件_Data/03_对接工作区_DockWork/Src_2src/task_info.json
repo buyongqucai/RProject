@@ -1,0 +1,20 @@
+{
+  "gene_mouse": "Src",
+  "gene_human": "SRC",
+  "pdb": "2src",
+  "center_source": "annotated_site",
+  "center_detail": "SRC kinase domain approximate ATP site (2SRC)",
+  "engine": "vina",
+  "ligand": "quercetin_CID5280343",
+  "status": "pending",
+  "center": [
+    20.0,
+    30.0,
+    30.0
+  ],
+  "size": [
+    24,
+    24,
+    24
+  ]
+}

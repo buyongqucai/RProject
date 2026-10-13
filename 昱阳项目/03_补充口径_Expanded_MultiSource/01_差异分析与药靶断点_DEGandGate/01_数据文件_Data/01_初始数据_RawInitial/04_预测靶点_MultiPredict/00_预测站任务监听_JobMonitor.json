@@ -1,0 +1,54 @@
+{
+  "email": "1054034696@qq.com",
+  "updated": "2026-10-11T16:50:00+08:00",
+  "jobs": {
+    "261011082113": {
+      "id": "261011082113",
+      "email": "1054034696@qq.com",
+      "status": "Completed",
+      "note": "submitted with user email"
+    },
+    "261011075421": {
+      "id": "261011075421",
+      "email": "",
+      "status": "Completed",
+      "note": "earlier job; same result used for extraction"
+    }
+  },
+  "other": {
+    "pharmmapper": {
+      "status": "ok_extracted",
+      "csv": "04_PharmMapper_Quercetin_genes.csv",
+      "genes_nonempty": 672,
+      "jobs": ["261011075421", "261011082113"]
+    },
+    "targetnet": {
+      "status": "ok",
+      "csv": "05_TargetNet_Quercetin_genes.csv",
+      "filter": "Prob>0",
+      "genes": 133,
+      "endpoint": "http://targetnet.scbdd.com/calcnet/calc_text/"
+    },
+    "batman": {
+      "status": "ok_prior",
+      "csv": "06_BATMAN_Quercetin_genes.csv"
+    },
+    "stp": {
+      "status": "ok_prior",
+      "filter": "Probability>0"
+    },
+    "superpred": {
+      "status": "connect_timeout",
+      "detail": "homepage briefly reachable; target_prediction.php timed out to 141.42.206.216:443"
+    },
+    "sea": {
+      "status": "blocked_or_spa_only",
+      "detail": "HTML shell only; search API 404/405"
+    }
+  },
+  "gate": {
+    "overlap_drug_x_disease": 62,
+    "predicted_sources": "STP+PharmMapper+TargetNet+BATMAN",
+    "enrich_ppi": "DONE ora_mode=Overlap overlap=62"
+  }
+}

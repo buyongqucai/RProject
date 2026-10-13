@@ -1,0 +1,492 @@
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+<!--%@ page import="jas.util.*" %-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/rwd/bind/bdbstyles.css" />
+  <link rel="stylesheet" href="/rwd/bind/bdbstyles1.css" />
+  <script src="https://kit.fontawesome.com/9fa68aceeb.js" crossorigin="anonymous"></script>
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C5ZFVSV64Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C5ZFVSV64Q');
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Tiqing Liu" />
+    <meta name="description" content="Biomolecule Binding Database" />
+    <meta name="keywords" content="chemical biology, medicinal chemistry, docking, ligand, affinity, free energy, virtual screening, computational chemistry, validation, binding affinity, binding free energy, drug design, drug discovery, article, publication, pharmaceutical, ucsd, target, small molecule, compound, chemical, download, SAR, structure activity relationship, docking, pubchem, chembl, enzyme inhibition" />
+    <meta name="robots" content="index,follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BindingDB PrimarySearch_ki</title>
+    <script src="/rwd/javascript/BDB_functions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script>
+      var column = 'kd';
+      var energyterm = 'kJ/mole';
+      var switchString = '/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=lidkd&startPg=0&submit=Search&energyterm=kJ%2Fmole&column=';
+      var stringSwitch = '/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=lidkd&startPg=0&submit=Search&column=kd&energyterm=';
+      var tag = 'lidkd';
+      $(document).ready(function () {
+
+        if( ! $("#outline > ul").length ) {
+          $("#oldata").css("display","none");
+        }
+        $('#content > aside > ul > li > a').click(function(){
+          $('#content > aside > ul > li > a > span').css( "display", "inline" );
+          if ($(this).attr('class') != 'active'){
+            $('#content aside ul li ul').slideUp();
+            $(this).next().slideToggle();
+            $('#content aside ul li a').removeClass('active');
+            $(this).addClass('active');
+            $(this).find("span").css( "display", "none" );
+          }
+          else {
+            $('#content aside ul li ul').slideUp();
+            $('#content aside ul li a').removeClass('active');
+          }
+        });
+        $('#content > aside > #outline > ul > li > a').click(function(){
+          $('#content > aside > #outline > ul > li > a > span').css( "display", "inline" );
+          if ($(this).attr('class') != 'active'){
+            $('#content aside #outline ul li ul').slideUp();
+            $(this).next().slideToggle();
+            $('#content aside #outline ul li a').removeClass('active');
+            $(this).addClass('active');
+            $(this).find("span").css( "display", "none" );
+          }
+          else {
+            $('#content aside #outline ul li ul').slideUp();
+            $('#content aside #outline ul li a').removeClass('active');
+          }
+        });
+        $('.menu').click(function(){
+          cacss =$('#content aside').css( "display" );
+          if( cacss == 'none' ) {
+            $('#content aside').css( "display", "block" );
+          }
+          else $('#content aside').css( "display", "none" );
+        });
+        $('#hamb').click(function(){
+          cacss =$('#content aside').css( "display" );
+          if( cacss == 'none' ) {
+            $('#content aside').css( "display", "block" );
+          }
+          else $('#content aside').css( "display", "none" );
+        });
+        $("#olhide").click(function(){
+          $("#outline > ul").hide();
+          $("#outline > form").hide();
+        });
+        $("#olshow").click(function(){
+          $("#outline > ul").show();
+          $("#outline > form").show();
+        });
+        init();
+      });
+
+      function init() {
+        var html = 'Sort by <select id="sortIt" name="sortIt" onChange="sortIt();">';
+        html += '<option value="' + column + '">' + column + '</option>';
+        if( column != 'ec50' ) html += '<option value="' + switchString + 'ec50">ec50</option>';
+        if( column != 'ic50' ) html += '<option value="' + switchString + 'ic50">ic50</option>';
+        if( column != 'kd' ) html += '<option value="' + switchString + 'kd">kd</option>';
+        if( column != 'ki' ) html += '<option value="' + switchString + 'ki">ki</option>';
+        if( column != 'kon' ) html += '<option value="' + switchString + 'kon">K<sub>on</sub></option>';
+        if( column != 'koff' ) html += '<option value="' + switchString + 'koff>">K<sub>off</sub></option>';
+        if( column != 'ph' ) html += '<option value="' + switchString + 'ph">pH</option>';
+        if( column != 'temp' ) html += '<option value="' + switchString + 'temp">TEMP</option>';
+        if( energyterm != 'kcal/mole' ) html += '<option value="' + stringSwitch + 'kcal/mole">kcal/mole</option>';
+        if( energyterm != 'kj/mole' ) html += '<option value="' + stringSwitch + 'kj/mole">kJ/mole</option>';
+        html += '</select>';
+        if( tag != 'rep' ) { 
+        //document.getElementById("sortBY").innerHTML = html;
+        }
+      }
+
+      function affRefine() {
+        var loAff = $("#loAff").val();
+      /**
+        $.post( "/rwd/jsp/dbsearch/PrimarySearch_ki.jsp",
+          { tag: rep,
+            loAff: loAff,
+            submit: summary
+          },
+          function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+       */
+        var url = "/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?tag=rep&submit=summary&loAff=" + loAff;
+        location.replace( url );
+      }
+
+      function sortIt() {
+        var selectBox = document.getElementById("sortIt");
+        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+        window.open(selectedValue, '_self');
+      }
+
+      function setThis(form, page) {
+        var vString = form.SDFpages.value;
+        vString = vString + " ";
+        vString = vString + page;
+        // update the pages
+        form.SDFpages.value = vString;
+        // set a cookie
+        var cookieName = "cookie4SDFpages";
+        var cookieValue = form.SDFpages.value;
+        var nDays = 1;
+        var today = new Date();
+        var expire = new Date();
+        if (nDays==null || nDays==0) nDays=1;
+        expire.setTime(today.getTime() + 3600000*24*nDays);
+        document.cookie = cookieName+"="+escape(cookieValue)
+            + ";expires="+expire.toGMTString();
+      }
+      function setAlls(form, pages) {
+        var vString = 1;
+        for (i = 2; i <= pages; i++) {
+          vString += " " + i ;
+        }
+        // update the pages
+        form.SDFpages.value = vString;
+        // set a cookie
+        var cookieName = "cookie4SDFpages";
+        var cookieValue = form.SDFpages.value;
+        var nDays = 1;
+        var today = new Date();
+        var expire = new Date();
+        if (nDays==null || nDays==0) nDays=1;
+        expire.setTime(today.getTime() + 3600000*24*nDays);
+        document.cookie = cookieName+"="+escape(cookieValue)
+            + ";expires="+expire.toGMTString();
+      }
+      function readCookie() {
+        // read the cookie
+        var cookieName = "cookie4SDFpages";
+        var theCookie=""+document.cookie;
+        var ind=theCookie.indexOf(cookieName);
+        if (ind==-1 || cookieName=="") return "";
+        var ind1=theCookie.indexOf(';',ind);
+        if (ind1==-1) ind1=theCookie.length;
+        //return unescape(theCookie.substring(ind+cookieName.length+1,ind1));
+        // update the pages
+        SDF.SDFpages.value = unescape(theCookie.substring(ind+cookieName.length+1,ind1));
+        // delete the cookie
+      }
+      function deleteCookie() {
+        // delete cookie cookie4SDFpages
+        var cookieName = "cookie4SDFpages";
+        document.cookie = cookieName + "=" +
+ "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+      }
+      function clearAlls() {
+        var cookieName = "cookie4SDFpages";
+        document.cookie = cookieName + "=" +
+"; expires=Thu, 01-Jan-70 00:00:01 GMT";
+        SDF.SDFpages.value = "";
+      }
+      function datanalysis() {
+        var dcss = $("#outline > ul").css( "display" );
+        if( dcss == 'block' ) $("#outline > ul").hide();
+        else $("#outline > ul").show();
+      }
+    </script>
+  </head>
+
+  
+    
+      <body onLoad="deleteCookie(); ResizeHeaderTable(); init()">
+    
+    
+  
+  <div id="container">
+    <nav>
+      <img src="/images/BDB-banner-1a.png" alt="SSPPS at UCSD" />
+<section>
+  <ul>
+    <!--li><a href="https://twitter.com/BindingDb"><i class="fa fa-twitter" style="font-size:1.25em;color:#48d1cc"></i></a></li-->
+    <!--li><a href="https://mstdn.science/@bindingdb"><i class="fab fa-mastodon" style="font-size:1.25em;color:#ffffff"></i></a></li-->
+    <li><a href="/rwd/bind/index.jsp">Home</a></li>
+    <li><a href="/rwd/bind/aboutus.jsp">About</a></li>
+    <li><a href="/rwd/bind/info.jsp">Info</a></li>
+    <li><a href="/rwd/bind/chemsearch/marvin/Download.jsp">Download</a></li>
+    <li><a href="/rwd/bind/BindingDBRESTfulAPI.jsp">WebServices</a></li>
+    <!--li><a href="/rwd/bind/contributedata.jsp">Contribute&nbsp;Data</a></li-->
+    <li><a href="/rwd/bind/sendmail.jsp">Contact</a></li>
+    <!--li><a id="old" href="/bind">Classic Site</a></li-->
+  </ul>
+</section>
+<aside>
+   <div>
+     <a href="/rwd/bind/" id="hama">BindingDB</a>
+     <ul class="mbh">
+       <!--li><a href="/rwd/bind/index.jsp">Home</a></li-->
+       <li><a href="/rwd/bind/aboutus.jsp">About</a></li>
+       <li><a href="/rwd/bind/info.jsp">Info</a></li>
+       <li><a href="/rwd/bind/chemsearch/marvin/Download.jsp">Download</a></li>
+     </ul>
+     <ul class="mbh">
+       <li><a href="/rwd/bind/BindingDBRESTfulAPI.jsp">WebServices</a></li>
+       <!--li><a href="/rwd/bind/contributedata.jsp">Contribute&nbsp;Data</a></li-->
+       <li><a href="/rwd/bind/sendmail.jsp">Contact</a></li>
+     </ul>
+     <a href="#" id="hamb">&#9776;</a>
+     <!--a href="#" id="hamb"><i class="fa fa-bars" aria-hidden="true" style="font-size:1.25em;color:#ffffff"></i></a-->
+   </div>
+</aside>
+<!--a id="twt" href="https://twitter.com/BindingDb"><i class="fa fa-twitter" style="font-size:2.00em;color:#48d1cc"></i></a-->
+
+    </nav>
+    <header>
+      <!--jsp:include page="../../bind/header.jsp" /-->
+    </header>
+    <div id="content">
+      <section>
+        <div>
+          <form name="SDF" method="GET" action="/rwd/jsp/dbsearch/PrimarySearch_kiSDF.jsp">
+<input type="hidden" name="Increment" value="200" /><input type="hidden" name="pgnum" value="1" /><span>Compile Data Set for Download or QSAR</span>
+<br /><input type="hidden" name="SDFpages" value="1" /><input type="submit" value="Make Data Set" /></form>
+
+          <div><a href="/rwd/bind/sendmail.jsp?hint=/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ%2Fmole&tag=lidkd&monomerid=7460&column=Kd&startPg=0&Increment=200&submit=Search"><i class="fa fa-envelope" style="font-size:1.25em"></i> <span class="m1fontSize">Report error</span></a> Found <span class="red">11</span>  of kd for monomerid = 7460 <!--span id="sortBY"></span--> </div><div class="index_table">
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=Serine%2Fthreonine-protein+kinase+pim-1">Serine/threonine-protein kinase pim-1</a><span></span><span>(Human)</span><br />Oxford University<br /><br /><span class="m1fontSize">Curated by</span> <a href="http://www.ebi.ac.uk/chembl/">ChEMBL</a><br /></div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">Kd:&nbsp;&nbsp;25nM</span><span></span><span class="ay">Assay Description:</span><span>Binding affinity to non phosphorylated PIM1</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=Serine%2Fthreonine-protein+kinase+pim-1&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%224RPV%2C5TUR%2C9YKI%2C1XWS%2C6YKD%2C3BGZ%2C3BGQ%2C3BGP%2C2OBJ%2C4XHK%2C4JX7%2C4JX3%2C7VSY%2C7ZUN%2C7Z6U%2C5NDT%2C5N5M%2C5N5L%2C5N52%2C5N51%2C5N50%2C5N4Z%2C5N4Y%2C5N4X%2C5N4V%2C5N4U%2C5N4R%2C5N4O%2C5N4N%2C5MZL%2C4BZO%2C4BZN%2C4ALW%2C4ALV%2C3CY3%2C3CY2%2C3CXW%2C3BWF%2C2OI4%2C2C3I%2C2BZK%2C2BZJ%2C2BZI%2C2BZH%2C2BIL%2C2BIK%2C5DWR%2C4N70%2C4N6Z%2C4N6Y%2C3T9I%2C3DCV%2C6AYD%2C8R27%2C8R25%2C8R1W%2C8R1T%2C8R1P%2C8R1N%2C8R1K%2C8R18%2C8R10%2C8R0Y%2C8R0W%2C8R0Q%2C8R0H%2C7QFM%2C7QB2%2C7OOX%2C7OOW%2C7OOV%2C6QXK%2C6PDP%2C6PDO%2C6PDN%2C6PDI%2C6PCW%2C4GW8%2C3QF9%2C3MA3%2C3JPV%2C31RU%2C2J2I%2C4ALU%2C8AFR%2C3F2A%2C2XJ2%2C2XJ1%2C2XJ0%2C2XIZ%2C2XIY%2C2XIX%2C1XR1%2C1XQZ%2C3A99%2C4MTA%2C5V82%2C5V80%2C5DIA%2C5DHJ%2C5DGZ%2C5VUC%2C5VUB%2C5VUA%2C4LMU%2C4LM5%2C4LL5%2C4ENY%2C4ENX%2C3VC4%2C3VBY%2C3VBX%2C3VBW%2C3VBV%2C3VBT%2C3VBQ%2C3UMX%2C3UMW%2C3UIX%2C3R04%2C3R02%2C3R01%2C3R00%2C4A7C%2C7XSV%2C6L17%2C6L16%2C6L15%2C6L14%2C6L13%2C6L12%2C6L11%2C6KZI%2C5O13%2C5O12%2C5O11%2C5C1Q%2C4RC4%2C4RC3%2C4RC2%2C4RBL%2C4IAA%2C5KCX%2C4XH6%2C4MBL%2C4MBI%2C3JYA%2C3JY0%2C3JXW%2C2O65%2C2O64%2C2O63%2C2O3P%2C1YXX%2C1YXV%2C1YXU%2C1YXT%2C1YWV%2C1YXS%2C4I41%2C5IIS%2C4K18%2C6BSK%2C5KGK%2C5KGI%2C5KGG%2C5KGE%2C5KGD%2C4DTK%2C6VRV%2C6VRU%2C5TEX%2C5TEL%2C4K0Y%2C6NO9%2C6NO8%2C4K1B%2C3C4E%2C1YI4%2C1YI3%2C1YHS%2C6MT0%2C5TOE%2C5KZI%2C5IPJ%2C5EOL%2C4WT6%2C4WSY%2C4WRS%2C4TY1%2C4AS0%2C3WE8%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=Serine/threonine-protein kinase pim-1&ids=hsa:5292">KEGG</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=Serine/threonine-protein kinase pim-1&ids=P11309,,Q38RT9,Q5T7H7,Q96RG3&cid=0&pid=20">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22Serine/threonine-protein+kinase+pim-1%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />12/25/2014<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50044029&ki_result_id=50066934&reactant_set_id=50066934&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<a href="http://dx.doi.org/10.1021/jm0504858">Article</a><br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q2Q52R4H')">Copy&nbsp;BDB&nbsp;DOI</button><a href="/rwd/bind/forward_otherdbs.jsp?dbName=PubMed&title=Serine/threonine-protein kinase pim-1&ids=16302800">PubMed</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%222O3P%2C4LMU%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=Jmol&title=%22Serine/threonine-protein+kinase+pim-1%22 AND %22BDBM7460%22&ids=2O3P,4LMU&monomerid=0&polymerid=p20"><img src="/images/Docked_3d.png" alt="3D" title="3D" />3D Structure (crystal)</a><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50044029&ki_result_id=50066934&reactant_set_id=50066934')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=Prothrombin">Prothrombin</a><span></span><span>(Human)</span><br />University of Lodz<br /><br /><span class="m1fontSize">Curated by</span> <a href="http://www.ebi.ac.uk/chembl/">ChEMBL</a><br /></div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">Kd:&nbsp;&nbsp;38.7nM</span><span></span><span class="ay">Assay Description:</span><span>Inhibition of human thrombin assessed as equilibrium dissociation constant at 50 to 1000 uM by BIAcore analysis</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=Prothrombin&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%229CMO%2C9CLS%2C9CLN%2C8RTN%2C13ER%2C8UF7%2C9TLE%2C9CTH%2C7TPP%2C6C2W%2C6BJR%2C5EDM%2C4O03%2C4NZQ%2C5EDK%2C4HZH%2C3NXP%2C9TLG%2C9T00%2C3K65%2C4H6T%2C1XM1%2C1JWT%2C1HAG%2C1DOJ%2C1NU9%2C6V5T%2C4RN6%2C3SQH%2C3SQE%2C2BDY%2C1D9I%2C1EOL%2C1EOJ%2C3C1K%2C1ZRB%2C1ZGV%2C1ZGI%2C1Z71%2C1TA6%2C1TA2%2C1SL3%2C1NT1%2C1NM6%2C1G37%2C1D6W%2C1MH0%2C1JMO%2C1DM4%2C9R8Q%2C9H79%2C9H5N%2C9C50%2C8BW5%2C8ASF%2C8ASE%2C7ZKO%2C7ZKN%2C7ZKM%2C7ZKL%2C7PHX%2C7NTU%2C7MJ5%2C7KME%2C7AC9%2C6ZV8%2C6ZV7%2C6ZUX%2C6ZUW%2C6ZUU%2C6ZUN%2C6ZUH%2C6ZGO%2C6Z8X%2C6Z8W%2C6Z8V%2C6Z48%2C6YSX%2C6YSJ%2C6YQV%2C6YN3%2C6YMP%2C6YHJ%2C6YHG%2C6YB6%2C6Y9H%2C6Y02%2C6V64%2C6TKL%2C6TKJ%2C6TKI%2C6TKH%2C6TKG%2C6TDT%2C6T8A%2C6T89%2C6T7H%2C6T57%2C6T56%2C6T55%2C6T54%2C6T53%2C6T52%2C6T4A%2C6T3Q%2C6T3M%2C6I51%2C6HSX%2C6GWE%2C6GN7%2C6GBW%2C6EVV%2C6EO9%2C6EO8%2C6EO7%2C6EO6%2C6CYM%2C5NHU%2C5LPD%2C5LCE%2C5L6N%2C5JZY%2C5JFD%2C5GIM%2C5GDS%2C5EW2%2C5EW1%2C5E8E%2C5CMX%2C4YES%2C4UD9%2C4THN%2C4LZ4%2C4LZ1%2C4LXB%2C4I7Y%2C4HTC%2C4E7R%2C4E06%2C4E05%2C4DII%2C4DIH%2C4CH8%2C4CH2%2C4BOH%2C4BAQ%2C4BAO%2C4BAN%2C4BAM%2C4BAK%2C4BAH%2C3VXF%2C3VXE%2C3UWJ%2C3UTU%2C3U9A%2C3U98%2C3U8T%2C3U8R%2C3U8O%2C3U69%2C3TU7%2C3T5F%2C3SV2%2C3SI4%2C3SI3%2C3SHC%2C3SHA%2C3RMO%2C3RMN%2C3RMM%2C3RML%2C3RM2%2C3RM0%2C3RLY%2C3RLW%2C3QX5%2C3QWC%2C3QTV%2C3QTO%2C3QLP%2C3PMH%2C3P70%2C3P6Z%2C3P17%2C3LDX%2C3HTC%2C3HAT%2C3F68%2C3EQ0%2C3EGK%2C3E6P%2C3DUX%2C3DT0%2C3DHK%2C3DA9%2C3D49%2C3C27%2C3BF6%2C3B23%2C2ZO3%2C2ZNK%2C2ZIQ%2C2ZI2%2C2ZHW%2C2ZHQ%2C2ZHF%2C2ZHE%2C2ZGX%2C2ZGB%2C2ZG0%2C2ZFR%2C2ZFQ%2C2ZFP%2C2ZFF%2C2ZF0%2C2ZDV%2C2ZDA%2C2ZC9%2C2UUK%2C2UUJ%2C2UUF%2C2R2M%2C2JH6%2C2JH5%2C2JH0%2C2HPQ%2C2HPP%2C2HGT%2C2H9T%2C2GDE%2C2FES%2C2FEQ%2C2C93%2C2C90%2C2C8Z%2C2C8Y%2C2C8X%2C2C8W%2C2BXU%2C2BXT%2C2BVX%2C2BVS%2C2ANK%2C2AFQ%2C2A45%2C2A2X%2C1XMN%2C1WAY%2C1W7G%2C1UVS%2C1UMA%2C1TOM%2C1TMU%2C1TMT%2C1TMB%2C1THS%2C1THR%2C1TBZ%2C1T4V%2C1T4U%2C1SR5%2C1QJ7%2C1QJ6%2C1QJ1%2C1QHR%2C1QBV%2C1PPB%2C1P8V%2C1OYT%2C1OOK%2C1O5G%2C1O2G%2C1O0D%2C1NZQ%2C1NU7%2C1NRS%2C1NRR%2C1NRQ%2C1NRP%2C1NRO%2C1NRN%2C1NO9%2C1MUE%2C1MU8%2C1MU6%2C1LHG%2C1LHF%2C1LHE%2C1LHD%2C1LHC%2C1KTT%2C1KTS%2C1K22%2C1K21%2C1IHT%2C1IHS%2C1HXF%2C1HXE%2C1HUT%2C1HLT%2C1HGT%2C1HDT%2C1HBT%2C1HAP%2C1HAO%2C1HAI%2C1HAH%2C1G32%2C1G30%2C1FPH%2C1FPC%2C1DWE%2C1DWD%2C1DWC%2C1DWB%2C1DIT%2C1DE7%2C1D4P%2C1D3T%2C1D3Q%2C1D3P%2C1CA8%2C1C5O%2C1C5N%2C1C5L%2C1C1W%2C1C1V%2C1C1U%2C1BMN%2C1BMM%2C1BCU%2C1BB0%2C1BA8%2C1B5G%2C1AY6%2C1AWH%2C1AWF%2C1AIX%2C1AI8%2C1AHT%2C1AFE%2C1AE8%2C1AD8%2C1ABJ%2C1ABI%2C1A61%2C1A5G%2C1A4W%2C1A46%2C1A3E%2C1A3B%2C1A2C%2C8TQS%2C6PX5%2C4RKO%2C4RKJ%2C4HFP%2C4DY7%2C4DT7%2C3LU9%2C3GIS%2C3B9F%2C2B5T%2C1TB6%2C1JOU%2C5MM6%2C5MLS%2C5MJT%2C2THF%2C1Z8I%2C1RD3%2C6PXJ%2C4MLF%2C3QDZ%2C3BEI%2C3BEF%2C2GP9%2C3BV9%2C2HWL%2C1SHH%2C1SGI%2C1SG8%2C1SFQ%2C6ZUG%2C6PXQ%2C5JDU%2C5DO4%2C5AHG%2C5AFZ%2C5AFY%2C5AF9%2C5A2M%2C4UFG%2C4UFF%2C4UFE%2C4UFD%2C4UEH%2C4UE7%2C4UDW%2C3DD2%2C2PW8%2C1SB1%2C1GJ5%2C1GJ4%2C1E0F%2C1DX5%2C1BTH%2C4H6S%2C1Z8J%2C1B7X%2C3QGN%2C3JZ2%2C3JZ1%2C4LOY%2C4AZ2%2C4AYY%2C4AYV%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=Prothrombin&ids=P00734,,B2R7F7,B4E1A7,Q4QZ40,Q53H04,Q53H06,Q69EZ7,Q7Z7P3,Q9UCA1&cid=0&pid=334">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22Prothrombin%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />12/26/2014<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50044057&ki_result_id=50076527&reactant_set_id=50076527&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<a href="http://dx.doi.org/10.1007/s00044-013-0829-4">Article</a><br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q2377B7W')">Copy&nbsp;BDB&nbsp;DOI</button><a href="/rwd/bind/forward_otherdbs.jsp?dbName=PubMed&title=Prothrombin&ids=24610996">PubMed</a><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50044057&ki_result_id=50076527&reactant_set_id=50076527')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=Phosphatidylinositol+4%2C5-bisphosphate+3-kinase+catalytic+subunit+gamma+isoform">Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform</a><span></span><span>(Human)</span><br />Mrc<br /><br /></div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">IC50:&nbsp;3.80E+3nM  Kd:&nbsp;&nbsp;280nM</span><span>pH:&nbsp;7.2  T:&nbsp;2&#176;C</span><a class="ay" href="/rwd/jsp/dbsearch/assay.jsp?assayid=2&entryid=1931">Assay Description:</a><span>Binding was detected as a change in the intrinsic tryptophan fluorescence of the PI3K upon the addition of inhibitor. The inhibitor was incubated wit...</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=Phosphatidylinositol+4%2C5-bisphosphate+3-kinase+catalytic+subunit+gamma+isoform&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%228DP0%2C7MEZ%2C8SOE%2C8SOD%2C8SOC%2C8SOB%2C8SOA%2C8SO9%2C8AJ8%2C5KAE%2C5EDS%2C4WWP%2C4WWO%2C4WWN%2C4DK5%2C5JHB%2C5JHA%2C4FLH%2C4FJZ%2C4FJY%2C4FHK%2C4FHJ%2C4F1S%2C4AOF%2C3S2A%2C3QK0%2C3QJZ%2C3QAR%2C3QAQ%2C3L13%2C3DBS%2C8SC8%2C7Z61%2C7KKE%2C7JX0%2C7JWZ%2C7JWE%2C6T3C%2C6T3B%2C6GQ7%2C6FH5%2C6C1S%2C5T23%2C4URK%2C4J6I%2C4HLE%2C4GB9%2C4G11%2C4FAD%2C4FA6%2C3ZW3%2C3ZVV%2C3TL5%2C3T8M%2C3R7R%2C3R7Q%2C3PS6%2C3PRZ%2C3PRE%2C3OAW%2C3L17%2C3L16%2C3L08%2C3CST%2C3CSF%2C3APF%2C3APD%2C3APC%2C3ENE%2C5OQ4%2C5G55%2C4XZ4%2C4XX5%2C4PS8%2C4PS7%2C4PS3%2C4KZC%2C4KZ0%2C4HVB%2C4FUL%2C3TJP%2C3SD5%2C3P2B%2C3ML9%2C3ML8%2C3MJW%2C3LJ3%2C3IBE%2C3DPD%2C2V4L%2C2CHZ%2C2CHX%2C2CHW%2C2A5U%2C2A4Z%2C1E8Z%2C1E8Y%2C9GG9%2C6AUD%2C5G2N%2C4EZL%2C4EZK%2C4EZJ%2C4ANW%2C4ANU%2C4ANV%2C4ANX%2C1HE8%2C3L54%2C6XRN%2C6XRM%2C6XRL%2C3NZU%2C3NZS%2C1E90%2C1E8X%2C1E8W%2C1E7V%2C1E7U%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform&ids=hsa:5294">KEGG</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform&ids=P48736,,A4D0Q6,Q8IV23,Q9BZC8&cid=0&pid=2113">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22Phosphatidylinositol+4,5-bisphosphate+3-kinase+catalytic+subunit+gamma+isoform%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />5/1/2007<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=1931&ki_result_id=27901&reactant_set_id=27902&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<a href="http://dx.doi.org/10.1016/s1097-2765(05)00089-4">Article</a><br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q22F7KPC')">Copy&nbsp;BDB&nbsp;DOI</button><a href="/rwd/bind/forward_otherdbs.jsp?dbName=PubMed&title=Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform&ids=11090628">PubMed</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=Jmol&title=%22Phosphatidylinositol+4,5-bisphosphate+3-kinase+catalytic+subunit+gamma+isoform%22 AND %22BDBM7460%22&ids=1E8W&monomerid=0&polymerid=p2113"><img src="/images/Docked_3d.png" alt="3D" title="3D" />3D Structure (crystal)</a><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=1931&ki_result_id=27901&reactant_set_id=27902')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=Isoform+A1-A+of+Heterogeneous+nuclear+ribonucleoprotein+A1+%28A1-A%29+68-320%5D">Isoform A1-A of Heterogeneous nuclear ribonucleoprotein A1 (A1-A) 68-320]</a><span></span><span>(Human)</span><br />National Taiwan University<br /><br /></div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">Kd:&nbsp;&nbsp;1.70E+3nM</span><span>pH:&nbsp;4.0</span><a class="ay" href="/rwd/jsp/dbsearch/assay.jsp?assayid=1&entryid=8062">Assay Description:</a><span>Recombinant full-length hnRNPA1 (aa 1-320) and truncated versions of hnRNPA1, including the N-terminal RNA binding domain (aa 1-196), the middle regi...</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=Isoform+A1-A+of+Heterogeneous+nuclear+ribonucleoprotein+A1+%28A1-A%29+68-320%5D&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%229GKF%2C7ZJ2%2C7BX7%2C2H4M%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=Isoform A1-A of Heterogeneous nuclear ribonucleoprotein A1 (A1-A) 68-320]&ids=P09651-2[268-320],,A8K4Z8-2[268-320],Q3MIB7-2[268-320],Q6PJZ7-2[268-320]&cid=0&pid=9928">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22Isoform+A1-A+of+Heterogeneous+nuclear+ribonucleoprotein+A1+(A1-A)+68-320]%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />6/9/2017<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=8062&ki_result_id=404392&reactant_set_id=404394&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<a href="http://dx.doi.org/10.1074/jbc.M114.553248">Article</a><br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q26Q1W4N')">Copy&nbsp;BDB&nbsp;DOI</button><a href="/rwd/bind/forward_otherdbs.jsp?dbName=PubMed&title=Isoform A1-A of Heterogeneous nuclear ribonucleoprotein A1 (A1-A) 68-320]&ids=24962584">PubMed</a><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=8062&ki_result_id=404392&reactant_set_id=404394')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=Catenin+beta-1">Catenin beta-1</a><span></span><span>(Human)</span><br />Tongji University<br /><br /><span class="m1fontSize">Curated by</span> <a href="http://www.ebi.ac.uk/chembl/">ChEMBL</a><br /></div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">Kd:&nbsp;&nbsp;4.99E+3nM</span><span></span><span class="ay">Assay Description:</span><span>Binding affinity to full length beta-catenin (unknown origin) assessed as dissociation constant by SPR analysis</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=Catenin+beta-1&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%222Z6G%2C2Z6H%2C8Z61%2C8Z5J%2C8Z10%2C8Z0U%2C8Y14%2C8Y0P%2C8Y0G%2C2GL7%2C9I8X%2C9I8W%2C4EVT%2C4EVP%2C4EVA%2C4EV9%2C4EV8%2C3OUX%2C3OUW%2C1V18%2C1M1E%2C1JPP%2C1I7X%2C1I7W%2C1JPW%2C1QZ7%2C7ZRB%2C7AR4%2C8RU3%2C8EIC%2C8EIB%2C8EIA%2C8EI9%2C7UWO%2C1TH1%2C1G3J%2C1JDH%2C3TX7%2C7UWI%2C8RU4%2C1T08%2C4DJS%2C2BCT%2C9I8K%2C1LUJ%2C29KL%2C29KK%2C3BCT%2C3SLA%2C7AFW%2C3SL9%2C9I8O%2C4ONS%2C1DOW%2C6M94%2C6M93%2C6M92%2C6M90%2C6M91%2C1P22%2C2G57%2C8VME%2C8VMF%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=Catenin beta-1&ids=hsa:1499">KEGG</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=Catenin beta-1&ids=P35222,,A8K1L7,Q8NEW9,Q8NI94,Q9H391&cid=0&pid=50004328">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22Catenin+beta-1%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />12/18/2024<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50020044&ki_result_id=51555409&reactant_set_id=51555409&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q2668JM8')">Copy&nbsp;BDB&nbsp;DOI</button><a href="/rwd/bind/forward_otherdbs.jsp?dbName=PubMed&title=Catenin beta-1&ids=38097141">PubMed</a><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50020044&ki_result_id=51555409&reactant_set_id=51555409')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=Catenin+beta-1">Catenin beta-1</a><span></span><span>(Human)</span><br />Tongji University<br /><br /><span class="m1fontSize">Curated by</span> <a href="http://www.ebi.ac.uk/chembl/">ChEMBL</a><br /></div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">Kd:&nbsp;&nbsp;5.58E+3nM</span><span></span><a class="ay" href="/rwd/jsp/dbsearch/assay.jsp?assayid=3&entryid=50019813">Assay Description:</a><span>Binding affinity to full length His-tagged beta-catenin (1 to 781 residues) (unknown origin) expressed in Escherichia coli DE3 by surface plasmon res...</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=Catenin+beta-1&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%222Z6G%2C2Z6H%2C8Z61%2C8Z5J%2C8Z10%2C8Z0U%2C8Y14%2C8Y0P%2C8Y0G%2C2GL7%2C9I8X%2C9I8W%2C4EVT%2C4EVP%2C4EVA%2C4EV9%2C4EV8%2C3OUX%2C3OUW%2C1V18%2C1M1E%2C1JPP%2C1I7X%2C1I7W%2C1JPW%2C1QZ7%2C7ZRB%2C7AR4%2C8RU3%2C8EIC%2C8EIB%2C8EIA%2C8EI9%2C7UWO%2C1TH1%2C1G3J%2C1JDH%2C3TX7%2C7UWI%2C8RU4%2C1T08%2C4DJS%2C2BCT%2C9I8K%2C1LUJ%2C29KL%2C29KK%2C3BCT%2C3SLA%2C7AFW%2C3SL9%2C9I8O%2C4ONS%2C1DOW%2C6M94%2C6M93%2C6M92%2C6M90%2C6M91%2C1P22%2C2G57%2C8VME%2C8VMF%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=Catenin beta-1&ids=hsa:1499">KEGG</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=Catenin beta-1&ids=P35222,,A8K1L7,Q8NEW9,Q8NI94,Q9H391&cid=0&pid=50004328">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22Catenin+beta-1%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />12/17/2024<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50019813&ki_result_id=51549440&reactant_set_id=51549440&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q2XP79BR')">Copy&nbsp;BDB&nbsp;DOI</button><a href="/rwd/bind/forward_otherdbs.jsp?dbName=PubMed&title=Catenin beta-1&ids=36599228">PubMed</a><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50019813&ki_result_id=51549440&reactant_set_id=51549440')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=ATP-dependent+translocase+ABCB1">ATP-dependent translocase ABCB1</a><span></span><span>(Human)</span><br />Chosun University<br /><br /><span class="m1fontSize">Curated by</span> <a href="http://www.ebi.ac.uk/chembl/">ChEMBL</a><br /></div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">Kd:&nbsp;&nbsp;7.08E+3nM</span><span></span><span class="ay">Assay Description:</span><span>Binding affinity to ABCB1 nucleotide binding domain 2</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=ATP-dependent+translocase+ABCB1&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%229CTG%2C9CTF%2C9CTC%2C9CR8%2C8SBA%2C8SB9%2C8SB8%2C8SB7%2C8SA1%2C8GMJ%2C8GMG%2C7O9W%2C7A6F%2C7A6E%2C7A6C%2C7A69%2C7A65%2C6QEX%2C6C0V%2C8Y6I%2C8Y6H%2C8SA0%2C6QEE%2C6FN4%2C6FN1%2C7OTI%2C7OTG%2C6GDI%2C4KSD%2C4KSC%2C4KSB%2C6Q81%2C5KPJ%2C5KPI%2C3G61%2C3G60%2C4LSG%2C3G5U%2C4XWK%2C4Q9L%2C4Q9K%2C4Q9J%2C4Q9I%2C4Q9H%2C4M2T%2C4M2S%2C6UJN%2C4M1M%2C6UJW%2C6UJT%2C6UJS%2C6UJR%2C6UJP%2C8PEE%2C8AVY%2C7ZKB%2C7ZKA%2C7ZK6%2C7ZK5%2C7ZK4%2C7ZK8%2C7ZK9%2C5KPD%2C5KOY%2C5KO2%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=ATP-dependent translocase ABCB1&ids=P08183,,A8K294,B5AK60,Q12755,Q14812&cid=0&pid=7531">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22ATP-dependent+translocase+ABCB1%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />9/23/2013<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50042303&ki_result_id=51037796&reactant_set_id=51037796&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<a href="http://dx.doi.org/10.1016/j.ejmech.2011.06.008">Article</a><br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q2FJ2J3W')">Copy&nbsp;BDB&nbsp;DOI</button><a href="/rwd/bind/forward_otherdbs.jsp?dbName=PubMed&title=ATP-dependent translocase ABCB1&ids=21723648">PubMed</a><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50042303&ki_result_id=51037796&reactant_set_id=51037796')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=Isoform+A1-A+of+Heterogeneous+nuclear+ribonucleoprotein+A1+%28A1-A%29">Isoform A1-A of Heterogeneous nuclear ribonucleoprotein A1 (A1-A)</a><span></span><span>(Human)</span><br />National Taiwan University<br /><br /></div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">Kd:&nbsp;&nbsp;8.90E+3nM</span><span>pH:&nbsp;4.0</span><span class="ay">Assay Description:</span><span>Recombinant full-length hnRNPA1 (aa 1-320) and truncated versions of hnRNPA1, including the N-terminal RNA binding domain (aa 1-196), the middle regi...</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=Isoform+A1-A+of+Heterogeneous+nuclear+ribonucleoprotein+A1+%28A1-A%29&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%229GKF%2C7ZJ2%2C9VVA%2C1U1R%2C1U1Q%2C1U1P%2C1U1O%2C1U1N%2C1U1M%2C1U1L%2C1U1K%2C1L3K%2C8X0N%2C4YOE%2C1PGZ%2C2LYV%2C9HQL%2C9HQJ%2C9HQ9%2C9F7H%2C9F7F%2C9F5K%2C9F5G%2C9F5F%2C9F5E%2C9F5D%2C9F5C%2C9F55%2C9F54%2C9F53%2C9F52%2C9F51%2C9F50%2C9F4Z%2C9F4Y%2C9F4X%2C9F4W%2C9F4V%2C9F4U%2C9F4T%2C9F4S%2C9F4R%2C9F4Q%2C9F4P%2C9F4O%2C9F4N%2C9F4L%2C9F4K%2C9F4J%2C9F4H%2C9F4G%2C9F4D%2C9F1S%2C8RZV%2C9GPJ%2C9GEA%2C6DCL%2C1HA1%2C2UP1%2C1PO6%2C1UP1%2C7BX7%2C5MPL%2C5MPG%2C2H4M%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=Isoform A1-A of Heterogeneous nuclear ribonucleoprotein A1 (A1-A)&ids=P09651-2,,A8K4Z8-2,Q3MIB7-2,Q6PJZ7-2&cid=0&pid=9927">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22Isoform+A1-A+of+Heterogeneous+nuclear+ribonucleoprotein+A1+(A1-A)%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />6/9/2017<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=8062&ki_result_id=404391&reactant_set_id=404393&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<a href="http://dx.doi.org/10.1074/jbc.M114.553248">Article</a><br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q26Q1W4N')">Copy&nbsp;BDB&nbsp;DOI</button><a href="/rwd/bind/forward_otherdbs.jsp?dbName=PubMed&title=Isoform A1-A of Heterogeneous nuclear ribonucleoprotein A1 (A1-A)&ids=24962584">PubMed</a><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=8062&ki_result_id=404391&reactant_set_id=404393')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=D-alanine--D-alanine+ligase">D-alanine--D-alanine ligase</a><span></span><span>(Helicobacter pylori (strain HPAG1))</span>TBA</div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">Kd:&nbsp;&nbsp;1.29E+4nM</span><span></span><span class="ay">Assay Description:</span><span>Binding affinity to Helicobacter pylori Ddl by surface plasmon resonance biosensor technology</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=D-alanine--D-alanine+ligase&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%222PVP%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=D-alanine--D-alanine ligase&ids=Q1CTD3&cid=0&pid=50000171">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22D-alanine--D-alanine+ligase%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />8/31/2020<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50005167&ki_result_id=51188694&reactant_set_id=51188694&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<a href="http://dx.doi.org/10.1007/s00044-012-0207-7">Article</a><br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q2CZ3B2V')">Copy&nbsp;BDB&nbsp;DOI</button><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50005167&ki_result_id=51188694&reactant_set_id=51188694')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=Cystic+fibrosis+transmembrane+conductance+regulator">Cystic fibrosis transmembrane conductance regulator</a><span></span><span>(Human)</span><br />National Research Council (Itb-Cnr)<br /><br /><span class="m1fontSize">Curated by</span> <a href="http://www.ebi.ac.uk/chembl/">ChEMBL</a><br /></div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">Kd:&nbsp;&nbsp;2.56E+4nM</span><span></span><span class="ay">Assay Description:</span><span>Binding affinity to sensorchip-immobilized human His-tagged CFTR F508 deletion mutant by surface plasmon resonance analysis</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=Cystic+fibrosis+transmembrane+conductance+regulator&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%225UAK%2C9DW7%2C9DW5%2C9DW4%2C7SVR%2C9MXL%2C9DW9%2C9DW8%2C8UBR%2C8GLS%2C7SVD%2C7SV7%2C6O2P%2C6O1V%2C6MSM%2C9Y4T%2C9Y1Q%2C8EJ1%2C8EIQ%2C8EIO%2C8EIG%2C8FZQ%2C8V81%2C8V7Z%2C1XMI%2C2BBT%2C4WZ6%2C2BBS%2C2BBO%2C1XMJ%2C6ZE1%2C6GJU%2C6GJQ%2C2PZG%2C3GD7%2C6UK1%2C6GKD%2C6GK4%2C6GJS%2C5TGK%2C5TFJ%2C5TFI%2C5TFG%2C5TFF%2C5TFD%2C5TFC%2C5TFB%2C5TFA%2C5TF8%2C5TF7%2C2PZE%2C2PZF%2C6WBS%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=Cystic fibrosis transmembrane conductance regulator&ids=P13569,,Q20BG8,Q20BH2,Q2I0A1,Q2I102&cid=0&pid=8455">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22Cystic+fibrosis+transmembrane+conductance+regulator%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />8/20/2022<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50013849&ki_result_id=51411492&reactant_set_id=51411492&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<a href="http://dx.doi.org/10.1016/j.ejmech.2021.113186">Article</a><br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q2571GS2')">Copy&nbsp;BDB&nbsp;DOI</button><a href="/rwd/bind/forward_otherdbs.jsp?dbName=PubMed&title=Cystic fibrosis transmembrane conductance regulator&ids=33472120">PubMed</a><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50013849&ki_result_id=51411492&reactant_set_id=51411492')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+<div><div><span class="header">Target</span><a class="big" href="/rwd/bind/searchby_target.jsp?tag=tg&kiunit=nM&icunit=nM&column=ki&submit=Search&energyterm=kJ%2Fmole&target=Interstitial+collagenase">Interstitial collagenase</a><span></span><span>(Human)</span><br />Gifu University<br /><br /><span class="m1fontSize">Curated by</span> <a href="http://www.ebi.ac.uk/chembl/">ChEMBL</a><br /></div>
+<div><span class="header">Ligand</span><a href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460"><img src="/data/jpeg/tenK0/BindingDB_7460.png" alt="Chemical structure of BindingDB Monomer ID 7460" border="0" /></a><a class="big" href="/rwd/bind/chemsearch/marvin/MolStructure.jsp?monomerid=7460&google=BDBM7460">BDBM7460</a>(2-(3,4-dihydroxyphenyl)-3,5,7-trihydroxy-chromone;...)<button class="nonb m1fontSize" onclick="setClipboard('c1cc(c(cc1C2=C(C(=O)c3c(cc(cc3O2)O)O)O)O)O')">Copy&nbsp;SMILES</button><button class="nonb m1fontSize" onclick="setClipboard('InChI=1S/C15H10O7/c16-7-4-10(19)12-11(5-7)22-15(14(21)13(12)20)6-1-2-8(17)9(18)3-6/h1-5,16-19,21H')">Copy&nbsp;InChI</button></div>
+<div><span class="header">Affinity&nbsp;Data</span><span class="big">Kd:&nbsp;&nbsp;5.18E+4nM</span><span></span><span class="ay">Assay Description:</span><span>Binding affinity to human MMP-1 catalytic domain (100 to 269 residues) expressed in Escherichia coli BL21 Star (DE3) by SPR analysis</span><a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?energyterm=kJ/mole&tag=r20&reactant1=Interstitial+collagenase&reactant2=BDBM7460&column=ki&startPg=0&Increment=50&submit=Search">More data for this Ligand-Target Pair</a></div>
+<div><span class="header">Target&nbsp;Info</span><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221SU3%2C4AUO%2C2CLT%2C1FBL%2C2J0T%2C4AYK%2C3AYK%2C2TCL%2C2AYK%2C1HFC%2C1AYK%2C1CGE%2C1CGL%2C1CGF%2C966C%2C3SHI%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=Interstitial collagenase&ids=hsa:4312">KEGG</a><br /><a href="/rwd/bind/forward_otherdbs.jsp?dbName=UniProt&title=Interstitial collagenase&ids=P03956,,P08156&cid=0&pid=111">UniProtKB/SwissProt</a><br /><a href="http://scholar.google.com/scholar?q=%22Interstitial+collagenase%22">GoogleScholar</a></div>
+<div><span class="header">Ligand&nbsp;Info</span><a href="/rwd/bind/purchasable.jsp?monomerid=7460">Purchase</a><a href="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=16243">ChEBI</a><br /><a href="https://www.ebi.ac.uk/chembldb/compound/inspect/CHEMBL50">CHEMBL</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=DrugBank&title=BDBM7460&ids=DB04216">DrugBank</a><a href="/rwd/bind/forward_otherdbs.jsp?dbName=KEGG&title=BDBM7460&ids=C00389">KEGG</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=5280343">PC&nbsp;cid</a><a href="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=11108251">PC&nbsp;sid</a><a href="https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22nodes%22%3A%5B%7B%22service%22%3A%22full_text%22%2C%22type%22%3A%22terminal%22%2C%22parameters%22%3A%7B%22value%22%3A%221E8W%2C1GP6%2C1H1I%2C2C9Z%2C2HCK%2C2JJ2%2C2MS6%2C2N6C%2C2O3P%2C2UXH%2C3BPT%2C3BXX%2C3CF8%2C3LJ0%2C3LM5%2C3NVY%2C4DFU%2C4LMU%2C4MRA%2C4WNJ%2C5A4V%2C5AUW%2C5FLI%2C5FLJ%2C5XG4%2C6AWS%2C6B1D%2C6IJD%2C6M89%2C6QCD%2C6QCN%2C6TTA%2C7VUM%2C8GQT%2C8SFW%2C9SN7%2C9X43%22%7D%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22label%22%3A%22full_text%22%2C%22type%22%3A%22group%22%7D%5D%2C%22logical_operator%22%3A%22and%22%2C%22type%22%3A%22group%22%7D%2C%22request_options%22%3A%7B%22scoring_strategy%22%3A%22combined%22%2C%22paginate%22%3A%7B%22start%22%3A0%2C%22rows%22%3A25%7D%2C%22results_content_type%22%3A%5B%22experimental%22%5D%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22return_type%22%3A%22entry%22%7D">PDB</a><a href="/rwd/bind/similarCompounds.jsp?monomerid=7460">Similars</a></div>
+<div><span class="header">In&nbsp;Depth</span><br />Date in BDB:<br />6/21/2023<br /><a href="/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50016492&ki_result_id=51476640&reactant_set_id=51476640&energyterm=kJ%2Fmole&kiunit=nM&icunit=nM">Entry Details</a>
+<br /><button class="m1fontSize" onclick="setClipboard('10.7270/Q27S7SS6')">Copy&nbsp;BDB&nbsp;DOI</button><a href="/rwd/bind/forward_otherdbs.jsp?dbName=PubMed&title=Interstitial collagenase&ids=35667156">PubMed</a><br /><button class="m1fontSize" onclick="setClipboard('https://www.bindingdb.org/rwd/jsp/dbsearch/Summary_ki.jsp?entryid=50016492&ki_result_id=51476640&reactant_set_id=51476640')">Copy&nbsp;reaction&nbsp;URL</button></div></div>
+</div><span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:pmid/24610996"><!-- COinS --></span>
+<span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:pmid/33472120"><!-- COinS --></span>
+<span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:pmid/21723648"><!-- COinS --></span>
+<span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:pmid/16302800"><!-- COinS --></span>
+<span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:pmid/38097141"><!-- COinS --></span>
+<span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:pmid/35667156"><!-- COinS --></span>
+<span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:pmid/11090628"><!-- COinS --></span>
+<span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:pmid/24962584"><!-- COinS --></span>
+<span class="Z3988" title="ctx_ver=Z39.88-2004&rft_val_fmt=info:ofi/fmt:kev:mtx:journal&rft_id=info:pmid/36599228"><!-- COinS --></span>
+
+          
+	  <img src="/img/powered_by_small.gif" align = "left" height="37" width="98" />
+ 	</div>
+      </section>
+      <aside>
+        <!--ul class="mbh">
+  <li><a href="/rwd/bind/index.jsp">Home</a></li>
+  <li><a href="/rwd/bind/aboutus.jsp">About</a></li>
+  <li><a href="/rwd/bind/info.jsp">Info</a></li>
+  <li><a href="/rwd/bind/chemsearch/marvin/SDFdownload.jsp?all_download=yes">Downloads</a></li>
+</ul>
+<ul class="mbh">
+  <li><a href="/rwd/bind/BindingDBRESTfulAPI.jsp">WebServices</a></li>
+  <li><a href="/rwd/bind/contributedata.jsp">Contribute&nbsp;Data</a></li>
+  <li><a href="/rwd/bind/sendmail.jsp">Contact&nbsp;us</a></li>
+</ul-->
+<ul>
+  <li>&nbsp;</li>
+  <li><a href="#">Targets<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li><a href="/rwd/bind/BySequence.jsp">Sequence</a></li>
+      <li><a href="/rwd/bind/ByTargetNames.jsp">Name</a></li>
+      <li><a href="/rwd/bind/ByKI.jsp?specified=KI">Ki</a> <a href="/rwd/bind/ByKI.jsp?specified=IC50">IC50</a> <a href="/rwd/bind/ByKI.jsp?specified=Kd">Kd</a> <a href="/rwd/bind/ByKI.jsp?specified=EC50">EC50</a></li>
+      <li><a href="/rwd/bind/ByKI.jsp?specified=Kn">Rate Constant</a></li>
+      <li><a href="/rwd/bind/ByG.jsp?specified=G">&Delta;G&#176;</a> <a href="/rwd/bind/ByG.jsp?specified=H">&Delta;H&#176;</a> <a  href="/rwd/bind/ByG.jsp?specified=S">-T&Delta;S&#176;</a></li>
+      <li><a href="/rwd/bind/ByKI.jsp?specified=pH">pH (Enzymatic Assay)</a></li>
+      <li><a href="/rwd/bind/ByG.jsp?specified=pH">pH (ITC)</a></li>
+      <li><a href="/rwd/bind/ByEnzymeSubstrate.jsp">Substrate or Competitor</a></li>
+      <li><a href="/rwd/bind/ByMolWeight.jsp">Compound Mol. Wt.</a></li>
+      <li><a href="/rwd/bind/chemsearch/marvin/index.jsp">Chemical Structure</a></li>
+      <li><a href="/rwd/Pathways/pathways.jsp">Pathways</a></li>
+      <li><a href="/rwd/bind/BySourceOrganism.jsp">Source Organism</a></li>
+      <li><a href="/rwd/bind/ByMonomersTarget.jsp">Number of Compounds</a></li>
+      <li><a href="/rwd/bind/ByTargetMonomers.jsp">Monomer List in csv</a></li>
+      <li><a href="/rwd/bind/ByTargetHets.jsp">HET groups from PDB</a></li>
+    </ul>
+  </li>	
+  <li><a href="#">Compounds<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li><a href="/rwd/bind/ByFDAdrugs.jsp">FDA Drugs</a></li>
+      <li><a href="/rwd/bind/BindingX.jsp">Important&nbsp;Compounds</a></li>
+      <li><a href="/rwd/bind/chemsearch/marvin/index.jsp">Chemical Structure</a></li>
+      <li><a href="/rwd/bind/ByLigandName.jsp">Name</a></li>
+      <li><a href="/rwd/bind/BySmiles.jsp">SMILES</a></li>
+      <li><a href="/rwd/bind/ByDataLigand.jsp">Data/Compound</a></li>
+      <li><a href="/rwd/bind/ByTargetsLigand.jsp">Targets/Compound</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Publications<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li><a href="/rwd/bind/ByAuthor.jsp">Author</a></li>
+      <li><a href="/rwd/bind/ByJournal.jsp">Journal/Citation</a></li>
+      <li><a href="/rwd/bind/ByInstitution.jsp">Institution</a></li>
+      <li><a href="/rwd/bind/ByPubMed.jsp">PubMed</a></li>
+      <li><a href="/rwd/bind/ByPCBioAssay.jsp">PubChem BioAssay</a></li>
+      <li><a href="/rwd/bind/ByPatent.jsp">US Patent</a></li>
+      <li><a href="/rwd/bind/ByWIPO.jsp">WIPO Patent</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Special Datasets<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li><a href="/rwd/bind/Covid19.jsp">Coronavirus Data</a></li>
+      <li><a href="/rwd/bind/ByD3R.jsp">D3R &amp; CSAR</a></li>
+      <li><a href="/rwd/bind/HostGuest.jsp">Host Guest Systems</a></li>
+      <li><a href="/rwd/validation_sets/index.jsp">Prot-Lig Validation Sets</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Special Tools<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li><a href="/rwd/bind/surflex_entry.jsp">3D Structure Series</a></li>
+      <li><a href="/rwd/bind/chemsearch/marvin/FMCT.jsp">Find My Compound's Targets</a></li>
+      <li><a href="/rwd/bind/as.jsp?opt=target_sequence">Find Compounds for My Targets</a></li>
+      <!--li><a href="/rwd/bind/vsOverview.jsp">Do Virtual Screening</a></li-->
+      <!--li><a href="/rwd/SCOP/scop.jsp">SCOP</a></li-->
+    </ul>
+  </li>			  
+  <li><a href="#">Other Databases<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li>PDB <a href="/rwd/bind/ByPDBids.jsp">85%</a>&nbsp;<a href="/rwd/bind/ByPDBids_100.jsp">100%</a> Seq ID</li>
+      <li><a href="/rwd/bind/ByUniProtids.jsp">UniProtKB/Swiss-Prot</a></li>
+      <li><a href="/rwd/bind/ByTrembleids.jsp">UniProtKB/TrEMBL</a></li>
+      <li><a href="/rwd/bind/ByPubMed.jsp">PubMed</a></li>
+    </ul>
+  </li>
+  <li><a href="/rwd/bind/tutorials.jsp">Tutorials</a>
+  </li>
+  <li><a href="/rwd/mybdb/login.jsp">myBDB</a>
+  </li>
+  <!--li id="oldata" onclick="datanalysis()">Filter Results
+  </li-->
+</ul>
+
+        <div id="outline">
+          <h4>Filter my <span class="red">11</span> hits</h4>
+<ul>
+  <li><a href="#">Targets 10<span>&#9663;</span></a>
+    <ul>
+      <li>Catenin beta-1 <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=tg&enzyme=Catenin beta-1&pcid=p50004328&submit=summary">2</a></li>
+      <li>Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=tg&enzyme=Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform&pcid=p2113&submit=summary">1</a></li>
+      <li>Prothrombin <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=tg&enzyme=Prothrombin&pcid=p334&submit=summary">1</a></li>
+      <li>D-alanine--D-alanine ligase <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=tg&enzyme=D-alanine--D-alanine ligase&pcid=p50000171&submit=summary">1</a></li>
+      <li>Isoform A1-A of Heterogeneous nuclear ribonucleoprotein A1 (A1-A) 68-320] <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=tg&enzyme=Isoform A1-A of Heterogeneous nuclear ribonucleoprotein A1 (A1-A) 68-320]&pcid=p9928&submit=summary">1</a></li>
+      <li>Serine/threonine-protein kinase pim-1 <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=tg&enzyme=Serine/threonine-protein kinase pim-1&pcid=p20&submit=summary">1</a></li>
+      <li>Cystic fibrosis transmembrane conductance regulator <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=tg&enzyme=Cystic fibrosis transmembrane conductance regulator&pcid=p8455&submit=summary">1</a></li>
+      <li>Isoform A1-A of Heterogeneous nuclear ribonucleoprotein A1 (A1-A) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=tg&enzyme=Isoform A1-A of Heterogeneous nuclear ribonucleoprotein A1 (A1-A)&pcid=p9927&submit=summary">1</a></li>
+      <li>Interstitial collagenase <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=tg&enzyme=Interstitial collagenase&pcid=p111&submit=summary">1</a></li>
+      <li>ATP-dependent translocase ABCB1 <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=tg&enzyme=ATP-dependent translocase ABCB1&pcid=p7531&submit=summary">1</a></li>
+    </ul></li>
+  <li><a href="#">Publications 9<span>&#9663;</span></a>
+    <ul>
+      <li><em>J Biol Chem</em> 289:  <em>22078</em>-<em>89</em>  (2014) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=8062&submit=summary">2</a></li>      <li><em>Mol Cell</em> 6:  <em>909</em>-<em>19</em>  (2000) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=1931&submit=summary">1</a></li>      <li><em>Eur J Med Chem</em> 247:  (2023) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50019813&submit=summary">1</a></li>      <li><em>Bioorg Med Chem Lett</em> 98:  (2024) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50020044&submit=summary">1</a></li>      <li><em>J Med Chem</em> 48:  <em>7604</em>-<em>14</em>  (2005) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50044029&submit=summary">1</a></li>      <li><em>Eur J Med Chem</em> 46:  <em>4078</em>-<em>88</em>  (2011) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50042303&submit=summary">1</a></li>      <li><em>Med Chem Res</em> 23:  <em>2324</em>-<em>2337</em>  (2014) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50044057&submit=summary">1</a></li>      <li><em>Eur J Med Chem</em> 213:  (2021) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50013849&submit=summary">1</a></li>      <li><em>Bioorg Med Chem</em> 68:  (2022) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50016492&submit=summary">1</a></li>    </ul></li>
+  <li><a href="#">Institutions 9<span>&#9663;</span></a>
+    <ul>
+<li>National Taiwan University <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=8062&submit=summary">2</a></li><li>Fudan University <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50019813&submit=summary">1</a></li><li>Tongji University <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50020044&submit=summary">1</a></li><li>Gifu University <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50016492&submit=summary">1</a></li><li>University of Lodz <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50044057&submit=summary">1</a></li><li>Chosun University <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50042303&submit=summary">1</a></li><li>National Research Council (Itb-Cnr) <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50013849&submit=summary">1</a></li><li>Oxford University <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=50044029&submit=summary">1</a></li><li>Mrc <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=entry&entryid=1931&submit=summary">1</a></li>    </ul></li>
+  <li><a href="#">Affinity:&nbsp;25&nbsp;to&nbsp;5.2E+4 nM<span>&#9663;</span></a>
+    <ul id="ki4">
+      <li>IC50 <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=ic50&submit=summary">1</a></li>
+      <li>Kd <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&fil=kd&submit=summary">11</a></li>
+      <li><span onclick="affRefine();">Affinity &leq;</span> <input id="loAff" onchange="affRefine();" type="text" /> nM <button type="button" onclick="affRefine();">GO</button></li>    </ul></li>
+  <li>Xtal structures: <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&monomerids=n3D7460&title=Compounds having Cocrystal Structure&fil=mids&submit=summary">1</a></li>
+  <li>Docked structures: 0</li>  <li>Catalog Cmpds: <a href="/rwd/jsp/dbsearch/PrimarySearch_ki.jsp?monomerid=7460&tag=rep&monomerids=7460&title=Purchasable Compounds&fil=mids&submit=summary">1</a></li>
+</ul>
+          <!--button id="olhide">Hide</button--> <!--button id="olshow">Show</button-->
+        </div>
+      </aside>
+    </div>
+    <footer>
+    </footer>
+  </div>
+<script type="text/javascript">
+       ResizeHeaderTable();
+</script>
+  </body>
+</html>

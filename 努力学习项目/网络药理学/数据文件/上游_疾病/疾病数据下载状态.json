@@ -1,0 +1,22 @@
+{
+  "disease": "Ulcerative Colitis",
+  "ctd_disease_name": "Colitis, Ulcerative",
+  "status": {
+    "CTD": {
+      "ok": true,
+      "n_curated_genes": 70,
+      "n_all_assoc_genes": 32097,
+      "file": "疾病靶点_CTD.csv"
+    },
+    "OpenTargets": {
+      "ok": true,
+      "n": 7107,
+      "file": "疾病靶点_OpenTargets.csv"
+    },
+    "AUTO_union": {
+      "ok": true,
+      "n": 7109,
+      "file": "疾病靶点合并_AUTO_DiseaseGenesUnion.csv"
+    }
+  }
+}
