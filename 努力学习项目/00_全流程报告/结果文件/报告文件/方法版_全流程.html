@@ -44,14 +44,14 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <h2 id="m-ov">总览</h2>
 <table>
 <tr><th>编号</th><th>主要数据库 / 上游模块</th><th>原始数据路径</th><th>处理后主产物路径</th></tr>
-<tr><td>01</td><td>交付网药；GeneCards/OMIM/DisGeNET/CTD 等合并 D</td><td><code>01_网络药理学/结果文件/数据文件/</code></td><td>同模块药病交集；I₁ 供 03</td></tr>
-<tr><td>02</td><td>有害暴露物；CTD/TTD/AOP-Wiki 线索</td><td><code>02_网络毒理学_毒性分层/</code> 数据与登记表</td><td><code>02_.../结果文件/数据文件/</code>、<code>图片文件/</code></td></tr>
-<tr><td>03</td><td>gutMGene、GMMAD2、SEA16(ChEMBL27)、STP；上游 01 的 I₁、D</td><td><code>03_三源交集_复方UC菌群/结果文件/数据文件/</code> 下外部库与 SEA/STP 原始</td><td><code>双交集统计汇总.csv</code>、<code>C_*.csv</code>、<code>I2_*.csv</code></td></tr>
-<tr><td>04</td><td>上游 03 的 C；STRING</td><td>读 C 表</td><td><code>04_机制层_PPI富集/结果文件/数据文件/机制层/</code></td></tr>
-<tr><td>05</td><td>上游 03 的 C 与代谢物边；GMMAD2</td><td>03 数据 + 外部导出</td><td><code>05_干预代谢物预测/结果文件/数据文件/预测/</code></td></tr>
-<tr><td>06</td><td>PubChem；RCSB PDB；上游配对表</td><td><code>06_分子对接/数据文件/对接工作区/</code></td><td><code>06_.../结果文件/数据文件/对接/对接汇总.csv</code></td></tr>
-<tr><td>07</td><td>GEO（GSE92415、GSE75214）；上游 C</td><td>GEO series matrix 缓存于 07 模块</td><td><code>07_外部支持_GEO与MR/结果文件/数据文件/GEO验证/</code></td></tr>
-<tr><td>08</td><td>上游 06 Top 复合物；RCSB 结构</td><td>WSL 运行目录；课题输入</td><td><code>08_分子动力学/结果文件/数据文件/分子动力学_MD/</code>；<code>DONE.txt</code></td></tr>
+<tr><td>01</td><td>交付网药；GeneCards/OMIM/DisGeNET/CTD 等合并 D</td><td><code>01_网络药理学/数据文件/结果数据/</code></td><td>同模块药病交集；I₁ 供 03</td></tr>
+<tr><td>02</td><td>有害暴露物；CTD/TTD/AOP-Wiki 线索</td><td><code>02_网络毒理学_毒性分层/</code> 数据与登记表</td><td><code>02_.../数据文件/结果数据/</code>、<code>图片文件/</code></td></tr>
+<tr><td>03</td><td>gutMGene、GMMAD2、SEA16(ChEMBL27)、STP；上游 01 的 I₁、D</td><td><code>03_三源交集_复方UC菌群/数据文件/结果数据/</code> 下外部库与 SEA/STP 原始</td><td><code>双交集统计汇总.csv</code>、<code>C_*.csv</code>、<code>I2_*.csv</code></td></tr>
+<tr><td>04</td><td>上游 03 的 C；STRING</td><td>读 C 表</td><td><code>04_机制层_PPI富集/数据文件/结果数据/机制层/</code></td></tr>
+<tr><td>05</td><td>上游 03 的 C 与代谢物边；GMMAD2</td><td>03 数据 + 外部导出</td><td><code>05_干预代谢物预测/数据文件/结果数据/预测/</code></td></tr>
+<tr><td>06</td><td>PubChem；RCSB PDB；上游配对表</td><td><code>06_分子对接/数据文件/原始数据/RCSB与PubChem_对接结构工作区/</code></td><td><code>06_.../数据文件/结果数据/对接/对接汇总.csv</code></td></tr>
+<tr><td>07</td><td>GEO（GSE92415、GSE75214）；上游 C</td><td>GEO series matrix 缓存于 07 模块</td><td><code>07_外部支持_GEO与MR/数据文件/结果数据/GEO验证/</code></td></tr>
+<tr><td>08</td><td>上游 06 Top 复合物；RCSB 结构</td><td>WSL 运行目录；课题输入</td><td><code>08_分子动力学/数据文件/结果数据/分子动力学_MD/</code>；<code>DONE.txt</code></td></tr>
 </table>
 
 <h2 id='m-01'>01 网络药理学</h2>
@@ -62,7 +62,7 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 
 <p><b>数据库：</b>疾病靶点 D 为交付合并集，登记来源包括 GeneCards、OMIM、DisGeNET、CTD 等；成分靶点来自交付网药流水线（含 SwissTargetPrediction 等历史抓取）。</p>
 <p><b>为何用该数据集：</b>与客户交付口径一致，保证后续 I₁ 可复现；不用另开一套疾病库以免「换库即改交集」。</p>
-<p><b>原始路径：</b><code>01_网络药理学/结果文件/数据文件/</code>（药物靶点与疾病表）。</p>
+<p><b>原始路径：</b><code>01_网络药理学/数据文件/结果数据/</code>（药物靶点与疾病表）。</p>
 <p><b>处理后路径：</b>同模块下药病交集表与网药图；I₁ 基因列表供 <code>03_三源交集_复方UC菌群/</code> 读取。</p>
 
 <h4>3. 筛选标准</h4>
@@ -86,7 +86,7 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 
 <p><b>数据库：</b>有害暴露物名单；毒性/不良结局线索来自 CTD、TTD、AOP-Wiki（按计划登记使用）。代谢物有害分层可对照 gutMGene/GMMAD2 注释字段。</p>
 <p><b>为何用：</b>提供暴露物–不良结局线索，供主面板排除既定有害物时引用。</p>
-<p><b>原始 / 处理后：</b><code>02_网络毒理学_毒性分层/结果文件/数据文件/</code> 与 <code>.../图片文件/</code>。</p>
+<p><b>原始 / 处理后：</b><code>02_网络毒理学_毒性分层/数据文件/结果数据/</code> 与 <code>.../图片文件/</code>。</p>
 
 <h4>3. 筛选标准</h4>
 <p>不良结局限定肠屏障损伤、肠道炎症、黏膜损伤/癌变风险（2026-10-07 冻结）。主面板 Tier A 结论排除既定有害物。这样洗是为了毒性支线不污染主交集叙事。</p>
@@ -111,12 +111,12 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <tr><th>来源</th><th>取什么</th><th>为何用 / 为何这样洗</th><th>路径</th></tr>
 <tr><td>01 模块</td><td>I₁、F</td><td>复方侧已冻结</td><td>读 01 产物 → 本模块汇总</td></tr>
 <tr><td>疾病 D</td><td>1517 基因</td><td>交付多库合并；冻结不改</td><td>随 01/交付疾病表</td></tr>
-<tr><td>gutMGene v2</td><td>人源微生物–代谢物、代谢物–基因实证边</td><td>策展库；实证记 H</td><td><code>03_.../结果文件/数据文件/</code> 外部库导出</td></tr>
+<tr><td>gutMGene v2</td><td>人源微生物–代谢物、代谢物–基因实证边</td><td>策展库；实证记 H</td><td><code>03_.../数据文件/结果数据/</code> 外部库导出</td></tr>
 <tr><td>GMMAD2</td><td>UC/IBD 代谢物关联分与 FDR</td><td>疾病相关代谢物优先级；主面板要求 FDR&lt;0.05</td><td>外部库导出 → 代谢物面板表</td></tr>
 <tr><td>SEA16 (ChEMBL 27)</td><td>代谢物相似性靶点</td><td>公共代理下 ChEMBL 36 不稳定，回退 SEA16；必须写 27 而非 36</td><td><code>03_.../数据文件/</code> SEA16 原始</td></tr>
 <tr><td>SwissTargetPrediction</td><td>代谢物预测靶点（PubChem SMILES）</td><td>与 SEA 交集才保留为 M 级；单工具丢弃为 L</td><td>STP 原始目录</td></tr>
 </table>
-<p><b>原始：</b>上表各库导出与 SEA/STP 原始抓取。<b>处理后：</b><code>03_三源交集_复方UC菌群/结果文件/数据文件/</code> 下 <code>C_*.csv</code>、<code>I2_*.csv</code>、<code>双交集统计汇总.csv</code>；代谢物面板在同模块代谢物子目录。</p>
+<p><b>原始：</b>上表各库导出与 SEA/STP 原始抓取。<b>处理后：</b><code>03_三源交集_复方UC菌群/数据文件/结果数据/</code> 下 <code>C_*.csv</code>、<code>I2_*.csv</code>、<code>双交集统计汇总.csv</code>；代谢物面板在同模块代谢物子目录。</p>
 
 <h4>3. 筛选标准</h4>
 
@@ -142,7 +142,7 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <p><b>来自分析：</b>上游 03 的 C 基因列表。</p>
 <p><b>数据库：</b>STRING（Homo sapiens）互作边。</p>
 <p><b>为何用 STRING：</b>与网药交付流水线一致，可用 combined score 复现过滤；不用把低置信边画进主图。</p>
-<p><b>原始：</b>C 表（03 处理后）。<b>处理后：</b><code>04_机制层_PPI富集/结果文件/数据文件/机制层/</code>。</p>
+<p><b>原始：</b>C 表（03 处理后）。<b>处理后：</b><code>04_机制层_PPI富集/数据文件/结果数据/机制层/</code>。</p>
 
 <h4>3. 筛选标准</h4>
 <p>combined score ≥ 0.9（课题偏严锁定）。枢纽用 MCC-like=Degree×局部三角（非官方 cytoHubba 分数）。GO/KEGG 背景为 D 映射后的 Entrez。这样洗是为了主图只保留高置信互作，并与疾病宇宙集对齐。</p>
@@ -166,7 +166,7 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <p><b>来自分析：</b>03 的 C；03 的代谢物–靶点边（H/M）。</p>
 <p><b>数据库：</b>GMMAD2 UC 关联分与 FDR。</p>
 <p><b>为何用：</b>n_C 描述「代谢物是否打到三源核心」；GMMAD2 提供疾病相关性过滤。</p>
-<p><b>原始：</b>03 数据与 GMMAD2 导出。<b>处理后：</b><code>05_干预代谢物预测/结果文件/数据文件/预测/</code>。</p>
+<p><b>原始：</b>03 数据与 GMMAD2 导出。<b>处理后：</b><code>05_干预代谢物预测/数据文件/结果数据/预测/</code>。</p>
 
 <h4>3. 筛选标准</h4>
 <p>n_C≥1 为 Tier A；主面板另要求 GMMAD2 UC FDR&lt;0.05。有害物按 02 名单排除出主结论。这样洗是为了候选可解释且与疾病关联同向。</p>
@@ -184,27 +184,31 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <h2 id='m-06'>06 分子对接</h2>
 
 <h4>1. 为何采用这一分析</h4>
-<p>对高优先级代谢物–基因对给出可重复的对接打分，筛选进入 MD 的复合物。打分只作结合候选，不作 Kd。</p>
+<p>科学目的：在同一过筛靶点宇宙上，并列检验「活性成分–宿主靶点」与「菌群代谢物–宿主靶点」的计算结合候选。为何不用旧手挑对：旧表未先过网毒硬过滤、成分 Degree 未限制在剔除后的 C*，与论文范式不一致。为何双轨而非只对接代谢物：复方药效轴与菌群代谢轴需共用 C* 才能写「交汇」句。</p>
 <h4>2. 数据来源</h4>
-
-<p><b>数据库：</b>PubChem（canonical SMILES）；RCSB PDB（受体结构）。</p>
-<p><b>来自分析：</b>05/04 产出的高优先级代谢物–靶点配对。</p>
-<p><b>为何这些结构：</b>需要可对接的三维受体；优先有机共晶、分辨率 ≤3.0 Å；无合适结构则换同家族并注明（如 NOS2→NOS3）。MMP9 正式用 4H3X（弃用 1GKD E402Q 突变体）。</p>
-<p><b>原始：</b><code>06_分子对接/数据文件/对接工作区/</code>。<b>处理后：</b><code>06_分子对接/结果文件/数据文件/对接/对接汇总.csv</code>。</p>
+<p><b>数据库：</b>PubChem（配体）；RCSB PDB（受体）；STRING human 边（score≥0.9）；CTD（有害小分子暴露物策展互作）。</p>
+<p><b>来自分析：</b>01 网药 F、03 代谢 M、疾病 D；02 网毒有害小分子清单。</p>
+<p><b>为何这些结构：</b>枢纽靶点须有可用 UniProt+PDB；共晶口袋优先，否则几何中心盲对接并在表中注明 site。</p>
+<p><b>原始：</b><code>06_分子对接/数据文件/</code> 与上游模块表。<b>处理后：</b><code>06_分子对接/数据文件/结果数据/筛选执行_SelectionRun/</code>；对接 <code>.../对接/成分对接汇总.csv</code>、<code>代谢物对接汇总.csv</code>。</p>
+<p><b>标准 SSOT：</b><code>06_分子对接/研究思路与标准_Paradigm/筛选标准_SelectionCriteria.md</code>（技能夹同步副本）。</p>
 
 <h4>3. 筛选标准</h4>
-<p>9 对正式配对；每对 3 种子；均值 ≤ −20.9 kJ/mol 且 pass_rate=1 为通过。这样洗是为了用统一能量阈值与多种子稳定性筛 MD 输入。</p>
-<h4>4. 数据处理与函数</h4>
-<p>准备配体/受体→Vina→汇总 mean/sd/pass_rate→热图。</p>
-<h4>5. 参数与取值原因</h4>
-<p>exhaustiveness=8；盒边长 22 Å；种子 1/7/42；阈值 −20.9 kJ/mol（课题锁定，非临时改口）。</p>
-<h4>6. 输入与输出</h4>
-<p><b>输入：</b>配对表与结构。<b>输出：</b>对接汇总与热图。<b>停机：</b>无 PASS 对则 08 不启动对应体系。</p>
-<h4>7. 结果数据与图片怎么读</h4>
-<figure><img src='../图片文件/panel_06_对接.png' alt=''/><figcaption><b>方法拼图 06：</b> 对接亲和力热图（方法版仅此一张）。细读见论文版。</figcaption></figure><p>读 <code>mean_kJ</code>、<code>pass_rate</code>；pass_rate=1 为通过。</p>
-<h4>8. 解读边界</h4>
-<p>结合候选；非实验 Kd、非疗效。</p>
+<p><b>总序（不可颠倒）：</b>C=F∩M∩D → 网毒硬过滤 → C* → ①成分 Degree（仅 B–C*）Top L=8 → ②C* 上 PPI/MCC Top T=8 → ③代谢物 Tier A*（n_C*≥1，排除有害小分子与 LPS/H₂S）Top M=8 → 各配体与其 C* 邻居中 PPI 最前且优先落入 Top 靶点的 1 个基因对接。</p>
+<p><b>为何这样洗：</b>先去掉明确有害暴露物相关靶点，避免把风险轴当成治疗对接主轴；Degree/PPI 必须在剔除后重算，否则枢纽会被 ToxHard 基因「顶上去」。LPS/H₂S 不整片删 C，以免炎症枢纽被掏空，但二者不作对接配体。</p>
+<p><b>本轮数字：</b>|C|=78，|ToxHard|=27，|C*|=51；Top 靶点 PCNA、DNMT1、ESR2、FOS、PPARG、EZH2、TOP1、GAPDH。</p>
+<p><b>对接通过：</b>三种子均值 ≤ −5.0 kcal/mol 且建议 pass_rate=1。旧硬编码对接对剔除并归档至 <code>.../对接/_归档_旧对接_*</code>。</p>
 
+<h4>4. 数据处理与函数</h4>
+<p>脚本 <code>06_分子对接/代码文件/19_按标准筛选并对接.py</code>：算 C*/Top → 归档旧表 → 成分轨与代谢物轨分别 Vina → 写汇总 CSV。</p>
+<h4>5. 参数与取值原因</h4>
+<p>单位 kcal/mol（FROZEN，由旧 kJ/mol 表述改回）；阈值 −5.0 kcal/mol（约合 −20.9 kJ/mol，旁注）；种子 1/7/42；STRING ≥0.9；Top T/L/M=8（课题锁定，见筛选标准 §7）。</p>
+<h4>6. 输入与输出</h4>
+<p><b>输入：</b>F/M/D 靶点、network 边、代谢物主面板、CTD ToxHard、STRING。<b>输出：</b>SelectionRun 表 + 双轨对接汇总/全表。<b>停机：</b>无 UniProt/PDB 则顺延下一名靶点；配体无 3D 则顺延下一名成分/代谢物。</p>
+<h4>7. 结果数据与图片怎么读</h4>
+<figure><img src='../图片文件/panel_06_对接.png' alt=''/><figcaption><b>方法拼图 06：</b> C* 后双轨对接亲和力热图（kcal/mol）。细读见论文版。</figcaption></figure>
+<p>读 <code>mean_kcal</code>、<code>pass_rate</code>；主结论以 <code>成分对接汇总.csv</code> / <code>代谢物对接汇总.csv</code> 为准，不以归档旧表为准。</p>
+<h4>8. 解读边界</h4>
+<p>结合候选；非实验 Kd、非疗效/拮抗/减毒。本轮 16 对与已完成 MD（色氨酸–MMP9、腺苷–ADA）无配体–基因重合，既有 MD 不能直接背书本轮对接对。</p>
 <h2 id='m-07'>07 外部支持 GEO/MR</h2>
 
 <h4>1. 为何采用这一分析</h4>
@@ -214,7 +218,7 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <p><b>数据库：</b>GEO — GSE92415（GPL13158）、GSE75214（GPL6244）官方 series matrix 与平台注释。</p>
 <p><b>来自分析：</b>03 的 C 基因列表。</p>
 <p><b>为何这两套：</b>均为结肠黏膜 UC vs 对照，可做外部一致性；排除 Crohn / 回肠 / inactive 混杂设计。</p>
-<p><b>原始：</b>07 模块内 GEO 下载缓存。<b>处理后：</b><code>07_外部支持_GEO与MR/结果文件/数据文件/GEO验证/</code>。</p>
+<p><b>原始：</b>07 模块内 GEO 下载缓存。<b>处理后：</b><code>07_外部支持_GEO与MR/数据文件/结果数据/GEO验证/</code>。</p>
 
 <h4>3. 筛选标准</h4>
 <p>C→探针/基因映射；计算 logFC、P/FDR；方向一致性；z-score panel AUC。GSE92415 用于定向，故该队列 AUC 有乐观偏倚，必须在读法中写明。这样洗是为了外部支持可复核且偏倚可见。</p>
@@ -230,7 +234,7 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <p>外部一致性；非疗效、非诊断产品。</p>
 
 <h2 id='m-08'>08 分子动力学</h2>
-
+<p><b>与 06 定稿对接的关系：</b>正式完成的 MD 仍对应旧对接最强体系（色氨酸–MMP9、腺苷–ADA）。2026-10-12 起 06 已按 C* 范式重筛，新对接对与上述 MD 体系无重合；若要以新范式进入 MD，须另开体系，不能把旧轨迹改挂新对。</p>
 <h4>1. 为何采用这一分析</h4>
 <p>对接通过且可建体系的复合物做有监控的 100 ns 生产段，记录骨架/配体 RMSD 与 COM。飞出后不续跑同一 <code>md.cpt</code> 充数。</p>
 <h4>2. 数据来源</h4>
@@ -239,7 +243,7 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <p><b>结构库：</b>RCSB（4H3X、7RTG、3IAR 等）。</p>
 <p><b>为何正式两套：</b>亲和力最强且可建体系；ADA 空口袋飞出后改 A2；CYP 飞出后取消并书面记录。</p>
 <p><b>原始运行：</b>WSL <code>~/md_runs/</code>（或课题约定运行根）。</p>
-<p><b>处理后交付：</b><code>08_分子动力学/结果文件/数据文件/分子动力学_MD/</code> 与 <code>.../图片文件/分子动力学图_MD/</code>；全流程副本可在 <code>00_全流程报告/结果文件/</code>。</p>
+<p><b>处理后交付：</b><code>08_分子动力学/数据文件/结果数据/分子动力学_MD/</code> 与 <code>.../图片文件/分子动力学图_MD/</code>；全流程副本可在 <code>00_全流程报告/结果文件/</code>。</p>
 
 <h4>3. 筛选标准</h4>
 <p>NS=100；CHUNK=1；MONITOR=1；飞出阈值见复合物 MD SOP。飞出→CANCELLED 或正式重做，不把飞出轨迹当稳定证据。这样洗是为了「监控内完成」可验收。</p>

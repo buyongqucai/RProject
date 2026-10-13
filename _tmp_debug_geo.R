@@ -1,5 +1,0 @@
-suppressPackageStartupMessages(library(GEOquery))
-es<-getGEO(filename='E:/RProject/_np_stage/geo_data/GSE92415_series_matrix.txt.gz',getGPL=FALSE); pd<-pData(es)
-g<-ifelse(pd[['disease:ch1']]=='Healthy','Control',ifelse(pd[['disease:ch1']]=='Ulcerative Colitis (UC)' & pd[['visit:ch1']]=='Week 0','UC',NA))
-cat('class g',class(g),'len',length(g),'true',sum(!is.na(g)),'\n'); str(g); cat('class keep',class(!is.na(g)),'\n')
-print(head(g))

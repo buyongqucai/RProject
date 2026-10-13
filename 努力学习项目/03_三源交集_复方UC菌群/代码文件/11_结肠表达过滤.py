@@ -6,7 +6,7 @@
   访问日期：2026-10-07；56,200 基因 × 54 组织。
 
 预登记判定：基因在结肠（Colon - Transverse 或 Colon - Sigmoid）任一段 median TPM ≥ 1 视为结肠表达。
-输出：结果文件/数据文件/敏感性/结肠表达过滤_{基因表,干预候选稳定性}.csv + 结肠过滤_摘要.json
+输出：数据文件/结果数据/敏感性/结肠表达过滤_{基因表,干预候选稳定性}.csv + 结肠过滤_摘要.json
 """
 from __future__ import annotations
 
@@ -19,11 +19,11 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 DELIV = ROOT.parent / "交付文件"
 CAND_GTEX = [                                       # 依次寻找 GTEx GCT（沙盒/本机两套路径）
-    ROOT / "数据文件/外部数据库/GTEx/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz",
+    ROOT / "数据文件/原始数据/外部数据库_多源/GTEx/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz",
     Path.home() / "extdata" / "gtex_median_tpm.gct.gz",
 ]
 GTEx = next((p for p in CAND_GTEX if p.exists()), CAND_GTEX[0])
-OUT = ROOT / "结果文件" / "数据文件" / "敏感性"
+OUT = ROOT / "数据文件" / "结果数据" / "敏感性"
 OUT.mkdir(parents=True, exist_ok=True)
 TPM_CUT = 1.0
 
@@ -31,9 +31,9 @@ TPM_CUT = 1.0
 def load_sets() -> dict:
     return {
         "I1": set(pd.read_csv(DELIV / "数据文件/药物/药物疾病交集.csv", encoding="utf-8-sig")["gene"]),
-        "C_main": set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "C_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"]),
-        "C_full": set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "C_full_gutmgene_human_H_plus_M.csv", encoding="utf-8-sig")["gene"]),
-        "I2_main": set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "I2_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"]),
+        "C_main": set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "C_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"]),
+        "C_full": set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "C_full_gutmgene_human_H_plus_M.csv", encoding="utf-8-sig")["gene"]),
+        "I2_main": set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "I2_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"]),
     }
 
 
@@ -87,7 +87,7 @@ def main() -> None:
         ("主面板", "复方候选干预代谢物_主面板.csv", s["C_main"]),
         ("全库敏感性", "复方候选干预代谢物_全库敏感性.csv", s["C_full"]),
     ]:
-        df = pd.read_csv(ROOT / "结果文件" / "数据文件" / "预测" / mfile)
+        df = pd.read_csv(ROOT / "数据文件" / "结果数据" / "预测" / mfile)
         c_colon = cset & expressed
         df["n_C_colon"] = df["C_genes"].fillna("").apply(
             lambda x: len([g for g in str(x).split(";") if g and g.upper() in {e.upper() for e in c_colon}]))

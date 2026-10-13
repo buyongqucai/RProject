@@ -73,5 +73,6 @@ E:\RProject\
 
 - **金标交付**：桌面独立目录 + 独立 git，结构对齐各技能金标。  
 - **仓内沙箱**：与技能同仓迭代；大体积通路图/动画等见 `.gitignore`。  
+- **原始数据命名**：文件/子目录须带数据库来源（`{来源库}_{内容}`）；全技能 SSOT → `生信分析技能_BioinformaticsSkills/00_基础_Foundation/统一交付规范_DeliveryStandards/文档_docs/样例目录与命名_SampleLayoutNaming.md` §2.1。  
 - 大文件/缓存（SRA、表达矩阵、`.pse` 备份、MD 工作目录）不进 git。  
 - 每个改动单元完成即提交；提交只含当次相关文件。

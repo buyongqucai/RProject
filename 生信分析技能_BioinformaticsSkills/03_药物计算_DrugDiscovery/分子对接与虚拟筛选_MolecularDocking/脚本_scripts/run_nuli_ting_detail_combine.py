@@ -11,9 +11,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-from PIL import Image
-import numpy as np
-
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from dock_export_common import ensure_img_subdir
 
@@ -32,24 +29,6 @@ def find_dir(parent: Path, *keys: str) -> Path:
         if p.is_dir() and all(k in p.name for k in keys):
             return p
     raise FileNotFoundError(f"{keys} under {parent}")
-
-
-def crop_bw(path: Path, tolerance: int = 0) -> None:
-    img = Image.open(path).convert("RGB")
-    arr = np.array(img)
-    h, w, _ = arr.shape
-    is_black = np.all(arr <= 0 + tolerance, axis=2)
-    is_white = np.all(arr >= 255 - tolerance, axis=2)
-    non_bw = ~(is_black | is_white)
-    if not np.any(non_bw):
-        return
-    left = int(np.argmax(np.any(non_bw, axis=0)))
-    right = w - 1 - int(np.argmax(np.any(non_bw[:, ::-1], axis=0)))
-    top = int(np.argmax(np.any(non_bw, axis=1)))
-    bottom = h - 1 - int(np.argmax(np.any(non_bw[::-1, :], axis=1)))
-    cropped = img.crop((left, top, right + 1, bottom + 1))
-    dpi = img.info.get("dpi", (600, 600))
-    cropped.save(path, dpi=dpi)
 
 
 def sync_pse_top10_to_jobs(viz: Path, jobs: Path) -> None:
@@ -123,11 +102,7 @@ def combine_dirs(img_dirs: list[Path]) -> None:
         for bad in img.glob("result_01.png"):
             bad.unlink()
             print(f"[clean] removed {bad}")
-        for big in img.glob("big-*.png"):
-            before = Image.open(big).size
-            crop_bw(big)
-            after = Image.open(big).size
-            print(f"[crop] {img.parent.name}/{big.name}: {before} -> {after}")
+        # 禁止对磁盘 big-*.png 做 crop_bw：会裁掉丝带余量且破坏 5040×3653 原图
         idxs = []
         for name in img.iterdir():
             if name.name.lower().startswith("big-") and name.suffix.lower() == ".png":

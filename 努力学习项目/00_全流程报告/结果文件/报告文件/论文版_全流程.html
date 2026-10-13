@@ -91,8 +91,10 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 
 
 <h2 id="s-dock">分子对接</h2>
-<p>从高优先级代谢物–基因对取 9 对正式对接，Vina，每对 3 种子，阈值 −20.9 kJ/mol。图 15 热图颜色为三轮均值亲和力（kJ/mol，越负越强）。最强三格：色氨酸–MMP9（4H3X）−37.26333333333333 ± 0.09504384952921963；吲哚–CYP1A1（4I8V）−29.69 ± 0.0；腺苷–ADA（3IAR）−27.56 ± 0.05567764362829951。另通过：苯丙氨酸–PPARG −26.343333333333334、精氨酸–NOS3 −26.076666666666668、色氨酸–MPO −22.366666666666664、4-羟基苯乙酸–CA2 −22.02333333333333。未通过：吲哚-3-乙酸–ACHE −19.786666666666665、丁酸–PPARG −16.46。</p>
-<figure><img src='../图片文件/dock.png' alt=''/><figcaption><b>图 15.</b> 对接亲和力热图。</figcaption></figure>
+<p>对接配对不再沿用旧版手挑代谢物–基因表。先取三源核心 C=F∩M∩D（|C|=78），再用预登记有害小分子暴露物（TMAO、p-甲酚硫酸盐、硫酸吲哚酚、脱氧胆酸、石胆酸）的 CTD 策展靶点硬剔除得工作宇宙 C*（|ToxHard|=27，|C*|=51；LPS/H₂S 不整片删 C）。随后在 C* 上按 STRING（score≥0.9）取枢纽靶点 Top 8（本轮：PCNA、DNMT1、ESR2、FOS、PPARG、EZH2、TOP1、GAPDH），成分 Degree 与代谢物 Tier A* 亦只在 C* 边重算；旧对接表已归档。单位改回 Vina 主单位 kcal/mol，阈值 −5.0；每对种子 1/7/42。</p>
+<p>成分轨 8 对均值（kcal/mol）：quercetin–FOS（1A02）-8.20（通过）；Anhydroicaritin–ESR2（1L2J）-7.70（通过）；kaempferol–PPARG（1FM9）-7.30（通过）；3beta-Hydroxyurs-12-En-28-Syre–DNMT1（3EPZ）-7.20（通过）；Caffeic Acid–TOP1（1K4T）-6.27（通过）；Eucalyptol–NLRP3（7ALV）-6.07（通过）；luteolin–PCNA（1U7B）-4.60（部分通过）；Stigmasterol–NR3C2（1Y9R）-3.33（未通过）。代谢物轨 8 对：Inosine–DNMT1（3EPZ）-6.60（通过）；Phenylalanine–PPARG（1FM9）-6.30（通过）；Maltotriose–LGALS3（1KJR）-5.90（通过）；4-Hydroxyphenylacetic acid–ESR2（1L2J）-5.80（通过）；Raffinose–LGALS3（1KJR）-5.27（通过）；Maltose–LGALS3（1KJR）-5.00（通过）；Tyrosine–PCNA（1U7B）-4.30（未通过）；Butyrate–FOS（1A02）-3.63（未通过）。分数只作结合候选，不作疗效或拮抗。</p>
+<p>与已完成的分子动力学对照：正式 MD 体系为色氨酸–MMP9（4H3X）与腺苷–ADA（7RTG，A2）；本轮 C* 终筛 16 对在配体与基因上均无重合，故不能把既有 MD 轨迹直接接到本轮对接结论。</p>
+<figure><img src='../图片文件/dock.png' alt=''/><figcaption><b>图 15.</b> C* 后成分/代谢物对接亲和力热图（kcal/mol，越负越强）。</figcaption></figure>
 <h2 id='s-geo'>GEO 外部一致性</h2>
 
 <p>图 16 是 GSE92415（GPL13158）火山图：横轴为 UC（n=87）相对 Healthy（n=21）的 logFC，纵轴 −log₁₀(P)。该队列同时用于后续 panel 定向，故其 AUC 有乐观偏倚。</p>
@@ -108,7 +110,7 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <figure><img src='../图片文件/geo_auc.png' alt=''/><figcaption><b>图 19.</b> AUC 森林图。0.995 与 0.993。</figcaption></figure>
 
 <h2 id="s-md">分子动力学</h2>
-<p>对接最强三对进入 MD。正式交付为色氨酸–MMP9（4H3X）与腺苷–ADA_A2（7RTG）；空口袋 ADA 对照约 42 ns 飞出、吲哚–CYP1A1 约 1 ns 飞出后取消，不附图充数。稳定/质控图按图册 01–12；自由能只纳入重绘后的 <b>3D 形貌 17–20</b>（漏斗+底板，已删除旧 2D FEL 与未重绘 3D），图源链到 <code>08_分子动力学/结果文件/图片文件/分子动力学图_MD/</code>。</p>
+<p>下列 MD 基于<strong>归档前</strong>对接最强体系进入；与 2026-10-12 起 C* 定稿对接对无配体–基因重合，叙事上二者并列、不互相改挂。对接最强三对进入 MD。正式交付为色氨酸–MMP9（4H3X）与腺苷–ADA_A2（7RTG）；空口袋 ADA 对照约 42 ns 飞出、吲哚–CYP1A1 约 1 ns 飞出后取消，不附图充数。稳定/质控图按图册 01–12；自由能只纳入重绘后的 <b>3D 形貌 17–20</b>（漏斗+底板，已删除旧 2D FEL 与未重绘 3D），图源链到 <code>08_分子动力学/结果文件/图片文件/分子动力学图_MD/</code>。</p>
 
 <h3 id='md-MMP9_Tryptophan_4H3X'>色氨酸–MMP9（4H3X）</h3>
 <p>色氨酸–MMP9（4H3X） 生产段完成 100.000 ns。末段监控：骨架 RMSD 最大 0.2805147 nm，配体 RMSD 最大 0.2325846 nm，COM 最大 1.052 nm。下列为该体系正式出图：01–12 与重绘 3D FEL（17–20）。旧 2D FEL（13–16）与未重绘 3D 已自论文版移除。</p>

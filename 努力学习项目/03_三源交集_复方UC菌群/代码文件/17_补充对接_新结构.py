@@ -7,7 +7,7 @@
         盒心 = 催化 Zn 位置（无配体可参照）
   CYP1A1: 4I8V 不变（Indole 已对接；HEME 另按 SOP §9.10 参数化）
 对接参数与首轮一致：22Å 盒、exhaustiveness 8、种子 1/7/42；受体保留 ZN（去掉 CA/溶剂/水/口袋配体）。
-结果追加进 结果文件/数据文件/对接/对接全表.csv 与 对接汇总.csv（pdb 列区分新旧受体）。
+结果追加进 数据文件/结果数据/对接/对接全表.csv 与 对接汇总.csv（pdb 列区分新旧受体）。
 """
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 WORK = ROOT / "数据文件" / "对接工作区"
-OUT = ROOT / "结果文件" / "数据文件" / "对接"
+OUT = ROOT / "数据文件" / "结果数据" / "对接"
 MDW = Path.home() / "md_inputs"          # 下载的受体 PDB
 OB = Path.home() / "dockenv/bin/obabel"
 VINA = Path.home() / "dockenv/bin/vina"
@@ -87,8 +87,8 @@ def prep_receptor(pdb_file: Path, site_res: str | None, tag: str):
 def main() -> None:
     # 配体 SMILES（面板）
     panel = pd.concat([
-        pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/代谢物主面板.csv", encoding="utf-8-sig"),
-        pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/代谢物全库敏感性.csv", encoding="utf-8-sig"),
+        pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/代谢物主面板.csv", encoding="utf-8-sig"),
+        pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/代谢物全库敏感性.csv", encoding="utf-8-sig"),
     ]).drop_duplicates("metabolite")
     smiles = dict(zip(panel["metabolite"], panel["canonical_smiles"]))
 

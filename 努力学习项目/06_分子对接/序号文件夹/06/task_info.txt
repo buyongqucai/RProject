@@ -1,0 +1,12 @@
+rank=06
+track=metabolite
+ligand=Phenylalanine
+gene=PPARG
+pdb=1FM9
+site=co-ligand:9CR(largest cluster 22/22)
+mean_kcal=-6.3
+best_seed=1
+best_affinity_kcal=-6.3
+md_priority=no
+ascii_prefix=STD_PPARG__Phenylalanine
+receptor=protein-only (DNA stripped)

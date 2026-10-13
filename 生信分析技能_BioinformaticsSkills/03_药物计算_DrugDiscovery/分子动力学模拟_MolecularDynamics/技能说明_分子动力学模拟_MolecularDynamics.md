@@ -3,7 +3,8 @@ name: bioinfo-molecular-dynamics
 description: >-
   分子动力学模拟 / MolecularDynamics：对接后稳定性/结合自由能；山水 M17；勿假装纯 R 跑 MD。
   工具栈：GROMACS GPU(CUDA)、UV(md-venv: acpype/gmx_MMPBSA)、conda env md-tools(仅 AmberTools)。
-  触发：分子动力学, GROMACS, MD, RMSD, acpype, MM-GBSA, AmberTools。交付范式 FROZEN（2026-09-03）。
+  触发：分子动力学, GROMACS, MD, RMSD, acpype, MM-GBSA, AmberTools, 跑MD, 生产MD。
+  Agent 默认：用户说「跑 MD」= 生产级 NS≥100+监控；开跑须过 SOP §9.0.2（mol2 几何、初态接触、EM 收敛）。仅明示「烟测/测试」才短轨迹。交付范式 FROZEN（2026-09-03）。
 ---
 
 # 分子动力学模拟 / MolecularDynamics
@@ -14,11 +15,14 @@ description: >-
 
 ## 1. 数据来源
 
-实验复合物优先；没有目标配体共晶时用同口袋近缘结构作参照；两者都没有才用对接姿态。判据与口袋限制见 SOP §9.0.1。
+实验复合物优先；没有目标配体共晶时用同口袋近缘结构作参照；两者都没有才用对接姿态。判据与口袋限制见 SOP §9.0.1。  
+**原始数据命名：** 初态结构须带来源（如 `PDB_`、`Upstream_` 对接姿态）→ DeliveryStandards SampleLayoutNaming **§2.1**。
 
 ## 2. 数据规范（判断是否可用）
 
-输入完整可溯源；分组/标注来自官方或实验记录；禁止编造结果数字。
+输入完整可溯源；分组/标注来自官方或实验记录；禁止编造结果数字。  
+raw 文件/夹名含来源库；禁止无来源的 `输入/`、`md_in/`。  
+选蛋白先过 SOP **§9.0.3**（大段 loop 缺失则换结构）。开跑再过 **§9.0.2**（mol2 几何、接触、EM 收敛）。溶剂化 / 电荷中和 / EM / NVT / NPT 不证明对接姿态正确。
 
 ## 3. 何时选用本技能
 
@@ -29,7 +33,7 @@ description: >-
 
 ## 4. 数据处理方法
 
-溶剂化→最小化→平衡→生产→RMSD/RMSF/氢键/MM-GBSA（细节见 SOP）
+先定初态场景（SOP §9.0.1：A1 共晶 / A2 近缘 / A3 对接 / A4 配位金属），再过 §9.0.2 门禁，然后溶剂化 → 中和 → EM → NVT → NPT → 分块生产。第 1 个生产块由监控筛选；飞出不从该检查点续跑。细节只维护在 SOP。
 
 ## 5. 工具链（2026-10-09 现行）
 
@@ -63,20 +67,27 @@ RMSD/RMSF 曲线；**DPI≥600；SVG+PNG；图面 English；防遮挡**。本技
 **执行 SOP（强制）：** [`文档_docs/复合物MD流水线_GromacsSop.md`](文档_docs/复合物MD流水线_GromacsSop.md)。  
 **出图/交付 FROZEN：** [`文档_docs/出图与交付约束_MdFigureStandards.md`](文档_docs/出图与交付约束_MdFigureStandards.md)。
 
+### 9.0 Agent 默认（2026-10-13 确认）
+
+| 用户说法 | Agent 动作 |
+|----------|------------|
+| 「跑 MD / 开 MD / 生产 / 正式」或未指定时长 | **立即**启动生产：`NS=100`（或用户指定 ≥100）、`CHUNK_NS=1`、`MONITOR=1`；输入齐则 **nohup 后台跑**，不得只备输入就停下 |
+| 「烟测 / 测试 / demo / 0.2 ns」 | 才允许短轨迹（`NS≤1` 或 `04_烟测_3HTB.sh`） |
+
+禁止用示例里的 `NS=1` 当课题默认。细则与变量表见 SOP §9.0。
+
 ```bash
 wsl -d Ubuntu-24.04 -- bash -lc '
   source ~/activate-md.sh
   cd <工作目录> && \
-  LIGAND_RES=JZ4 NET_CHARGE=0 NS=1 \
+  LIGAND_RES=JZ4 NET_CHARGE=0 NS=100 CHUNK_NS=1 MONITOR=1 \
   bash <技能根>/脚本_scripts/运行复合物MD_runComplexMd.sh . protein.pdb jz4_h.mol2
 '
 ```
 
-烟测：`source ~/activate-md.sh && bash /mnt/e/md_kit/04_烟测_3HTB.sh` → 期望 `SMOKE PASS` + `CUDA acceleration`。
+烟测（须用户明示）：`source ~/activate-md.sh && bash /mnt/e/md_kit/04_烟测_3HTB.sh` → 期望 `SMOKE PASS` + `CUDA acceleration`。
 
-**过程监控 / 异常即停（正式长轨迹）：** SOP §9.5.1；`CHUNK_NS=1 MONITOR=1`。飞出则停并留 `md.cpt`，**不续跑同一对接初态**；按 §9.0.1 用实验位姿重搭后排队。口袋不要撑开再对接（§9.0.1「口袋不放大」）。过程草图在 `monitor/`（非 Origin 金标）；交付图仍为样例 **01–26**。  
-
-**过程看门狗（`MD-WATCHDOG-v1`）：** 并行盯进程/轨迹是否推进；SSOT [`文档_docs/过程看门狗_MdWatchdog.md`](文档_docs/过程看门狗_MdWatchdog.md)；`E:\md_kit\watchdogMdRun.sh` + `heartbeat.json`。
+**开跑门禁：** SOP §9.0.2 / §9.0.3。**过程监控：** SOP §9.5.1。飞出后**自动重搭一轮**（共晶/近缘/无大段缺环）再跑；仍失败则停（§9.0.1「飞出后的队列」）。中文邮件写明原因与是否重试。不从坏 `md.cpt` 续跑。口袋不要撑开再对接。过程草图在 `monitor/`；交付图仍为样例 **01–26**。
 
 ## 样例验证
 

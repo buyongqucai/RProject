@@ -9,11 +9,13 @@ description: >-
 
 ## 1. 数据来源
 
-GEO/SRA/NGDC counts 或 FASTQ；自测 Illumina RNA-seq。书清：`工具_GEO元数据.R`、`工具_RNA定量.R`、`工具_富集与质控图.R`。
+GEO/SRA/NGDC counts 或 FASTQ；自测 Illumina RNA-seq。书清：`工具_GEO元数据.R`、`工具_RNA定量.R`、`工具_富集与质控图.R`。  
+**原始数据命名：** 须带库名（如 `GEO_`、`SRA_`、`NGDC_`；自测 `User_`）→ DeliveryStandards SampleLayoutNaming **§2.1**。
 
 ## 2. 数据规范（判断是否可用）
 
-每组建议 ≥3；分组官方可溯源；剔除汇总列；库型与比对参数匹配。
+每组建议 ≥3；分组官方可溯源；剔除汇总列；库型与比对参数匹配。  
+raw 文件/夹名含来源库与 accession（例：`01_GEO_表达矩阵_GSE10072_SeriesMatrix.txt.gz`）。
 
 ## 3. 何时选用本技能
 

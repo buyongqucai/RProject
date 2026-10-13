@@ -1,4 +1,4 @@
-﻿metabolite,gene,uniprot,pdb,site,seed,exhaustiveness,box_A,affinity_kcal_mol,affinity_sd,affinity_kJ_mol,pass_threshold_kJ
+﻿metabolite,gene,uniprot,pdb,site,seed,exhaustiveness,box_A,affinity_kcal_mol,affinity_sd,affinity_kJ_mol,pass_threshold_kcal
 Butyrate,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),1,8,22.0,-3.917,,-16.39,False
 Butyrate,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),7,8,22.0,-3.939,,-16.48,False
 Butyrate,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),42,8,22.0,-3.946,,-16.51,False

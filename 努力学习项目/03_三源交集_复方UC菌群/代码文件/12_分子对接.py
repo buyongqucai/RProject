@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """12_分子对接.py —— Phase 5：核心对分子对接（Vina，3 次独立重复）
 
-配对来源：结果文件/数据文件/机制层/核心代谢物靶点配对.csv（真实存在对 + Tier A 排名）。
+配对来源：数据文件/结果数据/机制层/核心代谢物靶点配对.csv（真实存在对 + Tier A 排名）。
 受体结构：RCSB Search API 按 UniProt 精确检索 → 选带合适有机共晶配体的最优 entry；
           口袋中心 = 共晶配体重原子质心；无共晶配体时 = 蛋白几何中心（标注 blind docking）。
 配体：代谢物面板 canonical_smiles（PubChem），Open Babel gen3d + 加氢。
 重复：3 个独立随机种子（1/7/42），exhaustiveness=8。
-阈值：|−20.9 kJ/mol| ≈ −4.99 kcal/mol（计划 §4 Phase 5 中文文献口径）。
+阈值：−5.0 kcal/mol（主单位；约合 −20.9 kJ/mol。FROZEN 2026-10-12）。
 
-输出：结果文件/数据文件/对接/对接全表.csv（每对×3重复）、对接汇总.csv、对接_摘要.json
+输出：数据文件/结果数据/对接/对接全表.csv（每对×3重复）、对接汇总.csv、对接_摘要.json
 结论边界：对接=结合候选，不作疗效/毒性结论（项目规范 §2）。
 """
 from __future__ import annotations
@@ -22,7 +22,7 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "结果文件" / "数据文件" / "对接"
+OUT = ROOT / "数据文件" / "结果数据" / "对接"
 WORK = ROOT / "数据文件" / "对接工作区"
 OUT.mkdir(parents=True, exist_ok=True)
 WORK.mkdir(parents=True, exist_ok=True)
@@ -32,7 +32,8 @@ VINA = Path.home() / "dockenv/bin/vina"
 SEEDS = [1, 7, 42]
 EXHAUST = 8
 BOX = 22.0                      # Å，共晶口袋 22Å 立方
-THRESH_KJ = -20.9
+THRESH_KCAL = -5.0
+THRESH_KJ = THRESH_KCAL * 4.184  # 仅旁注/兼容旧列
 SOLVENT_BLACK = {"SO4", "PO4", "GOL", "EDO", "PEG", "DMS", "ACT", "ACE", "MLI", "TRS",
                  "MPD", "PG4", "1PE", "P6G", "BTB", "FMT", "AZI", "NO3", "NH4", "IOD",
                  "BR", "CL", "NA", "K", "MG", "CA", "MN", "CD", "NI", "CO", "CU"}
@@ -229,8 +230,8 @@ def run(cmd: list[str], timeout: int = 300) -> str:
 
 def main() -> None:
     panel = pd.concat([
-        pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/代谢物主面板.csv", encoding="utf-8-sig"),
-        pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/代谢物全库敏感性.csv", encoding="utf-8-sig"),
+        pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/代谢物主面板.csv", encoding="utf-8-sig"),
+        pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/代谢物全库敏感性.csv", encoding="utf-8-sig"),
     ]).drop_duplicates("metabolite")
     smiles = dict(zip(panel["metabolite"], panel["canonical_smiles"]))
 

@@ -1,0 +1,12 @@
+rank=12
+track=metabolite
+ligand=Maltose
+gene=LGALS3
+pdb=1KJR
+site=co-ligand:BEK(largest cluster 15/15)
+mean_kcal=-5.0
+best_seed=1
+best_affinity_kcal=-5.0
+md_priority=no
+ascii_prefix=STD_LGALS3__Maltose
+receptor=protein-only (DNA stripped)

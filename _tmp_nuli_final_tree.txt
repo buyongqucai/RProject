@@ -1,0 +1,45 @@
+00_全流程报告
+  old_res_data_gone=True
+  raw_tops=[]
+  raw_files=0
+  result_data_files=0
+01_网络药理学
+  old_res_data_gone=True
+  raw_tops=['README_原始数据来源.md']
+  raw_files=1
+  result_data_files=42
+02_网络毒理学_毒性分层
+  old_res_data_gone=True
+  raw_tops=['README_原始数据来源.md']
+  raw_files=1
+  result_data_files=5
+03_三源交集_复方UC菌群
+  old_res_data_gone=True
+  raw_tops=['SEA数据库_SEA16原始', 'SEA数据库_SEA原始', 'SwissTargetPrediction_STP原始', '外部数据库_多源']
+  raw_files=977
+  result_data_files=27
+04_机制层_PPI富集
+  old_res_data_gone=True
+  raw_tops=['README_原始数据来源.md']
+  raw_files=1
+  result_data_files=18
+05_干预代谢物预测
+  old_res_data_gone=True
+  raw_tops=['README_原始数据来源.md']
+  raw_files=1
+  result_data_files=3
+06_分子对接
+  old_res_data_gone=True
+  raw_tops=['RCSB与PubChem_对接结构工作区', 'README_结构来源.md', '课题产物_手调detail备份']
+  raw_files=76
+  result_data_files=19
+07_外部支持_GEO与MR
+  old_res_data_gone=True
+  raw_tops=['GEO数据库_GEO', 'GWAS数据库_GWAS']
+  raw_files=11
+  result_data_files=11
+08_分子动力学
+  old_res_data_gone=True
+  raw_tops=['RCSB与对接姿态_MD输入_Top3', 'README_MD输入来源.md', '工具链残留_MD环境_应使用E盘md_kit']
+  raw_files=11
+  result_data_files=0

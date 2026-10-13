@@ -12,6 +12,17 @@
 
 禁止把文件名对照逻辑搬进图面（中英并排标题）。HTML 报告正文可用中文；**仅图面强制英文**。
 
+## 1.1 原始数据命名（强制 · 全技能）
+
+`数据文件/`（raw）文件名/子目录须带**数据库来源**，模式：
+
+```
+[{NN}_]{来源库}_{中文语义}_{EnglishPascal}.{ext}
+```
+
+细则与示例 → [`样例目录与命名_SampleLayoutNaming.md`](样例目录与命名_SampleLayoutNaming.md) **§2.1**。  
+禁止无来源的 `raw.csv`、`输入/`、`download/` 等。
+
 ## 2. 结果文件命名
 
 ```
@@ -26,7 +37,8 @@
 | 契约桩 | `契约阻塞桩_ContractBlockedStub.csv` | |
 | 报告 | `样例报告_SampleReport_v1.html` | |
 
-禁止：纯英文无中文前缀的 `sample_*.csv`、`plot.png`、`fig1.png`、无语义 `out.csv`。
+禁止：纯英文无中文前缀的 `sample_*.csv`、`plot.png`、`fig1.png`、无语义 `out.csv`。  
+结果表**不**要求再叠一层来源库前缀（来源写在审计/`DATA_SOURCE`）；raw 才强制 `{来源库}_`。
 
 ## 3. PlotQA 钩子
 

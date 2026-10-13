@@ -1,0 +1,12 @@
+rank=03
+track=compound
+ligand=kaempferol
+gene=PPARG
+pdb=1FM9
+site=co-ligand:9CR(largest cluster 22/22)
+mean_kcal=-7.3
+best_seed=1
+best_affinity_kcal=-7.3
+md_priority=YES
+ascii_prefix=STD_PPARG__kaempferol
+receptor=protein-only (DNA stripped)

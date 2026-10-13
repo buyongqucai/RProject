@@ -7,7 +7,7 @@
 - Open Targets 关联分数阈值 ≥0.1（主），≥0.3（严格对照）；UC=MONDO_0005101，CD=MONDO_0005011（OLS4 核验）。
 - 结论边界：特异性/敏感性均为方法学稳健性检查，不改变冻结口径 D=1517 主分析。
 
-输出：结果文件/数据文件/P0加固/ + 控制台摘要
+输出：数据文件/结果数据/P0加固/ + 控制台摘要
 """
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ from scipy.stats import fisher_exact, hypergeom
 
 ROOT = Path(__file__).resolve().parents[1]
 DELIV = ROOT.parent / "交付文件"
-OUT = ROOT / "结果文件" / "数据文件" / "P0加固"
+OUT = ROOT / "数据文件" / "结果数据" / "P0加固"
 OUT.mkdir(parents=True, exist_ok=True)
 OT_URL = "https://api.platform.opentargets.org/api/v4/graphql"
 N_SRC_MIN = 2
@@ -37,9 +37,9 @@ def hc_sensitivity() -> dict:
     D = set(pd.read_csv(DELIV / "数据文件/疾病/疾病靶点合并.csv", encoding="utf-8-sig")["gene"])
     F = set(pd.read_csv(DELIV / "数据文件/药物/药物靶点_全药.csv", encoding="utf-8-sig")["gene"])
     I1 = set(pd.read_csv(DELIV / "数据文件/药物/药物疾病交集.csv", encoding="utf-8-sig")["gene"])
-    Mdf = pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/M_主面板靶点.csv", encoding="utf-8-sig")
+    Mdf = pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/M_主面板靶点.csv", encoding="utf-8-sig")
     M = set(Mdf["gene"])
-    C = set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "C_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"])
+    C = set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "C_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"])
 
     nsrc = src.groupby("gene")["source"].nunique()
     HC = {g for g in D if nsrc.get(g, 0) >= N_SRC_MIN}
@@ -51,7 +51,7 @@ def hc_sensitivity() -> dict:
     jac = len(C_hc & C) / len(C_hc | C) if (C_hc | C) else 0.0
 
     # Tier A 稳定性（主面板，H+M）
-    tierA = pd.read_csv(ROOT / "结果文件" / "数据文件" / "预测/复方候选干预代谢物_主面板.csv", encoding="utf-8-sig")
+    tierA = pd.read_csv(ROOT / "数据文件" / "结果数据" / "预测/复方候选干预代谢物_主面板.csv", encoding="utf-8-sig")
     a = tierA[tierA["tier"].str.startswith("A")].copy()
     hc_str = {g.upper() for g in C_hc}
     a["n_C_hc"] = a["C_genes"].fillna("").apply(
@@ -136,7 +136,7 @@ def ot_targets_scored(doid: str) -> dict[str, float]:
 
 
 def specificity() -> dict:
-    C = set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "C_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"])
+    C = set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "C_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"])
     I1 = set(pd.read_csv(DELIV / "数据文件/药物/药物疾病交集.csv", encoding="utf-8-sig")["gene"])
     D = set(pd.read_csv(DELIV / "数据文件/疾病/疾病靶点合并.csv", encoding="utf-8-sig")["gene"])
 

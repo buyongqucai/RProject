@@ -1,0 +1,12 @@
+rank=01
+track=compound
+ligand=quercetin
+gene=FOS
+pdb=1A02
+site=blind(geometric center)
+mean_kcal=-8.2
+best_seed=1
+best_affinity_kcal=-8.2
+md_priority=YES
+ascii_prefix=STD_FOS__quercetin
+receptor=protein-only (DNA stripped)

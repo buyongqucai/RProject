@@ -20,12 +20,14 @@ description: >-
 
 ## 1. 数据来源
 
-GEO / NGDC 官方下载；本地目录 `书清项目/GSE*****/`；共享工具 `书清项目/共享脚本/`。
+GEO / NGDC 官方下载；本地目录 `书清项目/GSE*****/`；共享工具 `书清项目/共享脚本/`。  
+**原始数据命名：** 须带库名（`GEO_` / `NGDC_`）与 accession → DeliveryStandards SampleLayoutNaming **§2.1**。
 
 ## 2. 数据规范（判断是否可用）
 
 - **只用官方真实数据**：分组来自 GEO SOFT / series matrix；禁止模拟矩阵与编造分组  
 - **样本数 = GEO 官方**；剔除 `average/汇总` 列；先过 [数据真实性验证](../../00_基础_Foundation/数据真实性验证_DataAuthenticity/技能说明_数据真实性验证_DataAuthenticity.md)  
+- raw 路径/文件名含 `GEO_`/`NGDC_`（禁止无来源的 `counts.csv`、`输入/`）  
 - 可复现：独立数据集目录 + `set.seed`；诚实报告（无显著不放宽阈值凑数）
 
 ## 3. 何时选用本技能

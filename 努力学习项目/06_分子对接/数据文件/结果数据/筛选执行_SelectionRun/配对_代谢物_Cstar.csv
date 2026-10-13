@@ -1,0 +1,9 @@
+﻿ligand_type,metabolite,n_Cstar,n_H_in_Cstar,gene,uniprot,ppi_rank_in_top,pubchem_cid,canonical_smiles,selection_rule
+metabolite,Butyrate,5,5,FOS,P01100,4,104775,CCCC(=O)[O-],"TopM by H-in-C*, n_C*, GMMAD2; target=best PPI among C* neighbors"
+metabolite,4-Hydroxyphenylacetic acid,6,2,ESR2,Q92731,3,127,C1=CC(=CC=C1CC(=O)O)O,"TopM by H-in-C*, n_C*, GMMAD2; target=best PPI among C* neighbors"
+metabolite,Phenylalanine,11,0,PPARG,P37231,5,6140,C1=CC=C(C=C1)C[C@@H](C(=O)O)N,"TopM by H-in-C*, n_C*, GMMAD2; target=best PPI among C* neighbors"
+metabolite,Maltose,9,0,LGALS3,P17931,,6255,C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@@H]2[C@H](O[C@H]([C@@H]([C@H]2O)O)O)CO)O)O)O)O,"TopM by H-in-C*, n_C*, GMMAD2; target=best PPI among C* neighbors"
+metabolite,Maltotriose,9,0,LGALS3,P17931,,871,C(C1C(C(C(C(O1)OC2C(OC(C(C2O)O)OC3C(OC(C(C3O)O)O)CO)CO)O)O)O)O,"TopM by H-in-C*, n_C*, GMMAD2; target=best PPI among C* neighbors"
+metabolite,Inosine,7,0,DNMT1,P26358,2,135398641,C1=NC2=C(C(=O)N1)N=CN2[C@H]3[C@@H]([C@@H]([C@H](O3)CO)O)O,"TopM by H-in-C*, n_C*, GMMAD2; target=best PPI among C* neighbors"
+metabolite,Raffinose,6,0,LGALS3,P17931,,439242,C([C@@H]1[C@@H]([C@@H]([C@H]([C@H](O1)OC[C@@H]2[C@H]([C@@H]([C@H]([C@H](O2)O[C@]3([C@H]([C@@H]([C@H](O3)CO)O)O)CO)O)O)O)O)O)O)O,"TopM by H-in-C*, n_C*, GMMAD2; target=best PPI among C* neighbors"
+metabolite,Tyrosine,6,0,PCNA,P12004,1,6057,C1=CC(=CC=C1C[C@@H](C(=O)O)N)O,"TopM by H-in-C*, n_C*, GMMAD2; target=best PPI among C* neighbors"

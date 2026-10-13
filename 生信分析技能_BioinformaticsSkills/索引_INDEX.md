@@ -10,7 +10,7 @@
 
 - `00_基础_Foundation` / `01_组学_Omics` / `02_遗传与变异_Genetics` / `03_药物计算_DrugDiscovery` / `04_临床预测与统计_ClinicalStats` / `05_系统方法_SystemsMethods` / `06_已落地流水线_ProductionPipelines` / `07_分类验证_Validation`
 - 映射表：[目录重构说明_LayoutMigration.md](目录重构说明_LayoutMigration.md)
-- **样例交付 SSOT**：[统一交付规范_DeliveryStandards](00_基础_Foundation/统一交付规范_DeliveryStandards/技能说明_统一交付规范_DeliveryStandards.md)（命名/审计/报告；出图技术仍用 [VizStandards](00_基础_Foundation/统一可视化规范_VizStandards/技能说明_统一可视化规范_VizStandards.md)）
+- **样例交付 SSOT**：[统一交付规范_DeliveryStandards](00_基础_Foundation/统一交付规范_DeliveryStandards/技能说明_统一交付规范_DeliveryStandards.md)（命名/审计/报告；**raw 须带数据库来源**见 [SampleLayoutNaming §2.1](00_基础_Foundation/统一交付规范_DeliveryStandards/文档_docs/样例目录与命名_SampleLayoutNaming.md)；出图技术仍用 [VizStandards](00_基础_Foundation/统一可视化规范_VizStandards/技能说明_统一可视化规范_VizStandards.md)）
 
 ## 按研究目的
 
@@ -20,6 +20,7 @@
 | 机制+细胞 | scRNA-Spatial → 转录组 ± 细胞通讯 ± 单细胞进阶 |
 | 预后标志物 | GEO-TCGA → 生存 ± 诊断ROC |
 | 药物靶点 | 网络药理 → 蛋白结构与建模 → 分子对接 → 分子动力学 ± 类药性与QSAR |
+| 复方+菌群代谢物对接 | 网药/代谢/网毒 → **复方菌群代谢物整合对接**（C*）→ 分子对接引擎 |
 | 代谢脂质 | 代谢组分析（含脂质/通量） ± 转录组 |
 | 甲基化 | DNA甲基化 ± 转录组 ± GSEA |
 | ncRNA/ceRNA | 非编码与ceRNA ± 转录组 |

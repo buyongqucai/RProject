@@ -1,0 +1,12 @@
+rank=05
+track=metabolite
+ligand=Inosine
+gene=DNMT1
+pdb=3EPZ
+site=co-ligand:BGC(largest cluster 12/12)
+mean_kcal=-6.599999999999999
+best_seed=1
+best_affinity_kcal=-6.6
+md_priority=no
+ascii_prefix=STD_DNMT1__Inosine
+receptor=protein-only (DNA stripped)

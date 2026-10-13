@@ -1,0 +1,1433 @@
+==== 01_网络药理学 ====
+数据文件 exists=True empty=True
+结果/数据文件 files=42
+  RESDATA 结果文件\数据文件\PPI\string_interactions_short.tsv
+  RESDATA 结果文件\数据文件\PPI\Top20_PPI核心网络边.csv
+  RESDATA 结果文件\数据文件\富集分析\BPCCMF.csv
+  RESDATA 结果文件\数据文件\富集分析\KEGG.csv
+  RESDATA 结果文件\数据文件\疾病\疾病靶点合并.csv
+  RESDATA 结果文件\数据文件\疾病\疾病靶点按库.csv
+  RESDATA 结果文件\数据文件\疾病\疾病靶点按库_下游.csv
+  RESDATA 结果文件\数据文件\网络图\network.csv
+  RESDATA 结果文件\数据文件\网络图\type.csv
+  RESDATA 结果文件\数据文件\网络图\药物疾病交集靶点.csv
+  RESDATA 结果文件\数据文件\药物\全量单药疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\人参_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\人参_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\半夏_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\半夏_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\干姜_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\干姜_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\木香_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\木香_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\棕榈炭_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\棕榈炭_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\淫羊藿_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\淫羊藿_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\白术_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\白术_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\肉桂_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\肉桂_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\茯苓_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\茯苓_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\香附_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\香附_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\黄芩_疾病交集.csv
+  RESDATA 结果文件\数据文件\药物\单药\黄芩_靶点.csv
+  RESDATA 结果文件\数据文件\药物\单药\黄连_疾病交集.csv
+README README_模块说明.md
+# 01_网络药理学
+
+仅复方网药步骤（F、I₁、网药图）
+
+## 子文件夹（本课题统一）
+
+```text
+01_网络药理学/
+  README_模块说明.md
+  数据文件/                 # 本模块原始输入（外部库导出、对接工作区等）
+  代码文件/                 # 本模块脚本
+  结果文件/
+    数据文件/               # 本模块产物表
+    图片文件/               # 本模块图
+    报告文件/               # 本模块阶段报告（不是全项目论文版）
+```
+
+全项目论文版/方法版只在 `00_全流程报告/`，与 `01_…` 同级。
+
+README README_轨B说明.txt
+网络药理学 · 轨 B 子包。
+目录：图片文件/、数据文件/、报告文件/；入口：图注与解读说明.html
+上级总包：努力学习项目/交付文件/
+
+==== 02_网络毒理学_毒性分层 ====
+数据文件 exists=True empty=True
+结果/数据文件 files=5
+  RESDATA 结果文件\数据文件\毒性分层\CTD_有害暴露物基因互作.csv
+  RESDATA 结果文件\数据文件\毒性分层\代谢物有益有害分层.csv
+  RESDATA 结果文件\数据文件\毒性分层\有害暴露物清单.csv
+  RESDATA 结果文件\数据文件\毒性分层\毒性分层构建摘要.json
+  RESDATA 结果文件\数据文件\毒性分层\毒性线索_暴露物靶点不良结局.csv
+README README_模块说明.md
+# 02_网络毒理学_毒性分层
+
+有害暴露物/毒性分层支线（非主线）
+
+## 子文件夹（本课题统一）
+
+```text
+02_网络毒理学_毒性分层/
+  README_模块说明.md
+  数据文件/                 # 本模块原始输入（外部库导出、对接工作区等）
+  代码文件/                 # 本模块脚本
+  结果文件/
+    数据文件/               # 本模块产物表
+    图片文件/               # 本模块图
+    报告文件/               # 本模块阶段报告（不是全项目论文版）
+```
+
+全项目论文版/方法版只在 `00_全流程报告/`，与 `01_…` 同级。
+
+==== 03_三源交集_复方UC菌群 ====
+数据文件 exists=True empty=False
+DATADIR 数据文件\SEA16原始
+DATADIR 数据文件\SEA16原始\batch_001
+DATA 数据文件\SEA16原始\batch_001\compound_mapping.csv 1370
+DATA 数据文件\SEA16原始\batch_001\compound_target_hits.tsv 136711
+DATA 数据文件\SEA16原始\batch_001\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_001\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_001\extracted\query.smi 319
+DATA 数据文件\SEA16原始\batch_001\extracted\sea-results.xls 105213
+DATA 数据文件\SEA16原始\batch_001\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_001\manifest.json 329
+DATA 数据文件\SEA16原始\batch_001\sea16_download.zip 106787
+DATADIR 数据文件\SEA16原始\batch_002
+DATA 数据文件\SEA16原始\batch_002\compound_mapping.csv 1322
+DATA 数据文件\SEA16原始\batch_002\compound_target_hits.tsv 149204
+DATA 数据文件\SEA16原始\batch_002\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_002\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_002\extracted\query.smi 329
+DATA 数据文件\SEA16原始\batch_002\extracted\sea-results.xls 114446
+DATA 数据文件\SEA16原始\batch_002\extracted\sea-run.log 940
+DATA 数据文件\SEA16原始\batch_002\manifest.json 329
+DATA 数据文件\SEA16原始\batch_002\sea16_download.zip 116500
+DATADIR 数据文件\SEA16原始\batch_003
+DATA 数据文件\SEA16原始\batch_003\compound_mapping.csv 1378
+DATA 数据文件\SEA16原始\batch_003\compound_target_hits.tsv 210402
+DATA 数据文件\SEA16原始\batch_003\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_003\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_003\extracted\query.smi 345
+DATA 数据文件\SEA16原始\batch_003\extracted\sea-results.xls 162672
+DATA 数据文件\SEA16原始\batch_003\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_003\manifest.json 330
+DATA 数据文件\SEA16原始\batch_003\sea16_download.zip 164272
+DATADIR 数据文件\SEA16原始\batch_004
+DATA 数据文件\SEA16原始\batch_004\compound_mapping.csv 1601
+DATA 数据文件\SEA16原始\batch_004\compound_target_hits.tsv 108621
+DATA 数据文件\SEA16原始\batch_004\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_004\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_004\extracted\query.smi 461
+DATA 数据文件\SEA16原始\batch_004\extracted\sea-results.xls 86670
+DATA 数据文件\SEA16原始\batch_004\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_004\manifest.json 329
+DATA 数据文件\SEA16原始\batch_004\sea16_download.zip 88386
+DATADIR 数据文件\SEA16原始\batch_005
+DATA 数据文件\SEA16原始\batch_005\compound_mapping.csv 1619
+DATA 数据文件\SEA16原始\batch_005\compound_target_hits.tsv 200888
+DATA 数据文件\SEA16原始\batch_005\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_005\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_005\extracted\query.smi 503
+DATA 数据文件\SEA16原始\batch_005\extracted\sea-results.xls 161000
+DATA 数据文件\SEA16原始\batch_005\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_005\manifest.json 330
+DATA 数据文件\SEA16原始\batch_005\sea16_download.zip 162758
+DATADIR 数据文件\SEA16原始\batch_006
+DATA 数据文件\SEA16原始\batch_006\compound_mapping.csv 1650
+DATA 数据文件\SEA16原始\batch_006\compound_target_hits.tsv 122792
+DATA 数据文件\SEA16原始\batch_006\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_006\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_006\extracted\query.smi 589
+DATA 数据文件\SEA16原始\batch_006\extracted\sea-results.xls 99676
+DATA 数据文件\SEA16原始\batch_006\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_006\manifest.json 329
+DATA 数据文件\SEA16原始\batch_006\sea16_download.zip 101520
+DATADIR 数据文件\SEA16原始\batch_007
+DATA 数据文件\SEA16原始\batch_007\compound_mapping.csv 1679
+DATA 数据文件\SEA16原始\batch_007\compound_target_hits.tsv 95506
+DATA 数据文件\SEA16原始\batch_007\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_007\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_007\extracted\query.smi 531
+DATA 数据文件\SEA16原始\batch_007\extracted\sea-results.xls 75619
+DATA 数据文件\SEA16原始\batch_007\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_007\manifest.json 329
+DATA 数据文件\SEA16原始\batch_007\sea16_download.zip 77405
+DATADIR 数据文件\SEA16原始\batch_008
+DATA 数据文件\SEA16原始\batch_008\compound_mapping.csv 1651
+DATA 数据文件\SEA16原始\batch_008\compound_target_hits.tsv 268805
+DATA 数据文件\SEA16原始\batch_008\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_008\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_008\extracted\query.smi 502
+DATA 数据文件\SEA16原始\batch_008\extracted\sea-results.xls 215031
+DATA 数据文件\SEA16原始\batch_008\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_008\manifest.json 330
+DATA 数据文件\SEA16原始\batch_008\sea16_download.zip 216788
+DATADIR 数据文件\SEA16原始\batch_009
+DATA 数据文件\SEA16原始\batch_009\compound_mapping.csv 1566
+DATA 数据文件\SEA16原始\batch_009\compound_target_hits.tsv 152952
+DATA 数据文件\SEA16原始\batch_009\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_009\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_009\extracted\query.smi 466
+DATA 数据文件\SEA16原始\batch_009\extracted\sea-results.xls 119403
+DATA 数据文件\SEA16原始\batch_009\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_009\manifest.json 329
+DATA 数据文件\SEA16原始\batch_009\sea16_download.zip 121124
+DATADIR 数据文件\SEA16原始\batch_010
+DATA 数据文件\SEA16原始\batch_010\compound_mapping.csv 1702
+DATA 数据文件\SEA16原始\batch_010\compound_target_hits.tsv 148709
+DATA 数据文件\SEA16原始\batch_010\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_010\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_010\extracted\query.smi 639
+DATA 数据文件\SEA16原始\batch_010\extracted\sea-results.xls 121724
+DATA 数据文件\SEA16原始\batch_010\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_010\manifest.json 330
+DATA 数据文件\SEA16原始\batch_010\sea16_download.zip 123618
+DATADIR 数据文件\SEA16原始\batch_011
+DATA 数据文件\SEA16原始\batch_011\compound_mapping.csv 1489
+DATA 数据文件\SEA16原始\batch_011\compound_target_hits.tsv 212881
+DATA 数据文件\SEA16原始\batch_011\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_011\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_011\extracted\query.smi 483
+DATA 数据文件\SEA16原始\batch_011\extracted\sea-results.xls 168323
+DATA 数据文件\SEA16原始\batch_011\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_011\manifest.json 331
+DATA 数据文件\SEA16原始\batch_011\sea16_download.zip 170061
+DATADIR 数据文件\SEA16原始\batch_012
+DATA 数据文件\SEA16原始\batch_012\compound_mapping.csv 1626
+DATA 数据文件\SEA16原始\batch_012\compound_target_hits.tsv 96963
+DATA 数据文件\SEA16原始\batch_012\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_012\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_012\extracted\query.smi 508
+DATA 数据文件\SEA16原始\batch_012\extracted\sea-results.xls 75879
+DATA 数据文件\SEA16原始\batch_012\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_012\manifest.json 330
+DATA 数据文件\SEA16原始\batch_012\sea16_download.zip 77642
+DATADIR 数据文件\SEA16原始\batch_013
+DATA 数据文件\SEA16原始\batch_013\compound_mapping.csv 1473
+DATA 数据文件\SEA16原始\batch_013\compound_target_hits.tsv 110712
+DATA 数据文件\SEA16原始\batch_013\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_013\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_013\extracted\query.smi 371
+DATA 数据文件\SEA16原始\batch_013\extracted\sea-results.xls 86996
+DATA 数据文件\SEA16原始\batch_013\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_013\manifest.json 330
+DATA 数据文件\SEA16原始\batch_013\sea16_download.zip 88622
+DATADIR 数据文件\SEA16原始\batch_014
+DATA 数据文件\SEA16原始\batch_014\compound_mapping.csv 1610
+DATA 数据文件\SEA16原始\batch_014\compound_target_hits.tsv 130310
+DATA 数据文件\SEA16原始\batch_014\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_014\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_014\extracted\query.smi 452
+DATA 数据文件\SEA16原始\batch_014\extracted\sea-results.xls 99850
+DATA 数据文件\SEA16原始\batch_014\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_014\manifest.json 330
+DATA 数据文件\SEA16原始\batch_014\sea16_download.zip 101557
+DATADIR 数据文件\SEA16原始\batch_015
+DATA 数据文件\SEA16原始\batch_015\compound_mapping.csv 1590
+DATA 数据文件\SEA16原始\batch_015\compound_target_hits.tsv 236127
+DATA 数据文件\SEA16原始\batch_015\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_015\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_015\extracted\query.smi 360
+DATA 数据文件\SEA16原始\batch_015\extracted\sea-results.xls 181009
+DATA 数据文件\SEA16原始\batch_015\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_015\manifest.json 331
+DATA 数据文件\SEA16原始\batch_015\sea16_download.zip 182624
+DATADIR 数据文件\SEA16原始\batch_016
+DATA 数据文件\SEA16原始\batch_016\compound_mapping.csv 1525
+DATA 数据文件\SEA16原始\batch_016\compound_target_hits.tsv 206229
+DATA 数据文件\SEA16原始\batch_016\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_016\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_016\extracted\query.smi 368
+DATA 数据文件\SEA16原始\batch_016\extracted\sea-results.xls 157740
+DATA 数据文件\SEA16原始\batch_016\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_016\manifest.json 331
+DATA 数据文件\SEA16原始\batch_016\sea16_download.zip 159363
+DATADIR 数据文件\SEA16原始\batch_017
+DATA 数据文件\SEA16原始\batch_017\compound_mapping.csv 1582
+DATA 数据文件\SEA16原始\batch_017\compound_target_hits.tsv 164506
+DATA 数据文件\SEA16原始\batch_017\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_017\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_017\extracted\query.smi 379
+DATA 数据文件\SEA16原始\batch_017\extracted\sea-results.xls 126806
+DATA 数据文件\SEA16原始\batch_017\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_017\manifest.json 331
+DATA 数据文件\SEA16原始\batch_017\sea16_download.zip 128440
+DATADIR 数据文件\SEA16原始\batch_018
+DATA 数据文件\SEA16原始\batch_018\compound_mapping.csv 1698
+DATA 数据文件\SEA16原始\batch_018\compound_target_hits.tsv 75047
+DATA 数据文件\SEA16原始\batch_018\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_018\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_018\extracted\query.smi 641
+DATA 数据文件\SEA16原始\batch_018\extracted\sea-results.xls 61489
+DATA 数据文件\SEA16原始\batch_018\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_018\manifest.json 330
+DATA 数据文件\SEA16原始\batch_018\sea16_download.zip 63385
+DATADIR 数据文件\SEA16原始\batch_019
+DATA 数据文件\SEA16原始\batch_019\compound_mapping.csv 1464
+DATA 数据文件\SEA16原始\batch_019\compound_target_hits.tsv 219340
+DATA 数据文件\SEA16原始\batch_019\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_019\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_019\extracted\query.smi 504
+DATA 数据文件\SEA16原始\batch_019\extracted\sea-results.xls 171562
+DATA 数据文件\SEA16原始\batch_019\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_019\manifest.json 331
+DATA 数据文件\SEA16原始\batch_019\sea16_download.zip 173321
+DATADIR 数据文件\SEA16原始\batch_020
+DATA 数据文件\SEA16原始\batch_020\compound_mapping.csv 1508
+DATA 数据文件\SEA16原始\batch_020\compound_target_hits.tsv 80627
+DATA 数据文件\SEA16原始\batch_020\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_020\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_020\extracted\query.smi 563
+DATA 数据文件\SEA16原始\batch_020\extracted\sea-results.xls 64414
+DATA 数据文件\SEA16原始\batch_020\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_020\manifest.json 330
+DATA 数据文件\SEA16原始\batch_020\sea16_download.zip 66232
+DATADIR 数据文件\SEA16原始\batch_021
+DATA 数据文件\SEA16原始\batch_021\compound_mapping.csv 1344
+DATA 数据文件\SEA16原始\batch_021\compound_target_hits.tsv 112971
+DATA 数据文件\SEA16原始\batch_021\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_021\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_021\extracted\query.smi 374
+DATA 数据文件\SEA16原始\batch_021\extracted\sea-results.xls 87213
+DATA 数据文件\SEA16原始\batch_021\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_021\manifest.json 330
+DATA 数据文件\SEA16原始\batch_021\sea16_download.zip 88842
+DATADIR 数据文件\SEA16原始\batch_022
+DATA 数据文件\SEA16原始\batch_022\compound_mapping.csv 1422
+DATA 数据文件\SEA16原始\batch_022\compound_target_hits.tsv 95044
+DATA 数据文件\SEA16原始\batch_022\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_022\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_022\extracted\query.smi 457
+DATA 数据文件\SEA16原始\batch_022\extracted\sea-results.xls 74589
+DATA 数据文件\SEA16原始\batch_022\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_022\manifest.json 330
+DATA 数据文件\SEA16原始\batch_022\sea16_download.zip 76301
+DATADIR 数据文件\SEA16原始\batch_023
+DATA 数据文件\SEA16原始\batch_023\compound_mapping.csv 1708
+DATA 数据文件\SEA16原始\batch_023\compound_target_hits.tsv 129503
+DATA 数据文件\SEA16原始\batch_023\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_023\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_023\extracted\query.smi 721
+DATA 数据文件\SEA16原始\batch_023\extracted\sea-results.xls 101226
+DATA 数据文件\SEA16原始\batch_023\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_023\manifest.json 330
+DATA 数据文件\SEA16原始\batch_023\sea16_download.zip 103202
+DATADIR 数据文件\SEA16原始\batch_024
+DATA 数据文件\SEA16原始\batch_024\compound_mapping.csv 1687
+DATA 数据文件\SEA16原始\batch_024\compound_target_hits.tsv 196356
+DATA 数据文件\SEA16原始\batch_024\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_024\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_024\extracted\query.smi 659
+DATA 数据文件\SEA16原始\batch_024\extracted\sea-results.xls 156906
+DATA 数据文件\SEA16原始\batch_024\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_024\manifest.json 331
+DATA 数据文件\SEA16原始\batch_024\sea16_download.zip 158820
+DATADIR 数据文件\SEA16原始\batch_025
+DATA 数据文件\SEA16原始\batch_025\compound_mapping.csv 1425
+DATA 数据文件\SEA16原始\batch_025\compound_target_hits.tsv 107359
+DATA 数据文件\SEA16原始\batch_025\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_025\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_025\extracted\query.smi 440
+DATA 数据文件\SEA16原始\batch_025\extracted\sea-results.xls 85488
+DATA 数据文件\SEA16原始\batch_025\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_025\manifest.json 330
+DATA 数据文件\SEA16原始\batch_025\sea16_download.zip 87183
+DATADIR 数据文件\SEA16原始\batch_026
+DATA 数据文件\SEA16原始\batch_026\compound_mapping.csv 1596
+DATA 数据文件\SEA16原始\batch_026\compound_target_hits.tsv 174766
+DATA 数据文件\SEA16原始\batch_026\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_026\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_026\extracted\query.smi 630
+DATA 数据文件\SEA16原始\batch_026\extracted\sea-results.xls 140121
+DATA 数据文件\SEA16原始\batch_026\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_026\manifest.json 330
+DATA 数据文件\SEA16原始\batch_026\sea16_download.zip 142006
+DATADIR 数据文件\SEA16原始\batch_027
+DATA 数据文件\SEA16原始\batch_027\compound_mapping.csv 1532
+DATA 数据文件\SEA16原始\batch_027\compound_target_hits.tsv 220081
+DATA 数据文件\SEA16原始\batch_027\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_027\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_027\extracted\query.smi 513
+DATA 数据文件\SEA16原始\batch_027\extracted\sea-results.xls 171876
+DATA 数据文件\SEA16原始\batch_027\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_027\manifest.json 331
+DATA 数据文件\SEA16原始\batch_027\sea16_download.zip 173644
+DATADIR 数据文件\SEA16原始\batch_028
+DATA 数据文件\SEA16原始\batch_028\compound_mapping.csv 1610
+DATA 数据文件\SEA16原始\batch_028\compound_target_hits.tsv 158548
+DATA 数据文件\SEA16原始\batch_028\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_028\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_028\extracted\query.smi 623
+DATA 数据文件\SEA16原始\batch_028\extracted\sea-results.xls 122298
+DATA 数据文件\SEA16原始\batch_028\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_028\manifest.json 331
+DATA 数据文件\SEA16原始\batch_028\sea16_download.zip 124176
+DATADIR 数据文件\SEA16原始\batch_029
+DATA 数据文件\SEA16原始\batch_029\compound_mapping.csv 1566
+DATA 数据文件\SEA16原始\batch_029\compound_target_hits.tsv 111932
+DATA 数据文件\SEA16原始\batch_029\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_029\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_029\extracted\query.smi 589
+DATA 数据文件\SEA16原始\batch_029\extracted\sea-results.xls 91364
+DATA 数据文件\SEA16原始\batch_029\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_029\manifest.json 330
+DATA 数据文件\SEA16原始\batch_029\sea16_download.zip 93208
+DATADIR 数据文件\SEA16原始\batch_030
+DATA 数据文件\SEA16原始\batch_030\compound_mapping.csv 1548
+DATA 数据文件\SEA16原始\batch_030\compound_target_hits.tsv 49981
+DATA 数据文件\SEA16原始\batch_030\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_030\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_030\extracted\query.smi 541
+DATA 数据文件\SEA16原始\batch_030\extracted\sea-results.xls 41584
+DATA 数据文件\SEA16原始\batch_030\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_030\manifest.json 330
+DATA 数据文件\SEA16原始\batch_030\sea16_download.zip 43380
+DATADIR 数据文件\SEA16原始\batch_031
+DATA 数据文件\SEA16原始\batch_031\compound_mapping.csv 1517
+DATA 数据文件\SEA16原始\batch_031\compound_target_hits.tsv 110646
+DATA 数据文件\SEA16原始\batch_031\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_031\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_031\extracted\query.smi 510
+DATA 数据文件\SEA16原始\batch_031\extracted\sea-results.xls 87140
+DATA 数据文件\SEA16原始\batch_031\extracted\sea-run.log 470
+DATA 数据文件\SEA16原始\batch_031\manifest.json 330
+DATA 数据文件\SEA16原始\batch_031\sea16_download.zip 88905
+DATADIR 数据文件\SEA16原始\batch_032
+DATA 数据文件\SEA16原始\batch_032\compound_mapping.csv 346
+DATA 数据文件\SEA16原始\batch_032\compound_target_hits.tsv 13032
+DATA 数据文件\SEA16原始\batch_032\extracted\job_info.json 139
+DATA 数据文件\SEA16原始\batch_032\extracted\progress.msg 28
+DATA 数据文件\SEA16原始\batch_032\extracted\query.smi 120
+DATA 数据文件\SEA16原始\batch_032\extracted\sea-results.xls 10262
+DATA 数据文件\SEA16原始\batch_032\extracted\sea-run.log 468
+DATA 数据文件\SEA16原始\batch_032\manifest.json 328
+DATA 数据文件\SEA16原始\batch_032\sea16_download.zip 11635
+DATA 数据文件\SEA16原始\SEA16批量摘要.json 164
+DATADIR 数据文件\SEA原始
+DATADIR 数据文件\SEA原始\batch_001
+DATA 数据文件\SEA原始\batch_001\compound_mapping.csv 1370
+DATA 数据文件\SEA原始\batch_001\compound_target_hits.tsv 5
+DATA 数据文件\SEA原始\batch_001\manifest.json 62369
+DATA 数据文件\SEA原始\batch_001\sea_result.tsv 5
+DATADIR 数据文件\SEA原始\batch_002
+DATA 数据文件\SEA原始\batch_002\compound_mapping.csv 1322
+DATA 数据文件\SEA原始\batch_002\compound_target_hits.tsv 5
+DATA 数据文件\SEA原始\batch_002\manifest.json 89623
+DATA 数据文件\SEA原始\batch_002\sea_result.tsv 5
+DATADIR 数据文件\SEA原始\batch_003
+DATA 数据文件\SEA原始\batch_003\compound_mapping.csv 1378
+DATA 数据文件\SEA原始\batch_003\compound_target_hits.tsv 5
+DATA 数据文件\SEA原始\batch_003\manifest.json 112675
+DATA 数据文件\SEA原始\batch_003\sea_result.tsv 5
+DATADIR 数据文件\SEA原始\batch_004
+DATA 数据文件\SEA原始\batch_004\compound_mapping.csv 1601
+DATA 数据文件\SEA原始\batch_004\manifest.json 145
+DATADIR 数据文件\SEA原始\batch_005
+DATA 数据文件\SEA原始\batch_005\compound_mapping.csv 1619
+DATA 数据文件\SEA原始\batch_005\manifest.json 145
+DATADIR 数据文件\SEA原始\batch_006
+DATA 数据文件\SEA原始\batch_006\compound_mapping.csv 1650
+DATA 数据文件\SEA原始\batch_006\manifest.json 145
+DATADIR 数据文件\SEA原始\batch_007
+DATA 数据文件\SEA原始\batch_007\compound_mapping.csv 1679
+DATA 数据文件\SEA原始\batch_007\manifest.json 145
+DATADIR 数据文件\SEA原始\batch_008
+DATA 数据文件\SEA原始\batch_008\compound_mapping.csv 1651
+DATA 数据文件\SEA原始\batch_008\manifest.json 145
+DATADIR 数据文件\SEA原始\batch_009
+DATA 数据文件\SEA原始\batch_009\compound_mapping.csv 1566
+DATA 数据文件\SEA原始\batch_009\manifest.json 145
+DATADIR 数据文件\SEA原始\batch_010
+DATA 数据文件\SEA原始\batch_010\compound_mapping.csv 1702
+DATA 数据文件\SEA原始\batch_010\manifest.json 152
+DATADIR 数据文件\SEA原始\batch_011
+DATA 数据文件\SEA原始\batch_011\compound_mapping.csv 1489
+DATA 数据文件\SEA原始\batch_011\manifest.json 146
+DATADIR 数据文件\SEA原始\batch_012
+DATA 数据文件\SEA原始\batch_012\compound_mapping.csv 1626
+DATA 数据文件\SEA原始\batch_012\manifest.json 152
+DATADIR 数据文件\SEA原始\batch_013
+DATA 数据文件\SEA原始\batch_013\compound_mapping.csv 1473
+DATA 数据文件\SEA原始\batch_013\manifest.json 145
+DATADIR 数据文件\SEA原始\batch_014
+DATA 数据文件\SEA原始\batch_014\compound_mapping.csv 1610
+DATA 数据文件\SEA原始\batch_014\manifest.json 145
+DATADIR 数据文件\SEA原始\batch_015
+DATA 数据文件\SEA原始\batch_015\compound_mapping.csv 1590
+DATADIR 数据文件\SEA原始\batch_016
+DATA 数据文件\SEA原始\batch_016\compound_mapping.csv 1525
+DATADIR 数据文件\SEA原始\batch_017
+DATA 数据文件\SEA原始\batch_017\compound_mapping.csv 1582
+DATA 数据文件\SEA原始\SEA批量摘要.json 111
+DATADIR 数据文件\STP原始
+DATA 数据文件\STP原始\1-18_1-lysoPE_Swiss预测靶点_筛选前.csv 12853
+DATA 数据文件\STP原始\1-18_1-lysoPE_Swiss预测靶点_筛选后.csv 12853
+DATA 数据文件\STP原始\1-O-Caffeoylglycerol_Swiss预测靶点_筛选前.csv 11985
+DATA 数据文件\STP原始\1-O-Caffeoylglycerol_Swiss预测靶点_筛选后.csv 11985
+DATA 数据文件\STP原始\10-keto-12Z-octadecenoic_acid_Swiss预测靶点_筛选前.csv 12347
+DATA 数据文件\STP原始\10-keto-12Z-octadecenoic_acid_Swiss预测靶点_筛选后.csv 12347
+DATA 数据文件\STP原始\10-Oxo-11-octadecenoic_acid_Swiss预测靶点_筛选前.csv 12347
+DATA 数据文件\STP原始\10-Oxo-11-octadecenoic_acid_Swiss预测靶点_筛选后.csv 12347
+DATA 数据文件\STP原始\11-Methoxycurvularin_Swiss预测靶点_筛选前.csv 12248
+DATA 数据文件\STP原始\11-Methoxycurvularin_Swiss预测靶点_筛选后.csv 12248
+DATA 数据文件\STP原始\1_3-Diphenylpropan-2-ol_Swiss预测靶点_筛选前.csv 12496
+DATA 数据文件\STP原始\1_3-Diphenylpropan-2-ol_Swiss预测靶点_筛选后.csv 12496
+DATA 数据文件\STP原始\1_4-Diaminobutane_Swiss预测靶点_筛选前.csv 12246
+DATA 数据文件\STP原始\1_4-Diaminobutane_Swiss预测靶点_筛选后.csv 12246
+DATA 数据文件\STP原始\1_6-di-O-phosphono-beta-D-fructofuranose_Swiss预测靶点_筛选前.csv 12366
+DATA 数据文件\STP原始\1_6-di-O-phosphono-beta-D-fructofuranose_Swiss预测靶点_筛选后.csv 12366
+DATA 数据文件\STP原始\2-_4-Hydroxyphenyl_propionic_acid_2S_-_Swiss预测靶点_筛选前.csv 12215
+DATA 数据文件\STP原始\2-_4-Hydroxyphenyl_propionic_acid_2S_-_Swiss预测靶点_筛选后.csv 12215
+DATA 数据文件\STP原始\2-Acetoxypropanoic_acid_Swiss预测靶点_筛选前.csv 11658
+DATA 数据文件\STP原始\2-Acetoxypropanoic_acid_Swiss预测靶点_筛选后.csv 11658
+DATA 数据文件\STP原始\2-Amino-1-methyl-6-phenylimidazo_4_5-b_pyridine_Swiss预测靶点_筛选前.csv 12381
+DATA 数据文件\STP原始\2-Amino-1-methyl-6-phenylimidazo_4_5-b_pyridine_Swiss预测靶点_筛选后.csv 12381
+DATA 数据文件\STP原始\2-Dehydropantoate_Swiss预测靶点_筛选前.csv 12458
+DATA 数据文件\STP原始\2-Dehydropantoate_Swiss预测靶点_筛选后.csv 12458
+DATA 数据文件\STP原始\2-Hydroxy-3-_4-hydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选前.csv 12089
+DATA 数据文件\STP原始\2-Hydroxy-3-_4-hydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选后.csv 12089
+DATA 数据文件\STP原始\2-hydroxy-3-_5-hydroxy-1H-indol-3-yl_propanoic_acid_Swiss预测靶点_筛选前.csv 12520
+DATA 数据文件\STP原始\2-hydroxy-3-_5-hydroxy-1H-indol-3-yl_propanoic_acid_Swiss预测靶点_筛选后.csv 12520
+DATA 数据文件\STP原始\2-Methylbutanoic_acid_Swiss预测靶点_筛选前.csv 12479
+DATA 数据文件\STP原始\2-Methylbutanoic_acid_Swiss预测靶点_筛选后.csv 12479
+DATA 数据文件\STP原始\2-Methylbutyrate_Swiss预测靶点_筛选前.csv 12479
+DATA 数据文件\STP原始\2-Methylbutyrate_Swiss预测靶点_筛选后.csv 12479
+DATA 数据文件\STP原始\2-Oxobutanoic_acid_Swiss预测靶点_筛选前.csv 12691
+DATA 数据文件\STP原始\2-Oxobutanoic_acid_Swiss预测靶点_筛选后.csv 12691
+DATA 数据文件\STP原始\2-Oxoglutaric_acid_Swiss预测靶点_筛选前.csv 12520
+DATA 数据文件\STP原始\2-Oxoglutaric_acid_Swiss预测靶点_筛选后.csv 12520
+DATA 数据文件\STP原始\20_R_-Ginsenoside_Rh2_Swiss预测靶点_筛选前.csv 12447
+DATA 数据文件\STP原始\20_R_-Ginsenoside_Rh2_Swiss预测靶点_筛选后.csv 12447
+DATA 数据文件\STP原始\2_-Deoxyadenosine-5_-monophosphate_Swiss预测靶点_筛选前.csv 12098
+DATA 数据文件\STP原始\2_-Deoxyadenosine-5_-monophosphate_Swiss预测靶点_筛选后.csv 12098
+DATA 数据文件\STP原始\2_-Deoxyadenosine_Swiss预测靶点_筛选前.csv 12410
+DATA 数据文件\STP原始\2_-Deoxyadenosine_Swiss预测靶点_筛选后.csv 12410
+DATA 数据文件\STP原始\2_-Deoxyguanosine_5_-phosphate_Swiss预测靶点_筛选前.csv 12230
+DATA 数据文件\STP原始\2_-Deoxyguanosine_5_-phosphate_Swiss预测靶点_筛选后.csv 12230
+DATA 数据文件\STP原始\2_-Deoxyguanosine_Swiss预测靶点_筛选前.csv 12236
+DATA 数据文件\STP原始\2_-Deoxyguanosine_Swiss预测靶点_筛选后.csv 12236
+DATA 数据文件\STP原始\2_-Deoxyinosine_Swiss预测靶点_筛选前.csv 12302
+DATA 数据文件\STP原始\2_-Deoxyinosine_Swiss预测靶点_筛选后.csv 12302
+DATA 数据文件\STP原始\2_-Deoxyuridine_Swiss预测靶点_筛选前.csv 12193
+DATA 数据文件\STP原始\2_-Deoxyuridine_Swiss预测靶点_筛选后.csv 12193
+DATA 数据文件\STP原始\2_3-Bis_3_4-dihydroxybenzyl_butyrolactone_Swiss预测靶点_筛选前.csv 11847
+DATA 数据文件\STP原始\2_3-Bis_3_4-dihydroxybenzyl_butyrolactone_Swiss预测靶点_筛选后.csv 11847
+DATA 数据文件\STP原始\2_3-Butanediol_Swiss预测靶点_筛选前.csv 12289
+DATA 数据文件\STP原始\2_3-Butanediol_Swiss预测靶点_筛选后.csv 12289
+DATA 数据文件\STP原始\2_3-Butanedione_Swiss预测靶点_筛选前.csv 12342
+DATA 数据文件\STP原始\2_3-Butanedione_Swiss预测靶点_筛选后.csv 12342
+DATA 数据文件\STP原始\2_4-Dioxopentanedioic_acid_Swiss预测靶点_筛选前.csv 12583
+DATA 数据文件\STP原始\2_4-Dioxopentanedioic_acid_Swiss预测靶点_筛选后.csv 12583
+DATA 数据文件\STP原始\3-_1H-indol-3-yl_propanoate_Swiss预测靶点_筛选前.csv 12436
+DATA 数据文件\STP原始\3-_1H-indol-3-yl_propanoate_Swiss预测靶点_筛选后.csv 12436
+DATA 数据文件\STP原始\3-_2_4-Dihydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选前.csv 12043
+DATA 数据文件\STP原始\3-_2_4-Dihydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选后.csv 12043
+DATA 数据文件\STP原始\3-_3-Hydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选前.csv 12110
+DATA 数据文件\STP原始\3-_3-Hydroxyphenyl_propanoic_acid_Swiss预测靶点_筛选后.csv 12110
+DATA 数据文件\STP原始\3-_3_4-Dihydroxyphenyl_-2-hydroxypropanoic_acid_Swiss预测靶点_筛选前.csv 11625
+DATA 数据文件\STP原始\3-_3_4-Dihydroxyphenyl_-2-hydroxypropanoic_acid_Swiss预测靶点_筛选后.csv 11625
+DATA 数据文件\STP原始\3-_3_4_-Dihydroxyphenyl_-1-_2_4_6-trihydroxyphenyl_-propan-2-ol_Swiss预测靶点_筛选前.csv 11944
+DATA 数据文件\STP原始\3-_3_4_-Dihydroxyphenyl_-1-_2_4_6-trihydroxyphenyl_-propan-2-ol_Swiss预测靶点_筛选后.csv 11944
+DATA 数据文件\STP原始\3-_4-Hydroxyphenyl_propionic_acid_Swiss预测靶点_筛选前.csv 12178
+DATA 数据文件\STP原始\3-_4-Hydroxyphenyl_propionic_acid_Swiss预测靶点_筛选后.csv 12178
+DATA 数据文件\STP原始\3-Dehydroquinate_Swiss预测靶点_筛选前.csv 12479
+DATA 数据文件\STP原始\3-Dehydroquinate_Swiss预测靶点_筛选后.csv 12479
+DATA 数据文件\STP原始\3-Dehydroshikimate_Swiss预测靶点_筛选前.csv 12423
+DATA 数据文件\STP原始\3-Dehydroshikimate_Swiss预测靶点_筛选后.csv 12423
+DATA 数据文件\STP原始\3-deoxy-D-arabino-heptulosonate-7-phosphate_Swiss预测靶点_筛选前.csv 12549
+DATA 数据文件\STP原始\3-deoxy-D-arabino-heptulosonate-7-phosphate_Swiss预测靶点_筛选后.csv 12549
+DATA 数据文件\STP原始\3-Hydroxy-2-methylbutanoic_acid_Swiss预测靶点_筛选前.csv 12421
+DATA 数据文件\STP原始\3-Hydroxy-2-methylbutanoic_acid_Swiss预测靶点_筛选后.csv 12421
+DATA 数据文件\STP原始\3-Hydroxy-4-methoxybenzenepropanoic_acid_Swiss预测靶点_筛选前.csv 12102
+DATA 数据文件\STP原始\3-Hydroxy-4-methoxybenzenepropanoic_acid_Swiss预测靶点_筛选后.csv 12102
+DATA 数据文件\STP原始\3-Hydroxybenzoic_acid_Swiss预测靶点_筛选前.csv 11598
+DATA 数据文件\STP原始\3-Hydroxybenzoic_acid_Swiss预测靶点_筛选后.csv 11598
+DATA 数据文件\STP原始\3-Hydroxyphenethyl_alcohol_Swiss预测靶点_筛选前.csv 12307
+DATA 数据文件\STP原始\3-Hydroxyphenethyl_alcohol_Swiss预测靶点_筛选后.csv 12307
+DATA 数据文件\STP原始\3-Indolepropionic_acid_Swiss预测靶点_筛选前.csv 12436
+DATA 数据文件\STP原始\3-Indolepropionic_acid_Swiss预测靶点_筛选后.csv 12436
+DATA 数据文件\STP原始\3-Phenylpropionic_acid_Swiss预测靶点_筛选前.csv 12040
+DATA 数据文件\STP原始\3-Phenylpropionic_acid_Swiss预测靶点_筛选后.csv 12040
+DATA 数据文件\STP原始\3-Phosphoglyceric_acid_Swiss预测靶点_筛选前.csv 12232
+DATA 数据文件\STP原始\3-Phosphoglyceric_acid_Swiss预测靶点_筛选后.csv 12232
+DATA 数据文件\STP原始\3_4-Dihydroxy-trans-stilbene_Swiss预测靶点_筛选前.csv 11821
+DATA 数据文件\STP原始\3_4-Dihydroxy-trans-stilbene_Swiss预测靶点_筛选后.csv 11821
+DATA 数据文件\STP原始\3_4-Dihydroxybenzoic_acid_Swiss预测靶点_筛选前.csv 11524
+DATA 数据文件\STP原始\3_4-Dihydroxybenzoic_acid_Swiss预测靶点_筛选后.csv 11524
+DATA 数据文件\STP原始\3_4-Dihydroxyphenylacetic_acid_Swiss预测靶点_筛选前.csv 12046
+DATA 数据文件\STP原始\3_4-Dihydroxyphenylacetic_acid_Swiss预测靶点_筛选后.csv 12046
+DATA 数据文件\STP原始\3_9-dihydroxy-6H-benzo_c_chromen-6-one_Swiss预测靶点_筛选前.csv 11742
+DATA 数据文件\STP原始\3_9-dihydroxy-6H-benzo_c_chromen-6-one_Swiss预测靶点_筛选后.csv 11742
+DATA 数据文件\STP原始\4-_Phosphonooxy_-L-threonine_Swiss预测靶点_筛选前.csv 12458
+DATA 数据文件\STP原始\4-_Phosphonooxy_-L-threonine_Swiss预测靶点_筛选后.csv 12458
+DATA 数据文件\STP原始\4-_Z_-15_16-dihydroxydotriacont-19-enyl_-2-methyl-2H-uran-5-one_Swiss预测靶点_筛选前.csv 12420
+DATA 数据文件\STP原始\4-_Z_-15_16-dihydroxydotriacont-19-enyl_-2-methyl-2H-uran-5-one_Swiss预测靶点_筛选后.csv 12420
+DATA 数据文件\STP原始\4-Hydroxybenzoic_acid_Swiss预测靶点_筛选前.csv 11547
+DATA 数据文件\STP原始\4-Hydroxybenzoic_acid_Swiss预测靶点_筛选后.csv 11547
+DATA 数据文件\STP原始\4-Hydroxyphenylacetic_acid_Swiss预测靶点_筛选前.csv 12026
+DATA 数据文件\STP原始\4-Hydroxyphenylacetic_acid_Swiss预测靶点_筛选后.csv 12026
+DATA 数据文件\STP原始\4-Methyl-2-oxopentanoic_acid_Swiss预测靶点_筛选前.csv 12131
+DATA 数据文件\STP原始\4-Methyl-2-oxopentanoic_acid_Swiss预测靶点_筛选后.csv 12131
+DATA 数据文件\STP原始\4-Methyl-5-_2-phosphoethyl_-thiazole_Swiss预测靶点_筛选前.csv 11865
+DATA 数据文件\STP原始\4-Methyl-5-_2-phosphoethyl_-thiazole_Swiss预测靶点_筛选后.csv 11865
+DATA 数据文件\STP原始\4-Methylpentanoic_acid_Swiss预测靶点_筛选前.csv 12305
+DATA 数据文件\STP原始\4-Methylpentanoic_acid_Swiss预测靶点_筛选后.csv 12305
+DATA 数据文件\STP原始\4-Pyridoxic_acid_Swiss预测靶点_筛选前.csv 12060
+DATA 数据文件\STP原始\4-Pyridoxic_acid_Swiss预测靶点_筛选后.csv 12060
+DATA 数据文件\STP原始\5-_3-hydroxyphenyl_pentanoic_Acid_Swiss预测靶点_筛选前.csv 12393
+DATA 数据文件\STP原始\5-_3-hydroxyphenyl_pentanoic_Acid_Swiss预测靶点_筛选后.csv 12393
+DATA 数据文件\STP原始\5-_3_4-Dihydroxyphenyl_-4-hydroxypentanoic_acid_Swiss预测靶点_筛选前.csv 11907
+DATA 数据文件\STP原始\5-_3_4-Dihydroxyphenyl_-4-hydroxypentanoic_acid_Swiss预测靶点_筛选后.csv 11907
+DATA 数据文件\STP原始\5-_3_4-Dihydroxyphenyl_-valerolactone_Swiss预测靶点_筛选前.csv 12424
+DATA 数据文件\STP原始\5-_3_4-Dihydroxyphenyl_-valerolactone_Swiss预测靶点_筛选后.csv 12424
+DATA 数据文件\STP原始\5-_3_4-Dihydroxyphenyl_pentanoic_acid_Swiss预测靶点_筛选前.csv 12089
+DATA 数据文件\STP原始\5-_3_4-Dihydroxyphenyl_pentanoic_acid_Swiss预测靶点_筛选后.csv 12089
+DATA 数据文件\STP原始\5-hydroxy-1H-imidazole-4-carboxamide_Swiss预测靶点_筛选前.csv 11742
+DATA 数据文件\STP原始\5-hydroxy-1H-imidazole-4-carboxamide_Swiss预测靶点_筛选后.csv 11742
+DATA 数据文件\STP原始\5-Hydroxyindole-3-acetic_acid_Swiss预测靶点_筛选前.csv 12614
+DATA 数据文件\STP原始\5-Hydroxyindole-3-acetic_acid_Swiss预测靶点_筛选后.csv 12614
+DATA 数据文件\STP原始\5-Methoxyindole-3-acetic_acid_Swiss预测靶点_筛选前.csv 12898
+DATA 数据文件\STP原始\5-Methoxyindole-3-acetic_acid_Swiss预测靶点_筛选后.csv 12898
+DATA 数据文件\STP原始\5-O-_1-carboxylatovinyl_-3-phosphonatoshikimate_Swiss预测靶点_筛选前.csv 12198
+DATA 数据文件\STP原始\5-O-_1-carboxylatovinyl_-3-phosphonatoshikimate_Swiss预测靶点_筛选后.csv 12198
+DATA 数据文件\STP原始\5_-Deoxy-5_-methylthioadenosine_Swiss预测靶点_筛选前.csv 12325
+DATA 数据文件\STP原始\5_-Deoxy-5_-methylthioadenosine_Swiss预测靶点_筛选后.csv 12325
+DATA 数据文件\STP原始\5_-Deoxyadenosine_Swiss预测靶点_筛选前.csv 12335
+DATA 数据文件\STP原始\5_-Deoxyadenosine_Swiss预测靶点_筛选后.csv 12335
+DATA 数据文件\STP原始\5_7-Dihydroxy-2-_4-hydroxyphenyl_chroman-4-one_Swiss预测靶点_筛选前.csv 11658
+DATA 数据文件\STP原始\5_7-Dihydroxy-2-_4-hydroxyphenyl_chroman-4-one_Swiss预测靶点_筛选后.csv 11658
+DATA 数据文件\STP原始\6-_4R_5S_-5-methyl-2-oxoimidazolidin-4-yl_hexanoic_acid_Swiss预测靶点_筛选前.csv 11587
+DATA 数据文件\STP原始\6-_4R_5S_-5-methyl-2-oxoimidazolidin-4-yl_hexanoic_acid_Swiss预测靶点_筛选后.csv 11587
+DATA 数据文件\STP原始\6_-Hydroxy-O-desmethylangolensin_Swiss预测靶点_筛选前.csv 11907
+DATA 数据文件\STP原始\6_-Hydroxy-O-desmethylangolensin_Swiss预测靶点_筛选后.csv 11907
+DATA 数据文件\STP原始\6_7_4_-Trihydroxyisoflavone_Swiss预测靶点_筛选前.csv 11935
+DATA 数据文件\STP原始\6_7_4_-Trihydroxyisoflavone_Swiss预测靶点_筛选后.csv 11935
+DATA 数据文件\STP原始\7-Aminoheptanoic_acid_Swiss预测靶点_筛选前.csv 12919
+DATA 数据文件\STP原始\7-Aminoheptanoic_acid_Swiss预测靶点_筛选后.csv 12919
+DATA 数据文件\STP原始\8-Prenylnaringenin_Swiss预测靶点_筛选前.csv 11935
+DATA 数据文件\STP原始\8-Prenylnaringenin_Swiss预测靶点_筛选后.csv 11935
+DATA 数据文件\STP原始\_10-_Acetyloxy_methyl_-9-anthryl_methyl_acetate_Swiss预测靶点_筛选前.csv 12569
+DATA 数据文件\STP原始\_10-_Acetyloxy_methyl_-9-anthryl_methyl_acetate_Swiss预测靶点_筛选后.csv 12569
+DATA 数据文件\STP原始\_20S_-Protopanaxadiol_Swiss预测靶点_筛选前.csv 12539
+DATA 数据文件\STP原始\_20S_-Protopanaxadiol_Swiss预测靶点_筛选后.csv 12539
+DATA 数据文件\STP原始\_2S_6S_-2_6-diaminoheptanedioic_acid_Swiss预测靶点_筛选前.csv 12940
+DATA 数据文件\STP原始\_2S_6S_-2_6-diaminoheptanedioic_acid_Swiss预测靶点_筛选后.csv 12940
+DATADIR 数据文件\STP原始\_logs
+DATA 数据文件\STP原始\_logs\chunk_1.err.log 1354
+DATA 数据文件\STP原始\_logs\chunk_1.out.log 1643
+DATA 数据文件\STP原始\_logs\chunk_1.rerun2.err.log 0
+DATA 数据文件\STP原始\_logs\chunk_1.rerun2.out.log 6286
+DATA 数据文件\STP原始\_logs\chunk_1.retry.err.log 0
+DATA 数据文件\STP原始\_logs\chunk_1.retry.out.log 4891
+DATA 数据文件\STP原始\_logs\chunk_2.err.log 1354
+DATA 数据文件\STP原始\_logs\chunk_2.out.log 1481
+DATA 数据文件\STP原始\_logs\chunk_2.rerun2.err.log 0
+DATA 数据文件\STP原始\_logs\chunk_2.rerun2.out.log 6047
+DATA 数据文件\STP原始\_logs\chunk_2.retry.err.log 0
+DATA 数据文件\STP原始\_logs\chunk_2.retry.out.log 4692
+DATA 数据文件\STP原始\_logs\chunk_3.err.log 0
+DATA 数据文件\STP原始\_logs\chunk_3.out.log 6138
+DATA 数据文件\STP原始\_logs\chunk_3.retry.err.log 0
+DATA 数据文件\STP原始\_logs\chunk_3.retry.out.log 4714
+DATA 数据文件\STP原始\_logs\chunk_4.err.log 0
+DATA 数据文件\STP原始\_logs\chunk_4.out.log 6113
+DATA 数据文件\STP原始\_logs\chunk_4.retry.err.log 0
+DATA 数据文件\STP原始\_logs\chunk_4.retry.out.log 4569
+DATA 数据文件\STP原始\_R_-3-_4-Hydroxyphenyl_lactate_Swiss预测靶点_筛选前.csv 12089
+DATA 数据文件\STP原始\_R_-3-_4-Hydroxyphenyl_lactate_Swiss预测靶点_筛选后.csv 12089
+DATA 数据文件\STP原始\_R_-_-Lactamide_Swiss预测靶点_筛选前.csv 12350
+DATA 数据文件\STP原始\_R_-_-Lactamide_Swiss预测靶点_筛选后.csv 12350
+DATA 数据文件\STP原始\Acacetin_Swiss预测靶点_筛选前.csv 11751
+DATA 数据文件\STP原始\Acacetin_Swiss预测靶点_筛选后.csv 11751
+DATA 数据文件\STP原始\Acetoin_Swiss预测靶点_筛选前.csv 12506
+DATA 数据文件\STP原始\Acetoin_Swiss预测靶点_筛选后.csv 12506
+DATA 数据文件\STP原始\Acetyl_phosphate_2-__Swiss预测靶点_筛选前.csv 12000
+DATA 数据文件\STP原始\Acetyl_phosphate_2-__Swiss预测靶点_筛选后.csv 12000
+DATA 数据文件\STP原始\Adenine_Swiss预测靶点_筛选前.csv 12249
+DATA 数据文件\STP原始\Adenine_Swiss预测靶点_筛选后.csv 12249
+DATA 数据文件\STP原始\Adenosine_Phosphate_Swiss预测靶点_筛选前.csv 12001
+DATA 数据文件\STP原始\Adenosine_Phosphate_Swiss预测靶点_筛选后.csv 12001
+DATA 数据文件\STP原始\Adenosine_Swiss预测靶点_筛选前.csv 12331
+DATA 数据文件\STP原始\Adenosine_Swiss预测靶点_筛选后.csv 12331
+DATA 数据文件\STP原始\Aglycone_Swiss预测靶点_筛选前.csv 12551
+DATA 数据文件\STP原始\Aglycone_Swiss预测靶点_筛选后.csv 12551
+DATA 数据文件\STP原始\Agmatine_Swiss预测靶点_筛选前.csv 11960
+DATA 数据文件\STP原始\Agmatine_Swiss预测靶点_筛选后.csv 11960
+DATA 数据文件\STP原始\Alanine_Swiss预测靶点_筛选前.csv 12200
+DATA 数据文件\STP原始\Alanine_Swiss预测靶点_筛选后.csv 12200
+DATA 数据文件\STP原始\Allocholic_acid_Swiss预测靶点_筛选前.csv 12663
+DATA 数据文件\STP原始\Allocholic_acid_Swiss预测靶点_筛选后.csv 12663
+DATA 数据文件\STP原始\Amylotriose_Swiss预测靶点_筛选前.csv 11900
+DATA 数据文件\STP原始\Amylotriose_Swiss预测靶点_筛选后.csv 11900
+DATA 数据文件\STP原始\Anthranilic_acid_Swiss预测靶点_筛选前.csv 11907
+DATA 数据文件\STP原始\Anthranilic_acid_Swiss预测靶点_筛选后.csv 11907
+DATA 数据文件\STP原始\Apigenin_Swiss预测靶点_筛选前.csv 11511
+DATA 数据文件\STP原始\Apigenin_Swiss预测靶点_筛选后.csv 11511
+DATA 数据文件\STP原始\Arachidonic_Acid_Swiss预测靶点_筛选前.csv 12463
+DATA 数据文件\STP原始\Arachidonic_Acid_Swiss预测靶点_筛选后.csv 12463
+DATA 数据文件\STP原始\Arctigenin_Swiss预测靶点_筛选前.csv 12609
+DATA 数据文件\STP原始\Arctigenin_Swiss预测靶点_筛选后.csv 12609
+DATA 数据文件\STP原始\Arginine_Swiss预测靶点_筛选前.csv 12458
+DATA 数据文件\STP原始\Arginine_Swiss预测靶点_筛选后.csv 12458
+DATA 数据文件\STP原始\Ascorbic_Acid_Swiss预测靶点_筛选前.csv 11997
+DATA 数据文件\STP原始\Ascorbic_Acid_Swiss预测靶点_筛选后.csv 11997
+DATA 数据文件\STP原始\Asparagine_Swiss预测靶点_筛选前.csv 12366
+DATA 数据文件\STP原始\Asparagine_Swiss预测靶点_筛选后.csv 12366
+DATA 数据文件\STP原始\Aspartic_Acid_Swiss预测靶点_筛选前.csv 12919
+DATA 数据文件\STP原始\Aspartic_Acid_Swiss预测靶点_筛选后.csv 12919
+DATA 数据文件\STP原始\Baohuoside_I_Swiss预测靶点_筛选前.csv 11955
+DATA 数据文件\STP原始\Baohuoside_I_Swiss预测靶点_筛选后.csv 11955
+DATA 数据文件\STP原始\Benzoate_Swiss预测靶点_筛选前.csv 11893
+DATA 数据文件\STP原始\Benzoate_Swiss预测靶点_筛选后.csv 11893
+DATA 数据文件\STP原始\beta-Alanine_Swiss预测靶点_筛选前.csv 12513
+DATA 数据文件\STP原始\beta-Alanine_Swiss预测靶点_筛选后.csv 12513
+DATA 数据文件\STP原始\beta-D-fructofuranose_Swiss预测靶点_筛选前.csv 12069
+DATA 数据文件\STP原始\beta-D-fructofuranose_Swiss预测靶点_筛选后.csv 12069
+DATA 数据文件\STP原始\beta-D-Gal-_1-_4_-beta-D-GlcNAc-_1-_3_-beta-D-Gal-_1-_4_-D-Glc_Swiss预测靶点_筛选前.csv 12209
+DATA 数据文件\STP原始\beta-D-Gal-_1-_4_-beta-D-GlcNAc-_1-_3_-beta-D-Gal-_1-_4_-D-Glc_Swiss预测靶点_筛选后.csv 12209
+DATA 数据文件\STP原始\Betaine_Swiss预测靶点_筛选前.csv 12120
+DATA 数据文件\STP原始\Betaine_Swiss预测靶点_筛选后.csv 12120
+DATA 数据文件\STP原始\Bile_acid_Swiss预测靶点_筛选前.csv 12683
+DATA 数据文件\STP原始\Bile_acid_Swiss预测靶点_筛选后.csv 12683
+DATA 数据文件\STP原始\Biotin_Swiss预测靶点_筛选前.csv 11823
+DATA 数据文件\STP原始\Biotin_Swiss预测靶点_筛选后.csv 11823
+DATA 数据文件\STP原始\Butyrate_Swiss预测靶点_筛选前.csv 12421
+DATA 数据文件\STP原始\Butyrate_Swiss预测靶点_筛选后.csv 12421
+DATA 数据文件\STP原始\Caffeic_Acid_Swiss预测靶点_筛选前.csv 11504
+DATA 数据文件\STP原始\Caffeic_Acid_Swiss预测靶点_筛选后.csv 11504
+DATA 数据文件\STP原始\Capric_Acid_Swiss预测靶点_筛选前.csv 12283
+DATA 数据文件\STP原始\Capric_Acid_Swiss预测靶点_筛选后.csv 12283
+DATA 数据文件\STP原始\Caproic_Acid_Swiss预测靶点_筛选前.csv 12511
+DATA 数据文件\STP原始\Caproic_Acid_Swiss预测靶点_筛选后.csv 12511
+DATA 数据文件\STP原始\Carnosine_Swiss预测靶点_筛选前.csv 11976
+DATA 数据文件\STP原始\Carnosine_Swiss预测靶点_筛选后.csv 11976
+DATA 数据文件\STP原始\Chenodeoxycholic_acid_Swiss预测靶点_筛选前.csv 12766
+DATA 数据文件\STP原始\Chenodeoxycholic_acid_Swiss预测靶点_筛选后.csv 12766
+DATA 数据文件\STP原始\Chenodiol_Swiss预测靶点_筛选前.csv 12766
+DATA 数据文件\STP原始\Chenodiol_Swiss预测靶点_筛选后.csv 12766
+DATA 数据文件\STP原始\Cholic_acid_Swiss预测靶点_筛选前.csv 12762
+DATA 数据文件\STP原始\Cholic_acid_Swiss预测靶点_筛选后.csv 12762
+DATA 数据文件\STP原始\Choline_Alfoscerate_Swiss预测靶点_筛选前.csv 12303
+DATA 数据文件\STP原始\Choline_Alfoscerate_Swiss预测靶点_筛选后.csv 12303
+DATA 数据文件\STP原始\Choline_Swiss预测靶点_筛选前.csv 12825
+DATA 数据文件\STP原始\Choline_Swiss预测靶点_筛选后.csv 12825
+DATA 数据文件\STP原始\Chrysin_Swiss预测靶点_筛选前.csv 11692
+DATA 数据文件\STP原始\Chrysin_Swiss预测靶点_筛选后.csv 11692
+DATA 数据文件\STP原始\Citric_Acid_Swiss预测靶点_筛选前.csv 12552
+DATA 数据文件\STP原始\Citric_Acid_Swiss预测靶点_筛选后.csv 12552
+DATA 数据文件\STP原始\Citrulline_Swiss预测靶点_筛选前.csv 12118
+DATA 数据文件\STP原始\Citrulline_Swiss预测靶点_筛选后.csv 12118
+DATA 数据文件\STP原始\Cohibin_B_Swiss预测靶点_筛选前.csv 12452
+DATA 数据文件\STP原始\Cohibin_B_Swiss预测靶点_筛选后.csv 12452
+DATA 数据文件\STP原始\Colibactin_Swiss预测靶点_筛选前.csv 12497
+DATA 数据文件\STP原始\Colibactin_Swiss预测靶点_筛选后.csv 12497
+DATA 数据文件\STP原始\Coumarin_Swiss预测靶点_筛选前.csv 11707
+DATA 数据文件\STP原始\Coumarin_Swiss预测靶点_筛选后.csv 11707
+DATA 数据文件\STP原始\Creatine_Swiss预测靶点_筛选前.csv 12096
+DATA 数据文件\STP原始\Creatine_Swiss预测靶点_筛选后.csv 12096
+DATA 数据文件\STP原始\Cysteine_Swiss预测靶点_筛选前.csv 12105
+DATA 数据文件\STP原始\Cysteine_Swiss预测靶点_筛选后.csv 12105
+DATA 数据文件\STP原始\Cystine_Swiss预测靶点_筛选前.csv 12390
+DATA 数据文件\STP原始\Cystine_Swiss预测靶点_筛选后.csv 12390
+DATA 数据文件\STP原始\Cytidine-5_-diphosphate_Swiss预测靶点_筛选前.csv 12212
+DATA 数据文件\STP原始\Cytidine-5_-diphosphate_Swiss预测靶点_筛选后.csv 12212
+DATA 数据文件\STP原始\Cytidine_Swiss预测靶点_筛选前.csv 12306
+DATA 数据文件\STP原始\Cytidine_Swiss预测靶点_筛选后.csv 12306
+DATA 数据文件\STP原始\D-Fructose_Swiss预测靶点_筛选前.csv 11875
+DATA 数据文件\STP原始\D-Fructose_Swiss预测靶点_筛选后.csv 11875
+DATA 数据文件\STP原始\D-Galactose_Swiss预测靶点_筛选前.csv 11952
+DATA 数据文件\STP原始\D-Galactose_Swiss预测靶点_筛选后.csv 11952
+DATA 数据文件\STP原始\D-Glucose_Swiss预测靶点_筛选前.csv 11919
+DATA 数据文件\STP原始\D-Glucose_Swiss预测靶点_筛选后.csv 11919
+DATA 数据文件\STP原始\D-Glucuronic_Acid_Swiss预测靶点_筛选前.csv 12020
+DATA 数据文件\STP原始\D-Glucuronic_Acid_Swiss预测靶点_筛选后.csv 12020
+DATA 数据文件\STP原始\D-Lactic_acid_Swiss预测靶点_筛选前.csv 12196
+DATA 数据文件\STP原始\D-Lactic_acid_Swiss预测靶点_筛选后.csv 12196
+DATA 数据文件\STP原始\D-Mannose_Swiss预测靶点_筛选前.csv 11871
+DATA 数据文件\STP原始\D-Mannose_Swiss预测靶点_筛选后.csv 11871
+DATA 数据文件\STP原始\D-Methionine_Swiss预测靶点_筛选前.csv 12370
+DATA 数据文件\STP原始\D-Methionine_Swiss预测靶点_筛选后.csv 12370
+DATA 数据文件\STP原始\D-Xylose_Swiss预测靶点_筛选前.csv 11925
+DATA 数据文件\STP原始\D-Xylose_Swiss预测靶点_筛选后.csv 11925
+DATA 数据文件\STP原始\Daidzein_Swiss预测靶点_筛选前.csv 11967
+DATA 数据文件\STP原始\Daidzein_Swiss预测靶点_筛选后.csv 11967
+DATA 数据文件\STP原始\Deoxycholic_Acid_Swiss预测靶点_筛选前.csv 12604
+DATA 数据文件\STP原始\Deoxycholic_Acid_Swiss预测靶点_筛选后.csv 12604
+DATA 数据文件\STP原始\Deoxycytidine_5_-monophosphate_Swiss预测靶点_筛选前.csv 12172
+DATA 数据文件\STP原始\Deoxycytidine_5_-monophosphate_Swiss预测靶点_筛选后.csv 12172
+DATA 数据文件\STP原始\Dihydrocaffeic_acid_Swiss预测靶点_筛选前.csv 11856
+DATA 数据文件\STP原始\Dihydrocaffeic_acid_Swiss预测靶点_筛选后.csv 11856
+DATA 数据文件\STP原始\Dihydrodaidzein_Swiss预测靶点_筛选前.csv 12362
+DATA 数据文件\STP原始\Dihydrodaidzein_Swiss预测靶点_筛选后.csv 12362
+DATA 数据文件\STP原始\Dihydrogenistein_Swiss预测靶点_筛选前.csv 12125
+DATA 数据文件\STP原始\Dihydrogenistein_Swiss预测靶点_筛选后.csv 12125
+DATA 数据文件\STP原始\Dihydroglycitein_Swiss预测靶点_筛选前.csv 12143
+DATA 数据文件\STP原始\Dihydroglycitein_Swiss预测靶点_筛选后.csv 12143
+DATA 数据文件\STP原始\Dihydroorotic_acid_Swiss预测靶点_筛选前.csv 11575
+DATA 数据文件\STP原始\Dihydroorotic_acid_Swiss预测靶点_筛选后.csv 11575
+DATA 数据文件\STP原始\Dihydroresveratrol_Swiss预测靶点_筛选前.csv 12313
+DATA 数据文件\STP原始\Dihydroresveratrol_Swiss预测靶点_筛选后.csv 12313
+DATA 数据文件\STP原始\Diosmetin_Swiss预测靶点_筛选前.csv 11875
+DATA 数据文件\STP原始\Diosmetin_Swiss预测靶点_筛选后.csv 11875
+DATA 数据文件\STP原始\DL-Alanine_Swiss预测靶点_筛选前.csv 12200
+DATA 数据文件\STP原始\DL-Alanine_Swiss预测靶点_筛选后.csv 12200
+DATA 数据文件\STP原始\DL-Aspartic_acid_Swiss预测靶点_筛选前.csv 12919
+DATA 数据文件\STP原始\DL-Aspartic_acid_Swiss预测靶点_筛选后.csv 12919
+DATA 数据文件\STP原始\DL-Norvaline_Swiss预测靶点_筛选前.csv 12738
+DATA 数据文件\STP原始\DL-Norvaline_Swiss预测靶点_筛选后.csv 12738
+DATA 数据文件\STP原始\DL-Tartaric_acid_Swiss预测靶点_筛选前.csv 12556
+DATA 数据文件\STP原始\DL-Tartaric_acid_Swiss预测靶点_筛选后.csv 12556
+DATA 数据文件\STP原始\Doconexent_Swiss预测靶点_筛选前.csv 12564
+DATA 数据文件\STP原始\Doconexent_Swiss预测靶点_筛选后.csv 12564
+DATA 数据文件\STP原始\Dopamine_Swiss预测靶点_筛选前.csv 12197
+DATA 数据文件\STP原始\Dopamine_Swiss预测靶点_筛选后.csv 12197
+DATA 数据文件\STP原始\Enterodiol_Swiss预测靶点_筛选前.csv 12507
+DATA 数据文件\STP原始\Enterodiol_Swiss预测靶点_筛选后.csv 12507
+DATA 数据文件\STP原始\Equol_Swiss预测靶点_筛选前.csv 12145
+DATA 数据文件\STP原始\Equol_Swiss预测靶点_筛选后.csv 12145
+DATA 数据文件\STP原始\Ethyl_phenyllactate_-_-_Swiss预测靶点_筛选前.csv 12233
+DATA 数据文件\STP原始\Ethyl_phenyllactate_-_-_Swiss预测靶点_筛选后.csv 12233
+DATA 数据文件\STP原始\Folic_Acid_Swiss预测靶点_筛选前.csv 12186
+DATA 数据文件\STP原始\Folic_Acid_Swiss预测靶点_筛选后.csv 12186
+DATA 数据文件\STP原始\Fructose-6-phosphate_Swiss预测靶点_筛选前.csv 12527
+DATA 数据文件\STP原始\Fructose-6-phosphate_Swiss预测靶点_筛选后.csv 12527
+DATA 数据文件\STP原始\Fructose_1_6-bisphosphate_Swiss预测靶点_筛选前.csv 12366
+DATA 数据文件\STP原始\Fructose_1_6-bisphosphate_Swiss预测靶点_筛选后.csv 12366
+DATA 数据文件\STP原始\Fumaric_Acid_Swiss预测靶点_筛选前.csv 12117
+DATA 数据文件\STP原始\Fumaric_Acid_Swiss预测靶点_筛选后.csv 12117
+DATA 数据文件\STP原始\Gamma-Aminobutyric_Acid_Swiss预测靶点_筛选前.csv 12354
+DATA 数据文件\STP原始\Gamma-Aminobutyric_Acid_Swiss预测靶点_筛选后.csv 12354
+DATA 数据文件\STP原始\Genipin_Swiss预测靶点_筛选前.csv 12654
+DATA 数据文件\STP原始\Genipin_Swiss预测靶点_筛选后.csv 12654
+DATA 数据文件\STP原始\Genistein_Swiss预测靶点_筛选前.csv 11592
+DATA 数据文件\STP原始\Genistein_Swiss预测靶点_筛选后.csv 11592
+DATA 数据文件\STP原始\Ginsenoside_Rh2_Swiss预测靶点_筛选前.csv 12447
+DATA 数据文件\STP原始\Ginsenoside_Rh2_Swiss预测靶点_筛选后.csv 12447
+DATA 数据文件\STP原始\Glucosamine_6-phosphate_Swiss预测靶点_筛选前.csv 12522
+DATA 数据文件\STP原始\Glucosamine_6-phosphate_Swiss预测靶点_筛选后.csv 12522
+DATA 数据文件\STP原始\Glucose_1-phosphate_Swiss预测靶点_筛选前.csv 12519
+DATA 数据文件\STP原始\Glucose_1-phosphate_Swiss预测靶点_筛选后.csv 12519
+DATA 数据文件\STP原始\Glucose_6-phosphate_Swiss预测靶点_筛选前.csv 12589
+DATA 数据文件\STP原始\Glucose_6-phosphate_Swiss预测靶点_筛选后.csv 12589
+DATA 数据文件\STP原始\Glutamic_Acid_Swiss预测靶点_筛选前.csv 12439
+DATA 数据文件\STP原始\Glutamic_Acid_Swiss预测靶点_筛选后.csv 12439
+DATA 数据文件\STP原始\Glutamine_Swiss预测靶点_筛选前.csv 12494
+DATA 数据文件\STP原始\Glutamine_Swiss预测靶点_筛选后.csv 12494
+DATA 数据文件\STP原始\Glutathione_Swiss预测靶点_筛选前.csv 11166
+DATA 数据文件\STP原始\Glutathione_Swiss预测靶点_筛选后.csv 11166
+DATA 数据文件\STP原始\Glyceric_acid_Swiss预测靶点_筛选前.csv 12192
+DATA 数据文件\STP原始\Glyceric_acid_Swiss预测靶点_筛选后.csv 12192
+DATA 数据文件\STP原始\Glycerin_Swiss预测靶点_筛选前.csv 12220
+DATA 数据文件\STP原始\Glycerin_Swiss预测靶点_筛选后.csv 12220
+DATA 数据文件\STP原始\Glycine_Swiss预测靶点_筛选前.csv 12425
+DATA 数据文件\STP原始\Glycine_Swiss预测靶点_筛选后.csv 12425
+DATA 数据文件\STP原始\Glycitein_Swiss预测靶点_筛选前.csv 12243
+DATA 数据文件\STP原始\Glycitein_Swiss预测靶点_筛选后.csv 12243
+DATA 数据文件\STP原始\Glycochenodeoxycholic_acid_Swiss预测靶点_筛选前.csv 11986
+DATA 数据文件\STP原始\Glycochenodeoxycholic_acid_Swiss预测靶点_筛选后.csv 11986
+DATA 数据文件\STP原始\Glycocholic_acid_Swiss预测靶点_筛选前.csv 11976
+DATA 数据文件\STP原始\Glycocholic_acid_Swiss预测靶点_筛选后.csv 11976
+DATA 数据文件\STP原始\Glycoursodeoxycholic_acid_Swiss预测靶点_筛选前.csv 11986
+DATA 数据文件\STP原始\Glycoursodeoxycholic_acid_Swiss预测靶点_筛选后.csv 11986
+DATA 数据文件\STP原始\Gondoic_Acid_Swiss预测靶点_筛选前.csv 12455
+DATA 数据文件\STP原始\Gondoic_Acid_Swiss预测靶点_筛选后.csv 12455
+DATA 数据文件\STP原始\Guanosine-5_-monophosphate_Swiss预测靶点_筛选前.csv 12180
+DATA 数据文件\STP原始\Guanosine-5_-monophosphate_Swiss预测靶点_筛选后.csv 12180
+DATA 数据文件\STP原始\Guanosine_Swiss预测靶点_筛选前.csv 12329
+DATA 数据文件\STP原始\Guanosine_Swiss预测靶点_筛选后.csv 12329
+DATA 数据文件\STP原始\Hesperetin_dihydrochalcone_Swiss预测靶点_筛选前.csv 12038
+DATA 数据文件\STP原始\Hesperetin_dihydrochalcone_Swiss预测靶点_筛选后.csv 12038
+DATA 数据文件\STP原始\Hexanoate_Swiss预测靶点_筛选前.csv 12511
+DATA 数据文件\STP原始\Hexanoate_Swiss预测靶点_筛选后.csv 12511
+DATA 数据文件\STP原始\Histidine_Swiss预测靶点_筛选前.csv 12593
+DATA 数据文件\STP原始\Histidine_Swiss预测靶点_筛选后.csv 12593
+DATA 数据文件\STP原始\Hydroquinone_Swiss预测靶点_筛选前.csv 11516
+DATA 数据文件\STP原始\Hydroquinone_Swiss预测靶点_筛选后.csv 11516
+DATA 数据文件\STP原始\Hydroxyquercitrin_Swiss预测靶点_筛选前.csv 11738
+DATA 数据文件\STP原始\Hydroxyquercitrin_Swiss预测靶点_筛选后.csv 11738
+DATA 数据文件\STP原始\Hypoxanthine_Swiss预测靶点_筛选前.csv 12164
+DATA 数据文件\STP原始\Hypoxanthine_Swiss预测靶点_筛选后.csv 12164
+DATA 数据文件\STP原始\Icaritin_Swiss预测靶点_筛选前.csv 12045
+DATA 数据文件\STP原始\Icaritin_Swiss预测靶点_筛选后.csv 12045
+DATA 数据文件\STP原始\Indole-3-acetic_acid_Swiss预测靶点_筛选前.csv 12455
+DATA 数据文件\STP原始\Indole-3-acetic_acid_Swiss预测靶点_筛选后.csv 12455
+DATA 数据文件\STP原始\Indole-3-lactic_acid_Swiss预测靶点_筛选前.csv 12472
+DATA 数据文件\STP原始\Indole-3-lactic_acid_Swiss预测靶点_筛选后.csv 12472
+DATA 数据文件\STP原始\Indole_Swiss预测靶点_筛选前.csv 12280
+DATA 数据文件\STP原始\Indole_Swiss预测靶点_筛选后.csv 12280
+DATA 数据文件\STP原始\Indoxyl_sulfate_Swiss预测靶点_筛选前.csv 11988
+DATA 数据文件\STP原始\Indoxyl_sulfate_Swiss预测靶点_筛选后.csv 11988
+DATA 数据文件\STP原始\Inosine_Swiss预测靶点_筛选前.csv 12268
+DATA 数据文件\STP原始\Inosine_Swiss预测靶点_筛选后.csv 12268
+DATA 数据文件\STP原始\Inosinic_Acid_Swiss预测靶点_筛选前.csv 12132
+DATA 数据文件\STP原始\Inosinic_Acid_Swiss预测靶点_筛选后.csv 12132
+DATA 数据文件\STP原始\Isoallolithocholic_acid_Swiss预测靶点_筛选前.csv 12602
+DATA 数据文件\STP原始\Isoallolithocholic_acid_Swiss预测靶点_筛选后.csv 12602
+DATA 数据文件\STP原始\Isobutyric_acid_Swiss预测靶点_筛选前.csv 12503
+DATA 数据文件\STP原始\Isobutyric_acid_Swiss预测靶点_筛选后.csv 12503
+DATA 数据文件\STP原始\Isocitric_acid_Swiss预测靶点_筛选前.csv 12555
+DATA 数据文件\STP原始\Isocitric_acid_Swiss预测靶点_筛选后.csv 12555
+DATA 数据文件\STP原始\Isoquercetin_Swiss预测靶点_筛选前.csv 11729
+DATA 数据文件\STP原始\Isoquercetin_Swiss预测靶点_筛选后.csv 11729
+DATA 数据文件\STP原始\Isovalerate_Swiss预测靶点_筛选前.csv 12456
+DATA 数据文件\STP原始\Isovalerate_Swiss预测靶点_筛选后.csv 12456
+DATA 数据文件\STP原始\Isovaleric_acid_Swiss预测靶点_筛选前.csv 12456
+DATA 数据文件\STP原始\Isovaleric_acid_Swiss预测靶点_筛选后.csv 12456
+DATA 数据文件\STP原始\Kaempferol_Swiss预测靶点_筛选前.csv 11386
+DATA 数据文件\STP原始\Kaempferol_Swiss预测靶点_筛选后.csv 11386
+DATA 数据文件\STP原始\l-Histidinol_phosphate_Swiss预测靶点_筛选前.csv 11954
+DATA 数据文件\STP原始\l-Histidinol_phosphate_Swiss预测靶点_筛选后.csv 11954
+DATA 数据文件\STP原始\L-Homocysteine_Swiss预测靶点_筛选前.csv 12504
+DATA 数据文件\STP原始\L-Homocysteine_Swiss预测靶点_筛选后.csv 12504
+DATA 数据文件\STP原始\L-homoserine_Swiss预测靶点_筛选前.csv 12465
+DATA 数据文件\STP原始\L-homoserine_Swiss预测靶点_筛选后.csv 12465
+DATA 数据文件\STP原始\l-Isoleucine_Swiss预测靶点_筛选前.csv 12757
+DATA 数据文件\STP原始\l-Isoleucine_Swiss预测靶点_筛选后.csv 12757
+DATA 数据文件\STP原始\L-lactate_Swiss预测靶点_筛选前.csv 12196
+DATA 数据文件\STP原始\L-lactate_Swiss预测靶点_筛选后.csv 12196
+DATA 数据文件\STP原始\L-Leucic_acid_Swiss预测靶点_筛选前.csv 12272
+DATA 数据文件\STP原始\L-Leucic_acid_Swiss预测靶点_筛选后.csv 12272
+DATA 数据文件\STP原始\L-ornithine_Swiss预测靶点_筛选前.csv 12729
+DATA 数据文件\STP原始\L-ornithine_Swiss预测靶点_筛选后.csv 12729
+DATA 数据文件\STP原始\Lactate_Swiss预测靶点_筛选前.csv 12196
+DATA 数据文件\STP原始\Lactate_Swiss预测靶点_筛选后.csv 12196
+DATA 数据文件\STP原始\Lacto-N-tetraose_Swiss预测靶点_筛选前.csv 12183
+DATA 数据文件\STP原始\Lacto-N-tetraose_Swiss预测靶点_筛选后.csv 12183
+DATA 数据文件\STP原始\Lariciresinol_Swiss预测靶点_筛选前.csv 12746
+DATA 数据文件\STP原始\Lariciresinol_Swiss预测靶点_筛选后.csv 12746
+DATA 数据文件\STP原始\Leucine_Swiss预测靶点_筛选前.csv 12744
+DATA 数据文件\STP原始\Leucine_Swiss预测靶点_筛选后.csv 12744
+DATA 数据文件\STP原始\Leucocyanidin_Swiss预测靶点_筛选前.csv 11801
+DATA 数据文件\STP原始\Leucocyanidin_Swiss预测靶点_筛选后.csv 11801
+DATA 数据文件\STP原始\Leucylproline_Swiss预测靶点_筛选前.csv 11308
+DATA 数据文件\STP原始\Leucylproline_Swiss预测靶点_筛选后.csv 11308
+DATA 数据文件\STP原始\Levodopa_Swiss预测靶点_筛选前.csv 11831
+DATA 数据文件\STP原始\Levodopa_Swiss预测靶点_筛选后.csv 11831
+DATA 数据文件\STP原始\Linoleic_Acid_Swiss预测靶点_筛选前.csv 12386
+DATA 数据文件\STP原始\Linoleic_Acid_Swiss预测靶点_筛选后.csv 12386
+DATA 数据文件\STP原始\Lithocholic_acid_Swiss预测靶点_筛选前.csv 12515
+DATA 数据文件\STP原始\Lithocholic_acid_Swiss预测靶点_筛选后.csv 12515
+DATA 数据文件\STP原始\Loganetin_Swiss预测靶点_筛选前.csv 12294
+DATA 数据文件\STP原始\Loganetin_Swiss预测靶点_筛选后.csv 12294
+DATA 数据文件\STP原始\Lunularin_Swiss预测靶点_筛选前.csv 12378
+DATA 数据文件\STP原始\Lunularin_Swiss预测靶点_筛选后.csv 12378
+DATA 数据文件\STP原始\Luteolin_Swiss预测靶点_筛选前.csv 10945
+DATA 数据文件\STP原始\Luteolin_Swiss预测靶点_筛选后.csv 10945
+DATA 数据文件\STP原始\Lysine_Swiss预测靶点_筛选前.csv 12775
+DATA 数据文件\STP原始\Lysine_Swiss预测靶点_筛选后.csv 12775
+DATA 数据文件\STP原始\Maltose_Swiss预测靶点_筛选前.csv 11938
+DATA 数据文件\STP原始\Maltose_Swiss预测靶点_筛选后.csv 11938
+DATA 数据文件\STP原始\Maltotriose_Swiss预测靶点_筛选前.csv 11932
+DATA 数据文件\STP原始\Maltotriose_Swiss预测靶点_筛选后.csv 11932
+DATA 数据文件\STP原始\Mannose-6-phosphate_Swiss预测靶点_筛选前.csv 12615
+DATA 数据文件\STP原始\Mannose-6-phosphate_Swiss预测靶点_筛选后.csv 12615
+DATA 数据文件\STP原始\Melezitose_Swiss预测靶点_筛选前.csv 11978
+DATA 数据文件\STP原始\Melezitose_Swiss预测靶点_筛选后.csv 11978
+DATA 数据文件\STP原始\Methionine_Swiss预测靶点_筛选前.csv 12370
+DATA 数据文件\STP原始\Methionine_Swiss预测靶点_筛选后.csv 12370
+DATA 数据文件\STP原始\Myricetin_Swiss预测靶点_筛选前.csv 11090
+DATA 数据文件\STP原始\Myricetin_Swiss预测靶点_筛选后.csv 11090
+DATA 数据文件\STP原始\Myristic_Acid_Swiss预测靶点_筛选前.csv 12572
+DATA 数据文件\STP原始\Myristic_Acid_Swiss预测靶点_筛选后.csv 12572
+DATA 数据文件\STP原始\N-Acetyl-D-Glucosamine_Swiss预测靶点_筛选前.csv 12024
+DATA 数据文件\STP原始\N-Acetyl-D-Glucosamine_Swiss预测靶点_筛选后.csv 12024
+DATA 数据文件\STP原始\N-Acetyl-L-aspartic_acid_Swiss预测靶点_筛选前.csv 11502
+DATA 数据文件\STP原始\N-Acetyl-L-aspartic_acid_Swiss预测靶点_筛选后.csv 11502
+DATA 数据文件\STP原始\N-Acetyl-L-glutamic_acid_Swiss预测靶点_筛选前.csv 12140
+DATA 数据文件\STP原始\N-Acetyl-L-glutamic_acid_Swiss预测靶点_筛选后.csv 12140
+DATA 数据文件\STP原始\N-acetylornithine_Swiss预测靶点_筛选前.csv 12034
+DATA 数据文件\STP原始\N-acetylornithine_Swiss预测靶点_筛选后.csv 12034
+DATA 数据文件\STP原始\N-acetylputrescine_Swiss预测靶点_筛选前.csv 12184
+DATA 数据文件\STP原始\N-acetylputrescine_Swiss预测靶点_筛选后.csv 12184
+DATA 数据文件\STP原始\n_n_n-Trimethyllysine_Swiss预测靶点_筛选前.csv 12689
+DATA 数据文件\STP原始\n_n_n-Trimethyllysine_Swiss预测靶点_筛选后.csv 12689
+DATA 数据文件\STP原始\N_O-Bis-_trimethylsilyl_phenylalanine_Swiss预测靶点_筛选前.csv 12197
+DATA 数据文件\STP原始\N_O-Bis-_trimethylsilyl_phenylalanine_Swiss预测靶点_筛选后.csv 12197
+DATA 数据文件\STP原始\Naringenin_chalcone_Swiss预测靶点_筛选前.csv 11544
+DATA 数据文件\STP原始\Naringenin_chalcone_Swiss预测靶点_筛选后.csv 11544
+DATA 数据文件\STP原始\Nicotinamide_Swiss预测靶点_筛选前.csv 12373
+DATA 数据文件\STP原始\Nicotinamide_Swiss预测靶点_筛选后.csv 12373
+DATA 数据文件\STP原始\Nicotinic_acid_Swiss预测靶点_筛选前.csv 11984
+DATA 数据文件\STP原始\Nicotinic_acid_Swiss预测靶点_筛选后.csv 11984
+DATA 数据文件\STP原始\Norathyriol_Swiss预测靶点_筛选前.csv 11663
+DATA 数据文件\STP原始\Norathyriol_Swiss预测靶点_筛选后.csv 11663
+DATA 数据文件\STP原始\O-Desmethylangolensin_Swiss预测靶点_筛选前.csv 12113
+DATA 数据文件\STP原始\O-Desmethylangolensin_Swiss预测靶点_筛选后.csv 12113
+DATA 数据文件\STP原始\Oleic_Acid_Swiss预测靶点_筛选前.csv 12348
+DATA 数据文件\STP原始\Oleic_Acid_Swiss预测靶点_筛选后.csv 12348
+DATA 数据文件\STP原始\Orotic_acid_Swiss预测靶点_筛选前.csv 11880
+DATA 数据文件\STP原始\Orotic_acid_Swiss预测靶点_筛选后.csv 11880
+DATA 数据文件\STP原始\Orotidine-5_-monophosphate_Swiss预测靶点_筛选前.csv 12171
+DATA 数据文件\STP原始\Orotidine-5_-monophosphate_Swiss预测靶点_筛选后.csv 12171
+DATA 数据文件\STP原始\Oxalacetic_acid_Swiss预测靶点_筛选前.csv 12456
+DATA 数据文件\STP原始\Oxalacetic_acid_Swiss预测靶点_筛选后.csv 12456
+DATA 数据文件\STP原始\p-Cresol_glucuronide_Swiss预测靶点_筛选前.csv 12222
+DATA 数据文件\STP原始\p-Cresol_glucuronide_Swiss预测靶点_筛选后.csv 12222
+DATA 数据文件\STP原始\p-Cresol_sulfate_Swiss预测靶点_筛选前.csv 12161
+DATA 数据文件\STP原始\p-Cresol_sulfate_Swiss预测靶点_筛选后.csv 12161
+DATA 数据文件\STP原始\Palmitic_Acid_Swiss预测靶点_筛选前.csv 12476
+DATA 数据文件\STP原始\Palmitic_Acid_Swiss预测靶点_筛选后.csv 12476
+DATA 数据文件\STP原始\Palmitoleic_Acid_Swiss预测靶点_筛选前.csv 12431
+DATA 数据文件\STP原始\Palmitoleic_Acid_Swiss预测靶点_筛选后.csv 12431
+DATA 数据文件\STP原始\Palmitoylethanolamide_Swiss预测靶点_筛选前.csv 12212
+DATA 数据文件\STP原始\Palmitoylethanolamide_Swiss预测靶点_筛选后.csv 12212
+DATA 数据文件\STP原始\Pantothenic_Acid_Swiss预测靶点_筛选前.csv 11454
+DATA 数据文件\STP原始\Pantothenic_Acid_Swiss预测靶点_筛选后.csv 11454
+DATA 数据文件\STP原始\Phenylacetic_Acid_Swiss预测靶点_筛选前.csv 12147
+DATA 数据文件\STP原始\Phenylacetic_Acid_Swiss预测靶点_筛选后.csv 12147
+DATA 数据文件\STP原始\Phenylalanine_Swiss预测靶点_筛选前.csv 11949
+DATA 数据文件\STP原始\Phenylalanine_Swiss预测靶点_筛选后.csv 11949
+DATA 数据文件\STP原始\Phloretin_Swiss预测靶点_筛选前.csv 11963
+DATA 数据文件\STP原始\Phloretin_Swiss预测靶点_筛选后.csv 11963
+DATA 数据文件\STP原始\Phloroglucinol_Swiss预测靶点_筛选前.csv 11752
+DATA 数据文件\STP原始\Phloroglucinol_Swiss预测靶点_筛选后.csv 11752
+DATA 数据文件\STP原始\Phosphoserine_Swiss预测靶点_筛选前.csv 12370
+DATA 数据文件\STP原始\Phosphoserine_Swiss预测靶点_筛选后.csv 12370
+DATA 数据文件\STP原始\Pipecolic_acid_Swiss预测靶点_筛选前.csv 12554
+DATA 数据文件\STP原始\Pipecolic_acid_Swiss预测靶点_筛选后.csv 12554
+DATA 数据文件\STP原始\Ponciretin_Swiss预测靶点_筛选前.csv 11784
+DATA 数据文件\STP原始\Ponciretin_Swiss预测靶点_筛选后.csv 11784
+DATA 数据文件\STP原始\Proline_Swiss预测靶点_筛选前.csv 12591
+DATA 数据文件\STP原始\Proline_Swiss预测靶点_筛选后.csv 12591
+DATA 数据文件\STP原始\Propionate_Swiss预测靶点_筛选前.csv 12425
+DATA 数据文件\STP原始\Propionate_Swiss预测靶点_筛选后.csv 12425
+DATA 数据文件\STP原始\Propylene_Glycol_Swiss预测靶点_筛选前.csv 12108
+DATA 数据文件\STP原始\Propylene_Glycol_Swiss预测靶点_筛选后.csv 12108
+DATA 数据文件\STP原始\Protopanaxadiol_Swiss预测靶点_筛选前.csv 12484
+DATA 数据文件\STP原始\Protopanaxadiol_Swiss预测靶点_筛选后.csv 12484
+DATA 数据文件\STP原始\Pyridoxamine_Swiss预测靶点_筛选前.csv 12458
+DATA 数据文件\STP原始\Pyridoxamine_Swiss预测靶点_筛选后.csv 12458
+DATA 数据文件\STP原始\Pyruvate_Swiss预测靶点_筛选前.csv 12118
+DATA 数据文件\STP原始\Pyruvate_Swiss预测靶点_筛选后.csv 12118
+DATA 数据文件\STP原始\Pyruvic_Acid_Swiss预测靶点_筛选前.csv 12118
+DATA 数据文件\STP原始\Pyruvic_Acid_Swiss预测靶点_筛选后.csv 12118
+DATA 数据文件\STP原始\Quercetin_Swiss预测靶点_筛选前.csv 10409
+DATA 数据文件\STP原始\Quercetin_Swiss预测靶点_筛选后.csv 10409
+DATA 数据文件\STP原始\Quercimeritrin_Swiss预测靶点_筛选前.csv 11805
+DATA 数据文件\STP原始\Quercimeritrin_Swiss预测靶点_筛选后.csv 11805
+DATA 数据文件\STP原始\Quercitrin_Swiss预测靶点_筛选前.csv 11862
+DATA 数据文件\STP原始\Quercitrin_Swiss预测靶点_筛选后.csv 11862
+DATA 数据文件\STP原始\Quinic_acid_Swiss预测靶点_筛选前.csv 12385
+DATA 数据文件\STP原始\Quinic_acid_Swiss预测靶点_筛选后.csv 12385
+DATA 数据文件\STP原始\Raffinose_Swiss预测靶点_筛选前.csv 12108
+DATA 数据文件\STP原始\Raffinose_Swiss预测靶点_筛选后.csv 12108
+DATA 数据文件\STP原始\Riboflavin_Swiss预测靶点_筛选前.csv 12845
+DATA 数据文件\STP原始\Riboflavin_Swiss预测靶点_筛选后.csv 12845
+DATA 数据文件\STP原始\S-adenosyl-L-homocysteine_Swiss预测靶点_筛选前.csv 11875
+DATA 数据文件\STP原始\S-adenosyl-L-homocysteine_Swiss预测靶点_筛选后.csv 11875
+DATA 数据文件\STP原始\S-adenosylmethionine_Swiss预测靶点_筛选前.csv 12220
+DATA 数据文件\STP原始\S-adenosylmethionine_Swiss预测靶点_筛选后.csv 12220
+DATA 数据文件\STP原始\S-Ribosylhomocysteine_Swiss预测靶点_筛选前.csv 11873
+DATA 数据文件\STP原始\S-Ribosylhomocysteine_Swiss预测靶点_筛选后.csv 11873
+DATA 数据文件\STP原始\Secoisolariciresinol_Swiss预测靶点_筛选前.csv 12794
+DATA 数据文件\STP原始\Secoisolariciresinol_Swiss预测靶点_筛选后.csv 12794
+DATA 数据文件\STP原始\Sedoheptulose_Swiss预测靶点_筛选前.csv 12490
+DATA 数据文件\STP原始\Sedoheptulose_Swiss预测靶点_筛选后.csv 12490
+DATA 数据文件\STP原始\Serine_Swiss预测靶点_筛选前.csv 12332
+DATA 数据文件\STP原始\Serine_Swiss预测靶点_筛选后.csv 12332
+DATA 数据文件\STP原始\Spermidine_Swiss预测靶点_筛选前.csv 11956
+DATA 数据文件\STP原始\Spermidine_Swiss预测靶点_筛选后.csv 11956
+DATA 数据文件\STP原始\Stearic_Acid_Swiss预测靶点_筛选前.csv 12515
+DATA 数据文件\STP原始\Stearic_Acid_Swiss预测靶点_筛选后.csv 12515
+DATA 数据文件\STP原始\Succinate_Swiss预测靶点_筛选前.csv 12516
+DATA 数据文件\STP原始\Succinate_Swiss预测靶点_筛选后.csv 12516
+DATA 数据文件\STP原始\Succinic_Acid_Swiss预测靶点_筛选前.csv 12516
+DATA 数据文件\STP原始\Succinic_Acid_Swiss预测靶点_筛选后.csv 12516
+DATA 数据文件\STP原始\Sucrose_Swiss预测靶点_筛选前.csv 12096
+DATA 数据文件\STP原始\Sucrose_Swiss预测靶点_筛选后.csv 12096
+DATA 数据文件\STP原始\Sulfate_Ion_Swiss预测靶点_筛选前.csv 2153
+DATA 数据文件\STP原始\Sulfate_Ion_Swiss预测靶点_筛选后.csv 2153
+DATA 数据文件\STP原始\Taurine_Swiss预测靶点_筛选前.csv 11637
+DATA 数据文件\STP原始\Taurine_Swiss预测靶点_筛选后.csv 11637
+DATA 数据文件\STP原始\Taurocholic_acid_Swiss预测靶点_筛选前.csv 12108
+DATA 数据文件\STP原始\Taurocholic_acid_Swiss预测靶点_筛选后.csv 12108
+DATA 数据文件\STP原始\Taurodeoxycholic_acid_Swiss预测靶点_筛选前.csv 11953
+DATA 数据文件\STP原始\Taurodeoxycholic_acid_Swiss预测靶点_筛选后.csv 11953
+DATA 数据文件\STP原始\Taurolithocholic_acid_Swiss预测靶点_筛选前.csv 11968
+DATA 数据文件\STP原始\Taurolithocholic_acid_Swiss预测靶点_筛选后.csv 11968
+DATA 数据文件\STP原始\Threonine_Swiss预测靶点_筛选前.csv 12462
+DATA 数据文件\STP原始\Threonine_Swiss预测靶点_筛选后.csv 12462
+DATA 数据文件\STP原始\Thymine_Swiss预测靶点_筛选前.csv 11804
+DATA 数据文件\STP原始\Thymine_Swiss预测靶点_筛选后.csv 11804
+DATA 数据文件\STP原始\Tricarballylic_acid_Swiss预测靶点_筛选前.csv 12676
+DATA 数据文件\STP原始\Tricarballylic_acid_Swiss预测靶点_筛选后.csv 12676
+DATA 数据文件\STP原始\Trimethylamine_oxide_Swiss预测靶点_筛选前.csv 12206
+DATA 数据文件\STP原始\Trimethylamine_oxide_Swiss预测靶点_筛选后.csv 12206
+DATA 数据文件\STP原始\Tryptamine_Swiss预测靶点_筛选前.csv 12843
+DATA 数据文件\STP原始\Tryptamine_Swiss预测靶点_筛选后.csv 12843
+DATA 数据文件\STP原始\Tryptophan_Swiss预测靶点_筛选前.csv 12248
+DATA 数据文件\STP原始\Tryptophan_Swiss预测靶点_筛选后.csv 12248
+DATA 数据文件\STP原始\Tyramine_Swiss预测靶点_筛选前.csv 12575
+DATA 数据文件\STP原始\Tyramine_Swiss预测靶点_筛选后.csv 12575
+DATA 数据文件\STP原始\Tyrosine_Swiss预测靶点_筛选前.csv 12273
+DATA 数据文件\STP原始\Tyrosine_Swiss预测靶点_筛选后.csv 12273
+DATA 数据文件\STP原始\Uracil_Swiss预测靶点_筛选前.csv 12273
+DATA 数据文件\STP原始\Uracil_Swiss预测靶点_筛选后.csv 12273
+DATA 数据文件\STP原始\Ureidosuccinic_acid_Swiss预测靶点_筛选前.csv 11929
+DATA 数据文件\STP原始\Ureidosuccinic_acid_Swiss预测靶点_筛选后.csv 11929
+DATA 数据文件\STP原始\Uridine-5_-diphosphate_Swiss预测靶点_筛选前.csv 12269
+DATA 数据文件\STP原始\Uridine-5_-diphosphate_Swiss预测靶点_筛选后.csv 12269
+DATA 数据文件\STP原始\Uridine_Swiss预测靶点_筛选前.csv 12219
+DATA 数据文件\STP原始\Uridine_Swiss预测靶点_筛选后.csv 12219
+DATA 数据文件\STP原始\Ursodiol_Swiss预测靶点_筛选前.csv 12616
+DATA 数据文件\STP原始\Ursodiol_Swiss预测靶点_筛选后.csv 12616
+DATA 数据文件\STP原始\Valerate_Swiss预测靶点_筛选前.csv 12577
+DATA 数据文件\STP原始\Valerate_Swiss预测靶点_筛选后.csv 12577
+DATA 数据文件\STP原始\Valeric_acid_Swiss预测靶点_筛选前.csv 12577
+DATA 数据文件\STP原始\Valeric_acid_Swiss预测靶点_筛选后.csv 12577
+DATA 数据文件\STP原始\Valine_Swiss预测靶点_筛选前.csv 12622
+DATA 数据文件\STP原始\Valine_Swiss预测靶点_筛选后.csv 12622
+DATA 数据文件\STP原始\Xanthine_Swiss预测靶点_筛选前.csv 12482
+DATA 数据文件\STP原始\Xanthine_Swiss预测靶点_筛选后.csv 12482
+DATA 数据文件\STP原始\Xanthosine_Swiss预测靶点_筛选前.csv 12307
+DATA 数据文件\STP原始\Xanthosine_Swiss预测靶点_筛选后.csv 12307
+DATA 数据文件\STP原始\异常清单_CompoundTargetExceptions.csv 2262
+DATADIR 数据文件\外部数据库
+DATADIR 数据文件\外部数据库\CTD
+DATA 数据文件\外部数据库\CTD\CTD_chem_gene_ixns.csv.gz 43366575
+DATA 数据文件\外部数据库\CTD\CTD_chemicals.csv.gz 10537824
+DATA 数据文件\外部数据库\CTD\CTD_chemicals_diseases.csv.gz 163603578
+DATA 数据文件\外部数据库\CTD\CTD_chemicals_diseases.csv.gz.part00 20450448
+DATA 数据文件\外部数据库\CTD\CTD_chemicals_diseases.csv.gz.part01 20450448
+DATA 数据文件\外部数据库\CTD\CTD_chemicals_diseases.csv.gz.part02 20450448
+DATA 数据文件\外部数据库\CTD\CTD_chemicals_diseases.csv.gz.part03 20450448
+DATA 数据文件\外部数据库\CTD\CTD_chemicals_diseases.csv.gz.part04 20450448
+DATA 数据文件\外部数据库\CTD\CTD_chemicals_diseases.csv.gz.part05 20450448
+DATA 数据文件\外部数据库\CTD\CTD_chemicals_diseases.csv.gz.part06 20450448
+DATA 数据文件\外部数据库\CTD\CTD_chemicals_diseases.csv.gz.part07 20450442
+DATADIR 数据文件\外部数据库\GEO
+DATA 数据文件\外部数据库\GEO\GPL13158.annot.gz 8313277
+DATA 数据文件\外部数据库\GEO\GPL6244.annot.gz 7193437
+DATA 数据文件\外部数据库\GEO\GSE75214_series_matrix.txt.gz 34902052
+DATA 数据文件\外部数据库\GEO\GSE92415_series_matrix.txt.gz 27037708
+DATADIR 数据文件\外部数据库\GMMAD2
+DATA 数据文件\外部数据库\GMMAD2\browse3_D003093.html 1821481
+DATA 数据文件\外部数据库\GMMAD2\browse3_D015212.html 1762149
+DATA 数据文件\外部数据库\GMMAD2\disease_meta.csv 459406109
+DATADIR 数据文件\外部数据库\GTEx
+DATA 数据文件\外部数据库\GTEx\GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz 6952331
+DATADIR 数据文件\外部数据库\gutMGene_v2
+DATA 数据文件\外部数据库\gutMGene_v2\Gut Microbe-Host Gene.csv 740908
+DATA 数据文件\外部数据库\gutMGene_v2\Gut Microbe-Microbial metabolite.csv 1532993
+DATA 数据文件\外部数据库\gutMGene_v2\Microbial metabolite-Host Gene.csv 698451
+DATADIR 数据文件\外部数据库\GWAS
+DATA 数据文件\外部数据库\GWAS\_install_mr_pkgs.R 613
+DATA 数据文件\外部数据库\GWAS\finngen_R12_K11_UC_STRICT2_pheweb.gz 1134
+DATA 数据文件\外部数据库\GWAS\install_TwoSampleMR.log 2820
+DATA 数据文件\外部数据库\GWAS\install_TwoSampleMR.log.err 4603
+DATA 数据文件\外部数据库\GWAS\MBG.allHits.p1e4.txt 18329457
+DATA 数据文件\外部数据库\GWAS\UC_gwas_associations.csv 156670
+DATA 数据文件\外部数据库\GWAS\UC_trans_ethnic_association_summ_stats_b37.txt.gz 10567888
+结果/数据文件 files=27
+  RESDATA 结果文件\数据文件\C_full_gutmgene_human_H_only.csv
+  RESDATA 结果文件\数据文件\C_full_gutmgene_human_H_plus_M.csv
+  RESDATA 结果文件\数据文件\C_main_evidence_priority_H_only.csv
+  RESDATA 结果文件\数据文件\C_main_evidence_priority_H_plus_M.csv
+  RESDATA 结果文件\数据文件\I2_full_gutmgene_human_H_only.csv
+  RESDATA 结果文件\数据文件\I2_full_gutmgene_human_H_plus_M.csv
+  RESDATA 结果文件\数据文件\I2_main_evidence_priority_H_only.csv
+  RESDATA 结果文件\数据文件\I2_main_evidence_priority_H_plus_M.csv
+  RESDATA 结果文件\数据文件\P0加固\C_HC_D子集.csv
+  RESDATA 结果文件\数据文件\P0加固\P0_加固结果.json
+  RESDATA 结果文件\数据文件\P0加固\UC_CD_OT靶点集.json
+  RESDATA 结果文件\数据文件\代谢物\GMMAD2_IBD_D015212.csv
+  RESDATA 结果文件\数据文件\代谢物\GMMAD2_UC_D003093.csv
+  RESDATA 结果文件\数据文件\代谢物\M_主面板靶点.csv
+  RESDATA 结果文件\数据文件\代谢物\M_全库敏感性靶点.csv
+  RESDATA 结果文件\数据文件\代谢物\M_全部靶点.csv
+  RESDATA 结果文件\数据文件\代谢物\M_构建摘要.json
+  RESDATA 结果文件\数据文件\代谢物\M_阈值敏感性.csv
+  RESDATA 结果文件\数据文件\代谢物\M_靶点异常清单.csv
+  RESDATA 结果文件\数据文件\代谢物\代谢物主面板.csv
+  RESDATA 结果文件\数据文件\代谢物\代谢物全库敏感性.csv
+  RESDATA 结果文件\数据文件\代谢物\代谢物纳入排除清单.csv
+  RESDATA 结果文件\数据文件\代谢物\代谢物面板_主分析与全库敏感性.csv
+  RESDATA 结果文件\数据文件\代谢物\代谢物面板构建摘要.json
+  RESDATA 结果文件\数据文件\代谢物\特殊暴露物_不进入小分子预测.csv
+  RESDATA 结果文件\数据文件\双交集统计摘要.json
+  RESDATA 结果文件\数据文件\双交集统计汇总.csv
+README README_模块说明.md
+# 03_三源交集_复方UC菌群
+
+I₁/I₂/C、置换、敏感性、研究计划
+
+## 子文件夹（本课题统一）
+
+```text
+03_三源交集_复方UC菌群/
+  README_模块说明.md
+  数据文件/                 # 本模块原始输入（外部库导出、对接工作区等）
+  代码文件/                 # 本模块脚本
+  结果文件/
+    数据文件/               # 本模块产物表
+    图片文件/               # 本模块图
+    报告文件/               # 本模块阶段报告（不是全项目论文版）
+```
+
+全项目论文版/方法版只在 `00_全流程报告/`，与 `01_…` 同级。
+
+==== 04_机制层_PPI富集 ====
+数据文件 exists=True empty=True
+结果/数据文件 files=18
+  RESDATA 结果文件\数据文件\机制层\Full_STRING_edges.csv
+  RESDATA 结果文件\数据文件\机制层\Main_STRING_edges.csv
+  RESDATA 结果文件\数据文件\机制层\PPI_enrichment_summary.csv
+  RESDATA 结果文件\数据文件\机制层\PPI_MCODE模块.csv
+  RESDATA 结果文件\数据文件\机制层\PPI网络指标_MCC排序.csv
+  RESDATA 结果文件\数据文件\机制层\STRING_Full_score900.tsv
+  RESDATA 结果文件\数据文件\机制层\STRING_Main_score900.tsv
+  RESDATA 结果文件\数据文件\机制层\Top20_STRING_edges.csv
+  RESDATA 结果文件\数据文件\机制层\五层网络节点.csv
+  RESDATA 结果文件\数据文件\机制层\五层网络边.csv
+  RESDATA 结果文件\数据文件\机制层\富集分析\Full_background_audit.csv
+  RESDATA 结果文件\数据文件\机制层\富集分析\Full_GO_full.csv
+  RESDATA 结果文件\数据文件\机制层\富集分析\Full_KEGG_full.csv
+  RESDATA 结果文件\数据文件\机制层\富集分析\Main_background_audit.csv
+  RESDATA 结果文件\数据文件\机制层\富集分析\Main_GO_full.csv
+  RESDATA 结果文件\数据文件\机制层\富集分析\Main_KEGG_full.csv
+  RESDATA 结果文件\数据文件\机制层\机制层构建摘要.json
+  RESDATA 结果文件\数据文件\机制层\核心代谢物靶点配对.csv
+README README_模块说明.md
+# 04_机制层_PPI富集
+
+依赖 C 的 PPI/GO/KEGG/五层网
+
+## 子文件夹（本课题统一）
+
+```text
+04_机制层_PPI富集/
+  README_模块说明.md
+  数据文件/                 # 本模块原始输入（外部库导出、对接工作区等）
+  代码文件/                 # 本模块脚本
+  结果文件/
+    数据文件/               # 本模块产物表
+    图片文件/               # 本模块图
+    报告文件/               # 本模块阶段报告（不是全项目论文版）
+```
+
+全项目论文版/方法版只在 `00_全流程报告/`，与 `01_…` 同级。
+
+==== 05_干预代谢物预测 ====
+数据文件 exists=True empty=True
+结果/数据文件 files=3
+  RESDATA 结果文件\数据文件\预测\复方候选干预代谢物_主面板.csv
+  RESDATA 结果文件\数据文件\预测\复方候选干预代谢物_全库敏感性.csv
+  RESDATA 结果文件\数据文件\预测\干预代谢物预测_摘要.json
+README README_模块说明.md
+# 05_干预代谢物预测
+
+依赖 C 的 Tier 代谢物预测
+
+## 子文件夹（本课题统一）
+
+```text
+05_干预代谢物预测/
+  README_模块说明.md
+  数据文件/                 # 本模块原始输入（外部库导出、对接工作区等）
+  代码文件/                 # 本模块脚本
+  结果文件/
+    数据文件/               # 本模块产物表
+    图片文件/               # 本模块图
+    报告文件/               # 本模块阶段报告（不是全项目论文版）
+```
+
+全项目论文版/方法版只在 `00_全流程报告/`，与 `01_…` 同级。
+
+==== 06_分子对接 ====
+数据文件 exists=True empty=False
+DATADIR 数据文件\_手调detail备份
+DATA 数据文件\_手调detail备份\STD_DNMT1__3betaHydroxyurs12En2__detail.pse 979333
+DATA 数据文件\_手调detail备份\STD_DNMT1__3betaHydroxyurs12En2__task_info.txt 283
+DATA 数据文件\_手调detail备份\STD_DNMT1__Inosine__detail.pse 977308
+DATA 数据文件\_手调detail备份\STD_DNMT1__Inosine__task_info.txt 263
+DATA 数据文件\_手调detail备份\STD_ESR2__4Hydroxyphenylacetic__detail.pse 977847
+DATA 数据文件\_手调detail备份\STD_ESR2__4Hydroxyphenylacetic__task_info.txt 279
+DATA 数据文件\_手调detail备份\STD_ESR2__Anhydroicaritin__detail.pse 982266
+DATA 数据文件\_手调detail备份\STD_ESR2__Anhydroicaritin__task_info.txt 262
+DATA 数据文件\_手调detail备份\STD_FOS__quercetin__detail.pse 889056
+DATA 数据文件\_手调detail备份\STD_FOS__quercetin__task_info.txt 235
+DATA 数据文件\_手调detail备份\STD_LGALS3__Maltose__detail.pse 339524
+DATA 数据文件\_手调detail备份\STD_LGALS3__Maltose__task_info.txt 251
+DATA 数据文件\_手调detail备份\STD_LGALS3__Maltotriose__detail.pse 345783
+DATA 数据文件\_手调detail备份\STD_LGALS3__Maltotriose__task_info.txt 273
+DATA 数据文件\_手调detail备份\STD_LGALS3__Raffinose__detail.pse 343392
+DATA 数据文件\_手调detail备份\STD_LGALS3__Raffinose__task_info.txt 269
+DATA 数据文件\_手调detail备份\STD_NLRP3__Eucalyptol__detail.pse 1068061
+DATA 数据文件\_手调detail备份\STD_NLRP3__Eucalyptol__task_info.txt 267
+DATA 数据文件\_手调detail备份\STD_PPARG__kaempferol__detail.pse 1195757
+DATA 数据文件\_手调detail备份\STD_PPARG__kaempferol__task_info.txt 254
+DATA 数据文件\_手调detail备份\STD_PPARG__Phenylalanine__detail.pse 1193206
+DATA 数据文件\_手调detail备份\STD_PPARG__Phenylalanine__task_info.txt 261
+DATA 数据文件\_手调detail备份\STD_TOP1__CaffeicAcid__detail.pse 1340443
+DATA 数据文件\_手调detail备份\STD_TOP1__CaffeicAcid__task_info.txt 254
+DATADIR 数据文件\对接工作区
+DATA 数据文件\对接工作区\13CO.pdb 1576098
+DATA 数据文件\对接工作区\13CO.rec.pdb 1476164
+DATA 数据文件\对接工作区\1A02.pdb 361746
+DATA 数据文件\对接工作区\1A02.rec.pdb 251904
+DATA 数据文件\对接工作区\1A42.pdb 210519
+DATA 数据文件\对接工作区\1A42.rec.pdb 165159
+DATA 数据文件\对接工作区\1CXP.pdb 924696
+DATA 数据文件\对接工作区\1CXP.rec.pdb 755548
+DATA 数据文件\对接工作区\1D5L.pdb 929637
+DATA 数据文件\对接工作区\1D5L.rec.pdb 746334
+DATA 数据文件\对接工作区\1FM6.pdb 782946
+DATA 数据文件\对接工作区\1FM6.rec.pdb 671652
+DATA 数据文件\对接工作区\1FM9.pdb 402165
+DATA 数据文件\对接工作区\1FM9.rec.pdb 340136
+DATA 数据文件\对接工作区\1GFW.pdb 207036
+DATA 数据文件\对接工作区\1GFW.rec.pdb 157604
+DATA 数据文件\对接工作区\1GKD.pdb 294111
+DATA 数据文件\对接工作区\1GKD.rec.pdb 205656
+DATA 数据文件\对接工作区\1K2S.pdb 633501
+DATA 数据文件\对接工作区\1K2S.rec.pdb 552762
+DATA 数据文件\对接工作区\1K4T.pdb 532008
+DATA 数据文件\对接工作区\1K4T.rec.pdb 383022
+DATA 数据文件\对接工作区\1KJR.pdb 146367
+DATA 数据文件\对接工作区\1KJR.rec.pdb 93808
+DATA 数据文件\对接工作区\1L2H.pdb 128547
+DATA 数据文件\对接工作区\1L2H.rec.pdb 95776
+DATA 数据文件\对接工作区\1L2J.pdb 337527
+DATA 数据文件\对接工作区\1L2J.rec.pdb 278964
+DATA 数据文件\对接工作区\1U7B.pdb 208575
+DATA 数据文件\对接工作区\1U7B.rec.pdb 166870
+DATA 数据文件\对接工作区\1Y9R.pdb 403137
+DATA 数据文件\对接工作区\1Y9R.rec.pdb 318570
+DATA 数据文件\对接工作区\2AZ5.pdb 415773
+DATA 数据文件\对接工作区\2AZ5.rec.pdb 343908
+DATA 数据文件\对接工作区\2Z65.pdb 664443
+DATA 数据文件\对接工作区\2Z65.rec.pdb 544972
+DATA 数据文件\对接工作区\3EPZ.pdb 667521
+DATA 数据文件\对接工作区\3EPZ.rec.pdb 277488
+DATA 数据文件\对接工作区\3IAR.pdb 577854
+DATA 数据文件\对接工作区\3IAR.rec.pdb 238948
+DATA 数据文件\对接工作区\4I5I.pdb 425574
+DATA 数据文件\对接工作区\4I5I.rec.pdb 354896
+DATA 数据文件\对接工作区\4I8V.pdb 1356669
+DATA 数据文件\对接工作区\4I8V.rec.pdb 1250910
+DATA 数据文件\对接工作区\7ALV.pdb 659178
+DATA 数据文件\对接工作区\7ALV.rec.pdb 304876
+DATA 数据文件\对接工作区\8SOS.pdb 1417986
+DATA 数据文件\对接工作区\8SOS.rec.pdb 641896
+DATA 数据文件\对接工作区\bad_pdb.txt 11
+DATA 数据文件\对接工作区\structure_cache.json 125
+DATA 数据文件\对接工作区\t.rec.pdbqt 666008
+结果/数据文件 files=19
+  RESDATA 结果文件\数据文件\对接\MD优先与可视化排序.csv
+  RESDATA 结果文件\数据文件\对接\MD优先组合_Top3.md
+  RESDATA 结果文件\数据文件\对接\代谢物对接全表.csv
+  RESDATA 结果文件\数据文件\对接\代谢物对接汇总.csv
+  RESDATA 结果文件\数据文件\对接\受体去核酸说明.md
+  RESDATA 结果文件\数据文件\对接\对接_摘要.json
+  RESDATA 结果文件\数据文件\对接\成分对接全表.csv
+  RESDATA 结果文件\数据文件\对接\成分对接汇总.csv
+  RESDATA 结果文件\数据文件\对接\核心代谢物对接配对.csv
+  RESDATA 结果文件\数据文件\对接\核心成分靶点配对.csv
+  RESDATA 结果文件\数据文件\对接\网络图_成分Degree.csv
+  RESDATA 结果文件\数据文件\筛选执行_SelectionRun\Cstar_工作靶点.csv
+  RESDATA 结果文件\数据文件\筛选执行_SelectionRun\Top代谢物_TierAstar_Cstar.csv
+  RESDATA 结果文件\数据文件\筛选执行_SelectionRun\Top成分_Degree_Cstar.csv
+  RESDATA 结果文件\数据文件\筛选执行_SelectionRun\Top靶点_PPI_Cstar.csv
+  RESDATA 结果文件\数据文件\筛选执行_SelectionRun\ToxHard_剔除靶点.csv
+  RESDATA 结果文件\数据文件\筛选执行_SelectionRun\筛选摘要.json
+  RESDATA 结果文件\数据文件\筛选执行_SelectionRun\配对_代谢物_Cstar.csv
+  RESDATA 结果文件\数据文件\筛选执行_SelectionRun\配对_成分_Cstar.csv
+README README_模块说明.md
+# 06_分子对接
+
+核心代谢物–靶点对接
+
+## 子文件夹（本课题统一）
+
+```text
+06_分子对接/
+  README_模块说明.md
+  数据文件/                 # 本模块原始输入（外部库导出、对接工作区等）
+  代码文件/                 # 本模块脚本
+  结果文件/
+    数据文件/               # 本模块产物表
+    图片文件/               # 本模块图
+    报告文件/               # 本模块阶段报告（不是全项目论文版）
+```
+
+全项目论文版/方法版只在 `00_全流程报告/`，与 `01_…` 同级。
+
+==== 07_外部支持_GEO与MR ====
+数据文件 exists=True empty=True
+结果/数据文件 files=11
+  RESDATA 结果文件\数据文件\GEO验证\GEO_analysis_summary.csv
+  RESDATA 结果文件\数据文件\GEO验证\GEO_core_gene_consistency.csv
+  RESDATA 结果文件\数据文件\GEO验证\GEO_gene_AUC.csv
+  RESDATA 结果文件\数据文件\GEO验证\GEO_panel_AUC.csv
+  RESDATA 结果文件\数据文件\GEO验证\GEO_sample_audit.csv
+  RESDATA 结果文件\数据文件\GWAS遗传支持\MiBioGen_top10_instruments.csv
+  RESDATA 结果文件\数据文件\GWAS遗传支持\MR轻量_摘要.json
+  RESDATA 结果文件\数据文件\GWAS遗传支持\UC_GWAS_genomewide_significant.csv
+  RESDATA 结果文件\数据文件\方向一致性\方向一致性_代谢物汇总.csv
+  RESDATA 结果文件\数据文件\方向一致性\方向一致性_摘要.json
+  RESDATA 结果文件\数据文件\方向一致性\方向一致性_配对明细.csv
+README README_模块说明.md
+# 07_外部支持_GEO与MR
+
+GEO 一致性与 MR/GWAS 支持
+
+## 子文件夹（本课题统一）
+
+```text
+07_外部支持_GEO与MR/
+  README_模块说明.md
+  数据文件/                 # 本模块原始输入（外部库导出、对接工作区等）
+  代码文件/                 # 本模块脚本
+  结果文件/
+    数据文件/               # 本模块产物表
+    图片文件/               # 本模块图
+    报告文件/               # 本模块阶段报告（不是全项目论文版）
+```
+
+全项目论文版/方法版只在 `00_全流程报告/`，与 `01_…` 同级。
+
+==== 08_分子动力学 ====
+数据文件 exists=True empty=False
+DATADIR 数据文件\MD环境
+DATADIR 数据文件\MD输入_Top3
+DATADIR 数据文件\MD输入_Top3\ESR2_Anhydroicaritin_1L2J
+DATA 数据文件\MD输入_Top3\ESR2_Anhydroicaritin_1L2J\lig_h.mol2 27774
+DATA 数据文件\MD输入_Top3\ESR2_Anhydroicaritin_1L2J\pose_best.pdbqt 28800
+DATA 数据文件\MD输入_Top3\ESR2_Anhydroicaritin_1L2J\protein.pdb 278964
+DATADIR 数据文件\MD输入_Top3\FOS_quercetin_1A02
+DATA 数据文件\MD输入_Top3\FOS_quercetin_1A02\lig_h.mol2 25731
+DATA 数据文件\MD输入_Top3\FOS_quercetin_1A02\pose_best.pdbqt 27522
+DATA 数据文件\MD输入_Top3\FOS_quercetin_1A02\protein.pdb 251904
+DATADIR 数据文件\MD输入_Top3\PPARG_kaempferol_1FM9
+DATA 数据文件\MD输入_Top3\PPARG_kaempferol_1FM9\lig_h.mol2 23913
+DATA 数据文件\MD输入_Top3\PPARG_kaempferol_1FM9\pose_best.pdbqt 25299
+DATA 数据文件\MD输入_Top3\PPARG_kaempferol_1FM9\protein.pdb 340136
+结果/数据文件 files=0
+README README_模块说明.md
+# 08_分子动力学
+
+对接后续 100 ns；与网毒同级
+
+## 子文件夹（本课题统一）
+
+```text
+08_分子动力学/
+  README_模块说明.md
+  数据文件/                 # 本模块原始输入（外部库导出、对接工作区等）
+  代码文件/                 # 本模块脚本
+  结果文件/
+    数据文件/               # 本模块产物表
+    图片文件/               # 本模块图
+    报告文件/               # 本模块阶段报告（不是全项目论文版）
+```
+
+全项目论文版/方法版只在 `00_全流程报告/`，与 `01_…` 同级。

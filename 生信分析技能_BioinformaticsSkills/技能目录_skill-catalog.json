@@ -391,7 +391,7 @@
         "bioinfo-viz-standards"
       ],
       "category": "foundation",
-      "description_note": "交付文件名强制 {NN}_{中文}_{EnglishPascal}；结果在 代码文件/结果文件/；raw 仅 数据文件/；样例须 source VizStandards 再 DeliveryStandards；见文档_docs/样例目录与命名_SampleLayoutNaming.md"
+      "description_note": "交付文件名强制 {NN}_{中文}_{EnglishPascal}；raw 命名须带{来源库}_（SampleLayoutNaming §2.1）；结果在 代码文件/结果文件/；raw 仅 数据文件/；样例须 source VizStandards 再 DeliveryStandards"
     },
     {
       "id": "bioinfo-atac",
@@ -2552,6 +2552,66 @@
         "bioinfo-delivery-standards"
       ],
       "category": "pipeline"
+    },
+    {
+      "id": "bioinfo-formula-gut-metabolite-docking",
+      "path": "03_药物计算_DrugDiscovery/复方菌群代谢物整合对接_FormulaGutMetaboliteDocking",
+      "doc": "技能说明_复方菌群代谢物整合对接_FormulaGutMetaboliteDocking.md",
+      "title_zh": "复方菌群代谢物整合对接",
+      "title_en": "FormulaGutMetaboliteDocking",
+      "triggers": [
+        "复方菌群代谢物对接",
+        "三源靶点筛选",
+        "C星",
+        "C*",
+        "网毒后对接",
+        "FormulaGutMetaboliteDocking",
+        "成分与代谢物统一对接"
+      ],
+      "research_intents": [
+        "复方–菌群代谢物–疾病整合筛选对接",
+        "网毒过滤后C*枢纽对接",
+        "成分与代谢物双轨对接范式"
+      ],
+      "data_types": [
+        "compound_target_csv",
+        "metabolite_target_csv",
+        "disease_gene_csv",
+        "ppi_tsv",
+        "docking_score_csv"
+      ],
+      "inputs": [
+        "网药 F / 代谢 M / 疾病 D 靶点集",
+        "网毒有害小分子 CTD 靶点",
+        "STRING 边表",
+        "成分 network + 代谢物主面板"
+      ],
+      "outputs": [
+        "C*靶点宇宙",
+        "Top成分/靶点/代谢物表",
+        "成分对接汇总",
+        "代谢物对接汇总"
+      ],
+      "r_packages": [],
+      "cli_tools": [
+        "vina",
+        "obabel"
+      ],
+      "combines_with": [
+        "bioinfo-network-pharmacology",
+        "bioinfo-network-toxicology",
+        "bioinfo-molecular-docking"
+      ],
+      "requires": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards",
+        "bioinfo-molecular-docking"
+      ],
+      "depends_on": [
+        "bioinfo-viz-standards",
+        "bioinfo-delivery-standards"
+      ],
+      "category": "drug"
     }
   ],
   "layout_version": "2026-07-layout-v2",

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# 过时副本：开跑门禁只在 ../脚本_scripts/运行复合物MD_runComplexMd.sh（SOP §9.0.2）。队列不要调用本文件。
 # 运行复合物MD_runComplexMd.sh — 蛋白-配体复合物 GROMACS MD 全流程（WSL2/Linux 内运行）
 #
 # 流程: pdb2gmx(蛋白, AMBER99SB-ILDN+TIP3P) → acpype/antechamber(配体 GAFF2)
@@ -10,7 +11,7 @@
 # 选项(环境变量):
 #   LIGAND_RES=JZ4      配体残基名(三字母)
 #   NET_CHARGE=0        配体净电荷(antechamber -n)
-#   NS=1                生产时长 ns(演示 1；正式研究 50–100)
+#   NS=100              生产时长 ns（默认 100=生产级；烟测/演示须显式 NS≤1）
 #   CHUNK_NS=1          生产分块长度 ns（块间过程监控；断点 -cpi 续跑）
 #   MONITOR=1           1=每块结束后跑 过程监控_monitorMdRun.sh；异常 exit 2 即停
 #   CHECK_MMGBSA=0      传给监控：1=按间隔抽查 MM-GBSA，ΔG>0 即停
@@ -29,7 +30,7 @@ PROTEIN_PDB=${2:?缺蛋白 PDB}
 LIGAND_MOL2=${3:?缺配体 mol2(须已加氢)}
 LIGAND_RES=${LIGAND_RES:-JZ4}
 NET_CHARGE=${NET_CHARGE:-0}
-NS=${NS:-1}
+NS=${NS:-100}
 CHUNK_NS=${CHUNK_NS:-1}
 MONITOR=${MONITOR:-1}
 CHECK_MMGBSA=${CHECK_MMGBSA:-0}
@@ -272,7 +273,7 @@ if [[ ! -f solv_ions.gro ]]; then
   log "04 editconf/solvate/genion (0.15 M NaCl 中和)"
   # 防重入：solvate/genion 会向 topol.top 追加 SOL/NA/CL 行，重跑前剔除旧行
   sed -i '/^SOL[ \t]/d; /^NA[ \t]/d; /^CL[ \t]/d' topol.top
-  MAXWARN_IONS=1
+  MAXWARN_IONS=${MAXWARN_IONS:-2}
   if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then
     MAXWARN_IONS=10
     ensure_ion_types
@@ -335,7 +336,7 @@ if [[ -f index.ndx ]]; then
   NDX_ARG=(-n index.ndx)
 fi
 
-MAXWARN_GMX=1
+MAXWARN_GMX=${MAXWARN_GMX:-2}
 if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then MAXWARN_GMX=10; fi
 
 # ---- 05 能量最小化 ----

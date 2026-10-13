@@ -1,0 +1,13 @@
+task,md_priority,track,ligand,gene,pdb,affinity_kcal_mol,mean_kcal,ascii_prefix
+01,True,compound,quercetin,FOS,1A02,-8.2,-8.2,STD_FOS__quercetin
+02,True,compound,Anhydroicaritin,ESR2,1L2J,-7.7,-7.7,STD_ESR2__Anhydroicaritin
+03,True,compound,kaempferol,PPARG,1FM9,-7.3,-7.3,STD_PPARG__kaempferol
+04,False,compound,3beta-Hydroxyurs-12-En-28-Syre,DNMT1,3EPZ,-7.2,-7.2,STD_DNMT1__3betaHydroxyurs12En2
+05,False,metabolite,Inosine,DNMT1,3EPZ,-6.6,-6.599999999999999,STD_DNMT1__Inosine
+06,False,metabolite,Phenylalanine,PPARG,1FM9,-6.3,-6.3,STD_PPARG__Phenylalanine
+07,False,compound,Eucalyptol,NLRP3,7ALV,-6.6,-6.066666666666666,STD_NLRP3__Eucalyptol
+08,False,metabolite,Maltotriose,LGALS3,1KJR,-5.9,-5.900000000000001,STD_LGALS3__Maltotriose
+09,False,metabolite,4-Hydroxyphenylacetic acid,ESR2,1L2J,-5.8,-5.8,STD_ESR2__4Hydroxyphenylacetic
+10,False,compound,Caffeic Acid,TOP1,1K4T,-5.5,-5.5,STD_TOP1__CaffeicAcid
+11,False,metabolite,Raffinose,LGALS3,1KJR,-5.3,-5.266666666666667,STD_LGALS3__Raffinose
+12,False,metabolite,Maltose,LGALS3,1KJR,-5.0,-5.0,STD_LGALS3__Maltose

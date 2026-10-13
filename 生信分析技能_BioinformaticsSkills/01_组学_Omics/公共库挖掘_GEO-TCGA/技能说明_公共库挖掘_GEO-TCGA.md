@@ -9,11 +9,13 @@ description: >-
 
 ## 1. 数据来源
 
-GEO series matrix / SOFT；TCGA/GDC 表达与临床；书清：`工具_GEO元数据.R`、`工具_NCBI接口.R`。
+GEO series matrix / SOFT；TCGA/GDC 表达与临床；书清：`工具_GEO元数据.R`、`工具_NCBI接口.R`。  
+**原始数据命名：** 须带库名（`GEO_`、`TCGA_`/`GDC_`）→ DeliveryStandards SampleLayoutNaming **§2.1**。
 
 ## 2. 数据规范（判断是否可用）
 
-**强制**先读 [数据真实性验证](../../00_基础_Foundation/数据真实性验证_DataAuthenticity/技能说明_数据真实性验证_DataAuthenticity.md)：样本数=官网；分组官方可溯源；TCGA 随访定义清楚。
+**强制**先读 [数据真实性验证](../../00_基础_Foundation/数据真实性验证_DataAuthenticity/技能说明_数据真实性验证_DataAuthenticity.md)：样本数=官网；分组官方可溯源；TCGA 随访定义清楚。  
+raw 文件/夹名含来源库与 accession；禁止无来源空名目录。
 
 ## 3. 何时选用本技能
 

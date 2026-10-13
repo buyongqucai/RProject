@@ -36,7 +36,8 @@ data_provenance: REAL | TOY | BLOCKED
 ## 2. 数据规范（判断是否可用）
 
 - 目录树符合 [项目结构规范_ProjectLayout.md](../../项目结构规范_ProjectLayout.md) 与 [`文档_docs/样例目录与命名_SampleLayoutNaming.md`](文档_docs/样例目录与命名_SampleLayoutNaming.md)
-- **交付文件名强制中英对照**（见 §6）；禁止纯英文无中文前缀；推荐流水线 `01_`/`02_` 前缀
+- **原始数据命名须标明数据库来源**（`[{NN}_]{来源库}_{中文}_{English}`；子目录同理）→ SampleLayoutNaming **§2.1**
+- **交付结果文件名强制中英对照**（见 §6）；禁止纯英文无中文前缀；推荐流水线 `01_`/`02_` 前缀
 - 跑前/跑后写出审计表到 `代码文件/结果文件/数据文件/`
 - HTML 报告用**相对路径**引用本样例图片，且含 PASS/BLOCKED
 - `数据文件/` = raw only；结果不得放在样例根级 `结果文件/`（须在 `代码文件/结果文件/`）
@@ -85,7 +86,7 @@ data_provenance: REAL | TOY | BLOCKED
 **命名 / 图面英文 / 图册门禁 / STATUS** → [`文档_docs/交付命名与图册门禁_DeliveryNamingGate.md`](文档_docs/交付命名与图册门禁_DeliveryNamingGate.md)（SSOT）。  
 目录树 → [`文档_docs/样例目录与命名_SampleLayoutNaming.md`](文档_docs/样例目录与命名_SampleLayoutNaming.md)。
 
-摘要：交付文件名中英对照；图面 English only；BLOCKED 技能出契约桩 + 主题相关示意（图注 `schematic · BLOCKED`）。
+摘要：raw 文件名带来源库；结果文件名中英对照；图面 English only；BLOCKED 技能出契约桩 + 主题相关示意（图注 `schematic · BLOCKED`）。
 
 ## 7. 数据结果解读
 

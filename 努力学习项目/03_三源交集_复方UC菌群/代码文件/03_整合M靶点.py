@@ -14,7 +14,7 @@ import pandas as pd
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "结果文件" / "数据文件" / "代谢物"
+DATA = ROOT / "数据文件" / "结果数据" / "代谢物"
 PREP = ROOT / "数据文件"
 GUT = PREP / "外部数据库" / "gutMGene_v2" / "Microbial metabolite-Host Gene.csv"
 STP_DIR = PREP / "STP原始"

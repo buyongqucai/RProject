@@ -1,0 +1,29 @@
+{
+  "system": "ESR2_Anhydroicaritin_1L2J",
+  "source_dir": "/mnt/e/RProject/努力学习项目/08_分子动力学/数据文件/原始数据/RCSB与对接姿态_MD输入_Top3/ESR2_Anhydroicaritin_1L2J",
+  "auto_rebuild_attempted": true,
+  "auto_rebuild_ok": true,
+  "pose_class": "A2",
+  "chosen_pdb": "3OLL",
+  "reason_zh": "已自动重搭：排除原结构 1L2J，改用 3OLL （最大连续缺环 2，分辨率 1.5）。近缘/口袋配体参照 EST@3OLL。",
+  "candidates": [
+    "3OLL",
+    "7XVY",
+    "1QKM",
+    "7XWQ",
+    "7XWP",
+    "2YJD",
+    "3OMQ",
+    "9ECF",
+    "1YYE",
+    "3OMP",
+    "7XVZ",
+    "2NV7",
+    "4J24",
+    "4ZI1",
+    "7XWR"
+  ],
+  "resolution": 1.5,
+  "gap_max": 2,
+  "note": "近缘/口袋配体参照 EST@3OLL"
+}

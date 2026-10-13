@@ -10,12 +10,15 @@
 # 选项(环境变量):
 #   LIGAND_RES=JZ4      配体残基名(三字母)
 #   NET_CHARGE=0        配体净电荷(antechamber -n)
-#   NS=1                生产时长 ns(演示 1；正式研究 50–100)
+#   NS=100              生产时长 ns（默认 100=生产级；烟测/演示须显式 NS≤1）
 #   CHUNK_NS=1          生产分块长度 ns（块间过程监控；断点 -cpi 续跑）
 #   MONITOR=1           1=每块结束后跑 过程监控_monitorMdRun.sh；异常 exit 2 即停
 #   CHECK_MMGBSA=0      传给监控：1=按间隔抽查 MM-GBSA，ΔG>0 即停
-#   GMX_MAXBACKUP=-1    同名输出备份上限（默认 -1=覆盖不备份）。chunk 反复写 md.gro；
-#                       分块数>5 时切勿用 5，否则第 6 块写 gro 即 Fatal（轨迹/cpt 往往仍在）
+#   POSE_CLASS=A3       初态场景 A1/A2/A3/A4（未设则记 A3）；门禁见 SOP §9.0.2 / §9.0.3
+#   GAP_EXCLUDE_LEN=5   连续缺失 ≥ 此值则排除（大段 loop）
+#   GAP_NEAR_LEN=3      口袋附近连续缺失 ≥ 此值则排除
+#   GAP_NEAR_NM=1.5     「口袋附近」= 缺口端点 CA 到配体 COM 的距离上限（nm）
+#   GMX_MAXBACKUP=5     同名输出备份上限（默认 5；-1=覆盖不备份）。chunk 反复写 md.gro，勿用官方默认 99
 #   COFACTORS_PDB=      可选；ZN/CA 等 HETATM（§9.10.3 非键合 +2，晶体坐标）
 #   USE_PREBUILT_COMPLEX=0  1=已有 complex.gro+topol.top（CYP HEME tleap/ParmEd），跳过 01–03
 #   MDP_DIR=...         mdp 模板目录(默认取脚本同目录 mdp模板_mdps)
@@ -29,7 +32,7 @@ PROTEIN_PDB=${2:?缺蛋白 PDB}
 LIGAND_MOL2=${3:?缺配体 mol2(须已加氢)}
 LIGAND_RES=${LIGAND_RES:-JZ4}
 NET_CHARGE=${NET_CHARGE:-0}
-NS=${NS:-1}
+NS=${NS:-100}
 CHUNK_NS=${CHUNK_NS:-1}
 MONITOR=${MONITOR:-1}
 CHECK_MMGBSA=${CHECK_MMGBSA:-0}
@@ -45,30 +48,333 @@ export GMX_MAXBACKUP="${GMX_MAXBACKUP:--1}"
 NDX_ARG=()   # 有金属时填 -n index.ndx，使 ZN/CA 并入 Water_and_ions 温控组
 
 log(){ echo "[$(date +%H:%M:%S)] $*"; }
-
-# 主循环/非监控路径异常也要发信（监控 abort() 管飞出；此处管 mdrun/脚本中途退出）
-pipeline_alert() {
+fail_setup() {
   local reason="$1"
-  local NOTIFY="${MD_ALERT_SH:-/mnt/e/md_kit/notify_md_alert.sh}"
-  if [[ -f "$NOTIFY" ]]; then
-    bash "$NOTIFY" "$reason" "$(pwd)" || true
-  else
-    log "WARN alert script missing: $NOTIFY (reason=$reason)"
+  mkdir -p monitor
+  echo "$reason" > monitor/ABORT_REASON.txt
+  log "FAIL: $reason"
+  if [[ "${MD_ALERT_DEFER:-0}" == "1" ]]; then
+    exit 1
   fi
+  local cand
+  for cand in "$SCRIPT_DIR/../环境安装_EnvSetup/notify_md_alert.sh" /mnt/e/md_kit/notify_md_alert.sh; do
+    if [[ -f "$cand" ]]; then
+      bash "$cand" "$(pwd)" --phase final "$reason" || true
+      break
+    fi
+  done
+  exit 1
 }
+# §9.0.3 主链缺口：大段 loop / 口袋附近缺环则排除（不砌缺失残基）
+qc_protein_gaps() {
+  python3 - "$1" "${2:-}" <<'PY'
+import math, os, sys
+from pathlib import Path
+from collections import defaultdict
 
-# 是否 GMX_MAXBACKUP / md.gro 备份上限 Fatal（物理未坏，可清备份续跑）
-is_gro_backup_fatal() {
-  grep -qiE 'Won.?t make more than .* backups of md\.gro|GMX_MAXBACKUP' \
-    mdrun_md.log md.log 2>/dev/null || return 1
-  return 0
+pdb_path = Path(sys.argv[1])
+lig_path = Path(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2] else None
+gap_ex = int(os.environ.get("GAP_EXCLUDE_LEN", "5"))
+gap_near = int(os.environ.get("GAP_NEAR_LEN", "3"))
+near_nm = float(os.environ.get("GAP_NEAR_NM", "1.5"))
+near_a = near_nm * 10.0
+
+def parse_remark465(lines):
+    # REMARK 465     M RES C SSSEQI
+    gaps = []  # list of (chain, resseq)
+    on = False
+    for line in lines:
+        if line.startswith("REMARK 465"):
+            if "M RES C SSSEQI" in line or "RES C SSSEQI" in line:
+                on = True
+                continue
+            if not on:
+                continue
+            body = line[10:].strip()
+            if not body or body.startswith("M ") and "RES" in body:
+                continue
+            parts = body.split()
+            # formats: "M RES C SSSEQI" data rows like "  ALA A  45" or with model
+            if len(parts) >= 3 and parts[-2].isalpha() and len(parts[-2]) == 1:
+                try:
+                    resseq = int(parts[-1])
+                except ValueError:
+                    continue
+                gaps.append((parts[-2], resseq))
+            elif len(parts) >= 4:
+                try:
+                    resseq = int(parts[-1])
+                except ValueError:
+                    continue
+                chain = parts[-2]
+                if len(chain) == 1:
+                    gaps.append((chain, resseq))
+        elif on and not line.startswith("REMARK 465"):
+            on = False
+    return gaps
+
+def stretches(pairs):
+    by = defaultdict(list)
+    for c, r in pairs:
+        by[c].append(r)
+    out = []
+    for c, rs in by.items():
+        rs = sorted(set(rs))
+        if not rs:
+            continue
+        a = b = rs[0]
+        for x in rs[1:]:
+            if x == b + 1:
+                b = x
+            else:
+                out.append((c, a, b, b - a + 1))
+                a = b = x
+        out.append((c, a, b, b - a + 1))
+    return out
+
+def gaps_from_ca_jumps(lines):
+    ca = defaultdict(list)  # chain -> [(resseq, x,y,z)]
+    for line in lines:
+        if not (line.startswith("ATOM") or line.startswith("HETATM")):
+            continue
+        if line[12:16].strip() != "CA":
+            continue
+        chain = line[21].strip() or "_"
+        try:
+            resseq = int(line[22:26])
+            xyz = (float(line[30:38]), float(line[38:46]), float(line[46:54]))
+        except ValueError:
+            continue
+        ca[chain].append((resseq, xyz))
+    miss = []
+    ends = {}  # (chain,start,end) -> (xyz_start, xyz_end)
+    for c, rows in ca.items():
+        rows = sorted(rows, key=lambda t: t[0])
+        # unique resseq keep first CA
+        uniq = []
+        seen = set()
+        for r, xyz in rows:
+            if r in seen:
+                continue
+            seen.add(r)
+            uniq.append((r, xyz))
+        for i in range(len(uniq) - 1):
+            r0, xyz0 = uniq[i]
+            r1, xyz1 = uniq[i + 1]
+            if r1 - r0 > 1:
+                for r in range(r0 + 1, r1):
+                    miss.append((c, r))
+                ends[(c, r0 + 1, r1 - 1)] = (xyz0, xyz1)
+    return miss, ends
+
+def lig_com(path: Path):
+    if not path or not path.is_file():
+        return None
+    text = path.read_text(errors="replace").splitlines()
+    coords = []
+    if path.suffix.lower() == ".mol2":
+        in_a = False
+        for line in text:
+            if line.startswith("@<TRIPOS>ATOM"):
+                in_a = True
+                continue
+            if line.startswith("@<TRIPOS>"):
+                in_a = False
+                continue
+            if not in_a or not line.strip():
+                continue
+            p = line.split()
+            if len(p) < 5:
+                continue
+            elem = "".join(ch for ch in p[1] if ch.isalpha())[:1].upper()
+            if elem == "H":
+                continue
+            coords.append(tuple(map(float, p[2:5])))
+    else:
+        for line in text:
+            if not (line.startswith("ATOM") or line.startswith("HETATM")):
+                continue
+            name = line[12:16].strip()
+            elem = "".join(ch for ch in name if ch.isalpha())[:1].upper()
+            if elem == "H":
+                continue
+            try:
+                coords.append((float(line[30:38]), float(line[38:46]), float(line[46:54])))
+            except ValueError:
+                continue
+    if not coords:
+        return None
+    n = len(coords)
+    return (sum(c[0] for c in coords) / n, sum(c[1] for c in coords) / n, sum(c[2] for c in coords) / n)
+
+lines = pdb_path.read_text(errors="replace").splitlines()
+miss465 = parse_remark465(lines)
+miss_jump, jump_ends = gaps_from_ca_jumps(lines)
+source = "REMARK465" if miss465 else "CA_resseq_jump"
+miss = miss465 if miss465 else miss_jump
+segs = stretches(miss)
+com = lig_com(lig_path)
+
+Path("monitor").mkdir(exist_ok=True)
+rep = [f"source={source}", f"n_missing_residues={len(miss)}", f"n_segments={len(segs)}"]
+exclude = []
+for c, a, b, L in segs:
+    rep.append(f"gap\tchain={c}\tstart={a}\tend={b}\tlength={L}")
+    if L >= gap_ex:
+        exclude.append(f"long_gap chain {c} {a}-{b} len={L} (>={gap_ex})")
+        continue
+    if L >= gap_near and com is not None:
+        xyz0 = xyz1 = None
+        key = (c, a, b)
+        if key in jump_ends:
+            xyz0, xyz1 = jump_ends[key]
+        else:
+            # REMARK465：用缺口两端已有残基的 CA
+            ca_map = {}
+            for line in lines:
+                if not line.startswith("ATOM"):
+                    continue
+                if line[12:16].strip() != "CA":
+                    continue
+                ch = line[21].strip() or "_"
+                try:
+                    rr = int(line[22:26])
+                    ca_map[(ch, rr)] = (
+                        float(line[30:38]),
+                        float(line[38:46]),
+                        float(line[46:54]),
+                    )
+                except ValueError:
+                    continue
+            xyz0 = ca_map.get((c, a - 1))
+            xyz1 = ca_map.get((c, b + 1))
+        if xyz0 is not None and xyz1 is not None:
+            dmin = min(math.dist(xyz0, com), math.dist(xyz1, com))
+            rep.append(f"near_check\tchain={c}\t{a}-{b}\tmin_end_CA_to_lig_A={dmin:.2f}")
+            if dmin <= near_a:
+                exclude.append(
+                    f"pocket_gap chain {c} {a}-{b} len={L} end_CA_to_lig={dmin/10:.2f} nm (<= {near_nm} nm)"
+                )
+        elif L >= gap_near:
+            rep.append(f"near_check\tchain={c}\t{a}-{b}\tskipped_no_flanking_CA")
+
+Path("monitor/protein_gaps.txt").write_text("\n".join(rep) + "\n")
+print("\n".join(rep))
+if exclude:
+    sys.exit("EXCLUDE: " + "; ".join(exclude))
+print("protein gap QC OK")
+PY
 }
-
-prune_md_gro_backups() {
-  rm -f '#md.gro.'* 2>/dev/null || true
+# §9.0.2 配体几何：重叠或离散原子不得进 acpype
+qc_ligand_mol2() {
+  python3 - "$1" <<'PY'
+import sys
+from pathlib import Path
+p = Path(sys.argv[1])
+text = p.read_text(errors="replace").splitlines()
+n_header = None
+atoms = []
+in_atom = False
+for line in text:
+    if line.startswith("@<TRIPOS>MOLECULE"):
+        in_atom = False
+        continue
+    if line.startswith("@<TRIPOS>ATOM"):
+        in_atom = True
+        continue
+    if line.startswith("@<TRIPOS>"):
+        in_atom = False
+        continue
+    if n_header is None and line.strip() and line.split()[0].isdigit() and len(line.split()) >= 1:
+        # second numeric header line: natom nbond ...
+        parts = line.split()
+        if len(parts) >= 2 and parts[1].isdigit():
+            n_header = int(parts[0])
+        continue
+    if in_atom and line.strip():
+        parts = line.split()
+        if len(parts) < 6:
+            continue
+        try:
+            x, y, z = float(parts[2]), float(parts[3]), float(parts[4])
+        except ValueError:
+            continue
+        elem = "".join(c for c in parts[1] if c.isalpha())[:1].upper() or "C"
+        atoms.append((elem, x, y, z))
+if n_header is not None and n_header != len(atoms):
+    sys.exit(f"mol2 atom count header {n_header} != ATOM rows {len(atoms)}")
+heavy = [(x, y, z) for e, x, y, z in atoms if e != "H"]
+if len(heavy) < 2:
+    sys.exit("mol2 has <2 heavy atoms")
+import math
+dmin = 1e9
+isolated = 0
+for i, a in enumerate(heavy):
+    nearest = 1e9
+    for j, b in enumerate(heavy):
+        if i == j:
+            continue
+        d = math.dist(a, b)
+        if d < dmin:
+            dmin = d
+        if d < nearest:
+            nearest = d
+    if nearest > 3.0:
+        isolated += 1
+if dmin < 0.5:
+    sys.exit(f"mol2 heavy atoms closer than 0.5 A (min={dmin:.3f})")
+if isolated:
+    sys.exit(f"mol2 has {isolated} heavy atoms with no neighbor within 3.0 A")
+print(f"mol2 QC OK heavy={len(heavy)} min_dist={dmin:.3f} A")
+PY
 }
-
+# §9.0.2 初态接触：配体须贴着蛋白，且没有原子重叠
+qc_pose_contact() {
+  python3 - "$LIGAND_RES" <<'PY'
+import sys
+from pathlib import Path
+lig = sys.argv[1]
+lines = Path("complex.gro").read_text().splitlines()
+n = int(lines[1])
+prot, ligand = [], []
+skip = {"SOL", "NA", "CL", "WAT", "HOH", "ZN", "CA", "MG"}
+for line in lines[2:2+n]:
+    res = line[5:10].strip()
+    try:
+        xyz = (float(line[20:28]), float(line[28:36]), float(line[36:44]))
+    except ValueError:
+        continue
+    if res == lig:
+        ligand.append(xyz)
+    elif res not in skip:
+        prot.append(xyz)
+if not prot or not ligand:
+    sys.exit(f"complex.gro missing protein ({len(prot)}) or ligand {lig} ({len(ligand)})")
+dmin = 1e9
+for a in ligand:
+    for b in prot:
+        d = ((a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2) ** 0.5
+        if d < dmin:
+            dmin = d
+Path("monitor").mkdir(exist_ok=True)
+Path("monitor/pose_gate.txt").write_text(
+    f"min_heavy_distance_nm={dmin:.4f}\nligand_atoms={len(ligand)}\nprotein_atoms={len(prot)}\n"
+)
+print(f"pose contact min={dmin:.3f} nm")
+if dmin < 0.05:
+    sys.exit(f"protein-ligand clash {dmin:.3f} nm < 0.05 nm")
+if dmin > 0.60:
+    sys.exit(f"ligand not in contact {dmin:.3f} nm > 0.60 nm")
+PY
+}
 cd "$WORK_DIR"
+mkdir -p monitor
+POSE_CLASS=${POSE_CLASS:-A3}
+echo "$POSE_CLASS" > monitor/pose_class.txt
+if [[ "$POSE_CLASS" != "A1" && "$POSE_CLASS" != "A2" && "$POSE_CLASS" != "A3" && "$POSE_CLASS" != "A4" ]]; then
+  fail_setup "POSE_CLASS=$POSE_CLASS 不是 A1/A2/A3/A4"
+fi
+log "00 初态场景 POSE_CLASS=$POSE_CLASS（SOP §9.0.1 / 门禁 §9.0.2）"
 
 if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then
   [[ -f complex.gro && -f topol.top ]] || {
@@ -80,6 +386,10 @@ if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then
 else
 # ---- 01 配体 GAFF2 拓扑(acpype → antechamber AM1-BCC + parmchk2) ----
 if [[ ! -f ligand.acpype/ligand_GMX.itp ]]; then
+  log "01 mol2 几何门禁"
+  if ! qc_ligand_mol2 "$LIGAND_MOL2" > mol2_qc.log 2>&1; then
+    fail_setup "ligand mol2 geometry failed: $(tail -n 1 mol2_qc.log)"
+  fi
   log "01 acpype 配体拓扑 (GAFF2, 净电荷 $NET_CHARGE)"
   rm -rf ligand.acpype acpype_tmp.mol2
   cp "$LIGAND_MOL2" acpype_tmp.mol2
@@ -135,9 +445,27 @@ PY
 
 # ---- 02 蛋白拓扑(pdb2gmx) ----
 if [[ ! -f protein.gro ]]; then
+  if [[ ! -f monitor/PROTEIN_GAP_OK.txt ]]; then
+    log "02 蛋白主链缺口门禁（SOP §9.0.3）"
+    if ! qc_protein_gaps "$PROTEIN_PDB" "$LIGAND_MOL2" > protein_gaps.log 2>&1; then
+      fail_setup "protein gap gate failed: $(tail -n 1 protein_gaps.log)"
+    fi
+    cp -f monitor/protein_gaps.txt monitor/PROTEIN_GAP_OK.txt
+    log "02 protein gaps OK ($(grep -c '^gap' monitor/protein_gaps.txt || true) segments reported)"
+  fi
   log "02 pdb2gmx 蛋白拓扑 (amber99sb-ildn/tip3p)"
+  set +e
   gmx pdb2gmx -f "$PROTEIN_PDB" -o protein.gro -p topol.top -i posre.itp \
       -ff amber99sb-ildn -water tip3p -ignh > pdb2gmx.log 2>&1
+  P2G_RC=$?
+  set -e
+  if [[ $P2G_RC -ne 0 || ! -s topol.top || ! -f protein.gro ]]; then
+    reason="pdb2gmx failed (rc=$P2G_RC)"
+    if grep -q "Fatal error" pdb2gmx.log 2>/dev/null; then
+      reason="$(grep -A2 'Fatal error' pdb2gmx.log | tr '\n' ' ')"
+    fi
+    fail_setup "$reason"
+  fi
 fi
 
 # ---- 03 合并复合物 complex.gro + topol.top 接入配体（+可选金属辅因子）----
@@ -267,22 +595,51 @@ print("ion types injected")
 PY
 }
 
+# ---- 03b 初态接触（溶剂化之前；已通过则不重复）----
+if [[ -f complex.gro && ! -f monitor/POSE_GATE_OK.txt ]]; then
+  log "03b 蛋白–配体接触门禁"
+  if ! qc_pose_contact > pose_gate.log 2>&1; then
+    fail_setup "pose contact failed: $(tail -n 1 pose_gate.log)"
+  fi
+  cp -f monitor/pose_gate.txt monitor/POSE_GATE_OK.txt
+  log "03b $(tail -n 1 pose_gate.log)"
+fi
+
 # ---- 04 盒子 + 溶剂化 + 离子 ----
 if [[ ! -f solv_ions.gro ]]; then
   log "04 editconf/solvate/genion (0.15 M NaCl 中和)"
   # 防重入：solvate/genion 会向 topol.top 追加 SOL/NA/CL 行，重跑前剔除旧行
   sed -i '/^SOL[ \t]/d; /^NA[ \t]/d; /^CL[ \t]/d' topol.top
-  MAXWARN_IONS=1
+  # 中和前必有「net charge」警告；对接/补原子结构偶发长排除距离 → 默认允许 2 条
+  MAXWARN_IONS=${MAXWARN_IONS:-2}
   if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then
     MAXWARN_IONS=10
     ensure_ion_types
+  fi
+  # topol 被重建后若仍留着旧 solv.gro，原子数会对不上 → 强制重溶剂化
+  if [[ -f solv.gro ]] && ! grep -qE '^SOL[[:space:]]' topol.top; then
+    log "04 solv.gro 与 topol 不同步（缺 SOL 行），删除后重溶剂化"
+    rm -f solv.gro newbox.gro
   fi
   if [[ ! -f solv.gro ]]; then
     gmx editconf -f complex.gro -o newbox.gro -bt dodecahedron -d 1.0 > editconf.log 2>&1
     gmx solvate -cp newbox.gro -cs spc216 -p topol.top -o solv.gro > solvate.log 2>&1
   fi
   if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then ensure_ion_types; fi
+  set +e
   gmx grompp -f "$MDP_DIR/ions.mdp" -c solv.gro -p topol.top -o ions.tpr -maxwarn "$MAXWARN_IONS" > grompp_ions.log 2>&1
+  IONS_RC=$?
+  set -e
+  if [[ $IONS_RC -ne 0 || ! -f ions.tpr ]]; then
+    reason="grompp ions failed (rc=$IONS_RC, maxwarn=$MAXWARN_IONS); see grompp_ions.log"
+    mkdir -p monitor
+    echo "$reason" > monitor/ABORT_REASON.txt
+    log "FAIL: $reason"
+    for cand in "$SCRIPT_DIR/../环境安装_EnvSetup/notify_md_alert.sh" /mnt/e/md_kit/notify_md_alert.sh; do
+      [[ -f "$cand" ]] && { bash "$cand" "$reason" "$(pwd)" || true; break; }
+    done
+    exit 1
+  fi
   echo SOL | gmx genion -s ions.tpr -o solv_ions.gro -p topol.top \
       -pname NA -nname CL -neutral -conc 0.15 > genion.log 2>&1
 fi
@@ -335,7 +692,7 @@ if [[ -f index.ndx ]]; then
   NDX_ARG=(-n index.ndx)
 fi
 
-MAXWARN_GMX=1
+MAXWARN_GMX=${MAXWARN_GMX:-2}
 if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then MAXWARN_GMX=10; fi
 
 # ---- 05 能量最小化 ----
@@ -344,6 +701,12 @@ if [[ ! -f em.gro ]]; then
   gmx grompp -f "$MDP_DIR/em.mdp" -c solv_ions.gro -p topol.top -o em.tpr \
       "${NDX_ARG[@]}" -maxwarn "$MAXWARN_GMX" > grompp_em.log 2>&1
   gmx mdrun -v -deffnm em > mdrun_em.log 2>&1
+fi
+if [[ -f em.gro ]]; then
+  if ! grep -q "converged to Fmax" em.log 2>/dev/null \
+     && ! grep -q "converged to Fmax" mdrun_em.log 2>/dev/null; then
+    fail_setup "EM did not converge to Fmax (see em.log); do not start NVT"
+  fi
 fi
 
 # ---- 06 渲染 mdp 模板（__LIG__ → 实际配体残基名；温控/分析全用默认组，免索引文件） ----

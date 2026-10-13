@@ -2,6 +2,8 @@
 
 动手前先读 `CONTEXT.md`（词汇/边界）与 `docs/项目规范_ProjectStandards.md`（含 **§0 反馈进化闭环**、医学规范与存放）。
 
+**破坏性删除/覆盖：** 先 `git commit` 备份（或拷 `_备份_Backup/`），无备份不得删。规则：`.cursor/rules/destructive-ops-git-backup.mdc`（用户全局：`~/.cursor/rules/destructive-ops-git-backup.mdc`）。
+
 未 @ 技能时：意图路由见 `.cursor/skills/intent-skill-router`（自动 Read 对应 `技能说明_*.md`）。
 
 ## Agent skills

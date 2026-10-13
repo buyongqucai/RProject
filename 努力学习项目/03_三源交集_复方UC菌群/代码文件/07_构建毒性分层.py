@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "结果文件" / "数据文件"
+DATA = ROOT / "数据文件" / "结果数据"
 TOX = DATA / "毒性分层"
 CTD = ROOT / "数据文件" / "外部数据库" / "CTD"
 

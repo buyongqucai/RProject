@@ -1,0 +1,25 @@
+﻿compound,gene,uniprot,pdb,site,seed,affinity_kcal_mol,affinity_kJ_mol,pass_threshold_kcal
+luteolin,PCNA,P12004,1U7B,blind(geometric center),1,-4.0,-16.74,False
+luteolin,PCNA,P12004,1U7B,blind(geometric center),7,-4.8,-20.08,False
+luteolin,PCNA,P12004,1U7B,blind(geometric center),42,-5.0,-20.92,True
+kaempferol,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),1,-7.3,-30.54,True
+kaempferol,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),7,-7.3,-30.54,True
+kaempferol,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),42,-7.3,-30.54,True
+3beta-Hydroxyurs-12-En-28-Syre,DNMT1,P26358,3EPZ,co-ligand:BGC(largest cluster 12/12),1,-7.2,-30.12,True
+3beta-Hydroxyurs-12-En-28-Syre,DNMT1,P26358,3EPZ,co-ligand:BGC(largest cluster 12/12),7,-7.2,-30.12,True
+3beta-Hydroxyurs-12-En-28-Syre,DNMT1,P26358,3EPZ,co-ligand:BGC(largest cluster 12/12),42,-7.2,-30.12,True
+Eucalyptol,NLRP3,Q96P20,7ALV,co-ligand:RM5(largest cluster 16/29),1,-5.0,-20.92,True
+Eucalyptol,NLRP3,Q96P20,7ALV,co-ligand:RM5(largest cluster 16/29),7,-6.6,-27.61,True
+Eucalyptol,NLRP3,Q96P20,7ALV,co-ligand:RM5(largest cluster 16/29),42,-6.6,-27.61,True
+Anhydroicaritin,ESR2,Q92731,1L2J,co-ligand:ETC(largest cluster 24/48),1,-7.7,-32.22,True
+Anhydroicaritin,ESR2,Q92731,1L2J,co-ligand:ETC(largest cluster 24/48),7,-7.7,-32.22,True
+Anhydroicaritin,ESR2,Q92731,1L2J,co-ligand:ETC(largest cluster 24/48),42,-7.7,-32.22,True
+Stigmasterol,NR3C2,P08235,1Y9R,co-ligand:1CA(largest cluster 24/48),1,-3.4,-14.23,False
+Stigmasterol,NR3C2,P08235,1Y9R,co-ligand:1CA(largest cluster 24/48),7,-3.3,-13.81,False
+Stigmasterol,NR3C2,P08235,1Y9R,co-ligand:1CA(largest cluster 24/48),42,-3.3,-13.81,False
+quercetin,FOS,P01100,1A02,blind(geometric center),1,-8.2,-34.31,True
+quercetin,FOS,P01100,1A02,blind(geometric center),7,-8.2,-34.31,True
+quercetin,FOS,P01100,1A02,blind(geometric center),42,-8.2,-34.31,True
+Caffeic Acid,TOP1,P11387,1K4T,co-ligand:TTG(largest cluster 32/32),1,-5.5,-23.01,True
+Caffeic Acid,TOP1,P11387,1K4T,co-ligand:TTG(largest cluster 32/32),7,-5.5,-23.01,True
+Caffeic Acid,TOP1,P11387,1K4T,co-ligand:TTG(largest cluster 32/32),42,-5.5,-23.01,True

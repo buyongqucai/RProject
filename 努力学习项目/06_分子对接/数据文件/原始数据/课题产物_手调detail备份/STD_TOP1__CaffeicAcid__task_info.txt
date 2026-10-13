@@ -1,0 +1,12 @@
+rank=10
+track=compound
+ligand=Caffeic Acid
+gene=TOP1
+pdb=1K4T
+site=co-ligand:TTG(largest cluster 32/32)
+mean_kcal=-5.5
+best_seed=1
+best_affinity_kcal=-5.5
+md_priority=no
+ascii_prefix=STD_TOP1__CaffeicAcid
+receptor=protein-only (DNA stripped)

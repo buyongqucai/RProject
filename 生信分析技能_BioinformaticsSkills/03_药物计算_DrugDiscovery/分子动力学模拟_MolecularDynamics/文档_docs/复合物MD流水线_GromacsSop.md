@@ -12,22 +12,25 @@
 
 ### 9.0 一键调用
 
-> **每次跑 MD 前先激活隔离栈**（UV Python + conda AmberTools + GPU gmx）：`source ~/activate-md.sh`
+> **每次跑 MD 前先激活隔离栈**（UV Python + conda AmberTools + GPU gmx）：`source ~/activate-md.sh`  
+> **Agent 默认（2026-10-13）：** 用户说「跑 MD」而未写「烟测/测试」时，按**生产级**执行：`NS=100`、`CHUNK_NS=1`、`MONITOR=1`，输入齐则后台启动；**禁止**默认 `NS=1` 或只备输入不跑。短轨迹仅在用户明示烟测/测试时使用。
 
 ```bash
 wsl -d Ubuntu-24.04 -- bash -lc '
   source ~/activate-md.sh
   cd <工作目录> && \
-  LIGAND_RES=JZ4 NET_CHARGE=0 NS=1 ACPYPE_BIN=$HOME/md-venv/bin \
+  LIGAND_RES=JZ4 NET_CHARGE=0 NS=100 CHUNK_NS=1 MONITOR=1 ACPYPE_BIN=$HOME/md-venv/bin \
   bash <技能根>/脚本_scripts/运行复合物MD_runComplexMd.sh . protein.pdb jz4_h.mol2
 '
 ```
 
 | 环境变量 | 默认 | 说明 |
 |----------|------|------|
-| `LIGAND_RES` | JZ4 | 配体残基名（≤4 字符 ASCII，须与 mol2 一致） |
+| `LIGAND_RES` | JZ4 | 配体残基名（≤4 字符 ASCII；脚本会把 mol2 残基名统一为此） |
 | `NET_CHARGE` | 0 | 配体净电荷（antechamber -nc） |
-| `NS` | 1 | 生产时长 ns；演示可 0.2，正式 ≥100 |
+| `NS` | **100** | 生产时长 ns（脚本默认）；烟测/演示须显式设 `NS≤1` 或走 `04_烟测_3HTB.sh` |
+| `CHUNK_NS` | 1 | 分块长度 ns；生产默认开监控 |
+| `MONITOR` | 1 | 块间过程监控；飞出即停 |
 | `ACPYPE_BIN` | `~/md-venv/bin` | **仅** acpype（UV）；`antechamber`/`tleap` 来自 conda env `md-tools`（须在 PATH，见 §9.8） |
 
 ### 9.0.1 场景分流（先定初态，再进 §9.1）
@@ -84,14 +87,61 @@ wsl -d Ubuntu-24.04 -- bash -lc '
 - 空口袋不要撑开再对接。允许用的是**已结合配体的那套侧链**，或只松动与新配体碰撞的侧链（Sherman 等，*J. Med. Chem.* 2006；Miller 等，*J. Chem. Theory Comput.* 2021）。小幅主链运动留给 EM / 短平衡。
 - 生产段口袋会呼吸，这不是搭体系的一步。错误姿态不要指望 MD 把口袋撑开后修回实验结构（Bhakat 等，*J. Comput.-Aided Mol. Des.* 2017）。
 
-**飞出后的队列**
+**飞出后的队列（自动重搭一轮 · 2026-10-13）**
 
-监控因配体飞出而 `ABORT` 时，保留 `md.cpt` 作对照，**不从该检查点续跑同一对接初态**。按上面的 A1 → A2 → A3 重搭新目录，排在当前生产任务结束之后再开。同一 GPU 不同时跑两套生产 MD。
+监控因配体飞出而 `ABORT` 时，保留 `md.cpt` 作对照，**不从该检查点续跑同一对接初态**。
+
+| 步骤 | 动作 |
+|------|------|
+| 1 | 队列调用 `脚本_scripts/自动重搭初态_rebuildPoseRetry.py`（登记表 `md重搭登记_PoseRetryRegistry.json`） |
+| 2 | 按 UniProt 检索 RCSB：排除大段缺环（§9.0.3），优先带口袋小分子的结构 → 记为 A2（或可判定的 A1） |
+| 3 | 写出 `{原名}_retry1/` 初态与 `~/md_runs/{原名}_retry1/`，**只再跑 1 轮**生产 |
+| 4 | 重搭失败或重跑仍 `ABORT` → **停止**，不再自动重试 |
+
+中文邮件（`E:\md_kit\notify_md_alert.sh`）必须写明：异常停止原因；是否已进行自动重搭；本轮/之后还会不会重试。队列设 `MD_ALERT_DEFER=1`，由队列统一发信。同一 GPU 不同时跑两套生产 MD。
+
+### 9.0.2 开跑门禁（2026-10-13）
+
+溶剂化、`genion`（中和 + 0.15 M）、EM、NVT、NPT 是**每一套**生产的公共尾部，作用是去掉碰撞、中和电荷、把温度和压力拉到目标。它们**不证明**对接姿态结合正确。姿态对不对看 §9.0.1 的场景，以及下面三道门禁和生产段 §9.5.1。
+
+执行点：`脚本_scripts/运行复合物MD_runComplexMd.sh`。未通过则写 `monitor/ABORT_REASON.txt` 并退出，不进入下一步。
+
+| 门禁 | 何时 | 通过条件 |
+|------|------|----------|
+| 蛋白主链缺口 | 选结构时 + `pdb2gmx` 之前 | 无「大段 loop 缺失」（§9.0.3）；报告写入 `monitor/protein_gaps.txt` |
+| 配体 mol2 几何 | acpype 之前 | 重原子两两距离 ≥ 0.5 Å；每个重原子至少有一个邻居 < 3.0 Å；`@<TRIPOS>MOLECULE` 原子数与 ATOM 行数一致 |
+| 初态接触 | 写出 `complex.gro` 之后、溶剂化之前 | 蛋白重原子与配体重原子的最近距离 ≤ 0.60 nm，且 ≥ 0.05 nm。结果写入 `monitor/pose_gate.txt` |
+| EM 收敛 | 进入 NVT 之前 | `em.log` 含 `converged to Fmax`（`em.mdp`：steep，`emtol=1000`，`nsteps=50000`） |
+
+`POSE_CLASS` 取 `A1`/`A2`/`A3`/`A4`，写入 `monitor/pose_class.txt`。未设置时记 **A3**（对接初态）。A3 允许开生产；第 1 个 `CHUNK_NS` 由 §9.5.1 筛选，监控 `ABORT` 后不从该 `md.cpt` 续跑。
+
+初态接触通过、生产第 1 ns 仍飞出：按 §9.0.1 重搭，不放宽 `LIG_RMSD_MAX_NM` / `BB_RMSD_MAX_NM` / `COM_MAX_NM`。
+
+`pdb2gmx` 报侧链不全时，可在**分离后的** `protein.pdb` 上用 pdbfixer 补重原子再跑 pdb2gmx。补的是**已有残基内的原子**，不是砌缺失 loop。补原子不移动配体；补完必须重新合并 `complex.gro` 并再过初态接触门禁。
+
+### 9.0.3 选蛋白：大段 loop 缺失则排除（2026-10-13）
+
+RCSB 条目常有未解析 loop（`REMARK 465 MISSING RESIDUES`）。这类缺口**不得**靠 pdbfixer 默认砌回去当正式初态；选结构时排除，换分辨率更好或缺口更短的同靶点结构。
+
+| 判定 | 动作 |
+|------|------|
+| 同一链上连续缺失 ≥ **5** 个残基 | **排除**，不得开本技能生产 MD |
+| 连续缺失 ≥ **3**，且缺口两端 CA 与配体（或对接盒心）最近距离 ≤ **1.5 nm** | **排除**（口袋附近缺环） |
+| 仅残基内缺侧链原子、主链连续 | 不排除；走 §9.0.2 pdbfixer 补原子 |
+| 末端表达标签 / 非目标链 | 按 §9.10 切除，不算 loop 缺失 |
+
+查缺来源（按优先级）：
+
+1. 全条目 PDB 的 `REMARK 465`（裁切前查；裁进 `protein.pdb` 后 SEQRES 常丢失）  
+2. 回退：目标链 CA 的残基序号跳号（`resseq` 差 > 1 且中间无 ATOM）  
+3. 可选：PDBe / RCSB validation 的 missing residues 表
+
+完成判据：`monitor/protein_gaps.txt` 列出每段 `chain,start,end,length`；若触发上表排除行，脚本退出且 `ABORT_REASON` 写明缺口。换结构后重新对接/叠合，不在原缺口结构上强行生产。
 
 ### 9.1 输入准备（Windows 侧，OpenBabel）
 
 1. 从复合物 PDB 分离：`ATOM` 记录 → `protein.pdb`；目标配体 `HETATM`（按残基名过滤）→ `lig.pdb`。**远离口袋**的结晶添加剂（PO4/SO4/BME 等）与晶格水在此步剔除；口袋内生物学根离子与金属按 §9.0.1 轴 B 另存，不一律删除。初态场景先按 §9.0.1 轴 A 定，再执行本步。
-2. 配体加氢 + 部分电荷：`obabel lig.pdb -O lig_h.mol2 -h --partialcharge gasteiger`。
+2. 配体加氢 + 部分电荷：`obabel lig.pdb -O lig_h.mol2 -h --partialcharge gasteiger`。几何须过 §9.0.2（对接 pdbqt 多 MODEL 叠在一个 mol2 里、或原子重叠，会在 acpype 前被拒）。对接姿态优先保留 MODEL1 坐标；PubChem 3D 只提供连接关系，叠回 MODEL1 后再检查最近距离。
 3. **mol2 第 2 行分子名必须是 ASCII 残基名**（如 `JZ4`）：中文 Windows 下 OpenBabel 会把 GBK 编码的中文路径写进分子名，导致下游 tleap 输出非 UTF-8、acpype 报 `UnicodeDecodeError`。
 
 ### 9.2 配体拓扑（GAFF2，acpype → AmberTools）
@@ -104,7 +154,7 @@ wsl -d Ubuntu-24.04 -- bash -lc '
 
 ### 9.3 蛋白拓扑与复合物组装
 
-1. `gmx pdb2gmx -f protein.pdb -ff amber99sb-ildn -water tip3p`（配体 HETATM 必须先分离，pdb2gmx 不处理配体）。
+1. `gmx pdb2gmx -f protein.pdb -ff amber99sb-ildn -water tip3p`（配体 HETATM 必须先分离，pdb2gmx 不处理配体）。侧链不全时的 pdbfixer 补原子见 §9.0.2。
 2. 合并坐标：protein.gro + ligand_GMX.gro → complex.gro（脚本内嵌 Python 保格式合并，自动换算总原子数）。
 3. `topol.top`：在蛋白 forcefield include 之后插入 `#include "ligand.acpype/ligand_GMX.itp"`，`[ molecules ]` 追加 `JZ4  1`。
 
@@ -119,7 +169,7 @@ wsl -d Ubuntu-24.04 -- bash -lc '
 
 | 阶段 | mdp | 要点 |
 |------|-----|------|
-| EM | em.mdp | steep 5000 步，emtol 1000 kJ/mol/nm |
+| EM | em.mdp | steep，`nsteps=50000`，`emtol=1000` kJ/mol/nm；日志须出现 `converged to Fmax`（§9.0.2） |
 | NVT | nvt.mdp | 100 ps，V-rescale 300 K，位置限制 |
 | NPT | npt.mdp | 100 ps，+ Parrinello-Rahman 1 bar |
 | 生产 | md.mdp | `NS`×10³/0.002 步，2 fs，LINCS 约束 H 键 |
@@ -129,6 +179,7 @@ wsl -d Ubuntu-24.04 -- bash -lc '
 ### 9.5.1 过程监控与异常即停（2026-10-09）
 
 > 生产段**分块断点续跑**（`-cpi/-cpo md.cpt`）+ 块间监控；异常 **立即停止**，保留 `md.cpt` 便于查因后续跑。  
+> 第 1 块即初态筛选：EM/NVT/NPT 已完成仍可能在此停（配体解离）。停机按 §9.0.1 重搭，不从该检查点续跑。  
 > 脚本：`脚本_scripts/过程监控_monitorMdRun.sh`；主流程：`运行复合物MD_runComplexMd.sh`（`CHUNK_NS`/`MONITOR`/`CHECK_MMGBSA`）。
 
 | 环境变量 | 默认 | 含义 |
@@ -153,7 +204,8 @@ wsl -d Ubuntu-24.04 -- bash -lc '
 
 温度和势能**分开**抽 `gmx energy`（`energy_T.xvg` / `energy_P.xvg`）。一次多选时列序与输入顺序相反（ADA 实测：先写出 Potential ≈ −4.9×10⁵，后写出 Temperature ≈ 300 K），把势能当温度会得到约 −4.9×10⁵ K 的假停机。温度序列中位数不在 150–450 K 时按解析错误停，势能用相对中位数漂移 >50% 判断，不用绝对值 >1e9。
 
-监控 `abort` 时由 `E:\md_kit\notify_md_alert.sh` 拼装 MD 正文后调用全局 `E:\alert_kit\`（QQ SMTP `smtp.qq.com:587`）发纯文本告警。授权码只放在本地 `QQ邮箱.txt`（指针 `E:\alert_kit\qq_auth_path.txt`），脚本不回显。同一目录、同一原因只发一次。其它项目直接用 `alert_kit` / Cursor 技能 `qq-smtp-alert`。  
+**告警范围（2026-10-13）：** 生产段监控 `abort`、搭体系失败、自动重搭结果，均由 `E:\md_kit\notify_md_alert.sh` → `E:\alert_kit\` 发**中文**纯文本。正文含：停止原因；是否已自动重搭；是否还会重试。授权码只在本地 `QQ邮箱.txt`（指针 `E:\alert_kit\qq_auth_path.txt`）。按 `phase|体系|原因` 去重。其它项目用 `alert_kit` / `qq-smtp-alert`。  
+对接裁切受体若缺侧链原子（常见 `Incomplete ring in HIS`），队列须先 `pdbfixer` 补原子再 `pdb2gmx`（见 `queue_nuli_top3_md.sh` / ADA 排队脚本）。  
 
 **过程看门狗（稳定版 `MD-WATCHDOG-v1`）：** 与块间物理监控并列。详见 [`过程看门狗_MdWatchdog.md`](过程看门狗_MdWatchdog.md)；脚本 `E:\md_kit\watchdogMdRun.sh`。心跳：`workdir/monitor/heartbeat.json`；只读：`md_status.sh`。管进程死亡/轨迹停滞并发信；**不**自动续跑。  
 
@@ -324,7 +376,7 @@ VizStandards：DPI≥600、PNG+SVG、图面英文、PlotQA 逐图审核 → 审�
 5. solvate/genion 重复追加 topol.top（见 9.4）。
 6. ions 步 grompp 需 `-maxwarn 1`（见 9.4）。
 7. `gmx select` 赋值命名语法在 2023.3 不可用 → 全程默认组（见 9.5）。
-8. 性能参考：GPU 版正式研究 ≥100 ns；演示/烟测 `NS=0.02`～`0.2`。
+8. 性能参考：脚本/Agent 默认 `NS=100`；演示/烟测须显式 `NS=0.02`～`1` 或走 `04_烟测_3HTB.sh`。
 9. **CUDA nvcc + GCC>12**：`unsupported GNU version` → 用 gcc-12 作 host compiler（§9.8 第 4 条）。
 10. **conda ToS**：`CondaToSNonInteractiveError` → `conda tos accept` 或 `--override-channels` 只用 forge。
 11. **Windows 控制台托管 `wsl|Tee`**：UTF-8 中文进度易乱码 → 安装脚本 echo 用 ASCII；或 `chcp 65001`。
@@ -337,9 +389,10 @@ VizStandards：DPI≥600、PNG+SVG、图面英文、PlotQA 逐图审核 → 审�
 
 **9.10.1 结构选择政策（先于一切）**
 1. **优先野生型**：下载后必查 `SEQADV`——`ENGINEERED MUTATION` 在活性位点 → 换结构（本课题：1GKD=E402Q → 换 **4H3X**，1.76 Å WT；3IAR 催化位为 Ni 取代 → 人 ADA1 用实验 Zn 结构）；仅表达标签突变可保留。
-2. 备选池（MMP-9 WT+羟肟酸）：4H3X(1.76Å)/4XCT(1.30Å)/5I12(1.59Å)。ADA 结合稳定性初态从含腺苷/近缘核苷的共晶里选（§9.0.1 A4），不把「有 Zn 的空口袋」当作充分条件。
-3. 多链只取 **A 链**做 MD；表达标签（7RTG 364 起）切除。
-4. 换结构后按 **§9.0.1 轴 A** 决定保留共晶位姿、近缘叠合，或（仅 A3）重对接。重对接时盒心 = 口袋配体或文献位点；对接表新增行（pdb 列区分）。**禁止**把「换了 PDB」自动理解成必须盲对接。
+2. **主链完整性**：全条目查 `REMARK 465`；大段 loop 缺失按 **§9.0.3 排除**，换缺口更短的同靶点结构。
+3. 备选池（MMP-9 WT+羟肟酸）：4H3X(1.76Å)/4XCT(1.30Å)/5I12(1.59Å)。ADA 结合稳定性初态从含腺苷/近缘核苷的共晶里选（§9.0.1 A4），不把「有 Zn 的空口袋」当作充分条件。
+4. 多链只取 **A 链**做 MD；表达标签（7RTG 364 起）切除。
+5. 换结构后按 **§9.0.1 轴 A** 决定保留共晶位姿、近缘叠合，或（仅 A3）重对接。重对接时盒心 = 口袋配体或文献位点；对接表新增行（pdb 列区分）。**禁止**把「换了 PDB」自动理解成必须盲对接。
 
 **9.10.2 pdb2gmx 输入边界**
 - `protein.pdb` = **仅 ATOM**（pdb2gmx 不认识 ZN/CA/HEM，混入即 Fatal）。

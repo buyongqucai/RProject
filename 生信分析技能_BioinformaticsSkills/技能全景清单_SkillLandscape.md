@@ -5,7 +5,7 @@ SSOT：本文件 + `技能目录_skill-catalog.json`。
 
 布局版本：`layout_version = 2026-07-layout-v2`（见 [目录重构说明_LayoutMigration.md](目录重构说明_LayoutMigration.md)）。
 
-当前技能文档数：**67**（不含组入口）；已弃用目录见 catalog.`deprecated_folders`。
+当前技能文档数：**68**（不含组入口）；已弃用目录见 catalog.`deprecated_folders`。
 
 ## 基础 / Foundation（`00_基础_Foundation`）
 
@@ -67,6 +67,7 @@ SSOT：本文件 + `技能目录_skill-catalog.json`。
 |----------|-----|------------|
 | `分子动力学模拟_MolecularDynamics` | `bioinfo-molecular-dynamics` | 分子动力学模拟、MolecularDynamics |
 | `分子对接与虚拟筛选_MolecularDocking` | `bioinfo-molecular-docking` | 分子对接与虚拟筛选、MolecularDocking |
+| `复方菌群代谢物整合对接_FormulaGutMetaboliteDocking` | `bioinfo-formula-gut-metabolite-docking` | 复方菌群代谢物对接、C*、网毒后对接 |
 | `类药性与QSAR_ADMET-QSAR` | `bioinfo-admet-qsar` | ADMET、Lipinski、QSAR、药效团、类药性 |
 | `网络药理学_NetworkPharmacology` | `bioinfo-network-pharmacology` | 网络药理学、NetworkPharmacology |
 | `药物敏感性与GDSC_DrugResponse` | `bioinfo-drug-response` | 药物敏感性与GDSC、DrugResponse |

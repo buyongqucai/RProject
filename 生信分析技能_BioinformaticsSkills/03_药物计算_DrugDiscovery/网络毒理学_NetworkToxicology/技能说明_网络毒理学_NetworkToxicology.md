@@ -15,11 +15,13 @@ description: >-
 
 ## 1. 数据来源
 
-策展边、预测靶点、疾病基因分表存放。优先组合：PubChem 身份 + CTD 本地包 +（可选）gutMGene / STP + Open Targets 或疾病库手工表。细则与 AUTO/KEY/MANUAL 档只维护在可抓取登记。
+策展边、预测靶点、疾病基因分表存放。优先组合：PubChem 身份 + CTD 本地包 +（可选）gutMGene / STP + Open Targets 或疾病库手工表。细则与 AUTO/KEY/MANUAL 档只维护在可抓取登记。  
+**原始数据命名：** 须带库名（如 `CTD_`、`gutMGene_`、`PubChem_`、`STP_`）→ DeliveryStandards SampleLayoutNaming **§2.1**。
 
 ## 2. 数据规范
 
 - 每条边带来源库、版本或下载日期、`evidence=curated|predicted`
+- raw 文件/夹名含来源库；禁止无来源的 `输入/`、`raw/`
 - 无导出则该步 `BLOCKED_EXTERNAL`；禁止编造化学–基因对
 - CTD 批量查询带人机验证：**不写绕过脚本**；用用户已接受许可的月度文件
 - `DATA_SOURCE.md` 写 `data_provenance`

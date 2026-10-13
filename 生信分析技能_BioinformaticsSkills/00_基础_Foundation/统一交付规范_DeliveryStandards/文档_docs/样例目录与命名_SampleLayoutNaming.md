@@ -47,7 +47,7 @@
 - **脚本：** 按推荐运行顺序（主样例 = `01_run_sample.R`）
 - **结果图/表：** 按流水线产出顺序（与脚本内写出顺序一致）
 - **raw 输入：** 按摄入/依赖顺序；单文件可省略编号，多文件建议编号
-- 编号之后仍遵守中英对照：`{NN}_{中文语义}_{EnglishPascal}.{ext}`
+- 编号之后仍遵守中英对照；**raw 还必须带数据库来源**（见 §2.1）
 - 审计/报告固定名可加编号前缀，也可保持 `审计后检_AuditPost.csv` / `样例报告_SampleReport_v1.html`（迁移期允许不编号；新建优先编号）
 
 示例：
@@ -57,9 +57,45 @@
 | 脚本 | `01_run_sample.R`、`02_run_network_preview.R` |
 | 图 | `01_韦恩图_DrugDisease_Venn.png` + 同名 `.svg` |
 | 结果表 | `03_药物疾病交集_DrugDiseaseOverlap.csv` |
-| raw | `01_样本元数据_SampleMeta_GSE10072.csv` |
+| raw | `01_GEO_样本元数据_SampleMeta_GSE10072.csv` |
 
 R API：`delivery_order_prefix(n)`、`delivery_stem(..., order = n)`、`delivery_save_plot(..., order = n)`（见 `规范_出图与命名_PlotNaming.R`）。
+
+---
+
+## 2.1 原始数据命名：必须标明数据库来源（强制 · 全技能）
+
+适用范围：全部技能的 `01_样例_sample/数据文件/`（及课题交付里等价的 **原始/raw 输入** 目录或文件）。  
+结果表/图命名仍见 [`交付命名与图册门禁_DeliveryNamingGate.md`](交付命名与图册门禁_DeliveryNamingGate.md)；**本条只约束原始输入。**
+
+### 文件
+
+```text
+[{NN}_]{来源库}_{中文语义}_{EnglishPascal}.{ext}
+```
+
+| 段 | 要求 |
+|----|------|
+| `{来源库}` | 可识别的公共库/平台短名（如 `GEO`、`TCGA`、`TCMSP`、`DisGeNET`、`STRING`、`PDB`/`RCSB`、`PubChem`、`HMDB`、`MetaboLights`、`gutMGene`、`CTD`、`SwissTargetPrediction`/`STP`、`SEA`、`AlphaFold`） |
+| 无公共库 | 用户/客户交付写 `User` 或 `Client`；课题内上游模块交付写 `Upstream`（并在 `DATA_SOURCE.md` 写清指针） |
+| 多库合并 | **不得**伪装成单一库 raw；合并表放结果侧，或文件名用主库 + `DATA_SOURCE.md` 列全部分源 |
+
+### 子目录（课题常用）
+
+若原始数据按夹存放：目录名同样须带来源，推荐 `{来源库}_{内容简述}/`（例：`GEO_系列矩阵/`、`TCMSP_成分靶点/`、`RCSB_受体结构/`）。  
+禁止：`数据/`、`raw/`、`输入/`、`download/` 等无来源空名。
+
+### 示例（按领域）
+
+| 领域 | 合规示例 |
+|------|----------|
+| 网药 | `01_TCMSP_枸杞成分_LyciumCompounds.csv`、`02_DisGeNET_疾病靶点_DiseaseTargets.csv` |
+| 对接 | `01_PDB_受体_6W63.pdb`、`02_PubChem_配体3D_CID2244.sdf` |
+| 差异/转录组 | `01_GEO_表达矩阵_GSE10072_SeriesMatrix.txt.gz` |
+| 代谢 | `01_MetaboLights_峰表_MTBLS1234_PeakTable.csv`、`02_HMDB_代谢物注释_Annotation.tsv` |
+| 毒理 | `01_CTD_化学基因_ChemGene.csv`、`02_gutMGene_菌群代谢物_GutMetabolites.csv` |
+
+`DATA_SOURCE.md` 须与文件名中的来源库一致（accession、下载日期、`data_provenance`）。
 
 ---
 

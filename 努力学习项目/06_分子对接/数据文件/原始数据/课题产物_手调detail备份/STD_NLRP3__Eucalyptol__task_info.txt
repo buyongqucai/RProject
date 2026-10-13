@@ -1,0 +1,12 @@
+rank=07
+track=compound
+ligand=Eucalyptol
+gene=NLRP3
+pdb=7ALV
+site=co-ligand:RM5(largest cluster 16/29)
+mean_kcal=-6.066666666666666
+best_seed=7
+best_affinity_kcal=-6.6
+md_priority=no
+ascii_prefix=STD_NLRP3__Eucalyptol
+receptor=protein-only (DNA stripped)

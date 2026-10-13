@@ -88,11 +88,14 @@ CLI 工具（如 Bowtie2/MACS2）可写在同一表，**不得假装全流程仅
 
 ## 4. 样例与交付命名（强制，见 DeliveryStandards）
 
+**原始数据（`数据文件/`）：** 文件名/子目录必须标明数据库来源，模式 `[{NN}_]{来源库}_{中文语义}_{EnglishPascal}`（例：`01_GEO_表达矩阵_GSE10072.csv`、`TCMSP_成分靶点/`）。细则 → DeliveryStandards [`样例目录与命名_SampleLayoutNaming.md`](00_基础_Foundation/统一交付规范_DeliveryStandards/文档_docs/样例目录与命名_SampleLayoutNaming.md) **§2.1**。
+
 `01_样例_sample/代码文件/结果文件/` 强制中英对照，推荐流水线序号：`{NN}_{中文语义}_{EnglishCamelOrPascal}.{ext}`。  
-禁止 `plot.png`、`sample_*.csv`、`toy_*.csv`、纯英文无中文前缀名。
+禁止 `plot.png`、`sample_*.csv`、`toy_*.csv`、纯英文无中文前缀名；禁止无来源库的 raw 名（`raw.csv`、`输入/`）。
 
 | 类型 | 模式 | 示例 |
 |------|------|------|
+| raw | `{NN}_{来源库}_{中文}_{English}.{ext}` | `01_GEO_样本元数据_SampleMeta_GSE10072.csv` |
 | 图片 | `{NN}_{中文图类}_{主题}_{EnType}.{png\|svg}` | `01_火山图_TreatVsControl_Volcano.png` |
 | 数据表 | `{NN}_{中文表义}_{对象}_{EnType}.csv` | `02_差异结果_TreatVsControl_Deg.csv` |
 | 审计 | 固定名，可加序号 | `01_审计后检_AuditPost.csv` |

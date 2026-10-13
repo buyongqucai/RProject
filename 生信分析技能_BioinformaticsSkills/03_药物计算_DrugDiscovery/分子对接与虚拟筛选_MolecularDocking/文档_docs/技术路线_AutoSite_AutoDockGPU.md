@@ -24,7 +24,7 @@
 
 ```text
 ① 取结构（本地库优先）
-② 受体清洗：去结晶水/盐离子；保留功能辅因子（如 heme-Fe）并配平
+② 受体清洗：去结晶水/盐离子；**剔除 DNA/RNA（含 ATOM 记录的 DA/DC/DG/DT 等）**；保留功能辅因子（如 heme-Fe）并配平；蛋白对接默认 protein-only
 ③ 配体：PubChem 3D → PDBQT（Meeko 或现有 clean_h）
 ④ 定中心/定盒（见 §2 决策树）
 ⑤ Meeko/ADT：生成 AutoGrid 地图（.maps.fld）

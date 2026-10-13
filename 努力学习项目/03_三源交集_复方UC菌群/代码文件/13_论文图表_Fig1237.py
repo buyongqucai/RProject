@@ -35,7 +35,7 @@ def save(fig, name: str) -> None:
 def load_sets():
     F = set(pd.read_csv(DELIV / "数据文件/药物/药物靶点_全药.csv", encoding="utf-8-sig")["gene"])
     D = set(pd.read_csv(DELIV / "数据文件/疾病/疾病靶点合并.csv", encoding="utf-8-sig")["gene"])
-    Mm = pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/M_主面板靶点.csv", encoding="utf-8-sig")
+    Mm = pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/M_主面板靶点.csv", encoding="utf-8-sig")
     M = set(Mm["gene"])
     return F, D, M, Mm
 
@@ -123,7 +123,7 @@ def fig1() -> None:
 
 # ---------------- Fig 2: Venn + statistics ----------------
 def fig2(F, D, M) -> None:
-    stats = pd.read_csv(ROOT / "结果文件" / "数据文件" / "双交集统计汇总.csv", encoding="utf-8-sig")
+    stats = pd.read_csv(ROOT / "数据文件" / "结果数据" / "双交集统计汇总.csv", encoding="utf-8-sig")
     main = stats[(stats.analysis == "main_evidence_priority") &
                  (stats.evidence == "H_plus_M")].iloc[0]
     full = stats[(stats.analysis == "full_gutmgene_human") &
@@ -174,12 +174,12 @@ def fig2(F, D, M) -> None:
 
 # ---------------- Fig 3: sensitivity panels ----------------
 def fig3() -> None:
-    stats = pd.read_csv(ROOT / "结果文件" / "数据文件" / "双交集统计汇总.csv", encoding="utf-8-sig")
-    th = pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/M_阈值敏感性.csv", encoding="utf-8-sig")
-    Mm = pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/M_主面板靶点.csv", encoding="utf-8-sig")
+    stats = pd.read_csv(ROOT / "数据文件" / "结果数据" / "双交集统计汇总.csv", encoding="utf-8-sig")
+    th = pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/M_阈值敏感性.csv", encoding="utf-8-sig")
+    Mm = pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/M_主面板靶点.csv", encoding="utf-8-sig")
     D = set(pd.read_csv(DELIV / "数据文件/疾病/疾病靶点合并.csv", encoding="utf-8-sig")["gene"])
     I1 = set(pd.read_csv(DELIV / "数据文件/药物/药物疾病交集.csv", encoding="utf-8-sig")["gene"])
-    colon = pd.read_csv(ROOT / "结果文件" / "数据文件" / "敏感性/结肠表达过滤_基因表.csv", encoding="utf-8-sig")
+    colon = pd.read_csv(ROOT / "数据文件" / "结果数据" / "敏感性/结肠表达过滤_基因表.csv", encoding="utf-8-sig")
 
     main = stats[(stats.analysis == "main_evidence_priority") &
                  (stats.evidence == "H_plus_M")].iloc[0]
@@ -197,7 +197,7 @@ def fig3() -> None:
         g = set(th.loc[mask, "gene"]) | h_genes
         return len(I1 & g & D)
 
-    Cmain = set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "C_main_evidence_priority_H_plus_M.csv",
+    Cmain = set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "C_main_evidence_priority_H_plus_M.csv",
                             encoding="utf-8-sig")["gene"])
     colon_genes = set(colon.loc[colon["colon_expressed_tpm_ge_1"].astype(str)
                                 .str.lower().eq("true"), "gene"])
@@ -233,7 +233,7 @@ def fig3() -> None:
 
 # ---------------- Fig 7: docking heatmap ----------------
 def fig7() -> None:
-    df = pd.read_csv(ROOT / "结果文件" / "数据文件" / "对接/对接汇总.csv", encoding="utf-8-sig")
+    df = pd.read_csv(ROOT / "数据文件" / "结果数据" / "对接/对接汇总.csv", encoding="utf-8-sig")
     # 结构政策：有优选 PDB 时只用优选行（4H3X / 7RTG），避免新旧结构叠行
     prefer = {("Tryptophan", "MMP9"): "4H3X", ("Adenosine", "ADA"): "7RTG"}
     keep = []

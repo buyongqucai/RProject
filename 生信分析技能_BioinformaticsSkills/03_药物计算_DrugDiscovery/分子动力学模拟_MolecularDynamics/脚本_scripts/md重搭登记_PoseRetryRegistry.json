@@ -1,0 +1,26 @@
+{
+  "ESR2_Anhydroicaritin_1L2J": {
+    "gene": "ESR2",
+    "uniprot": "Q92731",
+    "ligand_cid": "14583584",
+    "ligand_name_zh": "脱水淫羊藿素",
+    "failed_pdb": "1L2J",
+    "prefer_chain": "A"
+  },
+  "FOS_quercetin_1A02": {
+    "gene": "FOS",
+    "uniprot": "P01100",
+    "ligand_cid": "5280343",
+    "ligand_name_zh": "槲皮素",
+    "failed_pdb": "1A02",
+    "prefer_chain": "A"
+  },
+  "PPARG_kaempferol_1FM9": {
+    "gene": "PPARG",
+    "uniprot": "P37231",
+    "ligand_cid": "5280863",
+    "ligand_name_zh": "山奈酚",
+    "failed_pdb": "1FM9",
+    "prefer_chain": "A"
+  }
+}

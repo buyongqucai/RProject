@@ -167,6 +167,19 @@ def ensure_ligand_pdbqt(lib: Path, cid: str, session: requests.Session) -> Path:
     return dest
 
 
+# PDB 核酸常记在 ATOM；蛋白对接默认剔除（FROZEN / SOP §3）
+NUCLEIC_RES = {
+    "DA", "DC", "DG", "DT", "DI",
+    "A", "C", "G", "T", "U", "I",
+    "RA", "RC", "RG", "RU",
+    "ADE", "CYT", "GUA", "THY", "URA",
+}
+
+
+def _is_nucleic_atom_line(ln: str) -> bool:
+    return ln.startswith("ATOM") and ln[17:20].strip() in NUCLEIC_RES
+
+
 def hetatm_centroid(pdb_path: Path) -> tuple[float, float, float] | None:
     xs, ys, zs = [], [], []
     for ln in pdb_path.read_text(encoding="utf-8", errors="replace").splitlines():
@@ -189,7 +202,7 @@ def hetatm_centroid(pdb_path: Path) -> tuple[float, float, float] | None:
 def atom_centroid(pdb_path: Path) -> tuple[float, float, float]:
     xs, ys, zs = [], [], []
     for ln in pdb_path.read_text(encoding="utf-8", errors="replace").splitlines():
-        if not ln.startswith("ATOM"):
+        if not ln.startswith("ATOM") or _is_nucleic_atom_line(ln):
             continue
         try:
             xs.append(float(ln[30:38]))
@@ -255,6 +268,8 @@ def ensure_receptor_pdbqt(
         lines = []
         for ln in raw.read_text(encoding="utf-8", errors="replace").splitlines():
             if ln.startswith("ATOM"):
+                if _is_nucleic_atom_line(ln):
+                    continue
                 lines.append(ln)
             elif ln.startswith("TER") or ln.startswith("END"):
                 lines.append(ln)
@@ -299,11 +314,14 @@ def ensure_alphafold_receptor(
             raise RuntimeError(f"AlphaFold download failed {uniprot}")
     clean = dirs["big_clean"] / f"{tag}_af_clean.pdb"
     if not clean.is_file():
-        lines = [
-            ln
-            for ln in raw.read_text(encoding="utf-8", errors="replace").splitlines()
-            if ln.startswith("ATOM") or ln.startswith("TER") or ln.startswith("END")
-        ]
+        lines = []
+        for ln in raw.read_text(encoding="utf-8", errors="replace").splitlines():
+            if ln.startswith("ATOM"):
+                if _is_nucleic_atom_line(ln):
+                    continue
+                lines.append(ln)
+            elif ln.startswith("TER") or ln.startswith("END"):
+                lines.append(ln)
         clean.write_text("\n".join(lines) + "\n", encoding="utf-8")
     if dest.is_file() and dest.stat().st_size > 500:
         text = dest.read_text(encoding="utf-8", errors="replace")

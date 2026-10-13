@@ -126,7 +126,8 @@ N/
 2. **禁止**任务内 `_png_tmp/`；发现即删。  
 3. **所有 PNG**（big/surface/detail/**result**）**只**在 `图片/`。  
 4. **`.pse` 只在任务根**（或 Top10 子目录根），不进 `图片/`。  
-5. **Git**：项目根须 git；`.gitignore` 至少 `_png_tmp/`、`Thumbs.db`、`.DS_Store`。手调 `.pse` 后先 commit 再批量操作。
+5. **Git**：项目根须 git；`.gitignore` 至少 `_png_tmp/`、`Thumbs.db`、`.DS_Store`。手调 `.pse` 后先 commit 再批量操作。  
+6. **禁止覆盖手调 detail：** 用户已拖标签的 `detail-N.pse` **不得**再跑 `pymol_dock_viz_standard.py --all` 或整夹删除重建冲掉。重建序号夹时须先按配体–基因键备份 detail（课题脚本 `保护手调detail_preserveDetailPse.py backup`），仅对缺文件的任务生成；`--skip-detail` 用于只重出 big/surface。
 
 命名要点：受体 `{PDB}_clean_h.pdbqt`；**配体自 2026-08-31 起一律以 PubChem CID 命名**（如 `442048_clean_h.pdbqt`；存量语义英文名文件由 `脚本_scripts/化合物CID重命名_renameCompoundsToCid.py` 一次性迁移，对照见 `D:\数据库\分子对接数据库\化合物_CID命名对照.csv`）；图面 **English**。
 
@@ -134,7 +135,9 @@ N/
 
 ## 3. 文件处理（准备）
 
-1. **受体**：去水、去非目标配体/离子（按课题保留辅因子）；加氢 → PDBQT。  
+1. **受体（蛋白对接默认）**：去水、去非目标配体/离子（按课题保留辅因子）；**剔除 DNA/RNA**；加氢 → PDBQT。  
+   - **核酸陷阱：** PDB 中核苷酸常写在 `ATOM`（残基名 `DA`/`DC`/`DG`/`DT`/`A`/`C`/`G`/`T`/`U` 等），不是 `HETATM`。只删结晶水/溶剂会把 DNA 链留进受体，对接与 PyMOL 会出现碱基氢键（如 DC/DA），**不能**当成蛋白残基相互作用。  
+   - **例外：** 课题明确要对接核酸或蛋白–核酸界面时，须在 `task_info` 写明 `receptor_includes_nucleic=yes` 及理由；否则一律 protein-only（FROZEN，见对接与交付约束）。  
 2. **配体**：必须用真实 3D 坐标（优先 PubChem `record_type=3d`）→ 加氢 → PDBQT；禁止在已有 3D SDF 上再跑 `--gen3d`。  
 3. **对接盒子**（强制；细则 SSOT：[`对接盒子定心与定边_DockingBoxProtocol.md`](对接盒子定心与定边_DockingBoxProtocol.md)，含 **§8 第二轮交叉核对**）：  
    - **中心**：指定**单一**共晶配体（`resname+chain[+resi]`）的几何中心；或文献/注释活性位点；再否则口袋预测（须标注）。**禁止**整链 COM；**禁止**对 PDB 内全部非溶剂 `HETATM` 无差别平均；**禁止**未校验照抄库表坐标。  
@@ -152,6 +155,7 @@ N/
 | `hetatm_centroid` 平均所有非溶剂 HETATM | 不是“某一个 bound ligand”的质心 |
 | 盲信 `分子对接_蛋白表.csv` 的 x/y/z | 表值可远离真实口袋，必须校验 |
 | AlphaFold 全长 COM 当打分盒 | 违反 Manual“搜索空间应尽量小且对准位点” |
+| 蛋白对接时把 `ATOM` 核酸链留在受体里 | DNA/RNA 记在 ATOM，易被「只删 HETATM」漏掉；氢键会打到碱基上 |
 
 ---
 
@@ -301,7 +305,10 @@ REM 显式 --root 时只处理该路径；每任务只开一次 PyMOLWin
 
 - 完整铺开蛋白丝带、氢键、残基、配体。  
 - **实线黑框只是「放大区域」标注，不是裁切框**——禁止把左图裁进黑框、禁止裁掉丝带。  
-- 以残基+配体+氢键并集为锚缩放，使关键簇尽量落入实线小框；粘贴整图，只裁画布越界及与右虚线框重叠区。
+- **倍率**：按全图非白内容（**含丝带**）等比装入左侧可用区（右虚线框以左）；**禁止**按口袋锚点放大到丝带出画。  
+- **平移**：以残基+配体+氢键并集为锚，尽量落入实线小框；再钳制使全内容不越出左侧可用区。  
+- 粘贴整图，只裁画布越界及与右虚线框重叠区。  
+- **禁止**拼图前对磁盘 `big-*.png` 做破坏性边框裁切（`crop_bw` 等）；白边仅可在拼图内存中轻裁。
 
 **右图（detail）**
 

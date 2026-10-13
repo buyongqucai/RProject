@@ -24,11 +24,13 @@ description: >-
 流水线摘要：下载 → 定盒并登记 `center_source` → AutoGrid → AutoDock-GPU → summary/热图 → PyMOL →（手调后）§7.3 导出 detail + §7.4 拼 result。
 ## 1. 数据来源
 
-**优先** `D:\数据库\分子对接数据库\`（已下载受体/配体与登记表）；缺项再 PDB/AlphaFold / PubChem 3D。细则见 SOP §1。
+**优先** `D:\数据库\分子对接数据库\`（已下载受体/配体与登记表）；缺项再 PDB/AlphaFold / PubChem 3D。细则见 SOP §1。  
+**原始数据命名：** 受体/配体 raw 须带来源（如 `PDB_`/`RCSB_`、`AlphaFold_`、`PubChem_`）→ DeliveryStandards SampleLayoutNaming **§2.1**（课题子目录如 `RCSB与PubChem_对接结构工作区/`）。
 
 ## 2. 数据规范（判断是否可用）
 
 输入完整可溯源；分组/标注来自官方或实验记录；亲和力与结构 ID 须可追溯。  
+raw 文件/夹名含来源库；禁止无来源的 `结构/`、`download/`。  
 对接盒子与引擎：[`技术路线_AutoSite_AutoDockGPU.md`](文档_docs/技术路线_AutoSite_AutoDockGPU.md)（定心决策树与硬护栏见该文 / FROZEN）。
 
 ### 2.1 每个任务必须说明「中心位点用了什么方法」（强制）
@@ -56,7 +58,7 @@ description: >-
 完整步骤见 SOP。摘要：
 
 1. 下载受体/配体 → `big/` `small/`（可在项目外）  
-2. 清洗加氢 → `*_clean/` `*_clean_h/`（PDBQT）  
+2. 清洗加氢 → `*_clean/` `*_clean_h/`（PDBQT）；**蛋白对接须剔核酸**（DNA 常在 `ATOM`，见 FROZEN/SOP §3）  
 3. **定心定盒**（决策树见技术路线）→ 写 `task_info`：`center_source` + 细节  
 4. 序号任务 `config.txt` → **默认 AutoDock-GPU**（Vina 可选对照）→ 输出 + log  
 5. **登记**：`分子对接_蛋白表.csv`（含受体级 `center_source`/`ref_ligand`）+ `分子对接_化合物表.csv`（不枚举组合）  

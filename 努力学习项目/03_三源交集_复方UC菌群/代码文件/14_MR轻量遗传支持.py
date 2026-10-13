@@ -12,7 +12,7 @@
 数据访问日期：2026-10-07。
   GWAS Catalog: https://www.ebi.ac.uk/gwas/rest/api/v2/associations?efo_id=MONDO_0005101
   MiBioGen:     https://molgenis26.gcc.rug.nl/downloads/MiBioGen/MBG.allHits.p1e4.txt
-输出：结果文件/数据文件/GWAS遗传支持/ + 结果文件/报告文件/报告_MR轻量遗传支持.md（打印摘要）
+输出：数据文件/结果数据/GWAS遗传支持/ + 结果文件/报告文件/报告_MR轻量遗传支持.md（打印摘要）
 """
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ from scipy.stats import hypergeom
 
 ROOT = Path(__file__).resolve().parents[1]
 DELIV = ROOT.parent / "交付文件"
-OUT = ROOT / "结果文件" / "数据文件" / "GWAS遗传支持"
+OUT = ROOT / "数据文件" / "结果数据" / "GWAS遗传支持"
 OUT.mkdir(parents=True, exist_ok=True)
 CACHE = ROOT / "数据文件" / "外部数据库" / "GWAS"
 CACHE.mkdir(parents=True, exist_ok=True)
@@ -76,7 +76,7 @@ def hyper_p(k: int, K: int, n: int, N: int) -> float:
 
 def main() -> None:
     D = set(pd.read_csv(DELIV / "数据文件/疾病/疾病靶点合并.csv", encoding="utf-8-sig")["gene"])
-    C = set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "C_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"])
+    C = set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "C_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"])
     I1 = set(pd.read_csv(DELIV / "数据文件/药物/药物疾病交集.csv", encoding="utf-8-sig")["gene"])
 
     gwas = fetch_gwas()

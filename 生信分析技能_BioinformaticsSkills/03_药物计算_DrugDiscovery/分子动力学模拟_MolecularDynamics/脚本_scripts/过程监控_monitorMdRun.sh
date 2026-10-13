@@ -38,10 +38,13 @@ mkdir -p "$MON"
 abort() {
   echo "$*" | tee "$MON/ABORT_REASON.txt"
   echo "MONITOR_ABORT: $*"
-  # 异常邮件：经 alert_kit（~/.md_alert_to 或 ~/.alert_to）；发送失败不掩盖退出码 2
+  # 队列托管中文告警时：只落盘，不在此处发信（MD_ALERT_DEFER=1）
+  if [[ "${MD_ALERT_DEFER:-0}" == "1" ]]; then
+    exit 2
+  fi
   NOTIFY="${MD_ALERT_SH:-/mnt/e/md_kit/notify_md_alert.sh}"
   if [[ -f "$NOTIFY" ]]; then
-    bash "$NOTIFY" "$*" "$(pwd)" || true
+    bash "$NOTIFY" "$(pwd)" --phase final "$*" || true
   fi
   exit 2
 }

@@ -1,0 +1,25 @@
+﻿metabolite,gene,uniprot,pdb,site,seed,affinity_kcal_mol,affinity_kJ_mol,pass_threshold_kcal
+4-Hydroxyphenylacetic acid,ESR2,Q92731,1L2J,co-ligand:ETC(largest cluster 24/48),1,-5.8,-24.27,True
+4-Hydroxyphenylacetic acid,ESR2,Q92731,1L2J,co-ligand:ETC(largest cluster 24/48),7,-5.8,-24.27,True
+4-Hydroxyphenylacetic acid,ESR2,Q92731,1L2J,co-ligand:ETC(largest cluster 24/48),42,-5.8,-24.27,True
+Phenylalanine,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),1,-6.3,-26.36,True
+Phenylalanine,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),7,-6.3,-26.36,True
+Phenylalanine,PPARG,P37231,1FM9,co-ligand:9CR(largest cluster 22/22),42,-6.3,-26.36,True
+Maltose,LGALS3,P17931,1KJR,co-ligand:BEK(largest cluster 15/15),1,-5.0,-20.92,True
+Maltose,LGALS3,P17931,1KJR,co-ligand:BEK(largest cluster 15/15),7,-5.0,-20.92,True
+Maltose,LGALS3,P17931,1KJR,co-ligand:BEK(largest cluster 15/15),42,-5.0,-20.92,True
+Maltotriose,LGALS3,P17931,1KJR,co-ligand:BEK(largest cluster 15/15),1,-5.9,-24.69,True
+Maltotriose,LGALS3,P17931,1KJR,co-ligand:BEK(largest cluster 15/15),7,-5.9,-24.69,True
+Maltotriose,LGALS3,P17931,1KJR,co-ligand:BEK(largest cluster 15/15),42,-5.9,-24.69,True
+Inosine,DNMT1,P26358,3EPZ,co-ligand:BGC(largest cluster 12/12),1,-6.6,-27.61,True
+Inosine,DNMT1,P26358,3EPZ,co-ligand:BGC(largest cluster 12/12),7,-6.6,-27.61,True
+Inosine,DNMT1,P26358,3EPZ,co-ligand:BGC(largest cluster 12/12),42,-6.6,-27.61,True
+Raffinose,LGALS3,P17931,1KJR,co-ligand:BEK(largest cluster 15/15),1,-5.2,-21.76,True
+Raffinose,LGALS3,P17931,1KJR,co-ligand:BEK(largest cluster 15/15),7,-5.3,-22.18,True
+Raffinose,LGALS3,P17931,1KJR,co-ligand:BEK(largest cluster 15/15),42,-5.3,-22.18,True
+Tyrosine,PCNA,P12004,1U7B,blind(geometric center),1,-4.3,-17.99,False
+Tyrosine,PCNA,P12004,1U7B,blind(geometric center),7,-4.3,-17.99,False
+Tyrosine,PCNA,P12004,1U7B,blind(geometric center),42,-4.3,-17.99,False
+Butyrate,FOS,P01100,1A02,blind(geometric center),1,-3.3,-13.81,False
+Butyrate,FOS,P01100,1A02,blind(geometric center),7,-3.3,-13.81,False
+Butyrate,FOS,P01100,1A02,blind(geometric center),42,-3.3,-13.81,False

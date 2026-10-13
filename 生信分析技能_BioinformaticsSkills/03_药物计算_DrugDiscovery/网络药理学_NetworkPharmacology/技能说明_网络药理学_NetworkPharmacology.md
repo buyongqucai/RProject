@@ -18,11 +18,13 @@ description: >-
 ## 1. 数据来源
 
 三类库不得混写。疾病六库 / 成分瀑布 / AUTO·MANUAL → [`数据库分类与流水线`](文档_docs/数据库分类与流水线_DataSourcesPipeline.md)。  
-样例：`data_provenance: REAL`（用户交付中间表 + 可程序化 CTD/STRING/KEGG）。
+样例：`data_provenance: REAL`（用户交付中间表 + 可程序化 CTD/STRING/KEGG）。  
+**原始数据命名：** 文件/子目录须带库名（如 `TCMSP_`、`DisGeNET_`、`STRING_`）→ DeliveryStandards SampleLayoutNaming **§2.1**。
 
 ## 2. 数据规范
 
 - 可溯源：单药名 + 英文病名 + 库导出；整合 schema = **药物–有效成分–靶点**
+- raw 路径/文件名含来源库；禁止无来源的 `输入/`、`raw/`
 - HERB→STP 交付精简与异常清单 → CompoundTargetSOP
 - 禁止 UniProt 全表左拼主交付；缺导出 → `BLOCKED_EXTERNAL`，不编造基因
 - 列契约：`脚本_scripts/01_契约接口_DataContracts.R`

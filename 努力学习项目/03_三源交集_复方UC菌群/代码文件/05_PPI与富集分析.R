@@ -9,7 +9,7 @@ source(delivery)
 source(file.path(skill, "脚本_scripts/03_STRING与网络图_StringNetwork.R"))
 source(file.path(skill, "脚本_scripts/04_交付网络布局_DeliveryNetworkLayouts.R"))
 
-data_dir <- file.path(root, "结果文件", "数据文件")
+data_dir <- file.path(root, "数据文件", "结果数据")
 met_dir <- file.path(data_dir, "代谢物")
 ppi_dir <- file.path(data_dir, "PPI")
 enrich_dir <- file.path(data_dir, "富集分析")

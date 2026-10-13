@@ -9,11 +9,14 @@ description: >-
 
 ## 1. 数据来源
 
-LC-MS/GC-MS 峰表；脂质定量表；约束模型/13C（通量小节）。
+LC-MS/GC-MS 峰表；脂质定量表；约束模型/13C（通量小节）。  
+公共库示例：MetaboLights、HMDB、GNPS、LipidMaps；自测写 `User_`/`Client_`。  
+**原始数据命名：** 须带库名（如 `MetaboLights_`、`HMDB_`）→ DeliveryStandards SampleLayoutNaming **§2.1**。
 
 ## 2. 数据规范（判断是否可用）
 
-输入完整可溯源；分组官方或实验记录可核对；禁止编造结果数字。
+输入完整可溯源；分组官方或实验记录可核对；禁止编造结果数字。  
+raw 文件/夹名含来源库；禁止无来源的 `峰表.csv`、`raw/`。
 
 ## 3. 何时选用本技能
 

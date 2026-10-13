@@ -14,7 +14,7 @@
 
 结论边界：三层一致性是**方向提示**，不是疗效/调控结论（项目规范 §2）；
 gutMGene 作用方向多来自体外/细胞实验，GMMAD2 丰度≠产生速率，横断面不能推因果。
-输出：结果文件/数据文件/方向一致性/
+输出：数据文件/结果数据/方向一致性/
 """
 from __future__ import annotations
 
@@ -24,7 +24,7 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "结果文件" / "数据文件" / "方向一致性"
+OUT = ROOT / "数据文件" / "结果数据" / "方向一致性"
 OUT.mkdir(parents=True, exist_ok=True)
 
 
@@ -33,10 +33,10 @@ def sgn(x: float) -> int:
 
 
 def main() -> None:
-    tierA = pd.read_csv(ROOT / "结果文件" / "数据文件" / "预测/复方候选干预代谢物_主面板.csv", encoding="utf-8-sig")
+    tierA = pd.read_csv(ROOT / "数据文件" / "结果数据" / "预测/复方候选干预代谢物_主面板.csv", encoding="utf-8-sig")
     a = tierA[tierA["tier"].str.startswith("A")].copy()
-    geo = pd.read_csv(ROOT / "结果文件" / "数据文件" / "GEO验证/GEO_core_gene_consistency.csv", encoding="utf-8-sig")
-    mtab = pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/M_主面板靶点.csv", encoding="utf-8-sig")
+    geo = pd.read_csv(ROOT / "数据文件" / "结果数据" / "GEO验证/GEO_core_gene_consistency.csv", encoding="utf-8-sig")
+    mtab = pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/M_主面板靶点.csv", encoding="utf-8-sig")
 
     geo_ix = {r["gene"]: r for _, r in geo.iterrows()}
     # H 边方向：(metabolite, gene) -> +1 activation / -1 inhibition

@@ -230,17 +230,31 @@ def download_protein(s: requests.Session, struct: str, big: Path) -> str:
     return "FAIL"
 
 
+# PDB 核酸常记在 ATOM（非 HETATM）；蛋白对接默认剔除（FROZEN）
+NUCLEIC_RES = {
+    "DA", "DC", "DG", "DT", "DI",
+    "A", "C", "G", "T", "U", "I",
+    "RA", "RC", "RG", "RU",
+    "ADE", "CYT", "GUA", "THY", "URA",
+}
+
+
 def clean_protein(raw: Path, dest: Path) -> int:
-    """仅保留 ATOM / TER / END；去 HETATM（水、配体、离子）。"""
+    """仅保留蛋白 ATOM / TER / END；去 HETATM；去 DNA/RNA ATOM。"""
     if dest.exists() and dest.stat().st_size > 100:
         return -1
     n = 0
     with raw.open("r", encoding="utf-8", errors="ignore") as fi, \
             dest.open("w", encoding="utf-8", newline="\n") as fo:
         for line in fi:
-            if line.startswith(("ATOM  ", "TER", "END")):
+            if line.startswith("ATOM  "):
+                res = line[17:20].strip()
+                if res in NUCLEIC_RES:
+                    continue
                 fo.write(line)
-                n += line.startswith("ATOM  ")
+                n += 1
+            elif line.startswith(("TER", "END")):
+                fo.write(line)
     return n
 
 

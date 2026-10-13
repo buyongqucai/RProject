@@ -476,6 +476,11 @@ def hide_all_labels(cmd) -> None:
             cmd.label("CJ and name CA", "")
         except Exception:
             pass
+        # 核酸残基无 CA，清 C1'/N1/N9 上可能残留的标签
+        try:
+            cmd.label("CJ and (name C1' or name N1 or name N9)", "")
+        except Exception:
+            pass
     for name in list(cmd.get_names("objects")):
         if str(name).startswith(("HBLab", "ResLab")):
             try:
@@ -484,8 +489,53 @@ def hide_all_labels(cmd) -> None:
                 pass
 
 
+def _label_cj_residues(cmd) -> None:
+    """CJ 残基标签：氨基酸打在 CA；无 CA 的核酸打在 C1'（再退 N1/N9）。"""
+    if cmd.count_atoms("CJ") <= 0:
+        return
+    cmd.label("CJ and name CA", '"%s%s" % (resn, resi)')
+    cmd.show("label", "CJ and name CA")
+
+    from pymol import stored
+
+    stored._cj_keys = []
+    cmd.iterate("CJ", "stored._cj_keys.append((chain, resn, resi))")
+    stored._ca_keys = []
+    cmd.iterate("CJ and name CA", "stored._ca_keys.append((chain, resn, resi))")
+    need = sorted(set(stored._cj_keys) - set(stored._ca_keys))
+    for chain, resn, resi in need:
+        sel = f"(CJ and chain {chain} and resi {resi})"
+        tagged = False
+        for atom in ("C1'", "N1", "N9", "C2", "P"):
+            a_sel = f"{sel} and name {atom}"
+            if cmd.count_atoms(a_sel) > 0:
+                cmd.label(a_sel, f'"{resn}{resi}"')
+                cmd.show("label", a_sel)
+                # 核酸标签易埋在碱基棒状里，略外推
+                try:
+                    cmd.set("label_position", (1.8, 1.2, 2.5), a_sel)
+                except Exception:
+                    pass
+                tagged = True
+                break
+        if not tagged and cmd.count_atoms(sel) > 0:
+            # 任意重原子兜底（每残基只标第一个）
+            stored._idx = []
+            cmd.iterate(sel, "stored._idx.append(index)")
+            if stored._idx:
+                a_sel = f"index {stored._idx[0]}"
+                cmd.label(a_sel, f'"{resn}{resi}"')
+                cmd.show("label", a_sel)
+                try:
+                    cmd.set("label_position", (1.8, 1.2, 2.5), a_sel)
+                except Exception:
+                    pass
+                tagged = True
+        log(f"  CJ non-CA label {resn}{resi} chain {chain}: {'ok' if tagged else 'FAIL'}")
+
+
 def apply_detail_labels(cmd) -> None:
-    """detail：残基 CA + QJ 氢键长度（1 位小数）；默认字体、字号 24；不外推（用户自行拖动）。"""
+    """detail：残基标签 + QJ 氢键长度（1 位小数）；默认字体、字号 24；不外推（用户自行拖动）。"""
     # 清理旧版伪原子标签
     for name in list(cmd.get_names("objects")):
         if str(name).startswith(("HBLab", "ResLab")):
@@ -509,9 +559,7 @@ def apply_detail_labels(cmd) -> None:
     cmd.set("label_position", (0.0, 0.0, 0.0))
     log("  detail labels: font_id=5 (default), size=24, digits=1, no offset")
 
-    if cmd.count_atoms("CJ") > 0:
-        cmd.label("CJ and name CA", '"%s%s" % (resn, resi)')
-        cmd.show("label", "CJ and name CA")
+    _label_cj_residues(cmd)
 
     if "QJ" in cmd.get_names("objects"):
         try:

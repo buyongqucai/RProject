@@ -19,7 +19,7 @@
   排序：分层 → n_C ↓ → 是否含实证H边 → GMMAD2 UC 显著(FDR<0.05) → |score| ↓ → 配对优先级 ↓
 
 结论边界（项目规范 §2）：全部表述为「候选/提示」；不写疗效、拮抗、减毒或因果结论。
-输出：结果文件/数据文件/预测/复方候选干预代谢物_{主面板,全库敏感性}.csv + 干预代谢物预测_摘要.json
+输出：数据文件/结果数据/预测/复方候选干预代谢物_{主面板,全库敏感性}.csv + 干预代谢物预测_摘要.json
 """
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]          # 网络毒理学_菌群代谢物双交集
 DELIV = ROOT.parent / "交付文件"                     # 交付数据（F/D/I₁ 源头）
-OUT = ROOT / "结果文件" / "数据文件" / "预测"
+OUT = ROOT / "数据文件" / "结果数据" / "预测"
 OUT.mkdir(parents=True, exist_ok=True)
 
 HARMFUL = {"TMAO", "p-Cresol sulfate", "Indoxyl sulfate", "Deoxycholic acid",
@@ -46,18 +46,18 @@ def norm_name(s: str) -> str:
 def load() -> dict:
     d = {}
     d["I1"] = set(pd.read_csv(DELIV / "数据文件/药物/药物疾病交集.csv", encoding="utf-8-sig")["gene"].dropna())
-    d["C_main"] = set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "C_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"])
-    d["C_full"] = set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "C_full_gutmgene_human_H_plus_M.csv", encoding="utf-8-sig")["gene"])
-    d["I2_main"] = set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "I2_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"])
-    d["I2_full"] = set(pd.read_csv(ROOT / "结果文件" / "数据文件" / "I2_full_gutmgene_human_H_plus_M.csv", encoding="utf-8-sig")["gene"])
-    d["M_main"] = pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/M_主面板靶点.csv", encoding="utf-8-sig")
-    d["M_full"] = pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/M_全库敏感性靶点.csv", encoding="utf-8-sig")
-    d["panel_main"] = pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/代谢物主面板.csv", encoding="utf-8-sig")
-    d["panel_full"] = pd.read_csv(ROOT / "结果文件" / "数据文件" / "代谢物/代谢物全库敏感性.csv", encoding="utf-8-sig")
-    d["benefit"] = pd.read_csv(ROOT / "结果文件" / "数据文件" / "毒性分层/代谢物有益有害分层.csv", encoding="utf-8-sig")
-    d["pairs"] = pd.read_csv(ROOT / "结果文件" / "数据文件" / "机制层/核心代谢物靶点配对.csv", encoding="utf-8-sig")
+    d["C_main"] = set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "C_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"])
+    d["C_full"] = set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "C_full_gutmgene_human_H_plus_M.csv", encoding="utf-8-sig")["gene"])
+    d["I2_main"] = set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "I2_main_evidence_priority_H_plus_M.csv", encoding="utf-8-sig")["gene"])
+    d["I2_full"] = set(pd.read_csv(ROOT / "数据文件" / "结果数据" / "I2_full_gutmgene_human_H_plus_M.csv", encoding="utf-8-sig")["gene"])
+    d["M_main"] = pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/M_主面板靶点.csv", encoding="utf-8-sig")
+    d["M_full"] = pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/M_全库敏感性靶点.csv", encoding="utf-8-sig")
+    d["panel_main"] = pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/代谢物主面板.csv", encoding="utf-8-sig")
+    d["panel_full"] = pd.read_csv(ROOT / "数据文件" / "结果数据" / "代谢物/代谢物全库敏感性.csv", encoding="utf-8-sig")
+    d["benefit"] = pd.read_csv(ROOT / "数据文件" / "结果数据" / "毒性分层/代谢物有益有害分层.csv", encoding="utf-8-sig")
+    d["pairs"] = pd.read_csv(ROOT / "数据文件" / "结果数据" / "机制层/核心代谢物靶点配对.csv", encoding="utf-8-sig")
     d["herb_I1"] = pd.read_csv(DELIV / "数据文件/药物/全量单药疾病交集.csv", encoding="utf-8-sig")
-    d["microbe"] = pd.read_csv(ROOT / "数据文件/外部数据库/gutMGene_v2/Gut Microbe-Microbial metabolite.csv",
+    d["microbe"] = pd.read_csv(ROOT / "数据文件/原始数据/外部数据库_多源/gutMGene_v2/Gut Microbe-Microbial metabolite.csv",
                                encoding="utf-8-sig", low_memory=False)
     return d
 
