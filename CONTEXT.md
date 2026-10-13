@@ -25,7 +25,8 @@
 | intent-skill-router | `.cursor/skills/intent-skill-router`：未 @ 技能时按意图自动 Read 对应 `技能说明_*.md` |
 | alert_kit / qq-smtp-alert | 跨项目 QQ SMTP 告警：`E:\alert_kit\`；Cursor 全局技能 `~/.cursor/skills/qq-smtp-alert` |
 | 工单 / frontier | `.scratch/<功能>/issues/NN-*.md`；只做 Blocked by 已完成且 `待Agent处理` 的单（见 `docs/agents/工单工作流_WorkOrder.md`） |
-| 技能范式 | 新建/审计领域技能的勾选 SSOT：`docs/agents/技能范式清单_SkillParadigm.md` |
+| 技能范式 | 新建/审计领域技能的勾选 SSOT（L0 写法）：`docs/agents/技能范式清单_SkillParadigm.md` |
+| 范式分层 | L0 写法 / L1 横切 / L2 图种 / L3 分析步骤 / L4 论文组合。正文：`研究方案编排_ResearchOrchestrator/文档_docs/范式分层_ParadigmLayers.md`。选图先定 L4 |
 | 接缝（seam） | 测试的公开边界；TDD 前须与用户书面确认 |
 | 红绿循环 | 先写失败测试（红）再最小实现（绿）；重构不属于循环 |
 | 双轴审查 | code-review 的 Standards + Spec 两轴，分开报告不合并排名 |
