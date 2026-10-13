@@ -13,7 +13,7 @@ tab <- file.path(root, "01_数据文件_Data/02_结果数据_ResultTables")
 rep <- file.path(root, "04_报告文件_Reports")
 sumdir <- "E:/RProject/昱阳项目/01_分析报告_AnalysisReport/02_阶段汇总_StageSummaries"
 expd <- file.path(raw, "03_ChEMBL_BindingDB_Experimental")
-pred <- file.path(raw, "04_预测靶点_MultiPredict")
+pred <- file.path(raw, "04_STP_STITCH_PharmMapper_TargetNet_BATMAN_预测靶点")
 ctdd <- file.path(raw, "05_CTD_Propofol")
 dir.create(tab, recursive = TRUE, showWarnings = FALSE)
 

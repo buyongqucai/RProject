@@ -7,7 +7,7 @@ suppressPackageStartupMessages({
 })
 
 root <- "E:/RProject/昱阳项目/02_差异分析与药靶断点_DEGandGate"
-raw_q <- file.path(root, "01_数据文件_Data/01_初始数据_RawInitial/02_槲皮素靶点_Quercetin")
+raw_q <- file.path(root, "01_数据文件_Data/01_初始数据_RawInitial/02_STP_槲皮素靶点_QuercetinTargets")
 tab_dir <- file.path(root, "01_数据文件_Data/02_结果数据_ResultTables")
 rep_dir <- file.path(root, "04_报告文件_Reports")
 report_sum <- "E:/RProject/昱阳项目/01_分析报告_AnalysisReport/02_阶段汇总_StageSummaries"

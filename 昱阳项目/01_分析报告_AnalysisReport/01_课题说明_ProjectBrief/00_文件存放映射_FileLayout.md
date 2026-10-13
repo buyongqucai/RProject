@@ -36,3 +36,22 @@ E:\RProject\昱阳项目/
   03_图片文件_Figures/
   04_报告文件_Reports/
 ```
+
+### 3.1 MD 模块变体（`05_分子动力学_MD`，2026-10-13）
+
+```text
+05_分子动力学_MD/
+  01_数据文件_Data/
+    01_初始数据_RawInitial/
+      {NN}_{来源}_{体系}_{PDBID}/   # 受体+对接姿态登记，每夹 DATA_SOURCE.md
+    02_结果数据_ResultTables/
+      {体系}/                       # xvg/csv 表型产物
+  02_代码文件_Code/
+  03_图片文件_Figures/
+    {体系}/{NN}_{中文}图/{NN}_{中文}_{English}.{png,svg}   # 冻结图册（MdFigureStandards）
+  04_报告文件_Reports/
+  05_工作文件_MdWork/               # GROMACS 运行工作目录（引擎原名不改；轨迹等大文件仅本地）
+```
+
+- raw 命名遵 `样例目录与命名_SampleLayoutNaming.md` §2.1（`01_PDB_受体_Receptor_1M17.pdb`、`02_AutoDock_对接姿态_QuercetinPose_EGFR.pdbqt` 等）。
+- 图片文件夹内平铺旧导出归 `99_平铺旧导出_LegacyFlat/`，不删图、不乱序。

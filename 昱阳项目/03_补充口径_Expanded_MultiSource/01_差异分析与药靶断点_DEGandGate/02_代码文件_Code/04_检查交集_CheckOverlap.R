@@ -1,5 +1,5 @@
 tab <- "E:/RProject/昱阳项目/02_差异分析与药靶断点_DEGandGate/01_数据文件_Data/02_结果数据_ResultTables"
-raw <- "E:/RProject/昱阳项目/02_差异分析与药靶断点_DEGandGate/01_数据文件_Data/01_初始数据_RawInitial/02_槲皮素靶点_Quercetin"
+raw <- "E:/RProject/昱阳项目/02_差异分析与药靶断点_DEGandGate/01_数据文件_Data/01_初始数据_RawInitial/02_STP_槲皮素靶点_QuercetinTargets"
 ov <- read.csv(file.path(tab, "09_药靶与DEG交集_QuercetinDegOverlap.csv"), stringsAsFactors = FALSE)
 cat("Mapped-ortholog overlap rows:\n")
 print(ov)

@@ -5,7 +5,7 @@ from pathlib import Path
 pred = Path(
     r"E:/RProject/昱阳项目/03_补充口径_Expanded_MultiSource/"
     r"01_差异分析与药靶断点_DEGandGate/01_数据文件_Data/"
-    r"01_初始数据_RawInitial/04_预测靶点_MultiPredict"
+    r"01_初始数据_RawInitial/04_STP_STITCH_PharmMapper_TargetNet_BATMAN_预测靶点"
 )
 url = "http://batman2api.cloudna.cn/queryTcm"
 

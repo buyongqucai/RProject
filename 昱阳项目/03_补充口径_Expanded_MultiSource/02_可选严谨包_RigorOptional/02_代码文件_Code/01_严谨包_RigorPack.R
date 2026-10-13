@@ -11,7 +11,7 @@ suppressPackageStartupMessages({
 
 arm <- "E:/RProject/昱阳项目/03_补充口径_Expanded_MultiSource"
 gate_tab <- file.path(arm, "01_差异分析与药靶断点_DEGandGate/01_数据文件_Data/02_结果数据_ResultTables")
-pred_dir <- file.path(arm, "01_差异分析与药靶断点_DEGandGate/01_数据文件_Data/01_初始数据_RawInitial/04_预测靶点_MultiPredict")
+pred_dir <- file.path(arm, "01_差异分析与药靶断点_DEGandGate/01_数据文件_Data/01_初始数据_RawInitial/04_STP_STITCH_PharmMapper_TargetNet_BATMAN_预测靶点")
 rigor_root <- file.path(arm, "02_可选严谨包_RigorOptional")
 out_tab <- file.path(rigor_root, "01_数据文件_Data/02_结果数据_ResultTables")
 out_fig <- file.path(rigor_root, "03_图片文件_Figures")
@@ -180,8 +180,8 @@ write.csv(
     item = c("PharmMapper_main", "PharmMapper_strict_audit"),
     rule = c("studySpecies_mouseORhuman_normFit>=0.6", "studySpecies_mouseORhuman_normFit>=0.8"),
     path = c(
-      "01_.../04_预测靶点_MultiPredict/04_PharmMapper_Quercetin_genes.csv",
-      "01_.../04_预测靶点_MultiPredict/_audit/04_PharmMapper_Quercetin_genes_studySpecies_normFit0.8.csv"
+      "01_.../04_STP_STITCH_PharmMapper_TargetNet_BATMAN_预测靶点/04_PharmMapper_Quercetin_genes.csv",
+      "01_.../04_STP_STITCH_PharmMapper_TargetNet_BATMAN_预测靶点/_audit/04_PharmMapper_Quercetin_genes_studySpecies_normFit0.8.csv"
     ),
     stringsAsFactors = FALSE
   ),

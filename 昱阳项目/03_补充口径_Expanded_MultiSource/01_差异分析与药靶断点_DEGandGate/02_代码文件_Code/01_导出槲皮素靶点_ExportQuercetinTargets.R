@@ -2,7 +2,7 @@
 # provenance: REAL (project cache of CompoundTargets; compound_name Quercetin)
 
 src <- "E:/RProject/努力学习项目/网络药理学/数据文件/药物成分靶点_CompoundTargets.csv"
-out_dir <- "E:/RProject/昱阳项目/02_差异分析与药靶断点_DEGandGate/01_数据文件_Data/01_初始数据_RawInitial/02_槲皮素靶点_Quercetin"
+out_dir <- "E:/RProject/昱阳项目/02_差异分析与药靶断点_DEGandGate/01_数据文件_Data/01_初始数据_RawInitial/02_STP_槲皮素靶点_QuercetinTargets"
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 dt <- read.csv(src, stringsAsFactors = FALSE, fileEncoding = "UTF-8")

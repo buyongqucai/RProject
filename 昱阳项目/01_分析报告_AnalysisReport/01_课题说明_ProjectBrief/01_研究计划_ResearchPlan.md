@@ -65,7 +65,7 @@ flowchart LR
 
 实验靶过滤（写死）：优先 binding 类；有标准值时 **≤ 10 µM**（或等价 pChEMBL）；物种优先人源再同源小鼠。
 
-预测站（补充口径目标 4–6 源，含 STP）：STP（已入库）；PharmMapper / TargetNet / BATMAN 已入库；SEA / Super-PRED 接口不可用时手工导出。**各源筛选门槛见** `03_补充口径_Expanded_MultiSource/.../04_预测靶点_MultiPredict/DATA_SOURCE.md`（PharmMapper **已采纳加宽版**：研究相关物种=小鼠∪人 ∩ Normalized Fit ≥ 0.6；≥0.8 仅作严格审计）。每源独立 CSV + 证据标签。
+预测站（补充口径目标 4–6 源，含 STP）：STP（已入库）；PharmMapper / TargetNet / BATMAN 已入库；SEA / Super-PRED 接口不可用时手工导出。**各源筛选门槛见** `03_补充口径_Expanded_MultiSource/.../04_STP_STITCH_PharmMapper_TargetNet_BATMAN_预测靶点/DATA_SOURCE.md`（PharmMapper **已采纳加宽版**：研究相关物种=小鼠∪人 ∩ Normalized Fit ≥ 0.6；≥0.8 仅作严格审计）。每源独立 CSV + 证据标签。
 
 ### 疾病基因（补充口径）
 

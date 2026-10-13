@@ -1,0 +1,6 @@
+source=E:\dock_yuyang\expanded\Hif1a_4h6j
+chains=['A', 'B']
+ligand_res=QUE
+net_charge=0
+clean=DNA/RNA+impurities+non-target HETATM dropped
+pose=Vina MODEL1 from quercetin_out.pdbqt

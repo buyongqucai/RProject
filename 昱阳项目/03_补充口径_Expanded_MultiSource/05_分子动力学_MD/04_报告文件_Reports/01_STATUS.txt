@@ -1,10 +1,1 @@
-RESUMING
-complex=3HTB (T4 lysozyme L99A/M102Q) + JZ4
-NS=100
-reached_before_stop=6.0 ns
-stop_reason=GMX_MAXBACKUP md.gro backups>5 (cpt kept)
-fix=GMX_MAXBACKUP=-1 resume from md.cpt
-CHUNK_NS=1
-MONITOR=1
-workdir=01_数据文件_Data/3HTB_JZ4_100ns
-log_wsl=~/md_runs/logs/yuyang_3HTB_JZ4_100ns.log
+RUNNING 02_AKT1_3CQW_Quercetin

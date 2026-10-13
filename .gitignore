@@ -98,8 +98,8 @@ NA
 生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/mail_auth_qr.png
 生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/test_mail_body.txt
 
-# 课题沙箱：MD 原始轨迹/运行数据仅本地保留（结果图、报告仍入库）
-昱阳项目/**/05_分子动力学_MD/01_数据文件_Data/**
+# 课题沙箱：MD 运行工作目录（轨迹/引擎文件）仅本地保留（初始数据登记、结果表、图、报告仍入库）
+昱阳项目/**/05_分子动力学_MD/05_工作文件_MdWork/**
 # 动画打包 zip 与动画目录同规（仅本地保留）
 努力学习项目/**/动画*.zip
 昱阳项目/**/动画*/**

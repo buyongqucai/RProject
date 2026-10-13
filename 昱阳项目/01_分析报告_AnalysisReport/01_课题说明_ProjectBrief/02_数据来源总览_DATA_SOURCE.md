@@ -16,9 +16,9 @@ data_provenance: REAL
 | 数据 | 路径（相对补充口径 `01_差异分析…/01_初始数据_RawInitial/`） |
 |------|------|
 | GSE106799 | `01_GEO_GSE106799/` |
-| STP 预测 | `02_槲皮素靶点_Quercetin/` + `04_预测靶点_MultiPredict/01_STP_…` |
+| STP 预测 | `02_STP_槲皮素靶点_QuercetinTargets/` + `04_STP_STITCH_PharmMapper_TargetNet_BATMAN_预测靶点/01_STP_…` |
 | ChEMBL/BindingDB | `03_ChEMBL_BindingDB_Experimental/` |
-| 多预测站槽 | `04_预测靶点_MultiPredict/`（SEA 等 MANUAL） |
+| 多预测站槽 | `04_STP_STITCH_PharmMapper_TargetNet_BATMAN_预测靶点/`（SEA 等 MANUAL） |
 | CTD propofol | `05_CTD_Propofol/` |
 | 对接配体 | `../04_分子对接_Docking/…/quercetin.pdbqt` |
 

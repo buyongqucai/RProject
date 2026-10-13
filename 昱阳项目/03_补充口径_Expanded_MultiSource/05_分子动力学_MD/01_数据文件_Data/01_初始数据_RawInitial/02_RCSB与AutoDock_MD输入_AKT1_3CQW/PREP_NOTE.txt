@@ -1,0 +1,7 @@
+source=E:\dock_yuyang\expanded\Akt1_3cqw
+chains=['A']
+ligand_res=QUE
+net_charge=0
+clean=DNA/RNA+impurities+non-target HETATM dropped
+pose=Vina MODEL1 from quercetin_out.pdbqt
+trim=dropped disconnected tail resSeq>=464 (gap 448-463 len=16 -> SOP §9.0.3 no long-gap; keep contiguous kinase domain 144-447) 2026-10-13
