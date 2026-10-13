@@ -74,7 +74,9 @@ wsl -d Ubuntu-24.04 -- bash -lc '
 
 烟测：`source ~/activate-md.sh && bash /mnt/e/md_kit/04_烟测_3HTB.sh` → 期望 `SMOKE PASS` + `CUDA acceleration`。
 
-**过程监控 / 异常即停（正式长轨迹）：** SOP §9.5.1；`CHUNK_NS=1 MONITOR=1`。飞出则停并留 `md.cpt`，**不续跑同一对接初态**；按 §9.0.1 用实验位姿重搭后排队。口袋不要撑开再对接（§9.0.1「口袋不放大」）。过程草图在 `monitor/`（非 Origin 金标）；交付图仍为样例 **01–26**。
+**过程监控 / 异常即停（正式长轨迹）：** SOP §9.5.1；`CHUNK_NS=1 MONITOR=1`。飞出则停并留 `md.cpt`，**不续跑同一对接初态**；按 §9.0.1 用实验位姿重搭后排队。口袋不要撑开再对接（§9.0.1「口袋不放大」）。过程草图在 `monitor/`（非 Origin 金标）；交付图仍为样例 **01–26**。  
+
+**过程看门狗（`MD-WATCHDOG-v1`）：** 并行盯进程/轨迹是否推进；SSOT [`文档_docs/过程看门狗_MdWatchdog.md`](文档_docs/过程看门狗_MdWatchdog.md)；`E:\md_kit\watchdogMdRun.sh` + `heartbeat.json`。
 
 ## 样例验证
 

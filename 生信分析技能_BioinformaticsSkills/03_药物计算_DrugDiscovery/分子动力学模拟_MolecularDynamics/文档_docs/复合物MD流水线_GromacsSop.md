@@ -155,7 +155,9 @@ wsl -d Ubuntu-24.04 -- bash -lc '
 
 监控 `abort` 时由 `E:\md_kit\notify_md_alert.sh` 拼装 MD 正文后调用全局 `E:\alert_kit\`（QQ SMTP `smtp.qq.com:587`）发纯文本告警。授权码只放在本地 `QQ邮箱.txt`（指针 `E:\alert_kit\qq_auth_path.txt`），脚本不回显。同一目录、同一原因只发一次。其它项目直接用 `alert_kit` / Cursor 技能 `qq-smtp-alert`。  
 
-分块 `-deffnm md` 会反复写 `md.gro`；流水线默认 `GMX_MAXBACKUP=5`（可用环境变量覆盖；`-1`=覆盖不备份）。官方默认 99 在 100×1 ns 块时会在写第 100 个 gro 备份时 Fatal——**轨迹与 `md.cpt` 往往已到终点**，用 `finalize_100ns_wrap.sh` / `trjconv -dump` 收尾，勿整段重跑（见 `终态收尾与备份上限_调研.md`）。监控忽略此类备份上限 Fatal。  
+**过程看门狗（稳定版 `MD-WATCHDOG-v1`）：** 与块间物理监控并列。详见 [`过程看门狗_MdWatchdog.md`](过程看门狗_MdWatchdog.md)；脚本 `E:\md_kit\watchdogMdRun.sh`。心跳：`workdir/monitor/heartbeat.json`；只读：`md_status.sh`。管进程死亡/轨迹停滞并发信；**不**自动续跑。  
+
+分块 `-deffnm md` 会反复写 `md.gro`；流水线默认 **`GMX_MAXBACKUP=-1`（覆盖不备份）**。旧默认 5 会在第 6 个 1 ns 块写 `md.gro` 时 Fatal，且主循环 `set -e` 会在监控/`abort()` 发信之前退出——2026-10-12 昱阳 3HTB 已踩坑并修：块前清 `#md.gro.*#`，`mdrun` 失败若判为备份上限则告警并续跑，其它失败才 `pipeline_alert`+退出。官方默认 99 在长轨迹末同样会撞上限——**轨迹与 `md.cpt` 往往仍在**，用 `finalize_100ns_wrap.sh` / `trjconv -dump` 收尾，勿整段重跑（见 `终态收尾与备份上限_调研.md`）。监控扫描 `md.log` 时仍忽略此类备份上限 Fatal。  
 
 飞出、温度、势能这些判定在监控脚本的 Python 段里，原先 `sys.exit(2)` 后直接结束，**没有调用**发信的 `abort()`。2026-10-09 ADA 约 42 ns、2026-10-10 CYP 约 1 ns 飞出因此没有邮件。根因还有一层：脚本顶部 `set -e` 时，Python `exit 2` 会在 `MON_RC=$?` 之前就整脚本退出，后面的 `abort()` 补丁仍跑不到。正确写法：Python 段外包 `set +e` … `MON_RC=$?` … `set -e`，再在 `MON_RC==2` 时调用 `abort()`。  
 

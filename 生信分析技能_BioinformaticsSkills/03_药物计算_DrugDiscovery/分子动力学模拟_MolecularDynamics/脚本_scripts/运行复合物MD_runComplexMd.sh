@@ -14,7 +14,8 @@
 #   CHUNK_NS=1          生产分块长度 ns（块间过程监控；断点 -cpi 续跑）
 #   MONITOR=1           1=每块结束后跑 过程监控_monitorMdRun.sh；异常 exit 2 即停
 #   CHECK_MMGBSA=0      传给监控：1=按间隔抽查 MM-GBSA，ΔG>0 即停
-#   GMX_MAXBACKUP=5     同名输出备份上限（默认 5；-1=覆盖不备份）。chunk 反复写 md.gro，勿用官方默认 99
+#   GMX_MAXBACKUP=-1    同名输出备份上限（默认 -1=覆盖不备份）。chunk 反复写 md.gro；
+#                       分块数>5 时切勿用 5，否则第 6 块写 gro 即 Fatal（轨迹/cpt 往往仍在）
 #   COFACTORS_PDB=      可选；ZN/CA 等 HETATM（§9.10.3 非键合 +2，晶体坐标）
 #   USE_PREBUILT_COMPLEX=0  1=已有 complex.gro+topol.top（CYP HEME tleap/ParmEd），跳过 01–03
 #   MDP_DIR=...         mdp 模板目录(默认取脚本同目录 mdp模板_mdps)
@@ -39,11 +40,34 @@ MDP_DIR=${MDP_DIR:-"$SCRIPT_DIR/mdp模板_mdps"}
 ACPYPE_BIN=${ACPYPE_BIN:-$HOME/md-venv/bin}
 # UV acpype first; AmberTools (conda md-tools) + GPU gmx must already be on PATH via ~/activate-md.sh
 export PATH="$ACPYPE_BIN:$HOME/gromacs-gpu/bin:$PATH"
-# 分块 -deffnm md 会反复写 md.gro；保留少量备份即可（续跑靠 md.cpt，不靠 #md.gro.N#）
-export GMX_MAXBACKUP="${GMX_MAXBACKUP:-5}"
+# 分块反复写 md.gro：默认覆盖不备份；续跑靠 md.cpt
+export GMX_MAXBACKUP="${GMX_MAXBACKUP:--1}"
 NDX_ARG=()   # 有金属时填 -n index.ndx，使 ZN/CA 并入 Water_and_ions 温控组
 
 log(){ echo "[$(date +%H:%M:%S)] $*"; }
+
+# 主循环/非监控路径异常也要发信（监控 abort() 管飞出；此处管 mdrun/脚本中途退出）
+pipeline_alert() {
+  local reason="$1"
+  local NOTIFY="${MD_ALERT_SH:-/mnt/e/md_kit/notify_md_alert.sh}"
+  if [[ -f "$NOTIFY" ]]; then
+    bash "$NOTIFY" "$reason" "$(pwd)" || true
+  else
+    log "WARN alert script missing: $NOTIFY (reason=$reason)"
+  fi
+}
+
+# 是否 GMX_MAXBACKUP / md.gro 备份上限 Fatal（物理未坏，可清备份续跑）
+is_gro_backup_fatal() {
+  grep -qiE 'Won.?t make more than .* backups of md\.gro|GMX_MAXBACKUP' \
+    mdrun_md.log md.log 2>/dev/null || return 1
+  return 0
+}
+
+prune_md_gro_backups() {
+  rm -f '#md.gro.'* 2>/dev/null || true
+}
+
 cd "$WORK_DIR"
 
 if [[ "$USE_PREBUILT_COMPLEX" == "1" ]]; then
@@ -383,6 +407,9 @@ if [[ "$NEED_PROD" == "1" ]]; then
       n=cs; if(n>left) n=left; printf "%d", n
     }')
     log "09 mdrun chunk ~from ${CUR} ns (+${REMAIN_STEPS} steps)"
+    # 块前清 gro 备份，避免 MAXBACKUP 在块末写 md.gro 时 Fatal（SOP：轨迹/cpt 仍在）
+    prune_md_gro_backups
+    set +e
     if [[ -f md.cpt ]]; then
       gmx mdrun -v -deffnm md -cpi md.cpt -cpo md.cpt -nsteps "$REMAIN_STEPS" \
         >> mdrun_md.log 2>&1
@@ -390,12 +417,29 @@ if [[ "$NEED_PROD" == "1" ]]; then
       gmx mdrun -v -deffnm md -cpo md.cpt -nsteps "$REMAIN_STEPS" \
         >> mdrun_md.log 2>&1
     fi
+    MDRC=$?
+    set -e
+    if [[ "$MDRC" -ne 0 ]]; then
+      if is_gro_backup_fatal; then
+        log "WARN mdrun exit=$MDRC GMX_MAXBACKUP/md.gro backups — prune + GMX_MAXBACKUP=-1, continue; cpt kept"
+        prune_md_gro_backups
+        export GMX_MAXBACKUP=-1
+        pipeline_alert "GMX_MAXBACKUP md.gro backup Fatal at ~${CUR} ns non-physics; auto-prune and continue with GMX_MAXBACKUP=-1"
+        # 本块积分往往已写完 cpt；不重跑本块步数，直接进监控/下一块
+      else
+        log "ABORT mdrun exit=$MDRC — see mdrun_md.log / md.log"
+        pipeline_alert "gmx mdrun failed exit=$MDRC at ~${CUR} ns not backup-limit; see mdrun_md.log"
+        exit "$MDRC"
+      fi
+    fi
     if [[ "$MONITOR" == "1" ]]; then
       log "09 monitor after chunk"
       LIGAND_RES="$LIGAND_RES" CHECK_MMGBSA="$CHECK_MMGBSA" \
         bash "$SCRIPT_DIR/过程监控_monitorMdRun.sh" . || {
           RC=$?
           log "ABORT monitor exit=$RC — see monitor/ABORT_REASON.txt (fix with md.cpt)"
+          # monitor 内 abort() 已尝试发信；此处再兜一层防路径缺失
+          pipeline_alert "MONITOR abort exit=$RC — see monitor/ABORT_REASON.txt"
           exit "$RC"
         }
     fi
