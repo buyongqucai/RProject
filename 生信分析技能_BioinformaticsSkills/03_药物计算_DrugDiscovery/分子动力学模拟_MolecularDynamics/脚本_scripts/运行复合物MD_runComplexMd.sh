@@ -48,6 +48,24 @@ export GMX_MAXBACKUP="${GMX_MAXBACKUP:--1}"
 NDX_ARG=()   # 有金属时填 -n index.ndx，使 ZN/CA 并入 Water_and_ions 温控组
 
 log(){ echo "[$(date +%H:%M:%S)] $*"; }
+# --- helpers (2026-10-13 fix: definitions were missing -> rc=127 at production start) ---
+prune_md_gro_backups() {
+  # clear GROMACS gro backups (#name.N# / .#name#) so chunk-end md.gro write cannot hit GMX_MAXBACKUP Fatal
+  find . -maxdepth 1 \( -name '#*.gro.*#' -o -name '.#*.gro.*#' -o -name '#*.gro#' \) -delete 2>/dev/null || true
+}
+is_gro_backup_fatal() {
+  # backup-limit Fatal only (do not match generic GROMACS 'backup' reminder quotes)
+  grep -q 'GMX_MAXBACKUP controls this maximum' mdrun_md.log 2>/dev/null
+}
+pipeline_alert() {
+  local msg="$1" cand
+  for cand in "$SCRIPT_DIR/../环境安装_EnvSetup/notify_md_alert.sh" "${MD_ALERT_SH:-}" /mnt/e/md_kit/notify_md_alert.sh; do
+    if [[ -n "$cand" && -f "$cand" ]]; then
+      bash "$cand" "$(pwd)" --phase will_retry "$msg" || true
+      break
+    fi
+  done
+}
 fail_setup() {
   local reason="$1"
   mkdir -p monitor

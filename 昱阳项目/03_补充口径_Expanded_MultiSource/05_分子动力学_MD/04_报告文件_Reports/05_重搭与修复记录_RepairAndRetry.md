@@ -34,3 +34,13 @@
 - SRC（B 类修复后）**已过 pdb2gmx 与接触门禁**（pose contact 0.202 nm），进入生产段；HIF1A 排在其后。
 - 19:59 轮的即时失败均带 `SKIPPED.txt`，重 prep 时已清除；`queue_yuyang_dock_md.sh` 增加命令行体系过滤参数，第二轮仅跑 01/02/03（`yuyang_queue_retry2.log`）。
 - QQ 告警脚本路径问题（WSL 传 `/mnt/e/...` 给 `send_alert.ps1` 的 `-File`）待修，见 `E:\md_kit\notify_md_alert.sh`。
+
+## 5. 第三轮：脚本缺陷修复与结构修剪（同日）
+
+| 问题 | 定位 | 处置 |
+|------|------|------|
+| 生产段一启动即 rc=127（SRC 20:08 实测） | `运行复合物MD_runComplexMd.sh` 调用了未定义的 `prune_md_gro_backups`（连带 `is_gro_backup_fatal`、`pipeline_alert` 也无定义）——拉取版本的脚本缺陷 | 三函数补定义（备份清理 / 仅匹配 `GMX_MAXBACKUP controls this maximum` 的备份上限 Fatal / 告警不中断）；`bash -n` 通过；同时停掉旧进程防热改脚本错位 |
+| EGFR 缺口门禁 `EXCLUDE: long_gap chain A 965-976 len=12` | 1M17 链 A 主域 672–964 与游离尾段 977–995 之间缺 12 残基 | 同 AKT1：修剪游离尾段（resSeq ≥ 977），保留连续激酶域 672–964（293 残基） |
+| GSK3B 结构检查 | 链 A 35–386 / 链 B 35–384 均连续无缺口 | 无需修剪；仅姿态 bug（§4）已修 |
+
+- 第三轮队列（20:23 起）：全 5 体系顺序执行（EGFR MODEL2 → AKT1 修剪版 → GSK3B MODEL3 → SRC → HIF1A），日志 `~/md_runs/logs/yuyang_queue_retry.log`。
