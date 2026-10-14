@@ -92,9 +92,22 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 
 <h2 id="s-dock">分子对接</h2>
 <p>对接配对不再沿用旧版手挑代谢物–基因表。先取三源核心 C=F∩M∩D（|C|=78），再用预登记有害小分子暴露物（TMAO、p-甲酚硫酸盐、硫酸吲哚酚、脱氧胆酸、石胆酸）的 CTD 策展靶点硬剔除得工作宇宙 C*（|ToxHard|=27，|C*|=51；LPS/H₂S 不整片删 C）。随后在 C* 上按 STRING（score≥0.9）取枢纽靶点 Top 8（本轮：PCNA、DNMT1、ESR2、FOS、PPARG、EZH2、TOP1、GAPDH），成分 Degree 与代谢物 Tier A* 亦只在 C* 边重算；旧对接表已归档。单位改回 Vina 主单位 kcal/mol，阈值 −5.0；每对种子 1/7/42。</p>
-<p>成分轨 8 对均值（kcal/mol）：quercetin–FOS（1A02）-8.20（通过）；Anhydroicaritin–ESR2（1L2J）-7.70（通过）；kaempferol–PPARG（1FM9）-7.30（通过）；3beta-Hydroxyurs-12-En-28-Syre–DNMT1（3EPZ）-7.20（通过）；Caffeic Acid–TOP1（1K4T）-6.27（通过）；Eucalyptol–NLRP3（7ALV）-6.07（通过）；luteolin–PCNA（1U7B）-4.60（部分通过）；Stigmasterol–NR3C2（1Y9R）-3.33（未通过）。代谢物轨 8 对：Inosine–DNMT1（3EPZ）-6.60（通过）；Phenylalanine–PPARG（1FM9）-6.30（通过）；Maltotriose–LGALS3（1KJR）-5.90（通过）；4-Hydroxyphenylacetic acid–ESR2（1L2J）-5.80（通过）；Raffinose–LGALS3（1KJR）-5.27（通过）；Maltose–LGALS3（1KJR）-5.00（通过）；Tyrosine–PCNA（1U7B）-4.30（未通过）；Butyrate–FOS（1A02）-3.63（未通过）。分数只作结合候选，不作疗效或拮抗。</p>
-<p>与已完成的分子动力学对照：正式 MD 体系为色氨酸–MMP9（4H3X）与腺苷–ADA（7RTG，A2）；本轮 C* 终筛 16 对在配体与基因上均无重合，故不能把既有 MD 轨迹直接接到本轮对接结论。</p>
+<p>成分轨 8 对均值（kcal/mol，三种子 1/7/42；来源 <code>06_分子对接/结果文件/数据文件/对接/成分对接汇总.csv</code>）：quercetin–FOS（1A02）-8.20（通过）；Anhydroicaritin–ESR2（1L2J）-7.70（通过）；kaempferol–PPARG（1FM9）-7.30（通过）；3beta-Hydroxyurs-12-En-28-Syre–DNMT1（3EPZ）-7.20（通过）；Eucalyptol–NLRP3（7ALV）-6.07（通过）；Caffeic Acid–TOP1（1K4T）-5.50（通过）；luteolin–PCNA（1U7B）-4.60（部分通过，1/3 种子达阈）；Stigmasterol–NR3C2（1Y9R）-3.33（未通过）。代谢物轨 8 对（来源 <code>06_分子对接/结果文件/数据文件/对接/代谢物对接汇总.csv</code>）：Inosine–DNMT1（3EPZ）-6.60（通过）；Phenylalanine–PPARG（1FM9）-6.30（通过）；Maltotriose–LGALS3（1KJR）-5.90（通过）；4-Hydroxyphenylacetic acid–ESR2（1L2J）-5.80（通过）；Raffinose–LGALS3（1KJR）-5.27（通过）；Maltose–LGALS3（1KJR）-5.00（通过）；Tyrosine–PCNA（1U7B）-4.30（未通过）；Butyrate–FOS（1A02）-3.30（未通过）。分数只作结合候选排序，不作疗效、拮抗或结合证实。</p>
+<p>图 15 把 C* 终筛 16 对（成分轨 8 对、代谢物轨 8 对）的三种子均值结合能排成热图，单位 kcal/mol、越负越强。最负一格为 quercetin–FOS（1A02）-8.20，其次 Anhydroicaritin–ESR2（1L2J）-7.70 与 Inosine–DNMT1（3EPZ）-6.60；最弱一侧为 Stigmasterol–NR3C2（1Y9R）-3.33 与 Butyrate–FOS（1A02）-3.30。未达 −5.0 kcal/mol 阈值的有 3 对（Tyrosine–PCNA -4.30、Butyrate–FOS -3.30、Stigmasterol–NR3C2 -3.33），luteolin–PCNA（-4.60）仅 1/3 种子达阈。</p>
 <figure><img src='../图片文件/dock.png' alt=''/><figcaption><b>图 15.</b> C* 后成分/代谢物对接亲和力热图（kcal/mol，越负越强）。</figcaption></figure>
+
+<h3 id="s-dock-md">对接筛选 → 分子动力学验证</h3>
+<p>进入 100 ns 分子动力学的三组组合如下。对接结合能仅用于候选排序与 −5.0 kcal/mol 准入，不作结合证实；MD 只检验该姿态在本窗口内的持续性。</p>
+<table>
+<tr><th>MD 体系</th><th>配体 × 受体</th><th>受体 PDB / 口袋</th><th>对接结合能（mean ± SD，kcal/mol）</th></tr>
+<tr><td><code>FOS_quercetin_1A02</code></td><td>槲皮素 × FOS</td><td>1A02（盲对接，几何中心）</td><td>-8.20 ± 0.00</td></tr>
+<tr><td><code>MMP9_Tryptophan_4H3X</code></td><td>色氨酸 × MMP9</td><td>4H3X（center-from:10B）</td><td>-8.91 ± 0.02</td></tr>
+<tr><td><code>ADA_Adenosine_7RTG_A2</code></td><td>腺苷 × ADA</td><td>7RTG（A2；center-from:ZN）</td><td>-6.28 ± 0.01</td></tr>
+</table>
+<p><b>FOS×槲皮素（1A02）：</b>对接筛选取 C* 成分轨最强对 quercetin–FOS（1A02，盲对接几何中心；种子 1/7/42 均 -8.20 kcal/mol，均值 -8.20 ± 0.00，通过 -5.0 阈值），以该对接姿态进入 100 ns MD。验证（0–100 ns）：骨架 RMSD 均值 0.5868 nm、最大 0.9242 nm，蛋白–配体最小镜像距离全程 0.1423–0.2966 nm（未分离）；但配体相对链 N 贴面滑移最大 2.7351 nm（t≈97.53 ns），是否仍在原结合口袋待人工复核。单条轨迹窗口统计，未含熵、无重复轨迹，仅探索性；不写成原位稳定结合，更不写成结合证实。</p>
+<p><b>MMP9×色氨酸（4H3X）：</b>对接筛选取代谢物批次最强对色氨酸–MMP9（4H3X，口袋 center-from:10B；三种子 -8.906/-8.884/-8.929，均值 -8.91 ± 0.02 kcal/mol；同配体在 1GKD 共晶口袋 -8.37 ± 0.02 为结构对照），以 4H3X 对接姿态进入 100 ns MD。验证（0–100 ns）：骨架 RMSD 均值 0.2116 nm（最大 0.2805 nm），COM 0.858–1.052 nm，氢键均值 3.32 条，窗口内未见持续漂移或飞出。结论同口径：单条轨迹窗口描述性统计，未含熵、无重复轨迹，仅探索性，不作长期稳定结合或结合证实。</p>
+<p><b>ADA×腺苷（7RTG A2）：</b>对接筛选中腺苷–ADA 两个结构均过阈：3IAR 共晶口袋 -6.59 ± 0.01 kcal/mol、7RTG（center-from:ZN）-6.28 ± 0.01 kcal/mol；MD 初态取 7RTG（Zn 位点、A2 链，配体由 3IAR 脱氧腺苷导出）。验证（0–100 ns）：骨架 RMSD 均值 0.1521 nm（最大 0.2024 nm），COM 0.602–0.886 nm，氢键均值 2.26 条，窗口内平稳。结论口径同上：仅本窗口描述性统计，未含熵、无重复轨迹，探索性。</p>
+<p>本轮 C* 终筛 16 对中仅 quercetin–FOS（1A02）与已完成 MD 重合；ADA×腺苷与 MMP9×色氨酸来自归档前代谢物对接批次，不属本轮 C* 终筛 16 对。数字来源：<code>06_分子对接/结果文件/数据文件/对接/成分对接汇总.csv</code>、<code>代谢物对接汇总.csv</code>；代谢物批次 <code>交付文件/06_分子对接/结果文件/数据文件/对接/对接汇总.csv</code>、<code>对接全表.csv</code>（同数见 <code>06_分子对接/结果文件/报告文件/报告_Phase5_分子对接.md</code>）。</p>
 <h2 id='s-geo'>GEO 外部一致性</h2>
 
 <p>图 16 是 GSE92415（GPL13158）火山图：横轴为 UC（n=87）相对 Healthy（n=21）的 logFC，纵轴 −log₁₀(P)。该队列同时用于后续 panel 定向，故其 AUC 有乐观偏倚。</p>
@@ -110,93 +123,114 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <figure><img src='../图片文件/geo_auc.png' alt=''/><figcaption><b>图 19.</b> AUC 森林图。0.995 与 0.993。</figcaption></figure>
 
 <h2 id="s-md">分子动力学</h2>
-<p>下列 MD 基于<strong>归档前</strong>对接最强体系进入；与 2026-10-12 起 C* 定稿对接对无配体–基因重合，叙事上二者并列、不互相改挂。对接最强三对进入 MD。正式交付为色氨酸–MMP9（4H3X）与腺苷–ADA_A2（7RTG）；空口袋 ADA 对照约 42 ns 飞出、吲哚–CYP1A1 约 1 ns 飞出后取消，不附图充数。稳定/质控图按图册 01–12；自由能只纳入重绘后的 <b>3D 形貌 17–20</b>（漏斗+底板，已删除旧 2D FEL 与未重绘 3D），图源链到 <code>08_分子动力学/结果文件/图片文件/分子动力学图_MD/</code>。</p>
+<p>三套体系均为分子对接组合的显式溶剂分子动力学，生产段各 100.000 ns（GROMACS 2024.4；体系构建、平衡与监控门禁见方法版 08）。按类别分：<b>FOS×槲皮素（1A02）</b>为活性成分轨，即本篇对接节 C* 成分轨 quercetin–FOS（1A02）组合（三种子均值 −8.20 kcal/mol，通过）；<b>ADA×腺苷（7RTG A2）</b>与<b>MMP9×色氨酸（4H3X）</b>为代谢物轨，来自归档前代谢物对接批次（色氨酸–MMP9 4H3X -8.91 ± 0.02、腺苷–ADA 7RTG -6.28 ± 0.01 kcal/mol，衔接叙事见对接节「对接筛选 → 分子动力学验证」）。此前「已完成 MD 与 C* 终筛对接无重合」的表述以本节与对接节为准。下述统计由 pandas 对 <code>E:\Origin_Data\&lt;体系&gt;\</code> 各指标 CSV（<code>RMSD_backbone.csv</code>、<code>RMSD_protein_ligand_complex.csv</code>、<code>Rg.csv</code>、<code>SASA.csv</code>、<code>COM_distance.csv</code>、<code>HBonds_protein_ligand.csv</code>）在 0–100 ns 全程计算 mean/max/min。<b>FOS 体系数字为 2026-10-14 PBC 成像伪影更正后的重算值</b>（多链复合物整体成像 + 参考帧取成像后首帧，见方法版 08 与异常知识库案例 01）。每体系给出稳定段图册 01–07 与自由能形貌 13–20（2D/3D 成对）；平衡段质控 08–12 存于模块图册；<b>21–26（MM-GBSA 21–24、快照 25、LigPlot 26）未跑，待补</b>。</p>
+<h3 id='md-FOS_quercetin_1A02'>FOS×槲皮素（FOS_quercetin_1A02，1A02）</h3>
+<p>图 20–34 为 FOS×槲皮素（1A02，活性成分轨）的正式出图（图册 01–07 与 13–20）。生产段完成 100.000 ns（0–100 ns，10001 帧）。本体系为三链蛋白复合物（拓扑链 N/F/J + 槲皮素；385 个 Cα 残基；体系内无核酸链，2026-10-14 自拓扑与残基名核实）。早先导出的合并 RMSD/COM/Rg/RMSF 序列存在<b>分析端 PBC 成像伪影</b>（t=0 处骨架 RMSD 即 3.7421 nm，物理上不可能），2026-10-14 已按异常知识库案例 01 口径重算：trjconv -pbc mol 逐分子完整 → -pbc cluster（聚类组 Protein_LIG）整体成像 → 参考帧取成像后首帧。更正后本窗口骨架 RMSD 均值 0.5868 nm、最大 0.9242 nm（旧伪影值 3.9367/5.4726 nm）；蛋白/复合物 RMSD 最大 1.0349/1.0413 nm；Rg 均值 2.4574 nm（旧 3.0116 nm 含跨镜像虚高）；RMSF 均值 0.2870 nm（旧 2.4708 nm）。PBC 免疫指标：蛋白–配体最小镜像距离全程 0.1423–0.2966 nm（均值 0.1850，从未分离；1 ns 步长抽检 0.1494–0.2567 nm，与 2026-10-13 验证一致）；配体自 RMSD 最大 0.1681 nm（刚性完好；抽检 0.059 nm 同源一致）；逐链骨架自 RMSD（链内 Kabsch 自拟合）链 N 均值 0.3407/最大 0.5505、链 F 0.9172/1.2335、链 J 0.7399/1.5047 nm，无展开。配体仅与链 N 接触（对链 F/J 最小距离 0.75–5.8 nm），但相对链 N 的位移均值 0.9606 nm、最大 2.7351 nm（t≈97.53 ns），在约 21–24、55–57、63–65 与 91–98 ns 分段平滑增大，属贴面滑移而非跨镜像跳变；是否仍在原结合口袋需人工复核（快照 25 待补）。图册 21–26（MM-GBSA 21–24、快照 25、LigPlot 26）未跑：<b>待补</b>。</p>
+<p>图 20 为 FOS×槲皮素（1A02） 的骨架 RMSD。横轴为时间（ns），纵轴为蛋白骨架 RMSD（nm）。0–100 ns 全程均值 0.5868 nm，最大 0.9242 nm（t≈83.77 ns），最小 0.0000 nm（参考帧=成像后首帧）。曲线在约 10 ns 后维持 0.4–0.9 nm 平台，未见持续上漂；该序列为整体成像+参考帧修正后的合并骨架 RMSD，已去除旧版 3.74–5.47 nm 的成像伪影。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/01_骨架RMSD图/01_骨架RMSD_RmsdBackbone.png" alt=""/><figcaption><b>图 20.</b> FOS×槲皮素（1A02） · 骨架 RMSD（图册 01；2026-10-14 PBC 更正后数据）。</figcaption></figure>
+<p>图 21 为 FOS×槲皮素（1A02） 的三线 RMSD。同图叠画 Protein、Ligand 与 Complex 三条曲线：横轴为时间（ns），纵轴为 RMSD（nm）。Protein 均值 0.6802 nm、最大 1.0349 nm；Complex 均值 0.6842 nm、最大 1.0413 nm；Ligand（拟合骨架后计算配体）均值 1.0384 nm、最大 2.8040 nm（t≈97.53 ns）。Protein 与 Complex 两线贴合，整体与骨架形变同量级；Ligand 线在约 21–24、55–57、63–65、91–98 ns 分段抬升，反映配体相对骨架贴面滑移，须与图 26 的最小镜像距离对照读：全程未分离。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/02_三线RMSD图/02_三线RMSD_RmsdProteinLigandComplex.png" alt=""/><figcaption><b>图 21.</b> FOS×槲皮素（1A02） · 三线 RMSD（图册 02；PBC 更正后数据）。</figcaption></figure>
+<p>图 22 为 FOS×槲皮素（1A02） 的 Cα RMSF。横轴为残基编号（140–678，共 385 个残基），纵轴为 Cα RMSF（nm）。重算后全程均值 0.2870 nm，最大 2.0509 nm 位于残基 267；峰值对应柔性环或末端，核区明显更低。原导出值（均值 2.4708 nm、最大 5.3086 nm）含同一成像伪影，已更正为与另两套体系同量级；该图用于定位柔性，不单独证明结合。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/03_残基RMSF图/03_残基RMSF_RmsfCalpha.png" alt=""/><figcaption><b>图 22.</b> FOS×槲皮素（1A02） · Cα RMSF（图册 03；PBC 更正后数据）。</figcaption></figure>
+<p>图 23 为 FOS×槲皮素（1A02） 的蛋白–配体氢键数。横轴为时间（ns），纵轴为每帧氢键条数。全程均值 1.78 条，最大 6 条，最小 0 条；87.6% 的帧至少 1 条氢键，≥2 条的帧占 53.8%。该序列与成像口径无关（2026-10-14 复算一致），逐帧计数只反映接触时有时无，不能写成稳定占据率。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/04_氢键数图/04_氢键数_HbondNum.png" alt=""/><figcaption><b>图 23.</b> FOS×槲皮素（1A02） · 氢键数（图册 04）。</figcaption></figure>
+<p>图 24 为 FOS×槲皮素（1A02） 的回旋半径 Rg。横轴为时间（ns），纵轴为 Rg（nm）。重算后全程均值 2.4574 nm，最大 2.5778 nm，最小 2.3615 nm，极差 0.2163 nm；曲线落在 2.36–2.58 nm 窄带内，整体紧实度在本窗口内平稳。原导出值（均值 3.0116 nm、极差 1.8163 nm）含跨镜像虚高，已更正。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/05_回旋半径图/05_回旋半径_RadiusGyration.png" alt=""/><figcaption><b>图 24.</b> FOS×槲皮素（1A02） · 回旋半径 Rg（图册 05；PBC 更正后数据）。</figcaption></figure>
+<p>图 25 为 FOS×槲皮素（1A02） 的溶剂可及表面积 SASA。横轴为时间（ns），纵轴为 SASA（nm²）。全程均值 246.36 nm²，最大 263.10 nm²，最小 231.47 nm²。SASA 在 231.47–263.10 nm² 间波动；该序列对成像不敏感（2026-10-14 复算与原值一致），未见持续抬升。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/06_溶剂可及表面积图/06_溶剂可及表面积_Sasa.png" alt=""/><figcaption><b>图 25.</b> FOS×槲皮素（1A02） · SASA（图册 06）。</figcaption></figure>
+<p>图 26 为 FOS×槲皮素（1A02） 的蛋白–配体最小镜像距离（图册 07；图名沿用 FROZEN 版式「质心距离 ComDistance」，纵轴数据已按 PBC 免疫口径换为 gmx mindist）。横轴为时间（ns），纵轴为最小镜像距离（nm）。全程均值 0.1850 nm，最大 0.2966 nm（t≈65.57 ns），最小 0.1423 nm；曲线全程贴在 0.14–0.30 nm 接触距离，从未分离（旧合并 COM 序列跨镜像虚高至 4.028 nm，已更正、不再采用）。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/07_质心距离图/07_质心距离_ComDistance.png" alt=""/><figcaption><b>图 26.</b> FOS×槲皮素（1A02） · 质心距离 COM（图册 07；数据为最小镜像距离，PBC 免疫）。</figcaption></figure>
+<p>图 27 为 FOS×槲皮素（1A02） 的二维自由能形貌（骨架 RMSD×Rg）。横轴为骨架 RMSD（0.000–0.924 nm），纵轴为 Rg（2.362–2.578 nm）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于骨架 RMSD≈0.67 nm、Rg≈2.42 nm；ΔG≤2 kJ/mol 的采样区为骨架 RMSD 0.28–0.75 nm、Rg 2.39–2.51 nm。该形貌由 PBC 更正后的序列重建，只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/13_自由能形貌图/13_自由能形貌_FreeEnergyLandscape.png" alt=""/><figcaption><b>图 27.</b> FOS×槲皮素（1A02） · FEL 2D（骨架 RMSD×Rg）（图册 13；重建）。</figcaption></figure>
+<p>图 28 为 FOS×槲皮素（1A02） 的三维自由能形貌（骨架 RMSD×Rg）。底面两轴为骨架 RMSD（0.000–0.924 nm）与 Rg（2.362–2.578 nm），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 27 同位（骨架 RMSD≈0.67 nm、Rg≈2.42 nm）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/14_自由能形貌3D图/14_自由能形貌3D_FreeEnergyLandscape3D.png" alt=""/><figcaption><b>图 28.</b> FOS×槲皮素（1A02） · FEL 3D（骨架 RMSD×Rg）（图册 14；重建）。</figcaption></figure>
+<p>图 29 为 FOS×槲皮素（1A02） 的二维自由能形貌（骨架 RMSD×最小镜像距离）。横轴为骨架 RMSD（0.000–0.924 nm），纵轴为蛋白–配体最小镜像距离（0.142–0.297 nm；图样轴标沿用 FROZEN 版式「COM (nm)」）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于骨架 RMSD≈0.67 nm、距离≈0.17 nm；ΔG≤2 kJ/mol 的采样区为骨架 RMSD 0.56–0.78 nm、距离 0.16–0.18 nm。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/15_自由能形貌RMSDx质心图/15_自由能形貌RMSDx质心_FreeEnergyRmsdCom.png" alt=""/><figcaption><b>图 29.</b> FOS×槲皮素（1A02） · FEL 2D（骨架 RMSD×COM）（图册 15；纵轴数据为最小镜像距离，重建）。</figcaption></figure>
+<p>图 30 为 FOS×槲皮素（1A02） 的三维自由能形貌（骨架 RMSD×最小镜像距离）。底面两轴为骨架 RMSD（0.000–0.924 nm）与最小镜像距离（0.142–0.297 nm），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 29 同位（骨架 RMSD≈0.67 nm、距离≈0.17 nm）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/16_自由能形貌3D_RMSDx质心图/16_自由能形貌3D_RMSDx质心_FreeEnergyRmsdCom3D.png" alt=""/><figcaption><b>图 30.</b> FOS×槲皮素（1A02） · FEL 3D（骨架 RMSD×COM）（图册 16；重建）。</figcaption></figure>
+<p>图 31 为 FOS×槲皮素（1A02） 的二维自由能形貌（骨架 RMSD×SASA）。横轴为骨架 RMSD（0.000–0.924 nm），纵轴为 SASA（231.47–263.10 nm²）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于骨架 RMSD≈0.66 nm、SASA≈241.65 nm²；ΔG≤2 kJ/mol 的采样区为骨架 RMSD 0.36–0.77 nm、SASA 237.90–252.38 nm²。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/17_自由能形貌RMSDxSASA图/17_自由能形貌RMSDxSASA_FreeEnergyRmsdSasa.png" alt=""/><figcaption><b>图 31.</b> FOS×槲皮素（1A02） · FEL 2D（骨架 RMSD×SASA）（图册 17；重建）。</figcaption></figure>
+<p>图 32 为 FOS×槲皮素（1A02） 的三维自由能形貌（骨架 RMSD×SASA）。底面两轴为骨架 RMSD（0.000–0.924 nm）与 SASA（231.47–263.10 nm²），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 31 同位（骨架 RMSD≈0.66 nm、SASA≈241.65 nm²）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/18_自由能形貌3D_RMSDxSASA图/18_自由能形貌3D_RMSDxSASA_FreeEnergyRmsdSasa3D.png" alt=""/><figcaption><b>图 32.</b> FOS×槲皮素（1A02） · FEL 3D（骨架 RMSD×SASA）（图册 18；重建）。</figcaption></figure>
+<p>图 33 为 FOS×槲皮素（1A02） 的二维自由能形貌（蛋白 RMSD×配体 RMSD）。横轴为蛋白 RMSD（0.000–1.035 nm），纵轴为配体 RMSD（0.000–2.804 nm）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于蛋白 RMSD≈0.77 nm、配体 RMSD≈0.62 nm；ΔG≤2 kJ/mol 的采样区为蛋白 RMSD 0.40–0.84 nm、配体 RMSD 0.29–1.95 nm（覆盖贴面滑移区）。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/19_自由能形貌配体蛋白RMSD图/19_自由能形貌配体蛋白RMSD_FreeEnergyLigandProteinRmsd.png" alt=""/><figcaption><b>图 33.</b> FOS×槲皮素（1A02） · FEL 2D（蛋白 RMSD×配体 RMSD）（图册 19；重建）。</figcaption></figure>
+<p>图 34 为 FOS×槲皮素（1A02） 的三维自由能形貌（蛋白 RMSD×配体 RMSD）。底面两轴为蛋白 RMSD（0.000–1.035 nm）与配体 RMSD（0.000–2.804 nm），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 33 同位（蛋白 RMSD≈0.77 nm、配体 RMSD≈0.62 nm）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/FOS_quercetin_1A02/20_自由能形貌3D_配体蛋白RMSD图/20_自由能形貌3D_配体蛋白RMSD_FreeEnergyLigandProteinRmsd3D.png" alt=""/><figcaption><b>图 34.</b> FOS×槲皮素（1A02） · FEL 3D（蛋白 RMSD×配体 RMSD）（图册 20；重建）。</figcaption></figure>
+<p>图册 21–24（MM-GBSA 分解/标注柱/残基贡献）、25（轨迹快照）、26（LigPlot 二维相互作用）未跑：<b>待补</b>。</p>
 
-<h3 id='md-MMP9_Tryptophan_4H3X'>色氨酸–MMP9（4H3X）</h3>
-<p>色氨酸–MMP9（4H3X） 生产段完成 100.000 ns。末段监控：骨架 RMSD 最大 0.2805147 nm，配体 RMSD 最大 0.2325846 nm，COM 最大 1.052 nm。下列为该体系正式出图：01–12 与重绘 3D FEL（17–20）。旧 2D FEL（13–16）与未重绘 3D 已自论文版移除。</p>
-<p>图 20 为色氨酸–MMP9（4H3X）的骨架 RMSD。横轴为时间（ns），纵轴为蛋白骨架 RMSD（nm）。色氨酸–MMP9（4H3X） 生产段 100.000 ns；监控骨架 RMSD 最大 0.2805147 nm。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/01_骨架RMSD图/01_骨架RMSD_RmsdBackbone.png' alt=''/><figcaption><b>图 20.</b> 色氨酸–MMP9（4H3X） · 骨架 RMSD（图册 01）。</figcaption></figure>
-<p>图 21 为色氨酸–MMP9（4H3X）的三线 RMSD。同图叠蛋白、配体与复合物 RMSD：横轴时间（ns），纵轴 RMSD（nm）。色氨酸–MMP9（4H3X） 配体 RMSD 最大 0.2325846 nm，与骨架曲线对照看是配体晃动还是整体漂移。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/02_三线RMSD图/02_三线RMSD_RmsdProteinLigandComplex.png' alt=''/><figcaption><b>图 21.</b> 色氨酸–MMP9（4H3X） · 三线 RMSD（图册 02）。</figcaption></figure>
-<p>图 22 为色氨酸–MMP9（4H3X）的Cα RMSF。横轴为残基编号，纵轴为 Cα RMSF（nm）。峰值标出柔性环/末端；核区应明显更低。色氨酸–MMP9（4H3X） 用于定位柔性，不单独证明结合。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/03_残基RMSF图/03_残基RMSF_RmsfCalpha.png' alt=''/><figcaption><b>图 22.</b> 色氨酸–MMP9（4H3X） · Cα RMSF（图册 03）。</figcaption></figure>
-<p>图 23 为色氨酸–MMP9（4H3X）的氢键数。横轴时间（ns），纵轴为蛋白–配体氢键条数。波动表示接触时有时无；不能把单帧氢键写成稳定占用率。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/04_氢键数图/04_氢键数_HbondNum.png' alt=''/><figcaption><b>图 23.</b> 色氨酸–MMP9（4H3X） · 氢键数（图册 04）。</figcaption></figure>
-<p>图 24 为色氨酸–MMP9（4H3X）的回旋半径 Rg。横轴时间（ns），纵轴 Rg（nm）。平台表示整体紧实度未失控膨胀。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/05_回旋半径图/05_回旋半径_RadiusGyration.png' alt=''/><figcaption><b>图 24.</b> 色氨酸–MMP9（4H3X） · 回旋半径 Rg（图册 05）。</figcaption></figure>
-<p>图 25 为色氨酸–MMP9（4H3X）的SASA。横轴时间（ns），纵轴溶剂可及表面积（nm²）。大幅持续上升才提示暴露异常。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/06_溶剂可及表面积图/06_溶剂可及表面积_Sasa.png' alt=''/><figcaption><b>图 25.</b> 色氨酸–MMP9（4H3X） · SASA（图册 06）。</figcaption></figure>
-<p>图 26 为色氨酸–MMP9（4H3X）的质心距离 COM。横轴时间（ns），纵轴蛋白–配体质心距离（nm）。色氨酸–MMP9（4H3X） COM 最大 1.052 nm；持续拉到数纳米才属飞出。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/07_质心距离图/07_质心距离_ComDistance.png' alt=''/><figcaption><b>图 26.</b> 色氨酸–MMP9（4H3X） · 质心距离 COM（图册 07）。</figcaption></figure>
-<p>图 27 为色氨酸–MMP9（4H3X）的NVT 温度。平衡段质控：横轴时间，纵轴温度（K）。看恒温器是否把体系拉在设定附近，不是生物学结论。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/08_NVT温度图/08_NVT温度_NvtTemperature.png' alt=''/><figcaption><b>图 27.</b> 色氨酸–MMP9（4H3X） · NVT 温度（图册 08）。</figcaption></figure>
-<p>图 28 为色氨酸–MMP9（4H3X）的NPT 温度。NPT 段温度–时间曲线，读法同 NVT：质控平台，不作结合结论。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/09_NPT温度图/09_NPT温度_NptTemperature.png' alt=''/><figcaption><b>图 28.</b> 色氨酸–MMP9（4H3X） · NPT 温度（图册 09）。</figcaption></figure>
-<p>图 29 为色氨酸–MMP9（4H3X）的NPT 压力。NPT 段压力–时间；允许噪声，关注是否发散。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/10_NPT压力图/10_NPT压力_NptPressure.png' alt=''/><figcaption><b>图 29.</b> 色氨酸–MMP9（4H3X） · NPT 压力（图册 10）。</figcaption></figure>
-<p>图 30 为色氨酸–MMP9（4H3X）的NPT 密度。NPT 段密度–时间；应落到合理溶剂密度平台。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/11_NPT密度图/11_NPT密度_NptDensity.png' alt=''/><figcaption><b>图 30.</b> 色氨酸–MMP9（4H3X） · NPT 密度（图册 11）。</figcaption></figure>
-<p>图 31 为色氨酸–MMP9（4H3X）的生产势能。生产段势能–时间；用于排除能量发散，不读成结合自由能。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/12_生产势能图/12_生产势能_MdPotential.png' alt=''/><figcaption><b>图 31.</b> 色氨酸–MMP9（4H3X） · 生产势能（图册 12）。</figcaption></figure>
-
-
-
-
-<p>图 32 为色氨酸–MMP9（4H3X）的FEL 3D（RMSD×Rg）。三维自由能形貌曲面（与图种 13 同投影网格）：底面两轴为 RMSD 与 Rg，高度/颜色为相对自由能（显示封顶约定见 MD 出图规范）。漏斗+底板投影用于看盆地深浅，仍不是实验结合自由能。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/17_自由能形貌3D图/17_自由能形貌3D_FreeEnergyLandscape3D.png' alt=''/><figcaption><b>图 32.</b> 色氨酸–MMP9（4H3X） · FEL 3D（RMSD×Rg）（图册 17）。</figcaption></figure>
-<p>图 33 为色氨酸–MMP9（4H3X）的FEL 3D（RMSD×COM）。三维 FEL：投影为 RMSD×质心距离，曲面高度为相对自由能。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/18_自由能形貌3D_RMSDx质心图/18_自由能形貌3D_RMSDx质心_FreeEnergyRmsdCom3D.png' alt=''/><figcaption><b>图 33.</b> 色氨酸–MMP9（4H3X） · FEL 3D（RMSD×COM）（图册 18）。</figcaption></figure>
-<p>图 34 为色氨酸–MMP9（4H3X）的FEL 3D（RMSD×SASA）。三维 FEL：投影为 RMSD×SASA。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/19_自由能形貌3D_RMSDxSASA图/19_自由能形貌3D_RMSDxSASA_FreeEnergyRmsdSasa3D.png' alt=''/><figcaption><b>图 34.</b> 色氨酸–MMP9（4H3X） · FEL 3D（RMSD×SASA）（图册 19）。</figcaption></figure>
-<p>图 35 为色氨酸–MMP9（4H3X）的FEL 3D（配体×蛋白 RMSD）。三维 FEL：投影为配体 RMSD×蛋白 RMSD。色氨酸–MMP9（4H3X）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/20_自由能形貌3D_配体蛋白RMSD图/20_自由能形貌3D_配体蛋白RMSD_FreeEnergyLigandProteinRmsd3D.png' alt=''/><figcaption><b>图 35.</b> 色氨酸–MMP9（4H3X） · FEL 3D（配体×蛋白 RMSD）（图册 20）。</figcaption></figure>
-<h3 id='md-ADA_Adenosine_7RTG_A2'>腺苷–ADA_A2（7RTG）</h3>
-<p>腺苷–ADA_A2（7RTG） 生产段完成 100.000 ns。末段监控：骨架 RMSD 最大 0.2023644 nm，配体 RMSD 最大 0.5247688 nm，COM 最大 0.886 nm。下列为该体系正式出图：01–12 与重绘 3D FEL（17–20）。旧 2D FEL（13–16）与未重绘 3D 已自论文版移除。</p>
-<p>图 32 为腺苷–ADA_A2（7RTG）的骨架 RMSD。横轴为时间（ns），纵轴为蛋白骨架 RMSD（nm）。腺苷–ADA_A2（7RTG） 生产段 100.000 ns；监控骨架 RMSD 最大 0.2023644 nm。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/01_骨架RMSD图/01_骨架RMSD_RmsdBackbone.png' alt=''/><figcaption><b>图 36.</b> 腺苷–ADA_A2（7RTG） · 骨架 RMSD（图册 01）。</figcaption></figure>
-<p>图 33 为腺苷–ADA_A2（7RTG）的三线 RMSD。同图叠蛋白、配体与复合物 RMSD：横轴时间（ns），纵轴 RMSD（nm）。腺苷–ADA_A2（7RTG） 配体 RMSD 最大 0.5247688 nm，与骨架曲线对照看是配体晃动还是整体漂移。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/02_三线RMSD图/02_三线RMSD_RmsdProteinLigandComplex.png' alt=''/><figcaption><b>图 37.</b> 腺苷–ADA_A2（7RTG） · 三线 RMSD（图册 02）。</figcaption></figure>
-<p>图 34 为腺苷–ADA_A2（7RTG）的Cα RMSF。横轴为残基编号，纵轴为 Cα RMSF（nm）。峰值标出柔性环/末端；核区应明显更低。腺苷–ADA_A2（7RTG） 用于定位柔性，不单独证明结合。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/03_残基RMSF图/03_残基RMSF_RmsfCalpha.png' alt=''/><figcaption><b>图 38.</b> 腺苷–ADA_A2（7RTG） · Cα RMSF（图册 03）。</figcaption></figure>
-<p>图 35 为腺苷–ADA_A2（7RTG）的氢键数。横轴时间（ns），纵轴为蛋白–配体氢键条数。波动表示接触时有时无；不能把单帧氢键写成稳定占用率。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/04_氢键数图/04_氢键数_HbondNum.png' alt=''/><figcaption><b>图 39.</b> 腺苷–ADA_A2（7RTG） · 氢键数（图册 04）。</figcaption></figure>
-<p>图 32 为腺苷–ADA_A2（7RTG）的回旋半径 Rg。横轴时间（ns），纵轴 Rg（nm）。平台表示整体紧实度未失控膨胀。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/05_回旋半径图/05_回旋半径_RadiusGyration.png' alt=''/><figcaption><b>图 40.</b> 腺苷–ADA_A2（7RTG） · 回旋半径 Rg（图册 05）。</figcaption></figure>
-<p>图 33 为腺苷–ADA_A2（7RTG）的SASA。横轴时间（ns），纵轴溶剂可及表面积（nm²）。大幅持续上升才提示暴露异常。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/06_溶剂可及表面积图/06_溶剂可及表面积_Sasa.png' alt=''/><figcaption><b>图 41.</b> 腺苷–ADA_A2（7RTG） · SASA（图册 06）。</figcaption></figure>
-<p>图 34 为腺苷–ADA_A2（7RTG）的质心距离 COM。横轴时间（ns），纵轴蛋白–配体质心距离（nm）。腺苷–ADA_A2（7RTG） COM 最大 0.886 nm；持续拉到数纳米才属飞出。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/07_质心距离图/07_质心距离_ComDistance.png' alt=''/><figcaption><b>图 42.</b> 腺苷–ADA_A2（7RTG） · 质心距离 COM（图册 07）。</figcaption></figure>
-<p>图 35 为腺苷–ADA_A2（7RTG）的NVT 温度。平衡段质控：横轴时间，纵轴温度（K）。看恒温器是否把体系拉在设定附近，不是生物学结论。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/08_NVT温度图/08_NVT温度_NvtTemperature.png' alt=''/><figcaption><b>图 43.</b> 腺苷–ADA_A2（7RTG） · NVT 温度（图册 08）。</figcaption></figure>
-<p>图 32 为腺苷–ADA_A2（7RTG）的NPT 温度。NPT 段温度–时间曲线，读法同 NVT：质控平台，不作结合结论。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/09_NPT温度图/09_NPT温度_NptTemperature.png' alt=''/><figcaption><b>图 44.</b> 腺苷–ADA_A2（7RTG） · NPT 温度（图册 09）。</figcaption></figure>
-<p>图 33 为腺苷–ADA_A2（7RTG）的NPT 压力。NPT 段压力–时间；允许噪声，关注是否发散。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/10_NPT压力图/10_NPT压力_NptPressure.png' alt=''/><figcaption><b>图 45.</b> 腺苷–ADA_A2（7RTG） · NPT 压力（图册 10）。</figcaption></figure>
-<p>图 34 为腺苷–ADA_A2（7RTG）的NPT 密度。NPT 段密度–时间；应落到合理溶剂密度平台。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/11_NPT密度图/11_NPT密度_NptDensity.png' alt=''/><figcaption><b>图 46.</b> 腺苷–ADA_A2（7RTG） · NPT 密度（图册 11）。</figcaption></figure>
-<p>图 35 为腺苷–ADA_A2（7RTG）的生产势能。生产段势能–时间；用于排除能量发散，不读成结合自由能。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/12_生产势能图/12_生产势能_MdPotential.png' alt=''/><figcaption><b>图 47.</b> 腺苷–ADA_A2（7RTG） · 生产势能（图册 12）。</figcaption></figure>
-
-
-
-
-<p>图 32 为腺苷–ADA_A2（7RTG）的FEL 3D（RMSD×Rg）。三维自由能形貌曲面（与图种 13 同投影网格）：底面两轴为 RMSD 与 Rg，高度/颜色为相对自由能（显示封顶约定见 MD 出图规范）。漏斗+底板投影用于看盆地深浅，仍不是实验结合自由能。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/17_自由能形貌3D图/17_自由能形貌3D_FreeEnergyLandscape3D.png' alt=''/><figcaption><b>图 48.</b> 腺苷–ADA_A2（7RTG） · FEL 3D（RMSD×Rg）（图册 17）。</figcaption></figure>
-<p>图 33 为腺苷–ADA_A2（7RTG）的FEL 3D（RMSD×COM）。三维 FEL：投影为 RMSD×质心距离，曲面高度为相对自由能。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/18_自由能形貌3D_RMSDx质心图/18_自由能形貌3D_RMSDx质心_FreeEnergyRmsdCom3D.png' alt=''/><figcaption><b>图 49.</b> 腺苷–ADA_A2（7RTG） · FEL 3D（RMSD×COM）（图册 18）。</figcaption></figure>
-<p>图 34 为腺苷–ADA_A2（7RTG）的FEL 3D（RMSD×SASA）。三维 FEL：投影为 RMSD×SASA。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/19_自由能形貌3D_RMSDxSASA图/19_自由能形貌3D_RMSDxSASA_FreeEnergyRmsdSasa3D.png' alt=''/><figcaption><b>图 50.</b> 腺苷–ADA_A2（7RTG） · FEL 3D（RMSD×SASA）（图册 19）。</figcaption></figure>
-<p>图 35 为腺苷–ADA_A2（7RTG）的FEL 3D（配体×蛋白 RMSD）。三维 FEL：投影为配体 RMSD×蛋白 RMSD。腺苷–ADA_A2（7RTG）。</p>
-<figure><img src='../../../08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/20_自由能形貌3D_配体蛋白RMSD图/20_自由能形貌3D_配体蛋白RMSD_FreeEnergyLigandProteinRmsd3D.png' alt=''/><figcaption><b>图 51.</b> 腺苷–ADA_A2（7RTG） · FEL 3D（配体×蛋白 RMSD）（图册 20）。</figcaption></figure>
-
-<div class="note">吲哚–CYP1A1 已 CANCELLED（配体 RMSD 最大 9.624 nm），不放入正文图册。自由能形貌（2D/3D）只描述采样偏好，禁止写成实验结合自由能或长期稳定结合。</div>
-
+<h3 id='md-ADA_Adenosine_7RTG_A2'>ADA×腺苷（ADA_Adenosine_7RTG_A2，7RTG A2）</h3>
+<p>图 35–49 为 ADA×腺苷（ADA_Adenosine_7RTG_A2，7RTG A2，代谢物轨）的正式出图（图册 01–07 与 13–20）。生产段完成 100.000 ns。本窗口骨架 RMSD 均值 0.1521 nm、最大 0.2024 nm；配体 RMSD 均值 0.3636 nm、最大 0.5248 nm（t≈57.07 ns）；COM 均值 0.7085 nm、最大 0.886 nm；Rg 均值 1.9588 nm；SASA 均值 155.59 nm²；氢键均值 2.26 条（≥1 条的帧占 99.7%）。</p>
+<p>图 35 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的骨架 RMSD。横轴为时间（ns），纵轴为蛋白骨架 RMSD（nm）。0–100 ns 全程均值 0.1521 nm，最大 0.2024 nm，最小 0.0005 nm（10001 帧）。曲线自 t=0 上升后在均值 0.1521 nm 附近波动，本窗口内无持续单调上漂。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/01_骨架RMSD图/01_骨架RMSD_RmsdBackbone.png" alt=""/><figcaption><b>图 35.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · 骨架 RMSD（图册 01）。</figcaption></figure>
+<p>图 36 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的三线 RMSD。同图叠画 Protein、Ligand 与 Complex 三条曲线：横轴为时间（ns），纵轴为 RMSD（nm）。配体 RMSD 均值 0.3636 nm、最大 0.5248 nm、最小 0.0005 nm；蛋白 RMSD 均值 0.2077 nm、最大 0.2568 nm；复合物 RMSD 均值 0.2092 nm、最大 0.2579 nm。配体曲线（最大 0.5248 nm，t≈57.07 ns）高于蛋白曲线（最大 0.2568 nm），差距属配体局部晃动相对整体漂移的幅度差别，未达持续数纳米的飞出量级。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/02_三线RMSD图/02_三线RMSD_RmsdProteinLigandComplex.png" alt=""/><figcaption><b>图 36.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · 三线 RMSD（图册 02）。</figcaption></figure>
+<p>图 37 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的 Cα RMSF。横轴为残基编号（5–353，共 349 个残基），纵轴为 Cα RMSF（nm）。全程均值 0.0811 nm，最大 0.3671 nm 位于残基 192；峰值对应柔性环或末端，核区明显更低。该图用于定位柔性，不单独证明结合。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/03_残基RMSF图/03_残基RMSF_RmsfCalpha.png" alt=""/><figcaption><b>图 37.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · Cα RMSF（图册 03）。</figcaption></figure>
+<p>图 38 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的蛋白–配体氢键数。横轴为时间（ns），纵轴为每帧氢键条数。全程均值 2.26 条，最大 8 条，最小 0 条；99.7% 的帧至少 1 条氢键，≥2 条的帧占 77.3%。逐帧计数只反映接触时有时无，不能写成稳定占据率。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/04_氢键数图/04_氢键数_HbondNum.png" alt=""/><figcaption><b>图 38.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · 氢键数（图册 04）。</figcaption></figure>
+<p>图 39 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的回旋半径 Rg。横轴为时间（ns），纵轴为 Rg（nm）。全程均值 1.9588 nm，最大 1.9860 nm，最小 1.9111 nm，极差 0.0749 nm。Rg 全程落在 1.9111–1.9860 nm 窄带内，整体紧实度在本窗口内平稳。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/05_回旋半径图/05_回旋半径_RadiusGyration.png" alt=""/><figcaption><b>图 39.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · 回旋半径 Rg（图册 05）。</figcaption></figure>
+<p>图 40 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的溶剂可及表面积 SASA。横轴为时间（ns），纵轴为 SASA（nm²）。全程均值 155.59 nm²，最大 165.28 nm²，最小 138.12 nm²。SASA 落在 138.12–165.28 nm² 区间，未见持续抬升。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/06_溶剂可及表面积图/06_溶剂可及表面积_Sasa.png" alt=""/><figcaption><b>图 40.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · SASA（图册 06）。</figcaption></figure>
+<p>图 41 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的蛋白–配体质心距离 COM。横轴为时间（ns），纵轴为 COM（nm）。全程均值 0.7085 nm，最大 0.886 nm（t≈23.39 ns），最小 0.602 nm。COM 维持 0.602–0.886 nm，未出现持续拉到数纳米的飞出。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/07_质心距离图/07_质心距离_ComDistance.png" alt=""/><figcaption><b>图 41.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · 质心距离 COM（图册 07）。</figcaption></figure>
+<p>图 42 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的二维自由能形貌（骨架 RMSD×Rg）。横轴为 骨架 RMSD（0.000–0.202 nm），纵轴为 Rg（1.911–1.986 nm）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于 骨架 RMSD≈0.158 nm、Rg≈1.96 nm；ΔG≤2 kJ/mol 的采样区为 骨架 RMSD 0.15–0.17 nm、Rg 1.95–1.97 nm。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/13_自由能形貌图/13_自由能形貌_FreeEnergyLandscape.png" alt=""/><figcaption><b>图 42.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · FEL 2D（骨架 RMSD×Rg）（图册 13）。</figcaption></figure>
+<p>图 43 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的三维自由能形貌（骨架 RMSD×Rg）。底面两轴为 骨架 RMSD（0.000–0.202 nm）与 Rg（1.911–1.986 nm），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 42 同位（骨架 RMSD≈0.158 nm、Rg≈1.96 nm）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/14_自由能形貌3D图/14_自由能形貌3D_FreeEnergyLandscape3D.png" alt=""/><figcaption><b>图 43.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · FEL 3D（骨架 RMSD×Rg）（图册 14）。</figcaption></figure>
+<p>图 44 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的二维自由能形貌（骨架 RMSD×COM）。横轴为 骨架 RMSD（0.000–0.202 nm），纵轴为 COM（0.602–0.886 nm）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于 骨架 RMSD≈0.158 nm、COM≈0.70 nm；ΔG≤2 kJ/mol 的采样区为 骨架 RMSD 0.15–0.17 nm、COM 0.67–0.73 nm。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/15_自由能形貌RMSDx质心图/15_自由能形貌RMSDx质心_FreeEnergyRmsdCom.png" alt=""/><figcaption><b>图 44.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · FEL 2D（骨架 RMSD×COM）（图册 15）。</figcaption></figure>
+<p>图 45 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的三维自由能形貌（骨架 RMSD×COM）。底面两轴为 骨架 RMSD（0.000–0.202 nm）与 COM（0.602–0.886 nm），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 44 同位（骨架 RMSD≈0.158 nm、COM≈0.70 nm）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/16_自由能形貌3D_RMSDx质心图/16_自由能形貌3D_RMSDx质心_FreeEnergyRmsdCom3D.png" alt=""/><figcaption><b>图 45.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · FEL 3D（骨架 RMSD×COM）（图册 16）。</figcaption></figure>
+<p>图 46 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的二维自由能形貌（骨架 RMSD×SASA）。横轴为 骨架 RMSD（0.000–0.202 nm），纵轴为 SASA（138.12–165.28 nm²）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于 骨架 RMSD≈0.158 nm、SASA≈156.53 nm²；ΔG≤2 kJ/mol 的采样区为 骨架 RMSD 0.15–0.17 nm、SASA 153.77–158.83 nm²。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/17_自由能形貌RMSDxSASA图/17_自由能形貌RMSDxSASA_FreeEnergyRmsdSasa.png" alt=""/><figcaption><b>图 46.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · FEL 2D（骨架 RMSD×SASA）（图册 17）。</figcaption></figure>
+<p>图 47 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的三维自由能形貌（骨架 RMSD×SASA）。底面两轴为 骨架 RMSD（0.000–0.202 nm）与 SASA（138.12–165.28 nm²），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 46 同位（骨架 RMSD≈0.158 nm、SASA≈156.53 nm²）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/18_自由能形貌3D_RMSDxSASA图/18_自由能形貌3D_RMSDxSASA_FreeEnergyRmsdSasa3D.png" alt=""/><figcaption><b>图 47.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · FEL 3D（骨架 RMSD×SASA）（图册 18）。</figcaption></figure>
+<p>图 48 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的二维自由能形貌（蛋白 RMSD×配体 RMSD）。横轴为 蛋白 RMSD（0.001–0.257 nm），纵轴为 配体 RMSD（0.000–0.525 nm）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于 蛋白 RMSD≈0.213 nm、配体 RMSD≈0.43 nm；ΔG≤2 kJ/mol 的采样区为 蛋白 RMSD 0.20–0.22 nm、配体 RMSD 0.39–0.45 nm。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/19_自由能形貌配体蛋白RMSD图/19_自由能形貌配体蛋白RMSD_FreeEnergyLigandProteinRmsd.png" alt=""/><figcaption><b>图 48.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · FEL 2D（蛋白 RMSD×配体 RMSD）（图册 19）。</figcaption></figure>
+<p>图 49 为 ADA×腺苷（ADA_Adenosine_7RTG_A2） 的三维自由能形貌（蛋白 RMSD×配体 RMSD）。底面两轴为 蛋白 RMSD（0.001–0.257 nm）与 配体 RMSD（0.000–0.525 nm），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 48 同位（蛋白 RMSD≈0.213 nm、配体 RMSD≈0.43 nm）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/ADA_Adenosine_7RTG_A2/20_自由能形貌3D_配体蛋白RMSD图/20_自由能形貌3D_配体蛋白RMSD_FreeEnergyLigandProteinRmsd3D.png" alt=""/><figcaption><b>图 49.</b> ADA×腺苷（ADA_Adenosine_7RTG_A2） · FEL 3D（蛋白 RMSD×配体 RMSD）（图册 20）。</figcaption></figure>
+<p>图册 21–24（MM-GBSA 分解/标注柱/残基贡献）、25（轨迹快照）、26（LigPlot 二维相互作用）未跑：<b>待补</b>。</p>
+<h3 id='md-MMP9_Tryptophan_4H3X'>MMP9×色氨酸（MMP9_Tryptophan_4H3X，4H3X）</h3>
+<p>图 50–64 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X，4H3X，代谢物轨）的正式出图（图册 01–07 与 13–20）。生产段完成 100.000 ns。本窗口骨架 RMSD 均值 0.2116 nm、最大 0.2805 nm；配体 RMSD 均值 0.1195 nm、最大 0.2326 nm（t≈4.50 ns）；COM 均值 0.9457 nm、最大 1.052 nm；Rg 均值 1.5255 nm；SASA 均值 90.05 nm²；氢键均值 3.32 条（≥1 条的帧占 99.7%，≥2 条的帧占 97.2%）。</p>
+<p>图 50 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的骨架 RMSD。横轴为时间（ns），纵轴为蛋白骨架 RMSD（nm）。0–100 ns 全程均值 0.2116 nm，最大 0.2805 nm，最小 0.0005 nm（10001 帧）。曲线自 t=0 升至 0.2 nm 附近后波动（均值 0.2116 nm），本窗口内无持续单调上漂。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/01_骨架RMSD图/01_骨架RMSD_RmsdBackbone.png" alt=""/><figcaption><b>图 50.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · 骨架 RMSD（图册 01）。</figcaption></figure>
+<p>图 51 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的三线 RMSD。同图叠画 Protein、Ligand 与 Complex 三条曲线：横轴为时间（ns），纵轴为 RMSD（nm）。配体 RMSD 均值 0.1195 nm、最大 0.2326 nm、最小 0.0006 nm；蛋白 RMSD 均值 0.2741 nm、最大 0.3350 nm；复合物 RMSD 均值 0.2729 nm、最大 0.3336 nm。配体曲线（最大 0.2326 nm）低于蛋白与复合物曲线（最大 0.3350 / 0.3336 nm），配体晃动幅度小于骨架漂移。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/02_三线RMSD图/02_三线RMSD_RmsdProteinLigandComplex.png" alt=""/><figcaption><b>图 51.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · 三线 RMSD（图册 02）。</figcaption></figure>
+<p>图 52 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的 Cα RMSF。横轴为残基编号（106–269，共 164 个残基），纵轴为 Cα RMSF（nm）。全程均值 0.1112 nm，最大 0.4303 nm 位于残基 174；峰值对应柔性环或末端，核区明显更低。该图用于定位柔性，不单独证明结合。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/03_残基RMSF图/03_残基RMSF_RmsfCalpha.png" alt=""/><figcaption><b>图 52.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · Cα RMSF（图册 03）。</figcaption></figure>
+<p>图 53 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的蛋白–配体氢键数。横轴为时间（ns），纵轴为每帧氢键条数。全程均值 3.32 条，最大 6 条，最小 0 条；99.7% 的帧至少 1 条氢键，≥2 条的帧占 97.2%。逐帧计数只反映接触时有时无，不能写成稳定占据率。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/04_氢键数图/04_氢键数_HbondNum.png" alt=""/><figcaption><b>图 53.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · 氢键数（图册 04）。</figcaption></figure>
+<p>图 54 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的回旋半径 Rg。横轴为时间（ns），纵轴为 Rg（nm）。全程均值 1.5255 nm，最大 1.5549 nm，最小 1.4930 nm，极差 0.0619 nm。Rg 全程落在 1.4930–1.5549 nm 窄带内，整体紧实度在本窗口内平稳。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/05_回旋半径图/05_回旋半径_RadiusGyration.png" alt=""/><figcaption><b>图 54.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · 回旋半径 Rg（图册 05）。</figcaption></figure>
+<p>图 55 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的溶剂可及表面积 SASA。横轴为时间（ns），纵轴为 SASA（nm²）。全程均值 90.05 nm²，最大 98.62 nm²，最小 83.18 nm²。SASA 落在 83.18–98.62 nm² 区间，未见持续抬升。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/06_溶剂可及表面积图/06_溶剂可及表面积_Sasa.png" alt=""/><figcaption><b>图 55.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · SASA（图册 06）。</figcaption></figure>
+<p>图 56 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的蛋白–配体质心距离 COM。横轴为时间（ns），纵轴为 COM（nm）。全程均值 0.9457 nm，最大 1.052 nm（t≈57.08 ns），最小 0.858 nm。COM 维持 0.858–1.052 nm，未出现持续拉到数纳米的飞出。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/07_质心距离图/07_质心距离_ComDistance.png" alt=""/><figcaption><b>图 56.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · 质心距离 COM（图册 07）。</figcaption></figure>
+<p>图 57 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的二维自由能形貌（骨架 RMSD×Rg）。横轴为 骨架 RMSD（0.001–0.281 nm），纵轴为 Rg（1.493–1.555 nm）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于 骨架 RMSD≈0.243 nm、Rg≈1.53 nm；ΔG≤2 kJ/mol 的采样区为 骨架 RMSD 0.19–0.25 nm、Rg 1.52–1.54 nm。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/13_自由能形貌图/13_自由能形貌_FreeEnergyLandscape.png" alt=""/><figcaption><b>图 57.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · FEL 2D（骨架 RMSD×Rg）（图册 13）。</figcaption></figure>
+<p>图 58 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的三维自由能形貌（骨架 RMSD×Rg）。底面两轴为 骨架 RMSD（0.001–0.281 nm）与 Rg（1.493–1.555 nm），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 57 同位（骨架 RMSD≈0.243 nm、Rg≈1.53 nm）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/14_自由能形貌3D图/14_自由能形貌3D_FreeEnergyLandscape3D.png" alt=""/><figcaption><b>图 58.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · FEL 3D（骨架 RMSD×Rg）（图册 14）。</figcaption></figure>
+<p>图 59 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的二维自由能形貌（骨架 RMSD×COM）。横轴为 骨架 RMSD（0.001–0.281 nm），纵轴为 COM（0.858–1.052 nm）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于 骨架 RMSD≈0.238 nm、COM≈0.95 nm；ΔG≤2 kJ/mol 的采样区为 骨架 RMSD 0.19–0.25 nm、COM 0.92–0.98 nm。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/15_自由能形貌RMSDx质心图/15_自由能形貌RMSDx质心_FreeEnergyRmsdCom.png" alt=""/><figcaption><b>图 59.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · FEL 2D（骨架 RMSD×COM）（图册 15）。</figcaption></figure>
+<p>图 60 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的三维自由能形貌（骨架 RMSD×COM）。底面两轴为 骨架 RMSD（0.001–0.281 nm）与 COM（0.858–1.052 nm），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 59 同位（骨架 RMSD≈0.238 nm、COM≈0.95 nm）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/16_自由能形貌3D_RMSDx质心图/16_自由能形貌3D_RMSDx质心_FreeEnergyRmsdCom3D.png" alt=""/><figcaption><b>图 60.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · FEL 3D（骨架 RMSD×COM）（图册 16）。</figcaption></figure>
+<p>图 61 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的二维自由能形貌（骨架 RMSD×SASA）。横轴为 骨架 RMSD（0.001–0.281 nm），纵轴为 SASA（83.18–98.62 nm²）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于 骨架 RMSD≈0.238 nm、SASA≈90.51 nm²；ΔG≤2 kJ/mol 的采样区为 骨架 RMSD 0.19–0.25 nm、SASA 87.89–92.60 nm²。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/17_自由能形貌RMSDxSASA图/17_自由能形貌RMSDxSASA_FreeEnergyRmsdSasa.png" alt=""/><figcaption><b>图 61.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · FEL 2D（骨架 RMSD×SASA）（图册 17）。</figcaption></figure>
+<p>图 62 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的三维自由能形貌（骨架 RMSD×SASA）。底面两轴为 骨架 RMSD（0.001–0.281 nm）与 SASA（83.18–98.62 nm²），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 61 同位（骨架 RMSD≈0.238 nm、SASA≈90.51 nm²）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/18_自由能形貌3D_RMSDxSASA图/18_自由能形貌3D_RMSDxSASA_FreeEnergyRmsdSasa3D.png" alt=""/><figcaption><b>图 62.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · FEL 3D（骨架 RMSD×SASA）（图册 18）。</figcaption></figure>
+<p>图 63 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的二维自由能形貌（蛋白 RMSD×配体 RMSD）。横轴为 蛋白 RMSD（0.001–0.335 nm），纵轴为 配体 RMSD（0.001–0.233 nm）；Viridis 色阶为相对自由能 ΔG（kJ/mol，网格最低点记 0）。本窗口最低盆地位于 蛋白 RMSD≈0.295 nm、配体 RMSD≈0.12 nm；ΔG≤2 kJ/mol 的采样区为 蛋白 RMSD 0.26–0.31 nm、配体 RMSD 0.10–0.14 nm。该形貌只描述本窗口采样偏好，不是实验结合自由能，不作能垒解读。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/19_自由能形貌配体蛋白RMSD图/19_自由能形貌配体蛋白RMSD_FreeEnergyLigandProteinRmsd.png" alt=""/><figcaption><b>图 63.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · FEL 2D（蛋白 RMSD×配体 RMSD）（图册 19）。</figcaption></figure>
+<p>图 64 为 MMP9×色氨酸（MMP9_Tryptophan_4H3X） 的三维自由能形貌（蛋白 RMSD×配体 RMSD）。底面两轴为 蛋白 RMSD（0.001–0.335 nm）与 配体 RMSD（0.001–0.233 nm），曲面高度与颜色为相对自由能（Jet，ΔG 显示封顶 20 kJ/mol），漏斗+底板投影用于比较盆地深浅。最低盆地与图 63 同位（蛋白 RMSD≈0.295 nm、配体 RMSD≈0.12 nm）。仍不是实验结合自由能。</p>
+<figure><img src="file:///E:/RProject/努力学习项目/08_分子动力学/结果文件/图片文件/分子动力学图_MD/MMP9_Tryptophan_4H3X/20_自由能形貌3D_配体蛋白RMSD图/20_自由能形貌3D_配体蛋白RMSD_FreeEnergyLigandProteinRmsd3D.png" alt=""/><figcaption><b>图 64.</b> MMP9×色氨酸（MMP9_Tryptophan_4H3X） · FEL 3D（蛋白 RMSD×配体 RMSD）（图册 20）。</figcaption></figure>
+<p>图册 21–24（MM-GBSA 分解/标注柱/残基贡献）、25（轨迹快照）、26（LigPlot 二维相互作用）未跑：<b>待补</b>。</p>
+<div class="note"><b>解读口径（全节）：</b>上列数字均为 0–100 ns <b>单条</b>生产轨迹的窗口内描述性统计。<b>未含熵修正</b>（MM-GBSA 图册 21–24 本身即不含熵，且未跑、待补）；<b>无重复轨迹</b>；<b>结论限于探索性</b>。要形成可发表的结合稳定性判断，需 ≥100 ns 且多条重复轨迹并加熵修正；本节未达该门槛。禁止写成发表级 ΔG、长期稳定结合或 FEL 能垒；自由能形貌只描述本窗口采样偏好。FOS×槲皮素（1A02）的分析端 PBC 成像伪影已于 2026-10-14 更正（合并骨架 RMSD 由伪影的 3.74–5.47 nm 重算为 ≤0.9242 nm；旧配体 RMSD 11.9605 nm、旧 COM 4.028 nm 同属伪影，废弃不用）：物理上配体全程与链 N 保持原子接触（mindist 0.1423–0.2966 nm，从未分离）、配体刚性完好（自 RMSD ≤0.1681 nm）、逐链骨架稳定（自 RMSD ≤1.5047 nm）；但配体相对链 N 贴面滑移最大 2.7351 nm，<b>不得写成原位稳定结合</b>，位点归属需人工复核（快照 25 待补）。此前 ADA 空口袋对照（约 42 ns 中止）与吲哚–CYP1A1（约 1 ns 中止后取消）不进入正文图册（书面记录见 <code>08_分子动力学</code> 下 <code>报告_正式MD_100ns.md</code>）。</div>
 
 <h2 id="s-disc">讨论边界</h2>
-<div class="take"><b>支持写到：</b>主面板 H+M 下 C=78；Tier A 72；对接 Top3 为结合候选；MMP9 与 ADA_A2 在监控内完成 100 ns，并具备完整 01–20 图册（含 3D FEL）；GEO 方向一致与高 AUC。</div>
+<div class="take"><b>支持写到：</b>主面板 H+M 下 C=78；Tier A 72；对接过阈组合为结合候选（结合能仅作排序与准入）；三套 MD 体系（FOS×槲皮素、ADA×腺苷、MMP9×色氨酸）在监控内完成 100 ns，并具备完整 01–20 图册（含 2D/3D FEL；21–26 待补）；GEO 方向一致与高 AUC。</div>
 <div class="note"><b>不支持写到：</b>疗效；复方降低代谢物；对接分=实验 Kd；FEL/MD=结合自由能；CYP 稳定；复方特异通路已定位。</div>
 <h2 id="s-mm">材料与方法（短）</h2>
-<p>库名、版本、原始/处理后路径、清洗原因、脚本与停机见方法版 01–08。锁定口径：D=1517；M=H∪(SEA∩STP)；STRING≥0.9；Vina 阈值 −20.9 kJ/mol；MD NS=100；SEA=ChEMBL 27。MD 出图遵循冻结图册 01–20（含 3D FEL）。</p>
+<p>库名、版本、原始/处理后路径、清洗原因、脚本与停机见方法版 01–08。锁定口径：D=1517；M=H∪(SEA∩STP)；STRING≥0.9；Vina 阈值 −5.0 kcal/mol（≈−20.9 kJ/mol）；MD NS=100；SEA=ChEMBL 27。MD 出图遵循冻结图册 01–20（含 3D FEL）。数据存放层级（课题交付）：<code>结果文件/{数据文件,图片文件,报告文件}/</code> 与 <code>代码文件/</code>、<code>数据文件/</code>（仅 raw）平级。</p>
 
-<p class="footer">论文版 · MD 用重绘 3D FEL · 共 51 图 · 2026-10-11</p>
+<p class="footer">论文版 · MD 三套体系 100 ns · 图册 01–20 · 共 64 图 · 2026-10-14</p>
 </main></div></body></html>
