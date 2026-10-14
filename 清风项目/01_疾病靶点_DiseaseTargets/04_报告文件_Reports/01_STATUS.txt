@@ -1,0 +1,17 @@
+01_疾病靶点_DiseaseTargets · STATUS
+更新: 2026-10-14
+
+完成:
+- 六库原始落库 (GeneCards/TTD/DrugBank/OMIM/CTD/DisGeNET空置) + UniProt reviewed 人源参考 + USER 中间表对账
+- 五库清洗合并 (脚本 02_代码文件_Code/疾病五库合并与净化_mergeDiseaseDBs.py):
+  GeneCards 9787 全量 / 4254 (Relevance>=40)；CTD MESH:D054990 过滤后 20509 行 (curated 23)；
+  OMIM 125→100、TTD 40→33、DrugBank 38
+- 主并集 4269 = GeneCards>=40 ∪ CTD_curated ∪ OMIM ∪ TTD ∪ DrugBank；全量包含于 USER 中间表 21841
+- 净化: 别名修复 6 / 排除 33 (歧义家族 7 + OMIM 表型位点 25 + 小鼠 CCL12)，全入 疾病靶点质控_DiseaseQC.csv
+
+交付 (01_数据文件_Data/02_结果数据_ResultTables/):
+- 疾病靶点按库_DiseaseGenesByDB.csv / _VennFull_DiseaseGenesByDB.csv
+- 疾病靶点合并_DiseaseGeneUnion.csv (4269)
+- 疾病靶点质控_DiseaseQC.csv
+
+待办: 图 01 疾病韦恩 (需 VennFull 五库)；DisGeNET 用户弃用保持空置

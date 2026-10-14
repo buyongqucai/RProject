@@ -1,0 +1,74 @@
+ENTRY       H01299                      Disease
+NAME        Idiopathic pulmonary fibrosis
+  SUBGROUP  Pulmonary fibrosis and/or bone marrow failure, telomere-related (PEBMFT) [DS:H02569]
+DESCRIPTION Idiopathic pulmonary fibrosis is a scarring lung disease that presents in older adults with shortness of breath and cough. Mutations in surfactant protein C (SFTPC), surfactant protein A (SFTPA), telomerase reverse transcriptase (TERT), and telomerase RNA component (TERC) have been identified in familial cases of pulmonary fibrosis. Recently, promoter variant of MUC5B was confirmed as an idiopathic pulmonary fibrosis risk variant.
+CATEGORY    Respiratory system disease
+BRITE       Human diseases in ICD-11 classification [BR:br08403]
+             12 Diseases of the respiratory system
+              Respiratory diseases principally affecting the lung interstitium
+               CB03  Idiopathic interstitial pneumonitis
+                H01299  Idiopathic pulmonary fibrosis
+GENE        (PFBMFT1) TERT [HSA:7015] [KO:K11126]
+            (PFBMFT2) TERC [HSA:7012] [KO:K22183]
+            (ILD1) SFTPA1 [HSA:653509] [KO:K10067]
+            (ILD2) SFTPA2 [HSA:729238] [KO:K10067]
+            (ILD2) MUC5B [HSA:727897] [KO:K13908]
+            SFTPC [HSA:6440] [KO:K26068]
+DRUG        Prednisolone sodium phosphate [DR:D00981]
+            Prednisone [DR:D00473]
+            Nintedanib esylate [DR:D10396]
+            Nerandomilast [DR:D12975]
+            Pirfenidone [DR:D01583]
+DBLINKS     ICD-11: CB03.4
+            OMIM: 614742 614743 619611 178500
+REFERENCE   PMID:17168848
+  AUTHORS   Heinrich S, Hartl D, Griese M
+  TITLE     Surfactant protein A--from genes to human lung diseases.
+  JOURNAL   Curr Med Chem 13:3239-52 (2006)
+            DOI:10.2174/092986706778773112
+REFERENCE   PMID:21613931
+  AUTHORS   Lawson WE, Loyd JE, Degryse AL
+  TITLE     Genetics in pulmonary fibrosis--familial cases provide clues to the pathogenesis of idiopathic pulmonary fibrosis.
+  JOURNAL   Am J Med Sci 341:439-43 (2011)
+            DOI:10.1097/MAJ.0b013e31821a9d7a
+REFERENCE   PMID:26846335
+  AUTHORS   Lehtonen ST, Veijola A, Karvonen H, Lappi-Blanco E, Sormunen R, Korpela S, Zagai U, Skold MC, Kaarteenaho R
+  TITLE     Pirfenidone and nintedanib modulate properties of fibroblasts and myofibroblasts in idiopathic pulmonary fibrosis.
+  JOURNAL   Respir Res 17:14 (2016)
+            DOI:10.1186/s12931-016-0328-5
+REFERENCE   PMID:24032382
+  AUTHORS   Travis WD, Costabel U, Hansell DM, King TE Jr, Lynch DA, Nicholson AG, Ryerson CJ, Ryu JH, Selman M, Wells AU, Behr J, Bouros D, Brown KK, Colby TV, Collard HR, Cordeiro CR, Cottin V, Crestani B, Drent M, Dudden RF, Egan J, Flaherty K, Hogaboam C, Inoue Y, Johkoh T, Kim DS, Kitaichi M, Loyd J, Martinez FJ, Myers J, Protzko S, Raghu G, Richeldi L, Sverzellati N, Swigris J, Valeyre D
+  TITLE     An official American Thoracic Society/European Respiratory Society statement: Update of the international multidisciplinary classification of the idiopathic interstitial pneumonias.
+  JOURNAL   Am J Respir Crit Care Med 188:733-48 (2013)
+            DOI:10.1164/rccm.201308-1483ST
+REFERENCE   PMID:15814878 (TERT)
+  AUTHORS   Yamaguchi H, Calado RT, Ly H, Kajigaya S, Baerlocher GM, Chanock SJ, Lansdorp PM, Young NS
+  TITLE     Mutations in TERT, the gene for telomerase reverse transcriptase, in aplastic anemia.
+  JOURNAL   N Engl J Med 352:1413-24 (2005)
+            DOI:10.1056/NEJMoa042980
+REFERENCE   PMID:12090986 (TERC)
+  AUTHORS   Vulliamy T, Marrone A, Dokal I, Mason PJ
+  TITLE     Association between aplastic anaemia and mutations in telomerase RNA.
+  JOURNAL   Lancet 359:2168-70 (2002)
+            DOI:10.1016/S0140-6736(02)09087-6
+REFERENCE   PMID:13680361 (SFTPA1)
+  AUTHORS   Selman M, Lin HM, Montano M, Jenkins AL, Estrada A, Lin Z, Wang G, DiAngelo SL, Guo X, Umstead TM, Lang CM, Pardo A, Phelps DS, Floros J
+  TITLE     Surfactant protein A and B genetic variants predispose to idiopathic pulmonary fibrosis.
+  JOURNAL   Hum Genet 113:542-50 (2003)
+            DOI:10.1007/s00439-003-1015-4
+REFERENCE   PMID:19100526 (SFTPA2)
+  AUTHORS   Wang Y, Kuan PJ, Xing C, Cronkhite JT, Torres F, Rosenblatt RL, DiMaio JM, Kinch LN, Grishin NV, Garcia CK
+  TITLE     Genetic defects in surfactant protein A2 are associated with pulmonary fibrosis and lung cancer.
+  JOURNAL   Am J Hum Genet 84:52-9 (2009)
+            DOI:10.1016/j.ajhg.2008.11.010
+REFERENCE   PMID:21506748 (MUC5B)
+  AUTHORS   Zhang Y, Noth I, Garcia JG, Kaminski N
+  TITLE     A variant in the promoter of MUC5B and idiopathic pulmonary fibrosis.
+  JOURNAL   N Engl J Med 364:1576-7 (2011)
+            DOI:10.1056/NEJMc1013504
+REFERENCE   PMID:19443464 (SFTPC)
+  AUTHORS   Guillot L, Epaud R, Thouvenin G, Jonard L, Mohsni A, Couderc R, Counil F, de Blic J, Taam RA, Le Bourgeois M, Reix P, Flamein F, Clement A, Feldmann D
+  TITLE     New surfactant protein C gene mutations associated with diffuse lung disease.
+  JOURNAL   J Med Genet 46:490-4 (2009)
+            DOI:10.1136/jmg.2009.066829
+///

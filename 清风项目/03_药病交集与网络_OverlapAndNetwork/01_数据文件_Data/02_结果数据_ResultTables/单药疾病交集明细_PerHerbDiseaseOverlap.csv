@@ -1,0 +1,825 @@
+﻿药物,Gene,疾病来源库,贡献成分
+川芎,ADRB2,GeneCards_ge40,Myricanone
+川芎,AR,GeneCards_ge40,Myricanone
+川芎,CCNA2,GeneCards_ge40,Myricanone
+川芎,CHEK1,GeneCards_ge40,Myricanone
+川芎,ESR1,GeneCards_ge40|CTD_curated,Myricanone
+川芎,ESR2,GeneCards_ge40,Myricanone
+川芎,F2,GeneCards_ge40,FA|Myricanone|Perlolyrine
+川芎,F7,GeneCards_ge40,Myricanone
+川芎,GSK3B,GeneCards_ge40,FA|Myricanone
+川芎,HSP90AA1,GeneCards_ge40,Myricanone
+川芎,KCNH2,GeneCards_ge40,Myricanone
+川芎,KDR,GeneCards_ge40,Myricanone
+川芎,MAPK14,GeneCards_ge40,Myricanone
+川芎,NOS2,GeneCards_ge40,Myricanone
+川芎,NR3C1,GeneCards_ge40|DrugBank,wallichilide
+川芎,NR3C2,GeneCards_ge40|DrugBank,sitosterol|wallichilide
+川芎,PGR,GeneCards_ge40,sitosterol
+川芎,PPARG,GeneCards_ge40|TTD,Myricanone
+川芎,PRKACA,GeneCards_ge40,Perlolyrine
+川芎,PTGS1,GeneCards_ge40,Mandenol|Myricanone
+川芎,PTGS2,GeneCards_ge40,Mandenol|Myricanone|Perlolyrine|wallichilide
+川芎,RXRA,GeneCards_ge40,Myricanone|Perlolyrine
+川芎,SCN5A,GeneCards_ge40,Myricanone
+旋覆花,ACHE,GeneCards_ge40,"3-[(3aS,4R,5R,8aR)-4-hydroxy-5,7-dimethyl-3-methylene-2-oxo-4,5,8,8a-tetrahydro-3aH-cyclohepta[b]furan-6-yl]propyl acetate|inulicin|isorhamnetin|kaempferol|quercetin"
+旋覆花,ADRA1A,GeneCards_ge40,beta-sitosterol
+旋覆花,ADRA1B,GeneCards_ge40,beta-sitosterol|kaempferol
+旋覆花,ADRB2,GeneCards_ge40,beta-sitosterol|quercetin
+旋覆花,AHR,GeneCards_ge40,kaempferol|quercetin
+旋覆花,AHSA1,GeneCards_ge40,kaempferol|quercetin
+旋覆花,AKR1C3,GeneCards_ge40,kaempferol
+旋覆花,AKT1,GeneCards_ge40,kaempferol|luteolin|quercetin
+旋覆花,AR,GeneCards_ge40,Azaleatin|Chryseriol|Patuletin|Pratensein|Tamarixetin|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,BAX,GeneCards_ge40,beta-sitosterol|kaempferol|quercetin
+旋覆花,BCL2,GeneCards_ge40,beta-sitosterol|kaempferol|quercetin
+旋覆花,BCL2L1,GeneCards_ge40,luteolin|quercetin
+旋覆花,BIRC5,GeneCards_ge40,luteolin|quercetin
+旋覆花,CASP3,GeneCards_ge40,beta-sitosterol|kaempferol|luteolin|quercetin
+旋覆花,CASP7,GeneCards_ge40,luteolin
+旋覆花,CASP8,GeneCards_ge40|OMIM,beta-sitosterol|quercetin
+旋覆花,CASP9,GeneCards_ge40,beta-sitosterol|luteolin|quercetin
+旋覆花,CAV1,GeneCards_ge40|OMIM,quercetin
+旋覆花,CCL2,GeneCards_ge40|TTD,quercetin
+旋覆花,CCNA2,GeneCards_ge40,Pratensein|isorhamnetin
+旋覆花,CCNB1,GeneCards_ge40,luteolin|quercetin
+旋覆花,CCND1,GeneCards_ge40,luteolin|quercetin
+旋覆花,CD40LG,GeneCards_ge40,luteolin|quercetin
+旋覆花,CDKN1A,GeneCards_ge40,luteolin|quercetin
+旋覆花,CHEK1,GeneCards_ge40,Chryseriol|Pratensein|Tamarixetin|isorhamnetin
+旋覆花,CHEK2,GeneCards_ge40,quercetin
+旋覆花,CHRM1,GeneCards_ge40,beta-sitosterol|kaempferol
+旋覆花,CHRM2,GeneCards_ge40,beta-sitosterol|kaempferol
+旋覆花,CHRM3,GeneCards_ge40,beta-sitosterol
+旋覆花,CHRNA7,GeneCards_ge40,beta-sitosterol
+旋覆花,CHUK,GeneCards_ge40,quercetin
+旋覆花,CLDN4,GeneCards_ge40,quercetin
+旋覆花,COL1A1,GeneCards_ge40,quercetin
+旋覆花,COL3A1,GeneCards_ge40,quercetin
+旋覆花,CTSD,GeneCards_ge40,quercetin
+旋覆花,CXCL10,GeneCards_ge40,quercetin
+旋覆花,CXCL11,GeneCards_ge40,quercetin
+旋覆花,CXCL2,GeneCards_ge40,quercetin
+旋覆花,CXCL8,GeneCards_ge40,quercetin
+旋覆花,CYP1A1,GeneCards_ge40,kaempferol|quercetin
+旋覆花,CYP1A2,GeneCards_ge40|DrugBank,kaempferol|quercetin
+旋覆花,CYP1B1,GeneCards_ge40|DrugBank,kaempferol|quercetin
+旋覆花,CYP3A4,GeneCards_ge40|DrugBank,kaempferol|quercetin
+旋覆花,DRD1,GeneCards_ge40,beta-sitosterol
+旋覆花,DUOX2,GeneCards_ge40,quercetin
+旋覆花,E2F1,GeneCards_ge40,quercetin
+旋覆花,EGF,GeneCards_ge40,quercetin
+旋覆花,EGFR,GeneCards_ge40|OMIM,luteolin|quercetin
+旋覆花,ERBB2,GeneCards_ge40|OMIM,luteolin|quercetin
+旋覆花,ERBB3,GeneCards_ge40,quercetin
+旋覆花,ESR1,GeneCards_ge40|CTD_curated,Chryseriol|Pratensein|isorhamnetin
+旋覆花,ESR2,GeneCards_ge40,Azaleatin|Pratensein|isorhamnetin
+旋覆花,F10,GeneCards_ge40,quercetin
+旋覆花,F2,GeneCards_ge40,isorhamnetin|kaempferol|quercetin
+旋覆花,F3,GeneCards_ge40,quercetin
+旋覆花,F7,GeneCards_ge40,Azaleatin|Patuletin|Tamarixetin|isorhamnetin|kaempferol|quercetin
+旋覆花,FOS,GeneCards_ge40,quercetin
+旋覆花,GABRA1,GeneCards_ge40,"3-[(3aS,4R,5R,8aR)-4-hydroxy-5,7-dimethyl-3-methylene-2-oxo-4,5,8,8a-tetrahydro-3aH-cyclohepta[b]furan-6-yl]propyl acetate|beta-sitosterol|isorhamnetin|kaempferol|quercetin"
+旋覆花,GJA1,GeneCards_ge40,quercetin
+旋覆花,GSK3B,GeneCards_ge40,Chryseriol|Pratensein|Tamarixetin|isorhamnetin
+旋覆花,GSTM1,GeneCards_ge40,kaempferol|quercetin
+旋覆花,GSTM2,GeneCards_ge40,kaempferol|quercetin
+旋覆花,GSTP1,GeneCards_ge40,kaempferol|luteolin|quercetin
+旋覆花,HAS2,GeneCards_ge40,kaempferol|quercetin
+旋覆花,HIF1A,GeneCards_ge40|CTD_curated,quercetin
+旋覆花,HMOX1,GeneCards_ge40|OMIM,kaempferol|luteolin|quercetin
+旋覆花,HSF1,GeneCards_ge40,quercetin
+旋覆花,HSP90AA1,GeneCards_ge40,Azaleatin|Chryseriol|Melilotoside|Patuletin|Pratensein|Tamarixetin|beta-sitosterol|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,HSPB1,GeneCards_ge40,quercetin
+旋覆花,ICAM1,GeneCards_ge40,kaempferol|luteolin|quercetin
+旋覆花,IFNG,GeneCards_ge40,luteolin|quercetin
+旋覆花,IGF2,GeneCards_ge40,quercetin
+旋覆花,IGFBP3,GeneCards_ge40,quercetin
+旋覆花,IKBKB,GeneCards_ge40,kaempferol
+旋覆花,IL10,GeneCards_ge40,luteolin|quercetin
+旋覆花,IL1A,GeneCards_ge40,quercetin
+旋覆花,IL1B,GeneCards_ge40,quercetin
+旋覆花,IL2,GeneCards_ge40,luteolin|quercetin
+旋覆花,IL4,GeneCards_ge40|TTD,luteolin
+旋覆花,IL6,GeneCards_ge40,luteolin|quercetin
+旋覆花,INSR,GeneCards_ge40,kaempferol|luteolin|quercetin
+旋覆花,IRF1,GeneCards_ge40|OMIM,quercetin
+旋覆花,KCNH2,GeneCards_ge40,beta-sitosterol|quercetin
+旋覆花,MAPK1,GeneCards_ge40,luteolin|quercetin
+旋覆花,MAPK14,GeneCards_ge40,Chryseriol|Pratensein|Tamarixetin|isorhamnetin
+旋覆花,MAPK8,GeneCards_ge40,kaempferol
+旋覆花,MCL1,GeneCards_ge40,luteolin
+旋覆花,MDM2,GeneCards_ge40,luteolin
+旋覆花,MET,GeneCards_ge40,luteolin
+旋覆花,MMP1,GeneCards_ge40,kaempferol|luteolin|quercetin
+旋覆花,MMP2,GeneCards_ge40,luteolin|quercetin
+旋覆花,MMP3,GeneCards_ge40|CTD_curated|TTD,quercetin
+旋覆花,MMP9,GeneCards_ge40,luteolin|quercetin
+旋覆花,MPO,GeneCards_ge40|OMIM,quercetin
+旋覆花,MYC,GeneCards_ge40,quercetin
+旋覆花,NCF1,GeneCards_ge40,isorhamnetin|quercetin
+旋覆花,NFE2L2,GeneCards_ge40,quercetin
+旋覆花,NFKBIA,GeneCards_ge40,luteolin|quercetin
+旋覆花,NOS2,GeneCards_ge40,Azaleatin|Chryseriol|Patuletin|Pratensein|Tamarixetin|isorhamnetin|kaempferol
+旋覆花,NQO1,GeneCards_ge40,quercetin
+旋覆花,NR1I2,GeneCards_ge40,kaempferol|quercetin
+旋覆花,NR3C2,GeneCards_ge40|DrugBank,Isoramanone
+旋覆花,ODC1,GeneCards_ge40,quercetin
+旋覆花,OPRM1,GeneCards_ge40,beta-sitosterol
+旋覆花,PARP1,GeneCards_ge40,quercetin
+旋覆花,PCNA,GeneCards_ge40,luteolin
+旋覆花,PGR,GeneCards_ge40,Isoramanone|beta-sitosterol|kaempferol
+旋覆花,PIK3CG,GeneCards_ge40,Azaleatin|Chryseriol|Tamarixetin|beta-sitosterol|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,PLAT,GeneCards_ge40,quercetin
+旋覆花,PLAU,GeneCards_ge40|CTD_curated,quercetin
+旋覆花,PON1,GeneCards_ge40,beta-sitosterol|quercetin
+旋覆花,POR,GeneCards_ge40,quercetin
+旋覆花,PPARA,GeneCards_ge40|TTD,quercetin
+旋覆花,PPARD,GeneCards_ge40,isorhamnetin|quercetin
+旋覆花,PPARG,GeneCards_ge40|TTD,Chryseriol|Pratensein|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,PRKACA,GeneCards_ge40,Chryseriol|Pratensein|beta-sitosterol|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,PRKCA,GeneCards_ge40,beta-sitosterol|quercetin
+旋覆花,PRKCB,GeneCards_ge40,quercetin
+旋覆花,PSMD3,GeneCards_ge40,kaempferol|quercetin
+旋覆花,PTGER3,GeneCards_ge40,quercetin
+旋覆花,PTGS1,GeneCards_ge40,Azaleatin|Chryseriol|Patuletin|Pratensein|Tamarixetin|beta-sitosterol|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,PTGS2,GeneCards_ge40,"3-[(3aS,4R,5R,8aR)-4-hydroxy-5,7-dimethyl-3-methylene-2-oxo-4,5,8,8a-tetrahydro-3aH-cyclohepta[b]furan-6-yl]propyl acetate|Azaleatin|Britanin|Chryseriol|Melilotoside|Patuletin|Pratensein|Tamarixetin|[(3aR,4R,7aR)-5-[(1S)-4-acetoxy-1-methyl-butyl]-6-methyl-3-methylene-2-oxo-3a,4,7,7a-tetrahydrobenzofuran-4-yl] acetate|beta-sitosterol|inulicin|isorhamnetin|kaempferol|luteolin|quercetin"
+旋覆花,PTPN1,GeneCards_ge40,"Melilotoside|[(3aR,4R,7aR)-5-[(1S)-4-acetoxy-1-methyl-butyl]-6-methyl-3-methylene-2-oxo-3a,4,7,7a-tetrahydrobenzofuran-4-yl] acetate|isorhamnetin"
+旋覆花,PYGM,GeneCards_ge40,isorhamnetin
+旋覆花,RAF1,GeneCards_ge40,quercetin
+旋覆花,RASA1,GeneCards_ge40,quercetin
+旋覆花,RB1,GeneCards_ge40|OMIM,luteolin|quercetin
+旋覆花,RELA,GeneCards_ge40,isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,RUNX1T1,GeneCards_ge40,quercetin
+旋覆花,RUNX2,GeneCards_ge40,quercetin
+旋覆花,RXRA,GeneCards_ge40,quercetin
+旋覆花,SCN5A,GeneCards_ge40,beta-sitosterol|quercetin
+旋覆花,SELE,GeneCards_ge40,kaempferol|quercetin
+旋覆花,SERPINE1,GeneCards_ge40,quercetin
+旋覆花,SLC2A4,GeneCards_ge40,kaempferol|luteolin|quercetin
+旋覆花,SLC6A4,GeneCards_ge40,beta-sitosterol
+旋覆花,SLPI,GeneCards_ge40,kaempferol
+旋覆花,SOD1,GeneCards_ge40,quercetin
+旋覆花,SPP1,GeneCards_ge40,quercetin
+旋覆花,STAT1,GeneCards_ge40,kaempferol|quercetin
+旋覆花,THBD,GeneCards_ge40,quercetin
+旋覆花,TNF,GeneCards_ge40|CTD_curated,kaempferol|luteolin|quercetin
+旋覆花,TOP1,GeneCards_ge40,luteolin|quercetin
+旋覆花,TOP2A,GeneCards_ge40,Patuletin|kaempferol|luteolin|quercetin
+旋覆花,TP53,GeneCards_ge40,luteolin|quercetin
+旋覆花,TYR,GeneCards_ge40,luteolin
+旋覆花,VCAM1,GeneCards_ge40,kaempferol|quercetin
+旋覆花,VEGFA,GeneCards_ge40,luteolin|quercetin
+桃仁,ADH1C,GeneCards_ge40,Sitosterol alpha1|hederagenin
+桃仁,ADRA1A,GeneCards_ge40,beta-sitosterol
+桃仁,ADRA1B,GeneCards_ge40,beta-sitosterol|hederagenin
+桃仁,ADRB2,GeneCards_ge40,beta-sitosterol|gibberellin 7
+桃仁,BAX,GeneCards_ge40,beta-sitosterol
+桃仁,BCL2,GeneCards_ge40,beta-sitosterol
+桃仁,CASP3,GeneCards_ge40,beta-sitosterol
+桃仁,CASP8,GeneCards_ge40|OMIM,beta-sitosterol
+桃仁,CASP9,GeneCards_ge40,beta-sitosterol
+桃仁,CHRM1,GeneCards_ge40,"2,3-didehydro GA70|GA120|beta-sitosterol|gibberellin 7|hederagenin"
+桃仁,CHRM2,GeneCards_ge40,GA120|GA60|beta-sitosterol|hederagenin
+桃仁,CHRM3,GeneCards_ge40,GA120|beta-sitosterol|gibberellin 7|hederagenin
+桃仁,CHRNA7,GeneCards_ge40,GA120|GA63|beta-sitosterol
+桃仁,DRD1,GeneCards_ge40,beta-sitosterol
+桃仁,F10,GeneCards_ge40,GA54
+桃仁,GABRA1,GeneCards_ge40,"2,3-didehydro GA70|2,3-didehydro GA77|GA120|GA60|GA63|GA77|Gibberellin A44|Sitosterol alpha1|beta-sitosterol|hederagenin"
+桃仁,HSP90AA1,GeneCards_ge40,3-O-p-coumaroylquinic acid|GA54|beta-sitosterol|campesterol
+桃仁,KCNH2,GeneCards_ge40,beta-sitosterol
+桃仁,NR3C2,GeneCards_ge40|DrugBank,"4a-formyl-7alpha-hydroxy-1-methyl-8-methylidene-4aalpha,4bbeta-gibbane-1alpha,10beta-dicarboxylic acid|Gibberellin A44|Sitosterol alpha1"
+桃仁,OPRM1,GeneCards_ge40,beta-sitosterol
+桃仁,PGR,GeneCards_ge40,"4a-formyl-7alpha-hydroxy-1-methyl-8-methylidene-4aalpha,4bbeta-gibbane-1alpha,10beta-dicarboxylic acid|GA121-isolactone|GA122-isolactone|Sitosterol alpha1|beta-sitosterol|campesterol|hederagenin"
+桃仁,PIK3CG,GeneCards_ge40,3-O-p-coumaroylquinic acid|beta-sitosterol|campesterol
+桃仁,PON1,GeneCards_ge40,beta-sitosterol
+桃仁,PRKACA,GeneCards_ge40,3-O-p-coumaroylquinic acid|beta-sitosterol
+桃仁,PRKCA,GeneCards_ge40,beta-sitosterol
+桃仁,PTGS1,GeneCards_ge40,"2,3-didehydro GA70|3-O-p-coumaroylquinic acid|beta-sitosterol|campesterol|hederagenin"
+桃仁,PTGS2,GeneCards_ge40,"2,3-didehydro GA70|2,3-didehydro GA77|3-O-p-coumaroylquinic acid|GA120|GA54|GA63|GA87|Sitosterol alpha1|beta-sitosterol|campesterol|gibberellin 7|hederagenin"
+桃仁,PTPN1,GeneCards_ge40,3-O-p-coumaroylquinic acid|GA54
+桃仁,RXRA,GeneCards_ge40,hederagenin
+桃仁,SCN5A,GeneCards_ge40,beta-sitosterol|hederagenin
+桃仁,SLC6A3,GeneCards_ge40,gibberellin 7
+桃仁,SLC6A4,GeneCards_ge40,beta-sitosterol|gibberellin 7
+水蛭,F10,GeneCards_ge40,Fragmin
+水蛭,F2,GeneCards_ge40,Fragmin
+水蛭,HPSE,GeneCards_ge40,Fragmin
+水蛭,SELL,GeneCards_ge40,Fragmin
+水蛭,SELP,GeneCards_ge40,Fragmin
+水蛭,SERPINC1,GeneCards_ge40,Heparin
+浙贝母,ACHE,GeneCards_ge40,pelargonidin
+浙贝母,ADRA1A,GeneCards_ge40,beta-sitosterol
+浙贝母,ADRA1B,GeneCards_ge40,beta-sitosterol
+浙贝母,ADRB2,GeneCards_ge40,Zhebeiresinol|beta-sitosterol
+浙贝母,AR,GeneCards_ge40,pelargonidin
+浙贝母,BAX,GeneCards_ge40,beta-sitosterol
+浙贝母,BCL2,GeneCards_ge40,beta-sitosterol
+浙贝母,CASP3,GeneCards_ge40,beta-sitosterol
+浙贝母,CASP8,GeneCards_ge40|OMIM,beta-sitosterol
+浙贝母,CASP9,GeneCards_ge40,beta-sitosterol
+浙贝母,CHRM1,GeneCards_ge40,beta-sitosterol
+浙贝母,CHRM2,GeneCards_ge40,beta-sitosterol
+浙贝母,CHRM3,GeneCards_ge40,beta-sitosterol
+浙贝母,CHRNA7,GeneCards_ge40,beta-sitosterol
+浙贝母,DRD1,GeneCards_ge40,beta-sitosterol
+浙贝母,ESR1,GeneCards_ge40|CTD_curated,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside"
+浙贝母,F10,GeneCards_ge40,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside"
+浙贝母,GABRA1,GeneCards_ge40,Zhebeiresinol|beta-sitosterol
+浙贝母,HSP90AA1,GeneCards_ge40,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside|Zhebeiresinol|beta-sitosterol|pelargonidin"
+浙贝母,KCNH2,GeneCards_ge40,beta-sitosterol
+浙贝母,NOS2,GeneCards_ge40,pelargonidin
+浙贝母,NR3C1,GeneCards_ge40|DrugBank,Peimisine|pelargonidin
+浙贝母,NR3C2,GeneCards_ge40|DrugBank,Peimisine|pelargonidin
+浙贝母,OPRM1,GeneCards_ge40,beta-sitosterol
+浙贝母,PGR,GeneCards_ge40,beta-sitosterol|pelargonidin
+浙贝母,PIK3CG,GeneCards_ge40,beta-sitosterol
+浙贝母,PON1,GeneCards_ge40,beta-sitosterol
+浙贝母,PPARG,GeneCards_ge40|TTD,pelargonidin
+浙贝母,PRKACA,GeneCards_ge40,beta-sitosterol|pelargonidin
+浙贝母,PRKCA,GeneCards_ge40,beta-sitosterol
+浙贝母,PTGS1,GeneCards_ge40,Zhebeiresinol|beta-sitosterol|pelargonidin
+浙贝母,PTGS2,GeneCards_ge40,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside|Zhebeiresinol|beta-sitosterol|pelargonidin"
+浙贝母,RXRA,GeneCards_ge40,Zhebeiresinol|pelargonidin
+浙贝母,SCN5A,GeneCards_ge40,Zhebeiresinol|beta-sitosterol
+浙贝母,SLC6A4,GeneCards_ge40,beta-sitosterol
+浙贝母,TOP2A,GeneCards_ge40,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside"
+甘草,ABAT,GeneCards_ge40,naringenin
+甘草,ABCC1,GeneCards_ge40,naringenin
+甘草,ACHE,GeneCards_ge40,"(-)-Medicocarpin|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Methoxyglabridin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Gancaonin A|Glabridin|Glabrone|Glyasperin C|Glyasperins M|Glycyrrhiza flavonol A|Licoagrocarpin|Licoisoflavone B|Phaseolinisoflavan|Semilicoisoflavone B|formononetin|glyasperin B|isorhamnetin|kaempferol|licoisoflavanone|licopyranocoumarin|quercetin"
+甘草,ADIPOQ,GeneCards_ge40,naringenin
+甘草,ADRA1A,GeneCards_ge40,Medicarpin|Vestitol|formononetin
+甘草,ADRA1B,GeneCards_ge40,"(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Gancaonin B|Glabridin|Glepidotin B|Glypallichalcone|Inermine|Licoagrocarpin|Medicarpin|Phaseolinisoflavan|Vestitol|kaempferol|licochalcone a|shinpterocarpin"
+甘草,ADRA1D,GeneCards_ge40,1-Methoxyphaseollidin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Inermine|Medicarpin|shinpterocarpin
+甘草,ADRB1,GeneCards_ge40,7-Methoxy-2-methyl isoflavone
+甘草,ADRB2,GeneCards_ge40,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|DFV|Gancaonin B|Glabrene|Glabridin|Glypallichalcone|HMO|Inermine|Inflacoumarin A|Licoagrocarpin|Licochalcone B|Medicarpin|Phaseolinisoflavan|Vestitol|dehydroglyasperins C|formononetin|licochalcone a|quercetin|shinpterocarpin"
+甘草,AHR,GeneCards_ge40,kaempferol|quercetin
+甘草,AHSA1,GeneCards_ge40,kaempferol|quercetin
+甘草,AKR1C1,GeneCards_ge40,naringenin
+甘草,AKR1C3,GeneCards_ge40,kaempferol
+甘草,AKT1,GeneCards_ge40,kaempferol|naringenin|quercetin
+甘草,APOB,GeneCards_ge40,naringenin
+甘草,AR,GeneCards_ge40,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabrene|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glyasperins M|Glycyrin|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Inflacoumarin A|Isoglycyrol|Isolicoflavonol|Isotrifoliol|Jaranol|Kanzonol F|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licocoumarone|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Vestitol|dehydroglyasperins C|formononetin|glyasperin B|glyasperin F|isorhamnetin|kaempferol|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|quercetin|shinpterocarpin"
+甘草,BAD,GeneCards_ge40,naringenin
+甘草,BAX,GeneCards_ge40,kaempferol|quercetin
+甘草,BCL2,GeneCards_ge40,kaempferol|licochalcone a|naringenin|quercetin
+甘草,BCL2L1,GeneCards_ge40,quercetin
+甘草,BIRC5,GeneCards_ge40,quercetin
+甘草,CASP3,GeneCards_ge40,kaempferol|naringenin|quercetin
+甘草,CASP8,GeneCards_ge40|OMIM,quercetin
+甘草,CASP9,GeneCards_ge40,quercetin
+甘草,CAT,GeneCards_ge40,naringenin
+甘草,CAV1,GeneCards_ge40|OMIM,quercetin
+甘草,CCL2,GeneCards_ge40|TTD,quercetin
+甘草,CCNA2,GeneCards_ge40,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glyasperins M|Glycyrol|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Isolicoflavonol|Isotrifoliol|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licocoumarone|Licoisoflavone|Licoisoflavone B|Lupiwighteone|Medicarpin|Odoratin|Phaseol|Phaseolinisoflavan|Vestitol|dehydroglyasperins C|formononetin|glyasperin B|glyasperin F|isorhamnetin|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|shinpterocarpin"
+甘草,CCNB1,GeneCards_ge40,quercetin
+甘草,CCND1,GeneCards_ge40,licochalcone a|quercetin
+甘草,CD40LG,GeneCards_ge40,quercetin
+甘草,CDKN1A,GeneCards_ge40,quercetin
+甘草,CHEK1,GeneCards_ge40,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glycyrin|Glycyrol|Glypallichalcone|Glyzaglabrin|HMO|Isotrifoliol|Jaranol|Licoagroisoflavone|Licochalcone B|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Odoratin|Phaseol|Phaseolinisoflavan|Semilicoisoflavone B|Vestitol|dehydroglyasperins C|formononetin|isorhamnetin|kanzonols W|licochalcone a"
+甘草,CHEK2,GeneCards_ge40,quercetin
+甘草,CHRM1,GeneCards_ge40,"2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|7-Methoxy-2-methyl isoflavone|Glabridin|Glypallichalcone|HMO|Inermine|Licoagrocarpin|Medicarpin|Phaseolinisoflavan|Vestitol|formononetin|kaempferol|licochalcone a|shinpterocarpin"
+甘草,CHRM2,GeneCards_ge40,Medicarpin|kaempferol
+甘草,CHRM3,GeneCards_ge40,"2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|7-Methoxy-2-methyl isoflavone|Inermine|Licoagrocarpin|Medicarpin|shinpterocarpin"
+甘草,CHRNA7,GeneCards_ge40,7-Methoxy-2-methyl isoflavone|Medicarpin|shinpterocarpin
+甘草,CHUK,GeneCards_ge40,quercetin
+甘草,CLDN4,GeneCards_ge40,quercetin
+甘草,COL1A1,GeneCards_ge40,quercetin
+甘草,COL3A1,GeneCards_ge40,quercetin
+甘草,CTSD,GeneCards_ge40,quercetin
+甘草,CXCL10,GeneCards_ge40,quercetin
+甘草,CXCL11,GeneCards_ge40,quercetin
+甘草,CXCL2,GeneCards_ge40,quercetin
+甘草,CXCL8,GeneCards_ge40,quercetin
+甘草,CYP1A1,GeneCards_ge40,kaempferol|quercetin
+甘草,CYP1A2,GeneCards_ge40|DrugBank,kaempferol|quercetin
+甘草,CYP1B1,GeneCards_ge40|DrugBank,kaempferol|quercetin
+甘草,CYP3A4,GeneCards_ge40|DrugBank,kaempferol|quercetin
+甘草,DRD1,GeneCards_ge40,7-Methoxy-2-methyl isoflavone|Medicarpin
+甘草,DUOX2,GeneCards_ge40,quercetin
+甘草,E2F1,GeneCards_ge40,quercetin
+甘草,EGF,GeneCards_ge40,quercetin
+甘草,EGFR,GeneCards_ge40|OMIM,quercetin
+甘草,ERBB2,GeneCards_ge40|OMIM,quercetin
+甘草,ERBB3,GeneCards_ge40,quercetin
+甘草,ESR1,GeneCards_ge40|CTD_curated,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|6-prenylated eriodictyol|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|8-prenylated eriodictyol|Calycosin|DFV|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabranin|Glabrene|Glabridin|Glabrone|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glycyrin|Glycyrol|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Inflacoumarin A|Isoglycyrol|Isolicoflavonol|Isotrifoliol|Kanzonol F|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licocoumarone|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Medicarpin|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Sigmoidin-B|Vestitol|Xambioona|dehydroglyasperins C|euchrenone|formononetin|glyasperin B|glyasperin F|isorhamnetin|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|naringenin|shinpterocarpin"
+甘草,ESR2,GeneCards_ge40,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabrene|Glabridin|Glabrone|Glyasperin C|Glyasperins M|Glycyrin|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Isotrifoliol|Jaranol|Kanzonol F|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licocoumarone|Licoisoflavone B|Lupiwighteone|Medicarpin|Odoratin|Phaseolinisoflavan|Quercetin der.|Vestitol|Xambioona|dehydroglyasperins C|euchrenone|formononetin|glyasperin B|glyasperin F|isorhamnetin|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|shinpterocarpin"
+甘草,F10,GeneCards_ge40,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|6-prenylated eriodictyol|8-prenylated eriodictyol|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabranin|Glabrene|Glabrone|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glycyrin|Glycyrrhiza flavonol A|Inflacoumarin A|Isolicoflavonol|Kanzonol F|Licoagrocarpin|Licoagroisoflavone|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Phaseolinisoflavan|Semilicoisoflavone B|Sigmoidin-B|Xambioona|dehydroglyasperins C|euchrenone|glyasperin B|glyasperin F|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|liquiritin|quercetin"
+甘草,F2,GeneCards_ge40,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabrone|Glepidotin A|Glyasperin C|Glycyrin|Glycyrol|Inflacoumarin A|Isolicoflavonol|Licoagrocarpin|Licoagroisoflavone|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Phaseol|Semilicoisoflavone B|formononetin|glyasperin B|isorhamnetin|kaempferol|licopyranocoumarin|quercetin"
+甘草,F3,GeneCards_ge40,quercetin
+甘草,F7,GeneCards_ge40,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|6-prenylated eriodictyol|8-prenylated eriodictyol|Gancaonin B|Glepidotin A|Glepidotin B|Glyasperins M|Glycyrrhiza flavonol A|Semilicoisoflavone B|glyasperin B|isorhamnetin|kaempferol|licoisoflavanone|licopyranocoumarin|liquiritin|quercetin"
+甘草,FASN,GeneCards_ge40,naringenin
+甘草,FOS,GeneCards_ge40,quercetin
+甘草,FOSL2,GeneCards_ge40,licochalcone a
+甘草,GABRA1,GeneCards_ge40,(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|isorhamnetin|kaempferol|quercetin
+甘草,GJA1,GeneCards_ge40,quercetin
+甘草,GSK3B,GeneCards_ge40,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabrene|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glyasperins M|Glycyrol|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Isoglycyrol|Isolicoflavonol|Isotrifoliol|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licocoumarone|Licoisoflavone B|Lupiwighteone|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Vestitol|formononetin|glyasperin B|glyasperin F|isorhamnetin|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|shinpterocarpin"
+甘草,GSR,GeneCards_ge40,naringenin
+甘草,GSTM1,GeneCards_ge40,kaempferol|quercetin
+甘草,GSTM2,GeneCards_ge40,kaempferol|quercetin
+甘草,GSTP1,GeneCards_ge40,kaempferol|naringenin|quercetin
+甘草,HAS2,GeneCards_ge40,kaempferol|quercetin
+甘草,HIF1A,GeneCards_ge40|CTD_curated,quercetin
+甘草,HMGCR,GeneCards_ge40,naringenin
+甘草,HMOX1,GeneCards_ge40|OMIM,kaempferol|quercetin
+甘草,HSD3B2,GeneCards_ge40,formononetin
+甘草,HSF1,GeneCards_ge40,quercetin
+甘草,HSP90AA1,GeneCards_ge40,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|6-prenylated eriodictyol|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|8-prenylated eriodictyol|Calycosin|DFV|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabranin|Glabrene|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|Inermine|Inflacoumarin A|Isolicoflavonol|Isotrifoliol|Jaranol|Licoagrocarpin|Licochalcone B|Licocoumarone|Licoisoflavone|Lupiwighteone|Medicarpin|Odoratin|Phaseol|Quercetin der.|Semilicoisoflavone B|Sigmoidin-B|Vestitol|dehydroglyasperins C|formononetin|glyasperin B|glyasperin F|isorhamnetin|kaempferol|licochalcone G|licochalcone a|licoisoflavanone|naringenin|quercetin"
+甘草,HSPB1,GeneCards_ge40,quercetin
+甘草,ICAM1,GeneCards_ge40,kaempferol|quercetin
+甘草,IFNG,GeneCards_ge40,quercetin
+甘草,IGF2,GeneCards_ge40,quercetin
+甘草,IGFBP3,GeneCards_ge40,quercetin
+甘草,IKBKB,GeneCards_ge40,kaempferol
+甘草,IL10,GeneCards_ge40,quercetin
+甘草,IL1A,GeneCards_ge40,quercetin
+甘草,IL1B,GeneCards_ge40,quercetin
+甘草,IL2,GeneCards_ge40,quercetin
+甘草,IL4,GeneCards_ge40|TTD,formononetin
+甘草,IL6,GeneCards_ge40,quercetin
+甘草,INSR,GeneCards_ge40,kaempferol|quercetin
+甘草,IRF1,GeneCards_ge40|OMIM,quercetin
+甘草,KCNH2,GeneCards_ge40,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|Glyasperin C|Glyasperins M|Glycyrin|Licoagrocarpin|Licoricone|euchrenone|quercetin|shinpterocarpin"
+甘草,KDR,GeneCards_ge40,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|1-Methoxyphaseollidin|3'-Hydroxy-4'-O-Methylglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|Gancaonin B|Gancaonin H|Glepidotin A|Glyasperins M|Glycyrin|Glycyrol|Licoisoflavone|Licoricone|Phaseol|Sigmoidin-B|glyasperin B|licochalcone G|licopyranocoumarin|liquiritin"
+甘草,LDLR,GeneCards_ge40,naringenin
+甘草,LTA4H,GeneCards_ge40,7-Methoxy-2-methyl isoflavone|Glypallichalcone
+甘草,MAPK1,GeneCards_ge40,licochalcone a|naringenin|quercetin
+甘草,MAPK14,GeneCards_ge40,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin G|Glabrene|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glycyrol|Glypallichalcone|Glyzaglabrin|HMO|Isotrifoliol|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licoisoflavone|Lupiwighteone|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Vestitol|dehydroglyasperins C|formononetin|glyasperin F|isorhamnetin|kanzonols W|licochalcone G|licochalcone a|shinpterocarpin"
+甘草,MAPK3,GeneCards_ge40,naringenin
+甘草,MAPK8,GeneCards_ge40,kaempferol
+甘草,MMP1,GeneCards_ge40,kaempferol|quercetin
+甘草,MMP2,GeneCards_ge40,quercetin
+甘草,MMP3,GeneCards_ge40|CTD_curated|TTD,quercetin
+甘草,MMP9,GeneCards_ge40,quercetin
+甘草,MPO,GeneCards_ge40|OMIM,quercetin
+甘草,MT-ND6,GeneCards_ge40,formononetin
+甘草,MTTP,GeneCards_ge40,naringenin
+甘草,MYC,GeneCards_ge40,quercetin
+甘草,NCF1,GeneCards_ge40,isorhamnetin|quercetin
+甘草,NFE2L2,GeneCards_ge40,quercetin
+甘草,NFKBIA,GeneCards_ge40,quercetin
+甘草,NOS2,GeneCards_ge40,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|6-prenylated eriodictyol|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabranin|Glabrene|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glyasperins M|Glycyrin|Glycyrol|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Isoglycyrol|Isolicoflavonol|Isotrifoliol|Jaranol|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Medicarpin|Odoratin|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Vestitol|Xambioona|dehydroglyasperins C|euchrenone|formononetin|glyasperin B|glyasperin F|isorhamnetin|kaempferol|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|shinpterocarpin"
+甘草,NQO1,GeneCards_ge40,quercetin
+甘草,NR1I2,GeneCards_ge40,kaempferol|quercetin
+甘草,NR3C2,GeneCards_ge40|DrugBank,sitosterol
+甘草,ODC1,GeneCards_ge40,quercetin
+甘草,OPRM1,GeneCards_ge40,7-Methoxy-2-methyl isoflavone|Inermine|Medicarpin|shinpterocarpin
+甘草,PARP1,GeneCards_ge40,quercetin
+甘草,PGR,GeneCards_ge40,Mairin|kaempferol|sitosterol
+甘草,PIK3CG,GeneCards_ge40,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|1-Methoxyphaseollidin|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|DFV|Glyzaglabrin|Inermine|Isotrifoliol|Medicarpin|isorhamnetin|kaempferol|naringenin|quercetin|shinpterocarpin"
+甘草,PLAT,GeneCards_ge40,quercetin
+甘草,PLAU,GeneCards_ge40|CTD_curated,quercetin
+甘草,PON1,GeneCards_ge40,quercetin
+甘草,POR,GeneCards_ge40,quercetin
+甘草,PPARA,GeneCards_ge40|TTD,naringenin|quercetin
+甘草,PPARD,GeneCards_ge40,Glyasperins M|isorhamnetin|quercetin
+甘草,PPARG,GeneCards_ge40|TTD,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabrene|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glyasperins M|Glycyrin|Glycyrol|Glypallichalcone|Glyzaglabrin|HMO|Inflacoumarin A|Isolicoflavonol|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Vestitol|dehydroglyasperins C|formononetin|glyasperin B|glyasperin F|isorhamnetin|kaempferol|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|naringenin|quercetin|shinpterocarpin"
+甘草,PRKACA,GeneCards_ge40,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Methoxy-2-methyl isoflavone|Calycosin|DFV|Glabranin|Glabridin|Glyasperins M|Glypallichalcone|Glyzaglabrin|HMO|Inermine|Isotrifoliol|Licochalcone B|Medicarpin|Phaseol|Vestitol|formononetin|isorhamnetin|kaempferol|naringenin|quercetin|shinpterocarpin"
+甘草,PRKCA,GeneCards_ge40,quercetin
+甘草,PRKCB,GeneCards_ge40,quercetin
+甘草,PSMD3,GeneCards_ge40,kaempferol|quercetin
+甘草,PTGER3,GeneCards_ge40,quercetin
+甘草,PTGS1,GeneCards_ge40,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|DFV|Glabranin|Glabrene|Glabrone|Glepidotin A|Glepidotin B|Glyasperins M|Glypallichalcone|Glyzaglabrin|HMO|Inermine|Inflacoumarin A|Jaranol|Licoagrocarpin|Licochalcone B|Medicarpin|Odoratin|Quercetin der.|Vestitol|formononetin|glyasperin F|isorhamnetin|kaempferol|kanzonols W|licochalcone a|licoisoflavanone|naringenin|quercetin|shinpterocarpin"
+甘草,PTGS2,GeneCards_ge40,"(-)-Medicocarpin|(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|6-prenylated eriodictyol|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|8-prenylated eriodictyol|Calycosin|DFV|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabranin|Glabrene|Glabridin|Glabrone|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glycyrin|Glycyrol|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Inermine|Inflacoumarin A|Isoglycyrol|Isolicoflavonol|Isotrifoliol|Jaranol|Kanzonol F|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Medicarpin|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Sigmoidin-B|Vestitol|Xambioona|dehydroglyasperins C|euchrenone|formononetin|glyasperin B|glyasperin F|isorhamnetin|kaempferol|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|liquiritin|naringenin|quercetin|shinpterocarpin"
+甘草,PTPN1,GeneCards_ge40,"3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|Quercetin der.|isorhamnetin"
+甘草,PYGM,GeneCards_ge40,isorhamnetin
+甘草,RAF1,GeneCards_ge40,quercetin
+甘草,RASA1,GeneCards_ge40,quercetin
+甘草,RB1,GeneCards_ge40|OMIM,licochalcone a|quercetin
+甘草,RELA,GeneCards_ge40,isorhamnetin|kaempferol|licochalcone a|naringenin|quercetin
+甘草,RUNX1T1,GeneCards_ge40,quercetin
+甘草,RUNX2,GeneCards_ge40,quercetin
+甘草,RXRA,GeneCards_ge40,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Methoxyglabridin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|Calycosin|DFV|Glabrene|Glabridin|Glabrone|Glepidotin A|Glepidotin B|Glyasperin C|HMO|Inermine|Licoagrocarpin|Medicarpin|Odoratin|Phaseolinisoflavan|Vestitol|formononetin|kanzonols W|quercetin|shinpterocarpin"
+甘草,SCN5A,GeneCards_ge40,"(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|6-prenylated eriodictyol|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-prenylated eriodictyol|Eurycarpin A|Gancaonin A|Glabranin|Glabrene|Glabridin|Glabrone|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glypallichalcone|HMO|Inermine|Inflacoumarin A|Jaranol|Licoagrocarpin|Licoagroisoflavone|Lupiwighteone|Medicarpin|Odoratin|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Vestitol|dehydroglyasperins C|euchrenone|glyasperin F|kanzonols W|licochalcone a|licoisoflavanone|quercetin|shinpterocarpin"
+甘草,SELE,GeneCards_ge40,kaempferol|quercetin
+甘草,SERPINE1,GeneCards_ge40,quercetin
+甘草,SLC2A4,GeneCards_ge40,kaempferol|quercetin
+甘草,SLC6A3,GeneCards_ge40,"2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|7-Methoxy-2-methyl isoflavone|Glypallichalcone|HMO|Medicarpin|Vestitol|formononetin|licochalcone a"
+甘草,SLC6A4,GeneCards_ge40,(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|7-Methoxy-2-methyl isoflavone|DFV|Glypallichalcone|HMO|Medicarpin|Vestitol|formononetin
+甘草,SLPI,GeneCards_ge40,kaempferol
+甘草,SOAT1,GeneCards_ge40,naringenin
+甘草,SOD1,GeneCards_ge40,liquiritin|naringenin|quercetin
+甘草,SPP1,GeneCards_ge40,quercetin
+甘草,SREBF1,GeneCards_ge40,naringenin
+甘草,STAT1,GeneCards_ge40,kaempferol|quercetin
+甘草,STAT3,GeneCards_ge40|CTD_curated,licochalcone a
+甘草,THBD,GeneCards_ge40,quercetin
+甘草,TNF,GeneCards_ge40|CTD_curated,kaempferol|quercetin
+甘草,TOP1,GeneCards_ge40,quercetin
+甘草,TOP2A,GeneCards_ge40,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|1-Methoxyphaseollidin|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glycyrin|Glycyrrhiza flavonol A|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Semilicoisoflavone B|glyasperin B|glyasperin F|kaempferol|kanzonols W|licoisoflavanone|licopyranocoumarin|quercetin"
+甘草,TP53,GeneCards_ge40,quercetin
+甘草,VCAM1,GeneCards_ge40,kaempferol|quercetin
+甘草,VEGFA,GeneCards_ge40,quercetin
+紫苏子,ABCG1,GeneCards_ge40,arachidonic acid
+紫苏子,ADH1C,GeneCards_ge40,Stigmasterol
+紫苏子,ADRA1A,GeneCards_ge40,Stigmasterol|beta-sitosterol
+紫苏子,ADRA1B,GeneCards_ge40,Stigmasterol|beta-sitosterol
+紫苏子,ADRA2A,GeneCards_ge40,Stigmasterol
+紫苏子,ADRB1,GeneCards_ge40,Stigmasterol
+紫苏子,ADRB2,GeneCards_ge40,(E)-(4-methylbenzylidene)-(4-phenyltriazol-1-yl)amine|Stigmasterol|beta-sitosterol
+紫苏子,AKT1,GeneCards_ge40,beta-carotene|luteolin
+紫苏子,ALDH2,GeneCards_ge40,arachidonic acid
+紫苏子,AR,GeneCards_ge40,luteolin
+紫苏子,BAX,GeneCards_ge40,beta-sitosterol
+紫苏子,BCL2,GeneCards_ge40,beta-carotene|beta-sitosterol
+紫苏子,BCL2L1,GeneCards_ge40,luteolin
+紫苏子,BIRC5,GeneCards_ge40,luteolin
+紫苏子,C1R,GeneCards_ge40,arachidonic acid
+紫苏子,CASP3,GeneCards_ge40,arachidonic acid|beta-carotene|beta-sitosterol|luteolin
+紫苏子,CASP7,GeneCards_ge40,beta-carotene|luteolin
+紫苏子,CASP8,GeneCards_ge40|OMIM,beta-carotene|beta-sitosterol
+紫苏子,CASP9,GeneCards_ge40,beta-carotene|beta-sitosterol|luteolin
+紫苏子,CAV1,GeneCards_ge40|OMIM,beta-carotene
+紫苏子,CCNB1,GeneCards_ge40,luteolin
+紫苏子,CCND1,GeneCards_ge40,arachidonic acid|luteolin
+紫苏子,CD40LG,GeneCards_ge40,luteolin
+紫苏子,CDKN1A,GeneCards_ge40,luteolin
+紫苏子,CETP,GeneCards_ge40,arachidonic acid
+紫苏子,CHRM1,GeneCards_ge40,Stigmasterol|beta-sitosterol
+紫苏子,CHRM2,GeneCards_ge40,Stigmasterol|beta-sitosterol
+紫苏子,CHRM3,GeneCards_ge40,Stigmasterol|beta-sitosterol
+紫苏子,CHRNA7,GeneCards_ge40,Stigmasterol|beta-sitosterol
+紫苏子,COL1A2,GeneCards_ge40,arachidonic acid
+紫苏子,CTNNB1,GeneCards_ge40,beta-carotene
+紫苏子,CYP1A2,GeneCards_ge40|DrugBank,beta-carotene
+紫苏子,CYP3A4,GeneCards_ge40|DrugBank,beta-carotene
+紫苏子,DRD1,GeneCards_ge40,beta-sitosterol
+紫苏子,EGF,GeneCards_ge40,arachidonic acid
+紫苏子,EGFR,GeneCards_ge40|OMIM,luteolin
+紫苏子,ERBB2,GeneCards_ge40|OMIM,luteolin
+紫苏子,F3,GeneCards_ge40,beta-carotene
+紫苏子,G6PD,GeneCards_ge40,arachidonic acid
+紫苏子,GABRA1,GeneCards_ge40,Stigmasterol|beta-sitosterol
+紫苏子,GJA1,GeneCards_ge40,beta-carotene
+紫苏子,GLB1,GeneCards_ge40,arachidonic acid
+紫苏子,GSTP1,GeneCards_ge40,luteolin
+紫苏子,HMOX1,GeneCards_ge40|OMIM,beta-carotene|luteolin
+紫苏子,HSP90AA1,GeneCards_ge40,beta-sitosterol|luteolin
+紫苏子,ICAM1,GeneCards_ge40,luteolin
+紫苏子,IFNG,GeneCards_ge40,luteolin
+紫苏子,IL10,GeneCards_ge40,luteolin
+紫苏子,IL2,GeneCards_ge40,luteolin
+紫苏子,IL4,GeneCards_ge40|TTD,luteolin
+紫苏子,IL6,GeneCards_ge40,luteolin
+紫苏子,INSR,GeneCards_ge40,luteolin
+紫苏子,KCNH2,GeneCards_ge40,beta-sitosterol
+紫苏子,LTA4H,GeneCards_ge40,Stigmasterol
+紫苏子,MAOA,GeneCards_ge40,Stigmasterol
+紫苏子,MAPK1,GeneCards_ge40,arachidonic acid|luteolin
+紫苏子,MCL1,GeneCards_ge40,luteolin
+紫苏子,MDM2,GeneCards_ge40,luteolin
+紫苏子,MET,GeneCards_ge40,luteolin
+紫苏子,MMP1,GeneCards_ge40,beta-carotene|luteolin
+紫苏子,MMP10,GeneCards_ge40,beta-carotene
+紫苏子,MMP2,GeneCards_ge40,beta-carotene|luteolin
+紫苏子,MMP9,GeneCards_ge40,luteolin
+紫苏子,MYC,GeneCards_ge40,beta-carotene
+紫苏子,NFKBIA,GeneCards_ge40,luteolin
+紫苏子,NR3C2,GeneCards_ge40|DrugBank,24-methylidenelophenol|CLR|Obtusifoliol|Spinasterol|Stigmasterol
+紫苏子,OPRM1,GeneCards_ge40,beta-sitosterol
+紫苏子,PCNA,GeneCards_ge40,luteolin
+紫苏子,PECAM1,GeneCards_ge40,arachidonic acid
+紫苏子,PGR,GeneCards_ge40,24-methylidenelophenol|CLR|Obtusifoliol|Spinasterol|Stigmasterol|beta-sitosterol|citrostadienol
+紫苏子,PIK3CG,GeneCards_ge40,beta-sitosterol|luteolin
+紫苏子,PLA2G4A,GeneCards_ge40,arachidonic acid
+紫苏子,PLAU,GeneCards_ge40|CTD_curated,Stigmasterol
+紫苏子,PON1,GeneCards_ge40,beta-sitosterol
+紫苏子,PPARG,GeneCards_ge40|TTD,arachidonic acid|luteolin
+紫苏子,PRKACA,GeneCards_ge40,(E)-(4-methylbenzylidene)-(4-phenyltriazol-1-yl)amine|Stigmasterol|beta-sitosterol|luteolin
+紫苏子,PRKCA,GeneCards_ge40,beta-sitosterol
+紫苏子,PRKCB,GeneCards_ge40,arachidonic acid
+紫苏子,PTGS1,GeneCards_ge40,Stigmasterol|arachidonic acid|beta-sitosterol|gondoic acid|luteolin
+紫苏子,PTGS2,GeneCards_ge40,"(E)-(4-methylbenzylidene)-(4-phenyltriazol-1-yl)amine|2,6,10,14,18-pentamethylicosa-2,6,10,14,18-pentaene|Stigmasterol|arachidonic acid|beta-carotene|beta-sitosterol|luteolin"
+紫苏子,RB1,GeneCards_ge40|OMIM,luteolin
+紫苏子,RELA,GeneCards_ge40,arachidonic acid|luteolin
+紫苏子,RXRA,GeneCards_ge40,Stigmasterol|arachidonic acid
+紫苏子,SCN5A,GeneCards_ge40,Stigmasterol|beta-sitosterol
+紫苏子,SELP,GeneCards_ge40,arachidonic acid
+紫苏子,SLC2A4,GeneCards_ge40,luteolin
+紫苏子,SLC6A3,GeneCards_ge40,Stigmasterol
+紫苏子,SLC6A4,GeneCards_ge40,beta-sitosterol
+紫苏子,TNF,GeneCards_ge40|CTD_curated,luteolin
+紫苏子,TNFRSF1A,GeneCards_ge40,arachidonic acid
+紫苏子,TNFRSF1B,GeneCards_ge40,arachidonic acid
+紫苏子,TOP1,GeneCards_ge40,luteolin
+紫苏子,TOP2A,GeneCards_ge40,luteolin
+紫苏子,TP53,GeneCards_ge40,luteolin
+紫苏子,TRPV1,GeneCards_ge40,arachidonic acid
+紫苏子,TYR,GeneCards_ge40,luteolin
+紫苏子,UCP2,GeneCards_ge40,arachidonic acid
+紫苏子,VEGFA,GeneCards_ge40,beta-carotene|luteolin
+蜜麻黄,ABAT,GeneCards_ge40,naringenin
+蜜麻黄,ABCC1,GeneCards_ge40,naringenin
+蜜麻黄,ACHE,GeneCards_ge40,Pectolinarigenin|kaempferol|quercetin
+蜜麻黄,ADH1C,GeneCards_ge40,Stigmasterol
+蜜麻黄,ADIPOQ,GeneCards_ge40,naringenin
+蜜麻黄,ADRA1A,GeneCards_ge40,Stigmasterol|beta-sitosterol
+蜜麻黄,ADRA1B,GeneCards_ge40,Pectolinarigenin|Stigmasterol|Truflex OBP|beta-sitosterol|kaempferol
+蜜麻黄,ADRA2A,GeneCards_ge40,Stigmasterol
+蜜麻黄,ADRB1,GeneCards_ge40,Stigmasterol
+蜜麻黄,ADRB2,GeneCards_ge40,Stigmasterol|Truflex OBP|beta-sitosterol|quercetin
+蜜麻黄,AHR,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,AHSA1,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,AKR1C1,GeneCards_ge40,naringenin
+蜜麻黄,AKR1C3,GeneCards_ge40,kaempferol
+蜜麻黄,AKT1,GeneCards_ge40,kaempferol|luteolin|naringenin|quercetin
+蜜麻黄,APOB,GeneCards_ge40,naringenin|taxifolin
+蜜麻黄,AR,GeneCards_ge40,Genkwanin|delphinidin|kaempferol|luteolin|quercetin
+蜜麻黄,BAD,GeneCards_ge40,naringenin
+蜜麻黄,BAX,GeneCards_ge40,beta-sitosterol|kaempferol|quercetin
+蜜麻黄,BCL2,GeneCards_ge40,beta-sitosterol|kaempferol|naringenin|quercetin
+蜜麻黄,BCL2L1,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,BIRC5,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,CASP3,GeneCards_ge40,beta-sitosterol|kaempferol|luteolin|naringenin|quercetin
+蜜麻黄,CASP7,GeneCards_ge40,luteolin
+蜜麻黄,CASP8,GeneCards_ge40|OMIM,beta-sitosterol|quercetin
+蜜麻黄,CASP9,GeneCards_ge40,beta-sitosterol|luteolin|quercetin
+蜜麻黄,CAT,GeneCards_ge40,(+)-catechin|naringenin
+蜜麻黄,CAV1,GeneCards_ge40|OMIM,quercetin
+蜜麻黄,CCL2,GeneCards_ge40|TTD,quercetin
+蜜麻黄,CCNB1,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,CCND1,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,CD40LG,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,CDKN1A,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,CHEK1,GeneCards_ge40,Genkwanin
+蜜麻黄,CHEK2,GeneCards_ge40,quercetin
+蜜麻黄,CHRM1,GeneCards_ge40,Stigmasterol|Truflex OBP|beta-sitosterol|kaempferol
+蜜麻黄,CHRM2,GeneCards_ge40,Stigmasterol|beta-sitosterol|kaempferol
+蜜麻黄,CHRM3,GeneCards_ge40,Stigmasterol|beta-sitosterol
+蜜麻黄,CHRNA7,GeneCards_ge40,Stigmasterol|beta-sitosterol
+蜜麻黄,CHUK,GeneCards_ge40,quercetin
+蜜麻黄,CLDN4,GeneCards_ge40,quercetin
+蜜麻黄,COL1A1,GeneCards_ge40,quercetin
+蜜麻黄,COL3A1,GeneCards_ge40,quercetin
+蜜麻黄,CTSD,GeneCards_ge40,quercetin
+蜜麻黄,CXCL10,GeneCards_ge40,quercetin
+蜜麻黄,CXCL11,GeneCards_ge40,quercetin
+蜜麻黄,CXCL2,GeneCards_ge40,quercetin
+蜜麻黄,CXCL8,GeneCards_ge40,quercetin
+蜜麻黄,CYP1A1,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,CYP1A2,GeneCards_ge40|DrugBank,kaempferol|quercetin
+蜜麻黄,CYP1B1,GeneCards_ge40|DrugBank,kaempferol|quercetin
+蜜麻黄,CYP3A4,GeneCards_ge40|DrugBank,kaempferol|quercetin
+蜜麻黄,DGAT2,GeneCards_ge40,taxifolin
+蜜麻黄,DRD1,GeneCards_ge40,beta-sitosterol
+蜜麻黄,DUOX2,GeneCards_ge40,quercetin
+蜜麻黄,E2F1,GeneCards_ge40,quercetin
+蜜麻黄,EGF,GeneCards_ge40,quercetin
+蜜麻黄,EGFR,GeneCards_ge40|OMIM,luteolin|quercetin
+蜜麻黄,ERBB2,GeneCards_ge40|OMIM,luteolin|quercetin
+蜜麻黄,ERBB3,GeneCards_ge40,quercetin
+蜜麻黄,ESR1,GeneCards_ge40|CTD_curated,(+)-catechin|leucopelargonidin|naringenin
+蜜麻黄,ESR2,GeneCards_ge40,Genkwanin
+蜜麻黄,F10,GeneCards_ge40,quercetin
+蜜麻黄,F2,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,F3,GeneCards_ge40,quercetin
+蜜麻黄,F7,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,FASN,GeneCards_ge40,naringenin
+蜜麻黄,FOS,GeneCards_ge40,quercetin
+蜜麻黄,GABRA1,GeneCards_ge40,Stigmasterol|beta-sitosterol|kaempferol|quercetin
+蜜麻黄,GJA1,GeneCards_ge40,quercetin
+蜜麻黄,GSR,GeneCards_ge40,naringenin
+蜜麻黄,GSTM1,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,GSTM2,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,GSTP1,GeneCards_ge40,kaempferol|luteolin|naringenin|quercetin
+蜜麻黄,HAS2,GeneCards_ge40,(+)-catechin|kaempferol|quercetin
+蜜麻黄,HIF1A,GeneCards_ge40|CTD_curated,quercetin
+蜜麻黄,HMGCR,GeneCards_ge40,naringenin
+蜜麻黄,HMOX1,GeneCards_ge40|OMIM,eriodictyol|kaempferol|luteolin|quercetin
+蜜麻黄,HSF1,GeneCards_ge40,quercetin
+蜜麻黄,HSP90AA1,GeneCards_ge40,(+)-Leucocyanidin|(+)-catechin|Diosmetin|Genkwanin|Resivit|beta-sitosterol|delphinidin|eriodictyol|kaempferol|leucopelargonidin|luteolin|naringenin|quercetin|taxifolin
+蜜麻黄,HSPB1,GeneCards_ge40,quercetin
+蜜麻黄,ICAM1,GeneCards_ge40,kaempferol|luteolin|quercetin|taxifolin
+蜜麻黄,IFNG,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,IGF2,GeneCards_ge40,quercetin
+蜜麻黄,IGFBP3,GeneCards_ge40,quercetin
+蜜麻黄,IKBKB,GeneCards_ge40,kaempferol
+蜜麻黄,IL10,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,IL1A,GeneCards_ge40,quercetin
+蜜麻黄,IL1B,GeneCards_ge40,quercetin
+蜜麻黄,IL2,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,IL4,GeneCards_ge40|TTD,luteolin
+蜜麻黄,IL6,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,INSR,GeneCards_ge40,kaempferol|luteolin|quercetin
+蜜麻黄,IRF1,GeneCards_ge40|OMIM,quercetin
+蜜麻黄,KCNH2,GeneCards_ge40,beta-sitosterol|quercetin
+蜜麻黄,LDLR,GeneCards_ge40,naringenin
+蜜麻黄,LTA4H,GeneCards_ge40,Stigmasterol
+蜜麻黄,MAOA,GeneCards_ge40,Stigmasterol
+蜜麻黄,MAPK1,GeneCards_ge40,luteolin|naringenin|quercetin
+蜜麻黄,MAPK3,GeneCards_ge40,naringenin
+蜜麻黄,MAPK8,GeneCards_ge40,kaempferol
+蜜麻黄,MCL1,GeneCards_ge40,luteolin
+蜜麻黄,MDM2,GeneCards_ge40,luteolin
+蜜麻黄,MET,GeneCards_ge40,luteolin
+蜜麻黄,MMP1,GeneCards_ge40,kaempferol|luteolin|quercetin
+蜜麻黄,MMP2,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,MMP3,GeneCards_ge40|CTD_curated|TTD,quercetin
+蜜麻黄,MMP9,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,MPO,GeneCards_ge40|OMIM,quercetin
+蜜麻黄,MTTP,GeneCards_ge40,naringenin|taxifolin
+蜜麻黄,MYC,GeneCards_ge40,quercetin
+蜜麻黄,NCF1,GeneCards_ge40,quercetin
+蜜麻黄,NFE2L2,GeneCards_ge40,eriodictyol|quercetin
+蜜麻黄,NFKBIA,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,NOS2,GeneCards_ge40,Diosmetin|Genkwanin|Pectolinarigenin|delphinidin|kaempferol
+蜜麻黄,NQO1,GeneCards_ge40,eriodictyol|quercetin
+蜜麻黄,NR1I2,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,NR3C2,GeneCards_ge40|DrugBank,24-Ethylcholest-4-en-3-one|Stigmasterol
+蜜麻黄,ODC1,GeneCards_ge40,quercetin
+蜜麻黄,OPRM1,GeneCards_ge40,beta-sitosterol
+蜜麻黄,PARP1,GeneCards_ge40,quercetin
+蜜麻黄,PCNA,GeneCards_ge40,luteolin
+蜜麻黄,PGR,GeneCards_ge40,24-Ethylcholest-4-en-3-one|Stigmasterol|beta-sitosterol|kaempferol|poriferast-5-en-3beta-ol
+蜜麻黄,PIK3CG,GeneCards_ge40,beta-sitosterol|delphinidin|eriodictyol|kaempferol|luteolin|naringenin|quercetin|taxifolin
+蜜麻黄,PLAT,GeneCards_ge40,quercetin
+蜜麻黄,PLAU,GeneCards_ge40|CTD_curated,Stigmasterol|quercetin
+蜜麻黄,PON1,GeneCards_ge40,beta-sitosterol|quercetin
+蜜麻黄,POR,GeneCards_ge40,quercetin
+蜜麻黄,PPARA,GeneCards_ge40|TTD,naringenin|quercetin
+蜜麻黄,PPARD,GeneCards_ge40,quercetin
+蜜麻黄,PPARG,GeneCards_ge40|TTD,kaempferol|luteolin|naringenin|quercetin
+蜜麻黄,PRKACA,GeneCards_ge40,(+)-catechin|Diosmetin|Genkwanin|Stigmasterol|beta-sitosterol|eriodictyol|kaempferol|luteolin|naringenin|quercetin
+蜜麻黄,PRKCA,GeneCards_ge40,beta-sitosterol|quercetin
+蜜麻黄,PRKCB,GeneCards_ge40,quercetin
+蜜麻黄,PSMD3,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,PTGER3,GeneCards_ge40,quercetin
+蜜麻黄,PTGS1,GeneCards_ge40,(+)-Leucocyanidin|(+)-catechin|Diosmetin|Genkwanin|Mandenol|Pectolinarigenin|Resivit|Stigmasterol|beta-sitosterol|delphinidin|eriodictyol|kaempferol|leucopelargonidin|luteolin|naringenin|quercetin|taxifolin
+蜜麻黄,PTGS2,GeneCards_ge40,(+)-Leucocyanidin|(+)-catechin|Diosmetin|Genkwanin|Mandenol|Pectolinarigenin|Resivit|Stigmasterol|beta-sitosterol|delphinidin|eriodictyol|kaempferol|leucopelargonidin|luteolin|naringenin|quercetin|taxifolin
+蜜麻黄,RAF1,GeneCards_ge40,quercetin
+蜜麻黄,RASA1,GeneCards_ge40,quercetin
+蜜麻黄,RB1,GeneCards_ge40|OMIM,luteolin|quercetin
+蜜麻黄,RELA,GeneCards_ge40,kaempferol|luteolin|naringenin|quercetin|taxifolin
+蜜麻黄,RUNX1T1,GeneCards_ge40,quercetin
+蜜麻黄,RUNX2,GeneCards_ge40,quercetin
+蜜麻黄,RXRA,GeneCards_ge40,(+)-catechin|Genkwanin|Stigmasterol|quercetin|taxifolin
+蜜麻黄,SCN5A,GeneCards_ge40,Pectolinarigenin|Stigmasterol|Truflex OBP|beta-sitosterol|quercetin
+蜜麻黄,SELE,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,SERPINE1,GeneCards_ge40,quercetin
+蜜麻黄,SLC2A4,GeneCards_ge40,kaempferol|luteolin|quercetin
+蜜麻黄,SLC6A3,GeneCards_ge40,Stigmasterol|Truflex OBP
+蜜麻黄,SLC6A4,GeneCards_ge40,beta-sitosterol
+蜜麻黄,SLPI,GeneCards_ge40,kaempferol
+蜜麻黄,SOAT1,GeneCards_ge40,naringenin
+蜜麻黄,SOD1,GeneCards_ge40,naringenin|quercetin
+蜜麻黄,SPP1,GeneCards_ge40,quercetin
+蜜麻黄,SREBF1,GeneCards_ge40,naringenin
+蜜麻黄,STAT1,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,THBD,GeneCards_ge40,quercetin
+蜜麻黄,TNF,GeneCards_ge40|CTD_curated,kaempferol|luteolin|quercetin
+蜜麻黄,TOP1,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,TOP2A,GeneCards_ge40,kaempferol|luteolin|quercetin
+蜜麻黄,TP53,GeneCards_ge40,luteolin|quercetin
+蜜麻黄,TYR,GeneCards_ge40,luteolin
+蜜麻黄,VCAM1,GeneCards_ge40,kaempferol|quercetin
+蜜麻黄,VEGFA,GeneCards_ge40,luteolin|quercetin
+黄芪,ACHE,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|formononetin|isorhamnetin|kaempferol|quercetin"
+黄芪,ADH1C,GeneCards_ge40,hederagenin
+黄芪,ADRA1A,GeneCards_ge40,7-O-methylisomucronulatol|formononetin
+黄芪,ADRA1B,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|hederagenin|kaempferol"
+黄芪,ADRA1D,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol"
+黄芪,ADRA2C,GeneCards_ge40,"3,9-di-O-methylnissolin|7-O-methylisomucronulatol"
+黄芪,ADRB1,GeneCards_ge40,"3,9-di-O-methylnissolin|7-O-methylisomucronulatol"
+黄芪,ADRB2,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Calycosin|formononetin|quercetin"
+黄芪,AHR,GeneCards_ge40,kaempferol|quercetin
+黄芪,AHSA1,GeneCards_ge40,kaempferol|quercetin
+黄芪,AKR1C3,GeneCards_ge40,kaempferol
+黄芪,AKT1,GeneCards_ge40,kaempferol|quercetin
+黄芪,AR,GeneCards_ge40,7-O-methylisomucronulatol|Calycosin|Jaranol|formononetin|isorhamnetin|kaempferol|quercetin
+黄芪,BAX,GeneCards_ge40,kaempferol|quercetin
+黄芪,BCL2,GeneCards_ge40,kaempferol|quercetin
+黄芪,BCL2L1,GeneCards_ge40,quercetin
+黄芪,BIRC5,GeneCards_ge40,quercetin
+黄芪,CASP3,GeneCards_ge40,kaempferol|quercetin
+黄芪,CASP8,GeneCards_ge40|OMIM,quercetin
+黄芪,CASP9,GeneCards_ge40,quercetin
+黄芪,CAV1,GeneCards_ge40|OMIM,quercetin
+黄芪,CCL2,GeneCards_ge40|TTD,quercetin
+黄芪,CCNA2,GeneCards_ge40,7-O-methylisomucronulatol|Calycosin|formononetin|isorhamnetin
+黄芪,CCNB1,GeneCards_ge40,quercetin
+黄芪,CCND1,GeneCards_ge40,quercetin
+黄芪,CD40LG,GeneCards_ge40,quercetin
+黄芪,CDKN1A,GeneCards_ge40,quercetin
+黄芪,CHEK1,GeneCards_ge40,7-O-methylisomucronulatol|Calycosin|Jaranol|formononetin|isorhamnetin
+黄芪,CHEK2,GeneCards_ge40,quercetin
+黄芪,CHRM1,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|formononetin|hederagenin|kaempferol"
+黄芪,CHRM2,GeneCards_ge40,7-O-methylisomucronulatol|hederagenin|kaempferol
+黄芪,CHRM3,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|hederagenin"
+黄芪,CHRNA7,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol"
+黄芪,CHUK,GeneCards_ge40,quercetin
+黄芪,CLDN4,GeneCards_ge40,quercetin
+黄芪,COL1A1,GeneCards_ge40,quercetin
+黄芪,COL3A1,GeneCards_ge40,quercetin
+黄芪,CTSD,GeneCards_ge40,quercetin
+黄芪,CXCL10,GeneCards_ge40,quercetin
+黄芪,CXCL11,GeneCards_ge40,quercetin
+黄芪,CXCL2,GeneCards_ge40,quercetin
+黄芪,CXCL8,GeneCards_ge40,quercetin
+黄芪,CYP1A1,GeneCards_ge40,kaempferol|quercetin
+黄芪,CYP1A2,GeneCards_ge40|DrugBank,kaempferol|quercetin
+黄芪,CYP1B1,GeneCards_ge40|DrugBank,kaempferol|quercetin
+黄芪,CYP3A4,GeneCards_ge40|DrugBank,kaempferol|quercetin
+黄芪,DRD1,GeneCards_ge40,7-O-methylisomucronulatol
+黄芪,DUOX2,GeneCards_ge40,quercetin
+黄芪,E2F1,GeneCards_ge40,quercetin
+黄芪,EGF,GeneCards_ge40,quercetin
+黄芪,EGFR,GeneCards_ge40|OMIM,quercetin
+黄芪,ERBB2,GeneCards_ge40|OMIM,quercetin
+黄芪,ERBB3,GeneCards_ge40,quercetin
+黄芪,ESR1,GeneCards_ge40|CTD_curated,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Calycosin|formononetin|isorhamnetin"
+黄芪,ESR2,GeneCards_ge40,7-O-methylisomucronulatol|Calycosin|Jaranol|formononetin|isorhamnetin
+黄芪,F10,GeneCards_ge40,7-O-methylisomucronulatol|quercetin
+黄芪,F2,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|FA|formononetin|isorhamnetin|kaempferol|quercetin"
+黄芪,F3,GeneCards_ge40,quercetin
+黄芪,F7,GeneCards_ge40,isorhamnetin|kaempferol|quercetin
+黄芪,FOS,GeneCards_ge40,quercetin
+黄芪,GABRA1,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|hederagenin|isorhamnetin|kaempferol|quercetin"
+黄芪,GJA1,GeneCards_ge40,quercetin
+黄芪,GSK3B,GeneCards_ge40,7-O-methylisomucronulatol|Calycosin|FA|formononetin|isorhamnetin
+黄芪,GSTM1,GeneCards_ge40,kaempferol|quercetin
+黄芪,GSTM2,GeneCards_ge40,kaempferol|quercetin
+黄芪,GSTP1,GeneCards_ge40,kaempferol|quercetin
+黄芪,HAS2,GeneCards_ge40,kaempferol|quercetin
+黄芪,HIF1A,GeneCards_ge40|CTD_curated,quercetin
+黄芪,HMOX1,GeneCards_ge40|OMIM,kaempferol|quercetin
+黄芪,HSD3B2,GeneCards_ge40,formononetin
+黄芪,HSF1,GeneCards_ge40,quercetin
+黄芪,HSP90AA1,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|1,7-Dihydroxy-3,9-dimethoxy pterocarpene|7-O-methylisomucronulatol|Bifendate|Calycosin|Jaranol|formononetin|isorhamnetin|kaempferol|quercetin"
+黄芪,HSPB1,GeneCards_ge40,quercetin
+黄芪,ICAM1,GeneCards_ge40,kaempferol|quercetin
+黄芪,IFNG,GeneCards_ge40,quercetin
+黄芪,IGF2,GeneCards_ge40,quercetin
+黄芪,IGFBP3,GeneCards_ge40,quercetin
+黄芪,IKBKB,GeneCards_ge40,kaempferol
+黄芪,IL10,GeneCards_ge40,quercetin
+黄芪,IL1A,GeneCards_ge40,quercetin
+黄芪,IL1B,GeneCards_ge40,quercetin
+黄芪,IL2,GeneCards_ge40,quercetin
+黄芪,IL4,GeneCards_ge40|TTD,formononetin
+黄芪,IL6,GeneCards_ge40,quercetin
+黄芪,INSR,GeneCards_ge40,kaempferol|quercetin
+黄芪,IRF1,GeneCards_ge40|OMIM,quercetin
+黄芪,KCNH2,GeneCards_ge40,7-O-methylisomucronulatol|quercetin
+黄芪,KDR,GeneCards_ge40,Bifendate
+黄芪,MAPK1,GeneCards_ge40,quercetin
+黄芪,MAPK14,GeneCards_ge40,7-O-methylisomucronulatol|Calycosin|formononetin|isorhamnetin
+黄芪,MAPK8,GeneCards_ge40,kaempferol
+黄芪,MET,GeneCards_ge40,Bifendate
+黄芪,MMP1,GeneCards_ge40,kaempferol|quercetin
+黄芪,MMP2,GeneCards_ge40,quercetin
+黄芪,MMP3,GeneCards_ge40|CTD_curated|TTD,quercetin
+黄芪,MMP9,GeneCards_ge40,quercetin
+黄芪,MPO,GeneCards_ge40|OMIM,quercetin
+黄芪,MT-ND6,GeneCards_ge40,formononetin
+黄芪,MYC,GeneCards_ge40,quercetin
+黄芪,NCF1,GeneCards_ge40,isorhamnetin|quercetin
+黄芪,NFE2L2,GeneCards_ge40,quercetin
+黄芪,NFKBIA,GeneCards_ge40,quercetin
+黄芪,NOS2,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Calycosin|Jaranol|formononetin|isorhamnetin|kaempferol"
+黄芪,NQO1,GeneCards_ge40,quercetin
+黄芪,NR1I2,GeneCards_ge40,kaempferol|quercetin
+黄芪,ODC1,GeneCards_ge40,quercetin
+黄芪,OPRM1,GeneCards_ge40,"3,9-di-O-methylnissolin"
+黄芪,PARP1,GeneCards_ge40,quercetin
+黄芪,PGR,GeneCards_ge40,"(3S,8S,9S,10R,13R,14S,17R)-10,13-dimethyl-17-[(2R,5S)-5-propan-2-yloctan-2-yl]-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol|Mairin|hederagenin|kaempferol"
+黄芪,PIK3CG,GeneCards_ge40,isorhamnetin|kaempferol|quercetin
+黄芪,PLAT,GeneCards_ge40,quercetin
+黄芪,PLAU,GeneCards_ge40|CTD_curated,quercetin
+黄芪,PON1,GeneCards_ge40,quercetin
+黄芪,POR,GeneCards_ge40,quercetin
+黄芪,PPARA,GeneCards_ge40|TTD,quercetin
+黄芪,PPARD,GeneCards_ge40,isorhamnetin|quercetin
+黄芪,PPARG,GeneCards_ge40|TTD,7-O-methylisomucronulatol|Calycosin|formononetin|isorhamnetin|kaempferol|quercetin
+黄芪,PRKACA,GeneCards_ge40,7-O-methylisomucronulatol|Calycosin|formononetin|isorhamnetin|kaempferol|quercetin
+黄芪,PRKCA,GeneCards_ge40,quercetin
+黄芪,PRKCB,GeneCards_ge40,quercetin
+黄芪,PSMD3,GeneCards_ge40,kaempferol|quercetin
+黄芪,PTGER3,GeneCards_ge40,quercetin
+黄芪,PTGS1,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Bifendate|Calycosin|Jaranol|formononetin|hederagenin|isorhamnetin|kaempferol|quercetin"
+黄芪,PTGS2,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|1,7-Dihydroxy-3,9-dimethoxy pterocarpene|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|9,10-dimethoxypterocarpan-3-O-β-D-glucoside|Bifendate|Calycosin|Jaranol|formononetin|hederagenin|isorhamnetin|kaempferol|quercetin"
+黄芪,PTPN1,GeneCards_ge40,isorhamnetin
+黄芪,PYGM,GeneCards_ge40,isorhamnetin
+黄芪,RAF1,GeneCards_ge40,quercetin
+黄芪,RASA1,GeneCards_ge40,quercetin
+黄芪,RB1,GeneCards_ge40|OMIM,quercetin
+黄芪,RELA,GeneCards_ge40,isorhamnetin|kaempferol|quercetin
+黄芪,RUNX1T1,GeneCards_ge40,quercetin
+黄芪,RUNX2,GeneCards_ge40,quercetin
+黄芪,RXRA,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|1,7-Dihydroxy-3,9-dimethoxy pterocarpene|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Calycosin|formononetin|hederagenin|quercetin"
+黄芪,SCN5A,GeneCards_ge40,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Jaranol|hederagenin|quercetin"
+黄芪,SELE,GeneCards_ge40,kaempferol|quercetin
+黄芪,SERPINE1,GeneCards_ge40,quercetin
+黄芪,SLC2A4,GeneCards_ge40,kaempferol|quercetin
+黄芪,SLC6A3,GeneCards_ge40,7-O-methylisomucronulatol|formononetin
+黄芪,SLC6A4,GeneCards_ge40,7-O-methylisomucronulatol|formononetin
+黄芪,SLPI,GeneCards_ge40,kaempferol
+黄芪,SOD1,GeneCards_ge40,quercetin
+黄芪,SPP1,GeneCards_ge40,quercetin
+黄芪,STAT1,GeneCards_ge40,kaempferol|quercetin
+黄芪,THBD,GeneCards_ge40,quercetin
+黄芪,TNF,GeneCards_ge40|CTD_curated,kaempferol|quercetin
+黄芪,TOP1,GeneCards_ge40,quercetin
+黄芪,TOP2A,GeneCards_ge40,"9,10-dimethoxypterocarpan-3-O-β-D-glucoside|Bifendate|isomucronulatol-7,2'-di-O-glucosiole|kaempferol|quercetin"
+黄芪,TP53,GeneCards_ge40,quercetin
+黄芪,VCAM1,GeneCards_ge40,kaempferol|quercetin
+黄芪,VEGFA,GeneCards_ge40,quercetin
