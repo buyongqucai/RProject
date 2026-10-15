@@ -1,0 +1,10 @@
+=== 17 polished overview Sankey ===
+[PlotQA:17_桑基图_HerbCompoundTargetPathway_Sankey] overall=WARN
+  - label_length: WARN | max_len=43 n_long(>28)=2/55 (3.6%)
+  - label_overlap: PASS | overlap_pairs=17/1378 (1.23%) deep=0
+OK 17
+=== 19 Herb × pathway heatmap ===
+[PlotQA:19_热图_HerbPathwayCoverage_Heatmap] overall=WARN
+  - label_length: WARN | max_len=71 n_long(>28)=2/200 (1.0%)
+  - label_overlap: PASS | overlap_pairs=0/19503 (0.00%) deep=0
+OK 19 DONE

@@ -1,0 +1,36 @@
+{
+  "job_id": "261011075421",
+  "adopted": "widened_normFit_0.6",
+  "primary_filter": {
+    "species_policy": "Mus musculus (10090) OR Homo sapiens (9606)",
+    "normalized_fit_score_min": 0.6,
+    "n_genes": 11,
+    "n_mouse": 4,
+    "n_human": 7,
+    "genes": [
+      "FUT8",
+      "FLNB",
+      "Ets1",
+      "Hnrnpll",
+      "Kics2",
+      "ALOX12",
+      "Flot2",
+      "BLVRA",
+      "IVD",
+      "NXT1",
+      "PRKD2"
+    ],
+    "note": "User-adopted widened cut; literature often cites ≥0.8 (kept as strict audit)"
+  },
+  "strict_audit": {
+    "normalized_fit_score_min": 0.8,
+    "n_genes": 2,
+    "genes": [
+      "FUT8",
+      "FLNB"
+    ],
+    "file": "04_PharmMapper_Quercetin_genes_studySpecies_normFit0.8.csv",
+    "literature": "Norm Fit ≥ 0.8 commonly used in network-pharmacology PharmMapper papers"
+  },
+  "unfiltered_backup": "04_PharmMapper_Quercetin_genes_unfiltered.csv"
+}

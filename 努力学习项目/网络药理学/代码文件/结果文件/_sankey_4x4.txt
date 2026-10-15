@@ -1,0 +1,14 @@
+Contract: A(herbs)=12 D(pathways)=20
+=== 17 complete Sankey ===
+17 canvas 18x36 · compounds=97 herbs_in_flow will be in subtitle
+[PlotQA:17_桑基图_HerbCompoundTargetPathway_Sankey] overall=WARN
+  - label_length: WARN | max_len=67 n_long(>28)=2/310 (0.6%)
+  - label_overlap: PASS | overlap_pairs=1235/19900 (6.21%) deep=0; sampled_n=200
+OK 17
+=== 18 Top-16 compounds · 4×4 panels ===
+18 canvas 18x18 panels=16
+[PlotQA:18_桑基图_PerCompound_Filtered_Sankey] overall=WARN
+  - label_length: WARN | max_len=61 n_long(>28)=2/246 (0.8%)
+  - label_overlap: PASS | overlap_pairs=1025/19900 (5.15%) deep=0; sampled_n=200
+OK 18
+DONE

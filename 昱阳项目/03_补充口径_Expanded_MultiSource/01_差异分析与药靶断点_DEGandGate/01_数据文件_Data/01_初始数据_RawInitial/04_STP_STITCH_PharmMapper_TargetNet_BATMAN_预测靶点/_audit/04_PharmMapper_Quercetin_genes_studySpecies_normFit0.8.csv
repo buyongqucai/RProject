@@ -1,0 +1,3 @@
+gene_human,pdb,uniprot,organism_id,organism,fit_score,norm_fit,target_name,source,evidence,job_id,filter
+FUT8,2DE0,Q9BYC5,9606,Homo_sapiens,3.324,0.831,"Alpha-(1,6)-fucosyltransferase",PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.8
+FLNB,3FER,O75369,9606,Homo_sapiens,3.316,0.829,Filamin-B,PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.8

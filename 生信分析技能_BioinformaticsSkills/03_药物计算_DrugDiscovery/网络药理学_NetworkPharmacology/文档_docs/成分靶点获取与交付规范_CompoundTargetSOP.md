@@ -91,7 +91,8 @@ STP 表字段通常含：Target（蛋白名）、**Common name（基因）**、U
 | **TCMSP-e 全量抓取**（token→搜索→草药页 Ingredients + Related Targets） | **AUTO**：`脚本_scripts/TCMSP批量抓取_tcmspBatchScrape.py`（2026-08-31 全量；**2026-09-02** 起 molecule.php 不再内嵌 JSON，改为草药页一次取成分与靶点；靶点表第三列为 UniProt reviewed human 基因简称，见 `TCMSP靶点UniProt映射_mapTcmspUniprot.py`；FASA- 列=FASA/tpsa） |
 | HERB 2.0 `chedi` API（search/detail） | **AUTO**（可达时） |
 | SwissTargetPrediction 表单提交 + 结果解析 | **AUTO**（可达时）；失败 → MANUAL 导出 |
-| BATMAN / ETCM / GeneCards 等 | 仍以 MANUAL 导出为主（无稳定公开 API） |
+| **BATMAN-TCM 2.0**（API 逆向实测，2026-10-14） | **AUTO**：`POST /api/queryTarget` → 轮询 `GET /api/queryTargetResult` → 作业包 zip（见 **§9**） |
+| ETCM / GeneCards 等 | 仍以 MANUAL 导出为主（无稳定公开 API） |
 
 ## 7. 空靶点药味（2026-07-27）
 
@@ -103,3 +104,38 @@ STP 表字段通常含：Target（蛋白名）、**Common name（基因）**、U
 4. 补数路径：核对 TCMSP 拉丁名与 OB/DL → 或 HERB/TCMBank 取成分+SMILES → SwissTargetPrediction → 重写 `{药}靶点基因.xlsx`（须含成分–基因映射列，白术式 ≥5 列或 `整合靶点` sheet）→ 重跑交集与 HCTP。
 
 与出图约束交叉引用：[`出图约束_NetworkFigureStandards.md`](出图约束_NetworkFigureStandards.md) §J（网络分析显示名）、§K（空靶点）。
+
+## 8. 非 TCMSP 库检索名规范（2026-10-14 用户确认，强制）
+
+> 一处 SSOT；技能说明只写指针。
+
+1. **只允许拉丁名或英文名**检索非 TCMSP 库（BATMAN-TCM、ETCM、HERB、TCMBank 等），如 `Hirudo`、`Panax ginseng`；**禁用拼音**（`shui zhi`、`ren shen`）。
+2. **理由（实证）**：BATMAN 2.0 拼音 `shui zhi` 被归并到**水栀子**（Gardenia jasminoides var. grandiflora，同音异物）；45 成分中 12 个栀子属专属，仅 4 个水蛭专属。拼音检索会静默引入错药数据。
+3. 拉丁/英文名**无匹配** → 记覆盖缺口（`BLOCKED_EXTERNAL` / 异常清单），**不得回退拼音**、不得用近音/同音条目顶替；药名规范以《中国药典》2020 为准。
+4. 检索命中后**必须核对返回条目的 Latin/English name 字段**与目标药一致，不一致按无匹配处理（见 BATMAN 返回的 `Related Herb` 字段）。
+5. 例外仅限：用户明示要求并接受混条风险时，可对同音脏条目做**人工成分归属截取**（保留判据 + 排除清单入 `成分归属审计` 表，如清风项目 `BATMAN_水蛭成分归属审计_ShuizhiCurationQC.csv`）。
+
+## 9. BATMAN-TCM 2.0 程序化接口（2026-10-14 实测）
+
+三个域分工（SPA `http://bionet.ncpsb.org.cn/batman-tcm/#/search`）：
+
+| 用途 | 端点 |
+|------|------|
+| 提交检索（herb/compound/formula） | `POST http://bionet.ncpsb.org.cn/api/queryTarget`（等价 `POST http://batman2api.cloudna.cn/queryTarget`，官方 API 文档在站内 API 选项卡） |
+| 轮询结果（表格 JSON） | `GET http://bionet.ncpsb.org.cn/api/queryTargetResult?tab=tab1&userInScore=<cutoff>&pvalue=<p>&jobId=<jobId>&top_20=<0|1>&drug_score=<n>` |
+| **作业包 zip**（网页 pane-1「Download all the searched result」同源） | `http://batman2.cloudna.cn/downloadApiFile/data/query_TARGET_result/{jobId}/Results%20of%20target%20protein.zip` |
+| Result 2 富集总表 xls | `.../query_TARGET_result/{jobId}-{cutoff}-{pVal}-{drugScore}-{top20}/EnrichmentResult-Cutoff={cutoff}targets.xls` |
+
+**提交体**（herb 检索，此时 list 必须是拉丁/英文名，见 §8）：
+
+```json
+{"jobId": "batman-I<日期>-<时间>-<unix秒>",
+ "content": [{"type": "caoyao", "clusterName": "Cluster1 (default)", "list": ["Hirudo"]}],
+ "userInScore": 80.88, "pvalue": 0.05, "homo": 0}
+```
+
+`type`：`fufang`（复方拼音）/ `caoyao`（草药）/ `compound`（PubChem CID 列表）。接单返回 `{"status":200}`（异步）；`queryTargetResult` 的 `status`：200=完成（`result.table[0].table` = `[成分名, CID, [[Entrez, symbol, score], …]]`），300=计算中，**500=查无此药**。作业包 URL 仅依赖 `{jobId}`；下载域是 `batman2.cloudna.cn`（`window.downloadApi`），**不是**页面 API 域，也**不是** Download 页的全库文件 `downloadApiFile/data/browser/known_browse_by_*`。
+
+**known 口径（瀑布不变：BATMAN 仅 known）**：靶点 score 字段为文字 `known target in HERB|HIT|TTD|…` 者 = curated；数字（0–1 或 LR 分）= 预测边，**不进主交付**。已知视图等价于 `userInScore=10000`。注意 BATMAN 的 known 标注不完美（如水蛭素 Hirudin→F2(凝血酶) 仅标 0.89 预测分），遇到经典药理边缺失时写入异常清单待人工复核，不静默纳入也不静默丢弃。
+
+**已知坑**：拼音同音混条（§8 实证）；作业临时文件服务端会清理，作业包 zip 拿到即存 raw；限流会 502，轮询间隔 ≥5s。

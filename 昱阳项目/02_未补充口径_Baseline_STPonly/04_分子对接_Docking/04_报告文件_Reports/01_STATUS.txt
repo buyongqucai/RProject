@@ -1,0 +1,11 @@
+STATUS: DONE
+step: 04_Docking
+phase: C
+arm: 02_未补充口径_Baseline_STPonly
+target: Alox15 (唯一交集基因, ALOX15)
+pdb: 1lox  ligand: quercetin_CID5280343  engine: vina
+affinity: -8.3 kcal/mol  center_source: autosite(rank=1)  box: cap35  box_qc: PASS
+viz: PyMOL big/surface/detail + FROZEN 结合能热图
+note: 仅 1 个靶点（交集=1），不足以支撑多靶点网络药理结论；仅代表槲皮素可结合 ALOX15。未做 MD（用户要求不做）。
+jobs_root: E:\dock_yuyang\baseline\Alox15_1lox
+updated: 2026-10-15

@@ -1,0 +1,21 @@
+=== 16 UpSet herb×compound ===
+Warning messages:
+1: `aes_string()` was deprecated in ggplot2 3.0.0.
+ℹ Please use tidy evaluation idioms with `aes()`.
+ℹ See also `vignette("ggplot2-in-packages")` for more information.
+ℹ The deprecated feature was likely used in the UpSetR package.
+  Please report the issue at <https://github.com/hms-dbmi/UpSetR/issues>. 
+2: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.
+ℹ The deprecated feature was likely used in the UpSetR package.
+  Please report the issue at <https://github.com/hms-dbmi/UpSetR/issues>. 
+3: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
+ℹ Please use the `linewidth` argument instead.
+ℹ The deprecated feature was likely used in the UpSetR package.
+  Please report the issue at <https://github.com/hms-dbmi/UpSetR/issues>. 
+OK 16 16_交集图_HerbCompound_UpSet sets=11 items=130
+=== 17 Sankey HCTP flow ===
+Error in `$<-.data.frame`(`*tmp*`, "compound", value = logical(0)) : 
+  replacement has 0 rows, data has 2192
+Calls: np_plot_hctp_sankey -> $<- -> $<-.data.frame
+Execution halted

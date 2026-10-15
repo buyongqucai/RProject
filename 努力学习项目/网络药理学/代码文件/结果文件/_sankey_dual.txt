@@ -1,0 +1,13 @@
+=== 17 complete Sankey ===
+17 canvas 16x11 compounds=18
+[PlotQA:17_桑基图_HerbCompoundTargetPathway_Sankey] overall=WARN
+  - label_length: WARN | max_len=59 n_long(>28)=2/49 (4.1%)
+  - label_overlap: PASS | overlap_pairs=13/1081 (1.20%) deep=0
+OK 17
+=== 18 per-compound filtered Sankey ===
+18 canvas 16x9 compounds=6
+[PlotQA:18_桑基图_PerCompound_Filtered_Sankey] overall=WARN
+  - label_length: WARN | max_len=59 n_long(>28)=2/88 (2.3%)
+  - label_overlap: PASS | overlap_pairs=63/3655 (1.72%) deep=0
+OK 18
+DONE dual Sankey 17+18

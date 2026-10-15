@@ -1,0 +1,21 @@
+{
+  "url": "http://batman2api.cloudna.cn/queryTarget",
+  "body": {
+    "jobId": "batman-yuyang-quercetin-1791705615",
+    "content": [
+      {
+        "type": "compound",
+        "clusterName": "quercetin",
+        "list": [
+          "5280343"
+        ]
+      }
+    ],
+    "userInScore": 20,
+    "pvalue": 0.05,
+    "homo": 0
+  },
+  "resp": {
+    "status": 200
+  }
+}

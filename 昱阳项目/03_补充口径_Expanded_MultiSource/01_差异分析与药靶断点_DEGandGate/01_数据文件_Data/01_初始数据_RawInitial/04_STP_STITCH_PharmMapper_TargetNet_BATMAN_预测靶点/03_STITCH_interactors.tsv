@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+
+<head>
+<meta http-equiv='Content-type' content='text/html;charset=UTF-8' />
+<link rel='shortcut icon' href='/images/favicon.png' />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'/>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700' rel='stylesheet' type='text/css'/>
+<title>STITCH: chemical association networks</title>
+<script type='text/javascript'>
+//<![CDATA[
+
+var js_comm_globals = {web_cgi_dir: '/cgi', web_images_dir: '/images', 
+                       user_id: 'yKAMXANmfhVY', task_id: '3nqIKrP6ECPj', session_id: 'l9nsQtIloU65', 
+                       targetmode: 'proteins', calling_script: 'network.pl', 
+                      };
+
+//]]>
+</script>
+<script type='text/javascript' src='/javascript/navigation_and_popup_functions_7023.js'></script>
+<script type='text/javascript' src='/javascript/string_scripts_7023.js'></script>
+<script type='text/javascript' src='/javascript/jquery/jquery-1.7.1.min.js'></script><script type='text/javascript' src='/javascript/basic/basic_js_util_7023.js'></script>
+<script type='text/javascript' src='/javascript/basic/basic_ajax_7023.js'></script>
+<script type='text/javascript' src='/javascript/basic/basic_floating_div_7023.js'></script>
+<script type='text/javascript' src='/javascript/ac_oetags.js'></script>
+<link href='/css/floatingDiv.css' rel='stylesheet' type='text/css'/>
+<link href='/css/main_stylesheet_pc.v7267.css' rel='stylesheet' type='text/css'/>
+</head>
+
+<body id="stringBodyTag" onclick="hideFDifInside('fpWindowDiv');hideFDifInside('LinkWindowDiv');hideFDifInside('pageLoadFloatingDiv');" onmousedown="hideFDifInside('fpWindowDiv');hideFDifInside('LinkWindowDiv');hideFDifInside('pageLoadFloatingDiv');" >
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2456420-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<div style='position:absolute;' class='nodeInfoDivStyle' id='fpWindowDiv' onmouseout='signalFDOnMouseOut(event, this, "fpWindowDiv"); restoreFNButtonMode (event, this); window.status=""; return true;'></div>
+<div style='position:absolute;' class='nodeInfoDivStyle' id='LinkWindowDiv' onmouseout='signalFDOnMouseOut(event, this, "LinkWindowDiv"); restoreFNButtonMode (event, this); window.status=""; return true;'><div id="containerInnerLink"></div><b>Full Link:</b><textarea cols='50' rows='6' style='border:none;border-radius:3px;width:100%;'>https://stitch-db.org/cgi/network.pl?all_channels_on=1&amp;block_structure_pics_in_bubbles=0&amp;hide_disconnected_nodes=0&amp;hide_node_labels=0&amp;limit=100&amp;network_display_mode=svg&amp;network_flavor=confidence&amp;targetmode=proteins&amp;identifier=&amp;species=auto_detect</textarea></div>
+<script type='text/javascript'> $("#fpWindowDiv").mouseenter(function() {signalFDOnMouseIn("fpWindowDiv"); });</script>
+<script type='text/javascript'> $("#LinkWindowDiv").mouseenter(function() {signalFDOnMouseIn("LinkWindowDiv"); });</script>
+<div class='top_bar'>
+<div class='container'>
+<div class='left'>
+<ul class='top_bar_list'>
+<li class='header'><b style='color: white'>This version is from 2015 and is not supported anymore!</b> Version:</li>
+<li class='last'>5.0</li>
+</ul>
+</div>
+<div class='right'>
+<ul class='top_bar_list'>
+<li><a href='/cgi/my.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65'>Login</a></li>
+<li><a href='/cgi/register.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65'>Register</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class='main_header'>
+<div class='container'>
+<h1 style='line-height: 2em;'><a id='stitch_logo' href='/cgi/input.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65'>STITCH&nbsp;(unsupported)</a></h1><div class='main_nav'>
+<ul>
+<li><div class='main_nav_item input_switch_to_search'><a href='/cgi/input.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;input_page_show_search=on' class='main_nav_item input_switch_to_search' id='search' onclick='main_nav_click (document.getElementById("search")); return true;'>Search</a></div></li>
+<li><div class='main_nav_item'><a href='/cgi/download.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65' class='main_nav_item' onclick='main_nav_click(this); return true;'>Download</a></div></li>
+<li><div class='main_nav_item'><a href='/cgi/help.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65' class='main_nav_item' onclick='main_nav_click(this); return true;'>Help</a></div></li>
+<li><div class='main_nav_item'><a href='/cgi/my.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65' class='main_nav_item' onclick='main_nav_click(this); return true;'>My&nbsp;Data</a></div></li>
+</ul>
+</div><!-- end main_nav -->
+</div>
+<div class='shadow'></div>
+</div>
+<script type='text/javascript'>
+<!--
+//-->
+</script>
+<noscript>
+</noscript>
+<div class='cell'>
+<div class='container'>
+<div class='main_content'>
+<form id='proceed_form' action='/cgi/network.pl' method='post'><div class='proceed_form_explanation'><div class='row'><div class='cell'>The following chemicals appear to match your input.<br/>Please review the list, then click 'Continue' to proceed.</div><div class='cell'><input type='hidden' name='block_structure_pics_in_bubbles' value='0'/>
+<input type='hidden' name='chemicalmode' value='10.5'/>
+<input type='hidden' name='hide_disconnected_nodes' value='0'/>
+<input type='hidden' name='hide_node_labels' value='0'/>
+<input type='hidden' name='input_query_species' value='9606'/>
+<input type='hidden' name='internal_call' value='1'/>
+<input type='hidden' name='limit' value='100'/>
+<input type='hidden' name='multi_input' value='1'/>
+<input type='hidden' name='multiple_input_items' value='CID0005280343'/>
+<input type='hidden' name='multiple_input_type' value='multi_identifier'/>
+<input type='hidden' name='network_display_mode' value='svg'/>
+<input type='hidden' name='network_flavor' value='confidence'/>
+<input type='hidden' name='required_score' value='400'/>
+<input type='hidden' name='sessionId' value='l9nsQtIloU65'/>
+<input type='hidden' name='targetmode' value='proteins'/>
+<input type='hidden' name='userId' value='yKAMXANmfhVY'/>
+<a class='button' href="javascript:history.go(-1);">&lt;- Back</a>
+&nbsp;&nbsp;<a class='button' href="javascript:document.getElementById('proceed_form').submit();">Continue -&gt;</a>
+</div></div></div><div class='proceed_form_table'>
+<div style='display:table-row;'>
+<div class='proceed_form_header_column'>'CID0005280343':<input type='hidden' name='query_name0' value='CID0005280343'/>
+</div>
+</div>
+<div style='display:table-row;'>
+<div class='checkbox_wrap proceed_form_item_column'><input id='item0.-5280343' type='checkbox' name='item0.-5280343' checked='checked'/><label for='item0.-5280343'>quercetin</label></div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</td></tr></table></div>
+<div class='main_footer'>
+<div class='shadow'></div>
+<div id='main_nav_footer_container' class='container'><div class='column first'>
+<h2>&copy; STITCH Consortium 2016</h2>
+<ul>
+<li><a href='http://www.embl.de/' id='EMBL_logo'>EMBL - European Molecular Biology Laboratory</a></li>
+<li><a href='http://www.isb-sib.ch/' id='SIB_logo'>SIB - Swiss Institute of Bioinformatics</a></li>
+<li><a href='http://www.cpr.ku.dk/' id='CPR_logo'>CPR - NNF Center for Protein Research</a></li>
+</ul>
+</div>
+<div class='column last'>
+<h2><a href='/cgi/credits.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65'>Credits</a></h2>
+<ul>
+<li><a href='/cgi/credits.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=funding'>Funding</a></li>
+<li><a href='/cgi/credits.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=datasources'>Datasources</a></li>
+<li><a href='/cgi/credits.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=partners'>Partners</a></li>
+<li><a href='/cgi/credits.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=libraries'>Software</a></li>
+</ul>
+</div>
+<div class='column'>
+<h2><a href='/cgi/access.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65'>Access</a></h2>
+<ul>
+<li><a href='/cgi/access.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=archive'>Versions</a></li>
+<li><a href='/cgi/access.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=apis'>APIs</a></li>
+<li><a href='/cgi/access.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=licensing'>Licensing</a></li>
+</ul>
+</div>
+<div class='column'>
+<h2><a href='/cgi/info.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65'>Info</a></h2>
+<ul>
+<li><a href='/cgi/info.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=scores'>Scores</a></li>
+<li><a href='/cgi/info.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=scenarios'>Use scenarios</a></li>
+<li><a href='/cgi/info.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=faqs'>FAQs</a></li>
+</ul>
+</div>
+<div class='column'>
+<h2><a href='/cgi/about.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65'>About</a></h2>
+<ul>
+<li><a href='/cgi/about.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=content'>Content</a></li>
+<li><a href='/cgi/about.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=references'>References</a></li>
+<li><a href='/cgi/about.pl?UserId=yKAMXANmfhVY&amp;sessionId=l9nsQtIloU65&amp;footer_active_subpage=contributors'>Contributors</a></li>
+</ul>
+</div>
+</div>
+</div>
+<script type='text/javascript'>
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u='//tr-denbi.embl.de/heimdall/';
+    _paq.push(['setTrackerUrl', u+'p.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'p.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"46c82dd091344df599ae75bdab07c5b7","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
+

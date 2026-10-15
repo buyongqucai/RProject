@@ -1,0 +1,20 @@
+03_药病交集与网络_OverlapAndNetwork · STATUS
+更新: 2026-10-15
+
+完成 (脚本 02_代码文件_Code/网络表构建_buildNetworkTables.py):
+- 药病交集 197 基因 (药物 244 ∩ 疾病 4269，80.7%)
+- 每药交集 9 份 + 每药靶点 9 份 (药物_H_*)；成分级交集靶点/汇总 (183 成分)
+- 网络表: 网络边_network.csv (ID,SYMBOL) + 网络节点类型_type.csv (A药/B成分/C靶点/D通路)
+  规模 A9/B183/C197/D20(KEGG top20)，边 3422 (A->B 183, B->C 2632, C->D 607)
+- 节点中心性 网络节点属性_NetworkNodes.csv；Cytoscape 边/点 ×2 网；成分重命名表；草药成分边
+- 交集核对_OverlapIntegrity.csv
+
+口径: C 层=交集靶点；D 层=KEGG padj<0.05 top20；药名节点 H_ 前缀防撞基因符号 (甘草 GC=GC 基因)
+注意: network.csv 为 edge list (ID,SYMBOL)，与技能样例 schema 一致
+
+图谱契约装配 (02_代码文件_Code/图谱契约装配_buildFigureContracts.py, 2026-10-15):
+- 01_数据文件_Data/02_结果数据_ResultTables/图谱契约数据_FigureContractData/ = 技能契约命名全套
+  (按库长表双口径 / GO 气泡表 top10/ontology / KEGG top25 含 BRITE 大类 one_type/two_type / 成分靶点等)
+- 图 02 药病韦恩 (微生信模板 build_two_set_svg, 244∩4269=197) 已产出并裁白边
+
+待办: 轨 B 交付文件/ 打包 (含 03-05 柱状图归位)

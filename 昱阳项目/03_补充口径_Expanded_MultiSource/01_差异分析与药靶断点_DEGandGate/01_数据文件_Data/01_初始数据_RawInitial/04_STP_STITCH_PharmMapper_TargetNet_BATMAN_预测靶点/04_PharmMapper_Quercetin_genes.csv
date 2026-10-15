@@ -1,0 +1,12 @@
+gene_human,pdb,uniprot,organism_id,organism,fit_score,norm_fit,target_name,source,evidence,job_id,filter
+FUT8,2DE0,Q9BYC5,9606,Homo_sapiens,3.324,0.831,"Alpha-(1,6)-fucosyltransferase",PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6
+FLNB,3FER,O75369,9606,Homo_sapiens,3.316,0.829,Filamin-B,PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6
+Ets1,1K7A,P27577,10090,Mus_musculus,3.188,0.7971,Protein C-ets-1,PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6
+Hnrnpll,2E5I,Q921F4,10090,Mus_musculus,3.09,0.7724,Heterogeneous nuclear ribonucleoprotein L-like,PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6
+Kics2,2GNX,Q6P1I3,10090,Mus_musculus,2.952,0.7379,UPF0536 protein C12orf66 homolog,PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6
+ALOX12,3D3L,P18054,9606,Homo_sapiens,3.443,0.6887,"Arachidonate 12-lipoxygenase, 12S-type",PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6
+Flot2,1WIN,Q60634,10090,Mus_musculus,3.383,0.6767,Flotillin-2,PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6
+BLVRA,2H63,P53004,9606,Homo_sapiens,3.32,0.664,Biliverdin reductase A,PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6
+IVD,1IVH,P26440,9606,Homo_sapiens,3.247,0.6495,"Isovaleryl-CoA dehydrogenase, mitochondrial",PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6
+NXT1,1JN5,Q9UKK6,9606,Homo_sapiens,3.097,0.6195,NTF2-related export protein 1,PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6
+PRKD2,2COA,Q9BZL6,9606,Homo_sapiens,3.634,0.6057,Serine/threonine-protein kinase D2,PharmMapper,predicted,261011075421,studySpecies_mouseORhuman_AND_normFit>=0.6

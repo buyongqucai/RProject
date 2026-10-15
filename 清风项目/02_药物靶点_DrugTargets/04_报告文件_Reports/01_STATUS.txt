@@ -1,0 +1,8 @@
+STATUS: PARTIAL
+step: 02_DrugTargets
+phase: B
+note: 实取轮 2026-10-14 — TCMSP 三级钻取全跑通：8 药成分 1,183 条(207 过 OB/DL，去重 182)落 raw；成分→靶点批量 182/182 零失败 → 2,454 成分-靶点对 / 290 去重靶点，结果表已落 02_结果数据_ResultTables/
+raw_layout: 01_初始数据_RawInitial/TCMSP_*(来源库前缀，§2.1)
+herbs: 水蛭(无TCMSP→BATMAN/ETCM/HERB)/旋覆花/川芎(已确认)/桃仁/浙贝母/蜜麻黄(已确认，TCMSP 以麻黄 Ephedra Herba 承载)/紫苏子/黄芪/甘草
+next: 水蛭兜底(BATMAN 网盘包或文献成分+STP) → SMILES(PubChem/HERB) → 靶点映射(TCMSP 靶点表含 kegg ID)
+updated: 2026-10-14

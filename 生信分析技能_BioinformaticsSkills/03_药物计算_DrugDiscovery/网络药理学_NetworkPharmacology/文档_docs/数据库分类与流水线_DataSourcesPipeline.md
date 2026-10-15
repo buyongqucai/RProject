@@ -36,12 +36,14 @@
 
 KEGG（通路）；STRING（PPI）。
 
-### 1.4 AUTO vs MANUAL（2026-07-19）
+### 1.4 AUTO vs MANUAL（2026-07-19；2026-10-14 更新 BATMAN）
 
 | 能力 | 库 |
 |------|-----|
-| AUTO | CTD bulk；KEGG REST；STRING API；HERB chedi；STP 表单（可达时） |
-| MANUAL | GeneCards、TTD、DrugBank、OMIM、DisGeNET；TCMSP、BATMAN、ETCM2、TCMBank；AUTO 失败回退 |
+| AUTO | CTD bulk；KEGG REST；STRING API；HERB chedi；STP 表单（可达时）；**BATMAN-TCM 2.0 API**（2026-10-14 实测，见 CompoundTargetSOP §9） |
+| MANUAL | GeneCards、TTD、DrugBank、OMIM、DisGeNET；TCMSP、ETCM2、TCMBank；AUTO 失败回退 |
+
+**检索名（2026-10-14 用户确认）：** 非 TCMSP 库只用拉丁名/英文名，禁拼音 → [`成分靶点获取与交付规范`](成分靶点获取与交付规范_CompoundTargetSOP.md) §8。
 
 ## 2. 流水线步骤（摘要）
 

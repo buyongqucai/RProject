@@ -1,0 +1,20 @@
+{
+  "gene_mouse": "Hif1a",
+  "gene_human": "HIF1A",
+  "pdb": "4h6j",
+  "center_source": "annotated_site",
+  "center_detail": "HIF1A PAS-B pocket region (4H6J); exploratory",
+  "engine": "vina",
+  "ligand": "quercetin_CID5280343",
+  "status": "pending",
+  "center": [
+    10.0,
+    15.0,
+    20.0
+  ],
+  "size": [
+    24,
+    24,
+    24
+  ]
+}

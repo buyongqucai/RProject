@@ -1,0 +1,7 @@
+=== 17 filtered overview Sankey ===
+17 canvas 16x12 compounds=22
+[PlotQA:17_桑基图_HerbCompoundTargetPathway_Sankey] overall=WARN
+  - label_length: WARN | max_len=43 n_long(>28)=2/72 (2.8%)
+  - label_overlap: PASS | overlap_pairs=33/2415 (1.37%) deep=0
+OK 17
+DONE

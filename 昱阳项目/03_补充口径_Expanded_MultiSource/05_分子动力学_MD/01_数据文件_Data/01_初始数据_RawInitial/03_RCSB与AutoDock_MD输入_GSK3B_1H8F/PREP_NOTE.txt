@@ -1,0 +1,6 @@
+source=E:\dock_yuyang\expanded\Gsk3b_1h8f
+chains=['A', 'B']
+ligand_res=QUE
+net_charge=0
+clean=DNA/RNA+impurities+non-target HETATM dropped
+pose=Vina MODEL3 from quercetin_out.pdbqt

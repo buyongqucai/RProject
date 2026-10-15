@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index-Calcnet-TargetNet</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+
+    <!--[if lt IE 9]>
+    <script src='/static/assets/javascripts/html5shiv.js' type='text/javascript'></script>
+    <![endif]-->
+    <link href='/static/assets/stylesheets/bootstrap/bootstrap.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/static/assets/stylesheets/bootstrap/bootstrap-responsive.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jquery ui -->
+    <link href='/static/assets/stylesheets/jquery_ui/jquery-ui-1.10.0.custom.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/static/assets/stylesheets/jquery_ui/jquery.ui.1.10.0.ie.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / switch buttons -->
+    <link href='/static/assets/stylesheets/plugins/bootstrap_switch/bootstrap-switch.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / xeditable -->
+    <link href='/static/assets/stylesheets/plugins/xeditable/bootstrap-editable.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/static/assets/stylesheets/plugins/common/bootstrap-wysihtml5.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / wysihtml5 (wysywig) -->
+    <link href='/static/assets/stylesheets/plugins/common/bootstrap-wysihtml5.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jquery file upload -->
+    <link href='/static/assets/stylesheets/plugins/jquery_fileupload/jquery.fileupload-ui.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / full calendar -->
+    <link href='/static/assets/stylesheets/plugins/fullcalendar/fullcalendar.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / select2 -->
+    <link href='/static/assets/stylesheets/plugins/select2/select2.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / mention -->
+    <link href='/static/assets/stylesheets/plugins/mention/mention.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / tabdrop (responsive tabs) -->
+    <link href='/static/assets/stylesheets/plugins/tabdrop/tabdrop.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jgrowl notifications -->
+    <link href='/static/assets/stylesheets/plugins/jgrowl/jquery.jgrowl.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / datatables -->
+    <link href='/static/assets/stylesheets/plugins/datatables/bootstrap-datatable.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / dynatrees (file trees) -->
+    <link href='/static/assets/stylesheets/plugins/dynatree/ui.dynatree.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / color picker -->
+    <link href='/static/assets/stylesheets/plugins/bootstrap_colorpicker/bootstrap-colorpicker.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / datetime picker -->
+    <link href='/static/assets/stylesheets/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / daterange picker) -->
+    <link href='/static/assets/stylesheets/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / flags (country flags) -->
+    <link href='/static/assets/stylesheets/plugins/flags/flags.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / slider nav (address book) -->
+    <link href='/static/assets/stylesheets/plugins/slider_nav/slidernav.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / fuelux (wizard) -->
+    <link href='/static/assets/stylesheets/plugins/fuelux/wizard.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / flatty theme -->
+    <link href='/static/assets/stylesheets/light-theme.css' id='color-settings-body-color' media='all' rel='stylesheet' type='text/css' />
+    <!-- / demo -->
+    <link href='/static/assets/stylesheets/demo.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/static/assets/stylesheets/docs.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='/static/assets/stylesheets/bootmetro-nav.css' media='all' rel='stylesheet' type='text/css' />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- / jquery -->
+<script src='/static/assets/javascripts/jquery/jquery.min.js' type='text/javascript'></script>
+<!-- / jquery mobile events (for touch and slide) -->
+<script src='/static/assets/javascripts/plugins/mobile_events/jquery.mobile-events.min.js' type='text/javascript'></script>
+<!-- / jquery migrate (for compatibility with new jquery) -->
+<script src='/static/assets/javascripts/jquery/jquery-migrate.min.js' type='text/javascript'></script>
+<!-- / jquery ui -->
+<script src='/static/assets/javascripts/jquery_ui/jquery-ui.min.js' type='text/javascript'></script>
+<!-- / bootstrap -->
+<script src='/static/assets/javascripts/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/flot/excanvas.js' type='text/javascript'></script>
+<!-- / sparklines -->
+<script src='/static/assets/javascripts/plugins/sparklines/jquery.sparkline.min.js' type='text/javascript'></script>
+<!-- / flot charts -->
+<script src='/static/assets/javascripts/plugins/flot/flot.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/flot/flot.resize.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/flot/flot.pie.js' type='text/javascript'></script>
+<!-- / bootstrap switch -->
+<script src='/static/assets/javascripts/plugins/bootstrap_switch/bootstrapSwitch.min.js' type='text/javascript'></script>
+<!-- / fullcalendar -->
+<script src='/static/assets/javascripts/plugins/fullcalendar/fullcalendar.min.js' type='text/javascript'></script>
+<!-- / datatables -->
+<script src='/static/assets/javascripts/plugins/datatables/jquery.dataTables.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/datatables/jquery.dataTables.columnFilter.js' type='text/javascript'></script>
+<!-- / wysihtml5 -->
+<script src='/static/assets/javascripts/plugins/common/wysihtml5.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/common/bootstrap-wysihtml5.js' type='text/javascript'></script>
+<!-- / select2 -->
+<script src='/static/assets/javascripts/plugins/select2/select2.js' type='text/javascript'></script>
+<!-- / color picker -->
+<script src='/static/assets/javascripts/plugins/bootstrap_colorpicker/bootstrap-colorpicker.min.js' type='text/javascript'></script>
+<!-- / mention -->
+<script src='/static/assets/javascripts/plugins/mention/mention.min.js' type='text/javascript'></script>
+<!-- / input mask -->
+<script src='/static/assets/javascripts/plugins/input_mask/bootstrap-inputmask.min.js' type='text/javascript'></script>
+<!-- / fileinput -->
+<script src='/static/assets/javascripts/plugins/fileinput/bootstrap-fileinput.js' type='text/javascript'></script>
+<!-- / modernizr -->
+<script src='/static/assets/javascripts/plugins/modernizr/modernizr.min.js' type='text/javascript'></script>
+<!-- / retina -->
+<script src='/static/assets/javascripts/plugins/retina/retina.js' type='text/javascript'></script>
+<!-- / fileupload -->
+<script src='/static/assets/javascripts/plugins/fileupload/tmpl.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/fileupload/load-image.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/fileupload/canvas-to-blob.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/fileupload/jquery.iframe-transport.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/fileupload/jquery.fileupload.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/fileupload/jquery.fileupload-fp.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/fileupload/jquery.fileupload-ui.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/fileupload/jquery.fileupload-init.js' type='text/javascript'></script>
+<!-- / timeago -->
+<script src='/static/assets/javascripts/plugins/timeago/jquery.timeago.js' type='text/javascript'></script>
+<!-- / slimscroll -->
+<script src='/static/assets/javascripts/plugins/slimscroll/jquery.slimscroll.min.js' type='text/javascript'></script>
+<!-- / autosize (for textareas) -->
+<script src='/static/assets/javascripts/plugins/autosize/jquery.autosize-min.js' type='text/javascript'></script>
+<!-- / charCount -->
+<script src='/static/assets/javascripts/plugins/charCount/charCount.js' type='text/javascript'></script>
+<!-- / validate -->
+<script src='/static/assets/javascripts/plugins/validate/jquery.validate.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/validate/additional-methods.js' type='text/javascript'></script>
+<!-- / naked password -->
+<script src='/static/assets/javascripts/plugins/naked_password/naked_password-0.2.4.min.js' type='text/javascript'></script>
+<!-- / nestable -->
+<script src='/static/assets/javascripts/plugins/nestable/jquery.nestable.js' type='text/javascript'></script>
+<!-- / tabdrop -->
+<script src='/static/assets/javascripts/plugins/tabdrop/bootstrap-tabdrop.js' type='text/javascript'></script>
+<!-- / jgrowl -->
+<script src='/static/assets/javascripts/plugins/jgrowl/jquery.jgrowl.min.js' type='text/javascript'></script>
+<!-- / bootbox -->
+<script src='/static/assets/javascripts/plugins/bootbox/bootbox.min.js' type='text/javascript'></script>
+<!-- / inplace editing -->
+<script src='/static/assets/javascripts/plugins/xeditable/bootstrap-editable.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/xeditable/wysihtml5.js' type='text/javascript'></script>
+<!-- / ckeditor -->
+<script src='/static/assets/javascripts/plugins/ckeditor/ckeditor.js' type='text/javascript'></script>
+<!-- / filetrees -->
+<script src='/static/assets/javascripts/plugins/dynatree/jquery.dynatree.min.js' type='text/javascript'></script>
+<!-- / datetime picker -->
+<script src='/static/assets/javascripts/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.js' type='text/javascript'></script>
+<!-- / daterange picker -->
+<script src='/static/assets/javascripts/plugins/bootstrap_daterangepicker/moment.min.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.js' type='text/javascript'></script>
+<!-- / max length -->
+<script src='/static/assets/javascripts/plugins/bootstrap_maxlength/bootstrap-maxlength.min.js' type='text/javascript'></script>
+<!-- / dropdown hover -->
+<script src='/static/assets/javascripts/plugins/bootstrap_hover_dropdown/twitter-bootstrap-hover-dropdown.min.js' type='text/javascript'></script>
+<!-- / slider nav (address book) -->
+<script src='/static/assets/javascripts/plugins/slider_nav/slidernav-min.js' type='text/javascript'></script>
+<!-- / fuelux -->
+<script src='/static/assets/javascripts/plugins/fuelux/wizard.js' type='text/javascript'></script>
+<!-- / flatty theme -->
+<script src='/static/assets/javascripts/nav.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/tables.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/theme.js' type='text/javascript'></script>
+<!-- / demo -->
+
+</head>
+<body>
+<div class="container-fluid" style="margin-bottom: 10px; ">
+
+    <div class="row-fluid">
+            <div class="navbar  navbar-inverse navbar-fixed-top" >
+             <div class="navbar-inner" >
+               <div class="container">
+                 <a class="brand" style="font-size: 22px;" href="/home/index/"><b>TargetNet</b></a>
+                 <a class="btn btn-navbar collapsed"  data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                 </a>
+
+                <div class="nav-collapse navbar-inverse-collapse collapse" style="font-size: 18px;">
+                 <ul class="nav" style="font-size: 18px;">
+                     <li ><a  href="/home/index/"><i class="icon-home"></i> Home</a></li>
+                     <li class="dropdown">
+                        <a href="#"  class="dropdown-toggle" data-toggle="dropdown">Webserver<b class="caret" style="margin: 8px 2px 0 5px;"></b></a>
+                         <ul class="dropdown-menu">
+                             <li ><a  href="/calcnet/index/"> <i class=" icon-puzzle-piece"></i>TargetNet</a></li>
+                             <li ><a  href="/calcnet/index_ensemble/"><i class=" icon-puzzle-piece"></i> Ensemble TargetNet</a></li>
+                             <li ><a  href="/calcnet/index_rule/"><i class=" icon-puzzle-piece"></i> Lipinski Rules</a></li>
+                         </ul>
+                     </li>
+                     <li ><a  href="/home/targets/">Targets</a></li>
+
+                     <li ><a  href="/home/documentation/">Documentation</a></li>
+
+                     <li ><a  href="/home/download/">Download</a></li>
+                     <li ><a  href="/home/help/">Help</a></li>
+
+                     <li><a  href="/home/contact/">Contact</a></li>
+
+                 </ul>
+		<ul id="main-menu-right" class="nav pull-right">
+				<li><a href="http://www.scbdd.com/">CBDD Group</a></li>
+			</ul>
+                </div>
+               </div>
+             </div>
+            </div>
+
+    </div>
+
+</div>
+
+
+  <!--[if lt IE 7]>
+   <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+   <![endif]-->
+
+
+<style>
+    a, a:hover, .btn-link, .btn-link:hover {
+      color: #FF9900;
+    }
+    .box1{
+        padding: 10px;
+    border: 1px solid #dddddd;
+    background: transparent;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+
+    }
+
+    #desc_text .control-label{
+        width: 25%;
+    }
+
+    #desc_text .controls{
+        margin-left: 35%;
+    }
+
+    #desc_text .ui-slider-horizontal{
+        height: .1em;
+    }
+
+    #desc_text .ui-slider .ui-slider-handle{
+        width: 0.5em;
+        height: 0.8em;
+        cursor: move;
+    }
+
+     #upload .control-label{
+        width: 100%;
+    }
+
+    #upload .controls{
+        margin-left: 0;
+    }
+
+    #upload .ui-slider-horizontal{
+        height: .1em;
+    }
+
+    #upload .ui-slider .ui-slider-handle{
+        width: 0.5em;
+        height: 0.8em;
+        cursor: move;
+    }
+    #upload .control-group{
+        margin-left: -10px;
+        width:90%;
+    }
+</style>
+ <div class="container" style="border-right: dotted 2px #b60f0b; border-bottom: dotted 2px #b60f0b; border-left: dotted 2px #b60f0b; padding: 2px 5px 2px 5px;">
+    <div class="row" >
+            <div class="span12" >
+
+            <ul class="breadcrumb" style="background-color: #E6E4D6;">
+              <li><i class="icon-home text-orange"></i><a href="/home/index/"> Home</a> <span class="divider">/</span></li>
+              <li><a href="/calcnet/index/">TargetNet</a> <span class="divider">/</span></li>
+              <li class="active">Calculate</li>
+
+            </ul>
+
+            </div>
+    </div>
+    <div class="row">
+            <div class="span6 box1">
+                <p class="well text-warning"><i class="icon-key" style="vertical-align: top;"></i> &nbsp;&nbsp;<strong>Use SMILES to net the targets</strong></p>
+                 <form id="desc_text" class="form form-horizontal" onSubmit="return Validator.Validate(this,3)" enctype="multipart/form-data" method="POST" action="/calcnet/calc_text/">
+                 <div class="control-group">
+                    <label class="control-label" for="inputText1">SMILES:</label>
+                    <div class="controls">
+                        <input dataType="Require" msg="This field is required!" id="inputText1" name="smile" placeholder="C(C=CC1)=C(C=1C(=O)O)O" type="text">
+                        <a style="" href="#" class="btn btn-mini btn-success" onclick="$('#inputText1').val('C(C=CC1)=C(C=1C(=O)O)O')">Example</a>
+                        <a style="" type="button" class="btn btn-mini btn-success" href="/home/jsdraw_editor/" target="_blank">Draw</a>
+                    </div>
+
+                 </div>
+
+                 <div class="control-group">
+                    <label class="control-label" for="inputSelect">Include models with:</label>
+                    <div class="controls">
+                        <select id="inputSelect" name="param_1">
+                            <option value="AUC_score">AUC >=</option>
+                            <option value="ACC">Accuracy >=</option>
+                            <option value="MCC">MCC >=</option>
+                            <option value="F1_score">F-score >=</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="control-label">
+                        <label id="slider-example1-amount" for="slider-example1"><small>0.6</small></label>
+
+                    </div>
+                    <div id="slider-example1" style="margin-bottom: 20px; clear: both;" class="controls ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+                        <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 20%;"></a>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="finger_type">Fingerprint type:</label>
+                    <div class="controls">
+                        <select id="finger_type" name="finger_type">
+                            <option value="BaseInfo_ecfp6">ECFP6 fingerprints</option>
+                            <option value="BaseInfo_fp2">FP2 fingerprints</option>
+                            <option value="BaseInfo_estate">Estate fingerprints</option>
+                            <option value="BaseInfo_daylight">Daylight fingerprints</option>
+                            <option value="BaseInfo_maccs">MACCS fingerprints</option>
+                            <option value="BaseInfo_ecfp2">ECFP2 fingerprints</option>
+                            <option value="BaseInfo_ecfp4" selected>ECFP4 fingerprints</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                    <br/>
+                     <input id="slider-example1-amount-2" name="param_2" type="hidden" value="0.7">
+                 <input type="submit" class="btn btn-warning" value="Submit"/>
+                 <input type="reset" class="btn btn-warning" value="Reset"/>
+                 </form>
+            </div>
+
+            <div class="span5 box1" style="float: right;">
+                <p class="well text-warning"><i class="icon-key" style="vertical-align: top;"></i> &nbsp;&nbsp;<strong>Upload file (Formats: *.smi)</strong></p>
+
+                <form name='theForm' id="upload" onSubmit="return Validator.Validate(this,2)" enctype="multipart/form-data" method="POST" action="/calcnet/calc_list/">
+                                                
+
+                                            <div class="span5">
+                                                <div class="control-group">
+                                                    <label class="control-label" for="f1">Upload your file:</label>
+                                                    <div class="controls">
+                                                        <input dataType="Filter" msg="invalid file format!" accept="smi,SMI" type="file" id="f1" name="tempfile"/>
+                                                         <a href="/static/media/calcnet/example.smi" class="btn btn-mini btn-success">Example</a>
+
+                                                    </div>
+                                                </div>
+
+                                                <br/>
+
+                                                <div class="control-group">
+                                                    <label class="control-label" for="inputSelect">Include models with:</label>
+                                                    <div class="controls">
+                                                        <select id="inputSelect" name="param_1_list">
+                                                            <option value="AUC_score">AUC >=</option>
+                                                            <option value="ACC">Accuracy >=</option>
+                                                            <option value="MCC">MCC >=</option>
+                                                            <option value="F1_score">F-score >=</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <div class="control-label">
+                                                        <label id="slider-example1-amount_list" for="slider-example1"><small>0.6</small></label>
+
+                                                    </div>
+                                                    <div id="slider-example1_list" style="margin-bottom: 20px; clear: both;" class="controls ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+                                                        <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 20%;"></a>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="control-group">
+                                                    <label class="control-label" for="finger_type_list">Fingerprint type:</label>
+                                                    <div class="controls">
+                                                        <select id="finger_type_list" name="finger_type_list">
+                                                            <option value="BaseInfo_ecfp6">ECFP6 fingerprints</option>
+                                                            <option value="BaseInfo_fp2">FP2 fingerprints</option>
+                                                            <option value="BaseInfo_estate">Estate fingerprints</option>
+                                                            <option value="BaseInfo_daylight">Daylight fingerprints</option>
+                                                            <option value="BaseInfo_maccs">MACCS fingerprints</option>
+                                                            <option value="BaseInfo_ecfp2">ECFP2 fingerprints</option>
+                                                            <option value="BaseInfo_ecfp4" selected>ECFP4 fingerprints</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <br/>
+                                                 <input id="slider-example1-amount-2_list" name="param_2_list" type="hidden" value="0.7">
+                                                <input class="btn btn-warning" type="button" id="b3" value="Submit" onclick="Validator.Validate(document.getElementById('upload'),3)"/>
+
+                                                <input class="btn btn-warning" type='reset' value="Reset">
+                                            </div>
+
+
+
+
+                                            
+                </form>
+            </div>
+
+    </div>
+   <div class="row"  >
+
+        <div class="span12" id="progress-container" style="margin-top: 3px;">
+       <div style="text-align: center" id="progressbar"></div>
+        <div style="text-align: center" id="progress_wait"></div>
+        </div>
+
+
+
+
+    </div>
+
+    <hr style="width: 98%; margin: 10px 0 10px 0 ; border-top: 2px groove #ba93bf;">
+    <div class="row">
+            <div class="span12 backborder-solid-1">
+
+                <div class="label label-warning" style="font-size: 16px;line-height: 20px;"><i class="icon-tags" style="vertical-align: middle;padding-bottom: 2px;"></i>&nbsp;&nbsp;Notes </div>
+                   <hr style="width: 98%; margin: 10px 0 10px 0 ; border-top: 1px groove #313537;">
+                <ul>
+                    <li><a><b>Interpretation</b></a>: Click <a class="btn-link" href = "/home/documentation/" target="_blank">here</a> for the details about the modeling process.</li>
+                    <li><a href="#" ><b>Batch computing limit</b> </a>: <code>5,000 molecules at one time</code>.</li>
+
+                    <li>To get the molecular structure you can use the <a href="/home/jsdraw_editor/" target="_blank"> editor </a> or use
+                        <a href="http://peter-ertl.com/jsme/JSME_2015-06-14/JSME.html" target="_blank">JSME editor</a> from Peter Ertl.</li>
+                    <li>When you get a service error or exception, you should firstly check your molecular files or the SMILES you upload or submit. We suggest you using the <a href="http://openbabel.org/wiki/Canonical_SMILES" target="_blank">Canonical SMILES</a> instead of unchecked SMILES.</li>
+
+
+
+                </ul>
+
+
+
+
+
+            </div>
+
+    </div>
+ </div>
+
+
+<!--  弹出smile的例子 -->
+<script>
+    // popover demo
+    $("a[data-toggle=popover]")
+      .popover()
+      .click(function(e) {
+        e.preventDefault()
+      })
+</script>
+
+
+<!--  js表单验证的引入 -->
+<script src='/static/js/validator/validator.js'></script>
+
+<!--  js等待进度条的引入 -->
+<script src="/static/js/spin.min.js"></script>
+
+
+<!--  js等待进度条调用函数以及js表单验证函数调用，注意前者的提交动作被包含在了validator.js里面-->
+<script>
+function progress(b,s){
+ var opts = {
+  lines: 15, // The number of lines to draw
+  length: 0, // The length of each line
+  width: 8, // The line thickness
+  radius: 17, // The radius of the inner circle
+  corners: 1, // Corner roundness (0..1)
+  rotate: 38, // The rotation offset
+  direction: 1, // 1: clockwise, -1: counterclockwise
+  color: 'black', // #rgb or #rrggbb or array of colors
+  speed: 1.5, // Rounds per second
+  trail: 37, // Afterglow percentage
+  shadow: false, // Whether to render a shadow
+  hwaccel: false, // Whether to use hardware acceleration
+  className: 'spinner', // The CSS class to assign to the spinner
+  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  top: '3', // Top position relative to parent in px
+  left: 'auto' // Left position relative to parent in px
+
+};
+    var submit_btn = document.getElementById(b);
+document.getElementById(s).submit();
+submit_btn.disabled=true;
+var target = document.getElementById('progressbar');
+var spinner = new Spinner(opts).spin(target);
+    $('#progress-container').css('border', 'dashed 1px grey');
+    document.getElementById('progress_wait').className='span12';
+    $('#progressbar').css('height', '50px');
+
+    document.getElementById('progressbar').className='span12';
+    document.getElementById('progress_wait').innerHTML='<h5>Please Wait...</h5>'
+}
+
+</script>
+
+
+
+
+<div class="container">
+    <div class="row-fluid">
+
+            <hr style="height:2px;border:none;border-top:2px groove #acbf81;width: 100%;margin: 10px 0 10px 0;">
+
+            <div style="background-color: #E6E4D6;margin-bottom: 20px;margin-left: 0;vertical-align:middle;" class="span12">
+
+                <div style="margin: 5px 0 0 0;padding: 0 0 0 0 ;" class="span3">
+
+               <span style="color: grey; font-size: 10px;">New counts from Mar. 10, 2025</span>
+<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=4f1919&w=190&t=tt&d=6Ewg93BobfRGUq2nKMJ5JBQuT96yj3QUhCUmXZ-nyUg&co=e6e4d6'></script>
+<span style="color: grey; font-size: 10px;">Visits between Oct. 1, 2017 to Mar. 10, 2025: 0.12 million</span>
+
+               
+                </div>
+                <div style="margin: 0 0 0 0 ;padding:0 0 0 0;vertical-align:text-bottom; " class="span6">
+
+
+
+                    <p style="margin: 10px 0 0 0 ;padding:0 0 0 0;vertical-align:text-bottom;text-align: center; ">
+
+                    <!-- <span style="text-align: center;">Copyright @ 2012-2014 <a href="http://www.scbdd.com">Computational Biology & Drug Design Group, </a><br/>
+                        School of Pharmaceutical Sciences, Central South University.
+                        All rights reserved.</span><br/> -->
+                                                <span>The recommended browsers: Safari, Firefox, Chrome, IE(Ver.>8).</span><br/>
+                         <span><i class="icon-envelope"></i>&nbsp;E-mail: jiedong@csu.edu.cn</span><br/>
+
+
+
+                    </p>
+
+
+
+                </div>
+                <div style="float: right;" class="span3">
+                     <table style="float: right;width: 220px;">
+                        <tr>
+
+                            <td>&nbsp;<img style="width: 60px;height: 40px;" src="/static/img/footer/mysql.png"></td>
+                            <td>&nbsp;<img style="width: 60px;height: 25px;"src="/static/img/footer/cbdd_django.gif"></td>
+                            <td>&nbsp;<img style="width: 40px;height: 40px;" src="/static/img/footer/jsdraw.gif"></td>
+
+
+                        </tr>
+                         <tr>
+
+                                 <td>&nbsp;<img style="width: 55px;height: 40px;" src="/static/img/footer/rdkit.png"></td>
+                                 <td>&nbsp;<img style="width: 55px;height:40px;" src="http://scikit-learn.org/stable/_static/scikit-learn-logo-small.png"></td>
+                                 <td>&nbsp;<img style="width: 55px;height:40px;" src="/static/img/footer/pybel.png"></td>
+
+                         </tr>
+                    </table>
+                </div>
+
+            </div>
+
+
+    </div>
+</div>
+
+
+
+<!-- / demo -->
+<script src='/static/assets/javascripts/demo/jquery.mockjax.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/demo/inplace_editing.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/demo/charts.js' type='text/javascript'></script>
+<script src='/static/assets/javascripts/demo/demo.js' type='text/javascript'></script>
+</body>
+</html>

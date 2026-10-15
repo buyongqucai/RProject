@@ -1,0 +1,27 @@
+=== 16 UpSet herb×compound ===
+Warning messages:
+1: `aes_string()` was deprecated in ggplot2 3.0.0.
+ℹ Please use tidy evaluation idioms with `aes()`.
+ℹ See also `vignette("ggplot2-in-packages")` for more information.
+ℹ The deprecated feature was likely used in the UpSetR package.
+  Please report the issue at <https://github.com/hms-dbmi/UpSetR/issues>. 
+2: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.
+ℹ The deprecated feature was likely used in the UpSetR package.
+  Please report the issue at <https://github.com/hms-dbmi/UpSetR/issues>. 
+3: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
+ℹ Please use the `linewidth` argument instead.
+ℹ The deprecated feature was likely used in the UpSetR package.
+  Please report the issue at <https://github.com/hms-dbmi/UpSetR/issues>. 
+OK 16 16_交集图_HerbCompound_UpSet sets=11 items=130
+=== 17 Sankey HCTP flow ===
+[PlotQA:17_桑基图_HerbCompoundTargetPathway_Sankey] overall=FAIL
+  - label_length: FAIL | max_len=86 n_long(>28)=2/80 (2.5%)
+  - label_overlap: PASS | overlap_pairs=72/3003 (2.40%) deep=0
+OK 17
+=== 18 Core target subnet ===
+[PlotQA:18_网络图_CoreTargets_Subnet_Network] overall=WARN
+  - label_length: WARN | max_len=64 n_long(>28)=2/93 (2.2%)
+  - label_overlap: PASS | overlap_pairs=1/4095 (0.02%) deep=0
+OK 18
+DONE advanced panels 16–18

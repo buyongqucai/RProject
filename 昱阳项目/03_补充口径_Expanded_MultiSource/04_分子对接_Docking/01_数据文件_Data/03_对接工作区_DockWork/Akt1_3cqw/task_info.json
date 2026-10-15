@@ -1,0 +1,20 @@
+{
+  "gene_mouse": "Akt1",
+  "gene_human": "AKT1",
+  "pdb": "3cqw",
+  "center_source": "annotated_site",
+  "center_detail": "AKT1 kinase site near ATP pocket (3CQW)",
+  "engine": "vina",
+  "ligand": "quercetin_CID5280343",
+  "status": "pending",
+  "center": [
+    18.0,
+    7.0,
+    12.0
+  ],
+  "size": [
+    22,
+    22,
+    22
+  ]
+}

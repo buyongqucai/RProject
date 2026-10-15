@@ -1,0 +1,14 @@
+肉桂（RG）为何无靶点 / 网络度为 0
+========================================
+
+结论：数据缺口（BLOCKED_EXTERNAL），不是「肉桂无药理作用」。
+
+证据链：
+1. TCMSP肉桂有效成分.xlsx — 仅表头，无有效成分行
+2. TCMSP肉桂有效成分靶点表.xlsx — 空表
+3. 肉桂靶点基因.xlsx — 仅 UniProt 两列，缺成分–基因映射列
+4. 解析器要求第5列为基因；列数<5 → 靶点=0
+5. 未走 HERB→SwissTargetPrediction 补全
+6. type.csv 保留 RG，但 network.csv 无边 → Degree=0
+
+本分析 RG：Degree=0, Betweenness=0.0, IsSingleNode=true

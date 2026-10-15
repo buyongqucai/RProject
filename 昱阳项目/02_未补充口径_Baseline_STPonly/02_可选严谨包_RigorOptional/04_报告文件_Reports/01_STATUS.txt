@@ -1,0 +1,6 @@
+STATUS: SKIPPED_CONFIRMED_DONE
+step: 02_RigorOptional
+phase: B
+arm: 02_未补充口径_Baseline_STPonly
+notes: User confirmed NOT to run rigor pack on baseline arm. Directory kept; no analyses executed. Marked complete as skipped.
+updated: 2026-10-11

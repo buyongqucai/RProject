@@ -1,0 +1,6 @@
+﻿gene,target_id,pvalue,FDR_BH,evidence,compound,ingredient_id,source
+SHH,HBTAR003719,0.000365393200674475,0.00487469958819063,herb_statistical_inference,,,HERB2.0
+CMC2,HBTAR008662,0.000121805152257541,0.00261045935332207,herb_statistical_inference,,,HERB2.0
+GCG,HBTAR001526,,,ingredient_target,cellulose,HBIN020055,HERB2.0
+SHH,HBTAR003719,,,ingredient_target,cellulose,HBIN020055,HERB2.0
+CMC2,HBTAR008662,,,ingredient_target,cellulose,HBIN020055,HERB2.0

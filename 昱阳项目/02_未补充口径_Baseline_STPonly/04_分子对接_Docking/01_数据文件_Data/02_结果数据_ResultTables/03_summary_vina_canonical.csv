@@ -1,0 +1,2 @@
+task,protein,pdb,ligand,ligand_name,cid,affinity_kcal_mol,center_source,center_detail,size_method,box_qc,fallback_used,engine
+01,ALOX15,1lox,quercetin,quercetin,5280343,-8.3,autosite,autosite_rank=1;file=rec_adfr_cl_001.pdb;size_capped35,autosite_box_cap35,PASS,,vina

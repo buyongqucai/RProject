@@ -1,0 +1,18 @@
+{
+  "PropertyTable": {
+    "Properties": [
+      {
+        "CID": 5280448,
+        "MolecularFormula": "C16H12O5",
+        "MolecularWeight": "284.26",
+        "SMILES": "COC1=C(C=C(C=C1)C2=COC3=C(C2=O)C=CC(=C3)O)O",
+        "ConnectivitySMILES": "COC1=C(C=C(C=C1)C2=COC3=C(C2=O)C=CC(=C3)O)O",
+        "XLogP": 2.4,
+        "TPSA": 76,
+        "HBondDonorCount": 2,
+        "HBondAcceptorCount": 5,
+        "RotatableBondCount": 2
+      }
+    ]
+  }
+}

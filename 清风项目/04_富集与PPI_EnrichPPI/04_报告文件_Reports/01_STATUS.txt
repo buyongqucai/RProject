@@ -1,0 +1,25 @@
+04_富集与PPI_EnrichPPI · STATUS
+更新: 2026-10-15
+
+完成:
+- GO/KEGG 富集 (R 4.5.3 clusterProfiler + org.Hs.eg.db，脚本 02_代码文件_Code/交集功能富集_enrichGOKEGG.R):
+  197 交集基因 -> GO BP 2400 / CC 83 / MF 205 terms (padj<0.05)；KEGG hsa 193 通路 (padj<0.05)
+  KEGG 靶点通路长表 2979 行；KEGG REST 需 options(timeout=300)
+- STRING PPI (API tsv/network，脚本 02_代码文件_Code/PPI获取_STRING_ppiString.py):
+  score>=900 主交付 687 边/173 节点 (24 基因无高置信互作入 QC)；>=400 全量 4572 边
+- 图谱套件 01-15 全出 (03_图片文件_Figures/，同名 SVG+PNG，DPI>=600；HCTP 光栅 300):
+  01 疾病五库韦恩(R N集微生信双底栏) / 02 药病韦恩(微生信模板+裁白边)
+  03 单药交集柱 / 04-05 成分疾病交集柱(均分/按药) / 06 GO气泡 / 07 GO柱 / 08 KEGG棒棒糖 / 09 KEGG柱 / 10 KEGG圈图
+  11 HCTP columns / 12 HCTP ellipse (18.5x16.5in) / 13 STRING 官方网络图 (REST image，PNG+SVG)
+  14 PPI 同心渐变 / 15 PPI Degree (173/173 节点标注，5 环外环 50%)
+- 出图脚本: 02_代码文件_Code/01_图谱套件出图_runFigureSuite.R / 02_网络预览出图_runNetworkPreview.R / 03_网络布局重生成_regenHctpLayouts.R
+  (recipe 全部来自技能 SSOT 脚本_scripts/02-04，本项目只接线契约数据)
+- PlotQA 自动过检: label_overlap 全 PASS (deep=0)；label_length FAIL 均为 FROZEN 冻结副标题
+  (14/15 STRING score subtitle 125 字；11/12 HCTP stats subtitle 185/219 字) — 误判例外，不改冻结文案
+
+交付 (01_数据文件_Data/02_结果数据_ResultTables/):
+- ID映射_SYMBOL2ENTREZ.csv；交集功能富集_GO_{BP,CC,MF}_EnrichGO*.csv；KEGG通路富集_EnrichKEGG.csv
+- PPI网络_STRING/ (PPI互作_StringInteractions_score900.tsv / _StringInteractions.tsv / 节点度表 / QC)
+- 图谱套件编号表_FigureSuiteTables/ (02-21 编号表 + 审计 + 报告)
+
+待办: PPI 集群 MCODE (可选)；KEGG 官方通路图 Top20 (BLOCKED_EXTERNAL，技能 §F 路线)；轨 B 交付文件打包

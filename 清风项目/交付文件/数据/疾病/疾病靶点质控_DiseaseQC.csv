@@ -1,0 +1,58 @@
+﻿项目,数值/内容,说明
+GeneCards_full,9787,
+GeneCards_ge40,4254,
+CTD_总行,20948,
+CTD_D054990行,20509,
+CTD_any基因,20509,
+CTD_curated基因,23,
+OMIM,100,
+TTD,33,
+DrugBank,38,
+USER中间表,21841,
+主并集,4269,
+主并集∩USER,4269,
+USER差集(仅USER),17572,USER中间表有而主并集无
+主并集差集(仅本表),0,主并集有而USER中间表无
+主并集中非UniProt标准符号,333,ADAMTS9-AS1|AFAP1-AS1|AIRN|C4B|CARMN|CASC15|CASC9|CCAT1|CDKN2B-AS1|CERNA3|CFTR-AS1|CHKB-CPT1B|CKMT1B|CYTOR|DEFA1|DEFB4A|DLEU2|DNM3OS|DSG2-AS1|EMSLR|FAS-AS1|FENDRR|FIRRE|FLNC-AS1|GAS5|GCOM1|GH-LCR|GJD2-DT|H19|H3C13|HAND2-AS1|HBA1|HBA2|HCCAT5|HFE-AS1|HNF1A-AS1|HOTAIR|HOTAIRM1|HOTTIP|HOXA11-AS
+处置[GeneCards],COPD -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[GeneCards_ge40],COPD -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[CTD],CCL12 -> （排除）,小鼠基因(物种口径 hsa)，CTD 混入
+处置[CTD_curated],CCL12 -> （排除）,小鼠基因(物种口径 hsa)，CTD 混入
+处置[OMIM],EIG1 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],EIG4 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],LNCR1 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],SHOXY -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],EIG7 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],PHN -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],PLF -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],LNCR4 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],TAPVR1 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],EIG3 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],IS5 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],EIG2 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],CFM1 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],CTEPH1 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],SCLC1 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],TSG11 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],COPD -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],LNCR5 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],IS4 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],LNCR3 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],IS1 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],IS2 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],CFEOM3C -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],SM2 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[OMIM],EIG5 -> （排除）,OMIM 表型/位点占位条目，非基因符号
+处置[TTD],CTGF -> CCN2,公认一一对应别名修复
+处置[TTD],PDHK1 -> PDK1,公认一一对应别名修复
+处置[TTD],PPARgamma -> PPARG,公认一一对应别名修复
+处置[TTD],PDE3 -> （排除）,歧义家族名(PDE3A/B)，无法唯一映射
+处置[TTD],JNK -> （排除）,歧义家族名(MAPK8/9/10)，无法唯一映射
+处置[TTD],D2R -> DRD2,公认一一对应别名修复
+处置[TTD],GPR40 -> FFAR1,公认一一对应别名修复
+处置[TTD],5LOX -> ALOX5,公认一一对应别名修复
+处置[TTD],CASP -> （排除）,歧义家族名(caspase family)，无法唯一映射
+处置[TTD],PDGFR -> （排除）,歧义家族名(PDGFRA/B)，无法唯一映射
+处置[TTD],NOX -> （排除）,歧义家族名(NOX family)，无法唯一映射
+处置[TTD],TGFBR -> （排除）,歧义家族名(TGFBR1/2)，无法唯一映射
+处置[TTD],VEGFR -> （排除）,歧义家族名(KDR/FLT1/FLT4)，无法唯一映射

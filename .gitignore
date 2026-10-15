@@ -84,6 +84,12 @@ NA
 努力学习项目/**/KEGG*/**/*.svg
 努力学习项目/**/动画*/**
 努力学习项目/**/参考_交付原图/**
+昱阳项目/**/KEGG*/**/*.png
+昱阳项目/**/KEGG*/**/*.svg
+昱阳项目/**/动画*/**
+昱阳项目/**/参考_交付原图/**
+昱阳项目/**/01_初始数据_RawInitial/01_GEO_GSE106799/**/*.gz
+昱阳项目/**/01_初始数据_RawInitial/01_GEO_GSE106799/**/*matrix*
 
 # QQ SMTP 授权码与告警凭据（勿入库）
 生信分析技能_BioinformaticsSkills/QQ邮箱.txt
@@ -91,6 +97,15 @@ NA
 生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/.mail_device_code
 生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/mail_auth_qr.png
 生信分析技能_BioinformaticsSkills/**/环境安装_EnvSetup/test_mail_body.txt
+
+# 课题沙箱：MD 运行工作目录（轨迹/引擎文件）仅本地保留（初始数据登记、结果表、图、报告仍入库）
+昱阳项目/**/05_分子动力学_MD/05_工作文件_MdWork/**
+# 动画打包 zip 与动画目录同规（仅本地保留）
+努力学习项目/**/动画*.zip
+昱阳项目/**/动画*/**
+昱阳项目/**/动画*.zip
+# 课题原始组学大文件（GEO 原始矩阵等）仅本地保留
+.scratch/*_InSilicoKOIntake/data/**
 
 # GitHub 100MB 限制：外部库原始大文件仅本地保留
 努力学习项目/**/外部数据库*/CTD/CTD_chemicals_diseases.csv.gz

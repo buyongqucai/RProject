@@ -1,0 +1,6 @@
+layer 1 cols: x,alluvium,stratum,fill_ggnewscale_1,y,PANEL,group,lode,n,count,deposit,prop,ymin,ymax,knot.pos,linewidth,linetype,colour,alpha
+layer 2 cols: PANEL,y,x,stratum,n,count,deposit,prop,ymin,ymax,fill,xmin,xmax,size,linewidth,linetype,colour,alpha
+  fill sample: #B3DE69 | #FCCDE5 | #8DD3C7 | #BEBADA | #FDB462 | #E6AB02 | #FB8072 | #80B1D3
+layer 3 cols: PANEL,y,x,stratum,n,count,deposit,prop,ymin,ymax,label,nudge_x,nudge_y,colour,family,size,angle,hjust,vjust,alpha,fontface,lineheight
+  fill sample: NA
+probe saved

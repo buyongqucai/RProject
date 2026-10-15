@@ -1,0 +1,5 @@
+Venn figures (Expanded) — NetworkPharm FROZEN §G 微生信模板
+engine: weishengxin_venn_lib.build_two_set_svg + Chrome rasterize + trim
+04 DEG vs CTD: |DEG|=120 |CTD|=178 |∩|=0
+05 Drug vs Disease: |Drug|=471 |Disease|=298 |∩|=57
+06 Exp/Pred/DEG: counts only (no 微生信 3-set template); Exp=12 Pred=55 DEG=4

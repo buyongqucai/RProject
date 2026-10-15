@@ -1,0 +1,6 @@
+STATUS: GATE_DONE_BASELINE_FROZEN
+arm: 02_未补充口径_Baseline_STPonly
+drug_targets: SwissTargetPrediction only
+stp_post=100 human_genes=99 mouse=85 overlap=1 Alox15
+notes: Backup archive. No further expansion on this arm.
+updated: 2026-10-11

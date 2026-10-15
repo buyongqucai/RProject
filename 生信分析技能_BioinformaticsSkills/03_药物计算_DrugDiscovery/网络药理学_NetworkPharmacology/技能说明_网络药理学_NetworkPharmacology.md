@@ -24,6 +24,7 @@ description: >-
 ## 2. 数据规范
 
 - 可溯源：单药名 + 英文病名 + 库导出；整合 schema = **药物–有效成分–靶点**
+- **检索名（强制）：** 非 TCMSP 库只用**拉丁名/英文名**、禁拼音，命中后核对返回 Latin/English 字段 → CompoundTargetSOP **§8**（2026-10-14）
 - raw 路径/文件名含来源库；禁止无来源的 `输入/`、`raw/`
 - HERB→STP 交付精简与异常清单 → CompoundTargetSOP
 - 禁止 UniProt 全表左拼主交付；缺导出 → `BLOCKED_EXTERNAL`，不编造基因

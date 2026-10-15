@@ -1,0 +1,6 @@
+source=E:\dock_yuyang\expanded\Egfr_1m17
+chains=['A']
+ligand_res=QUE
+net_charge=0
+clean=DNA/RNA+impurities+non-target HETATM dropped
+pose=Vina MODEL2 from quercetin_out.pdbqt

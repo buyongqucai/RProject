@@ -1,0 +1,13 @@
+=== 17 complete Sankey (fuller HCTP) ===
+17 canvas 17x26 · compounds=47 targets/pathways in subtitle
+[PlotQA:17_桑基图_HerbCompoundTargetPathway_Sankey] overall=WARN
+  - label_length: WARN | max_len=60 n_long(>28)=2/120 (1.7%)
+  - label_overlap: PASS | overlap_pairs=121/6903 (1.75%) deep=0
+OK 17
+=== 18 Top-16 compounds Sankey ===
+18 canvas 15x11 compounds=16
+[PlotQA:18_桑基图_PerCompound_Filtered_Sankey] overall=WARN
+  - label_length: WARN | max_len=43 n_long(>28)=2/78 (2.6%)
+  - label_overlap: PASS | overlap_pairs=38/2850 (1.33%) deep=0
+OK 18
+DONE Sankey 17 complete + 18 top16

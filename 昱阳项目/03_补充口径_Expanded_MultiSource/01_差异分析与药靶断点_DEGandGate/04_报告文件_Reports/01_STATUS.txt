@@ -1,0 +1,7 @@
+STATUS: GATE_DONE_EXPANDED
+arm: 03_补充口径_Expanded_MultiSource
+drug_human_union=549 experimental=174 predicted=484
+disease_union=298 DEG=120 CTD=178
+overlap_drug_x_disease=57 genes=Akt1,Alox15,Bax,Bcl2,Bcl2l1,Bdnf,Casp3,Casp8,Casp9,Cat,Ccnb1,Ccnd1,Cdh1,Cdk1,Chrm1,Creb1,Drd3,Egfr,Fos,Gabra1,Gabra2,Gabra4,Gabra6,Gabrb1,Gabrb2,Gabrb3,Gabre,Gria2,Gsk3b,Hif1a
+rigor: DONE_EXPANDED_ONLY
+updated: 2026-10-11 19:11

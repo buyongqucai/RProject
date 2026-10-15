@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+"""Rank -> base filename for Top20 SPECS (from 31_compose_vivid_bio_gifs.py)."""
+SRC_BY_RANK = {
+    0: "bio_base_01_epithelium.png",
+    5: "bio_base_02_il17.png",
+    6: "bio_base_03_tnf.png",
+    19: "bio_base_04_tlr.png",
+    20: "bio_base_05_hif1.png",
+    1: "bio_base_06_lipid_athero.png",
+    2: "bio_base_07_age_rage.png",
+    3: "bio_base_08_hepatitis_b.png",
+    4: "bio_base_09_kshv.png",
+    7: "bio_base_10_proteoglycans.png",
+    8: "bio_base_11_shear_athero.png",
+    9: "bio_base_12_prostate.png",
+    10: "bio_base_13_pi3k_akt.png",
+    11: "bio_base_14_hepatitis_c.png",
+    12: "bio_base_15_egfr_tki.png",
+    13: "bio_base_16_pdl1_pd1.png",
+    14: "bio_base_17_pancreatic.png",
+    15: "bio_base_18_ros_carcino.png",
+    16: "bio_base_19_chagas.png",
+    17: "bio_base_20_hcmv.png",
+    18: "bio_base_21_endocrine_res.png",
+}

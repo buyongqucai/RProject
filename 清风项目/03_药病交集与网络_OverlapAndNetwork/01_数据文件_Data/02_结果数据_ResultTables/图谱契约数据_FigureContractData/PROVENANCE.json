@@ -1,0 +1,10 @@
+{
+  "data_provenance": "REAL",
+  "source": "qingfeng_pipeline_tcmsp_batman_disease5db",
+  "disease_english_name": "Idiopathic Pulmonary Fibrosis",
+  "disease_mesh": "D054990",
+  "drug_union": 244,
+  "disease_union": 4269,
+  "overlap": 197,
+  "note": "TCMSP 8 herbs + BATMAN-TCM 2.0 水蛭 known; GeneCards>=40 union CTD_curated+OMIM+TTD+DrugBank"
+}

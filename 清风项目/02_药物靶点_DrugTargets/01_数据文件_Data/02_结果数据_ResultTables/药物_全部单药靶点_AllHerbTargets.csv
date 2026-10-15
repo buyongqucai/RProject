@@ -1,0 +1,990 @@
+﻿药物,Gene,来源库,贡献成分数,成分
+川芎,ADRB2,TCMSP,1,Myricanone
+川芎,AR,TCMSP,1,Myricanone
+川芎,CCNA2,TCMSP,1,Myricanone
+川芎,CHEK1,TCMSP,1,Myricanone
+川芎,ESR1,TCMSP,1,Myricanone
+川芎,ESR2,TCMSP,1,Myricanone
+川芎,F2,TCMSP,3,FA|Myricanone|Perlolyrine
+川芎,F7,TCMSP,1,Myricanone
+川芎,GSK3B,TCMSP,2,FA|Myricanone
+川芎,HSP90AA1,TCMSP,1,Myricanone
+川芎,IGHG1,TCMSP,1,Myricanone
+川芎,KCNH2,TCMSP,1,Myricanone
+川芎,KDR,TCMSP,1,Myricanone
+川芎,MAPK14,TCMSP,1,Myricanone
+川芎,NCOA1,TCMSP,1,Myricanone
+川芎,NCOA2,TCMSP,3,Mandenol|sitosterol|wallichilide
+川芎,NOS2,TCMSP,1,Myricanone
+川芎,NR3C1,TCMSP,1,wallichilide
+川芎,NR3C2,TCMSP,2,sitosterol|wallichilide
+川芎,PGR,TCMSP,1,sitosterol
+川芎,PPARG,TCMSP,1,Myricanone
+川芎,PRKACA,TCMSP,1,Perlolyrine
+川芎,PTGS1,TCMSP,2,Mandenol|Myricanone
+川芎,PTGS2,TCMSP,4,Mandenol|Myricanone|Perlolyrine|wallichilide
+川芎,RXRA,TCMSP,2,Myricanone|Perlolyrine
+川芎,SCN5A,TCMSP,1,Myricanone
+旋覆花,ACACA,TCMSP,1,quercetin
+旋覆花,ACHE,TCMSP,5,"3-[(3aS,4R,5R,8aR)-4-hydroxy-5,7-dimethyl-3-methylene-2-oxo-4,5,8,8a-tetrahydro-3aH-cyclohepta[b]furan-6-yl]propyl acetate|inulicin|isorhamnetin|kaempferol|quercetin"
+旋覆花,ACP3,TCMSP,1,quercetin
+旋覆花,ADCY2,TCMSP,1,luteolin
+旋覆花,ADRA1A,TCMSP,1,beta-sitosterol
+旋覆花,ADRA1B,TCMSP,2,beta-sitosterol|kaempferol
+旋覆花,ADRB2,TCMSP,2,beta-sitosterol|quercetin
+旋覆花,AHR,TCMSP,2,kaempferol|quercetin
+旋覆花,AHSA1,TCMSP,2,kaempferol|quercetin
+旋覆花,AKR1C3,TCMSP,1,kaempferol
+旋覆花,AKT1,TCMSP,3,kaempferol|luteolin|quercetin
+旋覆花,AR,TCMSP,9,Azaleatin|Chryseriol|Patuletin|Pratensein|Tamarixetin|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,BAX,TCMSP,3,beta-sitosterol|kaempferol|quercetin
+旋覆花,BCL2,TCMSP,3,beta-sitosterol|kaempferol|quercetin
+旋覆花,BCL2L1,TCMSP,2,luteolin|quercetin
+旋覆花,BIRC5,TCMSP,2,luteolin|quercetin
+旋覆花,CASP3,TCMSP,4,beta-sitosterol|kaempferol|luteolin|quercetin
+旋覆花,CASP7,TCMSP,1,luteolin
+旋覆花,CASP8,TCMSP,2,beta-sitosterol|quercetin
+旋覆花,CASP9,TCMSP,3,beta-sitosterol|luteolin|quercetin
+旋覆花,CAV1,TCMSP,1,quercetin
+旋覆花,CCL2,TCMSP,1,quercetin
+旋覆花,CCNA2,TCMSP,2,Pratensein|isorhamnetin
+旋覆花,CCNB1,TCMSP,2,luteolin|quercetin
+旋覆花,CCND1,TCMSP,2,luteolin|quercetin
+旋覆花,CD40LG,TCMSP,2,luteolin|quercetin
+旋覆花,CDKN1A,TCMSP,2,luteolin|quercetin
+旋覆花,CHEK1,TCMSP,4,Chryseriol|Pratensein|Tamarixetin|isorhamnetin
+旋覆花,CHEK2,TCMSP,1,quercetin
+旋覆花,CHRM1,TCMSP,2,beta-sitosterol|kaempferol
+旋覆花,CHRM2,TCMSP,2,beta-sitosterol|kaempferol
+旋覆花,CHRM3,TCMSP,1,beta-sitosterol
+旋覆花,CHRM4,TCMSP,1,beta-sitosterol
+旋覆花,CHRNA2,TCMSP,1,beta-sitosterol
+旋覆花,CHRNA7,TCMSP,1,beta-sitosterol
+旋覆花,CHUK,TCMSP,1,quercetin
+旋覆花,CLDN4,TCMSP,1,quercetin
+旋覆花,COL1A1,TCMSP,1,quercetin
+旋覆花,COL3A1,TCMSP,1,quercetin
+旋覆花,CTSD,TCMSP,1,quercetin
+旋覆花,CXCL10,TCMSP,1,quercetin
+旋覆花,CXCL11,TCMSP,1,quercetin
+旋覆花,CXCL2,TCMSP,1,quercetin
+旋覆花,CXCL8,TCMSP,1,quercetin
+旋覆花,CYP1A1,TCMSP,2,kaempferol|quercetin
+旋覆花,CYP1A2,TCMSP,2,kaempferol|quercetin
+旋覆花,CYP1B1,TCMSP,2,kaempferol|quercetin
+旋覆花,CYP3A4,TCMSP,2,kaempferol|quercetin
+旋覆花,DCAF5,TCMSP,1,quercetin
+旋覆花,DIO1,TCMSP,2,kaempferol|quercetin
+旋覆花,DRD1,TCMSP,1,beta-sitosterol
+旋覆花,DUOX2,TCMSP,1,quercetin
+旋覆花,E2F1,TCMSP,1,quercetin
+旋覆花,E2F2,TCMSP,1,quercetin
+旋覆花,EGF,TCMSP,1,quercetin
+旋覆花,EGFR,TCMSP,2,luteolin|quercetin
+旋覆花,EIF6,TCMSP,1,quercetin
+旋覆花,ELK1,TCMSP,1,quercetin
+旋覆花,ERBB2,TCMSP,2,luteolin|quercetin
+旋覆花,ERBB3,TCMSP,1,quercetin
+旋覆花,ESR1,TCMSP,3,Chryseriol|Pratensein|isorhamnetin
+旋覆花,ESR2,TCMSP,3,Azaleatin|Pratensein|isorhamnetin
+旋覆花,F10,TCMSP,1,quercetin
+旋覆花,F2,TCMSP,3,isorhamnetin|kaempferol|quercetin
+旋覆花,F3,TCMSP,1,quercetin
+旋覆花,F7,TCMSP,6,Azaleatin|Patuletin|Tamarixetin|isorhamnetin|kaempferol|quercetin
+旋覆花,FOS,TCMSP,1,quercetin
+旋覆花,GABRA1,TCMSP,5,"3-[(3aS,4R,5R,8aR)-4-hydroxy-5,7-dimethyl-3-methylene-2-oxo-4,5,8,8a-tetrahydro-3aH-cyclohepta[b]furan-6-yl]propyl acetate|beta-sitosterol|isorhamnetin|kaempferol|quercetin"
+旋覆花,GABRA2,TCMSP,2,beta-sitosterol|kaempferol
+旋覆花,GABRA3,TCMSP,1,beta-sitosterol
+旋覆花,GABRA5,TCMSP,1,beta-sitosterol
+旋覆花,GJA1,TCMSP,1,quercetin
+旋覆花,GRIA2,TCMSP,1,isorhamnetin
+旋覆花,GSK3B,TCMSP,4,Chryseriol|Pratensein|Tamarixetin|isorhamnetin
+旋覆花,GSTM1,TCMSP,2,kaempferol|quercetin
+旋覆花,GSTM2,TCMSP,2,kaempferol|quercetin
+旋覆花,GSTP1,TCMSP,3,kaempferol|luteolin|quercetin
+旋覆花,HAS2,TCMSP,2,kaempferol|quercetin
+旋覆花,HIF1A,TCMSP,1,quercetin
+旋覆花,HK2,TCMSP,1,quercetin
+旋覆花,HMOX1,TCMSP,3,kaempferol|luteolin|quercetin
+旋覆花,HSF1,TCMSP,1,quercetin
+旋覆花,HSP90AA1,TCMSP,11,Azaleatin|Chryseriol|Melilotoside|Patuletin|Pratensein|Tamarixetin|beta-sitosterol|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,HSPB1,TCMSP,1,quercetin
+旋覆花,ICAM1,TCMSP,3,kaempferol|luteolin|quercetin
+旋覆花,IFNG,TCMSP,2,luteolin|quercetin
+旋覆花,IGF2,TCMSP,1,quercetin
+旋覆花,IGFBP3,TCMSP,1,quercetin
+旋覆花,IKBKB,TCMSP,1,kaempferol
+旋覆花,IL10,TCMSP,2,luteolin|quercetin
+旋覆花,IL1A,TCMSP,1,quercetin
+旋覆花,IL1B,TCMSP,1,quercetin
+旋覆花,IL2,TCMSP,2,luteolin|quercetin
+旋覆花,IL4,TCMSP,1,luteolin
+旋覆花,IL6,TCMSP,2,luteolin|quercetin
+旋覆花,INSR,TCMSP,3,kaempferol|luteolin|quercetin
+旋覆花,IRF1,TCMSP,1,quercetin
+旋覆花,KCNH2,TCMSP,2,beta-sitosterol|quercetin
+旋覆花,MAOB,TCMSP,2,isorhamnetin|quercetin
+旋覆花,MAP2,TCMSP,1,beta-sitosterol
+旋覆花,MAPK1,TCMSP,2,luteolin|quercetin
+旋覆花,MAPK14,TCMSP,4,Chryseriol|Pratensein|Tamarixetin|isorhamnetin
+旋覆花,MAPK8,TCMSP,1,kaempferol
+旋覆花,MCL1,TCMSP,1,luteolin
+旋覆花,MDM2,TCMSP,1,luteolin
+旋覆花,MET,TCMSP,1,luteolin
+旋覆花,MMP1,TCMSP,3,kaempferol|luteolin|quercetin
+旋覆花,MMP2,TCMSP,2,luteolin|quercetin
+旋覆花,MMP3,TCMSP,1,quercetin
+旋覆花,MMP9,TCMSP,2,luteolin|quercetin
+旋覆花,MPO,TCMSP,1,quercetin
+旋覆花,MYC,TCMSP,1,quercetin
+旋覆花,NCF1,TCMSP,2,isorhamnetin|quercetin
+旋覆花,NCOA1,TCMSP,4,"Chryseriol|Isoramanone|[(3aR,4R,7aR)-5-[(1S)-4-acetoxy-1-methyl-butyl]-6-methyl-3-methylene-2-oxo-3a,4,7,7a-tetrahydrobenzofuran-4-yl] acetate|isorhamnetin"
+旋覆花,NCOA2,TCMSP,14,"3-[(3aS,4R,5R,8aR)-4-hydroxy-5,7-dimethyl-3-methylene-2-oxo-4,5,8,8a-tetrahydro-3aH-cyclohepta[b]furan-6-yl]propyl acetate|Azaleatin|Britanin|Chryseriol|Patuletin|Pratensein|Tamarixetin|[(3aR,4R,7aR)-5-[(1S)-4-acetoxy-1-methyl-butyl]-6-methyl-3-methylene-2-oxo-3a,4,7,7a-tetrahydrobenzofuran-4-yl] acetate|beta-sitosterol|inulicin|isorhamnetin|kaempferol|luteolin|quercetin"
+旋覆花,NFE2L2,TCMSP,1,quercetin
+旋覆花,NFKBIA,TCMSP,2,luteolin|quercetin
+旋覆花,NKX3-1,TCMSP,1,quercetin
+旋覆花,NOS2,TCMSP,7,Azaleatin|Chryseriol|Patuletin|Pratensein|Tamarixetin|isorhamnetin|kaempferol
+旋覆花,NPEPPS,TCMSP,1,quercetin
+旋覆花,NQO1,TCMSP,1,quercetin
+旋覆花,NR1I2,TCMSP,2,kaempferol|quercetin
+旋覆花,NR1I3,TCMSP,2,kaempferol|quercetin
+旋覆花,NR3C2,TCMSP,1,Isoramanone
+旋覆花,NUF2,TCMSP,1,luteolin
+旋覆花,ODC1,TCMSP,1,quercetin
+旋覆花,OLR1,TCMSP,1,isorhamnetin
+旋覆花,OPRM1,TCMSP,1,beta-sitosterol
+旋覆花,PARP1,TCMSP,1,quercetin
+旋覆花,PCNA,TCMSP,1,luteolin
+旋覆花,PCOLCE,TCMSP,1,quercetin
+旋覆花,PGR,TCMSP,3,Isoramanone|beta-sitosterol|kaempferol
+旋覆花,PIK3CG,TCMSP,8,Azaleatin|Chryseriol|Tamarixetin|beta-sitosterol|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,PLAT,TCMSP,1,quercetin
+旋覆花,PLAU,TCMSP,1,quercetin
+旋覆花,PON1,TCMSP,2,beta-sitosterol|quercetin
+旋覆花,POR,TCMSP,1,quercetin
+旋覆花,PPARA,TCMSP,1,quercetin
+旋覆花,PPARD,TCMSP,2,isorhamnetin|quercetin
+旋覆花,PPARG,TCMSP,6,Chryseriol|Pratensein|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,PRKACA,TCMSP,7,Chryseriol|Pratensein|beta-sitosterol|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,PRKCA,TCMSP,2,beta-sitosterol|quercetin
+旋覆花,PRKCB,TCMSP,1,quercetin
+旋覆花,PSMD3,TCMSP,2,kaempferol|quercetin
+旋覆花,PTGER3,TCMSP,1,quercetin
+旋覆花,PTGES,TCMSP,1,luteolin
+旋覆花,PTGS1,TCMSP,10,Azaleatin|Chryseriol|Patuletin|Pratensein|Tamarixetin|beta-sitosterol|isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,PTGS2,TCMSP,15,"3-[(3aS,4R,5R,8aR)-4-hydroxy-5,7-dimethyl-3-methylene-2-oxo-4,5,8,8a-tetrahydro-3aH-cyclohepta[b]furan-6-yl]propyl acetate|Azaleatin|Britanin|Chryseriol|Melilotoside|Patuletin|Pratensein|Tamarixetin|[(3aR,4R,7aR)-5-[(1S)-4-acetoxy-1-methyl-butyl]-6-methyl-3-methylene-2-oxo-3a,4,7,7a-tetrahydrobenzofuran-4-yl] acetate|beta-sitosterol|inulicin|isorhamnetin|kaempferol|luteolin|quercetin"
+旋覆花,PTPN1,TCMSP,3,"Melilotoside|[(3aR,4R,7aR)-5-[(1S)-4-acetoxy-1-methyl-butyl]-6-methyl-3-methylene-2-oxo-3a,4,7,7a-tetrahydrobenzofuran-4-yl] acetate|isorhamnetin"
+旋覆花,PYGM,TCMSP,1,isorhamnetin
+旋覆花,RAF1,TCMSP,1,quercetin
+旋覆花,RASA1,TCMSP,1,quercetin
+旋覆花,RASSF1,TCMSP,1,quercetin
+旋覆花,RB1,TCMSP,2,luteolin|quercetin
+旋覆花,RELA,TCMSP,4,isorhamnetin|kaempferol|luteolin|quercetin
+旋覆花,RUNX1T1,TCMSP,1,quercetin
+旋覆花,RUNX2,TCMSP,1,quercetin
+旋覆花,RXRA,TCMSP,1,quercetin
+旋覆花,SCN5A,TCMSP,2,beta-sitosterol|quercetin
+旋覆花,SELE,TCMSP,2,kaempferol|quercetin
+旋覆花,SERPINE1,TCMSP,1,quercetin
+旋覆花,SLC2A4,TCMSP,3,kaempferol|luteolin|quercetin
+旋覆花,SLC6A2,TCMSP,1,kaempferol
+旋覆花,SLC6A4,TCMSP,1,beta-sitosterol
+旋覆花,SLPI,TCMSP,1,kaempferol
+旋覆花,SOD1,TCMSP,1,quercetin
+旋覆花,SPP1,TCMSP,1,quercetin
+旋覆花,STAT1,TCMSP,2,kaempferol|quercetin
+旋覆花,THBD,TCMSP,1,quercetin
+旋覆花,TNF,TCMSP,3,kaempferol|luteolin|quercetin
+旋覆花,TOP1,TCMSP,2,luteolin|quercetin
+旋覆花,TOP2A,TCMSP,4,Patuletin|kaempferol|luteolin|quercetin
+旋覆花,TP53,TCMSP,2,luteolin|quercetin
+旋覆花,TYR,TCMSP,1,luteolin
+旋覆花,VCAM1,TCMSP,2,kaempferol|quercetin
+旋覆花,VEGFA,TCMSP,2,luteolin|quercetin
+桃仁,ADH1C,TCMSP,2,Sitosterol alpha1|hederagenin
+桃仁,ADRA1A,TCMSP,1,beta-sitosterol
+桃仁,ADRA1B,TCMSP,2,beta-sitosterol|hederagenin
+桃仁,ADRB2,TCMSP,2,beta-sitosterol|gibberellin 7
+桃仁,BAX,TCMSP,1,beta-sitosterol
+桃仁,BCL2,TCMSP,1,beta-sitosterol
+桃仁,CASP3,TCMSP,1,beta-sitosterol
+桃仁,CASP8,TCMSP,1,beta-sitosterol
+桃仁,CASP9,TCMSP,1,beta-sitosterol
+桃仁,CHRM1,TCMSP,5,"2,3-didehydro GA70|GA120|beta-sitosterol|gibberellin 7|hederagenin"
+桃仁,CHRM2,TCMSP,4,GA120|GA60|beta-sitosterol|hederagenin
+桃仁,CHRM3,TCMSP,4,GA120|beta-sitosterol|gibberellin 7|hederagenin
+桃仁,CHRM4,TCMSP,1,beta-sitosterol
+桃仁,CHRNA2,TCMSP,1,beta-sitosterol
+桃仁,CHRNA7,TCMSP,3,GA120|GA63|beta-sitosterol
+桃仁,DRD1,TCMSP,1,beta-sitosterol
+桃仁,F10,TCMSP,1,GA54
+桃仁,GABRA1,TCMSP,10,"2,3-didehydro GA70|2,3-didehydro GA77|GA120|GA60|GA63|GA77|Gibberellin A44|Sitosterol alpha1|beta-sitosterol|hederagenin"
+桃仁,GABRA2,TCMSP,4,GA60|GA77|beta-sitosterol|hederagenin
+桃仁,GABRA3,TCMSP,4,GA120|GA60|beta-sitosterol|hederagenin
+桃仁,GABRA5,TCMSP,2,beta-sitosterol|hederagenin
+桃仁,GRIA2,TCMSP,5,"2,3-didehydro GA70|GA60|GA63|GA77|hederagenin"
+桃仁,HSP90AA1,TCMSP,4,3-O-p-coumaroylquinic acid|GA54|beta-sitosterol|campesterol
+桃仁,IGHG1,TCMSP,1,hederagenin
+桃仁,KCNH2,TCMSP,1,beta-sitosterol
+桃仁,MAP2,TCMSP,1,beta-sitosterol
+桃仁,NCOA2,TCMSP,6,"2,3-didehydro GA77|3-O-p-coumaroylquinic acid|GA54|beta-sitosterol|campesterol|hederagenin"
+桃仁,NR3C2,TCMSP,3,"4a-formyl-7alpha-hydroxy-1-methyl-8-methylidene-4aalpha,4bbeta-gibbane-1alpha,10beta-dicarboxylic acid|Gibberellin A44|Sitosterol alpha1"
+桃仁,OPRM1,TCMSP,1,beta-sitosterol
+桃仁,PGR,TCMSP,7,"4a-formyl-7alpha-hydroxy-1-methyl-8-methylidene-4aalpha,4bbeta-gibbane-1alpha,10beta-dicarboxylic acid|GA121-isolactone|GA122-isolactone|Sitosterol alpha1|beta-sitosterol|campesterol|hederagenin"
+桃仁,PIK3CG,TCMSP,3,3-O-p-coumaroylquinic acid|beta-sitosterol|campesterol
+桃仁,PON1,TCMSP,1,beta-sitosterol
+桃仁,PRKACA,TCMSP,2,3-O-p-coumaroylquinic acid|beta-sitosterol
+桃仁,PRKCA,TCMSP,1,beta-sitosterol
+桃仁,PTGS1,TCMSP,5,"2,3-didehydro GA70|3-O-p-coumaroylquinic acid|beta-sitosterol|campesterol|hederagenin"
+桃仁,PTGS2,TCMSP,12,"2,3-didehydro GA70|2,3-didehydro GA77|3-O-p-coumaroylquinic acid|GA120|GA54|GA63|GA87|Sitosterol alpha1|beta-sitosterol|campesterol|gibberellin 7|hederagenin"
+桃仁,PTPN1,TCMSP,2,3-O-p-coumaroylquinic acid|GA54
+桃仁,RXRA,TCMSP,1,hederagenin
+桃仁,SCN5A,TCMSP,2,beta-sitosterol|hederagenin
+桃仁,SLC6A2,TCMSP,2,"2,3-didehydro GA70|hederagenin"
+桃仁,SLC6A3,TCMSP,1,gibberellin 7
+桃仁,SLC6A4,TCMSP,2,beta-sitosterol|gibberellin 7
+水蛭,F10,BATMAN-TCM 2.0,1,Fragmin
+水蛭,F2,BATMAN-TCM 2.0,1,Fragmin
+水蛭,HPSE,BATMAN-TCM 2.0,1,Fragmin
+水蛭,SELL,BATMAN-TCM 2.0,1,Fragmin
+水蛭,SELP,BATMAN-TCM 2.0,1,Fragmin
+水蛭,SERPINC1,BATMAN-TCM 2.0,1,Heparin
+浙贝母,ACHE,TCMSP,1,pelargonidin
+浙贝母,ADRA1A,TCMSP,1,beta-sitosterol
+浙贝母,ADRA1B,TCMSP,1,beta-sitosterol
+浙贝母,ADRB2,TCMSP,2,Zhebeiresinol|beta-sitosterol
+浙贝母,AR,TCMSP,1,pelargonidin
+浙贝母,BAX,TCMSP,1,beta-sitosterol
+浙贝母,BCL2,TCMSP,1,beta-sitosterol
+浙贝母,CASP3,TCMSP,1,beta-sitosterol
+浙贝母,CASP8,TCMSP,1,beta-sitosterol
+浙贝母,CASP9,TCMSP,1,beta-sitosterol
+浙贝母,CHRM1,TCMSP,1,beta-sitosterol
+浙贝母,CHRM2,TCMSP,1,beta-sitosterol
+浙贝母,CHRM3,TCMSP,1,beta-sitosterol
+浙贝母,CHRM4,TCMSP,1,beta-sitosterol
+浙贝母,CHRNA2,TCMSP,1,beta-sitosterol
+浙贝母,CHRNA7,TCMSP,1,beta-sitosterol
+浙贝母,DRD1,TCMSP,1,beta-sitosterol
+浙贝母,ESR1,TCMSP,1,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside"
+浙贝母,F10,TCMSP,1,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside"
+浙贝母,GABRA1,TCMSP,2,Zhebeiresinol|beta-sitosterol
+浙贝母,GABRA2,TCMSP,1,beta-sitosterol
+浙贝母,GABRA3,TCMSP,1,beta-sitosterol
+浙贝母,GABRA5,TCMSP,1,beta-sitosterol
+浙贝母,HSP90AA1,TCMSP,4,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside|Zhebeiresinol|beta-sitosterol|pelargonidin"
+浙贝母,KCNH2,TCMSP,1,beta-sitosterol
+浙贝母,MAP2,TCMSP,1,beta-sitosterol
+浙贝母,NCOA1,TCMSP,1,pelargonidin
+浙贝母,NCOA2,TCMSP,3,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside|beta-sitosterol|pelargonidin"
+浙贝母,NOS2,TCMSP,1,pelargonidin
+浙贝母,NR3C1,TCMSP,2,Peimisine|pelargonidin
+浙贝母,NR3C2,TCMSP,2,Peimisine|pelargonidin
+浙贝母,OPRM1,TCMSP,1,beta-sitosterol
+浙贝母,PGR,TCMSP,2,beta-sitosterol|pelargonidin
+浙贝母,PIK3CG,TCMSP,1,beta-sitosterol
+浙贝母,PON1,TCMSP,1,beta-sitosterol
+浙贝母,PPARG,TCMSP,1,pelargonidin
+浙贝母,PRKACA,TCMSP,2,beta-sitosterol|pelargonidin
+浙贝母,PRKCA,TCMSP,1,beta-sitosterol
+浙贝母,PTGS1,TCMSP,3,Zhebeiresinol|beta-sitosterol|pelargonidin
+浙贝母,PTGS2,TCMSP,4,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside|Zhebeiresinol|beta-sitosterol|pelargonidin"
+浙贝母,RXRA,TCMSP,2,Zhebeiresinol|pelargonidin
+浙贝母,SCN5A,TCMSP,2,Zhebeiresinol|beta-sitosterol
+浙贝母,SLC6A4,TCMSP,1,beta-sitosterol
+浙贝母,TOP2A,TCMSP,1,"6-Methoxyl-2-acetyl-3-methyl-1,4-naphthoquinone-8-O-beta-D-glucopyranoside"
+甘草,ABAT,TCMSP,1,naringenin
+甘草,ABCC1,TCMSP,1,naringenin
+甘草,ACACA,TCMSP,1,quercetin
+甘草,ACHE,TCMSP,23,"(-)-Medicocarpin|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Methoxyglabridin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Gancaonin A|Glabridin|Glabrone|Glyasperin C|Glyasperins M|Glycyrrhiza flavonol A|Licoagrocarpin|Licoisoflavone B|Phaseolinisoflavan|Semilicoisoflavone B|formononetin|glyasperin B|isorhamnetin|kaempferol|licoisoflavanone|licopyranocoumarin|quercetin"
+甘草,ACP3,TCMSP,1,quercetin
+甘草,ADIPOQ,TCMSP,1,naringenin
+甘草,ADRA1A,TCMSP,3,Medicarpin|Vestitol|formononetin
+甘草,ADRA1B,TCMSP,20,"(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Gancaonin B|Glabridin|Glepidotin B|Glypallichalcone|Inermine|Licoagrocarpin|Medicarpin|Phaseolinisoflavan|Vestitol|kaempferol|licochalcone a|shinpterocarpin"
+甘草,ADRA1D,TCMSP,6,1-Methoxyphaseollidin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Inermine|Medicarpin|shinpterocarpin
+甘草,ADRB1,TCMSP,1,7-Methoxy-2-methyl isoflavone
+甘草,ADRB2,TCMSP,28,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|DFV|Gancaonin B|Glabrene|Glabridin|Glypallichalcone|HMO|Inermine|Inflacoumarin A|Licoagrocarpin|Licochalcone B|Medicarpin|Phaseolinisoflavan|Vestitol|dehydroglyasperins C|formononetin|licochalcone a|quercetin|shinpterocarpin"
+甘草,AHR,TCMSP,2,kaempferol|quercetin
+甘草,AHSA1,TCMSP,2,kaempferol|quercetin
+甘草,AKR1C1,TCMSP,1,naringenin
+甘草,AKR1C3,TCMSP,1,kaempferol
+甘草,AKT1,TCMSP,3,kaempferol|naringenin|quercetin
+甘草,APOB,TCMSP,1,naringenin
+甘草,AR,TCMSP,66,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabrene|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glyasperins M|Glycyrin|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Inflacoumarin A|Isoglycyrol|Isolicoflavonol|Isotrifoliol|Jaranol|Kanzonol F|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licocoumarone|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Vestitol|dehydroglyasperins C|formononetin|glyasperin B|glyasperin F|isorhamnetin|kaempferol|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|quercetin|shinpterocarpin"
+甘草,BACE1,TCMSP,1,euchrenone
+甘草,BAD,TCMSP,1,naringenin
+甘草,BAX,TCMSP,2,kaempferol|quercetin
+甘草,BCL2,TCMSP,4,kaempferol|licochalcone a|naringenin|quercetin
+甘草,BCL2L1,TCMSP,1,quercetin
+甘草,BIRC5,TCMSP,1,quercetin
+甘草,CASP3,TCMSP,3,kaempferol|naringenin|quercetin
+甘草,CASP8,TCMSP,1,quercetin
+甘草,CASP9,TCMSP,1,quercetin
+甘草,CAT,TCMSP,1,naringenin
+甘草,CAV1,TCMSP,1,quercetin
+甘草,CCL2,TCMSP,1,quercetin
+甘草,CCNA2,TCMSP,53,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glyasperins M|Glycyrol|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Isolicoflavonol|Isotrifoliol|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licocoumarone|Licoisoflavone|Licoisoflavone B|Lupiwighteone|Medicarpin|Odoratin|Phaseol|Phaseolinisoflavan|Vestitol|dehydroglyasperins C|formononetin|glyasperin B|glyasperin F|isorhamnetin|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|shinpterocarpin"
+甘草,CCNB1,TCMSP,1,quercetin
+甘草,CCND1,TCMSP,2,licochalcone a|quercetin
+甘草,CD40LG,TCMSP,1,quercetin
+甘草,CDKN1A,TCMSP,1,quercetin
+甘草,CES1,TCMSP,1,naringenin
+甘草,CHEK1,TCMSP,46,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glycyrin|Glycyrol|Glypallichalcone|Glyzaglabrin|HMO|Isotrifoliol|Jaranol|Licoagroisoflavone|Licochalcone B|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Odoratin|Phaseol|Phaseolinisoflavan|Semilicoisoflavone B|Vestitol|dehydroglyasperins C|formononetin|isorhamnetin|kanzonols W|licochalcone a"
+甘草,CHEK2,TCMSP,1,quercetin
+甘草,CHRM1,TCMSP,14,"2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|7-Methoxy-2-methyl isoflavone|Glabridin|Glypallichalcone|HMO|Inermine|Licoagrocarpin|Medicarpin|Phaseolinisoflavan|Vestitol|formononetin|kaempferol|licochalcone a|shinpterocarpin"
+甘草,CHRM2,TCMSP,2,Medicarpin|kaempferol
+甘草,CHRM3,TCMSP,6,"2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|7-Methoxy-2-methyl isoflavone|Inermine|Licoagrocarpin|Medicarpin|shinpterocarpin"
+甘草,CHRM4,TCMSP,2,Medicarpin|Vestitol
+甘草,CHRM5,TCMSP,3,7-Methoxy-2-methyl isoflavone|Licoagrocarpin|Medicarpin
+甘草,CHRNA7,TCMSP,3,7-Methoxy-2-methyl isoflavone|Medicarpin|shinpterocarpin
+甘草,CHUK,TCMSP,1,quercetin
+甘草,CLDN4,TCMSP,1,quercetin
+甘草,COL1A1,TCMSP,1,quercetin
+甘草,COL3A1,TCMSP,1,quercetin
+甘草,CTSD,TCMSP,1,quercetin
+甘草,CXCL10,TCMSP,1,quercetin
+甘草,CXCL11,TCMSP,1,quercetin
+甘草,CXCL2,TCMSP,1,quercetin
+甘草,CXCL8,TCMSP,1,quercetin
+甘草,CYP1A1,TCMSP,2,kaempferol|quercetin
+甘草,CYP1A2,TCMSP,2,kaempferol|quercetin
+甘草,CYP1B1,TCMSP,2,kaempferol|quercetin
+甘草,CYP3A4,TCMSP,2,kaempferol|quercetin
+甘草,DCAF5,TCMSP,1,quercetin
+甘草,DIO1,TCMSP,2,kaempferol|quercetin
+甘草,DRD1,TCMSP,2,7-Methoxy-2-methyl isoflavone|Medicarpin
+甘草,DUOX2,TCMSP,1,quercetin
+甘草,E2F1,TCMSP,1,quercetin
+甘草,E2F2,TCMSP,1,quercetin
+甘草,EGF,TCMSP,1,quercetin
+甘草,EGFR,TCMSP,1,quercetin
+甘草,EIF6,TCMSP,2,licochalcone a|quercetin
+甘草,ELK1,TCMSP,1,quercetin
+甘草,ERBB2,TCMSP,1,quercetin
+甘草,ERBB3,TCMSP,1,quercetin
+甘草,ESR1,TCMSP,77,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|6-prenylated eriodictyol|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|8-prenylated eriodictyol|Calycosin|DFV|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabranin|Glabrene|Glabridin|Glabrone|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glycyrin|Glycyrol|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Inflacoumarin A|Isoglycyrol|Isolicoflavonol|Isotrifoliol|Kanzonol F|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licocoumarone|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Medicarpin|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Sigmoidin-B|Vestitol|Xambioona|dehydroglyasperins C|euchrenone|formononetin|glyasperin B|glyasperin F|isorhamnetin|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|naringenin|shinpterocarpin"
+甘草,ESR2,TCMSP,54,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabrene|Glabridin|Glabrone|Glyasperin C|Glyasperins M|Glycyrin|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Isotrifoliol|Jaranol|Kanzonol F|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licocoumarone|Licoisoflavone B|Lupiwighteone|Medicarpin|Odoratin|Phaseolinisoflavan|Quercetin der.|Vestitol|Xambioona|dehydroglyasperins C|euchrenone|formononetin|glyasperin B|glyasperin F|isorhamnetin|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|shinpterocarpin"
+甘草,F10,TCMSP,52,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|6-prenylated eriodictyol|8-prenylated eriodictyol|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabranin|Glabrene|Glabrone|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glycyrin|Glycyrrhiza flavonol A|Inflacoumarin A|Isolicoflavonol|Kanzonol F|Licoagrocarpin|Licoagroisoflavone|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Phaseolinisoflavan|Semilicoisoflavone B|Sigmoidin-B|Xambioona|dehydroglyasperins C|euchrenone|glyasperin B|glyasperin F|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|liquiritin|quercetin"
+甘草,F2,TCMSP,32,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabrone|Glepidotin A|Glyasperin C|Glycyrin|Glycyrol|Inflacoumarin A|Isolicoflavonol|Licoagrocarpin|Licoagroisoflavone|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Phaseol|Semilicoisoflavone B|formononetin|glyasperin B|isorhamnetin|kaempferol|licopyranocoumarin|quercetin"
+甘草,F3,TCMSP,1,quercetin
+甘草,F7,TCMSP,20,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|6-prenylated eriodictyol|8-prenylated eriodictyol|Gancaonin B|Glepidotin A|Glepidotin B|Glyasperins M|Glycyrrhiza flavonol A|Semilicoisoflavone B|glyasperin B|isorhamnetin|kaempferol|licoisoflavanone|licopyranocoumarin|liquiritin|quercetin"
+甘草,FASN,TCMSP,1,naringenin
+甘草,FOS,TCMSP,1,quercetin
+甘草,FOSL2,TCMSP,1,licochalcone a
+甘草,GABRA1,TCMSP,6,(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|isorhamnetin|kaempferol|quercetin
+甘草,GABRA2,TCMSP,1,kaempferol
+甘草,GJA1,TCMSP,1,quercetin
+甘草,GOT1,TCMSP,1,naringenin
+甘草,GRIA2,TCMSP,1,isorhamnetin
+甘草,GSK3B,TCMSP,56,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabrene|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glyasperins M|Glycyrol|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Isoglycyrol|Isolicoflavonol|Isotrifoliol|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licocoumarone|Licoisoflavone B|Lupiwighteone|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Vestitol|formononetin|glyasperin B|glyasperin F|isorhamnetin|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|shinpterocarpin"
+甘草,GSR,TCMSP,1,naringenin
+甘草,GSTM1,TCMSP,2,kaempferol|quercetin
+甘草,GSTM2,TCMSP,2,kaempferol|quercetin
+甘草,GSTP1,TCMSP,3,kaempferol|naringenin|quercetin
+甘草,HAS2,TCMSP,2,kaempferol|quercetin
+甘草,HIF1A,TCMSP,1,quercetin
+甘草,HK2,TCMSP,1,quercetin
+甘草,HMGCR,TCMSP,1,naringenin
+甘草,HMOX1,TCMSP,2,kaempferol|quercetin
+甘草,HSD3B1,TCMSP,1,formononetin
+甘草,HSD3B2,TCMSP,1,formononetin
+甘草,HSF1,TCMSP,1,quercetin
+甘草,HSP90AA1,TCMSP,62,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|6-prenylated eriodictyol|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|8-prenylated eriodictyol|Calycosin|DFV|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabranin|Glabrene|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|Inermine|Inflacoumarin A|Isolicoflavonol|Isotrifoliol|Jaranol|Licoagrocarpin|Licochalcone B|Licocoumarone|Licoisoflavone|Lupiwighteone|Medicarpin|Odoratin|Phaseol|Quercetin der.|Semilicoisoflavone B|Sigmoidin-B|Vestitol|dehydroglyasperins C|formononetin|glyasperin B|glyasperin F|isorhamnetin|kaempferol|licochalcone G|licochalcone a|licoisoflavanone|naringenin|quercetin"
+甘草,HSPB1,TCMSP,1,quercetin
+甘草,HTR3A,TCMSP,2,Inermine|shinpterocarpin
+甘草,ICAM1,TCMSP,2,kaempferol|quercetin
+甘草,IFNG,TCMSP,1,quercetin
+甘草,IGF2,TCMSP,1,quercetin
+甘草,IGFBP3,TCMSP,1,quercetin
+甘草,IGHG1,TCMSP,7,7-Methoxy-2-methyl isoflavone|Glabridin|Glepidotin A|Glepidotin B|HMO|Inermine|licochalcone G
+甘草,IKBKB,TCMSP,1,kaempferol
+甘草,IL10,TCMSP,1,quercetin
+甘草,IL1A,TCMSP,1,quercetin
+甘草,IL1B,TCMSP,1,quercetin
+甘草,IL2,TCMSP,1,quercetin
+甘草,IL4,TCMSP,1,formononetin
+甘草,IL6,TCMSP,1,quercetin
+甘草,INSR,TCMSP,2,kaempferol|quercetin
+甘草,IRF1,TCMSP,1,quercetin
+甘草,KCNH2,TCMSP,15,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|Glyasperin C|Glyasperins M|Glycyrin|Licoagrocarpin|Licoricone|euchrenone|quercetin|shinpterocarpin"
+甘草,KDR,TCMSP,18,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|1-Methoxyphaseollidin|3'-Hydroxy-4'-O-Methylglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|Gancaonin B|Gancaonin H|Glepidotin A|Glyasperins M|Glycyrin|Glycyrol|Licoisoflavone|Licoricone|Phaseol|Sigmoidin-B|glyasperin B|licochalcone G|licopyranocoumarin|liquiritin"
+甘草,LDLR,TCMSP,1,naringenin
+甘草,LTA4H,TCMSP,2,7-Methoxy-2-methyl isoflavone|Glypallichalcone
+甘草,MAOB,TCMSP,8,(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|7-Methoxy-2-methyl isoflavone|DFV|Glypallichalcone|HMO|formononetin|isorhamnetin|quercetin
+甘草,MAPK1,TCMSP,3,licochalcone a|naringenin|quercetin
+甘草,MAPK10,TCMSP,1,Medicarpin
+甘草,MAPK14,TCMSP,47,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin G|Glabrene|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glycyrol|Glypallichalcone|Glyzaglabrin|HMO|Isotrifoliol|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licoisoflavone|Lupiwighteone|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Vestitol|dehydroglyasperins C|formononetin|glyasperin F|isorhamnetin|kanzonols W|licochalcone G|licochalcone a|shinpterocarpin"
+甘草,MAPK3,TCMSP,1,naringenin
+甘草,MAPK8,TCMSP,1,kaempferol
+甘草,MMP1,TCMSP,2,kaempferol|quercetin
+甘草,MMP2,TCMSP,1,quercetin
+甘草,MMP3,TCMSP,1,quercetin
+甘草,MMP9,TCMSP,1,quercetin
+甘草,MPO,TCMSP,1,quercetin
+甘草,MT-ND6,TCMSP,1,formononetin
+甘草,MTTP,TCMSP,1,naringenin
+甘草,MYC,TCMSP,1,quercetin
+甘草,NCF1,TCMSP,2,isorhamnetin|quercetin
+甘草,NCOA1,TCMSP,16,"1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|7-Methoxy-2-methyl isoflavone|8-prenylated eriodictyol|Glabridin|Glepidotin B|Glyasperins M|Glypallichalcone|Phaseolinisoflavan|isorhamnetin|kanzonols W|licoisoflavanone|shinpterocarpin"
+甘草,NCOA2,TCMSP,43,"(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabrene|Glabridin|Glyasperin C|Glyasperins M|Glycyrin|Inflacoumarin A|Isolicoflavonol|Jaranol|Kanzonol F|Licoagrocarpin|Licoisoflavone|Licoricone|Lupiwighteone|Odoratin|Quercetin der.|Xambioona|dehydroglyasperins C|gadelaidic acid|glyasperin B|icos-5-enoic acid|isorhamnetin|kaempferol|kanzonols W|licochalcone G|licochalcone a|quercetin|sitosterol"
+甘草,NFE2L2,TCMSP,1,quercetin
+甘草,NFKBIA,TCMSP,1,quercetin
+甘草,NKX3-1,TCMSP,1,quercetin
+甘草,NOS2,TCMSP,65,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|6-prenylated eriodictyol|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabranin|Glabrene|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glyasperins M|Glycyrin|Glycyrol|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Isoglycyrol|Isolicoflavonol|Isotrifoliol|Jaranol|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Medicarpin|Odoratin|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Vestitol|Xambioona|dehydroglyasperins C|euchrenone|formononetin|glyasperin B|glyasperin F|isorhamnetin|kaempferol|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|shinpterocarpin"
+甘草,NPEPPS,TCMSP,1,quercetin
+甘草,NQO1,TCMSP,1,quercetin
+甘草,NR1I2,TCMSP,2,kaempferol|quercetin
+甘草,NR1I3,TCMSP,2,kaempferol|quercetin
+甘草,NR3C2,TCMSP,1,sitosterol
+甘草,ODC1,TCMSP,1,quercetin
+甘草,OLR1,TCMSP,1,isorhamnetin
+甘草,OPRD1,TCMSP,2,Medicarpin|shinpterocarpin
+甘草,OPRM1,TCMSP,4,7-Methoxy-2-methyl isoflavone|Inermine|Medicarpin|shinpterocarpin
+甘草,PARP1,TCMSP,1,quercetin
+甘草,PCOLCE,TCMSP,1,quercetin
+甘草,PGR,TCMSP,3,Mairin|kaempferol|sitosterol
+甘草,PIK3CG,TCMSP,13,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|1-Methoxyphaseollidin|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|DFV|Glyzaglabrin|Inermine|Isotrifoliol|Medicarpin|isorhamnetin|kaempferol|naringenin|quercetin|shinpterocarpin"
+甘草,PKIA,TCMSP,7,(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|7-Methoxy-2-methyl isoflavone|DFV|Glypallichalcone|HMO|Vestitol|formononetin
+甘草,PLAT,TCMSP,1,quercetin
+甘草,PLAU,TCMSP,1,quercetin
+甘草,PLB1,TCMSP,1,naringenin
+甘草,PON1,TCMSP,1,quercetin
+甘草,POR,TCMSP,1,quercetin
+甘草,PPARA,TCMSP,2,naringenin|quercetin
+甘草,PPARD,TCMSP,3,Glyasperins M|isorhamnetin|quercetin
+甘草,PPARG,TCMSP,62,"(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Glabrene|Glabridin|Glabrone|Glepidotin A|Glyasperin C|Glyasperins M|Glycyrin|Glycyrol|Glypallichalcone|Glyzaglabrin|HMO|Inflacoumarin A|Isolicoflavonol|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Vestitol|dehydroglyasperins C|formononetin|glyasperin B|glyasperin F|isorhamnetin|kaempferol|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|naringenin|quercetin|shinpterocarpin"
+甘草,PRKACA,TCMSP,27,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|1,3-dihydroxy-8,9-dimethoxy-6-benzofurano[3,2-c]chromenone|1,3-dihydroxy-9-methoxy-6-benzofurano[3,2-c]chromenone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Methoxy-2-methyl isoflavone|Calycosin|DFV|Glabranin|Glabridin|Glyasperins M|Glypallichalcone|Glyzaglabrin|HMO|Inermine|Isotrifoliol|Licochalcone B|Medicarpin|Phaseol|Vestitol|formononetin|isorhamnetin|kaempferol|naringenin|quercetin|shinpterocarpin"
+甘草,PRKCA,TCMSP,1,quercetin
+甘草,PRKCB,TCMSP,1,quercetin
+甘草,PSMD3,TCMSP,2,kaempferol|quercetin
+甘草,PTGER3,TCMSP,1,quercetin
+甘草,PTGS1,TCMSP,40,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|Calycosin|DFV|Glabranin|Glabrene|Glabrone|Glepidotin A|Glepidotin B|Glyasperins M|Glypallichalcone|Glyzaglabrin|HMO|Inermine|Inflacoumarin A|Jaranol|Licoagrocarpin|Licochalcone B|Medicarpin|Odoratin|Quercetin der.|Vestitol|formononetin|glyasperin F|isorhamnetin|kaempferol|kanzonols W|licochalcone a|licoisoflavanone|naringenin|quercetin|shinpterocarpin"
+甘草,PTGS2,TCMSP,81,"(-)-Medicocarpin|(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(2S)-2-[4-hydroxy-3-(3-methylbut-2-enyl)phenyl]-8,8-dimethyl-2,3-dihydropyrano[2,3-f]chromen-4-one|(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|(E)-3-[3,4-dihydroxy-5-(3-methylbut-2-enyl)phenyl]-1-(2,4-dihydroxyphenyl)prop-2-en-1-one|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|6-prenylated eriodictyol|7,2',4'-trihydroxy－5-methoxy-3－arylcoumarin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|8-prenylated eriodictyol|Calycosin|DFV|Eurycarpin A|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glabranin|Glabrene|Glabridin|Glabrone|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glycyrin|Glycyrol|Glycyrrhiza flavonol A|Glypallichalcone|Glyzaglabrin|HMO|Inermine|Inflacoumarin A|Isoglycyrol|Isolicoflavonol|Isotrifoliol|Jaranol|Kanzonol F|Licoagrocarpin|Licoagroisoflavone|Licochalcone B|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Medicarpin|Odoratin|Phaseol|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Sigmoidin-B|Vestitol|Xambioona|dehydroglyasperins C|euchrenone|formononetin|glyasperin B|glyasperin F|isorhamnetin|kaempferol|kanzonols W|licochalcone G|licochalcone a|licoisoflavanone|licopyranocoumarin|liquiritin|naringenin|quercetin|shinpterocarpin"
+甘草,PTPN1,TCMSP,3,"3-(3,4-dihydroxyphenyl)-5,7-dihydroxy-8-(3-methylbut-2-enyl)chromone|Quercetin der.|isorhamnetin"
+甘草,PYGM,TCMSP,1,isorhamnetin
+甘草,RAF1,TCMSP,1,quercetin
+甘草,RASA1,TCMSP,1,quercetin
+甘草,RASSF1,TCMSP,1,quercetin
+甘草,RB1,TCMSP,2,licochalcone a|quercetin
+甘草,RELA,TCMSP,5,isorhamnetin|kaempferol|licochalcone a|naringenin|quercetin
+甘草,RUNX1T1,TCMSP,1,quercetin
+甘草,RUNX2,TCMSP,1,quercetin
+甘草,RXRA,TCMSP,27,"(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Methoxyglabridin|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-(6-hydroxy-2-benzofuranyl)-2,2-dimethyl-5-chromenol|Calycosin|DFV|Glabrene|Glabridin|Glabrone|Glepidotin A|Glepidotin B|Glyasperin C|HMO|Inermine|Licoagrocarpin|Medicarpin|Odoratin|Phaseolinisoflavan|Vestitol|formononetin|kanzonols W|quercetin|shinpterocarpin"
+甘草,RXRB,TCMSP,4,"2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|Glabridin|Licoagrocarpin|shinpterocarpin"
+甘草,SCN5A,TCMSP,43,"(2S)-7-hydroxy-2-(4-hydroxyphenyl)-8-(3-methylbut-2-enyl)chroman-4-one|(E)-1-(2,4-dihydroxyphenyl)-3-(2,2-dimethylchromen-6-yl)prop-2-en-1-one|1-Methoxyphaseollidin|2-(3,4-dihydroxyphenyl)-5,7-dihydroxy-6-(3-methylbut-2-enyl)chromone|2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|6-prenylated eriodictyol|7-Acetoxy-2-methylisoflavone|7-Methoxy-2-methyl isoflavone|8-prenylated eriodictyol|Eurycarpin A|Gancaonin A|Glabranin|Glabrene|Glabridin|Glabrone|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glypallichalcone|HMO|Inermine|Inflacoumarin A|Jaranol|Licoagrocarpin|Licoagroisoflavone|Lupiwighteone|Medicarpin|Odoratin|Phaseolinisoflavan|Quercetin der.|Semilicoisoflavone B|Vestitol|dehydroglyasperins C|euchrenone|glyasperin F|kanzonols W|licochalcone a|licoisoflavanone|quercetin|shinpterocarpin"
+甘草,SELE,TCMSP,2,kaempferol|quercetin
+甘草,SERPINE1,TCMSP,1,quercetin
+甘草,SLC2A4,TCMSP,2,kaempferol|quercetin
+甘草,SLC6A2,TCMSP,1,kaempferol
+甘草,SLC6A3,TCMSP,8,"2-[(3R)-8,8-dimethyl-3,4-dihydro-2H-pyrano[6,5-f]chromen-3-yl]-5-methoxyphenol|7-Methoxy-2-methyl isoflavone|Glypallichalcone|HMO|Medicarpin|Vestitol|formononetin|licochalcone a"
+甘草,SLC6A4,TCMSP,8,(2R)-7-hydroxy-2-(4-hydroxyphenyl)chroman-4-one|7-Methoxy-2-methyl isoflavone|DFV|Glypallichalcone|HMO|Medicarpin|Vestitol|formononetin
+甘草,SLPI,TCMSP,1,kaempferol
+甘草,SOAT1,TCMSP,1,naringenin
+甘草,SOAT2,TCMSP,1,naringenin
+甘草,SOD1,TCMSP,3,liquiritin|naringenin|quercetin
+甘草,SPP1,TCMSP,1,quercetin
+甘草,SREBF1,TCMSP,1,naringenin
+甘草,STAT1,TCMSP,2,kaempferol|quercetin
+甘草,STAT3,TCMSP,1,licochalcone a
+甘草,THBD,TCMSP,1,quercetin
+甘草,TNF,TCMSP,2,kaempferol|quercetin
+甘草,TOP1,TCMSP,1,quercetin
+甘草,TOP2A,TCMSP,28,"(2S)-6-(2,4-dihydroxyphenyl)-2-(2-hydroxypropan-2-yl)-4-methoxy-2,3-dihydrofuro[3,2-g]chromen-7-one|1-Methoxyphaseollidin|3'-Hydroxy-4'-O-Methylglabridin|3'-Methoxyglabridin|3-(2,4-dihydroxyphenyl)-8-(1,1-dimethylprop-2-enyl)-7-hydroxy-5-methoxy-coumarin|5,7-dihydroxy-3-(4-methoxyphenyl)-8-(3-methylbut-2-enyl)chromone|Gancaonin A|Gancaonin B|Gancaonin G|Gancaonin H|Glepidotin A|Glepidotin B|Glyasperin C|Glyasperins M|Glycyrin|Glycyrrhiza flavonol A|Licoisoflavone|Licoisoflavone B|Licoricone|Lupiwighteone|Semilicoisoflavone B|glyasperin B|glyasperin F|kaempferol|kanzonols W|licoisoflavanone|licopyranocoumarin|quercetin"
+甘草,TP53,TCMSP,1,quercetin
+甘草,VCAM1,TCMSP,2,kaempferol|quercetin
+甘草,VEGFA,TCMSP,1,quercetin
+紫苏子,ABCG1,TCMSP,1,arachidonic acid
+紫苏子,ADCY2,TCMSP,1,luteolin
+紫苏子,ADH1C,TCMSP,1,Stigmasterol
+紫苏子,ADRA1A,TCMSP,2,Stigmasterol|beta-sitosterol
+紫苏子,ADRA1B,TCMSP,2,Stigmasterol|beta-sitosterol
+紫苏子,ADRA2A,TCMSP,1,Stigmasterol
+紫苏子,ADRB1,TCMSP,1,Stigmasterol
+紫苏子,ADRB2,TCMSP,3,(E)-(4-methylbenzylidene)-(4-phenyltriazol-1-yl)amine|Stigmasterol|beta-sitosterol
+紫苏子,AKT1,TCMSP,2,beta-carotene|luteolin
+紫苏子,ALDH2,TCMSP,1,arachidonic acid
+紫苏子,ALDH3A1,TCMSP,1,arachidonic acid
+紫苏子,AR,TCMSP,1,luteolin
+紫苏子,BAX,TCMSP,1,beta-sitosterol
+紫苏子,BCL2,TCMSP,2,beta-carotene|beta-sitosterol
+紫苏子,BCL2L1,TCMSP,1,luteolin
+紫苏子,BIRC5,TCMSP,1,luteolin
+紫苏子,C1R,TCMSP,1,arachidonic acid
+紫苏子,CASP3,TCMSP,4,arachidonic acid|beta-carotene|beta-sitosterol|luteolin
+紫苏子,CASP7,TCMSP,2,beta-carotene|luteolin
+紫苏子,CASP8,TCMSP,2,beta-carotene|beta-sitosterol
+紫苏子,CASP9,TCMSP,3,beta-carotene|beta-sitosterol|luteolin
+紫苏子,CAV1,TCMSP,1,beta-carotene
+紫苏子,CCNB1,TCMSP,1,luteolin
+紫苏子,CCND1,TCMSP,2,arachidonic acid|luteolin
+紫苏子,CD40LG,TCMSP,1,luteolin
+紫苏子,CDKN1A,TCMSP,1,luteolin
+紫苏子,CETP,TCMSP,1,arachidonic acid
+紫苏子,CHRM1,TCMSP,2,Stigmasterol|beta-sitosterol
+紫苏子,CHRM2,TCMSP,2,Stigmasterol|beta-sitosterol
+紫苏子,CHRM3,TCMSP,2,Stigmasterol|beta-sitosterol
+紫苏子,CHRM4,TCMSP,1,beta-sitosterol
+紫苏子,CHRNA2,TCMSP,1,beta-sitosterol
+紫苏子,CHRNA7,TCMSP,2,Stigmasterol|beta-sitosterol
+紫苏子,COL1A2,TCMSP,1,arachidonic acid
+紫苏子,CTNNB1,TCMSP,1,beta-carotene
+紫苏子,CTRB1,TCMSP,1,Stigmasterol
+紫苏子,CYP1A2,TCMSP,1,beta-carotene
+紫苏子,CYP3A4,TCMSP,1,beta-carotene
+紫苏子,DRD1,TCMSP,1,beta-sitosterol
+紫苏子,EGF,TCMSP,1,arachidonic acid
+紫苏子,EGFR,TCMSP,1,luteolin
+紫苏子,ERBB2,TCMSP,1,luteolin
+紫苏子,F3,TCMSP,1,beta-carotene
+紫苏子,G6PD,TCMSP,1,arachidonic acid
+紫苏子,GABRA1,TCMSP,2,Stigmasterol|beta-sitosterol
+紫苏子,GABRA2,TCMSP,1,beta-sitosterol
+紫苏子,GABRA3,TCMSP,2,Stigmasterol|beta-sitosterol
+紫苏子,GABRA5,TCMSP,1,beta-sitosterol
+紫苏子,GJA1,TCMSP,1,beta-carotene
+紫苏子,GLB1,TCMSP,1,arachidonic acid
+紫苏子,GSTP1,TCMSP,1,luteolin
+紫苏子,HMOX1,TCMSP,2,beta-carotene|luteolin
+紫苏子,HSP90AA1,TCMSP,2,beta-sitosterol|luteolin
+紫苏子,ICAM1,TCMSP,1,luteolin
+紫苏子,IFNG,TCMSP,1,luteolin
+紫苏子,IGHG1,TCMSP,1,Stigmasterol
+紫苏子,IL10,TCMSP,1,luteolin
+紫苏子,IL2,TCMSP,1,luteolin
+紫苏子,IL4,TCMSP,1,luteolin
+紫苏子,IL6,TCMSP,1,luteolin
+紫苏子,INSR,TCMSP,1,luteolin
+紫苏子,KCNH2,TCMSP,1,beta-sitosterol
+紫苏子,KCNK10,TCMSP,1,arachidonic acid
+紫苏子,KCNK2,TCMSP,1,arachidonic acid
+紫苏子,LTA4H,TCMSP,1,Stigmasterol
+紫苏子,MAOA,TCMSP,1,Stigmasterol
+紫苏子,MAOB,TCMSP,2,(E)-(4-methylbenzylidene)-(4-phenyltriazol-1-yl)amine|Stigmasterol
+紫苏子,MAP2,TCMSP,1,beta-sitosterol
+紫苏子,MAPK1,TCMSP,2,arachidonic acid|luteolin
+紫苏子,MCL1,TCMSP,1,luteolin
+紫苏子,MDM2,TCMSP,1,luteolin
+紫苏子,MET,TCMSP,1,luteolin
+紫苏子,MMP1,TCMSP,2,beta-carotene|luteolin
+紫苏子,MMP10,TCMSP,1,beta-carotene
+紫苏子,MMP2,TCMSP,2,beta-carotene|luteolin
+紫苏子,MMP9,TCMSP,1,luteolin
+紫苏子,MYC,TCMSP,1,beta-carotene
+紫苏子,NCOA1,TCMSP,1,Stigmasterol
+紫苏子,NCOA2,TCMSP,8,24-methylidenelophenol|CLR|Obtusifoliol|Spinasterol|Stigmasterol|beta-sitosterol|gondoic acid|luteolin
+紫苏子,NFKBIA,TCMSP,1,luteolin
+紫苏子,NR3C2,TCMSP,5,24-methylidenelophenol|CLR|Obtusifoliol|Spinasterol|Stigmasterol
+紫苏子,NUF2,TCMSP,1,luteolin
+紫苏子,OPRM1,TCMSP,1,beta-sitosterol
+紫苏子,PCNA,TCMSP,1,luteolin
+紫苏子,PECAM1,TCMSP,1,arachidonic acid
+紫苏子,PGR,TCMSP,7,24-methylidenelophenol|CLR|Obtusifoliol|Spinasterol|Stigmasterol|beta-sitosterol|citrostadienol
+紫苏子,PIK3CG,TCMSP,2,beta-sitosterol|luteolin
+紫苏子,PLA2G4A,TCMSP,1,arachidonic acid
+紫苏子,PLAU,TCMSP,1,Stigmasterol
+紫苏子,PON1,TCMSP,1,beta-sitosterol
+紫苏子,PPARG,TCMSP,2,arachidonic acid|luteolin
+紫苏子,PRKACA,TCMSP,4,(E)-(4-methylbenzylidene)-(4-phenyltriazol-1-yl)amine|Stigmasterol|beta-sitosterol|luteolin
+紫苏子,PRKCA,TCMSP,1,beta-sitosterol
+紫苏子,PRKCB,TCMSP,1,arachidonic acid
+紫苏子,PTGES,TCMSP,2,arachidonic acid|luteolin
+紫苏子,PTGES2,TCMSP,1,arachidonic acid
+紫苏子,PTGS1,TCMSP,5,Stigmasterol|arachidonic acid|beta-sitosterol|gondoic acid|luteolin
+紫苏子,PTGS2,TCMSP,7,"(E)-(4-methylbenzylidene)-(4-phenyltriazol-1-yl)amine|2,6,10,14,18-pentamethylicosa-2,6,10,14,18-pentaene|Stigmasterol|arachidonic acid|beta-carotene|beta-sitosterol|luteolin"
+紫苏子,RB1,TCMSP,1,luteolin
+紫苏子,RELA,TCMSP,2,arachidonic acid|luteolin
+紫苏子,RXRA,TCMSP,2,Stigmasterol|arachidonic acid
+紫苏子,RXRG,TCMSP,1,arachidonic acid
+紫苏子,SCN5A,TCMSP,2,Stigmasterol|beta-sitosterol
+紫苏子,SELP,TCMSP,1,arachidonic acid
+紫苏子,SLC2A4,TCMSP,1,luteolin
+紫苏子,SLC6A2,TCMSP,2,Stigmasterol|arachidonic acid
+紫苏子,SLC6A3,TCMSP,1,Stigmasterol
+紫苏子,SLC6A4,TCMSP,1,beta-sitosterol
+紫苏子,TNF,TCMSP,1,luteolin
+紫苏子,TNFRSF1A,TCMSP,1,arachidonic acid
+紫苏子,TNFRSF1B,TCMSP,1,arachidonic acid
+紫苏子,TOP1,TCMSP,1,luteolin
+紫苏子,TOP2A,TCMSP,1,luteolin
+紫苏子,TP53,TCMSP,1,luteolin
+紫苏子,TRPV1,TCMSP,1,arachidonic acid
+紫苏子,TYR,TCMSP,1,luteolin
+紫苏子,UCP2,TCMSP,1,arachidonic acid
+紫苏子,VEGFA,TCMSP,2,beta-carotene|luteolin
+蜜麻黄,ABAT,TCMSP,1,naringenin
+蜜麻黄,ABCC1,TCMSP,1,naringenin
+蜜麻黄,ACACA,TCMSP,1,quercetin
+蜜麻黄,ACHE,TCMSP,3,Pectolinarigenin|kaempferol|quercetin
+蜜麻黄,ACP3,TCMSP,1,quercetin
+蜜麻黄,ADCY2,TCMSP,1,luteolin
+蜜麻黄,ADH1C,TCMSP,1,Stigmasterol
+蜜麻黄,ADIPOQ,TCMSP,1,naringenin
+蜜麻黄,ADRA1A,TCMSP,2,Stigmasterol|beta-sitosterol
+蜜麻黄,ADRA1B,TCMSP,5,Pectolinarigenin|Stigmasterol|Truflex OBP|beta-sitosterol|kaempferol
+蜜麻黄,ADRA2A,TCMSP,1,Stigmasterol
+蜜麻黄,ADRB1,TCMSP,1,Stigmasterol
+蜜麻黄,ADRB2,TCMSP,4,Stigmasterol|Truflex OBP|beta-sitosterol|quercetin
+蜜麻黄,AHR,TCMSP,2,kaempferol|quercetin
+蜜麻黄,AHSA1,TCMSP,2,kaempferol|quercetin
+蜜麻黄,AKR1C1,TCMSP,1,naringenin
+蜜麻黄,AKR1C3,TCMSP,1,kaempferol
+蜜麻黄,AKT1,TCMSP,4,kaempferol|luteolin|naringenin|quercetin
+蜜麻黄,APOB,TCMSP,2,naringenin|taxifolin
+蜜麻黄,AR,TCMSP,5,Genkwanin|delphinidin|kaempferol|luteolin|quercetin
+蜜麻黄,BAD,TCMSP,1,naringenin
+蜜麻黄,BAX,TCMSP,3,beta-sitosterol|kaempferol|quercetin
+蜜麻黄,BCL2,TCMSP,4,beta-sitosterol|kaempferol|naringenin|quercetin
+蜜麻黄,BCL2L1,TCMSP,2,luteolin|quercetin
+蜜麻黄,BIRC5,TCMSP,2,luteolin|quercetin
+蜜麻黄,CASP3,TCMSP,5,beta-sitosterol|kaempferol|luteolin|naringenin|quercetin
+蜜麻黄,CASP7,TCMSP,1,luteolin
+蜜麻黄,CASP8,TCMSP,2,beta-sitosterol|quercetin
+蜜麻黄,CASP9,TCMSP,3,beta-sitosterol|luteolin|quercetin
+蜜麻黄,CAT,TCMSP,2,(+)-catechin|naringenin
+蜜麻黄,CAV1,TCMSP,1,quercetin
+蜜麻黄,CCL2,TCMSP,1,quercetin
+蜜麻黄,CCNB1,TCMSP,2,luteolin|quercetin
+蜜麻黄,CCND1,TCMSP,2,luteolin|quercetin
+蜜麻黄,CD40LG,TCMSP,2,luteolin|quercetin
+蜜麻黄,CDKN1A,TCMSP,2,luteolin|quercetin
+蜜麻黄,CES1,TCMSP,1,naringenin
+蜜麻黄,CHEK1,TCMSP,1,Genkwanin
+蜜麻黄,CHEK2,TCMSP,1,quercetin
+蜜麻黄,CHRM1,TCMSP,4,Stigmasterol|Truflex OBP|beta-sitosterol|kaempferol
+蜜麻黄,CHRM2,TCMSP,3,Stigmasterol|beta-sitosterol|kaempferol
+蜜麻黄,CHRM3,TCMSP,2,Stigmasterol|beta-sitosterol
+蜜麻黄,CHRM4,TCMSP,1,beta-sitosterol
+蜜麻黄,CHRNA2,TCMSP,1,beta-sitosterol
+蜜麻黄,CHRNA7,TCMSP,2,Stigmasterol|beta-sitosterol
+蜜麻黄,CHUK,TCMSP,1,quercetin
+蜜麻黄,CLDN4,TCMSP,1,quercetin
+蜜麻黄,COL1A1,TCMSP,1,quercetin
+蜜麻黄,COL3A1,TCMSP,1,quercetin
+蜜麻黄,CTRB1,TCMSP,1,Stigmasterol
+蜜麻黄,CTSD,TCMSP,1,quercetin
+蜜麻黄,CXCL10,TCMSP,1,quercetin
+蜜麻黄,CXCL11,TCMSP,1,quercetin
+蜜麻黄,CXCL2,TCMSP,1,quercetin
+蜜麻黄,CXCL8,TCMSP,1,quercetin
+蜜麻黄,CYP1A1,TCMSP,2,kaempferol|quercetin
+蜜麻黄,CYP1A2,TCMSP,2,kaempferol|quercetin
+蜜麻黄,CYP1B1,TCMSP,2,kaempferol|quercetin
+蜜麻黄,CYP3A4,TCMSP,2,kaempferol|quercetin
+蜜麻黄,DCAF5,TCMSP,1,quercetin
+蜜麻黄,DGAT2,TCMSP,1,taxifolin
+蜜麻黄,DIO1,TCMSP,2,kaempferol|quercetin
+蜜麻黄,DRD1,TCMSP,1,beta-sitosterol
+蜜麻黄,DUOX2,TCMSP,1,quercetin
+蜜麻黄,E2F1,TCMSP,1,quercetin
+蜜麻黄,E2F2,TCMSP,1,quercetin
+蜜麻黄,EGF,TCMSP,1,quercetin
+蜜麻黄,EGFR,TCMSP,2,luteolin|quercetin
+蜜麻黄,EIF6,TCMSP,1,quercetin
+蜜麻黄,ELK1,TCMSP,1,quercetin
+蜜麻黄,ERBB2,TCMSP,2,luteolin|quercetin
+蜜麻黄,ERBB3,TCMSP,1,quercetin
+蜜麻黄,ESR1,TCMSP,3,(+)-catechin|leucopelargonidin|naringenin
+蜜麻黄,ESR2,TCMSP,1,Genkwanin
+蜜麻黄,F10,TCMSP,1,quercetin
+蜜麻黄,F2,TCMSP,2,kaempferol|quercetin
+蜜麻黄,F3,TCMSP,1,quercetin
+蜜麻黄,F7,TCMSP,2,kaempferol|quercetin
+蜜麻黄,FASN,TCMSP,1,naringenin
+蜜麻黄,FOS,TCMSP,1,quercetin
+蜜麻黄,GABRA1,TCMSP,4,Stigmasterol|beta-sitosterol|kaempferol|quercetin
+蜜麻黄,GABRA2,TCMSP,2,beta-sitosterol|kaempferol
+蜜麻黄,GABRA3,TCMSP,2,Stigmasterol|beta-sitosterol
+蜜麻黄,GABRA5,TCMSP,1,beta-sitosterol
+蜜麻黄,GJA1,TCMSP,1,quercetin
+蜜麻黄,GOT1,TCMSP,1,naringenin
+蜜麻黄,GSR,TCMSP,1,naringenin
+蜜麻黄,GSTM1,TCMSP,2,kaempferol|quercetin
+蜜麻黄,GSTM2,TCMSP,2,kaempferol|quercetin
+蜜麻黄,GSTP1,TCMSP,4,kaempferol|luteolin|naringenin|quercetin
+蜜麻黄,HAS2,TCMSP,3,(+)-catechin|kaempferol|quercetin
+蜜麻黄,HIF1A,TCMSP,1,quercetin
+蜜麻黄,HK2,TCMSP,1,quercetin
+蜜麻黄,HMGCR,TCMSP,1,naringenin
+蜜麻黄,HMOX1,TCMSP,4,eriodictyol|kaempferol|luteolin|quercetin
+蜜麻黄,HSF1,TCMSP,1,quercetin
+蜜麻黄,HSP90AA1,TCMSP,14,(+)-Leucocyanidin|(+)-catechin|Diosmetin|Genkwanin|Resivit|beta-sitosterol|delphinidin|eriodictyol|kaempferol|leucopelargonidin|luteolin|naringenin|quercetin|taxifolin
+蜜麻黄,HSPB1,TCMSP,1,quercetin
+蜜麻黄,ICAM1,TCMSP,4,kaempferol|luteolin|quercetin|taxifolin
+蜜麻黄,IFNG,TCMSP,2,luteolin|quercetin
+蜜麻黄,IGF2,TCMSP,1,quercetin
+蜜麻黄,IGFBP3,TCMSP,1,quercetin
+蜜麻黄,IGHG1,TCMSP,2,Pectolinarigenin|Stigmasterol
+蜜麻黄,IKBKB,TCMSP,1,kaempferol
+蜜麻黄,IL10,TCMSP,2,luteolin|quercetin
+蜜麻黄,IL1A,TCMSP,1,quercetin
+蜜麻黄,IL1B,TCMSP,1,quercetin
+蜜麻黄,IL2,TCMSP,2,luteolin|quercetin
+蜜麻黄,IL4,TCMSP,1,luteolin
+蜜麻黄,IL6,TCMSP,2,luteolin|quercetin
+蜜麻黄,INSR,TCMSP,3,kaempferol|luteolin|quercetin
+蜜麻黄,IRF1,TCMSP,1,quercetin
+蜜麻黄,KCNH2,TCMSP,2,beta-sitosterol|quercetin
+蜜麻黄,LDLR,TCMSP,1,naringenin
+蜜麻黄,LTA4H,TCMSP,1,Stigmasterol
+蜜麻黄,MAOA,TCMSP,1,Stigmasterol
+蜜麻黄,MAOB,TCMSP,2,Stigmasterol|quercetin
+蜜麻黄,MAP2,TCMSP,1,beta-sitosterol
+蜜麻黄,MAPK1,TCMSP,3,luteolin|naringenin|quercetin
+蜜麻黄,MAPK3,TCMSP,1,naringenin
+蜜麻黄,MAPK8,TCMSP,1,kaempferol
+蜜麻黄,MCL1,TCMSP,1,luteolin
+蜜麻黄,MDM2,TCMSP,1,luteolin
+蜜麻黄,MET,TCMSP,1,luteolin
+蜜麻黄,MMP1,TCMSP,3,kaempferol|luteolin|quercetin
+蜜麻黄,MMP2,TCMSP,2,luteolin|quercetin
+蜜麻黄,MMP3,TCMSP,1,quercetin
+蜜麻黄,MMP9,TCMSP,2,luteolin|quercetin
+蜜麻黄,MPO,TCMSP,1,quercetin
+蜜麻黄,MTTP,TCMSP,2,naringenin|taxifolin
+蜜麻黄,MYC,TCMSP,1,quercetin
+蜜麻黄,NCF1,TCMSP,1,quercetin
+蜜麻黄,NCOA1,TCMSP,4,Diosmetin|Genkwanin|Pectolinarigenin|Stigmasterol
+蜜麻黄,NCOA2,TCMSP,13,(+)-catechin|Diosmetin|Genkwanin|Mandenol|Pectolinarigenin|Stigmasterol|beta-sitosterol|delphinidin|eriodictyol|kaempferol|luteolin|poriferast-5-en-3beta-ol|quercetin
+蜜麻黄,NFE2L2,TCMSP,2,eriodictyol|quercetin
+蜜麻黄,NFKBIA,TCMSP,2,luteolin|quercetin
+蜜麻黄,NKX3-1,TCMSP,1,quercetin
+蜜麻黄,NOS2,TCMSP,5,Diosmetin|Genkwanin|Pectolinarigenin|delphinidin|kaempferol
+蜜麻黄,NPEPPS,TCMSP,1,quercetin
+蜜麻黄,NQO1,TCMSP,2,eriodictyol|quercetin
+蜜麻黄,NR1I2,TCMSP,2,kaempferol|quercetin
+蜜麻黄,NR1I3,TCMSP,2,kaempferol|quercetin
+蜜麻黄,NR3C2,TCMSP,2,24-Ethylcholest-4-en-3-one|Stigmasterol
+蜜麻黄,NUF2,TCMSP,1,luteolin
+蜜麻黄,ODC1,TCMSP,1,quercetin
+蜜麻黄,OPRM1,TCMSP,1,beta-sitosterol
+蜜麻黄,PARP1,TCMSP,1,quercetin
+蜜麻黄,PCNA,TCMSP,1,luteolin
+蜜麻黄,PCOLCE,TCMSP,1,quercetin
+蜜麻黄,PGR,TCMSP,5,24-Ethylcholest-4-en-3-one|Stigmasterol|beta-sitosterol|kaempferol|poriferast-5-en-3beta-ol
+蜜麻黄,PIK3CG,TCMSP,8,beta-sitosterol|delphinidin|eriodictyol|kaempferol|luteolin|naringenin|quercetin|taxifolin
+蜜麻黄,PLAT,TCMSP,1,quercetin
+蜜麻黄,PLAU,TCMSP,2,Stigmasterol|quercetin
+蜜麻黄,PLB1,TCMSP,1,naringenin
+蜜麻黄,PON1,TCMSP,2,beta-sitosterol|quercetin
+蜜麻黄,POR,TCMSP,1,quercetin
+蜜麻黄,PPARA,TCMSP,2,naringenin|quercetin
+蜜麻黄,PPARD,TCMSP,1,quercetin
+蜜麻黄,PPARG,TCMSP,4,kaempferol|luteolin|naringenin|quercetin
+蜜麻黄,PRKACA,TCMSP,10,(+)-catechin|Diosmetin|Genkwanin|Stigmasterol|beta-sitosterol|eriodictyol|kaempferol|luteolin|naringenin|quercetin
+蜜麻黄,PRKCA,TCMSP,2,beta-sitosterol|quercetin
+蜜麻黄,PRKCB,TCMSP,1,quercetin
+蜜麻黄,PSMD3,TCMSP,2,kaempferol|quercetin
+蜜麻黄,PTGER3,TCMSP,1,quercetin
+蜜麻黄,PTGES,TCMSP,1,luteolin
+蜜麻黄,PTGS1,TCMSP,17,(+)-Leucocyanidin|(+)-catechin|Diosmetin|Genkwanin|Mandenol|Pectolinarigenin|Resivit|Stigmasterol|beta-sitosterol|delphinidin|eriodictyol|kaempferol|leucopelargonidin|luteolin|naringenin|quercetin|taxifolin
+蜜麻黄,PTGS2,TCMSP,17,(+)-Leucocyanidin|(+)-catechin|Diosmetin|Genkwanin|Mandenol|Pectolinarigenin|Resivit|Stigmasterol|beta-sitosterol|delphinidin|eriodictyol|kaempferol|leucopelargonidin|luteolin|naringenin|quercetin|taxifolin
+蜜麻黄,RAF1,TCMSP,1,quercetin
+蜜麻黄,RASA1,TCMSP,1,quercetin
+蜜麻黄,RASSF1,TCMSP,1,quercetin
+蜜麻黄,RB1,TCMSP,2,luteolin|quercetin
+蜜麻黄,RELA,TCMSP,5,kaempferol|luteolin|naringenin|quercetin|taxifolin
+蜜麻黄,RUNX1T1,TCMSP,1,quercetin
+蜜麻黄,RUNX2,TCMSP,1,quercetin
+蜜麻黄,RXRA,TCMSP,5,(+)-catechin|Genkwanin|Stigmasterol|quercetin|taxifolin
+蜜麻黄,SCN5A,TCMSP,5,Pectolinarigenin|Stigmasterol|Truflex OBP|beta-sitosterol|quercetin
+蜜麻黄,SELE,TCMSP,2,kaempferol|quercetin
+蜜麻黄,SERPINE1,TCMSP,1,quercetin
+蜜麻黄,SLC2A4,TCMSP,3,kaempferol|luteolin|quercetin
+蜜麻黄,SLC6A2,TCMSP,3,Stigmasterol|Truflex OBP|kaempferol
+蜜麻黄,SLC6A3,TCMSP,2,Stigmasterol|Truflex OBP
+蜜麻黄,SLC6A4,TCMSP,1,beta-sitosterol
+蜜麻黄,SLPI,TCMSP,1,kaempferol
+蜜麻黄,SOAT1,TCMSP,1,naringenin
+蜜麻黄,SOAT2,TCMSP,1,naringenin
+蜜麻黄,SOD1,TCMSP,2,naringenin|quercetin
+蜜麻黄,SPP1,TCMSP,1,quercetin
+蜜麻黄,SREBF1,TCMSP,1,naringenin
+蜜麻黄,STAT1,TCMSP,2,kaempferol|quercetin
+蜜麻黄,THBD,TCMSP,1,quercetin
+蜜麻黄,TNF,TCMSP,3,kaempferol|luteolin|quercetin
+蜜麻黄,TOP1,TCMSP,2,luteolin|quercetin
+蜜麻黄,TOP2A,TCMSP,3,kaempferol|luteolin|quercetin
+蜜麻黄,TP53,TCMSP,2,luteolin|quercetin
+蜜麻黄,TYR,TCMSP,1,luteolin
+蜜麻黄,VCAM1,TCMSP,2,kaempferol|quercetin
+蜜麻黄,VEGFA,TCMSP,2,luteolin|quercetin
+黄芪,ACACA,TCMSP,1,quercetin
+黄芪,ACHE,TCMSP,6,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|formononetin|isorhamnetin|kaempferol|quercetin"
+黄芪,ACP3,TCMSP,1,quercetin
+黄芪,ADH1C,TCMSP,1,hederagenin
+黄芪,ADRA1A,TCMSP,2,7-O-methylisomucronulatol|formononetin
+黄芪,ADRA1B,TCMSP,5,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|hederagenin|kaempferol"
+黄芪,ADRA1D,TCMSP,3,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol"
+黄芪,ADRA2C,TCMSP,2,"3,9-di-O-methylnissolin|7-O-methylisomucronulatol"
+黄芪,ADRB1,TCMSP,2,"3,9-di-O-methylnissolin|7-O-methylisomucronulatol"
+黄芪,ADRB2,TCMSP,6,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Calycosin|formononetin|quercetin"
+黄芪,AHR,TCMSP,2,kaempferol|quercetin
+黄芪,AHSA1,TCMSP,2,kaempferol|quercetin
+黄芪,AKR1C3,TCMSP,1,kaempferol
+黄芪,AKT1,TCMSP,2,kaempferol|quercetin
+黄芪,AR,TCMSP,7,7-O-methylisomucronulatol|Calycosin|Jaranol|formononetin|isorhamnetin|kaempferol|quercetin
+黄芪,BAX,TCMSP,2,kaempferol|quercetin
+黄芪,BCL2,TCMSP,2,kaempferol|quercetin
+黄芪,BCL2L1,TCMSP,1,quercetin
+黄芪,BIRC5,TCMSP,1,quercetin
+黄芪,CASP3,TCMSP,2,kaempferol|quercetin
+黄芪,CASP8,TCMSP,1,quercetin
+黄芪,CASP9,TCMSP,1,quercetin
+黄芪,CAV1,TCMSP,1,quercetin
+黄芪,CCL2,TCMSP,1,quercetin
+黄芪,CCNA2,TCMSP,4,7-O-methylisomucronulatol|Calycosin|formononetin|isorhamnetin
+黄芪,CCNB1,TCMSP,1,quercetin
+黄芪,CCND1,TCMSP,1,quercetin
+黄芪,CD40LG,TCMSP,1,quercetin
+黄芪,CDKN1A,TCMSP,1,quercetin
+黄芪,CHEK1,TCMSP,5,7-O-methylisomucronulatol|Calycosin|Jaranol|formononetin|isorhamnetin
+黄芪,CHEK2,TCMSP,1,quercetin
+黄芪,CHRM1,TCMSP,6,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|formononetin|hederagenin|kaempferol"
+黄芪,CHRM2,TCMSP,3,7-O-methylisomucronulatol|hederagenin|kaempferol
+黄芪,CHRM3,TCMSP,4,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|hederagenin"
+黄芪,CHRM4,TCMSP,2,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|7-O-methylisomucronulatol"
+黄芪,CHRM5,TCMSP,1,7-O-methylisomucronulatol
+黄芪,CHRNA7,TCMSP,1,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol"
+黄芪,CHUK,TCMSP,1,quercetin
+黄芪,CLDN4,TCMSP,1,quercetin
+黄芪,COL1A1,TCMSP,1,quercetin
+黄芪,COL3A1,TCMSP,1,quercetin
+黄芪,CTSD,TCMSP,1,quercetin
+黄芪,CXCL10,TCMSP,1,quercetin
+黄芪,CXCL11,TCMSP,1,quercetin
+黄芪,CXCL2,TCMSP,1,quercetin
+黄芪,CXCL8,TCMSP,1,quercetin
+黄芪,CYP1A1,TCMSP,2,kaempferol|quercetin
+黄芪,CYP1A2,TCMSP,2,kaempferol|quercetin
+黄芪,CYP1B1,TCMSP,2,kaempferol|quercetin
+黄芪,CYP3A4,TCMSP,2,kaempferol|quercetin
+黄芪,DCAF5,TCMSP,1,quercetin
+黄芪,DIO1,TCMSP,2,kaempferol|quercetin
+黄芪,DRD1,TCMSP,1,7-O-methylisomucronulatol
+黄芪,DUOX2,TCMSP,1,quercetin
+黄芪,E2F1,TCMSP,1,quercetin
+黄芪,E2F2,TCMSP,1,quercetin
+黄芪,EGF,TCMSP,1,quercetin
+黄芪,EGFR,TCMSP,1,quercetin
+黄芪,EIF6,TCMSP,1,quercetin
+黄芪,ELK1,TCMSP,1,quercetin
+黄芪,ERBB2,TCMSP,1,quercetin
+黄芪,ERBB3,TCMSP,1,quercetin
+黄芪,ESR1,TCMSP,6,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Calycosin|formononetin|isorhamnetin"
+黄芪,ESR2,TCMSP,5,7-O-methylisomucronulatol|Calycosin|Jaranol|formononetin|isorhamnetin
+黄芪,F10,TCMSP,2,7-O-methylisomucronulatol|quercetin
+黄芪,F2,TCMSP,8,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|FA|formononetin|isorhamnetin|kaempferol|quercetin"
+黄芪,F3,TCMSP,1,quercetin
+黄芪,F7,TCMSP,3,isorhamnetin|kaempferol|quercetin
+黄芪,FOS,TCMSP,1,quercetin
+黄芪,GABRA1,TCMSP,7,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|hederagenin|isorhamnetin|kaempferol|quercetin"
+黄芪,GABRA2,TCMSP,2,hederagenin|kaempferol
+黄芪,GABRA3,TCMSP,1,hederagenin
+黄芪,GABRA5,TCMSP,1,hederagenin
+黄芪,GJA1,TCMSP,1,quercetin
+黄芪,GRIA2,TCMSP,2,hederagenin|isorhamnetin
+黄芪,GSK3B,TCMSP,5,7-O-methylisomucronulatol|Calycosin|FA|formononetin|isorhamnetin
+黄芪,GSTM1,TCMSP,2,kaempferol|quercetin
+黄芪,GSTM2,TCMSP,2,kaempferol|quercetin
+黄芪,GSTP1,TCMSP,2,kaempferol|quercetin
+黄芪,HAS2,TCMSP,2,kaempferol|quercetin
+黄芪,HIF1A,TCMSP,1,quercetin
+黄芪,HK2,TCMSP,1,quercetin
+黄芪,HMOX1,TCMSP,2,kaempferol|quercetin
+黄芪,HSD3B1,TCMSP,1,formononetin
+黄芪,HSD3B2,TCMSP,1,formononetin
+黄芪,HSF1,TCMSP,1,quercetin
+黄芪,HSP90AA1,TCMSP,10,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|1,7-Dihydroxy-3,9-dimethoxy pterocarpene|7-O-methylisomucronulatol|Bifendate|Calycosin|Jaranol|formononetin|isorhamnetin|kaempferol|quercetin"
+黄芪,HSPB1,TCMSP,1,quercetin
+黄芪,HTR3A,TCMSP,2,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin"
+黄芪,ICAM1,TCMSP,2,kaempferol|quercetin
+黄芪,IFNG,TCMSP,1,quercetin
+黄芪,IGF2,TCMSP,1,quercetin
+黄芪,IGFBP3,TCMSP,1,quercetin
+黄芪,IGHG1,TCMSP,1,hederagenin
+黄芪,IKBKB,TCMSP,1,kaempferol
+黄芪,IL10,TCMSP,1,quercetin
+黄芪,IL1A,TCMSP,1,quercetin
+黄芪,IL1B,TCMSP,1,quercetin
+黄芪,IL2,TCMSP,1,quercetin
+黄芪,IL4,TCMSP,1,formononetin
+黄芪,IL6,TCMSP,1,quercetin
+黄芪,INSR,TCMSP,2,kaempferol|quercetin
+黄芪,IRF1,TCMSP,1,quercetin
+黄芪,KCNH2,TCMSP,2,7-O-methylisomucronulatol|quercetin
+黄芪,KDR,TCMSP,1,Bifendate
+黄芪,MAOB,TCMSP,3,formononetin|isorhamnetin|quercetin
+黄芪,MAPK1,TCMSP,1,quercetin
+黄芪,MAPK14,TCMSP,4,7-O-methylisomucronulatol|Calycosin|formononetin|isorhamnetin
+黄芪,MAPK8,TCMSP,1,kaempferol
+黄芪,MET,TCMSP,1,Bifendate
+黄芪,MMP1,TCMSP,2,kaempferol|quercetin
+黄芪,MMP2,TCMSP,1,quercetin
+黄芪,MMP3,TCMSP,1,quercetin
+黄芪,MMP9,TCMSP,1,quercetin
+黄芪,MPO,TCMSP,1,quercetin
+黄芪,MT-ND6,TCMSP,1,formononetin
+黄芪,MYC,TCMSP,1,quercetin
+黄芪,NCF1,TCMSP,2,isorhamnetin|quercetin
+黄芪,NCOA1,TCMSP,2,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|isorhamnetin"
+黄芪,NCOA2,TCMSP,10,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|9,10-dimethoxypterocarpan-3-O-β-D-glucoside|Calycosin|Jaranol|hederagenin|isorhamnetin|kaempferol|quercetin"
+黄芪,NFE2L2,TCMSP,1,quercetin
+黄芪,NFKBIA,TCMSP,1,quercetin
+黄芪,NKX3-1,TCMSP,1,quercetin
+黄芪,NOS2,TCMSP,8,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Calycosin|Jaranol|formononetin|isorhamnetin|kaempferol"
+黄芪,NPEPPS,TCMSP,1,quercetin
+黄芪,NQO1,TCMSP,1,quercetin
+黄芪,NR1I2,TCMSP,2,kaempferol|quercetin
+黄芪,NR1I3,TCMSP,2,kaempferol|quercetin
+黄芪,ODC1,TCMSP,1,quercetin
+黄芪,OLR1,TCMSP,1,isorhamnetin
+黄芪,OPRD1,TCMSP,1,7-O-methylisomucronulatol
+黄芪,OPRM1,TCMSP,1,"3,9-di-O-methylnissolin"
+黄芪,PARP1,TCMSP,1,quercetin
+黄芪,PCOLCE,TCMSP,1,quercetin
+黄芪,PGR,TCMSP,4,"(3S,8S,9S,10R,13R,14S,17R)-10,13-dimethyl-17-[(2R,5S)-5-propan-2-yloctan-2-yl]-2,3,4,7,8,9,11,12,14,15,16,17-dodecahydro-1H-cyclopenta[a]phenanthren-3-ol|Mairin|hederagenin|kaempferol"
+黄芪,PIK3CG,TCMSP,3,isorhamnetin|kaempferol|quercetin
+黄芪,PKIA,TCMSP,1,formononetin
+黄芪,PLAT,TCMSP,1,quercetin
+黄芪,PLAU,TCMSP,1,quercetin
+黄芪,PON1,TCMSP,1,quercetin
+黄芪,POR,TCMSP,1,quercetin
+黄芪,PPARA,TCMSP,1,quercetin
+黄芪,PPARD,TCMSP,2,isorhamnetin|quercetin
+黄芪,PPARG,TCMSP,6,7-O-methylisomucronulatol|Calycosin|formononetin|isorhamnetin|kaempferol|quercetin
+黄芪,PRKACA,TCMSP,6,7-O-methylisomucronulatol|Calycosin|formononetin|isorhamnetin|kaempferol|quercetin
+黄芪,PRKCA,TCMSP,1,quercetin
+黄芪,PRKCB,TCMSP,1,quercetin
+黄芪,PSMD3,TCMSP,2,kaempferol|quercetin
+黄芪,PTGER3,TCMSP,1,quercetin
+黄芪,PTGS1,TCMSP,11,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Bifendate|Calycosin|Jaranol|formononetin|hederagenin|isorhamnetin|kaempferol|quercetin"
+黄芪,PTGS2,TCMSP,13,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|1,7-Dihydroxy-3,9-dimethoxy pterocarpene|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|9,10-dimethoxypterocarpan-3-O-β-D-glucoside|Bifendate|Calycosin|Jaranol|formononetin|hederagenin|isorhamnetin|kaempferol|quercetin"
+黄芪,PTPN1,TCMSP,1,isorhamnetin
+黄芪,PYGM,TCMSP,1,isorhamnetin
+黄芪,RAF1,TCMSP,1,quercetin
+黄芪,RASA1,TCMSP,1,quercetin
+黄芪,RASSF1,TCMSP,1,quercetin
+黄芪,RB1,TCMSP,1,quercetin
+黄芪,RELA,TCMSP,3,isorhamnetin|kaempferol|quercetin
+黄芪,RUNX1T1,TCMSP,1,quercetin
+黄芪,RUNX2,TCMSP,1,quercetin
+黄芪,RXRA,TCMSP,8,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|1,7-Dihydroxy-3,9-dimethoxy pterocarpene|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Calycosin|formononetin|hederagenin|quercetin"
+黄芪,RXRB,TCMSP,1,7-O-methylisomucronulatol
+黄芪,SCN5A,TCMSP,6,"(6aR,11aR)-9,10-dimethoxy-6a,11a-dihydro-6H-benzofurano[3,2-c]chromen-3-ol|3,9-di-O-methylnissolin|7-O-methylisomucronulatol|Jaranol|hederagenin|quercetin"
+黄芪,SELE,TCMSP,2,kaempferol|quercetin
+黄芪,SERPINE1,TCMSP,1,quercetin
+黄芪,SLC2A4,TCMSP,2,kaempferol|quercetin
+黄芪,SLC6A2,TCMSP,2,hederagenin|kaempferol
+黄芪,SLC6A3,TCMSP,2,7-O-methylisomucronulatol|formononetin
+黄芪,SLC6A4,TCMSP,2,7-O-methylisomucronulatol|formononetin
+黄芪,SLPI,TCMSP,1,kaempferol
+黄芪,SOD1,TCMSP,1,quercetin
+黄芪,SPP1,TCMSP,1,quercetin
+黄芪,STAT1,TCMSP,2,kaempferol|quercetin
+黄芪,THBD,TCMSP,1,quercetin
+黄芪,TNF,TCMSP,2,kaempferol|quercetin
+黄芪,TOP1,TCMSP,1,quercetin
+黄芪,TOP2A,TCMSP,5,"9,10-dimethoxypterocarpan-3-O-β-D-glucoside|Bifendate|isomucronulatol-7,2'-di-O-glucosiole|kaempferol|quercetin"
+黄芪,TP53,TCMSP,1,quercetin
+黄芪,VCAM1,TCMSP,2,kaempferol|quercetin
+黄芪,VEGFA,TCMSP,1,quercetin

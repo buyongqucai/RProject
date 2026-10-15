@@ -1,0 +1,2 @@
+gene_mouse,gene_human,pdb,affinity_kcal_mol,center_source,center_detail,center_x,center_y,center_z,size_x,size_y,size_z,size_method,box_qc,engine,ligand,workdir,status
+Alox15,ALOX15,1lox,-8.3,autosite,autosite_rank=1;file=rec_adfr_cl_001.pdb;size_capped35,-2.766,141.27,46.666,35.0,26.0,23.0,autosite_box_cap35,PASS,vina,quercetin_CID5280343,E:\dock_yuyang\baseline\Alox15_1lox,ok

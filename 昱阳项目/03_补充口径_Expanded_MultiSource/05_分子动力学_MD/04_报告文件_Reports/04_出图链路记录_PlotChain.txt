@@ -1,0 +1,3 @@
+chain=extraMdAnalysis → exportMdOriginCsv → origin出图_plotMdOrigin → NN_主题图 layout → PyMOL/LigPlot
+SSOT=生信分析技能_BioinformaticsSkills/.../出图与交付约束_MdFigureStandards.md
+note=01_run_sample.R / plotMdAnalysis.R are sample-root bound; project uses same Origin recipes via origin出图_plotMdOrigin.py

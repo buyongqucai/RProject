@@ -1,0 +1,4 @@
+"figure","status","software","how_to"
+"Herb-compound-target-pathway network (Cytoscape polish)","OPTIONAL_CYTOSCAPE","Cytoscape 3.10.2 (optional after R preview)","Review R HCTP figures first; optional import HerbCompoundTargetPathway Cytoscape CSVs"
+"STRING web vector export (optional)","OPTIONAL_STRING_WEB","STRING web (optional)","Optional: upload overlap genes on STRING web for their stock SVG"
+"KEGG official pathway maps (Top20)","BLOCKED_EXTERNAL","KEGG website","See skill FROZEN section F route (24_download_kegg_pathway_maps.py)"
