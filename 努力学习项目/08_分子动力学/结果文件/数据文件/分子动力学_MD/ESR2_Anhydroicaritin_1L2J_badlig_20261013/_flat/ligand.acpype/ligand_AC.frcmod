@@ -1,0 +1,36 @@
+Remark line goes here
+MASS
+
+BOND
+
+ANGLE
+c1-ce-os   79.220     129.270   same as c1-ce-o , penalty score=  5.5
+c1-ce-oh   79.220     129.270   same as c1-ce-o , penalty score=  5.2
+c -c2-ce   68.600     104.230   same as c -c2-c2, penalty score=  2.2
+c -c2-oh   80.540     122.220   same as c2-c2-oh, penalty score=  2.6
+c1-os-ce   91.820     118.840   same as c1-os-ca, penalty score=  2.2
+
+DIHE
+ce-ce-os-c3   1    2.700       180.000          -2.000      same as c2-c2-os-c3
+ce-ce-os-c3   1    1.050       180.000          -1.000      same as c2-c2-os-c3
+ce-ce-os-c3   1    0.900       180.000           3.000      same as c2-c2-os-c3, penalty score=324.0
+c1-ce-os-c3   2    2.100       180.000           2.000      same as X -c2-os-X , penalty score=237.0
+c2-ce-oh-ho   1    1.280       180.000           2.000      same as c2-c2-oh-ho, penalty score=237.0
+c1-ce-oh-ho   2    2.100       180.000           2.000      same as X -c2-oh-X , penalty score=237.0
+c1-ce-os-c1   2    2.100       180.000           2.000      same as X -c2-os-X , penalty score=237.0
+
+IMPROPER
+c1-c2-ce-ce        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 37.0 (use general term))
+c1-ce-ce-os        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 37.0 (use general term))
+c2-ce-c2-os        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 40.3 (use general term))
+c -c2-c2-ce         1.1          180.0         2.0          Same as c2-ca-ca-ca, penalty score=409.0)
+c1-c2-ce-oh        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 37.0 (use general term))
+c2-c2-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)
+c -c2-c2-oh        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 40.3 (use general term))
+c1-c1-ce-c2        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 37.0 (use general term))
+c1-c1-ce-os        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 37.0 (use general term))
+
+NONBON
+
+
+

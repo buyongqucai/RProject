@@ -1,0 +1,9 @@
+{
+  "auto_rebuild_attempted": true,
+  "auto_rebuild_ok": true,
+  "will_retry": false,
+  "will_retry_again": false,
+  "chosen_pdb": "1FOS",
+  "rebuild_reason_zh": "已完成 1 轮自动重搭（1FOS）并重跑，仍然失败，停止。已自动重搭：排除原结构 1A02，改用 1FOS （最大连续缺环 2，分辨率 3.05）。无共晶小分子，配体放到蛋白 CA 质心附近（弱初态）@1FOS 链E。",
+  "original_system": "FOS_quercetin_1A02"
+}

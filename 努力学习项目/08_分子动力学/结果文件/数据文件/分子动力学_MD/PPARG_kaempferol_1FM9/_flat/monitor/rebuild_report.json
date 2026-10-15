@@ -1,0 +1,29 @@
+{
+  "system": "PPARG_kaempferol_1FM9",
+  "source_dir": "/mnt/e/RProject/努力学习项目/08_分子动力学/数据文件/原始数据/RCSB与对接姿态_MD输入_Top3/PPARG_kaempferol_1FM9",
+  "auto_rebuild_attempted": true,
+  "auto_rebuild_ok": true,
+  "pose_class": "A2",
+  "chosen_pdb": "6T1S",
+  "reason_zh": "已自动重搭：排除原结构 1FM9，改用 6T1S （最大连续缺环 3，分辨率 1.65）。近缘/口袋配体参照 EDK@6T1S 链A。",
+  "candidates": [
+    "9F7W",
+    "8BF1",
+    "9V8G",
+    "9V8H",
+    "8FKC",
+    "6MS7",
+    "9V8D",
+    "3U9Q",
+    "8B94",
+    "8DKV",
+    "3B1M",
+    "3V9V",
+    "9F7X",
+    "3V9T",
+    "6T1S"
+  ],
+  "resolution": 1.65,
+  "gap_max": 3,
+  "note": "近缘/口袋配体参照 EDK@6T1S 链A"
+}

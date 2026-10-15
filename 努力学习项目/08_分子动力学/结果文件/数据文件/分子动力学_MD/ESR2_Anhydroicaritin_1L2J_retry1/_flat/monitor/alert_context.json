@@ -1,0 +1,9 @@
+{
+  "auto_rebuild_attempted": true,
+  "auto_rebuild_ok": true,
+  "will_retry": false,
+  "will_retry_again": false,
+  "chosen_pdb": "3OLL",
+  "rebuild_reason_zh": "已完成 1 轮自动重搭（3OLL）并重跑，仍然失败，停止。已自动重搭：排除原结构 1L2J，改用 3OLL （最大连续缺环 2，分辨率 1.5）。近缘/口袋配体参照 EST@3OLL。",
+  "original_system": "ESR2_Anhydroicaritin_1L2J"
+}

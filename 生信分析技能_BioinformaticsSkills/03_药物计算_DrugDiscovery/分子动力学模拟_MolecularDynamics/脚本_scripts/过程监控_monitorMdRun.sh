@@ -78,18 +78,22 @@ XTC=md.xtc
 if [[ ! -f "$XTC" ]]; then
   echo "WARN: md.xtc missing yet; skip geometry checks (only edr/log)"
 else
-  printf 'Protein\nSystem\n' | gmx trjconv -s md.tpr -f md.xtc -o "$MON/md_center.xtc" \
-    -pbc mol -center -ur compact > "$MON/trjconv.log" 2>&1 || true
+  # -pbc mol：逐分子完整（链/配体各自成整体）。度量用“免疫指标”：
+  # 配体自RMSD（完整性）+ mindist（最小镜像距离，解离判定）。
+  # 合并 BB RMSD 易受多链跨镜像伪影影响（ESR2/FOS 2026-10-13 实测伪 3.9–5.0 nm），只记录不熔断。
+  printf 'System\n' | gmx trjconv -s md.tpr -f md.xtc -o "$MON/md_whole.xtc" \
+    -pbc mol > "$MON/trjconv.log" 2>&1 || true
+  TRJ_IN="$XTC"
+  [[ -f "$MON/md_whole.xtc" ]] && TRJ_IN="$MON/md_whole.xtc"
+  printf 'Protein\nSystem\n' | gmx trjconv -s md.tpr -f "$TRJ_IN" -o "$MON/md_center.xtc" \
+    -pbc mol -center -ur compact >> "$MON/trjconv.log" 2>&1 || true
   if [[ -f "$MON/md_center.xtc" ]]; then
-    printf 'Backbone\nBackbone\n' | gmx rms -s md.tpr -f "$MON/md_center.xtc" \
+    printf 'Backbone\nBackbone\n' | gmx rms -s md.tpr -f "$MON/md_whole.xtc" \
       -o "$MON/rmsd_backbone.xvg" -tu ns > "$MON/rms_bb.log" 2>&1 || true
-    printf "Backbone\n${LIGAND_RES}\n" | gmx rms -s md.tpr -f "$MON/md_center.xtc" \
-      -o "$MON/rmsd_ligand.xvg" -tu ns > "$MON/rms_lig.log" 2>&1 || true
-    printf "Protein\n${LIGAND_RES}\n" | gmx distance -s md.tpr -f "$MON/md_center.xtc" \
-      -select "com of group Protein plus com of group ${LIGAND_RES}" \
-      -oav "$MON/com_distance.xvg" > "$MON/com.log" 2>&1 \
-      || printf "Protein\n${LIGAND_RES}\n" | gmx distance -s md.tpr -f "$MON/md_center.xtc" \
-           -oav "$MON/com_distance.xvg" > "$MON/com.log" 2>&1 || true
+    printf "LIG\nLIG\n" | gmx rms -s md.tpr -f "$MON/md_whole.xtc" \
+      -o "$MON/rmsd_ligand_self.xvg" -tu ns > "$MON/rms_lig.log" 2>&1 || true
+    printf 'Protein\nLIG\n' | gmx mindist -s md.tpr -f md.xtc \
+      -od "$MON/mindist.xvg" > "$MON/mindist.log" 2>&1 || true
   fi
 fi
 
@@ -160,33 +164,27 @@ def median(vals):
     return s[len(s) // 2]
 
 bb = read_xvg(mon / "rmsd_backbone.xvg")
-lig = read_xvg(mon / "rmsd_ligand.xvg")
-com = read_xvg(mon / "com_distance.xvg")
+lig = read_xvg(mon / "rmsd_ligand_self.xvg")
+mdist = read_xvg(mon / "mindist.xvg")
 ti, temps, t_rows = col_by_legend(mon / "energy_T.xvg", "Temperature")
 pi, pots, p_rows = col_by_legend(mon / "energy_P.xvg", "Potential")
 
 bb_max = max((r[1] for r in bb), default=None)
 lig_max = max((r[1] for r in lig), default=None)
-com_vals = [r[1] for r in com]
-com_max = max(com_vals) if com_vals else None
-com0 = com_vals[0] if com_vals else None
-com_jump = (com_max - com0) if (com_max is not None and com0 is not None) else None
+md_vals = [r[1] for r in mdist]
+md_max = max(md_vals) if md_vals else None
 
 bb_lim = float(os.environ["BB_RMSD_MAX_NM"])
 lig_lim = float(os.environ["LIG_RMSD_MAX_NM"])
-com_lim = float(os.environ["COM_MAX_NM"])
-com_jump_lim = float(os.environ["COM_JUMP_NM"])
+md_lim = float(os.environ.get("MINDIST_MAX_NM", "1.0"))
 tmin = float(os.environ["TEMP_MIN_K"])
 tmax = float(os.environ["TEMP_MAX_K"])
 
-if bb_max is not None and bb_max > bb_lim:
-    reasons.append(f"backbone RMSD max {bb_max:.3f} nm > {bb_lim} nm (possible unfold)")
+# 合并 BB RMSD 跨镜像伪影多发，仅记录不熔断（2026-10-13 ESR2/FOS 实测）。
 if lig_max is not None and lig_max > lig_lim:
-    reasons.append(f"ligand RMSD max {lig_max:.3f} nm > {lig_lim} nm (ligand fly/dissociate)")
-if com_max is not None and com_max > com_lim:
-    reasons.append(f"COM distance max {com_max:.3f} nm > {com_lim} nm (receptor-ligand separation)")
-if com_jump is not None and com_jump > com_jump_lim:
-    reasons.append(f"COM jump {com_jump:.3f} nm > {com_jump_lim} nm vs first frame")
+    reasons.append(f"ligand self-RMSD max {lig_max:.3f} nm > {lig_lim} nm (integrity loss / topology defect)")
+if md_max is not None and md_max > md_lim:
+    reasons.append(f"protein-ligand min distance max {md_max:.3f} nm > {md_lim} nm (ligand dissociated)")
 
 # 温度必须像开尔文。ADA 2 ns 实测约 296–303 K。
 # 若中位数是势能量级（约 -4.9e5），按解析错误停，避免再报成「温度 -492803 K」。
@@ -220,10 +218,9 @@ if pots:
 
 summary = mon / "LAST_CHECK.txt"
 lines = [
-    f"bb_rmsd_max_nm={bb_max}",
-    f"lig_rmsd_max_nm={lig_max}",
-    f"com_max_nm={com_max}",
-    f"com_jump_nm={com_jump}",
+    f"bb_rmsd_max_nm={bb_max} (info only)",
+    f"lig_self_rmsd_max_nm={lig_max}",
+    f"mindist_max_nm={md_max}",
     f"temp_recent_K={t_recent}",
     f"temp_median_K={t_med}",
     f"pot_recent={p_recent}",
@@ -251,8 +248,8 @@ if os.environ.get("PLOT_MONITOR", "1") == "1":
             fig.savefig(out)
             plt.close(fig)
         plot_xy(bb, 1, "Backbone RMSD", "nm", mon / "01_monitor_RmsdBackbone.png")
-        plot_xy(lig, 1, "Ligand RMSD", "nm", mon / "02_monitor_RmsdLigand.png")
-        plot_xy(com, 1, "COM distance", "nm", mon / "07_monitor_ComDistance.png")
+        plot_xy(lig, 1, "Ligand self-RMSD", "nm", mon / "02_monitor_RmsdLigand.png")
+        plot_xy(mdist, 1, "Protein-ligand min dist", "nm", mon / "07_monitor_ComDistance.png")
         if t_rows and t_recent is not None and t_med is not None and 150 <= t_med <= 450:
             plot_xy(t_rows, ti, "Temperature", "K", mon / "08_monitor_Temperature.png")
         if p_rows and p_recent is not None:

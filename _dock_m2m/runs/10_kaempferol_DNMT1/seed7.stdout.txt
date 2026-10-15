@@ -1,0 +1,41 @@
+AutoDock-GPU version: v1.6|Release|x64
+
+Running 1 docking calculation
+
+Kernel source used for development:      ./device/calcenergy.cl                  
+Kernel string used for building:         ./host/inc/stringify.h                  
+Kernel compilation flags:                 -I ./device -I ./common -DN128WI   -cl-mad-enable
+OpenCL device:                           Intel(R) Graphics
+(Thread 0 is setting up Job #1)
+
+Running Job #1
+    Using heuristics: (capped) number of evaluations set to 1132076
+    Local-search chosen method is: ADADELTA (ad)
+
+Executing docking runs, stopping automatically after either reaching 0.15 kcal/mol standard deviation of
+the best molecules of the last 4 * 5 generations, 42000 generations, or 1132076 evaluations:
+
+Generations |  Evaluations |     Threshold    |  Average energy of best 10%  | Samples | Best Inter + Intra
+------------+--------------+------------------+------------------------------+---------+-------------------
+          0 |          150 |   -1.13 kcal/mol |   -2.20 +/-    0.33 kcal/mol |       6 |   -2.84 kcal/mol
+          5 |        66341 |   -1.38 kcal/mol |   -5.19 +/-    1.48 kcal/mol |    1258 |   -9.09 kcal/mol
+         10 |       147202 |   -5.17 kcal/mol |   -8.67 +/-    0.36 kcal/mol |      82 |   -9.36 kcal/mol
+         15 |       240558 |   -8.60 kcal/mol |   -9.25 +/-    0.11 kcal/mol |      21 |   -9.37 kcal/mol
+         20 |       341739 |   -9.17 kcal/mol |   -9.32 +/-    0.03 kcal/mol |      18 |   -9.37 kcal/mol
+         25 |       443791 |   -9.19 kcal/mol |   -9.33 +/-    0.02 kcal/mol |      22 |   -9.37 kcal/mol
+         30 |       547206 |   -9.22 kcal/mol |   -9.33 +/-    0.03 kcal/mol |      20 |   -9.37 kcal/mol
+------------+--------------+------------------+------------------------------+---------+-------------------
+
+                                   Finished evaluation after reaching
+                                   -9.31 +/-    0.07 kcal/mol combined.
+                             81 samples, best inter + intra    -9.37 kcal/mol.
+
+
+Job #1 took 10.050 sec after waiting 0.348 sec for setup
+
+(Thread 0 is processing Job #1)
+Run time of entire job set (1 file): 10.411 sec
+Processing time: 0.012 sec
+
+All jobs ran without errors.
+

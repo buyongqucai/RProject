@@ -14,6 +14,7 @@ TOP3 = Path(
     "/mnt/e/RProject/努力学习项目/08_分子动力学/数据文件/原始数据/RCSB与对接姿态_MD输入_Top3"
 )
 JOBS = [
+    ("ESR2_Anhydroicaritin_1L2J", "14583584"),
     ("FOS_quercetin_1A02", "5280343"),
     ("PPARG_kaempferol_1FM9", "5280863"),
 ]

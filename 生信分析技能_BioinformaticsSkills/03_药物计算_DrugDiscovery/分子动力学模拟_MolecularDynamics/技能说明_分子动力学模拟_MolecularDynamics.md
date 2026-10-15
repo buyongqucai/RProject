@@ -92,3 +92,5 @@ wsl -d Ubuntu-24.04 -- bash -lc '
 ## 样例验证
 
 样例：`01_样例_sample/`（**范式 FROZEN 2026-09-03**）。MD 计算侧见上述 SOP。
+
+**异常判定与补救：** `异常知识库_ExceptionKB/`（案例索引在该目录 README；写法 SSOT：`docs/agents/异常知识库规范_ExceptionKb.md`）。

@@ -15,6 +15,7 @@
 | A4 | `脚本_scripts/`（或明确「无脚本/仅文档」） | README 或技能说明写明入口脚本名 |
 | A5 | `01_样例_sample/` 或显式「样例待建」 | 有样例则符合 Delivery 目录树 |
 | A6 | `文档_docs/` 或显式「无独立 SOP」 | FROZEN/SOP 不写在技能说明正文 |
+| A7 | `异常知识库_ExceptionKB/`（每个技能必备） | 有 `README.md` 索引；案例写法 SSOT 见 `docs/agents/异常知识库规范_ExceptionKb.md`（只留指针，规则不双写） |
 
 ## B. 技能说明八节（可裁剪，勿空壳标题）
 
@@ -71,6 +72,9 @@
     数据文件/DATA_SOURCE.md
   文档_docs/
     （需要时再添 SOP；不要空文件刷屏）
+  异常知识库_ExceptionKB/
+    README.md
+    案例_Cases/          # 异常关闭后按 SSOT 模板录入
 ```
 
 创建后：勾本清单 A–D → 更新 catalog → 若有可跑样例则跑通 STATUS。

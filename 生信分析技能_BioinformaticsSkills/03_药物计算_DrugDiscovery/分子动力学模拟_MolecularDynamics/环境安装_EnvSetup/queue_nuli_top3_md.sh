@@ -329,8 +329,8 @@ for line in "${SYSTEMS[@]}"; do
   src="${line#*$'\t'}"
   if ! run_one "$name" "$src"; then
     fail=1
-    echo "[queue] $(date -Is) stop queue after failure on $name"
-    break
+    # 单体系最终失败不堵后续体系（仍串行、同 GPU 只跑一套）
+    echo "[queue] $(date -Is) continue after failure on $name"
   fi
 done
 if [[ $fail -eq 0 ]]; then

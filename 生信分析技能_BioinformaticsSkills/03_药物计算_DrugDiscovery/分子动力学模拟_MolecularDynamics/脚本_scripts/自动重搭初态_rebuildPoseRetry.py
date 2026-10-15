@@ -142,22 +142,53 @@ def entry_meta(pdb_id: str) -> dict:
         return {}
 
 
-def extract_chain_atoms(pdb_text: str, chain: str) -> str:
-    out = []
+def _chain_ca_count(pdb_text: str, chain: str) -> int:
+    n = 0
     for line in pdb_text.splitlines():
-        if line.startswith("ATOM") and (line[21].strip() or "_") == chain:
-            out.append(line)
-        elif line.startswith("TER") and out:
-            break
-    if not out:
-        # fallback: first chain present
-        chains = []
+        if (
+            line.startswith("ATOM")
+            and (line[21].strip() or "_") == chain
+            and line[12:16].strip() == "CA"
+        ):
+            n += 1
+    return n
+
+
+def list_protein_chains(pdb_text: str) -> list[tuple[str, int]]:
+    """Return (chain, CA_count) for chains that look like protein (have CA)."""
+    counts: dict[str, int] = defaultdict(int)
+    for line in pdb_text.splitlines():
+        if not line.startswith("ATOM") or line[12:16].strip() != "CA":
+            continue
+        ch = line[21].strip() or "_"
+        counts[ch] += 1
+    return sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+
+
+def extract_chain_atoms(pdb_text: str, chain: str) -> str:
+    """Extract one polymer chain; prefer protein (CA) over DNA/RNA-only chains."""
+    def _extract(ch: str) -> list[str]:
+        out = []
         for line in pdb_text.splitlines():
-            if line.startswith("ATOM"):
-                chains.append(line[21].strip() or "_")
-                break
-        if chains:
-            return extract_chain_atoms(pdb_text, chains[0])
+            if line.startswith("ATOM") and (line[21].strip() or "_") == ch:
+                out.append(line)
+            elif line.startswith("TER") and out:
+                # keep going: DNA entries often TER between nucleotides
+                if _chain_ca_count("\n".join(out), ch) > 0:
+                    break
+        return out
+
+    prot_chains = list_protein_chains(pdb_text)
+    chosen = chain
+    if _chain_ca_count(pdb_text, chain) == 0:
+        if prot_chains:
+            chosen = prot_chains[0][0]
+        else:
+            return ""
+    out = _extract(chosen)
+    if not out and prot_chains:
+        chosen = prot_chains[0][0]
+        out = _extract(chosen)
     return "\n".join(out) + ("\n" if out else "")
 
 
@@ -356,8 +387,12 @@ def rebuild(system: str, src_dir: Path, out_dir: Path) -> int:
                 report.setdefault("download_errors", []).append(f"{pdb_id}:{exc}")
                 continue
         text = pdb_path.read_text(errors="replace")
+        prot_chains = list_protein_chains(text)
+        if not prot_chains:
+            continue  # DNA/RNA-only or empty — skip
+        use_chain = chain if _chain_ca_count(text, chain) > 0 else prot_chains[0][0]
         segs = gaps_from_pdb_text(text)
-        gap_len = max_gap_len(segs, chain)
+        gap_len = max_gap_len(segs, use_chain)
         if gap_len >= GAP_EXCLUDE_LEN:
             continue
         em = entry_meta(pdb_id)
@@ -368,11 +403,13 @@ def rebuild(system: str, src_dir: Path, out_dir: Path) -> int:
                 resol = resol[0] if resol else None
         except Exception:  # noqa: BLE001
             resol = None
-        het = largest_het_com(text, chain)
+        het = largest_het_com(text, use_chain)
+        n_ca = _chain_ca_count(text, use_chain)
         score = (
             0 if het else 1,
             resol if resol is not None else 99.0,
             gap_len,
+            -n_ca,  # prefer longer protein chain when tied
             pdb_id,
         )
         cand = {
@@ -381,6 +418,8 @@ def rebuild(system: str, src_dir: Path, out_dir: Path) -> int:
             "resolution": resol,
             "has_het": bool(het),
             "het_res": het[1] if het else None,
+            "use_chain": use_chain,
+            "n_ca": n_ca,
             "score": score,
         }
         if best is None or score < best["score"]:
@@ -388,7 +427,8 @@ def rebuild(system: str, src_dir: Path, out_dir: Path) -> int:
 
     if best is None:
         report["reason_zh"] = (
-            f"UniProt {uniprot} 下未找到通过主链缺口门禁（连续缺失<{GAP_EXCLUDE_LEN}）的替代 PDB。"
+            f"UniProt {uniprot} 下未找到含蛋白主链（CA）且通过缺口门禁"
+            f"（连续缺失<{GAP_EXCLUDE_LEN}）的替代 PDB。"
         )
         (out_dir / "rebuild_report.json").write_text(
             json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
@@ -396,23 +436,35 @@ def rebuild(system: str, src_dir: Path, out_dir: Path) -> int:
         print(report["reason_zh"])
         return 2
 
-    prot = extract_chain_atoms(best["text"], chain)
-    if not prot.strip():
-        report["reason_zh"] = f"替代结构 {best['pdb']} 无法提取链 {chain}。"
-        (out_dir / "rebuild_report.json").write_text(
-            json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
-        )
-        return 2
+    prot = extract_chain_atoms(best["text"], best.get("use_chain") or chain)
+    if not prot.strip() or _chain_ca_count(prot, best.get("use_chain") or chain) == 0:
+        # extract_chain_atoms may remap chain; verify CA on whole text
+        try:
+            protein_ca_com(prot)
+        except SystemExit:
+            report["reason_zh"] = (
+                f"替代结构 {best['pdb']} 提取结果无蛋白 CA（可能是核酸链）。"
+            )
+            (out_dir / "rebuild_report.json").write_text(
+                json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+            return 2
     (out_dir / "protein.pdb").write_text(prot, encoding="utf-8")
 
     if best["het"] is not None:
         target_com = best["het"][0]
         pose_class = "A2"
-        note = f"近缘/口袋配体参照 {best['het'][1]}@{best['pdb']}"
+        note = (
+            f"近缘/口袋配体参照 {best['het'][1]}@{best['pdb']} "
+            f"链{best.get('use_chain') or chain}"
+        )
     else:
         target_com = protein_ca_com(prot)
         pose_class = "A2"
-        note = f"无共晶小分子，配体放到蛋白 CA 质心附近（弱初态）@{best['pdb']}"
+        note = (
+            f"无共晶小分子，配体放到蛋白 CA 质心附近（弱初态）"
+            f"@{best['pdb']} 链{best.get('use_chain') or chain}"
+        )
 
     ref_lig = src_dir / "lig_h.mol2"
     place_ligand_at(cid, np.asarray(target_com, float), out_dir / "lig_h.mol2", ref_lig)

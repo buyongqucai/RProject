@@ -1,0 +1,47 @@
+acpype:      /home/ywy/md-venv/bin/acpype
+antechamber: /home/ywy/miniconda3/envs/md-tools/bin/antechamber
+gmx:         /home/ywy/gromacs-gpu/bin/gmx
+[2026-10-10T17:14:56+08:00] CYP launch start
+/mnt/e/md_kit/heme_params_shahrokh/heme_params/IC6:
+total 16
+drwxrwxrwx 1 ywy ywy 4096 Oct 10 16:01 .
+drwxrwxrwx 1 ywy ywy 4096 Oct 10 16:01 ..
+-rwxrwxrwx 1 ywy ywy 1314 Oct 10 16:01 CYP.mol2
+-rwxrwxrwx 1 ywy ywy 7857 Oct 10 16:01 HEM.mol2
+-rwxrwxrwx 1 ywy ywy 1939 Oct 10 16:01 IC6.frcmod
+
+/mnt/e/md_kit/课题top3输入/CYP1A1_Indole_4I8V:
+total 324
+drwxrwxrwx 1 ywy ywy   4096 Oct  9 13:36 .
+drwxrwxrwx 1 ywy ywy   4096 Oct  9 20:38 ..
+-rwxrwxrwx 1 ywy ywy   3483 Oct  9 13:36 cofactors_HEM.pdb
+-rwxrwxrwx 1 ywy ywy  15464 Oct  9 13:36 lig_h.mol2
+-rwxrwxrwx 1 ywy ywy 309096 Oct  9 13:36 protein.pdb
+cp: '/mnt/e/RProject/生信分析技能_BioinformaticsSkills/03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics/环境安装_EnvSetup/build_cyp_heme_topology.sh' and '/mnt/e/md_kit/build_cyp_heme_topology.sh' are the same file
+[2026-10-10T17:14:56+08:00] building HEME topology (Shahrokh IC6 + tleap)...
+acpype:      /home/ywy/md-venv/bin/acpype
+antechamber: /home/ywy/miniconda3/envs/md-tools/bin/antechamber
+gmx:         /home/ywy/gromacs-gpu/bin/gmx
+[2026-10-10T17:14:56+08:00] HEME topology FAILED (exit 0). Not starting MD without HEME.
+acpype:      /home/ywy/md-venv/bin/acpype
+antechamber: /home/ywy/miniconda3/envs/md-tools/bin/antechamber
+gmx:         /home/ywy/gromacs-gpu/bin/gmx
+[2026-10-10T17:19:04+08:00] CYP launch start
+/mnt/e/md_kit/heme_params_shahrokh/heme_params/IC6:
+total 16
+drwxrwxrwx 1 ywy ywy 4096 Oct 10 16:01 .
+drwxrwxrwx 1 ywy ywy 4096 Oct 10 16:01 ..
+-rwxrwxrwx 1 ywy ywy 1314 Oct 10 16:01 CYP.mol2
+-rwxrwxrwx 1 ywy ywy 7857 Oct 10 16:01 HEM.mol2
+-rwxrwxrwx 1 ywy ywy 1939 Oct 10 16:01 IC6.frcmod
+
+/mnt/e/md_kit/课题top3输入/CYP1A1_Indole_4I8V:
+total 312
+drwxrwxrwx 1 ywy ywy   4096 Oct  9 13:36 .
+drwxrwxrwx 1 ywy ywy   4096 Oct  9 20:38 ..
+-rwxrwxrwx 1 ywy ywy   3483 Oct  9 13:36 cofactors_HEM.pdb
+-rwxrwxrwx 1 ywy ywy   1720 Oct 10 17:17 lig_h.mol2
+-rwxrwxrwx 1 ywy ywy 309096 Oct  9 13:36 protein.pdb
+[2026-10-10T17:19:04+08:00] start production NS=100 USE_PREBUILT_COMPLEX=1
+[17:19:04] 00 预构建复合物（跳过 01–03）：complex.gro + topol.top
+[17:19:04] 04 editconf/solvate/genion (0.15 M NaCl 中和)

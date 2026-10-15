@@ -1,0 +1,25 @@
+npts 55 55 55
+gridfld 3EPZ_clean_h.maps.fld
+spacing 0.375
+receptor_types A C N NA OA SA Zn
+ligand_types A Br C Cl F HD I N NA OA P S SA Zn
+receptor 3EPZ_clean_h.pdbqt
+gridcenter 37.718 -1.679 82.233
+smooth 0.5
+map 3EPZ_clean_h.A.map
+map 3EPZ_clean_h.Br.map
+map 3EPZ_clean_h.C.map
+map 3EPZ_clean_h.Cl.map
+map 3EPZ_clean_h.F.map
+map 3EPZ_clean_h.HD.map
+map 3EPZ_clean_h.I.map
+map 3EPZ_clean_h.N.map
+map 3EPZ_clean_h.NA.map
+map 3EPZ_clean_h.OA.map
+map 3EPZ_clean_h.P.map
+map 3EPZ_clean_h.S.map
+map 3EPZ_clean_h.SA.map
+map 3EPZ_clean_h.Zn.map
+elecmap 3EPZ_clean_h.e.map
+dsolvmap 3EPZ_clean_h.d.map
+dielectric -0.1465

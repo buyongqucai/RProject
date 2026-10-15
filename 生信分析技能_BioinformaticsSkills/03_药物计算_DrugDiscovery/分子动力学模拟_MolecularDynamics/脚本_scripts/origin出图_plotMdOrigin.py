@@ -621,6 +621,91 @@ def _layout(left: int = 16, right: int = 8, top: int = 7, bottom: int = 14) -> l
     ]
 
 
+# —— 版面修复（2026-10-14）：标签完整显示。页面尺寸不动（page.width 被纵横比锁死，
+#    改 page 会连带缩放字号），只调 layer 几何（% of page；layer.right/bottom 是空操作，
+#    必须用 width/height）。字号在 _style_xy 里先设好，之后动 layer 不改字号。
+def _page_fit(width_pct: float, height_pct: float, left_pct: float, top_pct: float) -> list[str]:
+    """layer 几何（% of page）：先尺寸后位置。字号/配色/图种不变。"""
+    return [
+        f"layer.width = {width_pct};",
+        f"layer.height = {height_pct};",
+        f"layer.left = {left_pct};",
+        f"layer.top = {top_pct};",
+    ]
+
+
+MD_VERIFY_SRC = r'''#include <origin.h>
+#pragma labtalk(1)
+
+void md_verify_fit()
+{
+    FILE* fp = fopen("E:\\Origin_Data\\_verify_log.txt", "a");
+    LT_execute("vVPW = page.width; vVPH = page.height;");
+    double pw = 0, ph = 0;
+    LT_get_var("vVPW", &pw);
+    LT_get_var("vVPH", &ph);
+    GraphLayer gl = Project.ActiveLayer();
+    RECT fr;
+    fr.left = 0; fr.top = 0; fr.right = 0; fr.bottom = 0;
+    gl.GetAllLinkedLayersFrame(fr);
+    double L = fr.left, T = fr.top, R = fr.right, B = fr.bottom;
+    int nobj = gl.GraphObjects.Count();
+    for (int i = 0; i < nobj && i < 80; i++)
+    {
+        GraphObject go = gl.GraphObjects(i);
+        string nm = go.GetName();
+        char* pnm = nm.GetBuffer(0);
+        bool skip = (pnm[0] == '_');
+        nm.ReleaseBuffer();
+        if (skip)
+            continue;
+        int w = go.Width;
+        int h = go.Height;
+        if (w <= 0 || h <= 0)
+            continue;
+        if (go.Left < L) L = go.Left;
+        if (go.Top < T) T = go.Top;
+        if (go.Left + w > R) R = go.Left + w;
+        if (go.Top + h > B) B = go.Top + h;
+    }
+    int ok = (L >= 0 && T >= 0 && R <= pw && B <= ph) ? 1 : 0;
+    LT_set_var("vMdVerifyOK", ok);
+    if (fp)
+    {
+        fprintf(fp, "VERIFY ok=%d page=%.0fx%.0f bbox=L%.0f T%.0f R%.0f B%.0f\n",
+                ok, pw, ph, L, T, R, B);
+        fclose(fp);
+    }
+}
+'''
+
+
+def _install_verify_oc() -> None:
+    text = MD_VERIFY_SRC.replace("\n", "\r\n")
+    origin_c = Path(r"E:\Origin\OriginC\md_dump_geom.c")
+    try:
+        origin_c.write_text(text, encoding="ascii")
+    except OSError:
+        pass
+
+
+def _verify_gate() -> list[str]:
+    """导出前版面自检（Origin 内）：对象包围盒须全在 Page 内。
+    不合格时借非法属性 ColorScale.title$ 触发 hard fail → 本图产物被弃、绝不交付。"""
+    _install_verify_oc()
+    return [
+        'run.LoadOC("md_dump_geom.c", 16);',
+        "md_verify_fit;",
+        'if (vMdVerifyOK < 0.5) ColorScale.title$ = "LAYOUT_OVERFLOW";',
+    ]
+
+
+def _spectrum_title(clab: str) -> list[str]:
+    """色阶标题在 Origin 内写入（禁止导出后补字）：Color Scale 对象属性。
+    实测有效：SPECTRUM1.title$；（label -s 会生成游离标签，禁止；doc -e L 对色阶标题无效）"""
+    return [f'SPECTRUM1.title$ = "{clab}";']
+
+
 def _style_xy(xlab: str, ylab: str, rotate_x: int = 0) -> list[str]:
     L = [
         "page.aa = 1;",
@@ -982,13 +1067,15 @@ def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[st
         L.append(f"layer.x.to = {_lt_num(x1)};")
         L.append(f"layer.y.from = {_lt_num(y0)};")
         L.append(f"layer.y.to = {_lt_num(y1)};")
-        L += _layout(left=16, right=right if legend else 8, top=7, bottom=14)
         L += _style_xy(xlab, ylab)
+        # 2026-10-14 版面修复：Y 轴标题（横排）与 02 图例完整显示（左/上留白）
+        L += _page_fit(56.0, 71.84, 34.2, 9.5)
         if legend:
             L.append("legendupdate;")
             # legend.show 在部分版本也弹 TYPE.ERRORS；有多系列时保留 legendupdate 即可
         else:
             L += _hide_legend()
+        L += _verify_gate()
         L += _export(png_dir, stem)
         jobs.append((stem, L))
     def add_simple_bar(key: str, csv_path: Path, stem: str, xlab: str, ylab: str,
@@ -1062,8 +1149,9 @@ def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[st
             "layer.CMap.lineColorLink = 1;",
         ]
         L += _viridis()
-        # 右缘必须够宽，否则色阶数字与标题被 export 裁掉
-        L += _layout(left=30, right=36, top=16, bottom=26)
+        # 2026-10-14 版面修复：页面尺寸不动（page.width 被纵横比锁死），调 layer 让
+        # 右侧色阶图例/标题与左侧 Y 轴标题全部落在页面内（留 ≥100px 边距）。
+        # 顺序：先设字号（_style_xy/ptitlesize），再动 layer 几何（字号不随 layer 缩）
         L += _style_xy(xlab, ylab)
         L += [
             "layer.x.label.rotate = 0;",
@@ -1072,8 +1160,11 @@ def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[st
             "layer.x.ptitlesize = 22;",
             "layer.y.ptitlesize = 22;",
         ]
-        L += _set_axis_titles(xlab, ylab, clab="dG (kJ/mol)", make_xy=True)
-        L += _fix_color_scale_title("dG (kJ/mol)")
+        L += _page_fit(41.5, 53.1, 36, 19.5)
+        L += _set_axis_titles(xlab, ylab, clab="G (kJ/mol)", make_xy=True)
+        L += _fix_color_scale_title("G (kJ/mol)")
+        L += _spectrum_title("G (kJ/mol)")
+        L += _verify_gate()
         L += _export(png_dir, stem)
         jobs.append((stem, L))
 
@@ -1138,6 +1229,9 @@ def build_jobs(files: dict[str, Path], png_dir: Path) -> list[tuple[str, list[st
             "page.aa = 1;",
         ]
         L += _fix_color_scale_title("G (kJ/mol)", use_czt=False)
+        # 2026-10-14：色阶标题在 Origin 内写入（3D 只用对象属性，勿 label -s 兜底）
+        L += [f'SPECTRUM1.title$ = "G (kJ/mol)";']
+        L += _verify_gate()
         L += _export(png_dir, stem)
         jobs.append((stem, L))
 
@@ -1287,6 +1381,15 @@ function Test-SoftLt([string]$line) {{
   if ($line -match '^label -s FelCBarUnit') {{ return $true }}
   if ($line -match '^export\.trimming') {{ return $true }}
   if ($line -match '^hide_fel_contours\s*;?\s*$') {{ return $true }}
+  if ($line -match '^md_\w+\s*;?\s*$') {{ return $true }}
+  if ($line -match '^md_verify_fit\s*;?\s*$') {{ return $true }}
+  if ($line -match '^SPECTRUM\d*\.') {{ return $true }}
+  if ($line -match '^spectrum\d*\.') {{ return $true }}
+  if ($line -match '^ZCOLORS\.') {{ return $true }}
+  if ($line -match '^3DCOLOR\.') {{ return $true }}
+  if ($line -match '^label -s ') {{ return $true }}
+  if ($line -match '^set %C -c[lt] ') {{ return $true }}
+  if ($line -match '^run\.LoadOC\("md_') {{ return $true }}
   if ($line -match '^run\.LoadOC\(') {{ return $true }}
   if ($line -match '^layer\.plot\d*\.contlines\s*=') {{ return $true }}
   if ($line -match '^layer\.plot1\.mesh\s*=') {{ return $true }}
@@ -1659,6 +1762,21 @@ def main() -> int:
         timeout = 150 if "FreeEnergy" in stem else 100
         status = run_one_plot(ogs, png_dir / f"{stem}.png", timeout_s=timeout)
         print(f"[origin] {stem}: {status}", flush=True)
+        vline = ""
+        try:
+            vlog = Path(r"E:\Origin_Data\_verify_log.txt")
+            if vlog.exists():
+                vs = [ln for ln in vlog.read_text(errors="replace").splitlines()
+                      if ln.startswith("VERIFY")]
+                if vs:
+                    vline = vs[-1]
+        except OSError:
+            pass
+        try:
+            with open(r"E:\Origin_Data\_verify_report.txt", "a", encoding="utf-8") as fh:
+                fh.write(f"{stem}\t{status}\t{vline}\n")
+        except OSError:
+            pass
         if status.startswith("OK") or status.startswith("TIMEOUT_BUT"):
             ok_n += 1
     pngs = sorted(p for p in png_dir.glob("*.png")

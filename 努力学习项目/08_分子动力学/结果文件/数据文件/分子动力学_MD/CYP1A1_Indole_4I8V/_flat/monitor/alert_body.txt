@@ -1,0 +1,12 @@
+分子动力学监控异常，模拟已停止。
+
+时间: 2026-10-10 20:41:39 +0800
+目录: /home/ywy/md_runs/CYP1A1_Indole_4I8V
+原因:
+backbone RMSD max 2.982 nm > 1.0 nm (possible unfold)
+ligand RMSD max 9.624 nm > 1.5 nm (ligand fly/dissociate)
+
+轨迹时间: 1.000 ns
+
+日志: /home/ywy/md_runs/logs/
+续跑前请先看 monitor/ABORT_REASON.txt，不要删 md.cpt。

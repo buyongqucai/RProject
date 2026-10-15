@@ -2,6 +2,7 @@
 01,PCNA,1U7B,quercetin,quercetin,5280343,-4.823333333333333,p2rank,p2rank_rank=2;file=1U7B_clean.pdb_predictions.csv;prob=0.017;d_iface=4.1A,rg_4_5x,PASS,p2rank,adgpu
 02,DNMT1,3EPZ,quercetin,quercetin,5280343,-6.206666666666667,cocrystal_meeko,BGC:A:702,meeko_enveloping,PASS,,adgpu
 03,ESR2,1L2J,quercetin,quercetin,5280343,-6.323333333333333,cocrystal_meeko,ETC:A:600,meeko_enveloping,PASS,,adgpu
+05,PCNA,1U7B,luteolin,luteolin,5280445,-5.31,p2rank,p2rank_rank=2;file=1U7B_clean.pdb_predictions.csv;prob=0.017;d_iface=4.1A,rg_4_5x,PASS,p2rank,adgpu
 06,DNMT1,3EPZ,luteolin,luteolin,5280445,-6.696666666666667,cocrystal_meeko,BGC:A:702,meeko_enveloping,PASS,,adgpu
 07,ESR2,1L2J,luteolin,luteolin,5280445,-6.96,cocrystal_meeko,ETC:A:600,meeko_enveloping,PASS,,adgpu
 08,FOS,1A02,luteolin,luteolin,5280445,-3.8566666666666665,annotated_site,site_citation=1A02 DNA chains A/B (stripped per FROZEN) interface,rg_4_5x,PASS,annotated_site,adgpu

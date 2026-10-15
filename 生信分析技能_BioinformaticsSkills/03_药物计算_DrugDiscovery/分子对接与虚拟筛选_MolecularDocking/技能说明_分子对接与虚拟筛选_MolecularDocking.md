@@ -120,3 +120,5 @@ detail/result 定稿指针：[`文档_docs/result拼图与detail导出定稿_Col
 批量导出+拼接：`脚本_scripts/run_nuli_ting_detail_combine.py`  
 Top10 汇总（默认 merge）：`脚本_scripts/collect_nuli_viz_top10.py`  
 result 拼图引擎：`E:\PythonProject\分子对接\2.分子对接结果图组合.py`
+
+**异常判定与补救：** `异常知识库_ExceptionKB/`（案例索引在该目录 README；写法 SSOT：`docs/agents/异常知识库规范_ExceptionKb.md`）。

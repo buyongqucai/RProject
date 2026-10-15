@@ -3,6 +3,8 @@
 
 - 输入：项目根 summary_adgpu.csv / summary_vina.csv 或 矩阵_结合能_DockingAffinityMatrix.csv
 - 输出：矩阵_结合能热图_DockingAffinityHeatmap.png/.svg（DPI≥600）
+- 分块输出（2026-10-14 增补，样式不变）：--matrix 直接喂一块矩阵 CSV（如成分/代谢物分轨小矩阵）
+  并配合 --out 指定输出主名；--fmt 控制格内数值格式（默认 .1f；需要与真表一致的精确 kcal/mol 时用 .2f）
 - 图面 English；行/列/格内数值标签一律黑色 #000000
 - 色标：仅非正值（亲和力应为负）；vmin=数据最负侧（稳健裁剪），vmax=0；图例不出现正值
 """
@@ -69,7 +71,7 @@ def affinity_scale_limits(finite: np.ndarray) -> tuple[float, float]:
     return vmin, vmax
 
 
-def plot_heatmap(df: pd.DataFrame, out_stem: Path, dpi: int = 600) -> None:
+def plot_heatmap(df: pd.DataFrame, out_stem: Path, dpi: int = 600, fmt: str = ".1f") -> None:
     n_row, n_col = df.shape
     w = max(8.0, 0.95 * n_col + 3.2)
     h = max(5.5, 0.55 * n_row + 2.2)
@@ -81,7 +83,6 @@ def plot_heatmap(df: pd.DataFrame, out_stem: Path, dpi: int = 600) -> None:
         df,
         ax=ax,
         annot=True,
-        fmt=".1f",
         cmap=CMAP,
         vmin=vmin,
         vmax=vmax,
@@ -93,6 +94,7 @@ def plot_heatmap(df: pd.DataFrame, out_stem: Path, dpi: int = 600) -> None:
             # no title/label; no extend triangles (FROZEN)
         },
         annot_kws={"size": 9, "color": BLACK, "weight": "normal"},
+        fmt=fmt,
     )
     # FROZEN: no main title / axis titles / colorbar title / footnote
     ax.set_xlabel("")
@@ -128,14 +130,28 @@ def main() -> None:
         help="output stem (default: <root>/矩阵_结合能热图_DockingAffinityHeatmap)",
     )
     ap.add_argument("--dpi", type=int, default=600)
+    ap.add_argument(
+        "--matrix",
+        default=None,
+        help="block matrix CSV (index=ligand, columns=protein) for split/分块 output; skips summary scan and sidecar writes",
+    )
+    ap.add_argument(
+        "--fmt",
+        default=".1f",
+        help="cell annotation format (default .1f; use .2f to print exact kcal/mol as in summary tables)",
+    )
     args = ap.parse_args()
     root = Path(args.root)
-    df = matrix_from_summary(root)
+    if args.matrix:
+        df = pd.read_csv(Path(args.matrix), index_col=0).apply(pd.to_numeric, errors="coerce")
+    else:
+        df = matrix_from_summary(root)
     out = Path(args.out) if args.out else root / "矩阵_结合能热图_DockingAffinityHeatmap"
-    plot_heatmap(df, out, dpi=args.dpi)
-    write_xlsx(df, root / "分子对接结合能信息.xlsx")
-    mat_path = root / "矩阵_结合能_DockingAffinityMatrix.csv"
-    df.to_csv(mat_path, encoding="utf-8-sig")
+    plot_heatmap(df, out, dpi=args.dpi, fmt=args.fmt)
+    if not args.matrix:
+        write_xlsx(df, root / "分子对接结合能信息.xlsx")
+        mat_path = root / "矩阵_结合能_DockingAffinityMatrix.csv"
+        df.to_csv(mat_path, encoding="utf-8-sig")
     print(f"OK heatmap -> {out}.png / .svg  shape={df.shape}")
 
 

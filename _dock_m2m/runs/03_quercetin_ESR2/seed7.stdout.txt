@@ -1,0 +1,40 @@
+AutoDock-GPU version: v1.6|Release|x64
+
+Running 1 docking calculation
+
+Kernel source used for development:      ./device/calcenergy.cl                  
+Kernel string used for building:         ./host/inc/stringify.h                  
+Kernel compilation flags:                 -I ./device -I ./common -DN128WI   -cl-mad-enable
+OpenCL device:                           Intel(R) Graphics
+(Thread 0 is setting up Job #1)
+
+Running Job #1
+    Using heuristics: (capped) number of evaluations set to 1132076
+    Local-search chosen method is: ADADELTA (ad)
+
+Executing docking runs, stopping automatically after either reaching 0.15 kcal/mol standard deviation of
+the best molecules of the last 4 * 5 generations, 42000 generations, or 1132076 evaluations:
+
+Generations |  Evaluations |     Threshold    |  Average energy of best 10%  | Samples | Best Inter + Intra
+------------+--------------+------------------+------------------------------+---------+-------------------
+          0 |          150 |  578.53 kcal/mol |  125.11 +/-  120.91 kcal/mol |       4 |   -5.39 kcal/mol
+          5 |        49531 |  578.53 kcal/mol |   22.29 +/-   63.58 kcal/mol |    1332 |  -10.59 kcal/mol
+         10 |       114126 |   23.01 kcal/mol |  -10.53 +/-    0.08 kcal/mol |      21 |  -10.62 kcal/mol
+         15 |       188801 |  -10.47 kcal/mol |  -10.60 +/-    0.01 kcal/mol |      21 |  -10.62 kcal/mol
+         20 |       269049 |  -10.49 kcal/mol |  -10.60 +/-    0.01 kcal/mol |      33 |  -10.62 kcal/mol
+         25 |       352095 |  -10.54 kcal/mol |  -10.60 +/-    0.01 kcal/mol |      39 |  -10.62 kcal/mol
+------------+--------------+------------------+------------------------------+---------+-------------------
+
+                                   Finished evaluation after reaching
+                                  -10.59 +/-    0.05 kcal/mol combined.
+                            114 samples, best inter + intra   -10.62 kcal/mol.
+
+
+Job #1 took 7.897 sec after waiting 0.302 sec for setup
+
+(Thread 0 is processing Job #1)
+Run time of entire job set (1 file): 8.211 sec
+Processing time: 0.012 sec
+
+All jobs ran without errors.
+

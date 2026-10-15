@@ -48,6 +48,17 @@ export GMX_MAXBACKUP="${GMX_MAXBACKUP:--1}"
 NDX_ARG=()   # 有金属时填 -n index.ndx，使 ZN/CA 并入 Water_and_ions 温控组
 
 log(){ echo "[$(date +%H:%M:%S)] $*"; }
+# 是否 GMX_MAXBACKUP / md.gro 备份上限 Fatal（物理未坏，可清备份续跑）
+is_gro_backup_fatal() {
+  grep -qiE 'Won.?t make more than .* backups of md\.gro|GMX_MAXBACKUP' \
+    mdrun_md.log md.log 2>/dev/null || return 1
+  return 0
+}
+
+prune_md_gro_backups() {
+  rm -f '#md.gro.'* '#md1.gro.'* 2>/dev/null || true
+}
+
 fail_setup() {
   local reason="$1"
   mkdir -p monitor
@@ -399,6 +410,31 @@ fi
 LIG_ITP=ligand.acpype/ligand_GMX.itp
 LIG_GRO=ligand.acpype/ligand_GMX.gro
 [[ -f $LIG_ITP && -f $LIG_GRO ]] || { log "FAIL: acpype 未产出 $LIG_ITP"; exit 1; }
+# 拓扑连通性门禁：任一原子零键即熔断（幽灵原子会1ns内飞散，ESR2 2026-10-13 实测）
+python3 - "$LIG_ITP" <<'PY' || fail_setup "ligand topology has zero-bond atoms"
+import re, sys
+t = open(sys.argv[1]).read()
+def sect(name):
+    m = re.search(r"\[ *" + name + r" *\](.*?)(\[ |\Z)", t, re.S)
+    return m.group(1) if m else ""
+atoms = [l.split() for l in sect("atoms").splitlines() if l.strip() and not l.strip().startswith(";")]
+bonds = [l.split() for l in sect("bonds").splitlines() if l.strip() and not l.strip().startswith(";")]
+deg = {}
+for a in atoms:
+    if len(a) >= 5:
+        deg[int(a[0])] = 0
+for b in bonds:
+    if len(b) >= 2:
+        for k in (0, 1):
+            i = int(b[k])
+            if i in deg:
+                deg[i] += 1
+zeros = [i for i, d in deg.items() if d == 0]
+if zeros:
+    print("ZERO-BOND atoms:", zeros, file=sys.stderr)
+    sys.exit(1)
+print(f"topology connectivity OK ({len(atoms)} atoms, {len(bonds)} bonds)")
+PY
 # acpype 的 moleculetype 名取自 -b 基名而非残基名；统一改名为 $LIGAND_RES 以对齐 topol.top
 awk -v r="$LIGAND_RES" '
   /\[ moleculetype \]/ {f=1; print; next}
@@ -846,6 +882,24 @@ if ! printf "Protein\n$LIGAND_RES\n" | gmx hbond-legacy -s md.tpr -f md_center.x
 fi
 printf 'Protein\n' | gmx gyrate -s md.tpr -f md_center.xtc \
     -o gyrate.xvg > gyrate.log 2>&1 || true
+
+# 10b 绘图数据导出（2026-10-14 挂接：此前只算 4 项速检，SASA/COM/平衡曲线与
+# Origin CSV 靠归档前手动补算，导致"跑完了没有绘图数据"。幂等；失败不撤销 DONE）。
+if [[ "${EXPORT_FIG_DATA:-1}" == "1" ]]; then
+  log "10b 补算+导出绘图数据（SASA/COM/三线RMSD/平衡曲线 → Origin CSV）"
+  bash "$SCRIPT_DIR/补算必备分析_extraMdAnalysis.sh" >> extra_analysis.log 2>&1 \
+    || log "WARN 补算必备分析失败 — see extra_analysis.log"
+  PYBIN="$HOME/md-venv/bin/python3"; [[ -x "$PYBIN" ]] || PYBIN=python3
+  if [[ -d /mnt/e/Origin_Data ]]; then
+    "$PYBIN" "$SCRIPT_DIR/导出Origin数据_exportMdOriginCsv.py" \
+      --work "$WORK_DIR" --project "$(basename "$WORK_DIR")" \
+      --origin-root /mnt/e/Origin_Data >> export_csv.log 2>&1 \
+      || log "WARN Origin CSV 导出失败 — see export_csv.log"
+    log "10b CSV → /mnt/e/Origin_Data/$(basename "$WORK_DIR")/（Origin 本机绘图另跑 origin出图_plotMdOrigin.py）"
+  else
+    log "10b 跳过 CSV 导出（无 /mnt/e/Origin_Data；Windows 直跑 导出Origin数据_exportMdOriginCsv.py）"
+  fi
+fi
 
 # 可选终检（不改生产轨迹；失败只记日志，不撤销 DONE）
 if [[ "$MONITOR" == "1" && -f md.xtc ]]; then

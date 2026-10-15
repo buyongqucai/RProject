@@ -1,0 +1,18 @@
+acpype:      /home/ywy/md-venv/bin/acpype
+antechamber: /home/ywy/miniconda3/envs/md-tools/bin/antechamber
+gmx:         /home/ywy/gromacs-gpu/bin/gmx
+topol patched nsol= 18447 extras= []
+[2026-10-10T17:26:51+08:00] grompp ions + genion
+-rw-r--r-- 1 ywy ywy 2827101 Oct 10 17:26 solv_ions.gro
+GROMACS reminds you: "Read me your scripture and I will twist it" (Red Hot Chili Peppers)
+
+Will try to add 58 NA ions and 60 CL ions.
+Select a continuous group of solvent molecules
+Selected 17: 'SOL'
+
+Processing topology
+Replacing 118 solute molecules in topology file (topol.top)  by 58 NA and 60 CL ions.
+[2026-10-10T17:26:51+08:00] start production NS=100 USE_PREBUILT_COMPLEX=1 MDP_DIR=/home/ywy/md_runs/mdp_templates
+[17:26:51] 00 预构建复合物（跳过 01–03）：complex.gro + topol.top
+[17:26:51] 05 能量最小化
+[17:27:05] 07 NVT 100 ps

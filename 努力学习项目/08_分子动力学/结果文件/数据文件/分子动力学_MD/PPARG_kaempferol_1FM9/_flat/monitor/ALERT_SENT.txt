@@ -1,0 +1,5 @@
+backbone RMSD max 4.971 nm > 1.0 nm (possible unfold)
+ligand RMSD max 13.265 nm > 1.5 nm (ligand fly/dissociate)
+COM distance max 6.579 nm > 2.0 nm (receptor-ligand separation)
+COM jump 1.441 nm > 1.0 nm vs first frame
+will_retry|PPARG_kaempferol_1FM9|骨架 RMSD 最大值 4.971 nm > 1.0 nm (可疑展开) 配体 RMSD 最大值 13.265 nm > 1.5 nm (配体飞散/解离) 蛋白–配体质心距离最大值 6.579

@@ -1,0 +1,11 @@
+分子动力学监控异常，模拟已停止。
+
+时间: 2026-10-10 15:55:38 +0800
+目录: /home/ywy/md_runs/MMP9_Tryptophan_4H3X
+原因:
+md.log after Started mdrun contains NaN/Fatal — stop and inspect topology/constraints
+
+轨迹时间: 100.000 ns
+
+日志: /home/ywy/md_runs/logs/
+续跑前请先看 monitor/ABORT_REASON.txt，不要删 md.cpt。
