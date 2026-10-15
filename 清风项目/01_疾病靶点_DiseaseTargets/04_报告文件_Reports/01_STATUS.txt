@@ -14,4 +14,8 @@
 - 疾病靶点合并_DiseaseGeneUnion.csv (4269)
 - 疾病靶点质控_DiseaseQC.csv
 
-待办: 图 01 疾病韦恩 (需 VennFull 五库)；DisGeNET 用户弃用保持空置
+完成 (2026-10-15):
+- 图 01 疾病五库韦恩 → `03_图片文件_Figures/01_韦恩图_DiseaseDatabases_Venn.{png,svg}`
+  (技能 FROZEN §G 双底栏版式 R SSOT 实现；五库 9787/23/100/33/38 均入图；主副本在 04_富集与PPI 图序全套)
+
+待办: DisGeNET 用户弃用保持空置；轨 B 交付文件打包

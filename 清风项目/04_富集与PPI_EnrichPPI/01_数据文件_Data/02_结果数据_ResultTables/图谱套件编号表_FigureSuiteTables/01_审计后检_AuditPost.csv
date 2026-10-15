@@ -1,0 +1,2 @@
+"skill","stage","n_rows","n_cols","n_samples","group_source","toy","data_provenance","accession","sourced_skill_scripts","notes","checked_at"
+"NetworkPharmacology","post",989,3,9,"disease_en=Idiopathic Pulmonary Fibrosis; per-herb TCMSP+BATMAN exports",FALSE,"REAL","qingfeng_delivery_20261015","已 source 本技能 脚本_scripts/: 01_契约接口_DataContracts.R, 02_可视化_NetworkPharmPlots.R, 03_STRING与网络图_StringNetwork.R, 04_交付网络布局_DeliveryNetworkLayouts.R, 05_高级附图_AdvancedPanels.R, 运行骨架_runSkeleton.R","overlap=197; R network previews in 02/03 scripts","2026-10-15 07:50:49"

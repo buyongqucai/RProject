@@ -156,3 +156,22 @@ TCMSP 2,454 成分靶点对 → 靶点蛋白名经 **技能 SSOT 映射器**（`
 ## 12. 网络表构建（2026-10-14，脚本 `网络表构建_buildNetworkTables.py`，对齐技能样例 schema）
 
 `网络边_network.csv`（ID,SYMBOL）+ `网络节点类型_type.csv`（term,type：A药/B成分/C靶点/D通路）+ 节点中心性 `网络节点属性_NetworkNodes.csv` + Cytoscape 边/点 + 成分重命名表。规模：**A9 / B183 / C197 / D20（KEGG top20）**，边 3,422（A→B 183、B→C 2,632、C→D 607）。药名节点统一 `H_` 前缀防撞基因符号（甘草 GC = GC 基因实测冲突）。每药交付 `药物_<code>_<名>_靶点基因_HerbTargets.csv` / `_疾病交集_HerbDiseaseOverlap.csv` 各 9。
+
+## 13. 图谱套件 01–15 出图（2026-10-15）
+
+**真源：** 技能 FROZEN 图 recipe（`网络药理学_NetworkPharmacology/脚本_scripts/` 02 可视化 / 03 STRING / 04 交付布局）+ 样例 runner 接线法；本项目 3 个出图脚本只接契约数据，不复制 recipe。
+
+| 环节 | 内容 | 规模 |
+|------|------|------|
+| 契约装配 | `图谱契约装配_buildFigureContracts.py`：按库长表双口径、GO 气泡表（fold enrichment）、KEGG top25（KEGG BRITE `br08901` 补 one_type/two_type）、成分靶点、PROVENANCE | 契约 20 文件 |
+| 图 01 疾病五库韦恩 | R N 集微生信双底栏版式（5 库>模板 4 集几何，走技能 SSOT `np_plot_disease_db_venn`） | 9787/23/100/33/38 |
+| 图 02 药病韦恩 | 微生信模板 `build_two_set_svg` + PNG 裁白边（FROZEN §G） | 244 ∩ 4269 = 197 |
+| 图 03–05 | 单药交集柱 / 成分交集柱（均分 / 按药） | 9 药 / 183 成分 |
+| 图 06–10 | GO 气泡+柱（top10/ontology）、KEGG 棒棒糖+柱（top20）、KEGG 圈图（circlize） | 30 GO / 25 KEGG |
+| 图 11–12 | HCTP columns + ellipse（18.5×16.5 in，`04_交付网络布局` 布局引擎） | 409 节点 / 3422 边 |
+| 图 13 | STRING 官方网络图（REST `image`，evidence/3D/隐 isolates） | PNG 12MB + SVG |
+| 图 14–15 | PPI 同心 Degree 渐变（173/173 标注，5 环外环 86 点） | 687 边 @score≥900 |
+
+**PlotQA：** label_overlap 全 PASS（deep=0）；label_length FAIL 4 处均为 FROZEN 冻结副标题误判（STRING/HCTP 统计副标题 125–219 字），按「冻结文案不改」记录例外。
+
+**落位：** 全套在 `04_富集与PPI_EnrichPPI/03_图片文件_Figures/`（FileLayout「01–15 图序出图」）；图 01 另存 `01_疾病靶点_DiseaseTargets/03_图片文件_Figures/`；编号表在 `图谱套件编号表_FigureSuiteTables/`。
