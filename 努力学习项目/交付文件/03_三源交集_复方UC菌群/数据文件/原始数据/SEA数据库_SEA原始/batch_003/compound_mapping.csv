@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,Phenylalanine,6140.0,C1=CC=C(C=C1)C[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,Proline,145742.0,C1C[C@H](NC1)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,Serine,5951.0,C([C@@H](C(=O)O)N)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0004,Threonine,6288.0,C[C@H]([C@@H](C(=O)O)N)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,Tyrosine,6057.0,C1=CC(=CC=C1C[C@@H](C(=O)O)N)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0006,Valine,6287.0,CC(C)[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0007,l-Isoleucine,6306.0,CC[C@H](C)[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0008,"(2S,6S)-2,6-diaminoheptanedioic acid",439283.0,C(C[C@@H](C(=O)O)N)C[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,"1,4-Diaminobutane",1045.0,C(CCN)CN,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0010,2'-Deoxyadenosine,13730.0,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C(N=CN=C32)N)CO)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

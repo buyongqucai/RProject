@@ -1,0 +1,155 @@
+{
+  "P0_1_HC_D": {
+    "预登记": "HC-D = D中≥2库支持",
+    "HC_D_n": 153,
+    "I1_hc": 45,
+    "I2_hc": 39,
+    "C_hc": 19,
+    "C_retention": "19/78",
+    "hypergeom_p_universe_HC_D": 0.0025632752951548978,
+    "jaccard_C_hc_vs_C": 0.244,
+    "C_hc_genes": [
+      "AHR",
+      "CASP3",
+      "CXCL8",
+      "CYP19A1",
+      "CYP1A1",
+      "CYP2C19",
+      "F2",
+      "ICAM1",
+      "IL10",
+      "IL1B",
+      "LTA4H",
+      "MMP9",
+      "MPO",
+      "NOS2",
+      "NR3C1",
+      "NR3C2",
+      "PPARG",
+      "TNF",
+      "XDH"
+    ],
+    "TierA_原": 72,
+    "TierA_HC下仍A": 32,
+    "TierA_丢失": [
+      "2'-Deoxyadenosine",
+      "2'-Deoxyadenosine-5'-monophosphate",
+      "2'-Deoxyguanosine 5'-phosphate",
+      "5'-Deoxy-5'-methylthioadenosine",
+      "5'-Deoxyadenosine",
+      "Adenosine",
+      "Adenosine Phosphate",
+      "Anthranilic acid",
+      "Carnosine",
+      "Cytidine",
+      "Cytidine-5'-diphosphate",
+      "D-Fructose",
+      "D-Galactose",
+      "D-Glucose",
+      "D-Mannose",
+      "Deoxycytidine 5'-monophosphate",
+      "Glucosamine 6-phosphate",
+      "Glucose 1-phosphate",
+      "Glucose 6-phosphate",
+      "Guanosine",
+      "Guanosine-5'-monophosphate",
+      "Histidine",
+      "Inosine",
+      "Inosinic Acid",
+      "Maltose",
+      "Maltotriose",
+      "Mannose-6-phosphate",
+      "N-Acetyl-D-Glucosamine",
+      "N-Acetyl-L-glutamic acid",
+      "Orotidine-5'-monophosphate",
+      "Raffinose",
+      "Riboflavin",
+      "S-adenosyl-L-homocysteine",
+      "S-adenosylmethionine",
+      "Spermidine",
+      "Sucrose",
+      "Uridine",
+      "Uridine-5'-diphosphate",
+      "Xanthosine",
+      "beta-Alanine"
+    ],
+    "TierA_HC下Top10": [
+      "Phenylalanine",
+      "Butyrate",
+      "Indole-3-acetic acid",
+      "4-Hydroxyphenylacetic acid",
+      "Tryptophan",
+      "Glutamic Acid",
+      "Cholic acid",
+      "Chenodeoxycholic acid",
+      "(2S,6S)-2,6-diaminoheptanedioic acid",
+      "Glutamine"
+    ]
+  },
+  "P0_2_UC_CD": {
+    "UC_OT_all": 8915,
+    "CD_OT_all": 6283,
+    "score_ge_0.1": {
+      "UC_n": 850,
+      "CD_n": 504,
+      "UC∩CD": 271,
+      "C_in_UC": 28,
+      "C_in_CD": 15,
+      "C_pct_UC": 35.9,
+      "C_pct_CD": 19.2,
+      "I1_in_UC": 79,
+      "I1_in_CD": 49,
+      "D_in_UC": 286,
+      "D_in_CD": 190,
+      "hypergeom_C_in_UC": 2.6700316687308876e-12,
+      "hypergeom_C_in_CD": 2.8260415741075994e-06,
+      "fisher_C_UC_vs_CD": {
+        "table": [
+          [
+            15,
+            2
+          ],
+          [
+            564,
+            231
+          ]
+        ],
+        "odds_ratio": 3.0718085106382977,
+        "p": 0.1742852407646207
+      }
+    },
+    "score_ge_0.3": {
+      "UC_n": 186,
+      "CD_n": 213,
+      "UC∩CD": 93,
+      "C_in_UC": 9,
+      "C_in_CD": 10,
+      "C_pct_UC": 11.5,
+      "C_pct_CD": 12.8,
+      "I1_in_UC": 25,
+      "I1_in_CD": 26,
+      "D_in_UC": 109,
+      "D_in_CD": 109,
+      "hypergeom_C_in_UC": 7.730818604988598e-06,
+      "hypergeom_C_in_CD": 3.0475057173007817e-06,
+      "fisher_C_UC_vs_CD": {
+        "table": [
+          [
+            1,
+            2
+          ],
+          [
+            92,
+            118
+          ]
+        ],
+        "odds_ratio": 0.6413043478260869,
+        "p": 1.0
+      }
+    },
+    "D_vs_both_ge_0.1": {
+      "D_in_UC": 286,
+      "D_in_CD": 190
+    }
+  }
+}

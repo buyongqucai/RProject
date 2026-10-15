@@ -1,0 +1,17 @@
+source leaprc.protein.ff14SB
+source leaprc.gaff2
+loadamberparams IC6.frcmod
+loadamberparams ligand.acpype/ligand_AC.frcmod
+HEM = loadmol2 HEM.mol2
+CYP = loadmol2 CYP.mol2
+LIG = loadmol2 ligand.acpype/ligand_bcc_gaff2.mol2
+set LIG name "LIG"
+mol = loadpdb protein_heme_cyp.pdb
+bond mol.CYP.SG mol.HEM.FE
+savepdb mol check_heme.pdb
+mol = combine { mol LIG }
+charge mol
+check mol
+saveamberparm mol cyp_complex.prmtop cyp_complex.inpcrd
+savepdb mol cyp_complex_dry.pdb
+quit

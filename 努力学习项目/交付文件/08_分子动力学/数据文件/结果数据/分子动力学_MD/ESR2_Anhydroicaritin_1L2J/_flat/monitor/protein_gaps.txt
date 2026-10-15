@@ -1,0 +1,9 @@
+source=CA_resseq_jump
+n_missing_residues=29
+n_segments=5
+gap	chain=A	start=285	end=289	length=5
+gap	chain=A	start=409	end=412	length=4
+near_check	chain=A	409-412	min_end_CA_to_lig_A=17.99
+gap	chain=B	start=281	end=293	length=13
+gap	chain=B	start=411	end=412	length=2
+gap	chain=B	start=480	end=484	length=5

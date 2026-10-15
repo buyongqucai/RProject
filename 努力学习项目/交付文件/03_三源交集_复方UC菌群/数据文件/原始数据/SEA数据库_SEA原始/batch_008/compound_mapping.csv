@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,Glucose 6-phosphate,5958.0,C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)OP(=O)(O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,Glutamine,5961.0,C(CC(=O)N)[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,Glyceric acid,752.0,C(C(C(=O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0004,Guanosine,135398635.0,C1=NC2=C(N1[C@H]3[C@@H]([C@@H]([C@H](O3)CO)O)O)N=C(NC2=O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,Guanosine-5'-monophosphate,135398631.0,C1=NC2=C(N1[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)O)O)O)N=C(NC2=O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0006,Indole,798.0,C1=CC=C2C(=C1)C=CN2,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile; gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05; predeclared UC mechanism anchor + GMMAD2 UC/IBD FDR<0.05
+m0007,Indole-3-acetic acid,802.0,C1=CC=C2C(=C1)C(=CN2)CC(=O)O,predeclared UC mechanism anchor + GMMAD2 UC/IBD FDR<0.05
+m0008,Inosine,135398641.0,C1=NC2=C(C(=O)N1)N=CN2[C@H]3[C@@H]([C@@H]([C@H](O3)CO)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,Inosinic Acid,135398640.0,C1=NC2=C(C(=O)N1)N=CN2[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0010,Isocitric acid,1198.0,C(C(C(C(=O)O)O)C(=O)O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

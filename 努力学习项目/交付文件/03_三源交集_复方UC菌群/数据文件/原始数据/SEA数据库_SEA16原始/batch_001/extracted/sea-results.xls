@@ -1,0 +1,893 @@
+Query ID,Target ID,Affinity Threshold (nM),P-Value,Max Tc,Cut Sum,Z-Score,Name,Description,Query Smiles
+m0002,1433G_HUMAN,5,2.006e-08,0.2973,0.2973,13.3698,YWHAG,14-3-3 protein gamma,C1=CC(=CC=C1CC(=O)O)O
+m0006,1A15_ARATH,5,7.438e-15,0.2812,0.2812,24.9153,ACS5,1-aminocyclopropane-1-carboxylate synthase 5,C([C@@H](C(=O)O)N)C(=O)O
+m0009,1A15_ARATH,5,7.438e-15,0.2812,0.2812,24.9153,ACS5,1-aminocyclopropane-1-carboxylate synthase 5,C([C@@H](C(=O)O)N)S
+m0001,5NTD_HUMAN,5,2.076e-14,0.4493,0.7331,24.1146,NT5E,5'-nucleotidase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,5NTD_RAT,5,2.632e-06,0.3014,0.5852,9.5673,Nt5e,5'-nucleotidase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,A0A060INS8_CAPHI,5,2.549e-06,0.3929,0.3929,9.5922,CTSH,Cathepsin H,C1=CC(=CC=C1CC(=O)O)O
+m0002,A0A0C7ACN7_PSEAI,5,4.707e-07,0.3000,0.3000,10.9094,pqsD,3-oxoacyl-ACP synthase,C1=CC(=CC=C1CC(=O)O)O
+m0001,A0A0E7NXW5_STAAU,5,3.922e-13,0.2857,0.2857,21.8235,birA,Bifunctional ligase/repressor BirA,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0007,A1ZA98_DROME,5,3.553e-18,0.2963,0.5926,30.8771,Jhe,Carboxylic ester hydrolase,CCCC(=O)[O-]
+m0001,A3RLP8_CHV1,5,3.173e-82,0.4909,2.3544,145.8657,UL23,Thymidine kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA1R_CHICK,5,7.54e-96,0.3636,4.1207,170.3253,ADORA1,Adenosine receptor A1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA1R_CAVPO,5,3.842e-73,0.4444,17.6180,129.5588,ADORA1,Adenosine receptor A1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA1R_BOVIN,5,2.985e-18,0.4098,9.0090,31.0131,ADORA1,Adenosine receptor A1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA1R_RABIT,5,1.495e-49,0.3012,2.6169,87.2069,ADORA1,Adenosine receptor A1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA1R_RAT,5,1.673e-138,0.6296,173.4418,246.9025,Adora1,Adenosine receptor A1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA2AR_CAVPO,5,1.761e-17,0.4098,1.6907,29.6291,ADORA2A,Adenosine receptor A2a,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA1R_HUMAN,5,1.626e-51,0.4098,90.1895,90.7321,ADORA1,Adenosine receptor A1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA2AR_RAT,5,1.48e-91,0.4333,85.2293,162.6181,Adora2a,Adenosine receptor A2a,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA2BR_HUMAN,5,2.22e-16,0.3788,18.4987,27.5660,ADORA2B,Adenosine receptor A2b,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA3R_RABIT,5,2.05e-51,0.3012,2.6169,90.5516,ADORA3,Adenosine receptor A3,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA3R_RAT,5,7.053e-46,0.4098,14.3959,80.6114,Adora3,Adenosine receptor A3,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,AAA1_RAT,5,1.414e-62,0.5000,0.5000,110.5895,Slc7a10,Asc-type amino acid transporter 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,AAA1_RAT,5,9.587e-69,0.5500,0.5500,121.6645,Slc7a10,Asc-type amino acid transporter 1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,AAA1_RAT,5,2.341e-49,0.3929,0.3929,86.8574,Slc7a10,Asc-type amino acid transporter 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,AAA1_RAT,5,9.587e-69,0.5500,0.5500,121.6645,Slc7a10,Asc-type amino acid transporter 1,C([C@@H](C(=O)O)N)S
+m0004,AAA1_RAT,5,7.775e-53,0.4211,0.4211,93.1027,Slc7a10,Asc-type amino acid transporter 1,C[C@@H](C(=O)O)N
+m0005,AAA1_RAT,5,1.633e-65,0.5238,0.5238,115.8633,Slc7a10,Asc-type amino acid transporter 1,C([C@@H](C(=O)O)N)C(=O)N
+m0001,AA2AR_HUMAN,5,6.983e-40,0.4444,75.0820,69.8473,ADORA2A,Adenosine receptor A2a,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,AA3R_HUMAN,5,3.197e-63,0.4127,105.1800,111.7488,ADORA3,Adenosine receptor A3,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,ACEA_CANAX,5,1.332e-15,0.2963,0.2963,26.2621,ICL1,Isocitrate lyase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0002,ACE_HUMAN,5,3.144e-07,0.3256,3.0635,11.2241,ACE,Angiotensin-converting enzyme,C1=CC(=CC=C1CC(=O)O)O
+m0002,ACE_RAT,5,1.532e-07,0.3333,2.3855,11.7847,Ace,Angiotensin-converting enzyme,C1=CC(=CC=C1CC(=O)O)O
+m0003,ADAM8_HUMAN,5,4.59e-07,0.3137,0.3137,10.9291,ADAM8,Disintegrin and metalloproteinase domain-containing protein 8,C(CCN=C(N)N)CN
+m0001,ADA_HUMAN,5,1.977e-21,0.4500,2.0577,36.7200,ADA,Adenosine deaminase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ADA_BOVIN,5,3.526e-46,0.5926,8.4135,81.1521,ADA,Adenosine deaminase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ADA_MOUSE,5,1.552e-50,0.3333,0.6333,88.9729,Ada,Adenosine deaminase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ADCY2_RAT,5,2.155e-34,0.3288,0.9713,59.9920,Adcy2,Adenylate cyclase type 2,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ADCY5_HUMAN,5,6.036e-32,0.3043,1.4845,55.5985,ADCY5,Adenylate cyclase type 5,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ADCY5_RAT,5,6.92e-39,0.6296,2.0452,68.0591,Adcy5,Adenylate cyclase type 5,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ADCYA_HUMAN,5,8.357e-20,0.3151,0.3151,33.8009,ADCY10,Adenylate cyclase type 10,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ADK_TOXGO,5,2.906e-54,0.3833,4.1837,95.6653,AK,Adenosine kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ADK_HUMAN,5,1.693e-10,0.3833,4.0282,17.0924,ADK,Adenosine kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,ADRB2_RAT,5,1.244e-32,0.3261,2.6954,56.8296,Adrb2,Beta-2 adrenergic receptor,C1=CC(=CC=C1CC(=O)O)O
+m0002,ADRB3_RAT,5,6.903e-34,0.3261,2.6981,59.0844,Adrb3,Beta-3 adrenergic receptor,C1=CC(=CC=C1CC(=O)O)O
+m0002,AK1BA_HUMAN,5,1.854e-17,0.3667,2.5371,29.5892,AKR1B10,Aldo-keto reductase family 1 member B10,C1=CC(=CC=C1CC(=O)O)O
+m0008,AL1A2_HUMAN,5,1.117e-09,0.3030,0.3030,15.6218,ALDH1A2,Retinal dehydrogenase 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0008,AL1A2_CHICK,5,2.83e-38,0.3030,0.3030,66.9608,ALDH1A2,Retinal dehydrogenase 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0008,AL1A3_HUMAN,5,2.783e-11,0.3030,0.3030,18.5005,ALDH1A3,Aldehyde dehydrogenase family 1 member A3,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0002,ALBU_BOVIN,5,1.14e-06,0.2941,0.2941,10.2198,ALB,Serum albumin,C1=CC(=CC=C1CC(=O)O)O
+m0002,ALDR_HUMAN,5,4.406e-13,0.5000,6.9312,21.7328,AKR1B1,Aldo-keto reductase family 1 member B1,C1=CC(=CC=C1CC(=O)O)O
+m0002,ALDR_RAT,5,1.207e-12,0.4000,5.9804,20.9469,Akr1b1,Aldo-keto reductase family 1 member B1,C1=CC(=CC=C1CC(=O)O)O
+m0002,AMD_HUMAN,5,2.126e-20,0.3871,0.6683,34.8681,PAM,Peptidyl-glycine alpha-amidating monooxygenase,C1=CC(=CC=C1CC(=O)O)O
+m0002,AMD_RAT,5,3.653e-11,0.3191,0.6191,18.2884,Pam,Peptidylglycine alpha-amidating monooxygenase,C1=CC(=CC=C1CC(=O)O)O
+m0010,AMPB_HUMAN,5,3.542e-11,0.3000,0.3000,18.3123,RNPEP,Aminopeptidase B,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,AMPB_HUMAN,5,1.479e-10,0.2821,0.2821,17.1979,RNPEP,Aminopeptidase B,C([C@@H](C(=O)O)N)C(=O)O
+m0008,AMPB_HUMAN,5,4.181e-45,0.3421,1.2810,79.2239,RNPEP,Aminopeptidase B,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,AMPB_HUMAN,5,1.469e-22,0.3214,0.6291,38.7471,RNPEP,Aminopeptidase B,C([C@@H](C(=O)O)N)S
+m0004,AMPB_HUMAN,5,2.23e-13,0.3636,0.3636,22.2634,RNPEP,Aminopeptidase B,C[C@@H](C(=O)O)N
+m0003,AMPB_HUMAN,5,1.554e-11,0.3103,0.3103,18.9546,RNPEP,Aminopeptidase B,C(CCN=C(N)N)CN
+m0010,AMPB_RAT,5,1.155e-07,0.3143,0.3143,12.0050,Rnpep,Aminopeptidase B,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,AMPB_RAT,5,1.746e-20,0.3333,0.8974,35.0216,Rnpep,Aminopeptidase B,C([C@@H](C(=O)O)N)C(=O)O
+m0008,AMPB_RAT,5,3.657e-17,0.4130,0.7464,29.0594,Rnpep,Aminopeptidase B,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,AMPB_RAT,5,3.205e-07,0.2941,0.2941,11.2090,Rnpep,Aminopeptidase B,C([C@@H](C(=O)O)N)S
+m0004,AMPB_RAT,5,4.403e-08,0.3333,0.3333,12.7568,Rnpep,Aminopeptidase B,C[C@@H](C(=O)O)N
+m0005,AMPB_RAT,5,7.232e-08,0.3235,0.3235,12.3698,Rnpep,Aminopeptidase B,C([C@@H](C(=O)O)N)C(=O)N
+m0010,AMPE_HUMAN,5,1.327e-55,0.5200,6.2616,98.0718,ENPEP,Glutamyl aminopeptidase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,AMPE_HUMAN,5,1.978e-31,0.3462,3.5090,54.6732,ENPEP,Glutamyl aminopeptidase,C([C@@H](C(=O)O)N)C(=O)O
+m0002,AMPE_HUMAN,5,7.704e-11,0.3043,1.1643,17.7065,ENPEP,Glutamyl aminopeptidase,C1=CC(=CC=C1CC(=O)O)O
+m0009,AMPE_HUMAN,5,2.174e-64,0.5217,7.2620,113.8449,ENPEP,Glutamyl aminopeptidase,C([C@@H](C(=O)O)N)S
+m0004,AMPE_HUMAN,5,1.876e-14,0.4167,1.5758,24.1938,ENPEP,Glutamyl aminopeptidase,C[C@@H](C(=O)O)N
+m0005,AMPE_HUMAN,5,1.237e-11,0.3333,1.2548,19.1329,ENPEP,Glutamyl aminopeptidase,C([C@@H](C(=O)O)N)C(=O)N
+m0006,AMPL_HUMAN,5,2.853e-11,0.3000,0.8941,18.4811,LAP3,Cytosol aminopeptidase,C([C@@H](C(=O)O)N)C(=O)O
+m0004,AMPL_HUMAN,5,4.458e-27,0.3333,2.2270,46.8580,LAP3,Cytosol aminopeptidase,C[C@@H](C(=O)O)N
+m0002,AMPL_PIG,5,1.123e-10,0.3043,0.6087,17.4124,LAP3,Cytosol aminopeptidase,C1=CC(=CC=C1CC(=O)O)O
+m0004,AMPL_PIG,5,2.921e-10,0.2917,0.5833,16.6674,LAP3,Cytosol aminopeptidase,C[C@@H](C(=O)O)N
+m0010,AMPN_ECOLI,5,9.056e-18,0.2812,0.2812,30.1477,pepN,Aminopeptidase N,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,AMPN_ECOLI,5,6.741e-19,0.3000,0.3000,32.1732,pepN,Aminopeptidase N,C([C@@H](C(=O)O)N)C(=O)O
+m0009,AMPN_ECOLI,5,6.741e-19,0.3000,0.3000,32.1732,pepN,Aminopeptidase N,C([C@@H](C(=O)O)N)S
+m0004,AMPN_ECOLI,5,1.142e-62,0.4000,1.0275,110.7562,pepN,Aminopeptidase N,C[C@@H](C(=O)O)N
+m0005,AMPN_ECOLI,5,6.654e-21,0.3333,0.3333,35.7740,pepN,Aminopeptidase N,C([C@@H](C(=O)O)N)C(=O)N
+m0008,AMPN_HUMAN,5,2.053e-09,0.3111,2.0936,15.1472,ANPEP,Aminopeptidase N,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0002,AMPN_HUMAN,5,3.466e-08,0.3043,1.8070,12.9434,ANPEP,Aminopeptidase N,C1=CC(=CC=C1CC(=O)O)O
+m0009,AMPN_HUMAN,5,3.218e-09,0.4400,2.0480,14.7965,ANPEP,Aminopeptidase N,C([C@@H](C(=O)O)N)S
+m0004,AMPX_VIBPR,5,2.725e-25,0.3200,0.6400,43.6512,,Bacterial leucyl aminopeptidase,C[C@@H](C(=O)O)N
+m0010,AMPN_PIG,5,1.123e-10,0.5200,4.1710,17.4127,ANPEP,Aminopeptidase N,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,AMPN_PIG,5,8.615e-09,0.3462,3.4154,14.0288,ANPEP,Aminopeptidase N,C([C@@H](C(=O)O)N)C(=O)O
+m0009,AMPN_PIG,5,7.196e-13,0.5217,5.0503,21.3503,ANPEP,Aminopeptidase N,C([C@@H](C(=O)O)N)S
+m0004,AMPN_PIG,5,3.114e-08,0.4167,3.1917,13.0269,ANPEP,Aminopeptidase N,C[C@@H](C(=O)O)N
+m0002,AOC2_HUMAN,5,7.183e-24,0.3056,0.6029,41.1003,AOC2,Retina-specific copper amine oxidase,C1=CC(=CC=C1CC(=O)O)O
+m0010,ARGI1_HUMAN,5,1.111e-61,0.4333,0.7754,108.9821,ARG1,Arginase-1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,ARGI1_HUMAN,5,2.525e-52,0.3667,0.6561,92.1843,ARG1,Arginase-1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,ARGI1_HUMAN,5,6.701e-67,0.4848,0.8420,118.3531,ARG1,Arginase-1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,ARGI1_HUMAN,5,2.525e-52,0.3667,0.6561,92.1843,ARG1,Arginase-1,C([C@@H](C(=O)O)N)S
+m0005,ARGI1_HUMAN,5,8.167e-51,0.3548,0.6369,89.4737,ARG1,Arginase-1,C([C@@H](C(=O)O)N)C(=O)N
+m0010,ARGI2_HUMAN,5,2.374e-54,0.4333,0.4333,95.8229,ARG2,"Arginase-2, mitochondrial",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,ARGI2_HUMAN,5,3.987e-46,0.3667,0.3667,81.0563,ARG2,"Arginase-2, mitochondrial",C([C@@H](C(=O)O)N)C(=O)O
+m0008,ARGI2_HUMAN,5,1.047e-60,0.4848,0.4848,107.2335,ARG2,"Arginase-2, mitochondrial",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,ARGI2_HUMAN,5,3.987e-46,0.3667,0.3667,81.0563,ARG2,"Arginase-2, mitochondrial",C([C@@H](C(=O)O)N)S
+m0005,ARGI2_HUMAN,5,1.148e-44,0.3548,0.3548,78.4364,ARG2,"Arginase-2, mitochondrial",C([C@@H](C(=O)O)N)C(=O)N
+m0010,ARGI1_RAT,5,7.531e-35,0.4333,0.4333,60.8119,Arg1,Arginase-1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,ARGI1_RAT,5,1.275e-29,0.3667,0.3667,51.4249,Arg1,Arginase-1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,ARGI1_RAT,5,6.863e-39,0.4848,0.4848,68.0655,Arg1,Arginase-1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,ARGI1_RAT,5,1.275e-29,0.3667,0.3667,51.4249,Arg1,Arginase-1,C([C@@H](C(=O)O)N)S
+m0005,ARGI1_RAT,5,1.079e-28,0.3548,0.3548,49.7594,Arg1,Arginase-1,C([C@@H](C(=O)O)N)C(=O)N
+m0006,B9V8S1_XENLA,5,1.444e-23,0.2895,0.2895,40.5557,grik2.L,Ionotropic glutamate receptor subunit GluR6(Q),C([C@@H](C(=O)O)N)C(=O)O
+m0009,B9V8S1_XENLA,5,1.444e-23,0.2895,0.2895,40.5557,grik2.L,Ionotropic glutamate receptor subunit GluR6(Q),C([C@@H](C(=O)O)N)S
+m0005,B9V8S1_XENLA,5,5.518e-23,0.2821,0.2821,39.5106,grik2.L,Ionotropic glutamate receptor subunit GluR6(Q),C([C@@H](C(=O)O)N)C(=O)N
+m0010,BHMT1_HUMAN,5,2.142e-125,0.5926,5.4012,223.3708,BHMT,Betaine--homocysteine S-methyltransferase 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,BHMT1_HUMAN,5,4.681e-95,0.4667,4.0864,168.9017,BHMT,Betaine--homocysteine S-methyltransferase 1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,BHMT1_HUMAN,5,6.155e-90,0.3947,3.8645,159.7117,BHMT,Betaine--homocysteine S-methyltransferase 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,BHMT1_HUMAN,5,2.464e-84,0.3667,3.6218,149.6537,BHMT,Betaine--homocysteine S-methyltransferase 1,C([C@@H](C(=O)O)N)S
+m0004,BHMT1_HUMAN,5,1.881e-08,0.3333,0.3333,13.4199,BHMT,Betaine--homocysteine S-methyltransferase 1,C[C@@H](C(=O)O)N
+m0005,BHMT1_HUMAN,5,8.027e-83,0.3636,3.5562,146.9374,BHMT,Betaine--homocysteine S-methyltransferase 1,C([C@@H](C(=O)O)N)C(=O)N
+m0010,BHMT2_HUMAN,5,1.259e-52,0.4194,0.4194,92.7267,BHMT2,S-methylmethionine--homocysteine S-methyltransferase BHMT2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,BHMT2_HUMAN,5,1.148e-44,0.3548,0.3548,78.4364,BHMT2,S-methylmethionine--homocysteine S-methyltransferase BHMT2,C([C@@H](C(=O)O)N)C(=O)O
+m0008,BHMT2_HUMAN,5,3.092e-44,0.3514,0.3514,77.6639,BHMT2,S-methylmethionine--homocysteine S-methyltransferase BHMT2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,BHMT2_HUMAN,5,1.148e-44,0.3548,0.3548,78.4364,BHMT2,S-methylmethionine--homocysteine S-methyltransferase BHMT2,C([C@@H](C(=O)O)N)S
+m0004,BHMT2_HUMAN,5,5.965e-45,0.3571,0.3571,78.9467,BHMT2,S-methylmethionine--homocysteine S-methyltransferase BHMT2,C[C@@H](C(=O)O)N
+m0005,BHMT2_HUMAN,5,2.679e-43,0.3438,0.3438,75.9802,BHMT2,S-methylmethionine--homocysteine S-methyltransferase BHMT2,C([C@@H](C(=O)O)N)C(=O)N
+m0001,BIP_HUMAN,5,9.432e-23,0.3281,0.9530,39.0926,HSPA5,Endoplasmic reticulum chaperone BiP,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,BIRA_ECOLI,5,3.875e-36,0.2857,0.2857,63.1253,birA,Bifunctional ligase/repressor BirA,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,BLA2_BACCE,5,8.558e-06,0.2812,0.2812,8.6479,blm,Metallo-beta-lactamase type 2,C1=CC(=CC=C1CC(=O)O)O
+m0010,BODG_HUMAN,5,1.71e-11,0.4074,0.6977,18.8803,BBOX1,Gamma-butyrobetaine dioxygenase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0001,BPL1_HUMAN,5,1.105e-10,0.2857,0.2857,17.4253,HLCS,Biotin--protein ligase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0008,C3AR_HUMAN,5,8.412e-28,0.4043,5.1662,48.1583,C3AR1,C3a anaphylatoxin chemotactic receptor,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0001,C3SIU2_ECOLX,5,7.873e-42,0.2911,2.2825,73.3445,metJ,Met repressor,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,CA2D1_MOUSE,5,4.618e-108,0.4643,10.7834,192.2514,Cacna2d1,Voltage-dependent calcium channel subunit alpha-2/delta-1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,CA2D1_MOUSE,5,1.921e-55,0.4074,5.5014,97.7834,Cacna2d1,Voltage-dependent calcium channel subunit alpha-2/delta-1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,CA2D1_MOUSE,5,2.93e-57,0.4167,5.6837,101.0450,Cacna2d1,Voltage-dependent calcium channel subunit alpha-2/delta-1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,CA2D1_MOUSE,5,1.921e-55,0.4074,5.5014,97.7834,Cacna2d1,Voltage-dependent calcium channel subunit alpha-2/delta-1,C([C@@H](C(=O)O)N)S
+m0004,CA2D1_MOUSE,5,1.662e-35,0.3600,3.5001,61.9899,Cacna2d1,Voltage-dependent calcium channel subunit alpha-2/delta-1,C[C@@H](C(=O)O)N
+m0005,CA2D1_MOUSE,5,7.896e-43,0.3929,4.2352,75.1375,Cacna2d1,Voltage-dependent calcium channel subunit alpha-2/delta-1,C([C@@H](C(=O)O)N)C(=O)N
+m0002,CAH13_MOUSE,5,1.244e-06,0.4583,0.8097,10.1515,Ca13,Carbonic anhydrase 13,C1=CC(=CC=C1CC(=O)O)O
+m0003,CAH13_MOUSE,5,2.154e-06,0.3889,0.7778,9.7235,Ca13,Carbonic anhydrase 13,C(CCN=C(N)N)CN
+m0002,CAH15_MOUSE,5,1.452e-06,0.4583,0.8155,10.0310,Ca15,Carbonic anhydrase 15,C1=CC(=CC=C1CC(=O)O)O
+m0003,CAH15_MOUSE,5,1.986e-08,0.3889,1.0694,13.3776,Ca15,Carbonic anhydrase 15,C(CCN=C(N)N)CN
+m0002,CAH14_HUMAN,5,1.367e-08,0.4583,4.0268,13.6690,CA14,Carbonic anhydrase 14,C1=CC(=CC=C1CC(=O)O)O
+m0002,CAH3_HUMAN,5,2.665e-15,0.4583,1.8244,25.7178,CA3,Carbonic anhydrase 3,C1=CC(=CC=C1CC(=O)O)O
+m0003,CAH3_HUMAN,5,7.24e-07,0.3889,0.7778,10.5736,CA3,Carbonic anhydrase 3,C(CCN=C(N)N)CN
+m0002,CAH5B_HUMAN,5,5.181e-10,0.4583,2.4228,16.2206,CA5B,"Carbonic anhydrase 5B, mitochondrial",C1=CC(=CC=C1CC(=O)O)O
+m0002,CAH5A_HUMAN,5,1.636e-08,0.4583,2.4228,13.5288,CA5A,"Carbonic anhydrase 5A, mitochondrial",C1=CC(=CC=C1CC(=O)O)O
+m0002,CAH6_HUMAN,5,1.843e-07,0.4583,1.8403,11.6406,CA6,Carbonic anhydrase 6,C1=CC(=CC=C1CC(=O)O)O
+m0002,CAH2_HUMAN,5,3.983e-06,0.5172,14.3129,9.2443,CA2,Carbonic anhydrase 2,C1=CC(=CC=C1CC(=O)O)O
+m0002,CAH7_HUMAN,5,1.585e-09,0.4583,5.2701,15.3488,CA7,Carbonic anhydrase 7,C1=CC(=CC=C1CC(=O)O)O
+m0002,CAN_CANAL,5,5.731e-21,1.0000,4.0971,35.8904,NCE103,Carbonic anhydrase,C1=CC(=CC=C1CC(=O)O)O
+m0006,CBPA1_BOVIN,5,4.692e-08,0.5238,0.8571,12.7072,CPA1,Carboxypeptidase A1,C([C@@H](C(=O)O)N)C(=O)O
+m0009,CBPA1_BOVIN,5,7.359e-96,1.0000,10.9698,170.3443,CPA1,Carboxypeptidase A1,C([C@@H](C(=O)O)N)S
+m0004,CBPA1_BOVIN,5,2.796e-21,0.4000,2.3803,36.4499,CPA1,Carboxypeptidase A1,C[C@@H](C(=O)O)N
+m0010,CBPA3_HUMAN,5,2.07e-23,0.3750,0.3750,40.2750,CPA3,Mast cell carboxypeptidase A,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,CBPA3_HUMAN,5,6.654e-21,0.3333,0.3333,35.7740,CPA3,Mast cell carboxypeptidase A,C([C@@H](C(=O)O)N)C(=O)O
+m0002,CBPA3_HUMAN,5,2.85e-36,0.3030,0.5887,63.3648,CPA3,Mast cell carboxypeptidase A,C1=CC(=CC=C1CC(=O)O)O
+m0009,CBPA3_HUMAN,5,6.654e-21,0.3333,0.3333,35.7740,CPA3,Mast cell carboxypeptidase A,C([C@@H](C(=O)O)N)S
+m0006,CBPA1_HUMAN,5,3.665e-08,0.3333,0.6667,12.8997,CPA1,Carboxypeptidase A1,C([C@@H](C(=O)O)N)C(=O)O
+m0002,CBPA1_HUMAN,5,2.554e-14,0.3256,1.2137,23.9522,CPA1,Carboxypeptidase A1,C1=CC(=CC=C1CC(=O)O)O
+m0006,CBPB1_HUMAN,5,5.31e-07,0.3333,0.6569,10.8154,CPB1,Carboxypeptidase B,C([C@@H](C(=O)O)N)C(=O)O
+m0009,CBPB1_PIG,5,5.728e-53,0.3871,2.3750,93.3409,CPB1,Carboxypeptidase B,C([C@@H](C(=O)O)N)S
+m0005,CBPB1_PIG,5,2.103e-13,0.2941,0.5754,22.3097,CPB1,Carboxypeptidase B,C([C@@H](C(=O)O)N)C(=O)N
+m0003,CBPB1_PIG,5,5.342e-09,0.3750,0.3750,14.4013,CPB1,Carboxypeptidase B,C(CCN=C(N)N)CN
+m0002,CBPC2_HUMAN,5,9.362e-36,0.2826,0.2826,62.4375,AGBL2,Cytosolic carboxypeptidase 2,C1=CC(=CC=C1CC(=O)O)O
+m0009,CBPB2_HUMAN,5,4.721e-17,0.4074,4.0115,28.8602,CPB2,Carboxypeptidase B2,C([C@@H](C(=O)O)N)S
+m0009,CBPN_HUMAN,5,6.489e-62,0.3871,2.9105,109.4015,CPN1,Carboxypeptidase N catalytic chain,C([C@@H](C(=O)O)N)S
+m0005,CBPN_HUMAN,5,6.257e-07,0.2941,0.2941,10.6874,CPN1,Carboxypeptidase N catalytic chain,C([C@@H](C(=O)O)N)C(=O)N
+m0003,CBPN_HUMAN,5,1.249e-08,0.3750,0.3750,13.7391,CPN1,Carboxypeptidase N catalytic chain,C(CCN=C(N)N)CN
+m0009,CBPM_HUMAN,5,1.157e-39,0.3143,0.3143,69.4539,CPM,Carboxypeptidase M,C([C@@H](C(=O)O)N)S
+m0006,CBS_HUMAN,5,2.506e-11,0.3043,0.3043,18.5823,CBS,Cystathionine beta-synthase,C([C@@H](C(=O)O)N)C(=O)O
+m0001,CDC42_HUMAN,5,4.441e-16,0.5231,0.5231,27.2147,CDC42,Cell division control protein 42 homolog,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,CDD_MOUSE,5,3.34e-33,0.3077,1.4759,57.8551,Cda,Cytidine deaminase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,CDD_HUMAN,5,4.914e-12,0.3000,0.5833,19.8524,CDA,Cytidine deaminase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,CELA1_HUMAN,5,1.683e-06,0.2857,0.2857,9.9159,CELA1,Chymotrypsin-like elastase family member 1,C1=CC(=CC=C1CC(=O)O)O
+m0008,CFAB_HUMAN,5,3.79e-20,0.3200,1.2229,34.4175,CFB,Complement factor B,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0006,CGL_HUMAN,5,3.283e-23,0.3043,0.5856,39.9154,CTH,Cystathionine gamma-lyase,C([C@@H](C(=O)O)N)C(=O)O
+m0009,CGL_HUMAN,5,1.437e-11,0.2812,0.2812,19.0156,CTH,Cystathionine gamma-lyase,C([C@@H](C(=O)O)N)S
+m0002,CISD1_HUMAN,5,2.875e-06,0.3429,0.6664,9.4983,CISD1,CDGSH iron-sulfur domain-containing protein 1,C1=CC(=CC=C1CC(=O)O)O
+m0002,CISY2_YEAST,5,3.447e-07,0.2927,0.2927,11.1523,CIT2,"Citrate synthase, peroxisomal",C1=CC(=CC=C1CC(=O)O)O
+m0002,COMT_RAT,5,5.964e-06,0.2927,0.5784,8.9295,Comt,Catechol O-methyltransferase,C1=CC(=CC=C1CC(=O)O)O
+m0002,CP24A_RAT,5,3.494e-26,0.3590,0.6633,45.2527,Cyp24a1,"1,25-dihydroxyvitamin D(3) 24-hydroxylase, mitochondrial",C1=CC(=CC=C1CC(=O)O)O
+m0010,CP4A4_RABIT,5,3.875e-36,0.2857,0.2857,63.1253,CYP4A4,Cytochrome P450 4A4,C(CC(=O)O)[C@@H](C(=O)O)N
+m0010,CQSS_VIBCH,5,1.166e-06,0.2812,0.2812,10.2020,cqsS,CAI-1 autoinducer sensor kinase/phosphatase CqsS,C(CC(=O)O)[C@@H](C(=O)O)N
+m0007,CQSS_VIBCH,5,3.138e-57,0.3913,2.6876,100.9915,cqsS,CAI-1 autoinducer sensor kinase/phosphatase CqsS,CCCC(=O)[O-]
+m0002,CSK_HUMAN,5,7.127e-06,0.3939,0.7082,8.7907,CSK,Tyrosine-protein kinase CSK,C1=CC(=CC=C1CC(=O)O)O
+m0002,CTBP2_HUMAN,5,2.202e-70,0.5714,3.0172,124.6068,CTBP2,C-terminal-binding protein 2,C1=CC(=CC=C1CC(=O)O)O
+m0006,CYSK_MYCTU,5,1.683e-06,0.2857,0.2857,9.9159,cysK1,O-acetylserine sulfhydrylase,C([C@@H](C(=O)O)N)C(=O)O
+m0001,D3ZGQ2_RAT,5,8.416e-44,0.3478,0.3478,76.8831,Tk2,Thymidine kinase 2,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0008,D5FGE8_TRYCR,5,2.886e-19,0.3061,0.3061,32.8345,POT1.5,Putative amino acid permease/transporter,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0010,DAPE_HAEIN,5,2.847e-23,0.2857,0.2857,40.0264,dapE,Succinyl-diaminopimelate desuccinylase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,DAPE_HAEIN,5,5.379e-25,0.3077,0.3077,43.1210,dapE,Succinyl-diaminopimelate desuccinylase,C([C@@H](C(=O)O)N)C(=O)O
+m0009,DAPE_HAEIN,5,4.249e-29,0.3600,0.3600,50.4862,dapE,Succinyl-diaminopimelate desuccinylase,C([C@@H](C(=O)O)N)S
+m0004,DAPE_HAEIN,5,1.78e-34,0.4286,0.4286,60.1414,dapE,Succinyl-diaminopimelate desuccinylase,C[C@@H](C(=O)O)N
+m0005,DAPE_HAEIN,5,4.212e-24,0.2963,0.2963,41.5164,dapE,Succinyl-diaminopimelate desuccinylase,C([C@@H](C(=O)O)N)C(=O)N
+m0001,DCAM_RAT,5,2.099e-09,0.3099,0.6084,15.1295,Amd1,S-adenosylmethionine decarboxylase proenzyme,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,DCAM_HUMAN,5,4.2e-21,0.2985,1.1703,36.1328,AMD1,S-adenosylmethionine decarboxylase proenzyme,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,DCOR_HUMAN,5,7.964e-08,0.2903,0.2903,12.2946,ODC1,Ornithine decarboxylase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0008,DCOR_HUMAN,5,2.082e-08,0.3143,0.3143,13.3407,ODC1,Ornithine decarboxylase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0010,DCOR_RAT,5,6.381e-08,0.3103,0.3103,12.4675,Odc1,Ornithine decarboxylase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,DCOR_RAT,5,1.881e-08,0.3333,0.3333,13.4199,Odc1,Ornithine decarboxylase,C([C@@H](C(=O)O)N)C(=O)O
+m0009,DCOR_RAT,5,1.881e-08,0.3333,0.3333,13.4199,Odc1,Ornithine decarboxylase,C([C@@H](C(=O)O)N)S
+m0004,DCOR_RAT,5,1.881e-08,0.3333,0.3333,13.4199,Odc1,Ornithine decarboxylase,C[C@@H](C(=O)O)N
+m0005,DCOR_RAT,5,3.541e-08,0.3214,0.3214,12.9267,Odc1,Ornithine decarboxylase,C([C@@H](C(=O)O)N)C(=O)N
+m0001,DCPS_HUMAN,5,5.031e-11,0.4595,0.8243,18.0387,DCPS,m7GpppX diphosphatase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,DDAH1_HUMAN,5,4.569e-10,0.3611,0.3611,16.3185,DDAH1,"N(G),N(G)-dimethylarginine dimethylaminohydrolase 1",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,DDAH1_HUMAN,5,1.229e-08,0.3056,0.3056,13.7514,DDAH1,"N(G),N(G)-dimethylarginine dimethylaminohydrolase 1",C([C@@H](C(=O)O)N)C(=O)O
+m0008,DDAH1_HUMAN,5,2.483e-11,0.4103,0.4103,18.5894,DDAH1,"N(G),N(G)-dimethylarginine dimethylaminohydrolase 1",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,DDAH1_HUMAN,5,1.229e-08,0.3056,0.3056,13.7514,DDAH1,"N(G),N(G)-dimethylarginine dimethylaminohydrolase 1",C([C@@H](C(=O)O)N)S
+m0005,DDAH1_HUMAN,5,2.37e-09,0.3333,0.3333,15.0350,DDAH1,"N(G),N(G)-dimethylarginine dimethylaminohydrolase 1",C([C@@H](C(=O)O)N)C(=O)N
+m0010,DHAS_HELPY,5,2.341e-49,0.3929,0.3929,86.8574,asd,Aspartate-semialdehyde dehydrogenase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,DHAS_HELPY,5,4.375e-53,0.4231,0.4231,93.5511,asd,Aspartate-semialdehyde dehydrogenase,C([C@@H](C(=O)O)N)C(=O)O
+m0008,DHAS_HELPY,5,8.37e-41,0.3235,0.3235,71.5014,asd,Aspartate-semialdehyde dehydrogenase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,DHAS_HELPY,5,4.375e-53,0.4231,0.4231,93.5511,asd,Aspartate-semialdehyde dehydrogenase,C([C@@H](C(=O)O)N)S
+m0004,DHAS_HELPY,5,2.281e-40,0.3200,0.3200,70.7196,asd,Aspartate-semialdehyde dehydrogenase,C[C@@H](C(=O)O)N
+m0005,DHAS_HELPY,5,3.751e-51,0.4074,0.4074,90.0803,asd,Aspartate-semialdehyde dehydrogenase,C([C@@H](C(=O)O)N)C(=O)N
+m0002,DHB3_HUMAN,5,8.238e-10,0.3235,2.2034,15.8589,HSD17B3,Testosterone 17-beta-dehydrogenase 3,C1=CC(=CC=C1CC(=O)O)O
+m0001,DHPS_ECOLI,5,1.519e-11,0.3115,0.9002,18.9726,folP,Dihydropteroate synthase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,DHRS9_RAT,5,1.418e-24,0.3023,0.3023,42.3653,Dhrs9,Dehydrogenase/reductase SDR family member 9,C1=CC(=CC=C1CC(=O)O)O
+m0008,DHYS_RAT,5,3.963e-20,0.3000,0.8813,34.3827,Dhps,Deoxyhypusine synthase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0003,DHYS_RAT,5,6.392e-85,0.7391,3.8284,150.7057,Dhps,Deoxyhypusine synthase,C(CCN=C(N)N)CN
+m0001,DNK_DROME,5,3.883e-62,0.3421,2.9211,109.8019,dnk,Deoxynucleoside kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,DNM3B_HUMAN,5,2.349e-33,0.3333,1.8739,58.1295,DNMT3B,DNA (cytosine-5)-methyltransferase 3B,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,DNMT1_HUMAN,5,2.105e-17,0.6078,4.0962,29.4900,DNMT1,DNA (cytosine-5)-methyltransferase 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0008,DNPEP_HUMAN,5,2.12e-33,0.3421,0.6532,58.2095,DNPEP,Aspartyl aminopeptidase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0001,DNPH1_HUMAN,5,2.675e-25,0.3086,1.4572,43.6657,DNPH1,2'-deoxynucleoside 5'-phosphate N-hydrolase 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,DNPH1_RAT,5,4.233e-26,0.3086,1.4572,45.1032,Dnph1,2'-deoxynucleoside 5'-phosphate N-hydrolase 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,DOPO_HUMAN,5,3.394e-08,0.3056,0.3056,12.9596,DBH,Dopamine beta-hydroxylase,C1=CC(=CC=C1CC(=O)O)O
+m0002,DOPO_RAT,5,3.781e-09,0.3056,0.3056,14.6709,Dbh,Dopamine beta-hydroxylase,C1=CC(=CC=C1CC(=O)O)O
+m0001,DOT1L_HUMAN,5,4.558e-11,0.2973,1.4543,18.1157,DOT1L,"Histone-lysine N-methyltransferase, H3 lysine-79 specific",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0008,DPO1_THEAQ,5,8.271e-21,0.3400,1.6672,35.6044,polA,"DNA polymerase I, thermostable",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0001,DPOG1_HUMAN,5,1.199e-80,0.6833,2.3088,143.0338,POLG,DNA polymerase subunit gamma-1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,DPOD1_HUMAN,5,8.297e-37,0.2911,0.2911,64.3270,POLD1,DNA polymerase delta catalytic subunit,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,DPOLA_HUMAN,5,3.281e-23,0.6000,1.9355,39.9159,POLA1,DNA polymerase alpha catalytic subunit,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,DPOLB_HUMAN,5,9.178e-52,0.6721,3.3926,91.1780,POLB,DNA polymerase beta,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,DPOL_HHV11,5,2.289e-13,0.2911,0.2911,22.2431,,DNA polymerase catalytic subunit,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,DPOL_HHV1K,5,2.301e-18,0.2911,0.2911,31.2160,,DNA polymerase catalytic subunit,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,DPOL_VZVD,5,2.289e-13,0.2911,0.2911,22.2431,,DNA polymerase catalytic subunit,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0008,DPP2_HUMAN,5,1.431e-06,0.4412,3.0573,10.0423,DPP7,Dipeptidyl peptidase 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0001,E1BN64_BOVIN,5,1.099e-14,0.5077,0.5077,24.6115,PDE3B,Phosphodiesterase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0006,EAA1_HUMAN,5,2.438e-36,0.3824,4.3445,63.4865,SLC1A3,Excitatory amino acid transporter 1,C([C@@H](C(=O)O)N)C(=O)O
+m0009,EAA1_HUMAN,5,5.618e-06,0.3478,0.6534,8.9761,SLC1A3,Excitatory amino acid transporter 1,C([C@@H](C(=O)O)N)S
+m0005,EAA1_HUMAN,5,2.018e-33,0.3714,3.9898,58.2479,SLC1A3,Excitatory amino acid transporter 1,C([C@@H](C(=O)O)N)C(=O)N
+m0010,EAA2_HUMAN,5,2.611e-06,0.3200,0.6095,9.5737,SLC1A2,Excitatory amino acid transporter 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,EAA2_HUMAN,5,4.064e-47,0.3824,4.9857,82.8367,SLC1A2,Excitatory amino acid transporter 2,C([C@@H](C(=O)O)N)C(=O)O
+m0009,EAA2_HUMAN,5,3.508e-12,0.3478,1.2392,20.1153,SLC1A2,Excitatory amino acid transporter 2,C([C@@H](C(=O)O)N)S
+m0004,EAA2_HUMAN,5,4.091e-17,0.4211,1.7682,28.9719,SLC1A2,Excitatory amino acid transporter 2,C[C@@H](C(=O)O)N
+m0005,EAA2_HUMAN,5,1.256e-43,0.3714,4.6114,76.5707,SLC1A2,Excitatory amino acid transporter 2,C([C@@H](C(=O)O)N)C(=O)N
+m0010,EAA3_HUMAN,5,1.574e-26,0.4231,2.7425,45.8747,SLC1A1,Excitatory amino acid transporter 3,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,EAA3_HUMAN,5,6.076e-70,0.5217,7.3394,123.8153,SLC1A1,Excitatory amino acid transporter 3,C([C@@H](C(=O)O)N)C(=O)O
+m0008,EAA3_HUMAN,5,7.772e-16,0.3438,1.6126,26.7170,SLC1A1,Excitatory amino acid transporter 3,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,EAA3_HUMAN,5,9.024e-27,0.4583,2.7681,46.3083,SLC1A1,Excitatory amino acid transporter 3,C([C@@H](C(=O)O)N)S
+m0004,EAA3_HUMAN,5,9.223e-22,0.4762,2.2377,37.3147,SLC1A1,Excitatory amino acid transporter 3,C[C@@H](C(=O)O)N
+m0005,EAA3_HUMAN,5,1.132e-65,0.5000,6.8873,116.1491,SLC1A1,Excitatory amino acid transporter 3,C([C@@H](C(=O)O)N)C(=O)N
+m0010,EAA4_RAT,5,1.11e-16,0.3200,0.3200,28.3838,Slc1a6,Excitatory amino acid transporter 4,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,EAA4_RAT,5,2.899e-32,0.3478,0.6304,56.1704,Slc1a6,Excitatory amino acid transporter 4,C([C@@H](C(=O)O)N)C(=O)O
+m0002,EAA4_RAT,5,4.441e-16,0.3056,0.3056,27.0909,Slc1a6,Excitatory amino acid transporter 4,C1=CC(=CC=C1CC(=O)O)O
+m0009,EAA4_RAT,5,3.565e-18,0.3478,0.3478,30.8745,Slc1a6,Excitatory amino acid transporter 4,C([C@@H](C(=O)O)N)S
+m0004,EAA4_RAT,5,7.967e-22,0.4211,0.4211,37.4289,Slc1a6,Excitatory amino acid transporter 4,C[C@@H](C(=O)O)N
+m0005,EAA4_RAT,5,1.882e-17,0.3333,0.3333,29.5772,Slc1a6,Excitatory amino acid transporter 4,C([C@@H](C(=O)O)N)C(=O)N
+m0001,EHMT1_HUMAN,5,6.293e-08,0.3056,0.8905,12.4782,EHMT1,Histone-lysine N-methyltransferase EHMT1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,ELAS_PSEAE,5,4.982e-10,0.3409,0.6520,16.2511,lasB,Elastase,C1=CC(=CC=C1CC(=O)O)O
+m0001,ENPL_PIG,5,2.223e-37,0.2958,0.2958,65.3537,HSP90B1,Endoplasmin,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ENPP1_RAT,5,1.427e-35,0.2933,0.5771,62.1088,Enpp1,Ectonucleotide pyrophosphatase/phosphodiesterase family member 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ENPP1_HUMAN,5,3.997e-14,0.3117,1.1965,23.6047,ENPP1,Ectonucleotide pyrophosphatase/phosphodiesterase family member 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,ENPP2_MOUSE,5,2.637e-13,0.3158,0.6235,22.1332,Enpp2,Ectonucleotide pyrophosphatase/phosphodiesterase family member 2,C1=CC(=CC=C1CC(=O)O)O
+m0002,ENPP2_HUMAN,5,5.703e-07,0.3778,2.6759,10.7598,ENPP2,Ectonucleotide pyrophosphatase/phosphodiesterase family member 2,C1=CC(=CC=C1CC(=O)O)O
+m0008,ERAP2_HUMAN,5,2.139e-07,0.3462,0.9945,11.5244,ERAP2,Endoplasmic reticulum aminopeptidase 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0002,ERAP2_HUMAN,5,6.97e-07,0.3111,0.9198,10.6033,ERAP2,Endoplasmic reticulum aminopeptidase 2,C1=CC(=CC=C1CC(=O)O)O
+m0002,ERCC1_HUMAN,5,3.152e-06,0.3158,0.6085,9.4267,ERCC1,DNA excision repair protein ERCC-1,C1=CC(=CC=C1CC(=O)O)O
+m0002,ERR2_HUMAN,5,3.171e-11,0.4167,1.0325,18.3988,ESRRB,Steroid hormone receptor ERR2,C1=CC(=CC=C1CC(=O)O)O
+m0002,ERR3_MOUSE,5,1.709e-08,0.3000,0.3000,13.4947,Esrrg,Estrogen-related receptor gamma,C1=CC(=CC=C1CC(=O)O)O
+m0002,ERR3_HUMAN,5,1.518e-07,0.4167,0.7130,11.7918,ESRRG,Estrogen-related receptor gamma,C1=CC(=CC=C1CC(=O)O)O
+m0002,ESR2_RAT,5,6.47e-08,0.3333,0.6667,12.4566,Esr2,Estrogen receptor beta,C1=CC(=CC=C1CC(=O)O)O
+m0007,EST1_HUMAN,5,1.976e-19,0.6250,5.8541,33.1300,CES1,Liver carboxylesterase 1,CCCC(=O)[O-]
+m0002,ESR2_HUMAN,5,4.229e-13,0.5000,13.6879,21.7648,ESR2,Estrogen receptor beta,C1=CC(=CC=C1CC(=O)O)O
+m0002,ESR1_HUMAN,5,2.054e-14,0.5000,17.7190,24.1212,ESR1,Estrogen receptor,C1=CC(=CC=C1CC(=O)O)O
+m0002,EST1_RABIT,5,2.562e-10,0.3333,0.9439,16.7696,,Liver carboxylesterase 1,C1=CC(=CC=C1CC(=O)O)O
+m0007,EST1_RABIT,5,5.124e-36,0.4737,3.4513,62.9074,,Liver carboxylesterase 1,CCCC(=O)[O-]
+m0002,EST2_HUMAN,5,1.692e-07,0.4231,1.3810,11.7072,CES2,Cocaine esterase,C1=CC(=CC=C1CC(=O)O)O
+m0007,EST2_HUMAN,5,3.505e-27,0.6250,5.2615,47.0456,CES2,Cocaine esterase,CCCC(=O)[O-]
+m0001,EZH1_HUMAN,5,5.365e-07,0.2973,0.2973,10.8074,EZH1,Histone-lysine N-methyltransferase EZH1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0007,FAAH1_MOUSE,5,8.436e-07,0.2963,1.1852,10.4545,Faah,Fatty-acid amide hydrolase 1,CCCC(=O)[O-]
+m0002,FABPL_RAT,5,1.645e-09,0.2973,0.2973,15.3198,Fabp1,"Fatty acid-binding protein, liver",C1=CC(=CC=C1CC(=O)O)O
+m0002,FFAR4_HUMAN,5,5.574e-09,0.3250,3.0200,14.3683,FFAR4,Free fatty acid receptor 4,C1=CC(=CC=C1CC(=O)O)O
+m0002,FFAR1_HUMAN,5,1.11e-16,0.5357,12.7871,28.3581,FFAR1,Free fatty acid receptor 1,C1=CC(=CC=C1CC(=O)O)O
+m0010,FOLH1_RAT,5,4.156e-103,0.5714,10.2861,183.3570,Folh1,Glutamate carboxypeptidase 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,FOLH1_RAT,5,1.029e-29,0.4828,2.9187,51.5921,Folh1,Glutamate carboxypeptidase 2,C([C@@H](C(=O)O)N)C(=O)O
+m0008,FOLH1_RAT,5,7.532e-07,0.3158,0.6235,10.5429,Folh1,Glutamate carboxypeptidase 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,FOLH1_RAT,5,6.966e-10,0.3125,0.9280,15.9897,Folh1,Glutamate carboxypeptidase 2,C([C@@H](C(=O)O)N)S
+m0005,FOLH1_RAT,5,6.264e-10,0.3333,0.9327,16.0725,Folh1,Glutamate carboxypeptidase 2,C([C@@H](C(=O)O)N)C(=O)N
+m0010,FOLH1_HUMAN,5,1.295e-48,0.5312,13.0337,85.5237,FOLH1,Glutamate carboxypeptidase 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,FOLH1_HUMAN,5,9.329e-11,0.3704,2.7987,17.5573,FOLH1,Glutamate carboxypeptidase 2,C([C@@H](C(=O)O)N)C(=O)O
+m0008,FOLH1_HUMAN,5,8.613e-06,0.3095,1.4563,8.6430,FOLH1,Glutamate carboxypeptidase 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,FOLH1_HUMAN,5,6.75e-11,0.3846,2.8367,17.8095,FOLH1,Glutamate carboxypeptidase 2,C([C@@H](C(=O)O)N)S
+m0008,FURIN_HUMAN,5,8.279e-22,0.4872,4.2022,37.3989,FURIN,Furin,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0001,FUT6_HUMAN,5,1.453e-71,0.3402,1.6417,126.7265,FUT6,"Alpha-(1,3)-fucosyltransferase 6",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,G3P_HUMAN,5,8.766e-29,0.4098,1.9625,49.9215,GAPDH,Glyceraldehyde-3-phosphate dehydrogenase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,G6PC_HUMAN,5,1.276e-07,0.2973,0.2973,11.9270,G6PC,Glucose-6-phosphatase,C1=CC(=CC=C1CC(=O)O)O
+m0010,GABR1_HUMAN,5,1.755e-07,0.3750,0.3750,11.6786,GABBR1,Gamma-aminobutyric acid type B receptor subunit 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GABR1_HUMAN,5,1.942e-11,0.3030,0.5947,18.7810,GABBR1,Gamma-aminobutyric acid type B receptor subunit 1,C([C@@H](C(=O)O)N)C(=O)O
+m0006,GABR1_RAT,5,2.746e-18,0.3030,1.7717,31.0782,Gabbr1,Gamma-aminobutyric acid type B receptor subunit 1,C([C@@H](C(=O)O)N)C(=O)O
+m0010,GABR2_HUMAN,5,9.926e-08,0.3750,0.3750,12.1230,GABBR2,Gamma-aminobutyric acid type B receptor subunit 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GABR2_HUMAN,5,7.915e-12,0.3030,0.5947,19.4807,GABBR2,Gamma-aminobutyric acid type B receptor subunit 2,C([C@@H](C(=O)O)N)C(=O)O
+m0010,GABR2_RAT,5,8.201e-06,0.3750,0.3750,8.6812,Gabbr2,Gamma-aminobutyric acid type B receptor subunit 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GABR2_RAT,5,6.875e-25,0.3030,1.7717,42.9297,Gabbr2,Gamma-aminobutyric acid type B receptor subunit 2,C([C@@H](C(=O)O)N)C(=O)O
+m0002,GABT_HUMAN,5,6.58e-28,0.3448,0.3448,48.3498,ABAT,"4-aminobutyrate aminotransferase, mitochondrial",C1=CC(=CC=C1CC(=O)O)O
+m0002,GABT_RAT,5,6.624e-07,0.3667,0.3667,10.6430,Abat,"4-aminobutyrate aminotransferase, mitochondrial",C1=CC(=CC=C1CC(=O)O)O
+m0010,GABT_PIG,5,1.654e-22,0.3600,0.3600,38.6547,ABAT,"4-aminobutyrate aminotransferase, mitochondrial",C(CC(=O)O)[C@@H](C(=O)O)N
+m0010,GBRG1_RAT,5,4.54e-22,0.3750,0.6713,37.8674,Gabrg1,Gamma-aminobutyric acid receptor subunit gamma-1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GBRG1_RAT,5,8.11e-24,0.4348,0.7264,41.0056,Gabrg1,Gamma-aminobutyric acid receptor subunit gamma-1,C([C@@H](C(=O)O)N)C(=O)O
+m0005,GBRG1_RAT,5,1.517e-10,0.3077,0.3077,17.1784,Gabrg1,Gamma-aminobutyric acid receptor subunit gamma-1,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GBRT_HUMAN,5,3.737e-47,0.3750,0.3750,82.9021,GABRQ,Gamma-aminobutyric acid receptor subunit theta,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GBRT_HUMAN,5,7.142e-37,0.2917,0.2917,64.4438,GABRQ,Gamma-aminobutyric acid receptor subunit theta,C([C@@H](C(=O)O)N)C(=O)O
+m0010,GBRR1_HUMAN,5,1.132e-06,0.3750,0.3750,10.2251,GABRR1,Gamma-aminobutyric acid receptor subunit rho-1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0010,GGH_HUMAN,5,2.612e-61,0.4194,0.7707,108.3158,GGH,Gamma-glutamyl hydrolase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0010,GFPT1_HUMAN,5,2.704e-41,0.3667,0.6722,72.3825,GFPT1,Glutamine--fructose-6-phosphate aminotransferase [isomerizing] 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GFPT1_HUMAN,5,5.95e-44,0.3929,0.7164,77.1534,GFPT1,Glutamine--fructose-6-phosphate aminotransferase [isomerizing] 1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GFPT1_HUMAN,5,2.08e-43,0.3824,0.7074,76.1775,GFPT1,Glutamine--fructose-6-phosphate aminotransferase [isomerizing] 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GFPT1_HUMAN,5,5.95e-44,0.3929,0.7164,77.1534,GFPT1,Glutamine--fructose-6-phosphate aminotransferase [isomerizing] 1,C([C@@H](C(=O)O)N)S
+m0004,GFPT1_HUMAN,5,1.345e-35,0.2963,0.5775,62.1551,GFPT1,Glutamine--fructose-6-phosphate aminotransferase [isomerizing] 1,C[C@@H](C(=O)O)N
+m0005,GFPT1_HUMAN,5,1.399e-42,0.3793,0.6936,74.6914,GFPT1,Glutamine--fructose-6-phosphate aminotransferase [isomerizing] 1,C([C@@H](C(=O)O)N)C(=O)N
+m0002,GLI1_HUMAN,5,2.8e-08,0.2917,0.2917,13.1096,GLI1,Zinc finger protein GLI1,C1=CC(=CC=C1CC(=O)O)O
+m0010,GLN1B_ECOLI,5,8.329e-97,0.4643,2.2275,172.0430,glnA,Glutamine synthetase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GLN1B_ECOLI,5,4.869e-82,0.3929,1.8848,145.5318,glnA,Glutamine synthetase,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GLN1B_ECOLI,5,1.987e-80,0.3824,1.8474,142.6401,glnA,Glutamine synthetase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GLN1B_ECOLI,5,4.869e-82,0.3929,1.8848,145.5318,glnA,Glutamine synthetase,C([C@@H](C(=O)O)N)S
+m0004,GLN1B_ECOLI,5,2.799e-72,0.3704,1.6583,128.0104,glnA,Glutamine synthetase,C[C@@H](C(=O)O)N
+m0005,GLN1B_ECOLI,5,2.4e-79,0.3793,1.8223,140.6975,glnA,Glutamine synthetase,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GLO2_BOVIN,5,1.917e-37,0.2963,0.2963,65.4693,HAGH,"Hydroxyacylglutathione hydrolase, mitochondrial",C(CC(=O)O)[C@@H](C(=O)O)N
+m0010,GLO2_HUMAN,5,2.434e-47,0.2963,0.5926,83.2364,HAGH,"Hydroxyacylglutathione hydrolase, mitochondrial",C(CC(=O)O)[C@@H](C(=O)O)N
+m0002,GLT_PYRHO,5,1.381e-38,0.3056,0.3056,67.5202,,Glutamate transporter homolog,C1=CC(=CC=C1CC(=O)O)O
+m0010,GNPAT_HUMAN,5,1.778e-21,0.3429,0.3429,36.8028,GNPAT,Dihydroxyacetone phosphate acyltransferase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GNPAT_HUMAN,5,1.864e-35,0.2895,0.5752,61.9004,GNPAT,Dihydroxyacetone phosphate acyltransferase,C([C@@H](C(=O)O)N)C(=O)O
+m0001,GPR17_HUMAN,5,3.08e-21,0.4000,1.6051,36.3746,GPR17,Uracil nucleotide/cysteinyl leukotriene receptor,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,GRIA1_MOUSE,5,1.267e-36,0.2973,0.5946,63.9968,Gria1,Glutamate receptor 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIA1_MOUSE,5,1.144e-38,0.3143,0.6286,67.6671,Gria1,Glutamate receptor 1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIA1_MOUSE,5,3.139e-35,0.2857,0.5714,61.4943,Gria1,Glutamate receptor 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIA1_MOUSE,5,1.144e-38,0.3143,0.6286,67.6671,Gria1,Glutamate receptor 1,C([C@@H](C(=O)O)N)S
+m0005,GRIA1_MOUSE,5,3.149e-55,0.3056,0.9038,97.3981,Gria1,Glutamate receptor 1,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIA1_HUMAN,5,1.223e-26,0.3438,3.6126,46.0714,GRIA1,Glutamate receptor 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIA1_HUMAN,5,8.072e-47,0.4643,6.4097,82.3016,GRIA1,Glutamate receptor 1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIA1_HUMAN,5,2.331e-15,0.3243,2.0489,25.8170,GRIA1,Glutamate receptor 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIA1_HUMAN,5,3.343e-45,0.4138,6.1856,79.3984,GRIA1,Glutamate receptor 1,C([C@@H](C(=O)O)N)S
+m0005,GRIA1_HUMAN,5,1.562e-45,0.4483,6.2314,79.9917,GRIA1,Glutamate receptor 1,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIA1_RAT,5,4.125e-10,0.3182,1.4995,16.3982,Gria1,Glutamate receptor 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIA1_RAT,5,6.661e-16,0.3143,2.4063,26.7797,Gria1,Glutamate receptor 1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIA1_RAT,5,5.154e-06,0.2857,0.8571,9.0433,Gria1,Glutamate receptor 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIA1_RAT,5,6.661e-16,0.3143,2.4063,26.7797,Gria1,Glutamate receptor 1,C([C@@H](C(=O)O)N)S
+m0005,GRIA1_RAT,5,3.228e-19,0.3056,2.9275,32.7472,Gria1,Glutamate receptor 1,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIA2_HUMAN,5,1.91e-14,0.3438,3.6648,24.1814,GRIA2,Glutamate receptor 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIA2_HUMAN,5,8.882e-23,0.4643,5.8409,39.1394,GRIA2,Glutamate receptor 2,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIA2_HUMAN,5,1.67e-09,0.3250,2.3739,15.3080,GRIA2,Glutamate receptor 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIA2_HUMAN,5,6.408e-22,0.4138,5.6168,37.5987,GRIA2,Glutamate receptor 2,C([C@@H](C(=O)O)N)S
+m0005,GRIA2_HUMAN,5,3.773e-22,0.4483,5.6769,38.0116,GRIA2,Glutamate receptor 2,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIA3_HUMAN,5,6.361e-26,0.3056,1.1979,44.7857,GRIA3,Glutamate receptor 3,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIA3_HUMAN,5,3.837e-35,0.3636,1.6366,61.3377,GRIA3,Glutamate receptor 3,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIA3_HUMAN,5,4.692e-19,0.2927,0.8711,32.4557,GRIA3,Glutamate receptor 3,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIA3_HUMAN,5,1.861e-33,0.3235,1.5564,58.3113,GRIA3,Glutamate receptor 3,C([C@@H](C(=O)O)N)S
+m0005,GRIA3_HUMAN,5,3.52e-34,0.3529,1.5908,59.6096,GRIA3,Glutamate receptor 3,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIA2_RAT,5,1.197e-23,0.3421,2.1111,40.7018,Gria2,Glutamate receptor 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIA2_RAT,5,2.6e-40,0.3243,3.6409,70.6178,Gria2,Glutamate receptor 2,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIA2_RAT,5,4.467e-17,0.3256,1.5077,28.9033,Gria2,Glutamate receptor 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIA2_RAT,5,6.23e-40,0.3235,3.6061,69.9363,Gria2,Glutamate receptor 2,C([C@@H](C(=O)O)N)S
+m0005,GRIA2_RAT,5,1.251e-45,0.3158,4.1291,80.1645,Gria2,Glutamate receptor 2,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIA3_RAT,5,3.075e-14,0.3824,0.9691,23.8075,Gria3,Glutamate receptor 3,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIA3_RAT,5,1.149e-34,0.3636,2.4308,60.4826,Gria3,Glutamate receptor 3,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIA3_RAT,5,8.892e-09,0.2927,0.5784,14.0040,Gria3,Glutamate receptor 3,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIA3_RAT,5,4.176e-34,0.3235,2.3907,59.4763,Gria3,Glutamate receptor 3,C([C@@H](C(=O)O)N)S
+m0004,GRIA3_RAT,5,6.333e-09,0.3077,0.5889,14.2686,Gria3,Glutamate receptor 3,C[C@@H](C(=O)O)N
+m0005,GRIA3_RAT,5,6.096e-42,0.3529,2.9514,73.5439,Gria3,Glutamate receptor 3,C([C@@H](C(=O)O)N)C(=O)N
+m0006,GRIA4_RAT,5,1.537e-29,0.3143,1.7617,51.2793,Gria4,Glutamate receptor 4,C([C@@H](C(=O)O)N)C(=O)O
+m0009,GRIA4_RAT,5,1.537e-29,0.3143,1.7617,51.2793,Gria4,Glutamate receptor 4,C([C@@H](C(=O)O)N)S
+m0005,GRIA4_RAT,5,1.406e-33,0.3056,2.0085,58.5300,Gria4,Glutamate receptor 4,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIA4_HUMAN,5,1.533e-18,0.3548,2.8013,31.5326,GRIA4,Glutamate receptor 4,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIA4_HUMAN,5,6.721e-37,0.4815,5.6598,64.4913,GRIA4,Glutamate receptor 4,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIA4_HUMAN,5,6.006e-12,0.3243,1.7748,19.6959,GRIA4,Glutamate receptor 4,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIA4_HUMAN,5,8.378e-35,0.4138,5.3335,60.7288,GRIA4,Glutamate receptor 4,C([C@@H](C(=O)O)N)S
+m0005,GRIA4_HUMAN,5,7.375e-36,0.4643,5.4978,62.6235,GRIA4,Glutamate receptor 4,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIK1_HUMAN,5,6.141e-61,0.4231,13.9059,107.6492,GRIK1,"Glutamate receptor ionotropic, kainate 1",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIK1_HUMAN,5,3.028e-101,0.5652,23.1726,180.0133,GRIK1,"Glutamate receptor ionotropic, kainate 1",C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIK1_HUMAN,5,6.722e-47,0.3529,10.6783,82.4442,GRIK1,"Glutamate receptor ionotropic, kainate 1",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIK1_HUMAN,5,4.055e-73,0.4615,16.7062,129.5167,GRIK1,"Glutamate receptor ionotropic, kainate 1",C([C@@H](C(=O)O)N)S
+m0004,GRIK1_HUMAN,5,3.558e-38,0.4762,8.6727,66.7824,GRIK1,"Glutamate receptor ionotropic, kainate 1",C[C@@H](C(=O)O)N
+m0005,GRIK1_HUMAN,5,4.635e-91,0.5417,20.8310,161.7281,GRIK1,"Glutamate receptor ionotropic, kainate 1",C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIK1_RAT,5,5.5e-58,0.4516,9.3217,102.3492,Grik1,"Glutamate receptor ionotropic, kainate 1",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIK1_RAT,5,1.187e-66,0.5217,10.7280,117.9073,Grik1,"Glutamate receptor ionotropic, kainate 1",C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIK1_RAT,5,4.091e-42,0.3714,6.7463,73.8549,Grik1,"Glutamate receptor ionotropic, kainate 1",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIK1_RAT,5,7.455e-53,0.4583,8.4890,93.1355,Grik1,"Glutamate receptor ionotropic, kainate 1",C([C@@H](C(=O)O)N)S
+m0004,GRIK1_RAT,5,1.487e-23,0.4762,3.7345,40.5330,Grik1,"Glutamate receptor ionotropic, kainate 1",C[C@@H](C(=O)O)N
+m0005,GRIK1_RAT,5,8.262e-64,0.5185,10.2667,112.8039,Grik1,"Glutamate receptor ionotropic, kainate 1",C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIK2_RAT,5,5.561e-35,0.4516,3.2517,61.0483,Grik2,"Glutamate receptor ionotropic, kainate 2",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIK2_RAT,5,1.222e-37,0.5217,3.5035,65.8207,Grik2,"Glutamate receptor ionotropic, kainate 2",C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIK2_RAT,5,9.44e-32,0.3714,2.9458,55.2498,Grik2,"Glutamate receptor ionotropic, kainate 2",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIK2_RAT,5,9.116e-31,0.4583,2.8525,53.4816,Grik2,"Glutamate receptor ionotropic, kainate 2",C([C@@H](C(=O)O)N)S
+m0004,GRIK2_RAT,5,2.049e-21,0.4762,1.9668,36.6922,Grik2,"Glutamate receptor ionotropic, kainate 2",C[C@@H](C(=O)O)N
+m0005,GRIK2_RAT,5,1.307e-34,0.5185,3.2166,60.3823,Grik2,"Glutamate receptor ionotropic, kainate 2",C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIK2_HUMAN,5,1.914e-42,0.4231,5.9997,74.4472,GRIK2,"Glutamate receptor ionotropic, kainate 2",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIK2_HUMAN,5,3.58e-78,0.5652,11.1185,138.5904,GRIK2,"Glutamate receptor ionotropic, kainate 2",C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIK2_HUMAN,5,1.037e-28,0.3529,4.0320,49.7902,GRIK2,"Glutamate receptor ionotropic, kainate 2",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIK2_HUMAN,5,2.794e-50,0.4615,7.1223,88.5148,GRIK2,"Glutamate receptor ionotropic, kainate 2",C([C@@H](C(=O)O)N)S
+m0004,GRIK2_HUMAN,5,6.806e-28,0.4762,3.9149,48.3235,GRIK2,"Glutamate receptor ionotropic, kainate 2",C[C@@H](C(=O)O)N
+m0005,GRIK2_HUMAN,5,2.647e-66,0.5417,9.4180,117.2820,GRIK2,"Glutamate receptor ionotropic, kainate 2",C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIK3_HUMAN,5,2.198e-14,0.3438,0.6771,24.0720,GRIK3,"Glutamate receptor ionotropic, kainate 3",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIK3_HUMAN,5,1.716e-25,0.4643,1.2284,44.0117,GRIK3,"Glutamate receptor ionotropic, kainate 3",C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIK3_HUMAN,5,5.83e-13,0.3243,0.6064,21.5144,GRIK3,"Glutamate receptor ionotropic, kainate 3",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIK3_HUMAN,5,6.518e-22,0.4138,1.0507,37.5853,GRIK3,"Glutamate receptor ionotropic, kainate 3",C([C@@H](C(=O)O)N)S
+m0004,GRIK3_HUMAN,5,3.315e-08,0.3704,0.3704,12.9779,GRIK3,"Glutamate receptor ionotropic, kainate 3",C[C@@H](C(=O)O)N
+m0005,GRIK3_HUMAN,5,1.05e-24,0.4483,1.1893,42.5993,GRIK3,"Glutamate receptor ionotropic, kainate 3",C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRIK3_RAT,5,5.622e-86,0.4516,8.0816,152.6010,Grik3,"Glutamate receptor ionotropic, kainate 3",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIK3_RAT,5,1.067e-94,0.5217,8.9077,168.2596,Grik3,"Glutamate receptor ionotropic, kainate 3",C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIK3_RAT,5,6.658e-62,0.3714,5.8016,109.3816,Grik3,"Glutamate receptor ionotropic, kainate 3",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIK3_RAT,5,4.453e-77,0.4583,7.2388,136.6250,Grik3,"Glutamate receptor ionotropic, kainate 3",C([C@@H](C(=O)O)N)S
+m0004,GRIK3_RAT,5,4.803e-34,0.4762,3.1630,59.3672,Grik3,"Glutamate receptor ionotropic, kainate 3",C[C@@H](C(=O)O)N
+m0005,GRIK3_RAT,5,5.879e-87,0.5185,8.1745,154.3615,Grik3,"Glutamate receptor ionotropic, kainate 3",C([C@@H](C(=O)O)N)C(=O)N
+m0006,GRIK5_RAT,5,4.438e-09,0.2826,0.2826,14.5459,Grik5,"Glutamate receptor ionotropic, kainate 5",C([C@@H](C(=O)O)N)C(=O)O
+m0010,GRIK5_HUMAN,5,1.209e-27,0.3438,1.5459,47.8758,GRIK5,"Glutamate receptor ionotropic, kainate 5",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRIK5_HUMAN,5,5.956e-78,0.4643,4.4350,138.1935,GRIK5,"Glutamate receptor ionotropic, kainate 5",C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRIK5_HUMAN,5,3.331e-16,0.3243,0.8921,27.4362,GRIK5,"Glutamate receptor ionotropic, kainate 5",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRIK5_HUMAN,5,1.911e-75,0.4138,4.2910,133.6939,GRIK5,"Glutamate receptor ionotropic, kainate 5",C([C@@H](C(=O)O)N)S
+m0004,GRIK5_HUMAN,5,3.564e-07,0.3704,0.3704,11.1263,GRIK5,"Glutamate receptor ionotropic, kainate 5",C[C@@H](C(=O)O)N
+m0005,GRIK5_HUMAN,5,8.114e-76,0.4483,4.3124,134.3618,GRIK5,"Glutamate receptor ionotropic, kainate 5",C([C@@H](C(=O)O)N)C(=O)N
+m0004,GRM3_RAT,5,2.369e-06,0.3750,1.3786,9.6495,Grm3,Metabotropic glutamate receptor 3,C[C@@H](C(=O)O)N
+m0010,GRM2_RAT,5,3.71e-06,0.6400,2.3257,9.2996,Grm2,Metabotropic glutamate receptor 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRM2_RAT,5,7.079e-06,0.5000,2.2148,8.7959,Grm2,Metabotropic glutamate receptor 2,C([C@@H](C(=O)O)N)C(=O)O
+m0004,GRM2_RAT,5,5.537e-06,0.3750,2.2569,8.9874,Grm2,Metabotropic glutamate receptor 2,C[C@@H](C(=O)O)N
+m0010,GRM4_RAT,5,1.536e-56,0.5714,10.2080,99.7531,Grm4,Metabotropic glutamate receptor 4,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRM4_RAT,5,2.074e-30,0.4800,5.4471,52.8408,Grm4,Metabotropic glutamate receptor 4,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRM4_RAT,5,3.06e-22,0.4062,3.9588,38.1748,Grm4,Metabotropic glutamate receptor 4,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRM4_RAT,5,1.127e-26,0.4231,4.7666,46.1349,Grm4,Metabotropic glutamate receptor 4,C([C@@H](C(=O)O)N)S
+m0004,GRM4_RAT,5,1.497e-12,0.3200,2.1934,20.7794,Grm4,Metabotropic glutamate receptor 4,C[C@@H](C(=O)O)N
+m0005,GRM4_RAT,5,5.006e-26,0.4074,4.6486,44.9724,Grm4,Metabotropic glutamate receptor 4,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRM4_HUMAN,5,6.649e-12,0.5714,6.1089,19.6166,GRM4,Metabotropic glutamate receptor 4,C(CC(=O)O)[C@@H](C(=O)O)N
+m0010,GRM6_HUMAN,5,1.047e-22,0.5714,2.4570,39.0111,GRM6,Metabotropic glutamate receptor 6,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRM6_HUMAN,5,3.209e-13,0.5217,1.4017,21.9802,GRM6,Metabotropic glutamate receptor 6,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRM6_HUMAN,5,1.609e-10,0.4062,1.1014,17.1323,GRM6,Metabotropic glutamate receptor 6,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRM6_HUMAN,5,9.861e-12,0.4583,1.2362,19.3094,GRM6,Metabotropic glutamate receptor 6,C([C@@H](C(=O)O)N)S
+m0004,GRM6_HUMAN,5,1.183e-10,0.4762,1.1162,17.3718,GRM6,Metabotropic glutamate receptor 6,C[C@@H](C(=O)O)N
+m0005,GRM6_HUMAN,5,7.243e-12,0.5000,1.2512,19.5500,GRM6,Metabotropic glutamate receptor 6,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRM6_RAT,5,2.68e-69,0.5600,3.8079,122.6581,Grm6,Metabotropic glutamate receptor 6,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRM6_RAT,5,1.513e-43,0.4800,2.3778,76.4256,Grm6,Metabotropic glutamate receptor 6,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRM6_RAT,5,5.042e-33,0.4062,1.7935,57.5341,Grm6,Metabotropic glutamate receptor 6,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRM6_RAT,5,1.698e-41,0.4231,2.2640,72.7452,Grm6,Metabotropic glutamate receptor 6,C([C@@H](C(=O)O)N)S
+m0004,GRM6_RAT,5,4.52e-36,0.3750,1.9627,63.0053,Grm6,Metabotropic glutamate receptor 6,C[C@@H](C(=O)O)N
+m0005,GRM6_RAT,5,3.953e-40,0.4074,2.1881,70.2910,Grm6,Metabotropic glutamate receptor 6,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRM8_HUMAN,5,9.19e-39,0.5714,4.1412,67.8379,GRM8,Metabotropic glutamate receptor 8,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRM8_HUMAN,5,1.11e-16,0.4800,1.7497,28.2955,GRM8,Metabotropic glutamate receptor 8,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRM8_HUMAN,5,4.79e-13,0.4062,1.3488,21.6677,GRM8,Metabotropic glutamate receptor 8,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRM8_HUMAN,5,8.882e-16,0.4231,1.6476,26.6076,GRM8,Metabotropic glutamate receptor 8,C([C@@H](C(=O)O)N)S
+m0004,GRM8_HUMAN,5,3.775e-09,0.3200,0.9257,14.6720,GRM8,Metabotropic glutamate receptor 8,C[C@@H](C(=O)O)N
+m0005,GRM8_HUMAN,5,8.48e-13,0.4074,1.3219,21.2223,GRM8,Metabotropic glutamate receptor 8,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRM8_MOUSE,5,5.596e-70,0.5600,0.5600,123.8795,Grm8,Metabotropic glutamate receptor 8,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRM8_MOUSE,5,4.15e-60,0.4800,0.4800,106.1595,Grm8,Metabotropic glutamate receptor 8,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRM8_MOUSE,5,5.212e-51,0.4062,0.4062,89.8239,Grm8,Metabotropic glutamate receptor 8,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRM8_MOUSE,5,4.375e-53,0.4231,0.4231,93.5511,Grm8,Metabotropic glutamate receptor 8,C([C@@H](C(=O)O)N)S
+m0004,GRM8_MOUSE,5,2.281e-40,0.3200,0.3200,70.7196,Grm8,Metabotropic glutamate receptor 8,C[C@@H](C(=O)O)N
+m0005,GRM8_MOUSE,5,3.751e-51,0.4074,0.4074,90.0803,Grm8,Metabotropic glutamate receptor 8,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GRM8_RAT,5,1.339e-67,0.5600,4.4448,119.6085,Grm8,Metabotropic glutamate receptor 8,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GRM8_RAT,5,4.67e-55,0.4800,3.6115,97.0907,Grm8,Metabotropic glutamate receptor 8,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GRM8_RAT,5,1.011e-44,0.4062,2.9247,78.5354,Grm8,Metabotropic glutamate receptor 8,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GRM8_RAT,5,8.838e-51,0.4231,3.3273,89.4122,Grm8,Metabotropic glutamate receptor 8,C([C@@H](C(=O)O)N)S
+m0004,GRM8_RAT,5,1.985e-30,0.3750,1.9750,52.8747,Grm8,Metabotropic glutamate receptor 8,C[C@@H](C(=O)O)N
+m0005,GRM8_RAT,5,1.076e-49,0.4074,3.2551,87.4636,Grm8,Metabotropic glutamate receptor 8,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GSH1_HUMAN,5,1.458e-70,0.3939,1.1586,124.9285,GCLC,Glutamate--cysteine ligase catalytic subunit,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GSH1_HUMAN,5,7.748e-60,0.3333,0.9804,105.6727,GCLC,Glutamate--cysteine ligase catalytic subunit,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GSH1_HUMAN,5,5.155e-60,0.3333,0.9833,105.9904,GCLC,Glutamate--cysteine ligase catalytic subunit,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GSH1_HUMAN,5,7.748e-60,0.3333,0.9804,105.6727,GCLC,Glutamate--cysteine ligase catalytic subunit,C([C@@H](C(=O)O)N)S
+m0004,GSH1_HUMAN,5,3.674e-52,0.2903,0.8528,91.8919,GCLC,Glutamate--cysteine ligase catalytic subunit,C[C@@H](C(=O)O)N
+m0005,GSH1_HUMAN,5,3.904e-58,0.3235,0.9521,102.6165,GCLC,Glutamate--cysteine ligase catalytic subunit,C([C@@H](C(=O)O)N)C(=O)N
+m0010,GSP_CRIFA,5,1.623e-67,0.4000,1.7439,119.4585,GSP,Glutathionylspermidine synthase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GSP_CRIFA,5,3.25e-23,0.3000,0.5857,39.9234,GSP,Glutathionylspermidine synthase,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GSP_CRIFA,5,1.359e-59,0.3191,1.5368,105.2345,GSP,Glutathionylspermidine synthase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0010,GSTA2_HUMAN,5,4.192e-52,0.3333,0.6533,91.7891,GSTA2,Glutathione S-transferase A2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GSTA2_HUMAN,5,9.719e-24,0.2917,0.2917,40.8645,GSTA2,Glutathione S-transferase A2,C([C@@H](C(=O)O)N)C(=O)O
+m0010,GSTA1_HUMAN,5,7.167e-09,0.3333,0.3333,14.1722,GSTA1,Glutathione S-transferase A1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0008,GSTA1_HUMAN,5,5.7e-08,0.2963,0.2963,12.5554,GSTA1,Glutathione S-transferase A1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0010,GSTM1_HUMAN,5,2.318e-41,0.3400,0.6733,72.5026,GSTM1,Glutathione S-transferase Mu 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0008,GSTM1_HUMAN,5,1.451e-35,0.2963,0.5770,62.0959,GSTM1,Glutathione S-transferase Mu 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0010,GSTK1_HUMAN,5,4.444e-60,0.4324,0.7550,106.1061,GSTK1,Glutathione S-transferase kappa 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,GSTK1_HUMAN,5,1.076e-27,0.3421,0.3421,47.9665,GSTK1,Glutathione S-transferase kappa 1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,GSTK1_HUMAN,5,1.335e-27,0.3409,0.3409,47.7981,GSTK1,Glutathione S-transferase kappa 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,GSTK1_HUMAN,5,4.552e-54,0.3784,0.6784,95.3155,GSTK1,Glutathione S-transferase kappa 1,C([C@@H](C(=O)O)N)S
+m0010,GSTP1_HUMAN,5,2.22e-16,0.3469,2.2739,27.5286,GSTP1,Glutathione S-transferase P,C(CC(=O)O)[C@@H](C(=O)O)N
+m0002,H9B8T9_CAPHI,5,2.514e-12,0.3929,0.7722,20.3749,CTSB,Cathepsin B,C1=CC(=CC=C1CC(=O)O)O
+m0002,H9TVJ1_CHISP,5,1.421e-57,0.4231,0.7231,101.6093,,TyR1,C1=CC(=CC=C1CC(=O)O)O
+m0002,HELD_ECOLI,5,3.072e-32,0.3256,0.6299,56.1251,helD,DNA helicase IV,C1=CC(=CC=C1CC(=O)O)O
+m0003,HGFA_HUMAN,5,2.185e-07,0.3404,0.6481,11.5079,HGFAC,Hepatocyte growth factor activator,C(CCN=C(N)N)CN
+m0001,HGPRT_MYCTU,5,5.887e-49,0.3896,0.3896,86.1383,hpt,Hypoxanthine-guanine phosphoribosyltransferase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,HISX_BRAOC,5,1.227e-07,0.2826,0.2826,11.9579,HDH,"Histidinol dehydrogenase, chloroplastic",C1=CC(=CC=C1CC(=O)O)O
+m0006,HISX_ECOLI,5,4.879e-18,0.2857,0.2857,30.6299,hisD,Histidinol dehydrogenase,C([C@@H](C(=O)O)N)C(=O)O
+m0010,HMDH_MESAU,5,7.088e-18,0.2830,0.2830,30.3388,HMGCR,3-hydroxy-3-methylglutaryl-coenzyme A reductase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0002,HPPD_PIG,5,1.664e-06,0.4643,0.4643,9.9250,HPD,4-hydroxyphenylpyruvate dioxygenase,C1=CC(=CC=C1CC(=O)O)O
+m0001,HPPK_ECOLI,5,1.488e-23,0.3614,1.8944,40.5325,folK,2-amino-4-hydroxy-6-hydroxymethyldihydropteridine pyrophosphokinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,HPRT_HUMAN,5,3.46e-99,0.5574,14.9177,176.3186,HPRT1,Hypoxanthine-guanine phosphoribosyltransferase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,HS71A_HUMAN,5,4.4e-06,0.2973,0.2973,9.1667,HSPA1A,Heat shock 70 kDa protein 1A,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,HSP7C_BOVIN,5,4.536e-38,0.3014,0.3014,66.5930,HSPA8,Heat shock cognate 71 kDa protein,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,HSP7C_HUMAN,5,3.531e-35,0.3281,2.4093,61.4023,HSPA8,Heat shock cognate 71 kDa protein,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,IF4E_HUMAN,5,6.501e-25,0.4648,4.5703,42.9733,EIF4E,Eukaryotic translation initiation factor 4E,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,IF4E_MOUSE,5,8.512e-104,0.3857,4.9034,184.5934,Eif4e,Eukaryotic translation initiation factor 4E,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,IF4E_RABIT,5,2.632e-111,0.4595,4.5462,198.0757,EIF4E,Eukaryotic translation initiation factor 4E,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,IL8_HUMAN,5,1.577e-26,0.3143,1.8486,45.8728,CXCL8,Interleukin-8,C1=CC(=CC=C1CC(=O)O)O
+m0002,IMPA1_BOVIN,5,3.304e-09,0.3077,0.3077,14.7760,IMPA1,Inositol monophosphatase 1,C1=CC(=CC=C1CC(=O)O)O
+m0001,INMT_HUMAN,5,5.365e-07,0.2973,0.2973,10.8074,INMT,Indolethylamine N-methyltransferase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,ITPR1_RAT,5,3.454e-31,0.3467,1.9175,54.2383,Itpr1,"Inositol 1,4,5-trisphosphate receptor type 1",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,IUNH_CRIFA,5,1.068e-41,0.4915,0.8197,73.1068,IUNH,Inosine-uridine preferring nucleoside hydrolase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,KAD2_RAT,5,2.139e-18,0.2917,0.2917,31.2729,Ak2,"Adenylate kinase 2, mitochondrial",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,KAD3_RAT,5,9.719e-24,0.2917,0.2917,40.8645,Ak3,"GTP:AMP phosphotransferase AK3, mitochondrial",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,KDM2A_HUMAN,5,9.283e-10,0.3600,0.9919,15.7658,KDM2A,Lysine-specific demethylase 2A,C(CC(=O)O)[C@@H](C(=O)O)N
+m0010,KDM4E_HUMAN,5,4.187e-08,0.3600,0.7062,12.7959,KDM4E,Lysine-specific demethylase 4E,C(CC(=O)O)[C@@H](C(=O)O)N
+m0010,KDM5C_HUMAN,5,1.305e-06,0.3600,0.9919,10.1142,KDM5C,Lysine-specific demethylase 5C,C(CC(=O)O)[C@@H](C(=O)O)N
+m0001,KITH_HHV1,5,1.575e-45,0.4262,3.7830,79.9851,TK,Thymidine kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,KITH_HHV1S,5,8.458e-86,0.4909,13.4622,152.2825,TK,Thymidine kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,KITH_HUMAN,5,3.822e-69,0.4909,4.8979,122.3815,TK1,"Thymidine kinase, cytosolic",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,KIF11_HUMAN,5,1.145e-11,0.4062,7.5722,19.1927,KIF11,Kinesin-like protein KIF11,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,KIF11_HUMAN,5,1.341e-13,0.3438,8.8327,22.6604,KIF11,Kinesin-like protein KIF11,C([C@@H](C(=O)O)N)C(=O)O
+m0009,KIF11_HUMAN,5,4.774e-14,0.3438,9.1254,23.4657,KIF11,Kinesin-like protein KIF11,C([C@@H](C(=O)O)N)S
+m0005,KIF11_HUMAN,5,3.001e-13,0.3333,8.6044,22.0323,KIF11,Kinesin-like protein KIF11,C([C@@H](C(=O)O)N)C(=O)N
+m0001,KITH_RAT,5,8.313e-51,0.4235,0.8303,89.4599,Tk1,"Thymidine kinase, cytosolic",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,KITH_VZVD,5,4.607e-75,0.3714,2.3434,133.0078,TK,Thymidine kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,KITH_VZVO,5,2.026e-28,0.3514,0.3514,49.2684,TK,Thymidine kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,KITM_HUMAN,5,1.044e-60,0.3623,4.5904,107.2351,TK2,"Thymidine kinase 2, mitochondrial",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0008,KLK4_HUMAN,5,5.162e-10,0.2909,0.2909,16.2234,KLK4,Kallikrein-4,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0008,KLK8_HUMAN,5,7.306e-11,0.2909,0.2909,17.7479,KLK8,Kallikrein-8,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0006,KMO_MOUSE,5,6.761e-14,0.3421,0.3421,23.1946,Kmo,Kynurenine 3-monooxygenase,C([C@@H](C(=O)O)N)C(=O)O
+m0005,KMO_MOUSE,5,1.463e-13,0.3333,0.3333,22.5922,Kmo,Kynurenine 3-monooxygenase,C([C@@H](C(=O)O)N)C(=O)N
+m0006,KMO_RAT,5,1.571e-06,0.3939,0.7360,9.9698,Kmo,Kynurenine 3-monooxygenase,C([C@@H](C(=O)O)N)C(=O)O
+m0005,KMO_RAT,5,2.292e-06,0.3824,0.7157,9.6752,Kmo,Kynurenine 3-monooxygenase,C([C@@H](C(=O)O)N)C(=O)N
+m0001,KMT2A_HUMAN,5,2.006e-08,0.2973,0.2973,13.3698,KMT2A,Histone-lysine N-methyltransferase 2A,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,KMT5C_HUMAN,5,1.443e-37,0.2973,0.2973,65.6910,KMT5C,Histone-lysine N-methyltransferase KMT5C,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,KS6B2_HUMAN,5,2.713e-08,0.3590,0.3590,13.1344,RPS6KB2,Ribosomal protein S6 kinase beta-2,C1=CC(=CC=C1CC(=O)O)O
+m0001,KTHY_HUMAN,5,4.922e-65,0.3855,1.4902,115.0030,DTYMK,Thymidylate kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,KTHY_MYCTU,5,4.555e-70,0.4821,9.8765,124.0400,tmk,Thymidylate kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,KYNU_HUMAN,5,1.851e-52,0.3143,1.1984,92.4265,KYNU,Kynureninase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,KYNU_HUMAN,5,9.45e-61,0.4194,1.3908,107.3131,KYNU,Kynureninase,C([C@@H](C(=O)O)N)C(=O)O
+m0009,KYNU_HUMAN,5,1.948e-55,0.3333,1.2675,97.7727,KYNU,Kynureninase,C([C@@H](C(=O)O)N)S
+m0005,KYNU_HUMAN,5,5.045e-59,0.4062,1.3507,104.2118,KYNU,Kynureninase,C([C@@H](C(=O)O)N)C(=O)N
+m0010,KYNU_RAT,5,1.332e-36,0.2895,0.2895,63.9581,Kynu,Kynureninase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,KYNU_RAT,5,3.453e-43,0.3429,0.3429,75.7825,Kynu,Kynureninase,C([C@@H](C(=O)O)N)C(=O)O
+m0009,KYNU_RAT,5,1.381e-38,0.3056,0.3056,67.5202,Kynu,Kynureninase,C([C@@H](C(=O)O)N)S
+m0005,KYNU_RAT,5,5.166e-42,0.3333,0.3333,73.6729,Kynu,Kynureninase,C([C@@H](C(=O)O)N)C(=O)N
+m0010,LAT1_HUMAN,5,1.285e-37,0.3056,0.6111,65.7810,SLC7A5,Large neutral amino acids transporter small subunit 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,LAT1_HUMAN,5,9.438e-57,0.3235,0.9291,100.1329,SLC7A5,Large neutral amino acids transporter small subunit 1,C([C@@H](C(=O)O)N)C(=O)O
+m0008,LAT1_HUMAN,5,4.551e-36,0.2927,0.5854,62.9999,SLC7A5,Large neutral amino acids transporter small subunit 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0002,LAT1_HUMAN,5,1.858e-18,0.2927,0.2927,31.3827,SLC7A5,Large neutral amino acids transporter small subunit 1,C1=CC(=CC=C1CC(=O)O)O
+m0009,LAT1_HUMAN,5,9.438e-57,0.3235,0.9291,100.1329,SLC7A5,Large neutral amino acids transporter small subunit 1,C([C@@H](C(=O)O)N)S
+m0005,LAT1_HUMAN,5,1.144e-38,0.3143,0.6286,67.6671,SLC7A5,Large neutral amino acids transporter small subunit 1,C([C@@H](C(=O)O)N)C(=O)N
+m0006,LCAP_RAT,5,6.741e-19,0.3000,0.3000,32.1732,Lnpep,Leucyl-cystinyl aminopeptidase,C([C@@H](C(=O)O)N)C(=O)O
+m0002,LCAP_HUMAN,5,5.259e-10,0.3036,2.0890,16.2088,LNPEP,Leucyl-cystinyl aminopeptidase,C1=CC(=CC=C1CC(=O)O)O
+m0004,LEU3_THET8,5,1.947e-38,0.3043,0.3043,67.2527,leuB,3-isopropylmalate dehydrogenase,C[C@@H](C(=O)O)N
+m0010,LGUL_HUMAN,5,2.667e-38,0.3721,3.7806,67.0071,GLO1,Lactoylglutathione lyase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0008,LGUL_HUMAN,5,2.009e-06,0.3000,0.5807,9.7778,GLO1,Lactoylglutathione lyase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0010,LGUL_YEAST,5,8.017e-54,0.3137,1.5331,94.8742,GLO1,Lactoylglutathione lyase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0010,LKHA4_HUMAN,5,1.62e-11,0.4286,5.1126,18.9222,LTA4H,Leukotriene A-4 hydrolase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0002,LOX15_PIG,5,3.726e-09,0.4000,0.4000,14.6823,ALOX15,Arachidonate 15-lipoxygenase,C1=CC(=CC=C1CC(=O)O)O
+m0002,LOX15_RAT,5,8.893e-27,0.3611,1.9099,46.3197,Alox15,Arachidonate 15-lipoxygenase,C1=CC(=CC=C1CC(=O)O)O
+m0002,LOX15_RABIT,5,1.427e-08,0.3667,1.6412,13.6350,ALOX15,Arachidonate 15-lipoxygenase,C1=CC(=CC=C1CC(=O)O)O
+m0002,LOX5_RAT,5,2.626e-06,0.3929,5.2803,9.5691,Alox5,Arachidonate 5-lipoxygenase,C1=CC(=CC=C1CC(=O)O)O
+m0002,LPAR1_HUMAN,5,7.203e-06,0.3000,1.4486,8.7824,LPAR1,Lysophosphatidic acid receptor 1,C1=CC(=CC=C1CC(=O)O)O
+m0002,LPXC_AQUAE,5,4.441e-16,0.4412,0.4412,27.0778,lpxC,UDP-3-O-acyl-N-acetylglucosamine deacetylase,C1=CC(=CC=C1CC(=O)O)O
+m0007,LUXP_VIBHA,5,9.126e-42,0.4000,1.9518,73.2293,luxP,Autoinducer 2-binding periplasmic protein LuxP,CCCC(=O)[O-]
+m0010,LUXS_BACSU,5,7.962e-82,0.4000,2.3428,145.1484,luxS,S-ribosylhomocysteine lyase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,LUXS_BACSU,5,6.22e-32,0.3056,0.9002,55.5750,luxS,S-ribosylhomocysteine lyase,C([C@@H](C(=O)O)N)C(=O)O
+m0008,LUXS_BACSU,5,4.35e-45,0.3333,1.2805,79.1930,luxS,S-ribosylhomocysteine lyase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,LUXS_BACSU,5,6.22e-32,0.3056,0.9002,55.5750,luxS,S-ribosylhomocysteine lyase,C([C@@H](C(=O)O)N)S
+m0005,LUXS_BACSU,5,4.174e-31,0.2973,0.8762,54.0908,luxS,S-ribosylhomocysteine lyase,C([C@@H](C(=O)O)N)C(=O)N
+m0010,LUXS_ECOLI,5,3.092e-44,0.3514,0.3514,77.6639,luxS,S-ribosylhomocysteine lyase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,LUXS_ECOLI,5,1.443e-37,0.2973,0.2973,65.6910,luxS,S-ribosylhomocysteine lyase,C([C@@H](C(=O)O)N)C(=O)O
+m0008,LUXS_ECOLI,5,5.166e-42,0.3333,0.3333,73.6729,luxS,S-ribosylhomocysteine lyase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,LUXS_ECOLI,5,1.443e-37,0.2973,0.2973,65.6910,luxS,S-ribosylhomocysteine lyase,C([C@@H](C(=O)O)N)S
+m0005,LUXS_ECOLI,5,1.332e-36,0.2895,0.2895,63.9581,luxS,S-ribosylhomocysteine lyase,C([C@@H](C(=O)O)N)C(=O)N
+m0010,LUXS_VIBCB,5,3.092e-44,0.3514,0.3514,77.6639,luxS,S-ribosylhomocysteine lyase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,LUXS_VIBCB,5,1.443e-37,0.2973,0.2973,65.6910,luxS,S-ribosylhomocysteine lyase,C([C@@H](C(=O)O)N)C(=O)O
+m0008,LUXS_VIBCB,5,5.166e-42,0.3333,0.3333,73.6729,luxS,S-ribosylhomocysteine lyase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,LUXS_VIBCB,5,1.443e-37,0.2973,0.2973,65.6910,luxS,S-ribosylhomocysteine lyase,C([C@@H](C(=O)O)N)S
+m0005,LUXS_VIBCB,5,1.332e-36,0.2895,0.2895,63.9581,luxS,S-ribosylhomocysteine lyase,C([C@@H](C(=O)O)N)C(=O)N
+m0010,LY96_HUMAN,5,3.175e-18,0.3488,0.3488,30.9650,LY96,Lymphocyte antigen 96,C(CC(=O)O)[C@@H](C(=O)O)N
+m0002,LYAM1_HUMAN,5,9.794e-19,0.3261,1.2604,31.8819,SELL,L-selectin,C1=CC(=CC=C1CC(=O)O)O
+m0002,LYAM2_HUMAN,5,4.194e-07,0.3590,1.2966,10.9993,SELE,E-selectin,C1=CC(=CC=C1CC(=O)O)O
+m0002,LYAM3_HUMAN,5,3.844e-13,0.3590,1.6193,21.8393,SELP,P-selectin,C1=CC(=CC=C1CC(=O)O)O
+m0001,MACD1_HUMAN,5,4.449e-37,0.2933,0.2933,64.8130,MACROD1,ADP-ribose glycohydrolase MACROD1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,MACD2_HUMAN,5,4.449e-37,0.2933,0.2933,64.8130,MACROD2,ADP-ribose glycohydrolase MACROD2,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,MAP1_ECOLI,5,1.382e-06,0.3333,1.5790,10.0698,map,Methionine aminopeptidase,C1=CC(=CC=C1CC(=O)O)O
+m0001,MBTA_MYCTU,5,1.11e-16,0.3896,2.4475,28.2961,mbtA,Salicyl-AMP ligase / salicyl-S-ArCP synthetase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0008,MCA2_TRYBB,5,6.171e-10,0.2885,0.2885,16.0842,MCA2,Metacaspase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0002,MDM4_HUMAN,5,2.853e-07,0.3500,1.3225,11.2997,MDM4,Protein Mdm4,C1=CC(=CC=C1CC(=O)O)O
+m0002,MEP1B_HUMAN,5,2.212e-06,0.4167,0.4167,9.7029,MEP1B,Meprin A subunit beta,C1=CC(=CC=C1CC(=O)O)O
+m0001,METK2_RAT,5,1.097e-35,0.2821,0.2821,62.3140,Mat2a,S-adenosylmethionine synthase isoform type-2,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,MGLL_RAT,5,5.751e-14,0.3243,1.2024,23.3197,Mgll,Monoglyceride lipase,C1=CC(=CC=C1CC(=O)O)O
+m0002,MET_HUMAN,5,7.531e-06,0.3488,9.3839,8.7476,MET,Hepatocyte growth factor receptor,C1=CC(=CC=C1CC(=O)O)O
+m0002,MGRA_STAAU,5,1.148e-44,0.3548,0.3548,78.4364,mgrA,HTH-type transcriptional regulator MgrA,C1=CC(=CC=C1CC(=O)O)O
+m0002,MIF_HUMAN,5,9.891e-08,0.3871,1.6325,12.1257,MIF,Macrophage migration inhibitory factor,C1=CC(=CC=C1CC(=O)O)O
+m0002,MMP12_HUMAN,5,4.894e-07,0.3488,3.0525,10.8791,MMP12,Macrophage metalloelastase,C1=CC(=CC=C1CC(=O)O)O
+m0008,MRGX1_MOUSE,5,1.887e-15,0.3830,0.3830,26.0014,Mrgprx1,Mas-related G-protein coupled receptor member X1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0008,MRGX1_RAT,5,2.15e-07,0.3830,0.3830,11.5204,Mrgprx1,Mas-related G-protein coupled receptor member X1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0010,MRP2_RAT,5,1.88e-06,0.2833,0.2833,9.8298,Abcc2,Canalicular multispecific organic anion transporter 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0001,MSHC_MYCTU,5,2.873e-37,0.2949,0.2949,65.1537,mshC,L-cysteine:1D-myo-inositol 2-amino-2-deoxy-alpha-D-glucopyranoside ligase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,MTAP_MOUSE,5,4.922e-56,0.3088,1.4437,98.8452,Mtap,S-methyl-5'-thioadenosine phosphorylase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,MTCA1_MYCTU,5,6.275e-11,0.6250,1.6742,17.8665,mtcA1,Beta-carbonic anhydrase 1,C1=CC(=CC=C1CC(=O)O)O
+m0002,MTSI_SPISQ,5,1.515e-11,0.3667,0.3667,18.9744,sssIM,CPG DNA methylase,C1=CC(=CC=C1CC(=O)O)O
+m0006,MURI_LACFE,5,7.545e-40,0.3158,0.3158,69.7870,murI,Glutamate racemase,C([C@@H](C(=O)O)N)C(=O)O
+m0009,MURI_LACFE,5,1.097e-35,0.2821,0.2821,62.3140,murI,Glutamate racemase,C([C@@H](C(=O)O)N)S
+m0005,MURI_LACFE,5,7.528e-39,0.3077,0.3077,67.9935,murI,Glutamate racemase,C([C@@H](C(=O)O)N)C(=O)N
+m0002,MYG_HUMAN,5,1.224e-18,0.3571,0.3571,31.7084,MB,Myoglobin,C1=CC(=CC=C1CC(=O)O)O
+m0001,NADK1_LISMF,5,1.713e-41,0.3291,0.3291,72.7383,nadK1,NAD kinase 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,NADK_HUMAN,5,3.516e-24,0.2973,0.2973,41.6573,NADK,NAD kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,NADK_STAAC,5,1.713e-41,0.3291,0.3291,72.7383,nadK,NAD kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,NALD2_HUMAN,5,5.899e-61,0.4444,3.3446,107.6805,NAALAD2,N-acetylated-alpha-linked acidic dipeptidase 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,NALD2_HUMAN,5,1.618e-06,0.3214,0.3214,9.9468,NAALAD2,N-acetylated-alpha-linked acidic dipeptidase 2,C([C@@H](C(=O)O)N)C(=O)O
+m0002,NALD2_HUMAN,5,1.511e-13,0.3947,0.7118,22.5670,NAALAD2,N-acetylated-alpha-linked acidic dipeptidase 2,C1=CC(=CC=C1CC(=O)O)O
+m0004,NALD2_HUMAN,5,2.968e-12,0.3200,0.6400,20.2455,NAALAD2,N-acetylated-alpha-linked acidic dipeptidase 2,C[C@@H](C(=O)O)N
+m0002,NANA_STREE,5,3.075e-12,0.3611,0.3611,20.2179,nanA,Sialidase A,C1=CC(=CC=C1CC(=O)O)O
+m0006,NEP_MOUSE,5,5.473e-14,0.3056,0.3056,23.3584,Mme,Neprilysin,C([C@@H](C(=O)O)N)C(=O)O
+m0004,NEP_MOUSE,5,7.039e-14,0.3030,0.3030,23.1631,Mme,Neprilysin,C[C@@H](C(=O)O)N
+m0002,NEP_PIG,5,4.111e-11,0.3256,0.3256,18.1963,MME,Neprilysin,C1=CC(=CC=C1CC(=O)O)O
+m0002,NEP_RABIT,5,1.064e-13,0.3333,4.1679,22.8409,MME,Neprilysin,C1=CC(=CC=C1CC(=O)O)O
+m0010,NMDE1_RAT,5,1.239e-12,0.4643,1.7286,20.9264,Grin2a,"Glutamate receptor ionotropic, NMDA 2A",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,NMDE1_RAT,5,4.217e-12,0.5000,1.6524,19.9717,Grin2a,"Glutamate receptor ionotropic, NMDA 2A",C([C@@H](C(=O)O)N)C(=O)O
+m0008,NMDE1_RAT,5,2.465e-14,0.4688,1.9724,23.9814,Grin2a,"Glutamate receptor ionotropic, NMDA 2A",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,NMDE1_RAT,5,2.36e-11,0.3929,1.5452,18.6291,Grin2a,"Glutamate receptor ionotropic, NMDA 2A",C([C@@H](C(=O)O)N)S
+m0004,NMDE1_RAT,5,7.405e-14,0.3846,1.9038,23.1228,Grin2a,"Glutamate receptor ionotropic, NMDA 2A",C[C@@H](C(=O)O)N
+m0005,NMDE1_RAT,5,1.062e-11,0.4815,1.5949,19.2519,Grin2a,"Glutamate receptor ionotropic, NMDA 2A",C([C@@H](C(=O)O)N)C(=O)N
+m0002,NMDE2_RAT,5,7.295e-09,0.3529,4.5051,14.1584,Grin2b,"Glutamate receptor ionotropic, NMDA 2B",C1=CC(=CC=C1CC(=O)O)O
+m0004,NMDE4_RAT,5,4.46e-07,0.3846,1.5969,10.9515,Grin2d,"Glutamate receptor ionotropic, NMDA 2D",C[C@@H](C(=O)O)N
+m0010,NOD1_HUMAN,5,4.219e-15,0.3947,4.1942,25.3631,NOD1,Nucleotide-binding oligomerization domain-containing protein 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0008,NOD1_HUMAN,5,8.433e-18,0.4222,4.9626,30.2032,NOD1,Nucleotide-binding oligomerization domain-containing protein 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0010,NOS1_MOUSE,5,5.529e-14,0.3939,0.7360,23.3504,Nos1,"Nitric oxide synthase, brain",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,NOS1_MOUSE,5,6.054e-12,0.3333,0.6228,19.6897,Nos1,"Nitric oxide synthase, brain",C([C@@H](C(=O)O)N)C(=O)O
+m0008,NOS1_MOUSE,5,1.732e-22,0.6250,1.2083,38.6185,Nos1,"Nitric oxide synthase, brain",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,NOS1_MOUSE,5,6.054e-12,0.3333,0.6228,19.6897,Nos1,"Nitric oxide synthase, brain",C([C@@H](C(=O)O)N)S
+m0004,NOS1_MOUSE,5,5.875e-06,0.2903,0.2903,8.9412,Nos1,"Nitric oxide synthase, brain",C[C@@H](C(=O)O)N
+m0005,NOS1_MOUSE,5,3.053e-12,0.3235,0.6393,20.2235,Nos1,"Nitric oxide synthase, brain",C([C@@H](C(=O)O)N)C(=O)N
+m0010,NOS1_RAT,5,1.343e-08,0.4194,3.4595,13.6823,Nos1,"Nitric oxide synthase, brain",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,NOS1_RAT,5,1.765e-06,0.3548,2.5806,9.8789,Nos1,"Nitric oxide synthase, brain",C([C@@H](C(=O)O)N)C(=O)O
+m0008,NOS1_RAT,5,4.704e-32,0.6250,13.1897,55.7928,Nos1,"Nitric oxide synthase, brain",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0005,NOS1_RAT,5,5.845e-07,0.4545,2.7798,10.7406,Nos1,"Nitric oxide synthase, brain",C([C@@H](C(=O)O)N)C(=O)N
+m0010,NOS2_HUMAN,5,7.772e-16,0.4333,8.3196,26.6617,NOS2,"Nitric oxide synthase, inducible",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,NOS2_HUMAN,5,3.475e-14,0.3667,7.4473,23.7123,NOS2,"Nitric oxide synthase, inducible",C([C@@H](C(=O)O)N)C(=O)O
+m0008,NOS2_HUMAN,5,3.419e-22,0.7500,11.6989,38.0883,NOS2,"Nitric oxide synthase, inducible",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,NOS2_HUMAN,5,3.475e-14,0.3667,7.4473,23.7123,NOS2,"Nitric oxide synthase, inducible",C([C@@H](C(=O)O)N)S
+m0004,NOS2_HUMAN,5,3.669e-06,0.3103,3.1876,9.3084,NOS2,"Nitric oxide synthase, inducible",C[C@@H](C(=O)O)N
+m0005,NOS2_HUMAN,5,8.327e-15,0.4000,7.7785,24.8321,NOS2,"Nitric oxide synthase, inducible",C([C@@H](C(=O)O)N)C(=O)N
+m0010,NOS1_HUMAN,5,9.104e-10,0.4194,5.8875,15.7810,NOS1,"Nitric oxide synthase, brain",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,NOS1_HUMAN,5,1.462e-08,0.3750,5.1536,13.6166,NOS1,"Nitric oxide synthase, brain",C([C@@H](C(=O)O)N)C(=O)O
+m0008,NOS1_HUMAN,5,2.432e-26,0.6250,15.9777,45.5353,NOS1,"Nitric oxide synthase, brain",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,NOS1_HUMAN,5,2.579e-08,0.3548,5.0035,13.1739,NOS1,"Nitric oxide synthase, brain",C([C@@H](C(=O)O)N)S
+m0005,NOS1_HUMAN,5,3.455e-08,0.3871,4.9261,12.9459,NOS1,"Nitric oxide synthase, brain",C([C@@H](C(=O)O)N)C(=O)N
+m0010,NOS2_MOUSE,5,5.578e-11,0.4194,3.6216,17.9582,Nos2,"Nitric oxide synthase, inducible",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,NOS2_MOUSE,5,5.022e-09,0.3548,2.9570,14.4495,Nos2,"Nitric oxide synthase, inducible",C([C@@H](C(=O)O)N)C(=O)O
+m0008,NOS2_MOUSE,5,6.736e-19,0.6061,6.3144,32.1737,Nos2,"Nitric oxide synthase, inducible",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,NOS2_MOUSE,5,4.737e-08,0.4000,2.6256,12.6998,Nos2,"Nitric oxide synthase, inducible",C([C@@H](C(=O)O)N)S
+m0005,NOS2_MOUSE,5,1.374e-09,0.4545,3.1484,15.4601,Nos2,"Nitric oxide synthase, inducible",C([C@@H](C(=O)O)N)C(=O)N
+m0010,NOS2_RAT,5,6.838e-19,0.4194,0.4194,32.1621,Nos2,"Nitric oxide synthase, inducible",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,NOS2_RAT,5,4.441e-16,0.3548,0.3548,27.1710,Nos2,"Nitric oxide synthase, inducible",C([C@@H](C(=O)O)N)C(=O)O
+m0008,NOS2_RAT,5,4.239e-21,0.4706,0.4706,36.1256,Nos2,"Nitric oxide synthase, inducible",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,NOS2_RAT,5,4.441e-16,0.3548,0.3548,27.1710,Nos2,"Nitric oxide synthase, inducible",C([C@@H](C(=O)O)N)S
+m0004,NOS2_RAT,5,3.408e-14,0.3103,0.3103,23.7289,Nos2,"Nitric oxide synthase, inducible",C[C@@H](C(=O)O)N
+m0005,NOS2_RAT,5,1.678e-17,0.3871,0.3871,29.6666,Nos2,"Nitric oxide synthase, inducible",C([C@@H](C(=O)O)N)C(=O)N
+m0010,NOS3_BOVIN,5,4.308e-20,0.4194,3.1081,34.3177,NOS3,"Nitric oxide synthase, endothelial",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,NOS3_BOVIN,5,6.661e-15,0.3548,2.2834,25.0052,NOS3,"Nitric oxide synthase, endothelial",C([C@@H](C(=O)O)N)C(=O)O
+m0008,NOS3_BOVIN,5,6.568e-35,0.6250,5.4641,60.9185,NOS3,"Nitric oxide synthase, endothelial",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,NOS3_BOVIN,5,1.548e-12,0.3548,1.9068,20.7531,NOS3,"Nitric oxide synthase, endothelial",C([C@@H](C(=O)O)N)S
+m0004,NOS3_BOVIN,5,8.17e-08,0.3030,1.1559,12.2747,NOS3,"Nitric oxide synthase, endothelial",C[C@@H](C(=O)O)N
+m0005,NOS3_BOVIN,5,1.11e-15,0.4545,2.4083,26.4159,NOS3,"Nitric oxide synthase, endothelial",C([C@@H](C(=O)O)N)C(=O)N
+m0010,NOS3_HUMAN,5,2.094e-09,0.4194,2.8692,15.1317,NOS3,"Nitric oxide synthase, endothelial",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,NOS3_HUMAN,5,2.205e-08,0.3548,2.5451,13.2959,NOS3,"Nitric oxide synthase, endothelial",C([C@@H](C(=O)O)N)C(=O)O
+m0008,NOS3_HUMAN,5,1.427e-20,0.6250,6.4090,35.1793,NOS3,"Nitric oxide synthase, endothelial",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,NOS3_HUMAN,5,2.205e-08,0.3548,2.5451,13.2959,NOS3,"Nitric oxide synthase, endothelial",C([C@@H](C(=O)O)N)S
+m0005,NOS3_HUMAN,5,5.497e-09,0.3871,2.7363,14.3791,NOS3,"Nitric oxide synthase, endothelial",C([C@@H](C(=O)O)N)C(=O)N
+m0008,NPFF1_HUMAN,5,1.643e-11,0.3276,1.5026,18.9114,NPFFR1,Neuropeptide FF receptor 1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0008,NPFF2_HUMAN,5,7.694e-14,0.3519,1.8545,23.0936,NPFFR2,Neuropeptide FF receptor 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0002,NR4A1_HUMAN,5,1.288e-06,0.4688,0.7545,10.1243,NR4A1,Nuclear receptor subfamily 4 group A member 1,C1=CC(=CC=C1CC(=O)O)O
+m0001,O15727_TRYBB,5,1.068e-41,0.4915,0.8197,73.1068,,Inosine-adenosine-guanosine-nucleoside hydrolase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0008,O31048_PORGN,5,1.865e-17,0.4359,1.4156,29.5844,DPP IV,Dipeptidyl peptidase IV,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0001,O39930_9HEPC,5,1.332e-17,0.4583,1.5054,29.8468,NS5b,RNA-directed RNA polymerase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,O54050_RHOCA,5,3.543e-39,0.3103,0.3103,68.5810,xdhA,Xanthine dehydrogenase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,OTC_HUMAN,5,1.031e-46,0.3714,0.3714,82.1110,OTC,"Ornithine carbamoyltransferase, mitochondrial",C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,OTC_HUMAN,5,1.157e-39,0.3143,0.3143,69.4539,OTC,"Ornithine carbamoyltransferase, mitochondrial",C([C@@H](C(=O)O)N)C(=O)O
+m0008,OTC_HUMAN,5,1.838e-73,0.5882,0.5882,130.1336,OTC,"Ornithine carbamoyltransferase, mitochondrial",C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,OTC_HUMAN,5,1.157e-39,0.3143,0.3143,69.4539,OTC,"Ornithine carbamoyltransferase, mitochondrial",C([C@@H](C(=O)O)N)S
+m0005,OTC_HUMAN,5,1.381e-38,0.3056,0.3056,67.5202,OTC,"Ornithine carbamoyltransferase, mitochondrial",C([C@@H](C(=O)O)N)C(=O)N
+m0001,OXGR1_RAT,5,5.226e-77,0.3478,6.7841,136.5002,Oxgr1,2-oxoglutarate receptor 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RX1_HUMAN,5,6.07e-35,0.3425,1.8338,60.9800,P2RX1,P2X purinoceptor 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RX1_RAT,5,1.68e-11,0.3429,0.6392,18.8941,P2rx1,P2X purinoceptor 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RX4_HUMAN,5,3.171e-13,0.3077,0.8967,21.9893,P2RX4,P2X purinoceptor 4,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RX4_MOUSE,5,5.735e-20,0.3077,0.6050,34.0945,P2rx4,P2X purinoceptor 4,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RX4_RAT,5,2.373e-17,0.3077,0.6050,29.3964,P2rx4,P2X purinoceptor 4,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RX5_RAT,5,3.002e-37,0.3077,0.6050,65.1197,P2rx5,P2X purinoceptor 5,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RX6_RAT,5,3.002e-37,0.3077,0.6050,65.1197,P2rx6,P2X purinoceptor 6,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RY1_MELGA,5,3.596e-83,0.4000,11.9301,147.5634,P2RY1,P2Y purinoceptor 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RY1_RAT,5,1.116e-66,0.3200,1.5283,117.9551,P2ry1,P2Y purinoceptor 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RY1_HUMAN,5,9.344e-11,0.3562,5.1326,17.5560,P2RY1,P2Y purinoceptor 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RY2_HUMAN,5,1.133e-10,0.5541,3.0740,17.4056,P2RY2,P2Y purinoceptor 2,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RY4_RAT,5,2.765e-36,0.2973,0.5890,63.3885,P2ry4,P2Y purinoceptor 4,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RY4_HUMAN,5,4.583e-06,0.5541,1.2208,9.1349,P2RY4,P2Y purinoceptor 4,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2RY6_HUMAN,5,1.471e-07,0.5541,1.5397,11.8164,P2RY6,P2Y purinoceptor 6,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2Y11_HUMAN,5,1.19e-28,0.4265,0.7278,49.6833,P2RY11,P2Y purinoceptor 11,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,P2Y12_RAT,5,3.987e-06,0.3077,0.9064,9.2435,P2ry12,P2Y purinoceptor 12,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,P4HTM_HUMAN,5,2.033e-08,0.4667,0.7810,13.3592,P4HTM,Transmembrane prolyl 4-hydroxylase,C1=CC(=CC=C1CC(=O)O)O
+m0002,P96878_MYCTU,5,5.102e-09,0.6250,1.2107,14.4372,,Probable transmembrane carbonic anhydrase (Carbonate dehydratase) (Carbonic dehydratase),C1=CC(=CC=C1CC(=O)O)O
+m0001,P96884_MYCTO,5,6.328e-15,0.2826,0.2826,25.0369,birA,BirA bifunctional protein,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,PA24B_HUMAN,5,3.345e-06,0.3846,0.3846,9.3805,PLA2G4B,Cytosolic phospholipase A2 beta,C1=CC(=CC=C1CC(=O)O)O
+m0007,PA2G5_HUMAN,5,4.549e-10,0.2903,0.5716,16.3219,PLA2G5,Calcium-dependent phospholipase A2,CCCC(=O)[O-]
+m0007,PA2GA_MOUSE,5,9.238e-13,0.2903,0.5716,21.1556,Pla2g2a,"Phospholipase A2, membrane associated",CCCC(=O)[O-]
+m0007,PA2G5_MOUSE,5,5.984e-14,0.2903,0.5716,23.2897,Pla2g5,Calcium-dependent phospholipase A2,CCCC(=O)[O-]
+m0007,PA2GA_RABIT,5,6.377e-23,0.2812,0.2812,39.3978,PLA2G2A,"Phospholipase A2, membrane associated",CCCC(=O)[O-]
+m0007,PA2GA_RAT,5,6.571e-19,0.2903,0.5716,32.1931,Pla2g2a,"Phospholipase A2, membrane associated",CCCC(=O)[O-]
+m0010,PA2GC_HUMAN,5,3.238e-10,0.2973,0.2973,16.5869,PLA2G2C,Putative inactive group IIC secretory phospholipase A2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0008,PADI1_HUMAN,5,1.581e-29,0.3125,0.9066,51.2571,PADI1,Protein-arginine deiminase type-1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0008,PADI2_HUMAN,5,2.659e-10,0.3000,0.3000,16.7407,PADI2,Protein-arginine deiminase type-2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0008,PADI3_HUMAN,5,3.315e-20,0.3125,0.6125,34.5219,PADI3,Protein-arginine deiminase type-3,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0008,PADI4_HUMAN,5,8.404e-20,0.3125,0.9066,33.7965,PADI4,Protein-arginine deiminase type-4,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0003,PAO1_MAIZE,5,2.219e-06,0.3462,0.3462,9.7005,MPAO1,Polyamine oxidase 1,C(CCN=C(N)N)CN
+m0003,PAOX_HUMAN,5,3.484e-10,0.2963,0.2963,16.5300,PAOX,Peroxisomal N(1)-acetyl-spermine/spermidine oxidase,C(CCN=C(N)N)CN
+m0002,PAR10_HUMAN,5,1.958e-06,0.3125,0.6066,9.7981,PARP10,Protein mono-ADP-ribosyltransferase PARP10,C1=CC(=CC=C1CC(=O)O)O
+m0001,PARG_BOVIN,5,1.395e-29,0.2927,0.5766,51.3547,PARG,Poly(ADP-ribose) glycohydrolase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,PARG_HUMAN,5,6.229e-18,0.2840,0.2840,30.4394,PARG,Poly(ADP-ribose) glycohydrolase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,PARG_RAT,5,2.594e-07,0.2840,0.2840,11.3740,Parg,Poly(ADP-ribose) glycohydrolase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,PARP1_MOUSE,5,9.639e-20,0.3023,2.9236,33.6897,Parp1,Poly [ADP-ribose] polymerase 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,PCNA_HUMAN,5,5.455e-06,0.3023,0.3023,8.9990,PCNA,Proliferating cell nuclear antigen,C1=CC(=CC=C1CC(=O)O)O
+m0010,PCSK6_HUMAN,5,8.472e-06,0.3200,0.3200,8.6558,PCSK6,Proprotein convertase subtilisin/kexin type 6,C(CC(=O)O)[C@@H](C(=O)O)N
+m0008,PCSK6_HUMAN,5,3.759e-31,0.3333,1.9152,54.1723,PCSK6,Proprotein convertase subtilisin/kexin type 6,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0001,PDCD4_HUMAN,5,8.719e-09,0.2923,0.2923,14.0194,PDCD4,Programmed cell death protein 4,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,PDE4B_HUMAN,5,2.757e-12,0.3810,9.9605,20.3030,PDE4B,"cAMP-specific 3',5'-cyclic phosphodiesterase 4B",C1=CC(=CC=C1CC(=O)O)O
+m0002,PDE4D_HUMAN,5,5.017e-07,0.3125,3.7844,10.8596,PDE4D,"cAMP-specific 3',5'-cyclic phosphodiesterase 4D",C1=CC(=CC=C1CC(=O)O)O
+m0002,PE2R4_HUMAN,5,1.277e-06,0.3659,3.5377,10.1313,PTGER4,Prostaglandin E2 receptor EP4 subtype,C1=CC(=CC=C1CC(=O)O)O
+m0002,PGH1_BOVIN,5,9.077e-09,0.2973,0.5914,13.9880,PTGS1,Prostaglandin G/H synthase 1,C1=CC(=CC=C1CC(=O)O)O
+m0002,PGH2_BOVIN,5,1.959e-06,0.2941,0.2941,9.7977,PTGS2,Prostaglandin G/H synthase 2,C1=CC(=CC=C1CC(=O)O)O
+m0002,PGH2_MOUSE,5,1.515e-09,0.5556,3.6920,15.3838,Ptgs2,Prostaglandin G/H synthase 2,C1=CC(=CC=C1CC(=O)O)O
+m0010,PHF8_HUMAN,5,1.358e-21,0.3600,0.9919,37.0130,PHF8,Histone lysine demethylase PHF8,C(CC(=O)O)[C@@H](C(=O)O)N
+m0002,PHHY_PSEFL,5,6.678e-41,0.3243,0.3243,71.6775,pobA,p-hydroxybenzoate hydroxylase,C1=CC(=CC=C1CC(=O)O)O
+m0001,PLCG1_HUMAN,5,1.144e-14,0.3188,0.6026,24.5761,PLCG1,"1-phosphatidylinositol 4,5-bisphosphate phosphodiesterase gamma-1",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,PLEC_HUMAN,5,6.446e-09,0.3333,0.9118,14.2549,PLEC,Plectin,C1=CC(=CC=C1CC(=O)O)O
+m0001,PNPH_BOVIN,5,3.008e-41,0.3788,5.7333,72.2994,PNP,Purine nucleoside phosphorylase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,PNPH_MOUSE,5,9.147e-43,0.3731,0.6967,75.0228,Pnp,Purine nucleoside phosphorylase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,PNPH_RAT,5,5.291e-34,0.4062,1.7834,59.2918,Pnp,Purine nucleoside phosphorylase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,PNPH_HUMAN,5,2.504e-90,0.5000,24.0870,160.4128,PNP,Purine nucleoside phosphorylase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,POLG_CXB3N,5,3.24e-34,0.4412,4.7026,59.6742,,Genome polyprotein,C1=CC(=CC=C1CC(=O)O)O
+m0003,POLG_DEN26,5,8.6e-26,0.2857,0.8521,44.5505,,Genome polyprotein,C(CCN=C(N)N)CN
+m0002,POLG_DEN2P,5,3.314e-08,0.3548,0.3548,12.9784,,Genome polyprotein,C1=CC(=CC=C1CC(=O)O)O
+m0008,POLG_WNV,5,1.545e-07,0.3137,0.9137,11.7782,,Genome polyprotein,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0002,PPO2_AGABI,5,6.106e-15,0.4194,5.0873,25.0646,PPO2,Polyphenol oxidase 2,C1=CC(=CC=C1CC(=O)O)O
+m0001,PSA_HUMAN,5,1.179e-13,0.2941,0.5868,22.7610,NPEPPS,Puromycin-sensitive aminopeptidase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,PTPRA_HUMAN,5,7.446e-06,0.3235,0.3235,8.7565,PTPRA,Receptor-type tyrosine-protein phosphatase alpha,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,PTPRA_HUMAN,5,3.553e-06,0.3438,0.3438,9.3335,PTPRA,Receptor-type tyrosine-protein phosphatase alpha,C([C@@H](C(=O)O)N)C(=O)O
+m0009,PTPRA_HUMAN,5,3.553e-06,0.3438,0.3438,9.3335,PTPRA,Receptor-type tyrosine-protein phosphatase alpha,C([C@@H](C(=O)O)N)S
+m0005,PTPRA_HUMAN,5,5.201e-06,0.3333,0.3333,9.0362,PTPRA,Receptor-type tyrosine-protein phosphatase alpha,C([C@@H](C(=O)O)N)C(=O)N
+m0001,PYGM_HUMAN,5,3.402e-06,0.3016,0.9048,9.3672,PYGM,"Glycogen phosphorylase, muscle form",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,PYGM_RABIT,5,6.675e-10,0.3226,1.8265,16.0229,PYGM,"Glycogen phosphorylase, muscle form",C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,PYRF_YEAST,5,8.926e-35,0.3529,0.6808,60.6794,URA3,Orotidine 5'-phosphate decarboxylase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,Q03732_HBV,5,5.316e-09,0.4909,0.4909,14.4052,HBcAg,Capsid protein,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,Q2PCB5_DICLA,5,6.706e-27,0.4583,0.7546,46.5398,ca,Carbonic anhydrase,C1=CC(=CC=C1CC(=O)O)O
+m0002,Q3I4V7_CRYNV,5,1.282e-33,1.0000,4.0971,58.6015,CAN2,Carbonic anhydrase,C1=CC(=CC=C1CC(=O)O)O
+m0001,Q3ZDS5_9HEPC,5,6.711e-38,0.4722,0.4722,66.2877,,NS5B,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,Q49PX0_9POXV,5,1.709e-08,0.3000,0.3000,13.4947,N1L,N1L,C1=CC(=CC=C1CC(=O)O)O
+m0001,Q4VQ11_PIG,5,2.249e-55,0.3788,4.1825,97.6604,,Adenosine receptor A1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0004,Q5HMD9_STAEQ,5,5.635e-51,0.3448,0.6389,89.7631,murF,UDP-N-acetylmuramoyl-tripeptide--D-alanyl-D-alanine ligase,C[C@@H](C(=O)O)N
+m0005,Q5HMD9_STAEQ,5,6.243e-24,0.2941,0.2941,41.2096,murF,UDP-N-acetylmuramoyl-tripeptide--D-alanyl-D-alanine ligase,C([C@@H](C(=O)O)N)C(=O)N
+m0001,Q6L709_HHV2,5,1.206e-66,0.3380,10.1442,117.8949,TK,Thymidine kinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,Q6RY99_RAT,5,2.492e-12,0.3333,0.3333,20.3820,,Tetraspanin,C(CC(=O)O)[C@@H](C(=O)O)N
+m0002,Q6RY99_RAT,5,8.751e-25,0.3514,0.6935,42.7417,,Tetraspanin,C1=CC(=CC=C1CC(=O)O)O
+m0004,Q6RY99_RAT,5,8.327e-12,0.3182,0.3182,19.4412,,Tetraspanin,C[C@@H](C(=O)O)N
+m0002,Q6TUJ4_PSEAI,5,2.082e-08,0.3143,0.3143,13.3407,blaIMP-1,Metallo beta-lactamase,C1=CC(=CC=C1CC(=O)O)O
+m0001,Q72547_9HIV1,5,1.656e-10,0.5902,11.5355,17.1098,pol,Reverse transcriptase/RNaseH,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,Q79MP6_PSEAI,5,1.778e-19,0.3556,2.0977,33.2122,blaIMP-1,Beta-lactamase,C1=CC(=CC=C1CC(=O)O)O
+m0009,Q79MP6_PSEAI,5,8.607e-07,0.3684,0.6866,10.4388,blaIMP-1,Beta-lactamase,C([C@@H](C(=O)O)N)S
+m0001,Q8II92_PLAF7,5,1.11e-16,0.3333,0.9810,28.3470,,Deoxyuridine 5'-triphosphate nucleotidohydrolase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,Q8JXU8_9HEPC,5,6.402e-06,0.6667,4.1288,8.8743,NS5B,RNA-directed RNA polymerase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,Q9BEG3_BOVIN,5,9.243e-19,0.4444,3.2108,31.9270,,5-lipoxygenase,C1=CC(=CC=C1CC(=O)O)O
+m0007,Q9GPG0_MANSE,5,4.212e-24,0.2963,0.2963,41.5164,,Carboxylic ester hydrolase,CCCC(=O)[O-]
+m0003,Q9GSW0_PLAFA,5,5.166e-42,0.3333,0.3333,73.6729,dhs,Deoxyhypusine synthase,C(CCN=C(N)N)CN
+m0010,Q9I056_PSEAE,5,3.61e-40,0.3250,0.9131,70.3618,cpg2,Carboxypeptidase G2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0001,Q9HX69_PSEAE,5,3.669e-102,0.5833,2.0324,181.6589,rocR,RocR,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0009,Q9K2N0_PSEAI,5,2.849e-06,0.2857,0.2857,9.5055,blaVIM-2,Beta-lactamase class B VIM-2,C([C@@H](C(=O)O)N)S
+m0001,Q9WJQ2_9HIV1,5,5.969e-08,0.5091,3.2543,12.5195,reverse transcriptase,Reverse transcriptase protein,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,Q9WKE8_9HIV1,5,1.592e-08,0.6833,8.7913,13.5501,reverse transcriptase,Reverse transcriptase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,Q9Z1J7_RAT,5,9.46e-10,0.2826,0.2826,15.7511,Slc1a5,Amino acid transporter,C(CC(=O)O)[C@@H](C(=O)O)N
+m0001,RAB7A_HUMAN,5,2.22e-16,0.5231,1.0382,27.5637,RAB7A,Ras-related protein Rab-7a,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,RAC1_HUMAN,5,2.263e-17,0.5231,0.5231,29.4337,RAC1,Ras-related C3 botulinum toxin substrate 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,RASK_HUMAN,5,1.42e-82,0.4474,5.4398,146.4926,KRAS,GTPase KRas,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,RN5A_HUMAN,5,6.395e-36,0.2840,0.2840,62.7347,RNASEL,2-5A-dependent ribonuclease,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,RNAS1_BOVIN,5,1.079e-64,0.4118,1.6701,114.3911,RNASE1,Ribonuclease pancreatic,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,RN5A_MOUSE,5,3.915e-23,0.2840,0.2840,39.7780,Rnasel,2-5A-dependent ribonuclease,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,RNAS2_HUMAN,5,5.874e-57,0.4000,0.7152,100.5027,RNASE2,Non-secretory ribonuclease,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,RNAS1_HUMAN,5,5.874e-57,0.4000,0.7152,100.5027,RNASE1,Ribonuclease pancreatic,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0003,S100B_RAT,5,1.163e-60,0.4000,1.2000,107.1514,S100b,Protein S100-B,C(CCN=C(N)N)CN
+m0002,S13A5_HUMAN,5,2.436e-17,0.2821,0.5641,29.3761,SLC13A5,Solute carrier family 13 member 5,C1=CC(=CC=C1CC(=O)O)O
+m0010,S15A1_HUMAN,5,5.806e-19,0.3636,0.3636,32.2896,SLC15A1,Solute carrier family 15 member 1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,S15A1_HUMAN,5,2.026e-45,0.3056,0.8943,79.7886,SLC15A1,Solute carrier family 15 member 1,C([C@@H](C(=O)O)N)C(=O)O
+m0004,S15A1_HUMAN,5,5.551e-16,0.3030,0.3030,26.8648,SLC15A1,Solute carrier family 15 member 1,C[C@@H](C(=O)O)N
+m0010,S15A2_HUMAN,5,5.245e-27,0.3333,0.3333,46.7314,SLC15A2,Solute carrier family 15 member 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,S15A2_HUMAN,5,3.548e-35,0.4375,0.4375,61.3986,SLC15A2,Solute carrier family 15 member 2,C([C@@H](C(=O)O)N)C(=O)O
+m0008,S15A2_HUMAN,5,9.886e-26,0.3171,0.3171,44.4419,SLC15A2,Solute carrier family 15 member 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0005,S15A2_HUMAN,5,7.913e-25,0.3056,0.3056,42.8201,SLC15A2,Solute carrier family 15 member 2,C([C@@H](C(=O)O)N)C(=O)N
+m0006,S15A2_RAT,5,2.22e-16,0.2857,0.5670,27.5264,Slc15a2,Solute carrier family 15 member 2,C([C@@H](C(=O)O)N)C(=O)O
+m0002,S15A2_RAT,5,2.663e-09,0.3111,0.3111,14.9441,Slc15a2,Solute carrier family 15 member 2,C1=CC(=CC=C1CC(=O)O)O
+m0004,S15A2_RAT,5,1.389e-09,0.3214,0.3214,15.4515,Slc15a2,Solute carrier family 15 member 2,C[C@@H](C(=O)O)N
+m0003,S22A3_HUMAN,5,2.409e-06,0.2895,0.2895,9.6362,SLC22A3,Solute carrier family 22 member 3,C(CCN=C(N)N)CN
+m0010,S22A6_MOUSE,5,7.228e-13,0.3810,0.3810,21.3469,Slc22a6,Solute carrier family 22 member 6,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,S22A6_MOUSE,5,7.541e-10,0.2857,0.2857,15.9278,Slc22a6,Solute carrier family 22 member 6,C([C@@H](C(=O)O)N)C(=O)O
+m0002,S22A6_MOUSE,5,4.084e-10,0.2941,0.2941,16.4060,Slc22a6,Solute carrier family 22 member 6,C1=CC(=CC=C1CC(=O)O)O
+m0010,S22A6_HUMAN,5,2.169e-10,0.3810,0.6772,16.8994,SLC22A6,Solute carrier family 22 member 6,C(CC(=O)O)[C@@H](C(=O)O)N
+m0002,S22A6_HUMAN,5,3.67e-09,0.2973,0.5914,14.6940,SLC22A6,Solute carrier family 22 member 6,C1=CC(=CC=C1CC(=O)O)O
+m0002,S22A6_RAT,5,6.44e-08,0.2941,0.2941,12.4603,Slc22a6,Solute carrier family 22 member 6,C1=CC(=CC=C1CC(=O)O)O
+m0010,S22A8_HUMAN,5,4.586e-06,0.2963,0.2963,9.1343,SLC22A8,Solute carrier family 22 member 8,C(CC(=O)O)[C@@H](C(=O)O)N
+m0007,S22A8_HUMAN,5,5.415e-07,0.3478,0.3478,10.8002,SLC22A8,Solute carrier family 22 member 8,CCCC(=O)[O-]
+m0002,S22AK_MOUSE,5,1.704e-13,0.2941,0.2941,22.4736,Slc22a20,Solute carrier family 22 member 20,C1=CC(=CC=C1CC(=O)O)O
+m0002,S22AC_HUMAN,5,3.014e-13,0.3846,4.8840,22.0289,SLC22A12,Solute carrier family 22 member 12,C1=CC(=CC=C1CC(=O)O)O
+m0001,S28A2_HUMAN,5,1.743e-14,0.2949,0.8665,24.2489,SLC28A2,Sodium/nucleoside cotransporter 2,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,S29A1_HUMAN,5,1.125e-74,0.4571,19.8323,132.3117,SLC29A1,Equilibrative nucleoside transporter 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,S29A1_RAT,5,3.637e-25,0.3099,0.3099,43.4261,Slc29a1,Equilibrative nucleoside transporter 1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0003,S47A2_HUMAN,5,2.791e-09,0.2895,0.2895,14.9076,SLC47A2,Multidrug and toxin extrusion protein 2,C(CCN=C(N)N)CN
+m0002,S5A1_RAT,5,3.074e-10,0.3333,0.6667,16.6275,Srd5a1,3-oxo-5-alpha-steroid 4-dehydrogenase 1,C1=CC(=CC=C1CC(=O)O)O
+m0010,S6A11_HUMAN,5,1.575e-19,0.3750,0.3750,33.3068,SLC6A11,Sodium- and chloride-dependent GABA transporter 3,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,S6A11_HUMAN,5,2.22e-15,0.2917,0.2917,25.8477,SLC6A11,Sodium- and chloride-dependent GABA transporter 3,C([C@@H](C(=O)O)N)C(=O)O
+m0010,S6A11_MOUSE,5,5.342e-09,0.3750,0.3750,14.4013,Slc6a11,Sodium- and chloride-dependent GABA transporter 3,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,S6A11_MOUSE,5,3.629e-07,0.2917,0.2917,11.1122,Slc6a11,Sodium- and chloride-dependent GABA transporter 3,C([C@@H](C(=O)O)N)C(=O)O
+m0002,S5A2_HUMAN,5,2.418e-09,0.4545,3.7746,15.0193,SRD5A2,3-oxo-5-alpha-steroid 4-dehydrogenase 2,C1=CC(=CC=C1CC(=O)O)O
+m0010,S6A13_RAT,5,3.737e-47,0.3750,0.3750,82.9021,Slc6a13,Sodium- and chloride-dependent GABA transporter 2,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,S6A13_RAT,5,7.142e-37,0.2917,0.2917,64.4438,Slc6a13,Sodium- and chloride-dependent GABA transporter 2,C([C@@H](C(=O)O)N)C(=O)O
+m0001,SAHH_MOUSE,5,5.24e-11,0.2951,0.2951,18.0070,Ahcy,Adenosylhomocysteinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,SAHH_HUMAN,5,1.24e-44,0.3548,9.0026,78.3761,AHCY,Adenosylhomocysteinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,SAHH_PLAF7,5,1.328e-57,0.3710,1.3177,101.6618,,Adenosylhomocysteinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,SAHH_RAT,5,4.641e-12,0.2923,0.5846,19.8969,Ahcy,Adenosylhomocysteinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,SC6A5_HUMAN,5,8.438e-15,0.3261,2.7778,24.8174,SLC6A5,Sodium- and chloride-dependent glycine transporter 2,C1=CC(=CC=C1CC(=O)O)O
+m0001,SETB1_HUMAN,5,1.443e-37,0.2973,0.2973,65.6910,SETDB1,Histone-lysine N-methyltransferase SETDB1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,SETD7_HUMAN,5,3.152e-09,0.2877,0.2877,14.8127,SETD7,Histone-lysine N-methyltransferase SETD7,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,SO1C1_MOUSE,5,5.114e-29,0.3590,0.3590,50.3418,Slco1c1,Solute carrier organic anion transporter family member 1C1,C1=CC(=CC=C1CC(=O)O)O
+m0010,SO4C1_HUMAN,5,4.879e-18,0.2857,0.2857,30.6299,SLCO4C1,Solute carrier organic anion transporter family member 4C1,C(CC(=O)O)[C@@H](C(=O)O)N
+m0008,SO4C1_HUMAN,5,3.691e-19,0.3043,0.3043,32.6428,SLCO4C1,Solute carrier organic anion transporter family member 4C1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0002,SOAT1_CHLAE,5,1.936e-10,0.3043,0.3043,16.9881,SOAT1,Sterol O-acyltransferase 1,C1=CC(=CC=C1CC(=O)O)O
+m0002,SOAT2_CHLAE,5,3.632e-08,0.3043,0.3043,12.9069,SOAT2,Sterol O-acyltransferase 2,C1=CC(=CC=C1CC(=O)O)O
+m0002,SSDH_HUMAN,5,1.973e-43,0.3448,0.3448,76.2189,ALDH5A1,"Succinate-semialdehyde dehydrogenase, mitochondrial",C1=CC(=CC=C1CC(=O)O)O
+m0001,SUV91_HUMAN,5,4.393e-11,0.2973,0.2973,18.1445,SUV39H1,Histone-lysine N-methyltransferase SUV39H1,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,SYD_ECOLI,5,6.395e-36,0.2840,0.2840,62.7347,aspS,Aspartate--tRNA ligase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,SYI_ECOLI,5,3.809e-18,0.2875,0.2875,30.8228,ileS,Isoleucine--tRNA ligase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,SYL_ECOLI,5,7.318e-23,0.2805,0.2805,39.2905,leuS,Leucine--tRNA ligase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,SYS_ECOLI,5,6.045e-41,0.3247,0.3247,71.7552,serS,Serine--tRNA ligase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0006,SYYC_HUMAN,5,6.674e-06,0.2973,0.2973,8.8419,YARS1,"Tyrosine--tRNA ligase, cytoplasmic",C([C@@H](C(=O)O)N)C(=O)O
+m0002,SYYC_HUMAN,5,1.873e-50,0.3784,2.8558,88.8266,YARS1,"Tyrosine--tRNA ligase, cytoplasmic",C1=CC(=CC=C1CC(=O)O)O
+m0002,T2R14_HUMAN,5,1.381e-09,0.3500,1.5861,15.4560,TAS2R14,Taste receptor type 2 member 14,C1=CC(=CC=C1CC(=O)O)O
+m0002,TA2R_RAT,5,1.916e-10,0.3846,1.8813,16.9960,Tbxa2r,Thromboxane A2 receptor,C1=CC(=CC=C1CC(=O)O)O
+m0002,TAAR1_MACMU,5,3.269e-19,0.3793,0.7586,32.7374,TAAR1,Trace amine-associated receptor 1,C1=CC(=CC=C1CC(=O)O)O
+m0002,TAT_HV1H2,5,9.46e-10,0.2826,0.2826,15.7511,tat,Protein Tat,C1=CC(=CC=C1CC(=O)O)O
+m0002,TDT_HUMAN,5,5.743e-12,0.2917,0.2917,19.7309,DNTT,DNA nucleotidylexotransferase,C1=CC(=CC=C1CC(=O)O)O
+m0001,TGT_ZYMMO,5,2.273e-18,0.3214,0.6422,31.2255,tgt,Queuine tRNA-ribosyltransferase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,THA_HUMAN,5,1.634e-22,0.5000,8.2207,38.6642,THRA,Thyroid hormone receptor alpha,C1=CC(=CC=C1CC(=O)O)O
+m0002,THB_HUMAN,5,1.029e-21,0.5000,9.7156,37.2294,THRB,Thyroid hormone receptor beta,C1=CC(=CC=C1CC(=O)O)O
+m0001,THIO_HUMAN,5,1.555e-08,0.3016,0.3016,13.5681,TXN,Thioredoxin,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,THYX_MYCTU,5,1.233e-63,0.3485,2.1417,112.4916,thyX,Flavin-dependent thymidylate synthase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,TPMT_HUMAN,5,8.165e-12,0.2877,0.2877,19.4565,TPMT,Thiopurine S-methyltransferase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0008,TPP2_HUMAN,5,5.739e-46,0.3654,0.3654,80.7723,TPP2,Tripeptidyl-peptidase 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0008,TPP2_RAT,5,8.858e-06,0.3023,0.5950,8.6211,Tpp2,Tripeptidyl-peptidase 2,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0004,TPP2_RAT,5,8.706e-06,0.3056,0.5959,8.6346,Tpp2,Tripeptidyl-peptidase 2,C[C@@H](C(=O)O)N
+m0001,TRPM2_HUMAN,5,1.191e-12,0.3095,0.3095,20.9572,TRPM2,Transient receptor potential cation channel subfamily M member 2,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0004,TS1R1_HUMAN,5,4.596e-06,0.2857,0.2857,9.1327,TAS1R1,Taste receptor type 1 member 1,C[C@@H](C(=O)O)N
+m0002,TTHY_HUMAN,5,1.136e-06,0.3077,0.9105,10.2223,TTR,Transthyretin,C1=CC(=CC=C1CC(=O)O)O
+m0010,TY3H_HUMAN,5,9.803e-19,0.2973,0.2973,31.8812,TH,Tyrosine 3-monooxygenase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,TY3H_HUMAN,5,9.314e-20,0.3143,0.3143,33.7164,TH,Tyrosine 3-monooxygenase,C([C@@H](C(=O)O)N)C(=O)O
+m0008,TY3H_HUMAN,5,4.879e-18,0.2857,0.2857,30.6299,TH,Tyrosine 3-monooxygenase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0002,TY3H_HUMAN,5,2.898e-18,0.2895,0.2895,31.0360,TH,Tyrosine 3-monooxygenase,C1=CC(=CC=C1CC(=O)O)O
+m0009,TY3H_HUMAN,5,9.314e-20,0.3143,0.3143,33.7164,TH,Tyrosine 3-monooxygenase,C([C@@H](C(=O)O)N)S
+m0005,TY3H_HUMAN,5,3.122e-19,0.3056,0.3056,32.7733,TH,Tyrosine 3-monooxygenase,C([C@@H](C(=O)O)N)C(=O)N
+m0010,TY3H_RAT,5,1.443e-37,0.2973,0.2973,65.6910,Th,Tyrosine 3-monooxygenase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,TY3H_RAT,5,1.157e-39,0.3143,0.3143,69.4539,Th,Tyrosine 3-monooxygenase,C([C@@H](C(=O)O)N)C(=O)O
+m0008,TY3H_RAT,5,3.875e-36,0.2857,0.2857,63.1253,Th,Tyrosine 3-monooxygenase,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0002,TY3H_RAT,5,1.332e-36,0.2895,0.2895,63.9581,Th,Tyrosine 3-monooxygenase,C1=CC(=CC=C1CC(=O)O)O
+m0009,TY3H_RAT,5,1.157e-39,0.3143,0.3143,69.4539,Th,Tyrosine 3-monooxygenase,C([C@@H](C(=O)O)N)S
+m0005,TY3H_RAT,5,1.381e-38,0.3056,0.3056,67.5202,Th,Tyrosine 3-monooxygenase,C([C@@H](C(=O)O)N)C(=O)N
+m0001,TYPH_HUMAN,5,1.789e-09,0.3056,1.2010,15.2542,TYMP,Thymidine phosphorylase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,TYRO_HUMAN,5,4.47e-20,0.4583,2.0056,34.2887,TYR,Tyrosinase,C1=CC(=CC=C1CC(=O)O)O
+m0001,TYSY_BOVIN,5,3.552e-52,0.3385,0.6543,91.9183,TYMS,Thymidylate synthase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,TYSY_LACCA,5,3.799e-82,0.4516,14.9567,145.7254,thyA,Thymidylate synthase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,TYSY_HUMAN,5,1.465e-10,0.3485,4.4132,17.2056,TYMS,Thymidylate synthase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,TYSY_MYCTU,5,6.98e-44,0.3485,0.3485,77.0290,thyA,Thymidylate synthase ThyA,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,TYSY_MOUSE,5,5.551e-16,0.4821,6.1100,26.9729,Tyms,Thymidylate synthase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,UBP4_HUMAN,5,6.625e-51,0.4054,0.4054,89.6369,USP4,Ubiquitin carboxyl-terminal hydrolase 4,C1=CC(=CC=C1CC(=O)O)O
+m0002,UBP5_HUMAN,5,1.167e-32,0.4054,0.4054,56.8795,USP5,Ubiquitin carboxyl-terminal hydrolase 5,C1=CC(=CC=C1CC(=O)O)O
+m0001,UL97_HCMVA,5,1.696e-55,0.4426,0.4426,97.8805,UL97,Serine/threonine protein kinase UL97,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0010,VANX_ENTFC,5,6.108e-13,0.2812,0.2812,21.4781,vanX,D-alanyl-D-alanine dipeptidase,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,VANX_ENTFC,5,7.223e-26,0.3000,0.5813,44.6865,vanX,D-alanyl-D-alanine dipeptidase,C([C@@H](C(=O)O)N)C(=O)O
+m0009,VANX_ENTFC,5,7.223e-26,0.3000,0.5813,44.6865,vanX,D-alanyl-D-alanine dipeptidase,C([C@@H](C(=O)O)N)S
+m0004,VANX_ENTFC,5,4.484e-47,0.4000,1.0734,82.7600,vanX,D-alanyl-D-alanine dipeptidase,C[C@@H](C(=O)O)N
+m0005,VANX_ENTFC,5,1.191e-28,0.3333,0.6458,49.6828,vanX,D-alanyl-D-alanine dipeptidase,C([C@@H](C(=O)O)N)C(=O)N
+m0002,VE1_HPV11,5,6.707e-13,0.3095,0.9142,21.4052,E1,Replication protein E1,C1=CC(=CC=C1CC(=O)O)O
+m0010,VGLU3_RAT,5,2.323e-25,0.4074,0.4074,43.7759,Slc17a8,Vesicular glutamate transporter 3,C(CC(=O)O)[C@@H](C(=O)O)N
+m0006,VGLU3_RAT,5,7.421e-35,0.5652,0.5652,60.8233,Slc17a8,Vesicular glutamate transporter 3,C([C@@H](C(=O)O)N)C(=O)O
+m0008,VGLU3_RAT,5,6.654e-21,0.3333,0.3333,35.7740,Slc17a8,Vesicular glutamate transporter 3,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0009,VGLU3_RAT,5,2.54e-27,0.4400,0.4400,47.2967,Slc17a8,Vesicular glutamate transporter 3,C([C@@H](C(=O)O)N)S
+m0004,VGLU3_RAT,5,6.654e-21,0.3333,0.3333,35.7740,Slc17a8,Vesicular glutamate transporter 3,C[C@@H](C(=O)O)N
+m0005,VGLU3_RAT,5,1.939e-33,0.5417,0.5417,58.2792,Slc17a8,Vesicular glutamate transporter 3,C([C@@H](C(=O)O)N)C(=O)N
+m0008,VM1B1_BOTAS,5,4.11e-19,0.3036,0.3036,32.5590,,Snake venom metalloproteinase BaP1,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0001,WALK_STAAU,5,4.536e-38,0.3014,0.3014,66.5930,walK,Sensor protein kinase WalK,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0008,WDR5_HUMAN,5,3.331e-16,0.3061,3.5125,27.2788,WDR5,WD repeat-containing protein 5,C(C[C@@H](C(=O)O)N)CNC(=O)N
+m0001,X5EH84_STAAU,5,5.829e-31,0.3385,3.3753,53.8304,folK,2-amino-4-hydroxy-6-hydroxymethyldihydropteridine diphosphokinase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0004,XCT_HUMAN,5,7.347e-08,0.3077,0.3077,12.3576,SLC7A11,Cystine/glutamate transporter,C[C@@H](C(=O)O)N
+m0001,XDH_HUMAN,5,4.703e-18,0.4464,3.8678,30.6586,XDH,Xanthine dehydrogenase/oxidase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0001,XGPT_ECOLI,5,3.859e-43,0.3425,0.3425,75.6958,gpt,Xanthine phosphoribosyltransferase,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)CO)O
+m0002,XPF_HUMAN,5,3.152e-06,0.3158,0.6085,9.4267,ERCC4,DNA repair endonuclease XPF,C1=CC(=CC=C1CC(=O)O)O

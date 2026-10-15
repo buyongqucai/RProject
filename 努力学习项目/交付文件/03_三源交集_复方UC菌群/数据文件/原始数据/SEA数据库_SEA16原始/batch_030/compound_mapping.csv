@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,Sedoheptulose,5459879.0,C([C@H]([C@H]([C@H]([C@@H](C(=O)CO)O)O)O)O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0002,Succinate,160419.0,C(CC(=O)[O-])C(=O)[O-],excluded from main; retained in gutMGene human full-library sensitivity
+m0003,Sulfate Ion,1117.0,[O-]S(=O)(=O)[O-],excluded from main; retained in gutMGene human full-library sensitivity
+m0004,Taurocholic acid,6675.0,C[C@H](CCC(=O)NCCS(=O)(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,Taurodeoxycholic acid,2733768.0,C[C@H](CCC(=O)NCCS(=O)(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2CC[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0006,Taurolithocholic acid,439763.0,C[C@H](CCC(=O)NCCS(=O)(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC[C@H]4[C@@]3(CC[C@H](C4)O)C)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0007,Thymine,1135.0,CC1=CNC(=O)NC1=O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0008,Tricarballylic acid,14925.0,C(C(CC(=O)O)C(=O)O)C(=O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0009,Trimethylamine,1146.0,CN(C)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0010,Trimethylamine oxide,1145.0,C[N+](C)(C)[O-],excluded from main; retained in gutMGene human full-library sensitivity

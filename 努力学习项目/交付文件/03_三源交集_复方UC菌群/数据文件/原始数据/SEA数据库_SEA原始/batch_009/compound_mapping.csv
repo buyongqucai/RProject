@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,L-Homocysteine,91552.0,C(CS)[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,Lysine,5962.0,C(CCN)C[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,Maltose,6255.0,C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@@H]2[C@H](O[C@H]([C@@H]([C@H]2O)O)O)CO)O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0004,Maltotriose,871.0,C(C1C(C(C(C(O1)OC2C(OC(C(C2O)O)OC3C(OC(C(C3O)O)O)CO)CO)O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,Mannose-6-phosphate,65127.0,C([C@@H]1[C@H]([C@@H]([C@@H](C(O1)O)O)O)O)OP(=O)(O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0006,N-Acetyl-D-Glucosamine,439174.0,CC(=O)N[C@@H]1[C@H]([C@@H]([C@H](OC1O)CO)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0007,N-Acetyl-L-glutamic acid,70914.0,CC(=O)N[C@@H](CCC(=O)O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0008,Nicotinamide,936.0,C1=CC(=CN=C1)C(=O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,Nicotinic acid,938.0,C1=CC(=CN=C1)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile; gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05
+m0010,Orotic acid,967.0,C1=C(NC(=O)NC1=O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

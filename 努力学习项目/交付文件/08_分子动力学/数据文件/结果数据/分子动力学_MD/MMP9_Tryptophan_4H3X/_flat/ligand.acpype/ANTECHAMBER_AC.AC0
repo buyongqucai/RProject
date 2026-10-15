@@ -1,0 +1,57 @@
+CHARGE      0.00 ( 0 )
+Formula: H12 C11 N2 O2 
+ATOM      1  CZ3 TRP     1      10.331   8.618  14.728 -0.061100      C.ar
+ATOM      2  CH2 TRP     1       9.713   9.863  14.650 -0.059800      C.ar
+ATOM      3  CZ2 TRP     1       9.375  10.425  13.415 -0.037800      C.ar
+ATOM      4  CE2 TRP     1       9.675   9.687  12.264  0.046700      C.ar
+ATOM      5  CD2 TRP     1      10.285   8.434  12.308  0.002900      C.ar
+ATOM      6  CE3 TRP     1      10.623   7.894  13.567 -0.052300      C.ar
+ATOM      7  CG  TRP     1      10.409   7.969  10.959 -0.020400      C.ar
+ATOM      8  CD1 TRP     1       9.897   8.961  10.147  0.006000      C.ar
+ATOM      9  NE1 TRP     1       9.469   9.992  10.940 -0.360400      N.ar
+ATOM     10  CB  TRP     1      10.965   6.650  10.508 -0.000100       C.3
+ATOM     11  CA  TRP     1      10.859   6.442   8.989  0.107300       C.3
+ATOM     12  N   TRP     1       9.946   5.304   8.697 -0.318100       N.3
+ATOM     13  C   TRP     1      12.242   6.154   8.378  0.322000       C.2
+ATOM     14  O   TRP     1      13.035   7.028   8.046 -0.249200       O.2
+ATOM     15  OXT TRP     1      12.539   4.839   8.266 -0.479500       O.3
+ATOM     16  HZ3 TRP     1      10.576   8.226  15.650  0.061800         H
+ATOM     17  HH2 TRP     1       9.501  10.380  15.518  0.061800         H
+ATOM     18  HZ2 TRP     1       8.921  11.350  13.354  0.063800         H
+ATOM     19  HE3 TRP     1      11.082   6.972  13.631  0.062400         H
+ATOM     20  HD1 TRP     1       9.845   8.931   9.117  0.081000         H
+ATOM     21  HE1 TRP     1       9.072  10.830  10.610  0.165300         H
+ATOM     22  HB1 TRP     1      10.425   5.867  10.998  0.033400         H
+ATOM     23  HB2 TRP     1      12.005   6.637  10.761  0.033400         H
+ATOM     24  HA  TRP     1      10.470   7.339   8.555  0.057700         H
+ATOM     25  H1  TRP     1      10.321   4.452   9.113  0.119000         H
+ATOM     26  H2  TRP     1       9.866   5.183   7.687  0.119000         H
+ATOM     27  HXT TRP     1      11.913   4.193   8.528  0.295100         H
+BOND    1    2    1    7    CH2  CZ3
+BOND    2    3    2    8    CZ2  CH2
+BOND    3    4    5    8    CE2  CD2
+BOND    4    4    3    7    CE2  CZ2
+BOND    5    5    6    7    CD2  CE3
+BOND    6    6    1    8    CE3  CZ3
+BOND    7    7    5    1     CG  CD2
+BOND    8    8    9    1    CD1  NE1
+BOND    9    8    7    2    CD1   CG
+BOND   10    9    4    1    NE1  CE2
+BOND   11   10    7    1     CB   CG
+BOND   12   11   12    1     CA    N
+BOND   13   11   10    1     CA   CB
+BOND   14   13   11    1      C   CA
+BOND   15   14   13    2      O    C
+BOND   16   15   13    1    OXT    C
+BOND   17    1   16    1    CZ3  HZ3
+BOND   18    2   17    1    CH2  HH2
+BOND   19    3   18    1    CZ2  HZ2
+BOND   20    6   19    1    CE3  HE3
+BOND   21    8   20    1    CD1  HD1
+BOND   22    9   21    1    NE1  HE1
+BOND   23   10   22    1     CB  HB1
+BOND   24   10   23    1     CB  HB2
+BOND   25   11   24    1     CA   HA
+BOND   26   12   25    1      N   H1
+BOND   27   12   26    1      N   H2
+BOND   28   15   27    1    OXT  HXT

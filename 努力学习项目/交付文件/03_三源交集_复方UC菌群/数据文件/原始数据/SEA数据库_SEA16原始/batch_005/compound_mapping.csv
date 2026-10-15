@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,4-Methyl-2-oxopentanoic acid,70.0,CC(C)CC(=O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,4-Methyl-5-(2-phosphoethyl)-thiazole,1137.0,CC1=C(SC=N1)CCOP(=O)(O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,5'-Deoxy-5'-methylthioadenosine,439176.0,CSC[C@@H]1[C@H]([C@H]([C@@H](O1)N2C=NC3=C(N=CN=C32)N)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0004,5'-Deoxyadenosine,439182.0,C[C@@H]1[C@H]([C@H]([C@@H](O1)N2C=NC3=C(N=CN=C32)N)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,5-O-(1-carboxylatovinyl)-3-phosphonatoshikimate,14506801.0,C=C(C(=O)[O-])O[C@@H]1CC(=C[C@H]([C@H]1O)OP(=O)([O-])[O-])C(=O)[O-],GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0006,Adenine,190.0,C1=NC2=NC=NC(=C2N1)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0007,Adenosine,60961.0,C1=NC(=C2C(=N1)N(C=N2)[C@H]3[C@@H]([C@@H]([C@H](O3)CO)O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0008,Adenosine Phosphate,6083.0,C1=NC(=C2C(=N1)N(C=N2)[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)O)O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,Anthranilic acid,227.0,C1=CC=C(C(=C1)C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0010,Arginine,6322.0,C(C[C@@H](C(=O)O)N)CN=C(N)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

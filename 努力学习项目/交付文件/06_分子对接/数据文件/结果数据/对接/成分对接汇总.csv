@@ -1,0 +1,9 @@
+﻿compound,gene,pdb,site,mean_kcal,sd_kcal,min_kcal,pass_rate,n_runs
+quercetin,FOS,1A02,blind(geometric center),-8.2,0.0,-8.2,1.0,3
+Anhydroicaritin,ESR2,1L2J,co-ligand:ETC(largest cluster 24/48),-7.7,0.0,-7.7,1.0,3
+kaempferol,PPARG,1FM9,co-ligand:9CR(largest cluster 22/22),-7.3,0.0,-7.3,1.0,3
+3beta-Hydroxyurs-12-En-28-Syre,DNMT1,3EPZ,co-ligand:BGC(largest cluster 12/12),-7.2,0.0,-7.2,1.0,3
+Eucalyptol,NLRP3,7ALV,co-ligand:RM5(largest cluster 16/29),-6.066666666666666,0.923760430703401,-6.6,1.0,3
+Caffeic Acid,TOP1,1K4T,co-ligand:TTG(largest cluster 32/32),-5.5,0.0,-5.5,1.0,3
+luteolin,PCNA,1U7B,blind(geometric center),-4.6000000000000005,0.5291502622129177,-5.0,0.3333333333333333,3
+Stigmasterol,NR3C2,1Y9R,co-ligand:1CA(largest cluster 24/48),-3.333333333333333,0.0577350269189624,-3.4,0.0,3

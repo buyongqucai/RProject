@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,Orotidine-5'-monophosphate,160617.0,C1=C(N(C(=O)NC1=O)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)O)O)O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,Phosphoserine,68841.0,C([C@@H](C(=O)O)N)OP(=O)(O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,Pyridoxamine,1052.0,CC1=NC=C(C(=C1O)CN)CO,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0004,Pyruvic Acid,1060.0,CC(=O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,Raffinose,439242.0,C([C@@H]1[C@@H]([C@@H]([C@H]([C@H](O1)OC[C@@H]2[C@H]([C@@H]([C@H]([C@H](O2)O[C@]3([C@H]([C@@H]([C@H](O3)CO)O)O)CO)O)O)O)O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0006,Riboflavin,493570.0,CC1=CC2=C(C=C1C)N(C3=NC(=O)NC(=O)C3=N2)C[C@@H]([C@@H]([C@@H](CO)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0007,S-Ribosylhomocysteine,440041.0,C(CSC[C@@H]1[C@H]([C@H]([C@@H](O1)O)O)O)[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0008,S-adenosyl-L-homocysteine,439155.0,C1=NC(=C2C(=N1)N(C=N2)[C@H]3[C@@H]([C@@H]([C@H](O3)CSCC[C@@H](C(=O)O)N)O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,S-adenosylmethionine,34755.0,C[S+](CC[C@@H](C(=O)[O-])N)C[C@@H]1[C@H]([C@H]([C@@H](O1)N2C=NC3=C(N=CN=C32)N)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0010,Spermidine,1102.0,C(CCNCCCN)CN,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

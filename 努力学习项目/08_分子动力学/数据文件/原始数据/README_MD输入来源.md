@@ -1,10 +1,9 @@
-# 08 分子动力学 · 原始输入来源
+# 08 分子动力学 · 原始数据来源
 
-| 体系 | 受体来源 | 配体来源 |
-|------|----------|----------|
-| ESR2_Anhydroicaritin_1L2J | RCSB **1L2J** | PubChem / 对接最佳姿态 |
-| FOS_quercetin_1A02 | RCSB **1A02** | PubChem CID 5280343 / 对接姿态 |
-| PPARG_kaempferol_1FM9 | RCSB **1FM9** | PubChem CID 5280863 / 对接姿态 |
+| 体系 / 内容 | 受体来源 | 配体来源 |
+|-------------|---------|----------|
+| 结构初态目录 | RCSB + 对接 pose | `RCSB与对接姿态_MD输入_Top3/` |
+| 对接筛选表（副本） | 06 结果 | `上游模块_06对接结果/` |
 
-生产轨迹工作目录在 WSL `~/md_runs/<体系>/`（大文件不进课题树）；分析表同步到 `数据文件/结果数据/分子动力学_MD/`。
-GROMACS/AmberTools 安装包不在本夹，见 `E:/md_kit`。
+本课题交付 MD 主体系为 **FOS×quercetin**（多对多 3×4 矩阵中的 task04）。  
+完整轨迹轻量归档在 `数据文件/结果数据/分子动力学_MD/`；GROMACS/AmberTools 工具链见 `E:/md_kit`。

@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,2'-Deoxyadenosine-5'-monophosphate,12599.0,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C(N=CN=C32)N)COP(=O)(O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,2'-Deoxyguanosine 5'-phosphate,135398597.0,C1[C@@H]([C@H](O[C@H]1N2C=NC3=C2N=C(NC3=O)N)COP(=O)(O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,2'-Deoxyuridine,13712.0,C1[C@@H]([C@H](O[C@H]1N2C=CC(=O)NC2=O)CO)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0004,2-Dehydropantoate,38.0,CC(C)(CO)C(=O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0005,2-Oxobutanoic acid,58.0,CCC(=O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0006,2-Oxoglutaric acid,51.0,C(CC(=O)O)C(=O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0007,3-Dehydroquinate,5460271.0,C1[C@H]([C@@H](C(=O)C[C@]1(C(=O)[O-])O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0008,3-Dehydroshikimate,439774.0,C1[C@H]([C@@H](C(=O)C=C1C(=O)O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,3-deoxy-D-arabino-heptulosonate-7-phosphate,160647.0,C([C@H]([C@@H]([C@@H](COP(=O)(O)O)O)O)O)C(=O)C(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0010,4-(Phosphonooxy)-L-threonine,440901.0,C([C@H]([C@@H](C(=O)O)N)O)OP(=O)(O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

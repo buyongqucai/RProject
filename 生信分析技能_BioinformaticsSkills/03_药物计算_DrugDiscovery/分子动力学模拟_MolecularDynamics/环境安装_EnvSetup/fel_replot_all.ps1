@@ -1,4 +1,4 @@
-﻿# Re-render 8 FEL figures per system (ASCII-only source; resolve plot script at runtime)
+# Re-render 8 FEL figures per system (ASCII-only source; resolve plot script at runtime)
 $plot = (Get-ChildItem "E:\RProject" -Recurse -Filter "origin*plotMdOrigin.py" | Select-Object -First 1).FullName
 $stems = "FreeEnergyLandscape,FreeEnergyLandscape3D,FreeEnergyRmsdCom,FreeEnergyRmsdCom3D,FreeEnergyRmsdSasa,FreeEnergyRmsdSasa3D,FreeEnergyLigandProteinRmsd,FreeEnergyLigandProteinRmsd3D"
 $log = "E:\Origin_Data\_fel_replot.log"

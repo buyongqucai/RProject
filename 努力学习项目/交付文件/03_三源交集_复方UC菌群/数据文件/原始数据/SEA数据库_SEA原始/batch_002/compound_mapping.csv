@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,Glutathione,124886.0,C(CC(=O)N[C@@H](CS)C(=O)NCC(=O)O)[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0002,Glycine,750.0,C(C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,Histidine,6274.0,C1=C(NC=N1)C[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0004,Hydroquinone,785.0,C1=CC(=CC=C1O)O,gutMGene human metabolite-gene evidence + GMMAD2 UC/IBD FDR<0.05
+m0005,Hypoxanthine,135398638.0,C1=NC2=C(N1)C(=O)NC=N2,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0006,Leucine,6106.0,CC(C)C[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0007,Methionine,6137.0,CSCC[C@@H](C(=O)O)N,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0008,Oleic Acid,445639.0,CCCCCCCC/C=C\CCCCCCCC(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0009,Palmitic Acid,985.0,CCCCCCCCCCCCCCCC(=O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0010,Pantothenic Acid,6613.0,CC(C)(CO)[C@H](C(=O)NCCC(=O)O)O,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile

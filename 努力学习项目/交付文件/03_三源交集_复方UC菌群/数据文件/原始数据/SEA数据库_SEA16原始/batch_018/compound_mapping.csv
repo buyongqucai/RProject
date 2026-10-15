@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,"7-Hydroxy-5-methyl-3-phenyl-6,7,8,9-tetrahydropyrido[3',2':4,5]imidazo[1,2-a]pyrimidin-5-ium chloride",129849310.0,CN1C2=C(N=CC(=C2)C3=CC=CC=C3)[N+]4=C1NC(CC4)O.[Cl-],excluded from main; retained in gutMGene human full-library sensitivity
+m0002,8-Prenylnaringenin,480764.0,CC(=CCC1=C2C(=C(C=C1O)O)C(=O)C[C@H](O2)C3=CC=C(C=C3)O)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0003,Acacetin,5280442.0,COC1=CC=C(C=C1)C2=CC(=O)C3=C(C=C(C=C3O2)O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0004,Acetate,175.0,CC(=O)[O-],excluded from main; retained in gutMGene human full-library sensitivity
+m0005,Acetoin,179.0,CC(C(=O)C)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0006,Acetyl phosphate(2-),4183249.0,CC(=O)OP(=O)([O-])[O-],excluded from main; retained in gutMGene human full-library sensitivity
+m0007,Aglycone,139597845.0,CC[C@@H](C)[C@H]1[C@@H](C=C[C@]2(O1)C[C@@H]3C[C@H](O2)CC=C([C@H]([C@H](C=CC=C4CO[C@H]5[C@]4([C@@H](C=C([C@H]5O)C)C(=O)O3)O)C)O)C)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0008,Allocholic acid,160636.0,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0009,Ammonium,223.0,[NH4+],excluded from main; retained in gutMGene human full-library sensitivity
+m0010,Amylotriose,439586.0,C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)O[C@@H]2[C@H](O[C@@H]([C@@H]([C@H]2O)O)O[C@@H]3[C@H](OC([C@@H]([C@H]3O)O)O)CO)CO)O)O)O)O,excluded from main; retained in gutMGene human full-library sensitivity

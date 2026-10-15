@@ -1,0 +1,9 @@
+﻿ligand_type,compound,compound_id,network_degree_Cstar,gene,uniprot,ppi_rank_in_top,pubchem_cid,canonical_smiles,selection_rule
+compound,quercetin,same8,21,FOS,P01100,4,5280343,C1=CC(=C(C=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O)O,TopL by B-C* degree; target=best PPI among C* neighbors
+compound,luteolin,YYH17,8,PCNA,P12004,1,5280445,C1=CC(=C(C=C1C2=CC(=O)C3=C(C=C(C=C3O2)O)O)O)O,TopL by B-C* degree; target=best PPI among C* neighbors
+compound,kaempferol,same6,6,PPARG,P37231,5,5280863,C1=CC(=CC=C1C2=C(C(=O)C3=C(C=C(C=C3O2)O)O)O)O,TopL by B-C* degree; target=best PPI among C* neighbors
+compound,3beta-Hydroxyurs-12-En-28-Syre,XF23,5,DNMT1,P26358,2,64945,CC1CCC2(CCC3(C(=CCC4C3(CCC5C4(CCC(C5(C)C)O)C)C)C2C1C)C)C(=O)O,TopL by B-C* degree; target=best PPI among C* neighbors
+compound,Caffeic Acid,XF15,4,TOP1,P11387,7,689043,C1=CC(=C(C=C1C=CC(=O)O)O)O,TopL by B-C* degree; target=best PPI among C* neighbors
+compound,Eucalyptol,XF4,4,NLRP3,Q96P20,,2758,CC1(C2CCC(O1)(CC2)C)C,TopL by B-C* degree; target=best PPI among C* neighbors
+compound,Anhydroicaritin,YYH8,4,ESR2,Q92731,3,14583584,CC1(CCC2=C(O1)C=C(C3=C2OC(=C(C3=O)O)C4=CC=C(C=C4)OC)O)C,TopL by B-C* degree; target=best PPI among C* neighbors
+compound,Stigmasterol,same10,3,NR3C2,P08235,,5280794,CCC(C=CC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)O)C)C)C(C)C,TopL by B-C* degree; target=best PPI among C* neighbors

@@ -1,0 +1,201 @@
+﻿Target,Common name,Uniprot ID,ChEMBL ID,Target Class,Probability,Known actives (2D/3D)
+"cGMP-specific 3',5'-cyclic phosphodiesterase",PDE5A,O76074,CHEMBL1827,Phosphodiesterase,1.0,"232 / 
+18&nbsp;&nbsp;&nbsp"
+Acetylcholinesterase,ACHE,P22303,CHEMBL220,Hydrolase,0.9174813685350504,"437 / 
+96&nbsp;&nbsp;&nbsp"
+Aldo-keto reductase family 1 member B1,AKR1B1,P15121,CHEMBL1900,Oxidoreductase,0.9079313832258931,"142 / 
+17&nbsp;&nbsp;&nbsp"
+Carbonic anhydrase 7,CA7,P43166,CHEMBL2326,Lyase,0.9013857729834269,"88 / 
+16&nbsp;&nbsp;&nbsp"
+Carbonic anhydrase 2,CA2,P00918,CHEMBL205,Lyase,0.9013857729834269,"611 / 
+13&nbsp;&nbsp;&nbsp"
+Carbonic anhydrase 12,CA12,O43570,CHEMBL3242,Lyase,0.9013857729834269,"426 / 
+25&nbsp;&nbsp;&nbsp"
+Carbonic anhydrase 4,CA4,P22748,CHEMBL3729,Lyase,0.8844427926911014,"71 / 
+11&nbsp;&nbsp;&nbsp"
+Xanthine dehydrogenase/oxidase,XDH,P47989,CHEMBL1929,Oxidoreductase,0.8716042993508454,"161 / 
+26&nbsp;&nbsp;&nbsp"
+NADPH oxidase 4,NOX4,Q9NPH5,CHEMBL1250375,Oxidoreductase,0.8674374944090275,"32 / 
+7&nbsp;&nbsp;&nbsp"
+Matrix metalloproteinase-9,MMP9,P14780,CHEMBL321,Protease,0.8652530867147159,"185 / 
+5&nbsp;&nbsp;&nbsp"
+Lysine-specific histone demethylase 1A,KDM1A,O60341,CHEMBL6136,Eraser,0.8631566953107666,"214 / 
+9&nbsp;&nbsp;&nbsp"
+Protein disulfide-isomerase,P4HB,P07237,CHEMBL5422,Isomerase,0.858016041621617,"135 / 
+2&nbsp;&nbsp;&nbsp"
+Ribosyldihydronicotinamide dehydrogenase [quinone],NQO2,P16083,CHEMBL3959,Oxidoreductase,0.8539399264249151,"37 / 
+1&nbsp;&nbsp;&nbsp"
+Synaptojanin-2,SYNJ2,O15056,CHEMBL4523129,Hydrolase,0.8462229894070648,"5 / 
+4&nbsp;&nbsp;&nbsp"
+Ribosomal protein S6 kinase alpha-3,RPS6KA3,P51812,CHEMBL2345,Kinase,0.8420652637937659,"91 / 
+26&nbsp;&nbsp;&nbsp"
+Beta-secretase 1,BACE1,P56817,CHEMBL4822,Protease,0.8398277613010376,"267 / 
+34&nbsp;&nbsp;&nbsp"
+Amine oxidase [flavin-containing] A,MAOA,P21397,CHEMBL1951,Oxidoreductase,0.8244451023640822,"308 / 
+24&nbsp;&nbsp;&nbsp"
+Alpha-2C adrenergic receptor,ADRA2C,P18825,CHEMBL1916,Family A G protein-coupled receptor,0.8210441654546659,"28 / 
+2&nbsp;&nbsp;&nbsp"
+Pyruvate kinase PKM,PKM,P14618,CHEMBL1075189,Enzyme,0.800394725327737,"16 / 
+9&nbsp;&nbsp;&nbsp"
+Alpha-2A adrenergic receptor,ADRA2A,P08913,CHEMBL1867,Family A G protein-coupled receptor,0.7559296274066528,"58 / 
+1&nbsp;&nbsp;&nbsp"
+Ribosomal protein S6 kinase alpha-1,RPS6KA1,Q15418,CHEMBL2553,Kinase,0.7536502718499514,"36 / 
+3&nbsp;&nbsp;&nbsp"
+Nicotinamide phosphoribosyltransferase,NAMPT,P43490,CHEMBL1744525,Enzyme,0.7399974018661569,"20 / 
+1&nbsp;&nbsp;&nbsp"
+Prostaglandin G/H synthase 2,PTGS2,P35354,CHEMBL230,Oxidoreductase,0.7006953869786774,"297 / 
+71&nbsp;&nbsp;&nbsp"
+Neuromedin-U receptor 2,NMUR2,Q9GZQ4,CHEMBL1075144,Family A G protein-coupled receptor,0.5918011991594658,"2 / 
+1&nbsp;&nbsp;&nbsp"
+2-5A-dependent ribonuclease,RNASEL,Q05823,CHEMBL3575,Hydrolase,0.49979145338078185,"3 / 
+1&nbsp;&nbsp;&nbsp"
+Cystathionine beta-synthase,CBS,P35520,CHEMBL3399911,Enzyme,0.36461998240039406,"8 / 
+4&nbsp;&nbsp;&nbsp"
+Ribosomal protein S6 kinase alpha-6,RPS6KA6,Q9UK32,CHEMBL4924,Kinase,0.35012228596281875,"27 / 
+2&nbsp;&nbsp;&nbsp"
+Dipeptidyl peptidase 4,DPP4,P27487,CHEMBL284,Protease,0.2977442805811022,"63 / 
+7&nbsp;&nbsp;&nbsp"
+ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 1,CD38,P28907,CHEMBL4660,Enzyme,0.15489435800480095,"3 / 
+2&nbsp;&nbsp;&nbsp"
+Tumor necrosis factor,TNF,P01375,CHEMBL1825,Secreted protein,0.10189407386550402,"49 / 
+3&nbsp;&nbsp;&nbsp"
+Interleukin-2,IL2,P60568,CHEMBL5880,Secreted protein,0.09099497330470963,"23 / 
+4&nbsp;&nbsp;&nbsp"
+Inhibitor of nuclear factor kappa-B kinase subunit beta,IKBKB,O14920,CHEMBL1991,Kinase,0.08896481243069584,"100 / 
+2&nbsp;&nbsp;&nbsp"
+Polyunsaturated fatty acid 5-lipoxygenase,ALOX5,P09917,CHEMBL215,Oxidoreductase,0.07962542325052525,"530 / 
+53&nbsp;&nbsp;&nbsp"
+ATP-dependent translocase ABCB1,ABCB1,P08183,CHEMBL4302,Primary active transporter,0.07331780463497484,"132 / 
+120&nbsp;&nbsp;&nbsp"
+Aromatase,CYP19A1,P11511,CHEMBL1978,Cytochrome P450,0.06392074861205937,"315 / 
+19&nbsp;&nbsp;&nbsp"
+Tyrosine-protein phosphatase non-receptor type 1,PTPN1,P18031,CHEMBL335,Phosphatase,0.0634139375953586,"675 / 
+61&nbsp;&nbsp;&nbsp"
+Serine/threonine-protein kinase PLK1,PLK1,P53350,CHEMBL3024,Kinase,0.03910234888729844,"81 / 
+4&nbsp;&nbsp;&nbsp"
+Dual specificity tyrosine-phosphorylation-regulated kinase 1A,DYRK1A,Q13627,CHEMBL2292,Kinase,0.038954621943920006,"175 / 
+3&nbsp;&nbsp;&nbsp"
+Dual specificity tyrosine-phosphorylation-regulated kinase 1B,DYRK1B,Q9Y463,CHEMBL5543,Kinase,0.03039147319678983,"87 / 
+2&nbsp;&nbsp;&nbsp"
+Estrogen receptor beta,ESR2,Q92731,CHEMBL242,Nuclear receptor,0.028955240256408915,"1509 / 
+10&nbsp;&nbsp;&nbsp"
+"3',5'-cyclic-AMP phosphodiesterase 4D",PDE4D,Q08499,CHEMBL288,Phosphodiesterase,0.02648215661296036,"98 / 
+50&nbsp;&nbsp;&nbsp"
+RAC-alpha serine/threonine-protein kinase,AKT1,P31749,CHEMBL4282,Kinase,0.02480650387457479,"155 / 
+3&nbsp;&nbsp;&nbsp"
+Beta-glucuronidase,GUSB,P08236,CHEMBL2728,Hydrolase,0.024292379916421053,"68 / 
+2&nbsp;&nbsp;&nbsp"
+Broad substrate specificity ATP-binding cassette transporter ABCG2,ABCG2,Q9UNQ0,CHEMBL5393,Primary active transporter,0.023777175641204358,"118 / 
+146&nbsp;&nbsp;&nbsp"
+Maltase-glucoamylase,MGAM,O43451,CHEMBL2074,Hydrolase,0.023774806384491032,"38 / 
+4&nbsp;&nbsp;&nbsp"
+Telomerase reverse transcriptase,TERT,O14746,CHEMBL2916,Transferase,0.022554586326401563,"48 / 
+30&nbsp;&nbsp;&nbsp"
+Adenosine receptor A3,ADORA3,P0DMS8,CHEMBL256,Family A G protein-coupled receptor,0.020705998517820904,"156 / 
+19&nbsp;&nbsp;&nbsp"
+Cholinesterase,BCHE,P06276,CHEMBL1914,Hydrolase,0.019376890242640846,"310 / 
+48&nbsp;&nbsp;&nbsp"
+"Aldehyde dehydrogenase, mitochondrial",ALDH2,P05091,CHEMBL1935,Oxidoreductase,0.01660744647087786,"40 / 
+27&nbsp;&nbsp;&nbsp"
+Peroxisome proliferator-activated receptor gamma,PPARG,P37231,CHEMBL235,Nuclear receptor,0.012348029622625727,"260 / 
+18&nbsp;&nbsp;&nbsp"
+Cytochrome P450 1B1,CYP1B1,Q16678,CHEMBL4878,Cytochrome P450,0.011518449980154274,"76 / 
+88&nbsp;&nbsp;&nbsp"
+Proto-oncogene tyrosine-protein kinase Src,SRC,P12931,CHEMBL267,Kinase,0.010855180912507494,"512 / 
+9&nbsp;&nbsp;&nbsp"
+Potassium voltage-gated channel subfamily A member 3,KCNA3,P22001,CHEMBL4633,Voltage-gated ion channel,0.010552111310523755,"12 / 
+10&nbsp;&nbsp;&nbsp"
+Peroxisome proliferator-activated receptor alpha,PPARA,Q07869,CHEMBL239,Nuclear receptor,0.010423254945456938,"102 / 
+5&nbsp;&nbsp;&nbsp"
+Carbonic anhydrase 13,CA13,Q8N1Q1,CHEMBL3912,Lyase,0.009360571916858943,"20 / 
+2&nbsp;&nbsp;&nbsp"
+Carbonic anhydrase 1,CA1,P00915,CHEMBL261,Lyase,0.009360571916858943,"532 / 
+11&nbsp;&nbsp;&nbsp"
+Amyloid-beta precursor protein,APP,P05067,CHEMBL2487,Membrane receptor,0.009301777876399148,"302 / 
+18&nbsp;&nbsp;&nbsp"
+Carbonic anhydrase 9,CA9,Q16790,CHEMBL3594,Lyase,0.009191802160753944,"523 / 
+15&nbsp;&nbsp;&nbsp"
+Induced myeloid leukemia cell differentiation protein Mcl-1,MCL1,Q07820,CHEMBL4361,Other cytosolic protein,0.009182330473629388,"243 / 
+4&nbsp;&nbsp;&nbsp"
+Plasminogen,PLG,P00747,CHEMBL1801,Protease,0.009162409642418705,"85 / 
+4&nbsp;&nbsp;&nbsp"
+"Aldehyde dehydrogenase X, mitochondrial",ALDH1B1,P30837,CHEMBL4881,Oxidoreductase,0.00864332317167647,"1 / 
+1&nbsp;&nbsp;&nbsp"
+Retinal dehydrogenase 2,ALDH1A2,O94788,CHEMBL3112384,Oxidoreductase,0.00864332317167647,"3 / 
+1&nbsp;&nbsp;&nbsp"
+Peroxisome proliferator-activated receptor delta,PPARD,Q03181,CHEMBL3979,Nuclear receptor,0.00760315460224591,"62 / 
+3&nbsp;&nbsp;&nbsp"
+Prostaglandin E synthase,PTGES,O14684,CHEMBL5658,Isomerase,0.006686029946611877,"113 / 
+1&nbsp;&nbsp;&nbsp"
+Epidermal growth factor receptor,EGFR,P00533,CHEMBL203,Kinase,0.006382348210783458,"577 / 
+28&nbsp;&nbsp;&nbsp"
+Multidrug resistance-associated protein 1,ABCC1,P33527,CHEMBL3004,Primary active transporter,0.005765510548549852,"16 / 
+81&nbsp;&nbsp;&nbsp"
+72 kDa type IV collagenase,MMP2,P08253,CHEMBL333,Protease,0.005300307619538932,"264 / 
+2&nbsp;&nbsp;&nbsp"
+CDK2/Cyclin A2,N/A,P24941&P20248,CHEMBL3038469,Kinase,0.005200081370491842,"100 / 
+28&nbsp;&nbsp;&nbsp"
+CDK9/cyclin T1,N/A,O60563&P50750,CHEMBL2111389,Kinase,0.005200081370491842,"125 / 
+36&nbsp;&nbsp;&nbsp"
+Cyclin-dependent kinase 2,CDK2,P24941,CHEMBL301,Kinase,0.005166191254718246,"284 / 
+24&nbsp;&nbsp;&nbsp"
+Tyrosine-protein kinase SYK,SYK,P43405,CHEMBL2599,Kinase,0.005079110712664711,"116 / 
+3&nbsp;&nbsp;&nbsp"
+Catenin beta-1,CTNNB1,P35222,CHEMBL5866,Unclassified protein,0.005052702818917293,"11 / 
+3&nbsp;&nbsp;&nbsp"
+Cyclin-dependent kinase 1,CDK1,P06493,CHEMBL308,Kinase,0.004896839162210588,"196 / 
+11&nbsp;&nbsp;&nbsp"
+Tyrosinase,TYR,P14679,CHEMBL1973,Oxidoreductase,0.004795759578614024,"112 / 
+9&nbsp;&nbsp;&nbsp"
+Vascular endothelial growth factor receptor 2,KDR,P35968,CHEMBL279,Kinase,0.004441986661025338,"1052 / 
+4&nbsp;&nbsp;&nbsp"
+"Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit alpha isoform",PIK3CA,P42336,CHEMBL4005,Transferase,0.004256456648694435,"458 / 
+1&nbsp;&nbsp;&nbsp"
+Transcription factor p65,RELA,Q04206,CHEMBL5533,Transcription factor,0.004218698583342584,"14 / 
+5&nbsp;&nbsp;&nbsp"
+Sodium/glucose cotransporter 2,SLC5A2,P31639,CHEMBL3884,Electrochemical transporter,0.004029028994990644,"93 / 
+48&nbsp;&nbsp;&nbsp"
+Bromodomain-containing protein 4,BRD4,O60885,CHEMBL1163125,Reader,0.004002122602747517,"181 / 
+16&nbsp;&nbsp;&nbsp"
+Ectonucleotide pyrophosphatase/phosphodiesterase family member 1,ENPP1,P22413,CHEMBL5925,Enzyme,0.003908230259525241,"71 / 
+1&nbsp;&nbsp;&nbsp"
+Sigma non-opioid intracellular receptor 1,SIGMAR1,Q99720,CHEMBL287,Membrane receptor,0.003862229668295095,"224 / 
+68&nbsp;&nbsp;&nbsp"
+Hepatocyte growth factor receptor,MET,P08581,CHEMBL3717,Kinase,0.0038608565459734806,"360 / 
+2&nbsp;&nbsp;&nbsp"
+Cyclin-dependent kinase 5/CDK5 activator 1,N/A,Q00535&Q15078,CHEMBL1907600,Kinase,0.00376935403765618,"218 / 
+23&nbsp;&nbsp;&nbsp"
+MAP kinase-interacting serine/threonine-protein kinase 2,MKNK2,Q9HBH9,CHEMBL4204,Kinase,0.0037033153066160463,"46 / 
+6&nbsp;&nbsp;&nbsp"
+C-X-C chemokine receptor type 1,CXCR1,P25024,CHEMBL4029,Family A G protein-coupled receptor,0.0036770139792272724,"225 / 
+1&nbsp;&nbsp;&nbsp"
+Serine/threonine-protein kinase B-raf,BRAF,P15056,CHEMBL5145,Kinase,0.0036770139792272724,"328 / 
+2&nbsp;&nbsp;&nbsp"
+Sodium/glucose cotransporter 1,SLC5A1,P13866,CHEMBL4979,Electrochemical transporter,0.0036544887101546304,"67 / 
+35&nbsp;&nbsp;&nbsp"
+Cyclin-dependent kinase 4/cyclin D1,N/A,P11802&P24385,CHEMBL1907601,Kinase,0.0036341885051441223,"198 / 
+22&nbsp;&nbsp;&nbsp"
+Microtubule-associated protein tau,MAPT,P10636,CHEMBL1293224,Other cytosolic protein,0.0035883900690310763,"52 / 
+1&nbsp;&nbsp;&nbsp"
+Cytochrome P450 1A1,CYP1A1,P04798,CHEMBL2231,Cytochrome P450,0.0034585770162592275,"6 / 
+10&nbsp;&nbsp;&nbsp"
+"Thioredoxin reductase 1, cytoplasmic",TXNRD1,Q16881,CHEMBL1927,Oxidoreductase,0.0033930185154361866,"5 / 
+1&nbsp;&nbsp;&nbsp"
+Cytochrome P450 1A2,CYP1A2,P05177,CHEMBL3356,Cytochrome P450,0.0033879048287984576,"10 / 
+5&nbsp;&nbsp;&nbsp"
+Glycogen synthase kinase-3 beta,GSK3B,P49841,CHEMBL262,Kinase,0.0033554974738693173,"325 / 
+16&nbsp;&nbsp;&nbsp"
+Receptor-type tyrosine-protein kinase FLT3,FLT3,P36888,CHEMBL1974,Kinase,0.0033554974738693173,"213 / 
+13&nbsp;&nbsp;&nbsp"
+Histone deacetylase 6,HDAC6,Q9UBN7,CHEMBL1865,Eraser,0.0033148014287957554,"330 / 
+13&nbsp;&nbsp;&nbsp"
+Histone deacetylase 8,HDAC8,Q9BY41,CHEMBL3192,Eraser,0.003268631412276234,"139 / 
+1&nbsp;&nbsp;&nbsp"
+Histone deacetylase 2,HDAC2,Q92769,CHEMBL1937,Eraser,0.003268631412276234,"110 / 
+2&nbsp;&nbsp;&nbsp"
+Histone deacetylase 1,HDAC1,Q13547,CHEMBL325,Eraser,0.003268631412276234,"316 / 
+4&nbsp;&nbsp;&nbsp"
+Histone deacetylase 3,HDAC3,O15379,CHEMBL1829,Eraser,0.003268631412276234,"111 / 
+2&nbsp;&nbsp;&nbsp"
+Stromelysin-1,MMP3,P08254,CHEMBL283,Protease,0.003215200679795115,"98 / 
+1&nbsp;&nbsp;&nbsp"

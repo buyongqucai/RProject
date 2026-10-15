@@ -1,0 +1,5 @@
+DONE: production 100.000 ns; finalized by finalize_100ns_wrap.sh
+note: 100 ns reached; previous Fatal was GMX_MAXBACKUP on md.gro (not physics)
+GMX_MAXBACKUP=5; gro_backups_kept<=5
+2026-10-10T15:58:57+08:00
+gyrate.xvg rmsd_backbone.xvg rmsf_calpha.xvg 

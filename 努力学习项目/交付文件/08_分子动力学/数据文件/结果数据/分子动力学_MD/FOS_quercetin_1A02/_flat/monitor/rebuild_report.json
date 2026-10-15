@@ -1,0 +1,16 @@
+{
+  "system": "FOS_quercetin_1A02",
+  "source_dir": "/mnt/e/RProject/努力学习项目/08_分子动力学/数据文件/原始数据/RCSB与对接姿态_MD输入_Top3/FOS_quercetin_1A02",
+  "auto_rebuild_attempted": true,
+  "auto_rebuild_ok": true,
+  "pose_class": "A2",
+  "chosen_pdb": "1FOS",
+  "reason_zh": "已自动重搭：排除原结构 1A02，改用 1FOS （最大连续缺环 2，分辨率 3.05）。无共晶小分子，配体放到蛋白 CA 质心附近（弱初态）@1FOS 链E。",
+  "candidates": [
+    "1FOS",
+    "1S9K"
+  ],
+  "resolution": 3.05,
+  "gap_max": 2,
+  "note": "无共晶小分子，配体放到蛋白 CA 质心附近（弱初态）@1FOS 链E"
+}

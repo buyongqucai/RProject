@@ -1,0 +1,5 @@
+﻿analysis,evidence,F_genes,D_project_count,I1_genes,M_genes,I2_genes,C_genes,hypergeom_p,jaccard_I1_I2,degree_weighted_permutation_p,perm_ge_observed_hits,degree_preserving_stratified_permutation_p,stratified_perm_ge_observed_hits,permutations,hub_degree_threshold_p90,hub_genes_removed,C_genes_no_top10pct_hub,hypergeom_p_no_top10pct_hub,go_no_go_C_lt_30,hypergeom_fdr_bh
+main_evidence_priority,H_only,636,1517,291,52,38,20,2.9375045394671576e-06,0.06472491909385113,0.98001998001998,0.98,1.0,1.0,1000,21.0,30,10,0.013856113058525826,True,2.9375045394671576e-06
+main_evidence_priority,H_plus_M,636,1517,291,466,165,78,1.5723546780171946e-18,0.20634920634920634,1.0,1.0,1.0,1.0,1000,20.0,41,61,1.8918841840435584e-14,False,3.1447093560343892e-18
+full_gutmgene_human,H_only,636,1517,291,82,60,35,7.15277337597568e-12,0.11075949367088607,0.9180819180819181,0.918,1.0,1.0,1000,21.0,30,21,4.811161037633198e-06,False,9.537031167967573e-12
+full_gutmgene_human,H_plus_M,636,1517,291,632,254,126,7.392372092671387e-35,0.30071599045346065,0.999000999000999,0.999,1.0,1.0,1000,23.0,42,94,2.6551324058282653e-24,False,2.9569488370685546e-34

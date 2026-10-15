@@ -1,0 +1,13 @@
+分子动力学监控异常，模拟已停止。
+
+时间: 2026-10-09 20:59:49 +0800
+目录: /home/ywy/md_runs/ADA_Adenosine_7RTG
+原因:
+ligand RMSD max 1.641 nm > 1.5 nm (ligand fly/dissociate)
+COM distance max 2.623 nm > 2.0 nm (receptor-ligand separation)
+COM jump 1.550 nm > 1.0 nm vs first frame
+
+轨迹时间: 42.000 ns
+
+日志: /home/ywy/md_runs/logs/
+续跑前请先看 monitor/ABORT_REASON.txt，不要删 md.cpt。

@@ -1,0 +1,18 @@
+{
+  "|C|": 78,
+  "|ToxHard|": 27,
+  "|C*|": 51,
+  "top_targets": [
+    "PCNA",
+    "DNMT1",
+    "ESR2",
+    "FOS",
+    "PPARG",
+    "EZH2",
+    "TOP1",
+    "GAPDH"
+  ],
+  "n_compound_pairs": 8,
+  "n_metabolite_pairs": 8,
+  "THRESH_KCAL": -5.0
+}

@@ -1,0 +1,9 @@
+﻿metabolite,gene,pdb,site,mean_kcal,sd_kcal,min_kcal,pass_rate,n_runs
+Inosine,DNMT1,3EPZ,co-ligand:BGC(largest cluster 12/12),-6.599999999999999,0.0,-6.6,1.0,3
+Phenylalanine,PPARG,1FM9,co-ligand:9CR(largest cluster 22/22),-6.3,0.0,-6.3,1.0,3
+Maltotriose,LGALS3,1KJR,co-ligand:BEK(largest cluster 15/15),-5.900000000000001,0.0,-5.9,1.0,3
+4-Hydroxyphenylacetic acid,ESR2,1L2J,co-ligand:ETC(largest cluster 24/48),-5.8,0.0,-5.8,1.0,3
+Raffinose,LGALS3,1KJR,co-ligand:BEK(largest cluster 15/15),-5.266666666666667,0.0577350269189623,-5.3,1.0,3
+Maltose,LGALS3,1KJR,co-ligand:BEK(largest cluster 15/15),-5.0,0.0,-5.0,1.0,3
+Tyrosine,PCNA,1U7B,blind(geometric center),-4.3,0.0,-4.3,0.0,3
+Butyrate,FOS,1A02,blind(geometric center),-3.2999999999999994,0.0,-3.3,0.0,3

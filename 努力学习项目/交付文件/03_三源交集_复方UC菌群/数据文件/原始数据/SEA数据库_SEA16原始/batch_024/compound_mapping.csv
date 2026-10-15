@@ -1,0 +1,11 @@
+﻿compound_id,name_en,cid,smiles,source
+m0001,Glycochenodeoxycholic acid,12544.0,C[C@H](CCC(=O)NCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0002,Glycocholic acid,10140.0,C[C@H](CCC(=O)NCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)O)C,GMMAD2 high-score: UC FDR<0.05 and |Score| strictly above the 90th percentile
+m0003,Glycoursodeoxycholic acid,12310288.0,C[C@H](CCC(=O)NCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@H](C[C@H]4[C@@]3(CC[C@H](C4)O)C)O)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0004,Gondoic Acid,5282768.0,CCCCCCCC/C=C\CCCCCCCCCC(=O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0005,Hesperetin dihydrochalcone,147608.0,COC1=C(C=C(C=C1)CCC(=O)C2=C(C=C(C=C2O)O)O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0006,Hexanoate,4398339.0,CCCCCC(=O)[O-],excluded from main; retained in gutMGene human full-library sensitivity
+m0007,Hydrogen,783.0,[HH],excluded from main; retained in gutMGene human full-library sensitivity
+m0008,Hydroxyquercitrin,129887767.0,C[C@H]1[C@@H]([C@H]([C@H]([C@@H](O1)OC2=C(OC3=C(C2=O)C(=C(C(=C3)O)O)O)C4=CC(=C(C=C4)O)O)O)O)O,excluded from main; retained in gutMGene human full-library sensitivity
+m0009,Icaritin,5318980.0,CC(=CCC1=C2C(=C(C=C1O)O)C(=O)C(=C(O2)C3=CC=C(C=C3)OC)O)C,excluded from main; retained in gutMGene human full-library sensitivity
+m0010,Indole-3-lactic acid,92904.0,C1=CC=C2C(=C1)C(=CN2)CC(C(=O)O)O,excluded from main; retained in gutMGene human full-library sensitivity

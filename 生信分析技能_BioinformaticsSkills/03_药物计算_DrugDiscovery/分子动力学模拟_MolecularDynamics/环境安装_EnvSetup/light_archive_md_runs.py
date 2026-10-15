@@ -6,7 +6,7 @@ import shutil
 from pathlib import Path
 
 SRC = Path.home() / "md_runs"
-DST = Path("/mnt/e/RProject/努力学习项目/08_分子动力学/结果文件/数据文件/分子动力学_MD")
+DST = Path("/mnt/e/RProject/努力学习项目/08_分子动力学/数据文件/结果数据/分子动力学_MD")
 SKIP_EXT = {".xtc", ".trr", ".edr"}
 
 copied, skipped_bytes, failed = 0, 0, 0
