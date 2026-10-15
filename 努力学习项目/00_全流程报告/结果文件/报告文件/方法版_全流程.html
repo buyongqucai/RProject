@@ -39,7 +39,7 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <p style="margin-top:1rem"><a href="论文版_全流程.html">→ 论文版</a></p>
 </aside>
 <main class="main">
-<p>方法版回答「每一步怎么做、数据从哪来、洗完放哪、做到哪一关停」。与 <code>01_网络药理学/</code> 同级，目录 <code>00_全流程报告/</code>。路径均相对于 <code>努力学习项目/</code>。存放层级（课题交付）：<code>结果文件/{数据文件,图片文件,报告文件}/</code> 与 <code>代码文件/</code>（仅脚本）、<code>数据文件/</code>（仅 raw，<code>原始数据/</code> 内目录名带来源库）平级。每模块至多一张拼图；单张结果细读在论文版。</p>
+<p>方法版回答「每一步怎么做、数据从哪来、洗完放哪、做到哪一关停」。与 <code>01_网络药理学/</code> 同级，目录 <code>00_全流程报告/</code>。路径均相对于 <code>努力学习项目/</code>。存放层级（课题交付）：<code>结果文件/{数据文件,图片文件,报告文件}/</code> 与 <code>代码文件/</code>（仅脚本）、<code>数据文件/</code>（仅 raw，<code>原始数据/</code> 内目录名带来源库）平级。每模块至多一张拼图（06 对接因双轨拆分为两张分轨矩阵）；单张结果细读在论文版。</p>
 
 <h2 id="m-ov">总览</h2>
 <table>
@@ -205,7 +205,8 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <h4>6. 输入与输出</h4>
 <p><b>输入：</b>F/M/D 靶点、network 边、代谢物主面板、CTD ToxHard、STRING。<b>输出：</b>SelectionRun 表 + 双轨对接汇总/全表。<b>停机：</b>无 UniProt/PDB 则顺延下一名靶点；配体无 3D 则顺延下一名成分/代谢物。</p>
 <h4>7. 结果数据与图片怎么读</h4>
-<figure><img src='../图片文件/panel_06_对接.png' alt=''/><figcaption><b>方法拼图 06：</b> C* 后双轨对接亲和力热图（kcal/mol）。细读见论文版。</figcaption></figure>
+<figure><img src='../图片文件/矩阵_结合能热图_成分_DockingAffinityHeatmapCompounds.png' alt=''/><figcaption><b>方法图 06-1（成分轨）：</b> C* 后成分轨对接亲和力矩阵，<b>8 配体 × 8 受体</b>（行=成分、列=受体，顺序按真表 <code>成分对接汇总.csv</code>）；分组来源：筛选步骤① 成分 B–C* Degree Top L=8 → 配步骤② PPI 最前 C* 靶点；格内=种子 1/7/42 均值结合能（kcal/mol），空格=未对接组合。细读见论文版图 15a。</figcaption></figure>
+<figure><img src='../图片文件/矩阵_结合能热图_代谢物_DockingAffinityHeatmapMetabolites.png' alt=''/><figcaption><b>方法图 06-2（代谢物轨）：</b> C* 后代谢物轨对接亲和力矩阵，<b>8 配体 × 6 受体</b>（行=代谢物、列=受体，顺序按真表 <code>代谢物对接汇总.csv</code>）；分组来源：筛选步骤③ 代谢物 Tier A*（n_C*≥1 且非有害）Top M=8 → 配步骤② PPI 最前 C* 靶点；格内=种子 1/7/42 均值结合能（kcal/mol），空格=未对接组合。细读见论文版图 15b。</figcaption></figure>
 <p>读 <code>mean_kcal</code>、<code>pass_rate</code>；主结论以 <code>成分对接汇总.csv</code> / <code>代谢物对接汇总.csv</code> 为准，不以归档旧表为准。</p>
 <h4>8. 解读边界</h4>
 <p>结合候选；非实验 Kd、非疗效/拮抗/减毒。对接结合能仅作候选排序与 −5.0 kcal/mol 准入，不作结合证实。MD 衔接：本轮 C* 成分轨 quercetin–FOS（1A02，-8.20）即已完成 MD 的 FOS×槲皮素体系；已完成 MD 的另两套（色氨酸–MMP9 4H3X -8.91 ± 0.02、腺苷–ADA 7RTG -6.28 ± 0.01 kcal/mol，3IAR 共晶 -6.59 ± 0.01）来自归档前代谢物批次，不属本轮 C* 16 对。其余 C* 配对未进 MD；MD 为单条轨迹窗口观察，不背书对接分为 Kd，也不把窗口稳定写成结合证实。</p>
