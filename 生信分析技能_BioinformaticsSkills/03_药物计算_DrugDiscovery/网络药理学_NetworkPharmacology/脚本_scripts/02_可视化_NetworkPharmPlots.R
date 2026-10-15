@@ -880,7 +880,7 @@ np_plot_go_bubble <- function(go_df, top_n = 10) {
       breaks = function(x) pretty(x, n = 3)
     ) +
     ggplot2::scale_x_continuous(expand = ggplot2::expansion(mult = c(0.04, 0.08))) +
-    ggplot2::labs(x = NULL, y = NULL) +
+    ggplot2::labs(x = "Enrichment", y = NULL) +
     ggplot2::guides(
       color = ggplot2::guide_colorbar(order = 1, barwidth = 0.7, barheight = 5),
       size = ggplot2::guide_legend(

@@ -100,7 +100,7 @@
 | 2 成分 | `tcmspsearch.php?qr=<herb_en_name>&qsr=herb_en_name&token=` | 拉丁名 | 成分表（MOL_ID、molecule_ID、OB、DL 全 ADME） |
 | 3 靶点 | `molecule.php?qn=<molecule_ID>` | 分子数字 ID | `var tar` 靶点数组（target_ID、target_name、drugbank_ID、SVM/RF score） |
 
-**9 药 TCMSP 口径与实取清单**（raw：`02_药物靶点_DrugTargets/.../01_初始数据_RawInitial/TCMSP_*`）：
+**9 药 TCMSP 口径与实取清单**（raw：`02_药物靶点_DrugTargets/.../01_初始数据_RawInitial/01_TCMSP_成分靶点_CompoundTargets/TCMSP_*`）：
 
 | 药材 | TCMSP 拉丁名 | 成分数 | 过 OB≥30/DL≥0.18 | 备注 |
 |------|--------------|--------|------------------|------|
@@ -164,7 +164,7 @@ TCMSP 2,454 成分靶点对 → 靶点蛋白名经 **技能 SSOT 映射器**（`
 | 环节 | 内容 | 规模 |
 |------|------|------|
 | 契约装配 | `图谱契约装配_buildFigureContracts.py`：按库长表双口径、GO 气泡表（fold enrichment）、KEGG top25（KEGG BRITE `br08901` 补 one_type/two_type）、成分靶点、PROVENANCE | 契约 20 文件 |
-| 图 01 疾病五库韦恩 | R N 集微生信双底栏版式（5 库>模板 4 集几何，走技能 SSOT `np_plot_disease_db_venn`） | 9787/23/100/33/38 |
+| 图 01 疾病多库韦恩 | 微生信五库（GeneCards全量/**CTD_curated**/OMIM/TTD/DrugBank）；与图02同 `write_venn_pair` 链 | GC 9786 / CTD_curated 22 / OMIM 100 / TTD 33 / DrugBank 38 |
 | 图 02 药病韦恩 | 微生信模板 `build_two_set_svg` + PNG 裁白边（FROZEN §G） | 244 ∩ 4269 = 197 |
 | 图 03–05 | 单药交集柱 / 成分交集柱（均分 / 按药） | 9 药 / 183 成分 |
 | 图 06–10 | GO 气泡+柱（top10/ontology）、KEGG 棒棒糖+柱（top20）、KEGG 圈图（circlize） | 30 GO / 25 KEGG |
@@ -174,4 +174,8 @@ TCMSP 2,454 成分靶点对 → 靶点蛋白名经 **技能 SSOT 映射器**（`
 
 **PlotQA：** label_overlap 全 PASS（deep=0）；label_length FAIL 4 处均为 FROZEN 冻结副标题误判（STRING/HCTP 统计副标题 125–219 字），按「冻结文案不改」记录例外。
 
-**落位：** 全套在 `04_富集与PPI_EnrichPPI/03_图片文件_Figures/`（FileLayout「01–15 图序出图」）；图 01 另存 `01_疾病靶点_DiseaseTargets/03_图片文件_Figures/`；编号表在 `图谱套件编号表_FigureSuiteTables/`。
+**落位（by_stage，用户确认 2026-10-15）：**  
+- 图 01 → `01_疾病靶点_DiseaseTargets/03_图片文件_Figures/`  
+- 图 02–05、11–12、16–19 → `03_药病交集与网络_OverlapAndNetwork/03_图片文件_Figures/`  
+- 图 06–10、13–15 → `04_富集与PPI_EnrichPPI/03_图片文件_Figures/`  
+- 轨 B 汇总 → `交付文件/`；编号表在 `图谱套件编号表_FigureSuiteTables/`。

@@ -8,10 +8,12 @@ description: >-
 
 # 网络药理学 / NetworkPharmacology
 
-> **出图约束 SSOT（FROZEN）：** [`出图约束_NetworkFigureStandards.md`](文档_docs/出图约束_NetworkFigureStandards.md) — 改视觉 recipe / 疾病双口径前须「解冻」。  
+> **出图约束 SSOT（FROZEN 2026-10-16）：** [`出图约束_NetworkFigureStandards.md`](文档_docs/出图约束_NetworkFigureStandards.md) — 改视觉 recipe / 疾病双口径 / 韦恩 jvenn 路径前须「解冻」。  
 > **库与流水线 SSOT：** [`数据库分类与流水线_DataSourcesPipeline.md`](文档_docs/数据库分类与流水线_DataSourcesPipeline.md)  
 > **成分靶点 SOP：** [`成分靶点获取与交付规范_CompoundTargetSOP.md`](文档_docs/成分靶点获取与交付规范_CompoundTargetSOP.md)  
-> **手工/Cytoscape 可选：** [`手工导出与Cytoscape可选_ManualOps.md`](文档_docs/手工导出与Cytoscape可选_ManualOps.md)
+> **手工/Cytoscape 可选：** [`手工导出与Cytoscape可选_ManualOps.md`](文档_docs/手工导出与Cytoscape可选_ManualOps.md)  
+> **课题终局报告：** 论文式 + 方法论双报告 → DeliveryStandards [`课题双报告范式_ProjectDualReport.md`](../../00_基础_Foundation/统一交付规范_DeliveryStandards/文档_docs/课题双报告范式_ProjectDualReport.md)（禁「治疗」题名）  
+> **疾病韦恩（冻结）：** 五库 + **CTD_curated**；出图=微生信 [jvenn 金标页](https://bioinformatics.com.cn/static/others/jvenn/example.html)（§G / `weishengxin_venn_lib.py`），禁自绘花瓣
 
 基因列表与 STRING 边须可溯源。交付默认 **代码/AI（R）出图**；Cytoscape 仅可选精修。
 
@@ -25,7 +27,8 @@ description: >-
 
 - 可溯源：单药名 + 英文病名 + 库导出；整合 schema = **药物–有效成分–靶点**
 - **检索名（强制）：** 非 TCMSP 库只用**拉丁名/英文名**、禁拼音，命中后核对返回 Latin/English 字段 → CompoundTargetSOP **§8**（2026-10-14）
-- raw 路径/文件名含来源库；禁止无来源的 `输入/`、`raw/`
+- **BATMAN 双轨：** 药味 A① 按药 API（已验证）／A② 全库 browse+按药筛（**待验证**）；**化合物预测必须实时** → CompoundTargetSOP **§9.1**
+- raw 路径/文件名含来源库；**无库不建空夹**；禁止无来源的 `输入/`、`raw/`
 - HERB→STP 交付精简与异常清单 → CompoundTargetSOP
 - 禁止 UniProt 全表左拼主交付；缺导出 → `BLOCKED_EXTERNAL`，不编造基因
 - 列契约：`脚本_scripts/01_契约接口_DataContracts.R`

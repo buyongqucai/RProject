@@ -1,8 +1,11 @@
 # 样例报告范式 / Sample Report Paradigm
 
+> **范围：** 仅 `01_样例_sample/` 与技能演示报告。  
+> **课题 / 客户终局报告** 改走 [`课题双报告范式_ProjectDualReport.md`](课题双报告范式_ProjectDualReport.md)（论文式 + 方法论；金标升格自婷婷双报告，不再以本文件或 MD 样例报告代替）。
+
 **SSOT：** `统一交付规范_DeliveryStandards`  
 **生成器：** [`脚本_scripts/规范_报告生成_ReportBuild.R`](../脚本_scripts/规范_报告生成_ReportBuild.R) 的 `write_delivery_report()`  
-**金标（完整解读 + 分组图 · FROZEN）：**  
+**样例金标（完整解读 + 分组图 · FROZEN）：**  
 `03_药物计算_DrugDiscovery/分子动力学模拟_MolecularDynamics/01_样例_sample/代码文件/结果文件/报告文件/样例报告_SampleReport_v1.html`
 
 只重写 MD 金标、不重跑模拟：

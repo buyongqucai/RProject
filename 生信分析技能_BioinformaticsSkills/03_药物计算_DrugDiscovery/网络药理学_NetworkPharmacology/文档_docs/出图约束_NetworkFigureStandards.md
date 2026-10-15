@@ -1,7 +1,7 @@
 # 网络药理学出图约束（SSOT）
 
-> **状态：** `FROZEN`（2026-07-26 用户确认冻结）  
-> **解冻条件：** 用户明确说「解冻 / unfreeze」前，**禁止**改既有视觉 recipe、疾病双口径与主 HTML 报告结构。  
+> **状态：** `FROZEN`（2026-10-16 用户确认再冻结；首冻 2026-07-26）  
+> **解冻条件：** 用户明确说「解冻 / unfreeze」前，**禁止**改既有视觉 recipe、疾病双口径（含 CTD_curated）、韦恩 jvenn 金标路径与主 HTML 报告结构。  
 > **进化：** 解冻后新确认图样只写入本文件；技能说明不复述 recipe。反馈闭环见仓库 `docs/项目规范_ProjectStandards.md` §0。  
 > **增补例外：** 用户于 2026-07-27 明确要求写入规范的 **§J–§L**（网络分析报告 / 空靶点药味 / 生物结构动画）为授权增补，**不改** §A–§H 已冻结图样。  
 > **代码 SSOT：** `脚本_scripts/04_交付网络布局_DeliveryNetworkLayouts.R`（在 `03_STRING与网络图_StringNetwork.R` 之后 source，覆盖其 plot helpers）；圈图见 `02_可视化_NetworkPharmPlots.R`；高级附图见 `05_高级附图_AdvancedPanels.R`  
@@ -35,6 +35,13 @@
 
 **药病交集** = 药物靶点并集 ∩ **下游疾病并集**（不是 GeneCards 全量自交）。  
 写作/HTML 必须同时写清两套数字，避免「全量 7000+ vs 交集几百」被误解为数据错误。
+
+**CTD 口径（2026-10-16 用户确认）：**
+- **图 01 与下游一致**：CTD 只用 **CTD_curated（Direct Evidence）**，**不用 CTD_any**。
+- **图 01 五库**：GeneCards全量 + **CTD_curated** + OMIM + TTD + DrugBank。
+- **下游并集**：GeneCards≥40 ∪ **CTD_curated** ∪ OMIM ∪ TTD ∪ DrugBank。
+- **GeneCards 仍双口径**：韦恩用全量；下游用 Relevance≥40（CTD 则韦恩/下游均为 curated）。
+- **出图（微生信 = jvenn）**：权威页 [微生信 jvenn](https://bioinformatics.com.cn/static/others/jvenn/example.html)。图01 五库必须 `build_disease_5db_svg` → Selenium 驱动**该页**填入五列表并导出 SVG（同页 jvenn.min.js）；离线回退 `_jvenn_assets/`。图02 两集可用 jvenn 导出模板 `build_two_set_svg`。均经 `write_venn_pair` 光栅化+裁白边。**禁止**自绘 `<ellipse>` 花瓣冒充微生信。
 
 ---
 
@@ -114,7 +121,7 @@
 | 靶点 C | 圆角方；填充 **`#F0B2AE`**；基因名标在块内 |
 | 药 A | 平顶八边形；pastel 色板 `.np_herb_palette`（`#CBD5E8 #80B1D3 #FB8072 #E6AB02 #FDB462 #BEBADA #8DD3C7 #FCCDE5 #B3DE69 #BC80BD …`） |
 | 成分 B | 圆；与所属药同色 |
-| 通路 D | columns 六边形 / ellipse 扁椭圆；绿渐变 `#C7E9C0→#41AB5D→#006D2C` |
+| 通路 D | **正六边形**（长宽 **60–120**）；绿渐变 `#C7E9C0→#41AB5D→#006D2C`（2026-10-15 用户确认；原「columns 六边形 / ellipse 扁椭圆」作废） |
 | `same*` | 与**宿主药**同色（见 A3）；不单独刷灰 |
 | A–B / B–C 边 | **`#7A8A94` 实线**；α≈0.22–0.32；线宽≈0.28–0.36 |
 | C–D 边 | **`#3B7DD8` 实线**；α≈0.28；线宽≈0.40（禁止再淡到不可辨） |
@@ -147,7 +154,8 @@ ring_gap ≥ 4 × r_b
 
 ### A3. 成分命名与 `same*`（强制）
 
-1. 仅 1 味药：`{药码}{n}`（如 `BX1`）。
+1. 仅 1 味药：`{药码}{n}`（如 `BX1`、`GC1`、`HQ2`；**药码 = 药名拼音首字母**，序号递增）。
+   **禁止 `H_` / `h_` 等任何前缀**——化合物节点 ID 就是「药码+序号」（2026-10-15 用户确认；清风曾误加 `H_` 前缀已废）。
 2. ≥2 味药同名化学成分 → 唯一 ID **`same1…sameN`**（契约层）；`草药成分边` 每味相关药各挂一条到同一 `sameN`；图上节点只画一次。
 3. **空间宿主：** `host = argmin_{h∈sharers}(已分配成分数)`（先挂独有，再挂 shared）；`same*` 画在宿主卫星圈内。
 4. **颜色：** 与宿主药同色（`herb_owner`）；A–B 边仍连到所有共享药。
@@ -238,9 +246,13 @@ ring_gap ≥ 4 × r_b
 
 ## G. 韦恩图交付（冻结）
 
-1. 多库韦恩用 **VennFull**；药病韦恩用 **下游疾病并集 ∩ 药物靶点**。
-2. 优先微生信风格模板（`09_build_weishengxin_style_venn.py`）；光栅化后 **必须裁白边**（禁止 Chrome 大画布留巨幅空白）。
-3. 裁边脚本：`代码文件/27_trim_venn_whitespace.py`（轨 A + 轨 B 同步）。
+1. **图 01 疾病多库韦恩** = 五库（GeneCards_full / **CTD_curated** / OMIM / TTD / DrugBank）→ Selenium 打开金标页 classic + displayStat → `write_venn_pair`。
+2. **图 02 药病韦恩** = jvenn 两集几何模板 `build_two_set_svg` + `write_venn_pair`（与官网两集导出一致）。
+3. 入口库：`脚本_scripts/weishengxin_venn_lib.py`；金标：https://bioinformatics.com.cn/static/others/jvenn/example.html
+4. 光栅化后 **必须裁白边**。
+5. **禁止**：自绘五瓣椭圆；韦恩用 CTD_any；缺 CTD 的四库图冒充有 CTD 课题图 01。
+
+**审计（2026-10-16）：** 曾用自绘 `<ellipse>` 花瓣 + 仿双底栏，**不是**微生信 jvenn，与官网视觉不一致；已改回 jvenn 引擎。
 
 ---
 
@@ -254,6 +266,17 @@ ring_gap ≥ 4 × r_b
 | 统计 | `28_collect_report_stats.py` → `报告/_stats.json`；生成 HTML 时自动重算 |
 | 生成 | `26_build_html_report.py`；`报告/` 内 stub 跳转到根目录 HTML |
 | 分享 | **整夹打包** `交付文件/`；对方打开根目录 HTML 即可看图 |
+
+---
+
+## I. GO 气泡图排序（2026-10-15 增补 · 用户确认）
+
+> 撤销「按 p 值排序」临时 override，恢复 SSOT `np_plot_go_bubble` 默认（`02_可视化_NetworkPharmPlots.R`）：**X = 富集分数（enrichment）**、size = count、color = −log10(pvalue)。
+
+1. **X 轴 = 富集分数**（微生信口径 = `enrichment` 列 = **FoldEnrichment 富集倍数** `(k/n)/(K/N)`，由契约 `图谱契约装配` 计算；若需换 `RichFactor(k/n)` 改契约一处即可）。
+2. **竖排**：BP / CC / MF 三个分面自上而下；**每分面内按富集分数自上而下**排列（富集分数高在上），使气泡沿 X（富集分数）单调展开、观感整齐。
+3. 选条目：每 ontology 取 top_n（**按富集分数降序**）。
+4. 代码入口不变：`np_plot_go_bubble(go_df, top_n)`；禁临时 matplotlib/自创样式。
 
 ---
 
@@ -350,3 +373,5 @@ ring_gap ≥ 4 × r_b
 | 2026-07-19 | 柱/韦恩/GO/KEGG 柱棒气泡等首轮冻结 |
 | 2026-07-26 | HCTP/PPI/圈图修订 + 高级附图 16–19 + KEGG Top20 + HTML 报告 + 疾病双口径 + 轨 B 目录 → **用户确认 FROZEN** |
 | 2026-07-27 | 用户授权增补 **§J** 网络分析大表+HTML（成分显示原名、配色差异、禁散 Top10 表）、**§K** 空靶点药味、**§L** 生物结构动画与轨 B 目录项；**未解冻** §A–§H 视觉 recipe |
+| 2026-10-15 | 用户明确指令改图样/口径（**解冻授权**）：**§0a** CTD 双口径（韦恩全量 + 下游审编，与 GeneCards 同理）；**§A1** 通路 D 改**正六边形**（长宽 60–120；原八/六矛盾按确认六执行待拍板）；**§A3** 化合物 ID **禁 `H_` 前缀**、药码=拼音首字母+序号、共用 `same+序号`；**新增 §I** GO 气泡按富集分数排序（X=富集分数 FoldEnrichment）。备份 commit `afd483b`。靶点保留基因符号（不改）。 |
+| 2026-10-16 | **解冻→再冻结**：CTD 韦恩/下游均 **CTD_curated**；图01=Selenium 驱动微生信金标 [jvenn](https://bioinformatics.com.cn/static/others/jvenn/example.html)（禁自绘花瓣）；图02=两集 jvenn 模板；入口 `weishengxin_venn_lib.py`。用户确认冻结。 |

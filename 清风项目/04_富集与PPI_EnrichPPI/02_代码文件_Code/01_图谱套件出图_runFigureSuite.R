@@ -14,10 +14,14 @@ source(file.path(delivery_scripts, "规范_数据审计_DataAudit.R"), encoding 
 source(file.path(delivery_scripts, "规范_报告生成_ReportBuild.R"), encoding = "UTF-8")
 
 data_dir <- "E:/RProject/清风项目/03_药病交集与网络_OverlapAndNetwork/01_数据文件_Data/02_结果数据_ResultTables/图谱契约数据_FigureContractData"
-fig_dir <- "E:/RProject/清风项目/04_富集与PPI_EnrichPPI/03_图片文件_Figures"
+# by_stage 落位（用户确认 2026-10-15）：01疾病 / 03交集网络 / 04富集PPI
+fig_dir_01 <- "E:/RProject/清风项目/01_疾病靶点_DiseaseTargets/03_图片文件_Figures"
+fig_dir_03 <- "E:/RProject/清风项目/03_药病交集与网络_OverlapAndNetwork/03_图片文件_Figures"
+fig_dir_04 <- "E:/RProject/清风项目/04_富集与PPI_EnrichPPI/03_图片文件_Figures"
+fig_dir <- fig_dir_04  # 兼容旧引用；新图按 stage 写
 tab_dir <- "E:/RProject/清风项目/04_富集与PPI_EnrichPPI/01_数据文件_Data/02_结果数据_ResultTables/图谱套件编号表_FigureSuiteTables"
 rep_dir <- "E:/RProject/清风项目/04_富集与PPI_EnrichPPI/04_报告文件_Reports"
-for (d in c(data_dir, fig_dir, tab_dir, rep_dir)) dir.create(d, recursive = TRUE, showWarnings = FALSE)
+for (d in c(data_dir, fig_dir_01, fig_dir_03, fig_dir_04, tab_dir, rep_dir)) dir.create(d, recursive = TRUE, showWarnings = FALSE)
 
 skill_en <- "NetworkPharmacology"
 skill_folder <- "网络药理学_NetworkPharmacology"
@@ -26,9 +30,9 @@ sk_files <- list.files(scripts_dir, pattern = "[.][Rr]$", full.names = TRUE)
 for (sf in sk_files) try(source(sf, encoding = "UTF-8"), silent = TRUE)
 sourced_note <- paste0("已 source 本技能 脚本_scripts/: ", paste(basename(sk_files), collapse = ", "))
 
-# ---- 本地 recipe 覆盖：GO 气泡按 p 值排序（用户确认 2026-10-15） ----
-# 技能 SSOT 的 np_plot_go_bubble 按 enrichment 排；用户确认改为按 p 值（最显著在上、颜色红→绿渐变）。
-# 仅覆盖 GO 气泡（图06）；柱状(图07)仍走 SSOT。此偏好待经反馈闭环写入 FROZEN 出图约束 §D，暂不改共享技能。
+# ---- 本地 recipe 覆盖：GO 气泡按富集分数排序（用户确认 2026-10-15，撤销旧「按 p 值」override） ----
+# X=enrichment（富集分数 FoldEnrichment）、size=count、color=-log10(pvalue)；竖排 BP/CC/MF；
+# 每分面内按富集分数自上而下（富集分数高在上），使气泡沿 X 单调展开、观感整齐。见出图约束 §I。
 np_plot_go_bubble <- function(go_df, top_n = 10) {
   if (!requireNamespace("ggplot2", quietly = TRUE)) stop("需要 ggplot2")
   df <- go_df
@@ -39,18 +43,17 @@ np_plot_go_bubble <- function(go_df, top_n = 10) {
   df$ontology <- factor(as.character(df$ontology), levels = c("BP", "CC", "MF"))
   df$neglogp <- -log10(pmax(df$pvalue, 1e-300))
 
-  # 每个 ontology 取 top_n（按 p 值升序 = 最显著优先）
+  # 与技能 SSOT np_plot_go_bubble 对齐：top_n 按 enrichment 降序；分面内 enrichment 高在上
   parts <- split(df, df$ontology)
   parts <- lapply(parts, function(d) {
-    d <- d[order(d$pvalue, -d$enrichment), , drop = FALSE]
+    d <- d[order(-d$enrichment, d$pvalue), , drop = FALSE]
     utils::head(d, top_n)
   })
   df <- do.call(rbind, parts)
   rownames(df) <- NULL
 
   df$term_lab <- np_wrap_term(df$term, width = 36)
-  # y 轴因子末位在顶 → 按 p 降序排，使最显著(p 最小)落在顶部，颜色红→绿自上而下
-  df <- df[order(df$ontology, -df$pvalue), , drop = FALSE]
+  df <- df[order(df$ontology, df$enrichment, -df$neglogp), , drop = FALSE]
   df$term_lab <- factor(df$term_lab, levels = unique(df$term_lab))
 
   ggplot2::ggplot(
@@ -64,7 +67,7 @@ np_plot_go_bubble <- function(go_df, top_n = 10) {
       range = c(2.5, 10), name = "count", breaks = function(x) pretty(x, n = 3)
     ) +
     ggplot2::scale_x_continuous(expand = ggplot2::expansion(mult = c(0.04, 0.08))) +
-    ggplot2::labs(x = NULL, y = NULL) +
+    ggplot2::labs(x = "Enrichment", y = NULL) +
     ggplot2::guides(
       color = ggplot2::guide_colorbar(order = 1, barwidth = 0.7, barheight = 5),
       size = ggplot2::guide_legend(order = 2, override.aes = list(color = "grey30"))
@@ -182,46 +185,47 @@ write_delivery_audit(
   data_provenance = data_provenance
 )
 
-# --- 图 01：疾病多库韦恩（微生信模板 build_disease_4db_svg，契约装配脚本已产出，FROZEN §G） ---
+# --- 图 01：疾病多库韦恩（契约装配→01_疾病靶点/03_图片，FROZEN §G） ---
 fig_map <- c()
-venn_dis <- file.path(fig_dir, paste0(delivery_stem(skill_en, "venn", "DiseaseDatabases", order = 1), ".png"))
+venn_dis <- file.path(fig_dir_01, paste0(delivery_stem(skill_en, "venn", "DiseaseDatabases", order = 1), ".png"))
 if (file.exists(venn_dis)) {
-  fig_map <- c(fig_map, "疾病多库韦恩" = paste0("../图片文件/", basename(venn_dis)))
+  fig_map <- c(fig_map, "疾病多库韦恩" = paste0("../../01_疾病靶点_DiseaseTargets/03_图片文件_Figures/", basename(venn_dis)))
 } else {
   warning("图01 疾病多库韦恩缺失（应由 图谱契约装配_buildFigureContracts.py 微生信产出）")
 }
 
-# --- 图 02：药病韦恩（微生信模板，契约装配脚本已产出） ---
-venn_dd <- file.path(fig_dir, paste0(delivery_stem(skill_en, "venn", "DrugDisease", order = 2), ".png"))
+# --- 图 02：药病韦恩（契约装配→03_药病交集/03_图片） ---
+venn_dd <- file.path(fig_dir_03, paste0(delivery_stem(skill_en, "venn", "DrugDisease", order = 2), ".png"))
 if (file.exists(venn_dd)) {
-  fig_map <- c(fig_map, "药物疾病韦恩" = paste0("../图片文件/", basename(venn_dd)))
+  fig_map <- c(fig_map, "药物疾病韦恩" = paste0("../../03_药病交集与网络_OverlapAndNetwork/03_图片文件_Figures/", basename(venn_dd)))
 } else {
   warning("图02 药病韦恩缺失（应由 图谱契约装配_buildFigureContracts.py 产出）")
 }
 
-# --- 图 03：单药疾病交集 ---
+# --- 图 03–05：交集柱（→03） ---
 p_herb <- np_plot_per_herb_overlap(sum_df)
-delivery_save_plot(p_herb, skill_en, "bar", "PerHerbDiseaseOverlap", 6.0, 4.8, fig_dir, bio_root, order = 3)
-fig_map <- c(fig_map, "单药疾病交集" = paste0("../图片文件/", delivery_stem(skill_en, "bar", "PerHerbDiseaseOverlap", order = 3), ".png"))
+delivery_save_plot(p_herb, skill_en, "bar", "PerHerbDiseaseOverlap", 6.0, 4.8, fig_dir_03, bio_root, order = 3)
+fig_map <- c(fig_map, "单药疾病交集" = paste0("../../03_药病交集与网络_OverlapAndNetwork/03_图片文件_Figures/", delivery_stem(skill_en, "bar", "PerHerbDiseaseOverlap", order = 3), ".png"))
 
 if (!is.null(ct_ov_sum) && nrow(ct_ov_sum) > 0) {
   p_ct <- np_plot_compound_overlap_panels(ct_ov_sum, target_per = 14L, max_per = 16L)
   h_ct <- np_compound_overlap_panels_height(ct_ov_sum, target_per = 14L, max_per = 16L)
-  delivery_save_plot(p_ct, skill_en, "bar", "CompoundDiseaseOverlap", 14.0, h_ct, fig_dir, bio_root, order = 4)
-  fig_map <- c(fig_map, "成分疾病交集(均分)" = paste0("../图片文件/", delivery_stem(skill_en, "bar", "CompoundDiseaseOverlap", order = 4), ".png"))
+  delivery_save_plot(p_ct, skill_en, "bar", "CompoundDiseaseOverlap", 14.0, h_ct, fig_dir_03, bio_root, order = 4)
+  fig_map <- c(fig_map, "成分疾病交集(均分)" = paste0("../../03_药病交集与网络_OverlapAndNetwork/03_图片文件_Figures/", delivery_stem(skill_en, "bar", "CompoundDiseaseOverlap", order = 4), ".png"))
   if (!is.null(ct_ov_edges) && nrow(ct_ov_edges) > 0) {
     p_ct_h <- np_plot_compound_overlap_by_herb(ct_ov_edges, target_per = 14L, max_per = 16L)
     h_ct_h <- np_compound_overlap_by_herb_height(ct_ov_edges, target_per = 14L, max_per = 16L)
-    delivery_save_plot(p_ct_h, skill_en, "bar", "CompoundDiseaseOverlapByHerb", 14.0, h_ct_h, fig_dir, bio_root, order = 5)
-    fig_map <- c(fig_map, "成分疾病交集(按药)" = paste0("../图片文件/", delivery_stem(skill_en, "bar", "CompoundDiseaseOverlapByHerb", order = 5), ".png"))
+    delivery_save_plot(p_ct_h, skill_en, "bar", "CompoundDiseaseOverlapByHerb", 14.0, h_ct_h, fig_dir_03, bio_root, order = 5)
+    fig_map <- c(fig_map, "成分疾病交集(按药)" = paste0("../../03_药病交集与网络_OverlapAndNetwork/03_图片文件_Figures/", delivery_stem(skill_en, "bar", "CompoundDiseaseOverlapByHerb", order = 5), ".png"))
   }
 }
 
+# --- 图 06–10：GO/KEGG（→04 富集） ---
 if (!is.null(go_df) && nrow(go_df) > 0) {
   p_go_b <- np_plot_go_bubble(go_df, top_n = 10)
-  delivery_save_plot(p_go_b, skill_en, "bubble", "GO_BPCCMF", 10.0, 9.5, fig_dir, bio_root, order = 6)
+  delivery_save_plot(p_go_b, skill_en, "bubble", "GO_BPCCMF", 10.0, 9.5, fig_dir_04, bio_root, order = 6)
   p_go_bar <- np_plot_go_bar(go_df, top_n = 10)
-  delivery_save_plot(p_go_bar, skill_en, "bar", "GO_BPCCMF", 11.0, 7.5, fig_dir, bio_root, order = 7)
+  delivery_save_plot(p_go_bar, skill_en, "bar", "GO_BPCCMF", 11.0, 7.5, fig_dir_04, bio_root, order = 7)
   fig_map <- c(fig_map,
     "GO气泡" = paste0("../图片文件/", delivery_stem(skill_en, "bubble", "GO_BPCCMF", order = 6), ".png"),
     "GO柱状" = paste0("../图片文件/", delivery_stem(skill_en, "bar", "GO_BPCCMF", order = 7), ".png"))
@@ -229,9 +233,9 @@ if (!is.null(go_df) && nrow(go_df) > 0) {
 
 if (!is.null(kegg_df) && nrow(kegg_df) > 0) {
   p_kegg_l <- np_plot_kegg_lollipop(kegg_df, top_n = 20)
-  delivery_save_plot(p_kegg_l, skill_en, "lollipop", "KEGG_Pathways", 10.5, 8.5, fig_dir, bio_root, order = 8)
+  delivery_save_plot(p_kegg_l, skill_en, "lollipop", "KEGG_Pathways", 10.5, 8.5, fig_dir_04, bio_root, order = 8)
   p_kegg_b <- np_plot_kegg_bar(kegg_df, top_n = 20)
-  delivery_save_plot(p_kegg_b, skill_en, "bar", "KEGG_Pathways", 10.5, 8.5, fig_dir, bio_root, order = 9)
+  delivery_save_plot(p_kegg_b, skill_en, "bar", "KEGG_Pathways", 10.5, 8.5, fig_dir_04, bio_root, order = 9)
   fig_map <- c(fig_map,
     "KEGG棒棒糖" = paste0("../图片文件/", delivery_stem(skill_en, "lollipop", "KEGG_Pathways", order = 8), ".png"),
     "KEGG柱状" = paste0("../图片文件/", delivery_stem(skill_en, "bar", "KEGG_Pathways", order = 9), ".png"))
@@ -241,7 +245,7 @@ if (!is.null(kegg_df) && nrow(kegg_df) > 0) {
     delivery_assert_name_ok(paste0(circ_stem, ".png"))
     dpi_use <- if (exists("FIG_DPI")) FIG_DPI else 600L
     circ_out <- tryCatch(
-      np_save_kegg_chord(kegg_df, out_dir = fig_dir, stem = circ_stem, top_n = 20,
+      np_save_kegg_chord(kegg_df, out_dir = fig_dir_04, stem = circ_stem, top_n = 20,
                          label_genes = TRUE, width = 11, height = 10, dpi = dpi_use),
       error = function(e) { warning("KEGG circos failed: ", conditionMessage(e)); NULL }
     )
@@ -255,11 +259,11 @@ if (!is.null(kegg_df) && nrow(kegg_df) > 0) {
   }
 }
 
-# 11/12/13/14/15 由 02_网络预览出图 / 03_网络布局重生成 两脚本产出
+# 11/12→03；13/14/15→04（由 02/03 脚本产出）
 fig_map <- c(
   fig_map,
-  "药成分靶通路网络" = "../图片文件/11_网络图_HerbCompoundTargetPathway_Network.png",
-  "药成分靶通路网络(椭圆)" = "../图片文件/12_网络图_HerbCompoundTargetPathway_Ellipse_Network.png",
+  "药成分靶通路网络" = "../../03_药病交集与网络_OverlapAndNetwork/03_图片文件_Figures/11_网络图_HerbCompoundTargetPathway_Network.png",
+  "药成分靶通路网络(椭圆)" = "../../03_药病交集与网络_OverlapAndNetwork/03_图片文件_Figures/12_网络图_HerbCompoundTargetPathway_Ellipse_Network.png",
   "STRING_PPI网络" = "../图片文件/13_网络图_StringPPI_Network.png",
   "STRING_PPI同心圆" = "../图片文件/14_网络图_StringPPI_Concentric_Network.png",
   "STRING_PPI_Degree" = "../图片文件/15_网络图_StringPPI_Degree_Network.png"
@@ -293,7 +297,7 @@ writeLines(
     paste0("data_provenance=", data_provenance),
     paste0("disease_english_name=", disease_en),
     "R_figures_01_10=PASS_SUBSET",
-    "venn_disease=WEISHENGIN_TEMPLATE",
+    "venn_disease=WEISHENGXIN_5DB_CTD_curated",
     "venn_drugdisease=WEISHENGIN_TEMPLATE",
     "compound_disease_overlap_table=PASS",
     "KEGG_circos=PASS",

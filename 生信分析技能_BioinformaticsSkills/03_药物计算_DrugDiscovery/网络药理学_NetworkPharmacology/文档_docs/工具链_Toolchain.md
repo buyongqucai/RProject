@@ -5,7 +5,8 @@
 
 | 步骤 | 工具 | 本机位置 / 调用 | 备注 |
 |------|------|-----------------|------|
-| 表与图 | R（ggplot2、circlize） | 技能 `脚本_scripts/` | 韦恩、GO/KEGG、网络预览 |
+| 表与图 | R（ggplot2、circlize） | 技能 `脚本_scripts/` | GO/KEGG、网络预览；两集/四集韦恩模板 |
+| 疾病五库韦恩 | Python + Selenium + Chrome/Edge | `weishengxin_venn_lib.py` → 金标 [jvenn](https://bioinformatics.com.cn/static/others/jvenn/example.html) | 图01 强制；禁自绘花瓣；`pip install selenium` |
 | PPI | STRING API + 本技能布局脚本 | `03_STRING与网络图_StringNetwork.R`、`04_交付网络布局_DeliveryNetworkLayouts.R` | 官方 3D 图可另存；假边禁止冒充 STRING |
 | 网络精修 | Cytoscape | 可选，手工 | 见 [`手工导出与Cytoscape可选_ManualOps.md`](手工导出与Cytoscape可选_ManualOps.md) |
 | GO 原始 | Metascape | 外部网站 | 样例可用预计算表 |

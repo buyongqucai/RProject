@@ -55,7 +55,7 @@ python 网络药理学_NetworkPharmacology/_prepare_compound_overlap_from_delive
 完整瀑布见 **§4.1**。操作要点：
 
 1. **TCMSP** 检索单药 → OB≥30%、DL≥0.18 → 参数表 + 成分靶点（有则结束本药获取）。  
-2. 无 → **BATMAN-TCM**（http://bionet.ncpsb.org.cn/batman-tcm/#/search）仅 **known** 靶点。  
+2. 无 → **BATMAN-TCM**（http://bionet.ncpsb.org.cn/batman-tcm/#/search）仅 **known** 靶点。药味可用全库 browse + 按药筛或按药 API；**化合物预测必须实时**（见 CompoundTargetSOP **§9.1**）。  
 3. 无 → **ETCM2**（http://www.tcmip.cn/ETCM2/front/#/）。  
 4. 无 → **HERB 2.0** 取成分与 SMILES → **SwissTargetPrediction**（Homo sapiens）；**TCMBank** 可作成分来源后同走预测。  
 5. 剔除 Probability=0；复合物空基因用 UniProt Accession 展开；MW 过大 → `异常清单_CompoundTargetExceptions.csv`。  

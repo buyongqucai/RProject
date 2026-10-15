@@ -8,7 +8,12 @@ import shutil
 from pathlib import Path
 
 PROJ = Path(r"E:/RProject/清风项目")
-FIG_SRC = PROJ / "04_富集与PPI_EnrichPPI" / "03_图片文件_Figures"
+# by_stage：从图所属阶段夹聚合到轨 B（勿假设全在 04）
+FIG_SRCS = [
+    PROJ / "01_疾病靶点_DiseaseTargets" / "03_图片文件_Figures",
+    PROJ / "03_药病交集与网络_OverlapAndNetwork" / "03_图片文件_Figures",
+    PROJ / "04_富集与PPI_EnrichPPI" / "03_图片文件_Figures",
+]
 TAB = PROJ / "04_富集与PPI_EnrichPPI" / "01_数据文件_Data" / "02_结果数据_ResultTables"
 SUITE = TAB / "图谱套件编号表_FigureSuiteTables"
 CONTRACT = PROJ / "03_药病交集与网络_OverlapAndNetwork" / "01_数据文件_Data" / "02_结果数据_ResultTables" / "图谱契约数据_FigureContractData"
@@ -54,11 +59,16 @@ def main() -> None:
     if "Desktop" in str(OUT) or "桌面" in str(OUT):
         raise SystemExit("Refusing Desktop path")
 
-    # ---- 图片：轨 A → 轨 B（png + svg 同名） ----
+    # ---- 图片：轨 A → 轨 B（png + svg 同名；多阶段 FIG_SRCS 查找） ----
     n_fig = 0
     for stem, rel in FIGMAP.items():
         for ext in ("png", "svg"):
-            if cp(FIG_SRC / f"{stem}.{ext}", OUT / f"{rel}.{ext}"):
+            name = f"{stem}.{ext}"
+            src = next((d / name for d in FIG_SRCS if (d / name).exists()), None)
+            if src is None:
+                print("MISS", name)
+                continue
+            if cp(src, OUT / f"{rel}.{ext}"):
                 n_fig += 1
 
     # ---- 数据 ----

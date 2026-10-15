@@ -139,3 +139,17 @@ STP 表字段通常含：Target（蛋白名）、**Common name（基因）**、U
 **known 口径（瀑布不变：BATMAN 仅 known）**：靶点 score 字段为文字 `known target in HERB|HIT|TTD|…` 者 = curated；数字（0–1 或 LR 分）= 预测边，**不进主交付**。已知视图等价于 `userInScore=10000`。注意 BATMAN 的 known 标注不完美（如水蛭素 Hirudin→F2(凝血酶) 仅标 0.89 预测分），遇到经典药理边缺失时写入异常清单待人工复核，不静默纳入也不静默丢弃。
 
 **已知坑**：拼音同音混条（§8 实证）；作业临时文件服务端会清理，作业包 zip 拿到即存 raw；限流会 502，轮询间隔 ≥5s。
+
+### 9.1 BATMAN 双轨获取（2026-10-16）
+
+> 药味 curated 与化合物预测**不得混用同一套「静态全库表」策略**。
+
+| 场景 | 做法 | 验证状态 | 禁止 |
+|------|------|----------|------|
+| **A① 药味 known · 按药 API** | `type=caoyao` + 拉丁/英文名（§8）→ 作业包落 raw → 只保留 known | **已验证**（清风水蛭） | 拼音检索；数字分当 known；Related Herb 未核对就全收 |
+| **A② 药味 known · 全库 browse + 按药筛** | Download 页 `known_browse_by_*` / 官方全库表 → **按本课题药味筛选**后落该药 raw | **待验证**（已写入意向，**尚未在课题实测**；未验证前实施须先开小样核对 Latin/English 命中与 known 边，再进主交付） | 未核对 Related Herb；把 browse 预测边当 known |
+| **B 化合物预测** | **必须实时** `POST queryTarget`（`type=compound` + PubChem CID）→ 轮询 → 当次作业包 | **规范强制**（不得用静态全库顶替；具体 endpoint 以当次官方页为准） | 静态 browse 查表代替当次预测 |
+
+**口径提醒**：即使用实时 compound API，主交付仍只收 **known** 文字标注边；数字预测分仅可进「预测参考」旁路表，不进药病交集 / HCTP 主网络（与 §1 瀑布一致）。若用户明示要预测边，须另开旁路交付并标注 `predicted`，不得与 known 混列。
+
+**清风实证（水蛭）**：仅 **A①**；曾因拼音混入水栀子，经 `BATMAN_水蛭成分归属审计` 截取专属 known。**未使用 A②。**

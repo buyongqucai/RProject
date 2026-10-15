@@ -19,14 +19,15 @@
 | 5 | CTD | `疾病靶点_CTD.csv` |
 | 6 | DisGeNET | `疾病靶点_DisGeNET.csv` |
 
-疾病多库韦恩用**完整 GeneCards**；下游用 Relevance≥40 过滤后再与其他库并集。见出图约束 **§0a**。
+**本次下游默认 = 5 库含 CTD**（GeneCards≥40 ∪ TTD ∪ DrugBank ∪ OMIM ∪ **CTD_curated**）；DisGeNET 为六库第 6 位，未导出则不纳入。  
+疾病多库**韦恩图** = 五库（GeneCards全量 / **CTD_curated** / OMIM / TTD / DrugBank），**真实微生信 jvenn**（https://bioinformatics.com.cn/static/others/jvenn/example.html → `build_disease_5db_svg`）。药病两集可用 jvenn 模板 `build_two_set_svg`。下游并集 = GeneCards≥40 ∪ CTD_curated ∪ OMIM ∪ TTD ∪ DrugBank。详见 **§0a / §G**。
 
 ### 1.2 药物 / 成分–靶点
 
 | 库 | 用途 |
 |----|------|
 | TCMSP | 优先：OB≥30%, DL≥0.18 + 成分–靶点 |
-| BATMAN-TCM | **仅 known/curated**；禁止预测靶点 |
+| BATMAN-TCM | **仅 known/curated**；禁止预测靶点进主交付。获取见 CompoundTargetSOP **§9.1**：A① 按药 API（已验证）／A② browse+筛（**待验证**）；**化合物预测必须实时**，禁静态全库顶替 |
 | ETCM / ETCM2 | 补充 |
 | HERB 2.0 | 成分 + SMILES → SwissTargetPrediction |
 | SwissTargetPrediction | 剔除 Probability=0 |

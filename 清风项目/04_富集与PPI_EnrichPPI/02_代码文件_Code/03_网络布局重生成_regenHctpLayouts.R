@@ -11,9 +11,12 @@ delivery_scripts <- file.path(bio_root, "00_基础_Foundation", "统一交付规
 source(file.path(delivery_scripts, "规范_出图与命名_PlotNaming.R"), encoding = "UTF-8")
 
 data_dir <- "E:/RProject/清风项目/03_药病交集与网络_OverlapAndNetwork/01_数据文件_Data/02_结果数据_ResultTables/图谱契约数据_FigureContractData"
-fig_dir <- "E:/RProject/清风项目/04_富集与PPI_EnrichPPI/03_图片文件_Figures"
+# by_stage：HCTP 11–12 → 03；PPI 14–15 → 04
+fig_dir_03 <- "E:/RProject/清风项目/03_药病交集与网络_OverlapAndNetwork/03_图片文件_Figures"
+fig_dir_04 <- "E:/RProject/清风项目/04_富集与PPI_EnrichPPI/03_图片文件_Figures"
 tab_dir <- "E:/RProject/清风项目/04_富集与PPI_EnrichPPI/01_数据文件_Data/02_结果数据_ResultTables/图谱套件编号表_FigureSuiteTables"
-dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(fig_dir_03, recursive = TRUE, showWarnings = FALSE)
+dir.create(fig_dir_04, recursive = TRUE, showWarnings = FALSE)
 dir.create(tab_dir, recursive = TRUE, showWarnings = FALSE)
 
 scripts_dir <- file.path(skill_root, "脚本_scripts")
@@ -33,13 +36,13 @@ message("Loaded network rows=", nrow(net), " type rows=", nrow(type_df))
 # --- A) columns HCTP (Fig 11) ---
 p_col <- np_plot_hctp_network(net, type_df, pathway_mode = "columns")
 delivery_save_plot(p_col, skill_en, "network", "HerbCompoundTargetPathway",
-                   18.5, 16.5, fig_dir, bio_root, order = 11)
+                   18.5, 16.5, fig_dir_03, bio_root, order = 11)
 message("Saved columns HCTP")
 
 # --- B) ellipse HCTP (Fig 12) ---
 p_ell <- np_plot_hctp_network(net, type_df, pathway_mode = "ellipse")
 delivery_save_plot(p_ell, skill_en, "network", "HerbCompoundTargetPathway_Ellipse",
-                   18.5, 16.5, fig_dir, bio_root, order = 12)
+                   18.5, 16.5, fig_dir_03, bio_root, order = 12)
 message("Saved ellipse HCTP")
 
 # --- C) STRING PPI Degree (15) + Concentric alias (14) ---
@@ -66,8 +69,8 @@ if (length(ppi_candidates)) {
 if (!is.null(ppi) && nrow(ppi) > 0) {
   p_ppi <- np_plot_string_ppi(ppi, min_score = 900L, drop_isolates = TRUE,
                               layout = "concentric", label_top_n = NULL, outer_frac = 0.50)
-  delivery_save_plot(p_ppi, skill_en, "network", "StringPPI_Degree", 11.5, 10.5, fig_dir, bio_root, order = 15)
-  delivery_save_plot(p_ppi, skill_en, "network", "StringPPI_Concentric", 11.5, 10.5, fig_dir, bio_root, order = 14)
+  delivery_save_plot(p_ppi, skill_en, "network", "StringPPI_Degree", 11.5, 10.5, fig_dir_04, bio_root, order = 15)
+  delivery_save_plot(p_ppi, skill_en, "network", "StringPPI_Concentric", 11.5, 10.5, fig_dir_04, bio_root, order = 14)
   message("Saved PPI Degree + Concentric")
 } else {
   message("SKIP PPI regen — no PPI table available")

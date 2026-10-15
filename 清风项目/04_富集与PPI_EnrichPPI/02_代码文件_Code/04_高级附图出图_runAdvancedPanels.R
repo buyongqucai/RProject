@@ -12,8 +12,11 @@ delivery_scripts <- file.path(bio_root, "00_基础_Foundation", "统一交付规
 source(file.path(delivery_scripts, "规范_出图与命名_PlotNaming.R"), encoding = "UTF-8")
 
 data_dir <- "E:/RProject/清风项目/03_药病交集与网络_OverlapAndNetwork/01_数据文件_Data/02_结果数据_ResultTables/图谱契约数据_FigureContractData"
-fig_dir <- "E:/RProject/清风项目/04_富集与PPI_EnrichPPI/03_图片文件_Figures"
+# by_stage：高级附图 16–19（网络侧）→ 03
+fig_dir <- "E:/RProject/清风项目/03_药病交集与网络_OverlapAndNetwork/03_图片文件_Figures"
+rep_dir <- "E:/RProject/清风项目/04_富集与PPI_EnrichPPI/04_报告文件_Reports"
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(rep_dir, recursive = TRUE, showWarnings = FALSE)
 
 scripts_dir <- file.path(skill_root, "脚本_scripts")
 script_files <- list.files(scripts_dir, pattern = "[.][Rr]$", full.names = TRUE)
@@ -69,6 +72,6 @@ writeLines(
   c("advanced_panels=PASS",
     paste0("upset_members=", length(comp_names), " compounds x ", length(herb_codes), " herbs"),
     "16_upset=PASS", "17_sankey=PASS", "18_sankey_filtered=PASS", "19_heatmap=PASS"),
-  file.path(dirname(fig_dir), "04_报告文件_Reports", "STATUS_advanced_panels.txt")
+  file.path(rep_dir, "STATUS_advanced_panels.txt")
 )
 message("DONE advanced panels")

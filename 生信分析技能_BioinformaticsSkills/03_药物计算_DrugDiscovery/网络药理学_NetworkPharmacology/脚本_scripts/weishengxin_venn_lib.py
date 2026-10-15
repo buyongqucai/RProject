@@ -1,19 +1,25 @@
 # -*- coding: utf-8 -*-
-"""微生信韦恩模板库（网药 FROZEN §G）。
+"""微生信韦恩（jvenn）出图库（网药 FROZEN §G）。
 
-几何与配色来自 `01_样例_sample/参考_交付原图/Venn_*.svg`。
-项目侧只传入基因集合并指定输出路径；禁止另写 VennDiagram/R 近似顶替交付。
+权威：https://bioinformatics.com.cn/static/others/jvenn/example.html （jvenn）
+- 2 集 / 4 集：可用历史 jvenn 导出 SVG 模板填数（`参考_交付原图/Venn_*.svg`）
+- 5 集：Selenium 驱动金标页 `render_jvenn_svg`（同页 jvenn.min.js）→ 导出 SVG；**禁止**自绘花瓣椭圆
+
+引用：Bardou et al. BMC Bioinformatics 2014, 15:293
 """
 from __future__ import annotations
 
+import json
 import re
 import shutil
 import subprocess
+import tempfile
 from collections import Counter
 from pathlib import Path
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 SAMPLE_REF = SKILL_ROOT / "01_样例_sample" / "参考_交付原图"
+JVENN_ASSETS = Path(__file__).resolve().parent / "_jvenn_assets"
 
 CHROME_CANDIDATES = [
     Path(r"C:\Program Files\Google\Chrome\Application\chrome.exe"),
@@ -28,6 +34,7 @@ COL = {
     "DrugBank": (90, 155, 212),
     "GeneCards": (241, 90, 96),
     "OMIM": (207, 207, 27),
+    "CTD": (243, 146, 60),
     "Drugs": (0, 102, 0),
     "Disease": (90, 155, 212),
     "share": (156, 106, 156),
@@ -227,6 +234,170 @@ def build_disease_4db_svg(sets: dict[str, set[str]]) -> str:
         f"{title_size}{axis}{''.join(bars)}{title_share}{''.join(share)}"
         f"{''.join(label_txt)}{''.join(name_txt)}</g></svg>"
     )
+
+
+# 微生信 jvenn 默认色序（example.html colorDefault）
+JVENN_COLORS = ["#006600", "#5a9bd4", "#f15a60", "#cfcf1b", "#ff7500", "#c09853"]
+
+
+JVENN_EXAMPLE_URL = "https://bioinformatics.com.cn/static/others/jvenn/example.html"
+
+_EXPORT_SVG_JS = r"""
+function F(s,e,t,l,r,c,o,i,u){
+  if(u){e=parseInt(String(e).replace('px',''))+20;t=parseInt(String(t).replace('px',''))+14;}
+  else{e=parseInt(String(e).replace('px',''))+5;t=parseInt(String(t).replace('px',''))+14;}
+  return '<text fill="'+l+'" fill-opacity="'+r+'" stroke="none" font-family="'+c+
+    '" font-size="'+o+'" font-style="normal" font-weight="'+i+
+    '" text-decoration="none" x="'+e+'" y="'+t+
+    '" text-anchor="middle" dominant-baseline="alphabetic">'+s+'</text>';
+}
+const $ = jQuery;
+const wrap = $('<div></div>');
+const svg = $('#jvenn-container svg').first();
+if(!svg.length) return null;
+wrap.append(svg.clone());
+$('[id^=resultC]').each(function(){
+  if($(this).css('display')==='none') return;
+  const value = (0===String($(this).html()).indexOf('<span')) ? '?' : $(this).text();
+  if(!value) return;
+  wrap.children('svg').children('g').append($(F(
+    value,$(this).css('left'),$(this).css('top'),$(this).css('color'),$(this).css('opacity'),
+    $(this).css('font-family'),$(this).css('font-size'),$(this).css('font-weight'),false
+  )));
+});
+$('[id^=label]').each(function(){
+  const html=$(this).text(); if(!html) return;
+  wrap.children('svg').children('g').append($(F(
+    html,$(this).css('left'),$(this).css('top'),$(this).css('color'),$(this).css('opacity'),
+    $(this).css('font-family'),$(this).css('font-size'),$(this).css('font-weight'),true
+  )));
+});
+let serialized = wrap.html();
+if(serialized.indexOf('xmlns=')<0){
+  serialized = serialized.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
+}
+return serialized;
+"""
+
+
+def render_jvenn_svg(
+    series: list[dict],
+    *,
+    colors: list[str] | None = None,
+    display_mode: str = "classic",
+    timeout_s: float = 180.0,
+    url: str = JVENN_EXAMPLE_URL,
+) -> str:
+    """驱动微生信官网 jvenn 页填入列表并导出 SVG（与页面「下载 SVG」同逻辑）。
+
+    权威：https://bioinformatics.com.cn/static/others/jvenn/example.html
+    """
+    if CHROME is None:
+        raise SystemExit("No Chrome/Edge for jvenn headless render")
+    try:
+        from selenium import webdriver
+        from selenium.webdriver.chrome.options import Options
+        from selenium.webdriver.support.ui import WebDriverWait
+    except ImportError as e:
+        raise SystemExit("pip install selenium  # required for jvenn render") from e
+
+    # name colors: set via inline style so jvenn reads css('color')
+    color_map = {}
+    if colors:
+        for s, c in zip(series, colors):
+            color_map[s["name"]] = c
+
+    opts = Options()
+    opts.binary_location = str(CHROME)
+    opts.add_argument("--headless=new")
+    opts.add_argument("--disable-gpu")
+    opts.add_argument("--window-size=1100,1200")
+    opts.add_argument("--hide-scrollbars")
+    driver = webdriver.Chrome(options=opts)
+    try:
+        driver.set_page_load_timeout(timeout_s)
+        driver.get(url)
+        WebDriverWait(driver, timeout_s).until(
+            lambda d: d.execute_script("return !!(window.jQuery && jQuery.fn.jvenn);")
+        )
+        # classic mode + stats if controls exist
+        driver.execute_script(
+            """
+            const mode = arguments[0];
+            // display mode radios/buttons often labeled classic / Edwards
+            document.querySelectorAll('input[type=radio],button,a,label').forEach(el => {
+              const t = ((el.value||'') + ' ' + (el.textContent||'')).toLowerCase();
+              if (mode === 'classic' && t.includes('classic')) { try { el.click(); } catch(e){} }
+              if (mode === 'edwards' && t.includes('edward')) { try { el.click(); } catch(e){} }
+            });
+            """,
+            display_mode,
+        )
+        driver.execute_script(
+            """
+            const series = arguments[0];
+            const colorMap = arguments[1] || {};
+            for (let i = 1; i <= 6; i++) {
+              const n = document.getElementById('name' + i);
+              const a = document.getElementById('area' + i);
+              if (n) { n.value = ''; n.style.color = ''; jQuery(n).trigger('change'); }
+              if (a) { a.value = ''; jQuery(a).trigger('change'); }
+            }
+            series.forEach((s, idx) => {
+              const i = idx + 1;
+              const n = document.getElementById('name' + i);
+              const a = document.getElementById('area' + i);
+              n.value = s.name;
+              if (colorMap[s.name]) n.style.color = colorMap[s.name];
+              a.value = (s.data || []).join('\\n');
+              jQuery(n).trigger('change');
+              jQuery(a).trigger('change');
+            });
+            """,
+            series,
+            color_map,
+        )
+        WebDriverWait(driver, timeout_s).until(
+            lambda d: d.execute_script(
+                "const c=document.getElementById('jvenn-container');"
+                "return !!(c && c.querySelector('svg') && c.innerHTML.length>800);"
+            )
+        )
+        # settle absolute labels
+        driver.execute_script("return new Promise(r => setTimeout(r, 1200));")
+        svg = driver.execute_script(_EXPORT_SVG_JS)
+    finally:
+        driver.quit()
+
+    svg = (svg or "").strip()
+    if not svg.startswith("<svg"):
+        sm = re.search(r"<svg[\s\S]*</svg>", svg or "")
+        if not sm:
+            raise SystemExit(f"jvenn svg export failed: {str(svg)[:400]}")
+        svg = sm.group(0)
+    return svg
+
+
+def build_disease_5db_svg(sets: dict[str, set[str]]) -> str:
+    """五库疾病韦恩 = **真实微生信 jvenn**（官网页面引擎）。
+
+    集合：GeneCards / CTD / OMIM / TTD / DrugBank；CTD 须为 curated。
+    """
+    order = ["GeneCards", "CTD", "OMIM", "TTD", "DrugBank"]
+    color_by = {
+        "GeneCards": "rgb(241,90,96)",
+        "CTD": "rgb(255,117,0)",
+        "OMIM": "rgb(207,207,27)",
+        "TTD": "rgb(0,102,0)",
+        "DrugBank": "rgb(90,155,212)",
+    }
+    series = []
+    colors = []
+    for name in order:
+        genes = sorted(_as_set(sets.get(name, set())))
+        series.append({"name": name, "data": genes})
+        colors.append(color_by[name])
+    return render_jvenn_svg(series, colors=colors, display_mode="classic")
 
 
 def build_two_set_svg(

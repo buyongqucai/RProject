@@ -1,22 +1,26 @@
 # 原始数据来源 README — 02_药物靶点_DrugTargets
 
-**状态：PENDING（2026-10-14 建骨架，成分瀑布未跑）**
+**状态：ACTIVE（2026-10-16 洁净：只保留已抓库子目录）**
 
-## 本目录放什么
+## 规则
 
-9 味药（水蛭/旋覆花/川芎*/桃仁/浙贝母/蜜麻黄*/紫苏子/黄芪/甘草；* 待确认）成分–靶点瀑布原始导出：
+**无库不建夹。** 瀑布中未走到的库（ETCM / HERB / STP / TCMBank）**不预建空目录**；走到再创。
 
-| 子目录 | 来源库 | 规则 |
+## 本目录实际内容
+
+| 子目录 | 来源库 | 内容 |
 |--------|--------|------|
-| `01_TCMSP_成分靶点_CompoundTargets` | TCMSP | OB≥30%, DL≥0.18 |
-| `02_BATMAN_成分靶点_CompoundTargets` | BATMAN-TCM | **仅 known/curated**，禁预测靶 |
-| `03_ETCM_成分靶点_CompoundTargets` | ETCM | 补充 |
-| `04_HERB_成分表_CompoundList` | HERB 2.0 | 成分 + SMILES → STP |
-| `05_STP_预测靶点_PredictedTargets` | SwissTargetPrediction | 剔除 Probability=0 |
-| `06_TCMBank_成分表_CompoundList` | TCMBank | 可取成分再预测 |
+| `01_TCMSP_成分靶点_CompoundTargets/` | TCMSP | 全量目录 JSON + 8 味药药材成分导出 + PubChem 辅助属性；下游按 OB≥30%、DL≥0.18 筛 |
+| `02_BATMAN_成分靶点_CompoundTargets/` | BATMAN-TCM 2.0 | **仅水蛭**：按药 API 作业包/JSON（非全库 browse）；known 视图 + 混条审计后专属成分 |
 
-每子目录落库方原始导出 + `DATA_SOURCE.md`；实验靶/预测靶分层登记，不得混写。
+## 清风 BATMAN 水蛭怎么来的（事实）
 
-## 获取策略与连通性
+**不是** Download 页 `known_browse_by_*` 全库下载再筛。  
+流程：`POST queryTarget`（拼音 `shui zhi` 作业）→ 轮询 `queryTargetResult` → 存作业包 zip/JSON → 发现 Related Herb 实为**水栀子**混条 → 人工成分归属截取，只留水蛭专属 known 边（结果表在 `02_结果数据_ResultTables/BATMAN_水蛭*`）。
 
-见 `../../../01_分析报告_AnalysisReport/01_课题说明_ProjectBrief/02_数据来源总览_DATA_SOURCE.md`。
+教训：非 TCMSP 检索必须拉丁/英文名（见技能 CompoundTargetSOP §8）。
+
+## 获取策略
+
+见 `../../../01_分析报告_AnalysisReport/01_课题说明_ProjectBrief/02_数据来源总览_DATA_SOURCE.md`  
+与技能 `E:/RProject/生信分析技能_BioinformaticsSkills/03_药物计算_DrugDiscovery/网络药理学_NetworkPharmacology/文档_docs/成分靶点获取与交付规范_CompoundTargetSOP.md` §9 / §9.1。

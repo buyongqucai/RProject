@@ -1,10 +1,8 @@
 <svg class='notselectable nwlinkhovertoggle' height='1870' id='svg_network_image' width='1744' style='vertical-align:top;' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
 <style type='text/css'><![CDATA[
 .nwbubblecoloredcircle { opacity: 0.4; }
-.nwbubbletransparentdcircle { opacity: 0.1; }
 .nwnodecontainer:hover { cursor: pointer; }
 .nwnodecontainer:hover .nwbubblecoloredcircle { opacity: 0.2; }
-.nwnodecontainerselected .nwbubblecoloredcircle { fill: rgb(255,0,0) !important; }
 .nwnodecontainerwhiteout .nwbubblecoloredcircle { fill: rgb(255,255,255) !important; }
 .nwarrowsign { pointer-events: none; }
 text { font-family: Arial; font-size: 12px; }

@@ -1,11 +1,11 @@
 {
   "n_disease_union": 4269,
   "disease_by_db_venn_full": {
+    "CTD": 22,
     "GeneCards": 9786,
     "OMIM": 100,
     "DrugBank": 38,
-    "TTD": 33,
-    "CTD": 22
+    "TTD": 33
   },
   "disease_by_db_downstream": {
     "GeneCards": 4253,
@@ -18,11 +18,11 @@
   "genecards_filtered_ge40": 4253,
   "genecards_relevance_cutoff": 40.0,
   "disease_by_db": {
+    "CTD": 22,
     "GeneCards": 9786,
     "OMIM": 100,
     "DrugBank": 38,
-    "TTD": 33,
-    "CTD": 22
+    "TTD": 33
   },
   "n_drug_targets": 244,
   "n_overlap": 197,
@@ -77,7 +77,7 @@
       "n_targets": 6
     }
   ],
-  "n_compounds": 209,
+  "n_compounds": 184,
   "n_herbs_with_comp": 9,
   "n_herb_comp_edges": 209,
   "n_kegg_terms": 193,
@@ -162,11 +162,13 @@
   },
   "network_type_counts": {
     "C": 197,
-    "B": 183,
+    "B": 159,
     "D": 20,
     "A": 9
   },
-  "n_network_edges": 3422,
+  "n_network_edges": 2571,
   "n_ppi_edges": 687,
-  "n_ppi_proteins": 173
+  "n_ppi_proteins": 173,
+  "ctd_venn": "curated",
+  "ctd_downstream": "curated"
 }

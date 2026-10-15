@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>JVENN_PENDING</title>
+<style>
+  html, body { margin: 0; padding: 8px; background: #fff; }
+  #jvenn-container { display: inline-block; background: #fff; min-width: 500px; min-height: 700px; }
+</style>
+<script src="jquery.min.js"></script>
+<script src="canvas2svg.js"></script>
+<script src="jvenn.min.js"></script>
+</head>
+<body>
+<div id="jvenn-container"></div>
+<pre id="svg-dump"></pre>
+<script id="payload" type="application/json">__PAYLOAD__</script>
+<script>
+function jvennTextNode(s, e, t, l, r, c, o, i, u) {
+  if (u) { e = parseInt(String(e).replace("px", ""), 10) + 20; t = parseInt(String(t).replace("px", ""), 10) + 14; }
+  else { e = parseInt(String(e).replace("px", ""), 10) + 5; t = parseInt(String(t).replace("px", ""), 10) + 14; }
+  return '<text fill="' + l + '" fill-opacity="' + r + '" stroke="none" font-family="' + c +
+    '" font-size="' + o + '" font-style="normal" font-weight="' + i +
+    '" text-decoration="none" x="' + e + '" y="' + t +
+    '" text-anchor="middle" dominant-baseline="alphabetic">' + $("<div/>").text(s).html() + "</text>";
+}
+
+function finish(ok, msg) {
+  document.title = ok ? "JVENN_READY" : ("JVENN_FAIL:" + msg);
+  if (!ok && !document.getElementById("svg-dump").textContent) {
+    document.getElementById("svg-dump").textContent = "FAIL:" + msg;
+  }
+}
+
+$(function () {
+  try {
+    if (typeof window.C2S !== "function") { finish(false, "no_C2S"); return; }
+    if (typeof $.fn.jvenn !== "function") { finish(false, "no_jvenn"); return; }
+    var payload = JSON.parse(document.getElementById("payload").textContent);
+    $("#jvenn-container").jvenn({
+      series: payload.series,
+      colors: payload.colors,
+      fontSize: payload.fontSize || "12px",
+      fontFamily: payload.fontFamily || "Arial",
+      displayMode: payload.displayMode || "classic",
+      shortNumber: false,
+      displayStat: true,
+      exporting: false
+    });
+    // allow layout / absolute labels to settle
+    setTimeout(function () {
+      try {
+        var svg = $("#jvenn-container svg").first();
+        if (!svg.length) { finish(false, "no_svg_in_dom html=" + $("#jvenn-container").html().slice(0, 200)); return; }
+        var wrap = $("<div></div>");
+        wrap.append(svg.clone());
+        $("[id^=resultC]").each(function () {
+          if ($(this).css("display") === "none") return;
+          var value = (0 === String($(this).html()).indexOf("<span")) ? "?" : $(this).text();
+          if (value === "" || value == null) return;
+          wrap.children("svg").children("g").append($(jvennTextNode(
+            value, $(this).css("left"), $(this).css("top"),
+            $(this).css("color"), $(this).css("opacity"),
+            $(this).css("font-family"), $(this).css("font-size"),
+            $(this).css("font-weight"), false
+          )));
+        });
+        $("[id^=label]").each(function () {
+          var html = $(this).text();
+          if (!html) return;
+          wrap.children("svg").children("g").append($(jvennTextNode(
+            html, $(this).css("left"), $(this).css("top"),
+            $(this).css("color"), $(this).css("opacity"),
+            $(this).css("font-family"), $(this).css("font-size"),
+            $(this).css("font-weight"), true
+          )));
+        });
+        var serialized = wrap.html();
+        if (serialized.indexOf("<svg") >= 0 && serialized.indexOf("xmlns=") < 0) {
+          serialized = serialized.replace("<svg", '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
+        }
+        document.getElementById("svg-dump").textContent = serialized;
+        finish(true, "ok");
+      } catch (err) {
+        finish(false, String(err));
+      }
+    }, 1500);
+  } catch (err) {
+    finish(false, String(err));
+  }
+});
+</script>
+</body>
+</html>

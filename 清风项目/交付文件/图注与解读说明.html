@@ -171,7 +171,7 @@ footer { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top
       <h1>特发性肺纤维化（水蛭宣痹化纤汤）· 网络药理学交付报告</h1>
       <p>以 9 味药（水蛭为 BATMAN-TCM 已知靶点）筛选有效成分与疾病靶点交集，构建药–成分–靶点–通路（HCTP）与 PPI，并做 GO/KEGG 富集。本页汇总<strong>关键统计</strong>、<strong>读图方法</strong>与<strong>生物学意义</strong>，数字来自 <code>数据/</code> 实时汇总。图片路径均为相对本目录的 <code>图片/...</code>，请<strong>打包整个「交付文件」文件夹</strong>发送，勿只发单个 HTML。</p>
       <div class="meta-row">
-        <span class="chip">交集 197 基因 · KEGG 193 项 · HCTP 边 3422</span>
+        <span class="chip">交集 197 基因 · KEGG 193 项 · HCTP 边 2571</span>
         <span class="chip"><a href="README_轨B说明.txt">轨 B README</a></span>
         <span class="chip"><a href="数据/富集分析/KEGG.csv">KEGG.csv</a></span>
         <span class="chip">分享：整夹打包 → 打开本 HTML</span>
@@ -181,7 +181,7 @@ footer { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top
     <section id="overview">
       <h2>0. 关键统计总览</h2>
       <p class="blurb">可直接写入结果部分的「规模数字」。刷新报告会自动重算。</p>
-      <div class="metrics"><div class="metric"><div class="metric-val">197</div><div class="metric-lab">药病交集靶点</div><div class="metric-sub">下游网络/富集核心输入</div></div><div class="metric"><div class="metric-val">244</div><div class="metric-lab">药物靶点并集</div><div class="metric-sub">占交集 80.7%</div></div><div class="metric"><div class="metric-val">4269</div><div class="metric-lab">疾病基因并集</div><div class="metric-sub">交集占病 4.6%</div></div><div class="metric"><div class="metric-val">209</div><div class="metric-lab">有效成分数</div><div class="metric-sub">进入成分层筛选</div></div><div class="metric"><div class="metric-val">3422</div><div class="metric-lab">HCTP 边数</div><div class="metric-sub">A9/B183/C197/D20</div></div><div class="metric"><div class="metric-val">193</div><div class="metric-lab">KEGG 通路项</div><div class="metric-sub">padj&lt;0.05：193</div></div><div class="metric"><div class="metric-val">2688</div><div class="metric-lab">GO 条目</div><div class="metric-sub">BP/CC/MF 合并表</div></div><div class="metric"><div class="metric-val">687 / 173</div><div class="metric-lab">PPI 边 / 蛋白</div><div class="metric-sub">STRING 高分互作</div></div></div>
+      <div class="metrics"><div class="metric"><div class="metric-val">197</div><div class="metric-lab">药病交集靶点</div><div class="metric-sub">下游网络/富集核心输入</div></div><div class="metric"><div class="metric-val">244</div><div class="metric-lab">药物靶点并集</div><div class="metric-sub">占交集 80.7%</div></div><div class="metric"><div class="metric-val">4269</div><div class="metric-lab">疾病基因并集</div><div class="metric-sub">交集占病 4.6%</div></div><div class="metric"><div class="metric-val">184</div><div class="metric-lab">有效成分数</div><div class="metric-sub">进入成分层筛选</div></div><div class="metric"><div class="metric-val">2571</div><div class="metric-lab">HCTP 边数</div><div class="metric-sub">A9/B159/C197/D20</div></div><div class="metric"><div class="metric-val">193</div><div class="metric-lab">KEGG 通路项</div><div class="metric-sub">padj&lt;0.05：193</div></div><div class="metric"><div class="metric-val">2688</div><div class="metric-lab">GO 条目</div><div class="metric-sub">BP/CC/MF 合并表</div></div><div class="metric"><div class="metric-val">687 / 173</div><div class="metric-lab">PPI 边 / 蛋白</div><div class="metric-sub">STRING 高分互作</div></div></div>
       <div class="callout">
         <p><strong>数据观看入口：</strong></p>
         <ul>
@@ -203,12 +203,12 @@ footer { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top
           （占药靶 80.7%），提示存在可观的疾病相关分子重叠。</li>
         <li><strong>药味贡献：</strong>交集靶点领先药味为 甘草（交集166）、蜜麻黄（交集165）、黄芪（交集150）；
           水蛭为 BATMAN-TCM 已知靶点路径获取，其余 8 味走 TCMSP 瀑布。</li>
-        <li><strong>成分协同：</strong>约 209 个有效成分进入分析，
+        <li><strong>成分协同：</strong>约 184 个有效成分进入分析，
           UpSet 中共享成分（same*）支持多药协同，独有成分支持药味特异性。</li>
         <li><strong>通路层面：</strong>KEGG 显著富集项丰富（n=193）。
           与 UC 更直接相关的优先讨论：<em>IL-17、TNF、TLR、HIF-1、PI3K-Akt</em>；
           感染/肿瘤类通路多反映共享炎症模块，避免过度因果表述。</li>
-        <li><strong>网络叙事：</strong>HCTP（A9/B183/C197/D20）
+        <li><strong>网络叙事：</strong>HCTP（A9/B159/C197/D20）
           与桑基展示「药→成分→靶→通路」流量；PPI（687 边 /
           173 蛋白）突出枢纽蛋白互作。</li>
         <li><strong>局限：</strong>本分析为预测性网络药理学证据，需细胞/动物实验与临床文献交叉验证；
@@ -232,7 +232,7 @@ footer { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top
 </div>
 <table>
   <thead><tr><th>数据库</th><th>韦恩全量口径</th><th>下游过滤口径</th></tr></thead>
-  <tbody><tr><td>GeneCards</td><td>9786</td><td>4253</td></tr><tr><td>OMIM</td><td>100</td><td>100</td></tr><tr><td>DrugBank</td><td>38</td><td>38</td></tr><tr><td>TTD</td><td>33</td><td>33</td></tr><tr><td>CTD</td><td>22</td><td>22</td></tr></tbody>
+  <tbody><tr><td>CTD</td><td>20508</td><td>22</td></tr><tr><td>GeneCards</td><td>9786</td><td>4253</td></tr><tr><td>OMIM</td><td>100</td><td>100</td></tr><tr><td>DrugBank</td><td>38</td><td>38</td></tr><tr><td>TTD</td><td>33</td><td>33</td></tr></tbody>
 </table>
 <p class="note">技能规范：韦恩用 VennFull；下游交集/富集用 GeneCards Relevance≥40.0 ∪ 其他库（见 <code>疾病靶点按库_下游.csv</code> / <code>疾病靶点合并.csv</code>）。</p>
 </div>
@@ -268,7 +268,7 @@ footer { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top
 <section id="extra">
   <h2>2. 补充柱状 / UpSet / 热图</h2>
   <p class="blurb">从单药、成分到通路覆盖，量化各方贡献。</p>
-  <div class='callout'><p><strong>药味：</strong>名义 9 味，有靶点 9 味；成分约 209 个；药–成分边 209。</p><p><strong>生物学意义：</strong>川芎/黄芪/甘草等交集靶点多，提示其在方剂抗纤维化与抗炎轴中贡献更大；本方 9 味药均有靶点支持（水蛭为已知靶点路径），无空靶点药味。UpSet 中 <code>same*</code> 为多药共享成分，常对应「君臣协同」的分子基础；热图显示各药对 Top 通路的靶点覆盖强度。</p><h4>单药 × 疾病交集</h4><table><thead><tr><th>药味</th><th>靶点数</th><th>与疾病交集</th></tr></thead><tbody><tr><td>甘草</td><td>200</td><td><strong>166</strong></td></tr><tr><td>蜜麻黄</td><td>197</td><td><strong>165</strong></td></tr><tr><td>黄芪</td><td>180</td><td><strong>150</strong></td></tr><tr><td>旋覆花</td><td>176</td><td><strong>148</strong></td></tr><tr><td>紫苏子</td><td>118</td><td><strong>98</strong></td></tr><tr><td>浙贝母</td><td>44</td><td><strong>36</strong></td></tr><tr><td>桃仁</td><td>42</td><td><strong>32</strong></td></tr><tr><td>川芎</td><td>26</td><td><strong>23</strong></td></tr><tr><td>水蛭</td><td>6</td><td><strong>6</strong></td></tr></tbody></table></div>
+  <div class='callout'><p><strong>药味：</strong>名义 9 味，有靶点 9 味；成分约 184 个；药–成分边 209。</p><p><strong>生物学意义：</strong>川芎/黄芪/甘草等交集靶点多，提示其在方剂抗纤维化与抗炎轴中贡献更大；本方 9 味药均有靶点支持（水蛭为已知靶点路径），无空靶点药味。UpSet 中 <code>same*</code> 为多药共享成分，常对应「君臣协同」的分子基础；热图显示各药对 Top 通路的靶点覆盖强度。</p><h4>单药 × 疾病交集</h4><table><thead><tr><th>药味</th><th>靶点数</th><th>与疾病交集</th></tr></thead><tbody><tr><td>甘草</td><td>200</td><td><strong>166</strong></td></tr><tr><td>蜜麻黄</td><td>197</td><td><strong>165</strong></td></tr><tr><td>黄芪</td><td>180</td><td><strong>150</strong></td></tr><tr><td>旋覆花</td><td>176</td><td><strong>148</strong></td></tr><tr><td>紫苏子</td><td>118</td><td><strong>98</strong></td></tr><tr><td>浙贝母</td><td>44</td><td><strong>36</strong></td></tr><tr><td>桃仁</td><td>42</td><td><strong>32</strong></td></tr><tr><td>川芎</td><td>26</td><td><strong>23</strong></td></tr><tr><td>水蛭</td><td>6</td><td><strong>6</strong></td></tr></tbody></table></div>
   <div class="grid">
 <article class="card">
   <div class="card-media"><a class="thumb" href="图片/补充_技能扩展/单药疾病交集柱状图.png" target="_blank" rel="noopener"><img src="图片/补充_技能扩展/单药疾病交集柱状图.png" alt="单药疾病交集柱状图" loading="lazy" /></a></div>
@@ -412,13 +412,13 @@ footer { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top
 <section id="network">
   <h2>4. 网络与 PPI</h2>
   <p class="blurb">HCTP 四层网络 + 桑基流量 + STRING 互作。</p>
-  <div class='callout'><p><strong>HCTP 节点：</strong>药(A)=9，成分(B)=183，靶点(C)=197，通路(D)=20；边=3422。</p><p><strong>PPI：</strong>687 条高分互作，涉及 173 个蛋白。</p><p><strong>生物学意义：</strong>网络把「药→成分→靶→通路」连成可讲述的作用轴；桑基带宽反映关联强度；PPI 中 Degree 高的蛋白（如 TNF、AKT1、NFKB1、STAT3 等常见炎症枢纽）是验证与机制深挖的优先节点。</p></div>
+  <div class='callout'><p><strong>HCTP 节点：</strong>药(A)=9，成分(B)=159，靶点(C)=197，通路(D)=20；边=2571。</p><p><strong>PPI：</strong>687 条高分互作，涉及 173 个蛋白。</p><p><strong>生物学意义：</strong>网络把「药→成分→靶→通路」连成可讲述的作用轴；桑基带宽反映关联强度；PPI 中 Degree 高的蛋白（如 TNF、AKT1、NFKB1、STAT3 等常见炎症枢纽）是验证与机制深挖的优先节点。</p></div>
   <div class="grid">
 <article class="card">
   <div class="card-media"><a class="thumb" href="图片/网络图/药物有效成分疾病靶点通路网络图.png" target="_blank" rel="noopener"><img src="图片/网络图/药物有效成分疾病靶点通路网络图.png" alt="药物有效成分疾病靶点通路网络图" loading="lazy" /></a></div>
   <div class="card-body">
     <h3>药物有效成分疾病靶点通路网络图</h3>
-    <p class="statline">边=3422 · C靶=197 · D通路=20</p>
+    <p class="statline">边=2571 · C靶=197 · D通路=20</p>
     <p><span class="tag">含义</span>HCTP 四层网络</p>
     <p><span class="tag how">怎么看</span>A 药 / B 成分 / C 靶 / D 通路；看枢纽靶点与 same*。</p>
     <p><span class="tag bio">生物学意义</span>整体拓扑展示方剂多成分多靶点特征。</p>

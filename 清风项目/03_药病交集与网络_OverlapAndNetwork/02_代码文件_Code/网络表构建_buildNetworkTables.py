@@ -38,18 +38,40 @@ for r in csv.DictReader(open(os.path.join(DISE, '疾病靶点合并_DiseaseGeneU
     disease.add(r['Gene'])
     dsrc[r['Gene']] = r['来源库']
 
-# ---- 成分登记（每药独立 compound_id，样例口径 herb_code+序号） ----
-comp_name, comp_reg, comp_src = {}, {}, {}   # (herb, mol) -> id
+# ---- 成分登记：去 H_ 前缀（药码=拼音）；≥2 药共用成分合并唯一 same{n}（§A3 / 用户确认 2026-10-15） ----
+# 预扫：分子 -> 涉及药味集合，用于判定「共用」。共用成分跨药共用同一 same{n} 节点；
+# 独有成分 = {药码拼音}{序号}（如 GC1、HQ2）。下游网络边经 dict.fromkeys 去重后自动把共用成分合并为单节点。
+mol_herbs, mol_src = defaultdict(set), {}
+for r in csv.DictReader(open(os.path.join(DROOT, 'TCMSP_过筛成分表_FilteredCompounds.csv'), encoding='utf-8-sig')):
+    for herb in r['herbs'].split('|'):
+        herb = herb.strip()
+        if herb in HERB:
+            mol_herbs[r['molecule_name']].add(herb)
+            mol_src.setdefault(r['molecule_name'], ('TCMSP', r['molecule_ID']))
+for r in csv.DictReader(open(os.path.join(DROOT, 'BATMAN_水蛭专属成分_known靶点_ShuizhiKnownTargets.csv'), encoding='utf-8-sig')):
+    mol_herbs[r['成分英文名']].add('水蛭')
+    mol_src.setdefault(r['成分英文名'], ('BATMAN-TCM 2.0', r['PubChem_CID']))
+shared_mols = {m for m, hs in mol_herbs.items() if len(hs) >= 2}
+same_seq = {m: f'same{i}' for i, m in enumerate(sorted(shared_mols), 1)}
+print(f'[compounds] 共用成分(≥2药)={len(shared_mols)} -> same1..same{len(same_seq)}；独有={len(mol_herbs)-len(shared_mols)}')
+
+comp_name, comp_reg, comp_src = {}, {}, {}   # (herb, mol) -> id（共用成分跨药映射到同一 same{n}）
+herb_seq = defaultdict(int)
+def herb_py(herb):
+    return HERB[herb][0].replace('H_', '', 1)   # H_GC -> GC（拼音首字母）
+
 def reg_comp(herb, mol, mol_id, src):
-    key = (herb, mol)
-    if key in comp_reg:
-        return comp_reg[key]
-    code = HERB[herb][0]
-    n = sum(1 for (h, m) in comp_reg if h == herb) + 1
-    cid = f'{code}{n}'
-    comp_reg[key] = cid
-    comp_name[cid] = mol
-    comp_src[cid] = (src, mol_id)
+    if mol in shared_mols:
+        cid = same_seq[mol]                       # 共用：跨药同一节点
+    else:
+        key = (herb, mol)
+        if key in comp_reg:
+            return comp_reg[key]
+        herb_seq[herb] += 1
+        cid = f'{herb_py(herb)}{herb_seq[herb]}'  # 独有：药码拼音+序号，无 H_
+    comp_reg[(herb, mol)] = cid
+    comp_name.setdefault(cid, mol)
+    comp_src.setdefault(cid, (src, mol_id))
     return cid
 
 for r in csv.DictReader(open(os.path.join(DROOT, 'TCMSP_过筛成分表_FilteredCompounds.csv'), encoding='utf-8-sig')):
@@ -205,9 +227,9 @@ with open(os.path.join(OROOT, '草药成分边_HerbCompoundEdges.csv'), 'w', new
 # ---- VennFull 疾病按库（完整 GeneCards 口径） ----
 bydb = list(csv.DictReader(open(os.path.join(DISE, '疾病靶点按库_DiseaseGenesByDB.csv'), encoding='utf-8-sig')))
 with open(os.path.join(DISE, '疾病靶点按库_VennFull_DiseaseGenesByDB.csv'), 'w', newline='', encoding='utf-8-sig') as f:
-    w = csv.writer(f); w.writerow(['Gene', 'GeneCards', 'CTD_curated', 'OMIM', 'TTD', 'DrugBank'])
+    w = csv.writer(f); w.writerow(['Gene', 'GeneCards', 'CTD', 'OMIM', 'TTD', 'DrugBank'])
     for r in bydb:
-        w.writerow([r['Gene'], r['GeneCards_full'], r['CTD_curated'], r['OMIM'], r['TTD'], r['DrugBank']])
+        w.writerow([r['Gene'], r['GeneCards_full'], r['CTD_any'], r['OMIM'], r['TTD'], r['DrugBank']])
 
 # ---- 交集核对 ----
 n_tc_pairs = sum(1 for _ in csv.DictReader(open(os.path.join(DROOT, 'TCMSP_成分靶点映射_基因化_MoleculeTargetGeneMap.csv'), encoding='utf-8-sig')))

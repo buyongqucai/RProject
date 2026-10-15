@@ -94,7 +94,8 @@ data_provenance: REAL | TOY | BLOCKED
 - toy 结论写「不可外推」；REAL 可核对 accession / 路径
 - 报告须写明是否 `source` 了 VizStandards + DeliveryStandards + 本技能脚本
 - `data_provenance` 与 STATUS 分列，勿混
-- HTML 版式 → [`文档_docs/样例报告范式_SampleReportParadigm.md`](文档_docs/样例报告范式_SampleReportParadigm.md)
+- **样例** HTML 版式 → [`文档_docs/样例报告范式_SampleReportParadigm.md`](文档_docs/样例报告范式_SampleReportParadigm.md)
+- **课题终局双报告**（论文式 + 方法论 + 入口；升格自婷婷金标）→ [`文档_docs/课题双报告范式_ProjectDualReport.md`](文档_docs/课题双报告范式_ProjectDualReport.md)；**禁止**用样例骨架冒充课题终局报告
 
 ## 8. 能否结合其它生信
 

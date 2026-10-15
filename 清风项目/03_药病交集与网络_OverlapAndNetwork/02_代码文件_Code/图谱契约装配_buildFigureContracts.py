@@ -16,9 +16,12 @@ DRUG = PROJ / '02_药物靶点_DrugTargets' / '01_数据文件_Data' / '02_结�
 DISE = PROJ / '01_疾病靶点_DiseaseTargets' / '01_数据文件_Data' / '02_结果数据_ResultTables'
 PPI = PROJ / '04_富集与PPI_EnrichPPI' / '01_数据文件_Data' / '02_结果数据_ResultTables'
 OUT = DATA / '图谱契约数据_FigureContractData'
-FIG = PROJ / '04_富集与PPI_EnrichPPI' / '03_图片文件_Figures'
+# by_stage 落位（用户确认 2026-10-15）：图01→01疾病；图02→03交集网络
+FIG01 = PROJ / '01_疾病靶点_DiseaseTargets' / '03_图片文件_Figures'
+FIG03 = PROJ / '03_药病交集与网络_OverlapAndNetwork' / '03_图片文件_Figures'
 OUT.mkdir(parents=True, exist_ok=True)
-FIG.mkdir(parents=True, exist_ok=True)
+FIG01.mkdir(parents=True, exist_ok=True)
+FIG03.mkdir(parents=True, exist_ok=True)
 
 def rd(p, enc='utf-8-sig'):
     with open(p, encoding=enc, newline='') as f:
@@ -56,6 +59,7 @@ bydb = rd(DISE / '疾病靶点按库_DiseaseGenesByDB.csv')
 SRC = [('GeneCards_ge40', 'GeneCards'), ('CTD_curated', 'CTD'), ('OMIM', 'OMIM'), ('TTD', 'TTD'), ('DrugBank', 'DrugBank')]
 long_rows = [[r['Gene'], nm] for r in bydb for col, nm in SRC if r[col] == '1']
 wr(OUT / '疾病靶点按库_DiseaseGenesByDB.csv', ['gene', 'source'], long_rows)
+# 图01/VennFull 展示口径：CTD=curated（§0a 2026-10-16）；GeneCards 仍 full
 venn_rows = [[r['Gene'], nm] for r in bydb for col, nm in [('GeneCards_full', 'GeneCards'), ('CTD_curated', 'CTD'),
                                                           ('OMIM', 'OMIM'), ('TTD', 'TTD'), ('DrugBank', 'DrugBank')] if r[col] == '1']
 wr(OUT / '疾病靶点按库_VennFull_DiseaseGenesByDB.csv', ['gene', 'source'], venn_rows)
@@ -154,7 +158,7 @@ spec.loader.exec_module(lib)
 drug_genes = [r['gene'] for r in rd(OUT / '药物去重基因_DrugGenesUnion.csv')]
 disease_genes = [r['Gene'] for r in uni]
 svg_text = lib.build_two_set_svg(drug_genes, disease_genes, name_a='Drugs', name_b='Disease')
-svg_p, png_p = lib.write_venn_pair(svg_text, FIG, '02_韦恩图_DrugDisease_Venn')
+svg_p, png_p = lib.write_venn_pair(svg_text, FIG03, '02_韦恩图_DrugDisease_Venn')
 print(f'[venn02] svg={svg_p.stat().st_size} png={png_p.stat().st_size}')
 
 try:
@@ -174,19 +178,21 @@ try:
 except Exception as e:
     print('[venn02] trim skipped:', e)
 
-# ---- 9b. 图01 微生信疾病多库韦恩（TTD/DrugBank/GeneCards/OMIM 4 库，VennFull 全量口径，FROZEN §G）+ 裁白边 ----
+# ---- 9b. 图01 微生信五库韦恩（CTD_curated；与图02同 write_venn_pair 链；§0a/§G）----
+# GeneCards_full + CTD_curated + OMIM + TTD + DrugBank。落位→01。
 def _geneset(col):
     return {r['Gene'] for r in bydb if r.get(col) == '1'}
-sets4 = {
+sets5 = {
+    'GeneCards': _geneset('GeneCards_full'),
+    'CTD': _geneset('CTD_curated'),
+    'OMIM': _geneset('OMIM'),
     'TTD': _geneset('TTD'),
     'DrugBank': _geneset('DrugBank'),
-    'GeneCards': _geneset('GeneCards_full'),
-    'OMIM': _geneset('OMIM'),
 }
-svg_text1 = lib.build_disease_4db_svg(sets4)
-svg_p1, png_p1 = lib.write_venn_pair(svg_text1, FIG, '01_韦恩图_DiseaseDatabases_Venn')
-print(f'[venn01] svg={svg_p1.stat().st_size} png={png_p1.stat().st_size} sizes=' +
-      str({k: len(v) for k, v in sets4.items()}))
+svg_text1 = lib.build_disease_5db_svg(sets5)
+svg_p1, png_p1 = lib.write_venn_pair(svg_text1, FIG01, '01_韦恩图_DiseaseDatabases_Venn')
+print(f'[venn01-jvenn-5db+CTD_curated] svg={svg_p1.stat().st_size} png={png_p1.stat().st_size} sizes=' +
+      str({k: len(v) for k, v in sets5.items()}))
 try:
     trim(png_p1)
     print(f'[venn01] trimmed -> {png_p1.stat().st_size}')

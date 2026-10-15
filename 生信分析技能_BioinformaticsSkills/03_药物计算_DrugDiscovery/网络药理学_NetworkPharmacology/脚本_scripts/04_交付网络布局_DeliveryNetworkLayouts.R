@@ -1565,15 +1565,14 @@ np_plot_hctp_network <- function(net,
   nd_a <- nd[nd$type == "A", , drop = FALSE]
   nd_d <- nd[nd$type == "D", , drop = FALSE]
 
-  # Pathway fills: ellipse mode → flattened ellipses (a > b); columns keep hexagons
+  # Pathway fills = 正六边形 regular hexagon (geom_regon sides=6) — BOTH modes (用户确认 2026-10-15)。
+  # 保留 a/b 仅作 ellipse 模式间距推算（近似）；绘图统一用正六边形 r=nd_d$r（Degree→size 60–120）。
   if (nrow(nd_d)) {
+    nd_d$sides <- 6L
+    nd_d$angle <- 0
     if (identical(pathway_mode, "ellipse")) {
       nd_d$a <- nd_d$r * path_ell_a_frac
       nd_d$b <- nd_d$r * path_ell_b_frac
-      nd_d$angle <- 0
-    } else {
-      nd_d$sides <- 6L
-      nd_d$angle <- 0
     }
   }
 
@@ -1867,19 +1866,12 @@ np_plot_hctp_network <- function(net,
   if (nrow(nd_c)) nd_c$label_size <- sz_tgt
   if (nrow(nd_d)) nd_d$label_size <- sz_path
 
-  path_geom <- if (identical(pathway_mode, "ellipse")) {
-    ggforce::geom_ellipse(
-      data = nd_d,
-      ggplot2::aes(x0 = x, y0 = y, a = a, b = b, angle = angle, fill = fill_col),
-      colour = NA, linewidth = 0, n = 64, alpha = 1
-    )
-  } else {
-    ggforce::geom_regon(
-      data = nd_d,
-      ggplot2::aes(x0 = x, y0 = y, r = r, fill = fill_col, sides = sides, angle = angle),
-      colour = NA, linewidth = 0, alpha = 1
-    )
-  }
+  # 通路 D 统一正六边形 regular hexagon（geom_regon sides=6），用户确认 2026-10-15
+  path_geom <- ggforce::geom_regon(
+    data = nd_d,
+    ggplot2::aes(x0 = x, y0 = y, r = r, fill = fill_col, sides = sides, angle = angle),
+    colour = NA, linewidth = 0, alpha = 1
+  )
 
   p <- ggplot2::ggplot() +
     # Edges under fills — stronger visibility; solid lines (dashed too faint on dense nets)
