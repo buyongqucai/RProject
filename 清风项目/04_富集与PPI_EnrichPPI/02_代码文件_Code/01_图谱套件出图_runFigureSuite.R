@@ -25,6 +25,58 @@ scripts_dir <- file.path(skill_root, "脚本_scripts")
 sk_files <- list.files(scripts_dir, pattern = "[.][Rr]$", full.names = TRUE)
 for (sf in sk_files) try(source(sf, encoding = "UTF-8"), silent = TRUE)
 sourced_note <- paste0("已 source 本技能 脚本_scripts/: ", paste(basename(sk_files), collapse = ", "))
+
+# ---- 本地 recipe 覆盖：GO 气泡按 p 值排序（用户确认 2026-10-15） ----
+# 技能 SSOT 的 np_plot_go_bubble 按 enrichment 排；用户确认改为按 p 值（最显著在上、颜色红→绿渐变）。
+# 仅覆盖 GO 气泡（图06）；柱状(图07)仍走 SSOT。此偏好待经反馈闭环写入 FROZEN 出图约束 §D，暂不改共享技能。
+np_plot_go_bubble <- function(go_df, top_n = 10) {
+  if (!requireNamespace("ggplot2", quietly = TRUE)) stop("需要 ggplot2")
+  df <- go_df
+  df$pvalue <- as.numeric(df$pvalue)
+  df$enrichment <- as.numeric(df$enrichment)
+  df$count <- as.numeric(df$count)
+  if (!"ontology" %in% names(df)) df$ontology <- "BP"
+  df$ontology <- factor(as.character(df$ontology), levels = c("BP", "CC", "MF"))
+  df$neglogp <- -log10(pmax(df$pvalue, 1e-300))
+
+  # 每个 ontology 取 top_n（按 p 值升序 = 最显著优先）
+  parts <- split(df, df$ontology)
+  parts <- lapply(parts, function(d) {
+    d <- d[order(d$pvalue, -d$enrichment), , drop = FALSE]
+    utils::head(d, top_n)
+  })
+  df <- do.call(rbind, parts)
+  rownames(df) <- NULL
+
+  df$term_lab <- np_wrap_term(df$term, width = 36)
+  # y 轴因子末位在顶 → 按 p 降序排，使最显著(p 最小)落在顶部，颜色红→绿自上而下
+  df <- df[order(df$ontology, -df$pvalue), , drop = FALSE]
+  df$term_lab <- factor(df$term_lab, levels = unique(df$term_lab))
+
+  ggplot2::ggplot(
+    df,
+    ggplot2::aes(enrichment, term_lab, size = count, color = neglogp)
+  ) +
+    ggplot2::geom_point(alpha = 0.92) +
+    ggplot2::facet_grid(ontology ~ ., scales = "free_y", space = "free_y") +
+    ggplot2::scale_color_gradientn(colours = np_go_pval_cols, name = "-log 10 (pvalue)") +
+    ggplot2::scale_size_continuous(
+      range = c(2.5, 10), name = "count", breaks = function(x) pretty(x, n = 3)
+    ) +
+    ggplot2::scale_x_continuous(expand = ggplot2::expansion(mult = c(0.04, 0.08))) +
+    ggplot2::labs(x = NULL, y = NULL) +
+    ggplot2::guides(
+      color = ggplot2::guide_colorbar(order = 1, barwidth = 0.7, barheight = 5),
+      size = ggplot2::guide_legend(order = 2, override.aes = list(color = "grey30"))
+    ) +
+    np_theme_enrich(8.2) +
+    ggplot2::theme(
+      strip.text.y = ggplot2::element_text(angle = 0, face = "bold", size = 10),
+      panel.spacing.y = ggplot2::unit(0.4, "lines"),
+      legend.position = "right"
+    )
+}
+
 if (!requireNamespace("ggplot2", quietly = TRUE)) stop("需要 ggplot2")
 library(ggplot2)
 if (exists("setup_cjk_fonts")) setup_cjk_fonts()
@@ -130,11 +182,14 @@ write_delivery_audit(
   data_provenance = data_provenance
 )
 
-# --- 图 01：疾病多库韦恩（5 库 N 集微生信双底栏版式，R SSOT 实现） ---
+# --- 图 01：疾病多库韦恩（微生信模板 build_disease_4db_svg，契约装配脚本已产出，FROZEN §G） ---
 fig_map <- c()
-p_venn_dis <- np_plot_disease_db_venn(dis_by_venn)
-delivery_save_plot(p_venn_dis, skill_en, "venn", "DiseaseDatabases", 6.5, 8.0, fig_dir, bio_root, order = 1)
-fig_map <- c(fig_map, "疾病多库韦恩" = paste0("../图片文件/", delivery_stem(skill_en, "venn", "DiseaseDatabases", order = 1), ".png"))
+venn_dis <- file.path(fig_dir, paste0(delivery_stem(skill_en, "venn", "DiseaseDatabases", order = 1), ".png"))
+if (file.exists(venn_dis)) {
+  fig_map <- c(fig_map, "疾病多库韦恩" = paste0("../图片文件/", basename(venn_dis)))
+} else {
+  warning("图01 疾病多库韦恩缺失（应由 图谱契约装配_buildFigureContracts.py 微生信产出）")
+}
 
 # --- 图 02：药病韦恩（微生信模板，契约装配脚本已产出） ---
 venn_dd <- file.path(fig_dir, paste0(delivery_stem(skill_en, "venn", "DrugDisease", order = 2), ".png"))
@@ -238,7 +293,7 @@ writeLines(
     paste0("data_provenance=", data_provenance),
     paste0("disease_english_name=", disease_en),
     "R_figures_01_10=PASS_SUBSET",
-    "venn_disease=R_Nset_microformat",
+    "venn_disease=WEISHENGIN_TEMPLATE",
     "venn_drugdisease=WEISHENGIN_TEMPLATE",
     "compound_disease_overlap_table=PASS",
     "KEGG_circos=PASS",

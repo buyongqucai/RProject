@@ -174,4 +174,23 @@ try:
 except Exception as e:
     print('[venn02] trim skipped:', e)
 
+# ---- 9b. 图01 微生信疾病多库韦恩（TTD/DrugBank/GeneCards/OMIM 4 库，VennFull 全量口径，FROZEN §G）+ 裁白边 ----
+def _geneset(col):
+    return {r['Gene'] for r in bydb if r.get(col) == '1'}
+sets4 = {
+    'TTD': _geneset('TTD'),
+    'DrugBank': _geneset('DrugBank'),
+    'GeneCards': _geneset('GeneCards_full'),
+    'OMIM': _geneset('OMIM'),
+}
+svg_text1 = lib.build_disease_4db_svg(sets4)
+svg_p1, png_p1 = lib.write_venn_pair(svg_text1, FIG, '01_韦恩图_DiseaseDatabases_Venn')
+print(f'[venn01] svg={svg_p1.stat().st_size} png={png_p1.stat().st_size} sizes=' +
+      str({k: len(v) for k, v in sets4.items()}))
+try:
+    trim(png_p1)
+    print(f'[venn01] trimmed -> {png_p1.stat().st_size}')
+except Exception as e:
+    print('[venn01] trim skipped:', e)
+
 print('[done] contracts at', OUT)

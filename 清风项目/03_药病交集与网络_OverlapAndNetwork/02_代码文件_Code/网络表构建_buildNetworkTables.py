@@ -21,6 +21,17 @@ HERB = {  # 药名 -> (code, en)；节点 ID 统一 H_ 前缀防与基因符号�
     '黄芪': ('H_HQ', 'Astragalus'), '甘草': ('H_GC', 'Licorice'),
 }
 
+# 网络 A 节点 ID = 中文药名（不加 H_ 前缀）。中文药名（甘草/水蛭…）不与拉丁基因符号（GC/EGFR）或
+# hsa 通路号冲突，故无需用 H_ 前缀防撞；若出现同名药味（本方 9 味唯一，通常不触发）以尾部空格区分节点键，
+# 使 network.csv 键唯一且图上肉眼看着是同一药名。
+HERB_NODE, _seen_nid = {}, set()
+for _h in HERB:
+    _nid = _h
+    while _nid in _seen_nid:
+        _nid += ' '
+    HERB_NODE[_h] = _nid
+    _seen_nid.add(_nid)
+
 # ---- 载入疾病并集 ----
 disease, dsrc = set(), {}
 for r in csv.DictReader(open(os.path.join(DISE, '疾病靶点合并_DiseaseGeneUnion.csv'), encoding='utf-8-sig')):
@@ -117,7 +128,7 @@ for (herb, mol), gs in sorted(c2g.items()):
     ogs = gs & overlap
     if not ogs:
         continue
-    edges.append((HERB[herb][0], cid))
+    edges.append((HERB_NODE[herb], cid))
     for g in sorted(ogs):
         edges.append((cid, g))
         for p in sorted(g2p.get(g, ())):
@@ -135,7 +146,7 @@ for n in list(nodes):
         nodes[n] = 'B'
     elif n.startswith('hsa'):
         nodes[n] = 'D'
-    elif n in {v[0] for v in HERB.values()}:
+    elif n in set(HERB_NODE.values()):
         nodes[n] = 'A'
     else:
         nodes[n] = 'C'
