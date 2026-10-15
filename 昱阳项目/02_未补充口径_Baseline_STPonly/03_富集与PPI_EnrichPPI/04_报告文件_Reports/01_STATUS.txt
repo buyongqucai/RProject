@@ -1,6 +1,14 @@
-STATUS: SKIPPED_BASELINE_ARCHIVE
+STATUS: DONE_NEGATIVE_RESULT
 step: 03_EnrichPPI
 phase: C
 arm: 02_未补充口径_Baseline_STPonly
-notes: Baseline arm frozen at gate (STP x DEG). Stage C runs on Expanded arm only.
-updated: 2026-10-11
+enrich_viz: 无（0 显著条目，不作图，避免以噪声冒充机制）
+ora_mode=Full_DEG n_ora=120 n_overlap=1 ora_map_rate=81.7%(98/120 ENTREZID)
+enrich_result: GO_BP/CC/MF + KEGG 在 FDR<0.05 均 0 条显著（已用诊断脚本核实=真阴性，非报错/非离线）；
+  放宽 p.adj<0.2 仅零散不显著条目（雌性性别分化/眼发育/肾小管/视黄醇代谢, p.adj≈0.17），主题离散、与神经毒性不相干。
+  阴性主因：DEG 多为 Olfr/Vmn/Rik 新基因、注释稀疏，且 DEG 本身无 FDR 显著基因。
+ppi_genes=50(top DEG, overlap<3) string_edges=(稀疏/低分, score>=400) hubs=13(最高 degree=3 Olfr961) — 仅背景参考
+venn_drug_vs_deg_intersect=1 (Alox15)
+diag_script: 02_代码文件_Code/_diag_enrich.R（映射率+真实 error 核实）
+conclusion: 基线口径证据不足→作补充口径(交集57/凋亡缺氧)之阴性对照
+updated: 2026-10-15
