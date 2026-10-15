@@ -1,0 +1,172 @@
+{
+  "n_disease_union": 4269,
+  "disease_by_db_venn_full": {
+    "GeneCards": 9786,
+    "OMIM": 100,
+    "DrugBank": 38,
+    "TTD": 33,
+    "CTD": 22
+  },
+  "disease_by_db_downstream": {
+    "GeneCards": 4253,
+    "OMIM": 100,
+    "DrugBank": 38,
+    "TTD": 33,
+    "CTD": 22
+  },
+  "genecards_full": 9786,
+  "genecards_filtered_ge40": 4253,
+  "genecards_relevance_cutoff": 40.0,
+  "disease_by_db": {
+    "GeneCards": 9786,
+    "OMIM": 100,
+    "DrugBank": 38,
+    "TTD": 33,
+    "CTD": 22
+  },
+  "n_drug_targets": 244,
+  "n_overlap": 197,
+  "overlap_pct_of_drug": 80.7,
+  "overlap_pct_of_disease": 4.6,
+  "n_herbs_nominal": 9,
+  "n_herbs_with_targets": 9,
+  "per_herb": [
+    {
+      "herb_zh": "甘草",
+      "n_overlap": 166,
+      "n_targets": 200
+    },
+    {
+      "herb_zh": "蜜麻黄",
+      "n_overlap": 165,
+      "n_targets": 197
+    },
+    {
+      "herb_zh": "黄芪",
+      "n_overlap": 150,
+      "n_targets": 180
+    },
+    {
+      "herb_zh": "旋覆花",
+      "n_overlap": 148,
+      "n_targets": 176
+    },
+    {
+      "herb_zh": "紫苏子",
+      "n_overlap": 98,
+      "n_targets": 118
+    },
+    {
+      "herb_zh": "浙贝母",
+      "n_overlap": 36,
+      "n_targets": 44
+    },
+    {
+      "herb_zh": "桃仁",
+      "n_overlap": 32,
+      "n_targets": 42
+    },
+    {
+      "herb_zh": "川芎",
+      "n_overlap": 23,
+      "n_targets": 26
+    },
+    {
+      "herb_zh": "水蛭",
+      "n_overlap": 6,
+      "n_targets": 6
+    }
+  ],
+  "n_compounds": 209,
+  "n_herbs_with_comp": 9,
+  "n_herb_comp_edges": 209,
+  "n_kegg_terms": 193,
+  "n_kegg_padj05": 193,
+  "top_kegg": [
+    {
+      "id": "hsa05417",
+      "desc": "Lipid and atherosclerosis",
+      "pvalue": 2.25387821596751e-35,
+      "padj": 6.5137080441461e-33,
+      "count": 46
+    },
+    {
+      "id": "hsa05418",
+      "desc": "Fluid shear stress and atherosclerosis",
+      "pvalue": 3.26209937925895e-29,
+      "padj": 3.43741626977841e-27,
+      "count": 35
+    },
+    {
+      "id": "hsa04933",
+      "desc": "AGE-RAGE signaling pathway in diabetic complications",
+      "pvalue": 3.56825218316098e-29,
+      "padj": 3.43741626977841e-27,
+      "count": 31
+    },
+    {
+      "id": "hsa05215",
+      "desc": "Prostate cancer",
+      "pvalue": 1.04941654142257e-25,
+      "padj": 7.58203451177805e-24,
+      "count": 29
+    },
+    {
+      "id": "hsa05160",
+      "desc": "Hepatitis C",
+      "pvalue": 3.09811301863543e-25,
+      "padj": 1.79070932477128e-23,
+      "count": 33
+    },
+    {
+      "id": "hsa05207",
+      "desc": "Chemical carcinogenesis - receptor activation",
+      "pvalue": 1.00154839268677e-24,
+      "padj": 4.82412475810796e-23,
+      "count": 37
+    },
+    {
+      "id": "hsa05161",
+      "desc": "Hepatitis B",
+      "pvalue": 1.3940075713858e-24,
+      "padj": 5.75525983043565e-23,
+      "count": 33
+    },
+    {
+      "id": "hsa04657",
+      "desc": "IL-17 signaling pathway",
+      "pvalue": 2.97801018322636e-23,
+      "padj": 1.07580617869052e-21,
+      "count": 26
+    },
+    {
+      "id": "hsa05167",
+      "desc": "Kaposi sarcoma-associated herpesvirus infection",
+      "pvalue": 5.39657885029069e-23,
+      "padj": 1.73290143081557e-21,
+      "count": 34
+    },
+    {
+      "id": "hsa05163",
+      "desc": "Human cytomegalovirus infection",
+      "pvalue": 6.15364732178622e-23,
+      "padj": 1.7784040759962202e-21,
+      "count": 36
+    }
+  ],
+  "n_go": 2688,
+  "go_by_ont": {
+    "BP": 2400,
+    "CC": 83,
+    "MF": 205
+  },
+  "network_type_counts": {
+    "C": 197,
+    "B": 183,
+    "D": 20,
+    "A": 9
+  },
+  "n_network_edges": 3422,
+  "n_ppi_edges": 687,
+  "n_ppi_proteins": 173
+}
