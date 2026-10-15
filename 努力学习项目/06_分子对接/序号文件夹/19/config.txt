@@ -1,0 +1,13 @@
+engine = autodock-gpu (AD4)
+receptor = 1U7B_clean_h.pdbqt
+ligand = 5280863_clean_h.pdbqt
+maps = maps/PCNA/1U7B_clean_h.maps.fld
+center_x = 46.529
+center_y = -46.185
+center_z = -10.415
+size_x = 20.6
+size_y = 20.6
+size_z = 20.6
+nrun = 20
+seeds = 1,7,42
+devnum = 1

@@ -39,7 +39,7 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <p style="margin-top:1rem"><a href="论文版_全流程.html">→ 论文版</a></p>
 </aside>
 <main class="main">
-<p>方法版回答「每一步怎么做、数据从哪来、洗完放哪、做到哪一关停」。与 <code>01_网络药理学/</code> 同级，目录 <code>00_全流程报告/</code>。路径均相对于 <code>努力学习项目/</code>。存放层级（课题交付）：<code>结果文件/{数据文件,图片文件,报告文件}/</code> 与 <code>代码文件/</code>（仅脚本）、<code>数据文件/</code>（仅 raw，<code>原始数据/</code> 内目录名带来源库）平级。每模块至多一张拼图；单张结果细读在论文版。</p>
+<p>方法版回答「每一步怎么做、数据从哪来、洗完放哪、做到哪一关停」。与 <code>01_网络药理学/</code> 同级，目录 <code>00_全流程报告/</code>。路径均相对于 <code>努力学习项目/</code>。存放层级（课题交付）：<code>结果文件/{数据文件,图片文件,报告文件}/</code> 与 <code>代码文件/</code>（仅脚本）、<code>数据文件/</code>（仅 raw，<code>原始数据/</code> 内目录名带来源库）平级。每模块至多一张拼图（06 对接因双轨拆分为两张分轨矩阵）；单张结果细读在论文版。</p>
 
 <h2 id="m-ov">总览</h2>
 <table>
@@ -184,31 +184,31 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <h2 id='m-06'>06 分子对接</h2>
 
 <h4>1. 为何采用这一分析</h4>
-<p>科学目的：在同一过筛靶点宇宙上，并列检验「活性成分–宿主靶点」与「菌群代谢物–宿主靶点」的计算结合候选。为何不用旧手挑对：旧表未先过网毒硬过滤、成分 Degree 未限制在剔除后的 C*，与论文范式不一致。为何双轨而非只对接代谢物：复方药效轴与菌群代谢轴需共用 C* 才能写「交汇」句。</p>
+<p>科学目的：在同一过筛靶点宇宙 C* 上读出「活性成分 × 靶点」的结合选择性格局——哪些靶点被多种成分共同强结合，哪些只认特定成分。为何多对多而非一配体一靶点：单对读不出选择性，3×4 全组合才能并列比较同一配体跨靶点与同一靶点跨配体。为何不用旧手挑对：旧表未先过网毒硬过滤、成分 Degree 未限制在剔除后的 C*，与论文范式不一致。更早的 C* 双轨批次（成分轨 + 代谢物轨，一配体一靶点）保留归档作历史引用（表路径见 §2），不再作为本轮主口径。</p>
 <h4>2. 数据来源</h4>
 <p><b>数据库：</b>PubChem（配体）；RCSB PDB（受体）；STRING human 边（score≥0.9）；CTD（有害小分子暴露物策展互作）。</p>
 <p><b>来自分析：</b>01 网药 F、03 代谢 M、疾病 D；02 网毒有害小分子清单。</p>
-<p><b>为何这些结构：</b>枢纽靶点须有可用 UniProt+PDB；共晶口袋优先，否则几何中心盲对接并在表中注明 site。</p>
-<p><b>原始：</b><code>06_分子对接/数据文件/原始数据/RCSB与PubChem_对接结构工作区/</code> 与上游模块表。<b>处理后：</b><code>06_分子对接/结果文件/数据文件/筛选执行_SelectionRun/</code>；对接 <code>06_分子对接/结果文件/数据文件/对接/</code>（<code>成分对接汇总.csv</code>、<code>代谢物对接汇总.csv</code>）。代谢物批次（色氨酸–MMP9、腺苷–ADA 等）表在 <code>交付文件/06_分子对接/结果文件/数据文件/对接/</code>（<code>对接汇总.csv</code>、<code>对接全表.csv</code>），同数见 <code>06_分子对接/结果文件/报告文件/报告_Phase5_分子对接.md</code>。</p>
+<p><b>为何这些结构：</b>四个受体均有可用 UniProt+PDB——PCNA P12004/1U7B、DNMT1 P26358/3EPZ、ESR2 Q92731/1L2J、FOS P01100/1A02；定心按决策树（见 §3），有共晶小分子优先共晶包盒，否则 AutoSite/P2Rank/annotated_site，并在表中注明 <code>site</code> 与 <code>center_source</code>。</p>
+<p><b>原始：</b><code>06_分子对接/数据文件/原始数据/RCSB与PubChem_对接结构工作区/</code> 与上游模块表。<b>处理后：</b><code>06_分子对接/结果文件/数据文件/筛选执行_SelectionRun/</code>；对接 <code>06_分子对接/结果文件/数据文件/对接/</code>——本轮多对多 3×4 产物 <code>多对多3x4_对接汇总.csv</code>（12 行，含 <code>center_source</code>/<code>engine</code>）、<code>多对多3x4_对接全表.csv</code>（36 行种子级）、<code>summary_adgpu_多对多3x4.csv</code>、<code>矩阵_结合能_多对多3x4.csv</code>；热图 <code>06_分子对接/结果文件/图片文件/矩阵_结合能热图_多对多3x4_DockingAffinityHeatmap3x4.png/.svg</code>；PyMOL 三视图 <code>06_分子对接/序号文件夹/13–22/</code>（big/surface/detail <code>.pse</code> 于任务根，<code>图片/big-N.png、surface-N.png</code> 已出；<code>detail-N.png、result_N.png</code> 待手调定稿，断点提示见各任务 <code>待办_detail手调与result拼图_提示.md</code>）。历史双轨批次表 <code>成分对接汇总.csv</code>、<code>代谢物对接汇总.csv</code> 等留在同目录；代谢物批次（色氨酸–MMP9、腺苷–ADA 等）表在 <code>交付文件/06_分子对接/结果文件/数据文件/对接/</code>（<code>对接汇总.csv</code>、<code>对接全表.csv</code>），同数见 <code>06_分子对接/结果文件/报告文件/报告_Phase5_分子对接.md</code>。</p>
 <p><b>标准 SSOT：</b><code>06_分子对接/研究思路与标准_Paradigm/筛选标准_SelectionCriteria.md</code>（技能夹同步副本）。</p>
 
 <h4>3. 筛选标准</h4>
-<p><b>总序（不可颠倒）：</b>C=F∩M∩D → 网毒硬过滤 → C* → ①成分 Degree（仅 B–C*）Top L=8 → ②C* 上 PPI/MCC Top T=8 → ③代谢物 Tier A*（n_C*≥1，排除有害小分子与 LPS/H₂S）Top M=8 → 各配体与其 C* 邻居中 PPI 最前且优先落入 Top 靶点的 1 个基因对接。</p>
-<p><b>为何这样洗：</b>先去掉明确有害暴露物相关靶点，避免把风险轴当成治疗对接主轴；Degree/PPI 必须在剔除后重算，否则枢纽会被 ToxHard 基因「顶上去」。LPS/H₂S 不整片删 C，以免炎症枢纽被掏空，但二者不作对接配体。</p>
-<p><b>本轮数字：</b>|C|=78，|ToxHard|=27，|C*|=51；Top 靶点 PCNA、DNMT1、ESR2、FOS、PPARG、EZH2、TOP1、GAPDH。</p>
+<p><b>多对多取样（本轮主口径）：</b>C* 派生沿用：C=F∩M∩D（|C|=78）→ 网毒硬过滤（|ToxHard|=27）→ C*（|C*|=51）→ STRING（score≥0.9）Top 8 靶点（PCNA、DNMT1、ESR2、FOS、PPARG、EZH2、TOP1、GAPDH）；硬过滤先去明确有害暴露物相关靶点，避免把风险轴当治疗主轴，Degree/PPI 在剔除后重算，LPS/H₂S 不整片删 C 也不作对接配体。本轮在 Top 8 中取 PCNA/DNMT1/ESR2/FOS 四受体，与 quercetin、luteolin、kaempferol 三配体做全组合 3×4=12 对；每对种子 1/7/42 独立运行取均值；通过判据：三种子均值 ≤ −5.0 kcal/mol 并记 <code>pass_rate</code>。为何全组合：选择性格局（共同强靶 vs 选择性识别）只有同批并列比较才能读出。</p>
+<p><b>定心决策树（FROZEN，每任务强制登记 <code>center_source</code>）：</b>有可用共晶小分子 → <code>cocrystal_meeko</code>/<code>cocrystal</code>；无共晶 → AutoSite；质控 FAIL → P2Rank → 文献/annotated_site/manual → FAIL。禁止整链 COM、全 HETATM 平均、固定边长 22、未校验照抄库表。本轮实际：cocrystal_meeko 6 对（DNMT1 3EPZ <code>BGC:A:702</code>、ESR2 1L2J <code>ETC:A:600</code>，<code>meeko_enveloping</code>）、p2rank 2 对（PCNA 1U7B rank=2，<code>rg_4_5x</code>）、annotated_site 2 对（FOS 1A02 参考位点=DNA 链 A/B 界面，受体按 FROZEN 剔除核酸，<code>rg_4_5x</code>）；10 对盒质控均 <code>box_qc=PASS</code>。</p>
+<p><b>engine 区分与复用对：</b>10 对新跑走 AutoDock-GPU（AD4、<code>--nrun 20</code>，AutoGrid 出 <code>.maps.fld</code>）；2 对复用旧结果——quercetin–FOS（任务 01）、luteolin–PCNA（旧批次、无任务号）为 Vina 几何中心盲对接（<code>engine=vina_legacy</code>、<code>center_source=legacy_blind_geometric_center</code>、<code>fixed22_legacy</code>；废止法，仅作历史引用），不重跑。汇总表 <code>engine</code> 列区分 vina_legacy 与 adgpu，AD-GPU 与 Vina 分表登记（<code>summary_adgpu</code> ≠ <code>summary_vina</code>）。历史 C* 双轨批次（一配体一靶点，成分轨 8 对 + 代谢物轨 8 对）的筛选总序与逐对数字见 <code>成分对接汇总.csv</code>/<code>代谢物对接汇总.csv</code>，本轮不复述。</p>
 <p><b>对接通过：</b>三种子均值 ≤ −5.0 kcal/mol 且建议 pass_rate=1。旧硬编码对接对剔除并归档至 <code>.../对接/_归档_旧对接_*</code>。</p>
 
 <h4>4. 数据处理与函数</h4>
-<p>脚本 <code>06_分子对接/代码文件/19_按标准筛选并对接.py</code>：算 C*/Top → 归档旧表 → 成分轨与代谢物轨分别 Vina → 写汇总 CSV。</p>
+<p>冻结流水线：AutoGrid 出 <code>.maps.fld</code> → AutoDock-GPU（AD4、<code>--nrun 20</code>）种子 1/7/42 三次独立运行 → 任务 <code>output.pdbqt</code> → 汇总/全表/矩阵 CSV（每行含 <code>center_source</code>、<code>engine</code>；schema 见技能 <code>dock_summary_schema.py</code>，批处理 <code>批量对接_runBatchAdgpu.py</code>）。出图与可视化：热图 <code>plot_docking_affinity_heatmap.py</code>（<code>--matrix</code> 喂 3×4 矩阵、<code>--fmt .2f</code>、DPI 600、色标 vmax=0）；PyMOL 三视图 <code>pymol_dock_viz_standard.py</code>（ST/PT/CJ/QJ；big/surface 用 Draw(fast) 5040×3653、dpi=600、ray=0）+ <code>export_detail_png_from_pse.py</code>（手调后 detail 截图定稿）；result 拼图按 SOP §7.4。历史双轨批次脚本 <code>06_分子对接/代码文件/19_按标准筛选并对接.py</code> 保留归档。</p>
 <h4>5. 参数与取值原因</h4>
-<p>单位 kcal/mol（FROZEN，由旧 kJ/mol 表述改回）；阈值 −5.0 kcal/mol（约合 −20.9 kJ/mol，旁注）；种子 1/7/42；STRING ≥0.9；Top T/L/M=8（课题锁定，见筛选标准 §7）。</p>
+<p>亲和力主单位 kcal/mol（FROZEN，由旧 kJ/mol 表述改回）；阈值 −5.0 kcal/mol（约合 −20.9 kJ/mol，仅旁注）；种子 1/7/42（三次独立运行，报均值 ± SD）；AD-GPU：AD4、<code>--nrun 20</code>（搜索强度按课题锁定）；STRING score≥0.9（选靶沿用）；Top T/L/M=8 为课题锁定（见筛选标准 §7）。本轮未改冻结默认参数；复用 2 对沿用旧 Vina 结果、不重跑不换算。</p>
 <h4>6. 输入与输出</h4>
-<p><b>输入：</b>F/M/D 靶点、network 边、代谢物主面板、CTD ToxHard、STRING。<b>输出：</b>SelectionRun 表 + 双轨对接汇总/全表。<b>停机：</b>无 UniProt/PDB 则顺延下一名靶点；配体无 3D 则顺延下一名成分/代谢物。</p>
+<p><b>输入：</b>受体结构（1U7B、3EPZ、1L2J、1A02 的 <code>*_clean_h.pdbqt</code>；蛋白对接已按 FROZEN 剔除核酸）、配体 3D（PubChem CID：5280343 quercetin、5280445 luteolin、5280863 kaempferol）、任务 13–22 的 <code>output.pdbqt</code>；2 个复用对输入为任务 01 与旧批次既有结果。<b>输出：</b><code>多对多3x4_对接汇总.csv</code>（12 行）、<code>多对多3x4_对接全表.csv</code>（36 行种子级）、<code>summary_adgpu_多对多3x4.csv</code>、<code>矩阵_结合能_多对多3x4.csv</code>、热图 png/svg、任务 13–22 PyMOL 三视图。<b>停机：</b>盒质控 FAIL 或无 UniProt/PDB 则顺延/停机并书面登记；配体无 3D 则顺延下一名；detail 未手调前不产出定稿 <code>detail-N.png</code>/<code>result_N.png</code>（断点提示文件见任务夹）。</p>
 <h4>7. 结果数据与图片怎么读</h4>
-<figure><img src='../图片文件/panel_06_对接.png' alt=''/><figcaption><b>方法拼图 06：</b> C* 后双轨对接亲和力热图（kcal/mol）。细读见论文版。</figcaption></figure>
-<p>读 <code>mean_kcal</code>、<code>pass_rate</code>；主结论以 <code>成分对接汇总.csv</code> / <code>代谢物对接汇总.csv</code> 为准，不以归档旧表为准。</p>
+<figure><img src='../图片文件/矩阵_结合能热图_多对多3x4_DockingAffinityHeatmap3x4.png' alt=''/><figcaption><b>方法图 06-1（多对多 3×4）：</b>3 配体 × 4 受体结合能矩阵（行=配体、列=受体；格内=种子 1/7/42 均值结合能，kcal/mol；色标仅非正 vmax=0、无 extend 箭头；黑标签）。细读见论文版图 15。</figcaption></figure>
+<p>读 <code>mean_kcal</code>、<code>sd_kcal</code>、<code>pass_rate</code>、<code>engine</code>、<code>center_source</code>；主结论以 <code>多对多3x4_对接汇总.csv</code> 与 <code>矩阵_结合能_多对多3x4.csv</code> 为准，历史双轨批次以 <code>成分对接汇总.csv</code>/<code>代谢物对接汇总.csv</code> 为准，不以归档旧表为准。验收：12 行汇总每行 <code>center_source</code> 非空、亲和力为负、热图色标无正值、PyMOL big=ST cartoon+CJ 仅 QJ 残基。</p>
 <h4>8. 解读边界</h4>
-<p>结合候选；非实验 Kd、非疗效/拮抗/减毒。对接结合能仅作候选排序与 −5.0 kcal/mol 准入，不作结合证实。MD 衔接：本轮 C* 成分轨 quercetin–FOS（1A02，-8.20）即已完成 MD 的 FOS×槲皮素体系；已完成 MD 的另两套（色氨酸–MMP9 4H3X -8.91 ± 0.02、腺苷–ADA 7RTG -6.28 ± 0.01 kcal/mol，3IAR 共晶 -6.59 ± 0.01）来自归档前代谢物批次，不属本轮 C* 16 对。其余 C* 配对未进 MD；MD 为单条轨迹窗口观察，不背书对接分为 Kd，也不把窗口稳定写成结合证实。</p>
+<p>结合候选；非实验 Kd、非疗效/拮抗/减毒。对接结合能仅作候选排序与 −5.0 kcal/mol 准入，不作结合证实。<b>复用对口径差异明示：</b>quercetin–FOS（任务 01）与 luteolin–PCNA（旧批次、无任务号）为 Vina 几何中心盲对接（<code>engine=vina_legacy</code>、<code>center_source=legacy_blind_geometric_center</code>，废止法定心），其余 10 对为 AutoDock-GPU 定心新跑；<code>engine</code> 列已区分，跨引擎数值仅作排序参考，不作严格横向比较，解读时须点明对应 <code>center_source</code>。MD 衔接：MD 三组合（FOS×槲皮素=任务 01 复用对 quercetin–FOS 1A02，−8.20）仍成立；ADA×腺苷与 MMP9×色氨酸来自归档前代谢物批次，不属本轮 3×4。新矩阵显示 ESR2/DNMT1 为三种成分共同强靶（−6.21 至 −6.96 kcal/mol），可作后续 MD 候选；其余组合未进 MD。MD 为单条轨迹窗口观察，不背书对接分为 Kd，也不把窗口稳定写成结合证实。</p>
 <h2 id='m-07'>07 外部支持 GEO/MR</h2>
 
 <h4>1. 为何采用这一分析</h4>
@@ -264,10 +264,10 @@ code{font-size:.84em;background:#f0ebe1;padding:.05rem .25rem;border-radius:.25r
 <h2 id="m-end">文末清单</h2>
 <ul>
 <li><b>质控：</b>01 I₁=291；03 汇总表存在 main H+M 行；06 pass_rate 可区分；08 DONE 或 CANCELLED 有书面记录；08 图册 21–26 未跑须标「待补」。</li>
-<li><b>复现：</b>SEA=ChEMBL 27 回退；对接种子 1/7/42；MD NS=100（1 ns 分块）；MD 引擎 GROMACS 2024.4，amber99sb-ildn/tip3p + GAFF2/acpype 配体拓扑，0.15 M NaCl。</li>
+<li><b>复现：</b>SEA=ChEMBL 27 回退；对接种子 1/7/42，引擎 AutoDock-GPU（AD4、<code>--nrun 20</code>），复用 2 对为 vina_legacy 旧结果不重跑不换算；MD NS=100（1 ns 分块）；MD 引擎 GROMACS 2024.4，amber99sb-ildn/tip3p + GAFF2/acpype 配体拓扑，0.15 M NaCl。</li>
 <li><b>硬件：</b>GPU 只改变速度。</li>
 <li><b>改图：</b>只换 png 且数字未变不必改正文；重算 C/对接/MD 必须改论文版数字。</li>
 </ul>
 
-<p class="footer">方法版 · 库名+路径+筛选原因+每模块八项+拼图 · 2026-10-14</p>
+<p class="footer">方法版 · 库名+路径+筛选原因+每模块八项+拼图 · 2026-10-15</p>
 </main></div></body></html>

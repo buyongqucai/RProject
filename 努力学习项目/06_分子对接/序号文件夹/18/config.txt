@@ -1,0 +1,13 @@
+engine = autodock-gpu (AD4)
+receptor = 1A02_clean_h.pdbqt
+ligand = 5280445_clean_h.pdbqt
+maps = maps/FOS/1A02_clean_h.maps.fld
+center_x = 51.831
+center_y = 30.612
+center_z = 44.274
+size_x = 20.6
+size_y = 20.6
+size_z = 20.6
+nrun = 20
+seeds = 1,7,42
+devnum = 1

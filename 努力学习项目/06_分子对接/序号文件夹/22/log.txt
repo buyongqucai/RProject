@@ -1,0 +1,111 @@
+task 22 FOS x kaempferol (AutoDock-GPU nrun=20)
+seed=1 best_free_NRG_binding=-3.440 kcal/mol
+Kernel compilation flags:                 -I ./device -I ./common -DN128WI   -cl-mad-enable
+OpenCL device:                           Intel(R) Graphics
+(Thread 3 is setting up Job #1)
+
+Running Job #1
+    Using heuristics: (capped) number of evaluations set to 1132076
+    Local-search chosen method is: ADADELTA (ad)
+
+Executing docking runs, stopping automatically after either reaching 0.15 kcal/mol standard deviation of
+the best molecules of the last 4 * 5 generations, 42000 generations, or 1132076 evaluations:
+
+Generations |  Evaluations |     Threshold    |  Average energy of best 10%  | Samples | Best Inter + Intra
+------------+--------------+------------------+------------------------------+---------+-------------------
+          0 |          150 |   -2.12 kcal/mol |   -2.68 +/-    0.15 kcal/mol |       4 |   -2.89 kcal/mol
+          5 |        67437 |   -2.12 kcal/mol |   -4.05 +/-    0.87 kcal/mol |    1015 |   -6.31 kcal/mol
+         10 |       134879 |   -4.04 kcal/mol |   -5.94 +/-    0.20 kcal/mol |      84 |   -6.47 kcal/mol
+         15 |       205699 |   -5.91 kcal/mol |   -6.31 +/-    0.10 kcal/mol |      32 |   -6.47 kcal/mol
+         20 |       280066 |   -6.26 kcal/mol |   -6.41 +/-    0.07 kcal/mol |      28 |   -6.47 kcal/mol
+         25 |       355672 |   -6.33 kcal/mol |   -6.42 +/-    0.05 kcal/mol |      18 |   -6.47 kcal/mol
+         30 |       434280 |   -6.30 kcal/mol |   -6.44 +/-    0.05 kcal/mol |      26 |   -6.47 kcal/mol
+------------+--------------+------------------+------------------------------+---------+-------------------
+
+                                   Finished evaluation after reaching
+                                   -6.39 +/-    0.09 kcal/mol combined.
+                            104 samples, best inter + intra    -6.47 kcal/mol.
+
+
+Job #1 took 9.367 sec after waiting 0.288 sec for setup
+
+(Thread 3 is processing Job #1)
+Run time of entire job set (1 file): 9.669 sec
+Processing time: 0.013 sec
+
+All jobs ran without errors.
+
+
+seed=7 best_free_NRG_binding=-3.440 kcal/mol
+Kernel compilation flags:                 -I ./device -I ./common -DN128WI   -cl-mad-enable
+OpenCL device:                           Intel(R) Graphics
+(Thread 4 is setting up Job #1)
+
+Running Job #1
+    Using heuristics: (capped) number of evaluations set to 1132076
+    Local-search chosen method is: ADADELTA (ad)
+
+Executing docking runs, stopping automatically after either reaching 0.15 kcal/mol standard deviation of
+the best molecules of the last 4 * 5 generations, 42000 generations, or 1132076 evaluations:
+
+Generations |  Evaluations |     Threshold    |  Average energy of best 10%  | Samples | Best Inter + Intra
+------------+--------------+------------------+------------------------------+---------+-------------------
+          0 |          150 |   -1.88 kcal/mol |   -2.19 +/-    0.16 kcal/mol |       8 |   -2.51 kcal/mol
+          5 |        65961 |   -1.88 kcal/mol |   -4.02 +/-    0.87 kcal/mol |    1057 |   -6.46 kcal/mol
+         10 |       135208 |   -4.01 kcal/mol |   -6.02 +/-    0.22 kcal/mol |      61 |   -6.47 kcal/mol
+         15 |       207883 |   -5.97 kcal/mol |   -6.34 +/-    0.13 kcal/mol |      30 |   -6.47 kcal/mol
+         20 |       285152 |   -6.27 kcal/mol |   -6.45 +/-    0.02 kcal/mol |      24 |   -6.47 kcal/mol
+         25 |       363751 |   -6.35 kcal/mol |   -6.45 +/-    0.03 kcal/mol |      30 |   -6.47 kcal/mol
+         30 |       441174 |   -6.37 kcal/mol |   -6.45 +/-    0.02 kcal/mol |      28 |   -6.47 kcal/mol
+------------+--------------+------------------+------------------------------+---------+-------------------
+
+                                   Finished evaluation after reaching
+                                   -6.42 +/-    0.08 kcal/mol combined.
+                            112 samples, best inter + intra    -6.47 kcal/mol.
+
+
+Job #1 took 9.426 sec after waiting 0.300 sec for setup
+
+(Thread 4 is processing Job #1)
+Run time of entire job set (1 file): 9.739 sec
+Processing time: 0.012 sec
+
+All jobs ran without errors.
+
+
+seed=42 best_free_NRG_binding=-3.440 kcal/mol
+Kernel compilation flags:                 -I ./device -I ./common -DN128WI   -cl-mad-enable
+OpenCL device:                           Intel(R) Graphics
+(Thread 3 is setting up Job #1)
+
+Running Job #1
+    Using heuristics: (capped) number of evaluations set to 1132076
+    Local-search chosen method is: ADADELTA (ad)
+
+Executing docking runs, stopping automatically after either reaching 0.15 kcal/mol standard deviation of
+the best molecules of the last 4 * 5 generations, 42000 generations, or 1132076 evaluations:
+
+Generations |  Evaluations |     Threshold    |  Average energy of best 10%  | Samples | Best Inter + Intra
+------------+--------------+------------------+------------------------------+---------+-------------------
+          0 |          150 |   -1.78 kcal/mol |   -2.85 +/-    0.38 kcal/mol |       6 |   -3.44 kcal/mol
+          5 |        68617 |   -1.91 kcal/mol |   -4.16 +/-    0.82 kcal/mol |    1067 |   -6.45 kcal/mol
+         10 |       138790 |   -4.15 kcal/mol |   -6.04 +/-    0.20 kcal/mol |      68 |   -6.46 kcal/mol
+         15 |       213908 |   -6.00 kcal/mol |   -6.37 +/-    0.07 kcal/mol |      27 |   -6.46 kcal/mol
+         20 |       293497 |   -6.28 kcal/mol |   -6.42 +/-    0.05 kcal/mol |      24 |   -6.46 kcal/mol
+         25 |       374077 |   -6.32 kcal/mol |   -6.44 +/-    0.03 kcal/mol |      27 |   -6.47 kcal/mol
+         30 |       459147 |   -6.36 kcal/mol |   -6.45 +/-    0.02 kcal/mol |      33 |   -6.47 kcal/mol
+------------+--------------+------------------+------------------------------+---------+-------------------
+
+                                   Finished evaluation after reaching
+                                   -6.42 +/-    0.05 kcal/mol combined.
+                            111 samples, best inter + intra    -6.47 kcal/mol.
+
+
+Job #1 took 9.525 sec after waiting 0.300 sec for setup
+
+(Thread 3 is processing Job #1)
+Run time of entire job set (1 file): 9.838 sec
+Processing time: 0.012 sec
+
+All jobs ran without errors.
+

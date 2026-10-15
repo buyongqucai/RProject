@@ -1,0 +1,13 @@
+engine = autodock-gpu (AD4)
+receptor = 3EPZ_clean_h.pdbqt
+ligand = 5280343_clean_h.pdbqt
+maps = maps/DNMT1/3EPZ_clean_h.maps.fld
+center_x = 37.718
+center_y = -1.679
+center_z = 82.233
+size_x = 20.6
+size_y = 20.6
+size_z = 20.6
+nrun = 20
+seeds = 1,7,42
+devnum = 1
