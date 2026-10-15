@@ -33,7 +33,7 @@
 
 - SRC（B 类修复后）**已过 pdb2gmx 与接触门禁**（pose contact 0.202 nm），进入生产段；HIF1A 排在其后。
 - 19:59 轮的即时失败均带 `SKIPPED.txt`，重 prep 时已清除；`queue_yuyang_dock_md.sh` 增加命令行体系过滤参数，第二轮仅跑 01/02/03（`yuyang_queue_retry2.log`）。
-- QQ 告警脚本路径问题（WSL 传 `/mnt/e/...` 给 `send_alert.ps1` 的 `-File`）待修，见 `E:\md_kit\notify_md_alert.sh`。
+- QQ 告警脚本路径问题已修：`E:\alert_kit\notify_alert.sh` 的 `powershell.exe -File` 原传 `/mnt/e/...`（Windows 侧无法解析），改为 Windows 路径 `E:\alert_kit\send_alert.ps1`。
 
 ## 5. 第三轮：脚本缺陷修复与结构修剪（同日）
 
@@ -44,3 +44,13 @@
 | GSK3B 结构检查 | 链 A 35–386 / 链 B 35–384 均连续无缺口 | 无需修剪；仅姿态 bug（§4）已修 |
 
 - 第三轮队列（20:23 起）：全 5 体系顺序执行（EGFR MODEL2 → AKT1 修剪版 → GSK3B MODEL3 → SRC → HIF1A），日志 `~/md_runs/logs/yuyang_queue_retry.log`。
+
+## 6. 第四轮：2026-10-13 夜 ～ 10-14 晨
+
+| 事件 | 定位 | 处置 |
+|------|------|------|
+| EGFR MODEL2 仍飞散（20:23–20:53，ABORT：ligand RMSD max 8.732 nm > 1.5 nm） | 口袋内 2 个 Vina 姿态（MODEL1/MODEL2）均 <1 ns 解离 | **A 类升级为换口袋重对接**（AutoSite 备选口袋 / `cap_and_redock.py`）——待执行，重对接前 EGFR 不入列 |
+| AKT1 生产段推进至 ~6.9 ns 后 mdrun exit=1（23:45） | 机器休眠挂起 WSL：mdrun 被杀、drvfs 报 `Input/output error`（队列写 STATUS 失败即中断，GSK3B/SRC/HIF1A 未跑） | 队列 STATUS 写入加 `|| true` 防中断；`md.cpt` 检查点完好，支持断点续跑 |
+| 10-14 晨重启队列秒退（rc=2，`set: pipefail: invalid option name`） | `运行复合物MD_runComplexMd.sh` 混入 CRLF 行尾（疑似休眠期 drvfs 异常） | `sed` 清 CRLF + `bash -n` 通过后重启 |
+| 失败作业遗留 `SKIPPED.txt` 被队列跳过 | 失败即写 SKIPPED 的约定与重试语义冲突 | 重试前清 `SKIPPED.txt`/`ABORT_REASON.txt`（失败证据已归档 `99_失败存档_FailedArchive/`） |
+| 第四轮队列 08:58 起 | AKT1 自 **6.9 ns** 断点续跑（`-cpi md.cpt`），GSK3B（MODEL3，几何门禁 1.22 Å 通过）→ SRC → HIF1A 顺序入列 | 运行中；日志 `~/md_runs/logs/queue_yuyang_4.log`；watchdog + QQ 告警在岗 |
