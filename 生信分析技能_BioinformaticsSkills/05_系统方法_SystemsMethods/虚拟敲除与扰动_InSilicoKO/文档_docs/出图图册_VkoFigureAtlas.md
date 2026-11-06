@@ -1,6 +1,7 @@
 # 出图图册 — 虚拟敲除（SSOT）
 
-> 改主线报告图序只改本文件。叠加 VizStandards（DPI≥600、图面 English、SVG+PNG）+ DeliveryStandards 命名。
+> 改主线报告图序只改本文件。叠加 VizStandards（DPI≥600、图面 English、SVG+PNG）+ DeliveryStandards 命名。  
+> **本文件默认只约束 scTenifoldKnk。** GenKI / CellOracle / GEARS 等图种不同，见 [`引擎选型与适用场景_EngineCatalog.md`](引擎选型与适用场景_EngineCatalog.md) §1b；禁止把下列 01–07 文件名语义套到其它引擎。
 
 ## 来源
 

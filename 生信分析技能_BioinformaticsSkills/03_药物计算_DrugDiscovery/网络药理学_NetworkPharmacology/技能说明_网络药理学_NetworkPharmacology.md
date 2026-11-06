@@ -8,12 +8,12 @@ description: >-
 
 # 网络药理学 / NetworkPharmacology
 
-> **出图约束 SSOT（FROZEN 2026-10-16）：** [`出图约束_NetworkFigureStandards.md`](文档_docs/出图约束_NetworkFigureStandards.md) — 改视觉 recipe / 疾病双口径 / 韦恩 jvenn 路径前须「解冻」。  
+> **出图约束 SSOT（FROZEN 2026-10-16）：** [`出图约束_NetworkFigureStandards.md`](文档_docs/出图约束_NetworkFigureStandards.md) — 改视觉 recipe / 疾病双口径前须「解冻」。韦恩默认引擎见该文件 §G（2026-11-03 起为本地代码）。  
 > **库与流水线 SSOT：** [`数据库分类与流水线_DataSourcesPipeline.md`](文档_docs/数据库分类与流水线_DataSourcesPipeline.md)  
 > **成分靶点 SOP：** [`成分靶点获取与交付规范_CompoundTargetSOP.md`](文档_docs/成分靶点获取与交付规范_CompoundTargetSOP.md)  
 > **手工/Cytoscape 可选：** [`手工导出与Cytoscape可选_ManualOps.md`](文档_docs/手工导出与Cytoscape可选_ManualOps.md)  
-> **课题终局报告：** 论文式 + 方法论双报告 → DeliveryStandards [`课题双报告范式_ProjectDualReport.md`](../../00_基础_Foundation/统一交付规范_DeliveryStandards/文档_docs/课题双报告范式_ProjectDualReport.md)（禁「治疗」题名）  
-> **疾病韦恩（冻结）：** 五库 + **CTD_curated**；出图=微生信 [jvenn 金标页](https://bioinformatics.com.cn/static/others/jvenn/example.html)（§G / `weishengxin_venn_lib.py`），禁自绘花瓣
+> **课题终局报告：** [`课题报告_ProjectReport`](../../00_基础_Foundation/课题报告_ProjectReport/技能说明_课题报告_ProjectReport.md)。轨 B 图注不替代双报告。本技能正文不出现「治疗」二字（含否定句），生成时传给 `check_html(..., forbidden="治疗")`。  
+> **疾病韦恩：** 五库 + **CTD_curated**。没有特定说明就用本地 HTML 复刻 `_jvenn_assets/jvenn_runner.html`（`render_replica_svg`，出图约束 §G）。不要用 VennDiagram，也不要打开微生信网站。
 
 基因列表与 STRING 边须可溯源。交付默认 **代码/AI（R）出图**；Cytoscape 仅可选精修。
 
@@ -46,7 +46,8 @@ description: >-
 
 ## 5. 工具链
 
-本机程序与路径：[`文档_docs/工具链_Toolchain.md`](文档_docs/工具链_Toolchain.md)。库表与瀑布不在此复述。
+本机程序与路径：[`文档_docs/工具链_Toolchain.md`](文档_docs/工具链_Toolchain.md)。库表与瀑布不在此复述。  
+已有影刀应用抓疾病原始表时：`.cursor/skills/shadowbot-cli/SKILL.md` 只跑 GeneCards数据库NEW、TTD数据库、OMIM数据库（GeneMap）、CTD数据库、Drugbank数据库NEW。清洗合并与韦恩用本技能 §1.1 / §0a 和 `清风项目/.../疾病五库合并与净化_mergeDiseaseDBs.py`，不跑影刀里的数据处理子流程。出图仍以本技能 FROZEN 为准。
 
 ## 6. 数据可视化
 

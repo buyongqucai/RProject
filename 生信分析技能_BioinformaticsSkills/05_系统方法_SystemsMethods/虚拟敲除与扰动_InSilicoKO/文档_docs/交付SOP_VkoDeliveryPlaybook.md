@@ -89,16 +89,21 @@
 
 ## 4. 算法选择（一实例一引擎）
 
-细则 SSOT：[`虚拟敲除方法论_VkoMethodology.md`](虚拟敲除方法论_VkoMethodology.md) §1/§3/§7。选择口诀：
+细则 SSOT：[`虚拟敲除方法论_VkoMethodology.md`](虚拟敲除方法论_VkoMethodology.md) §1/§3/§7。  
+**完整场景表：** [`引擎选型与适用场景_EngineCatalog.md`](引擎选型与适用场景_EngineCatalog.md)。
 
 | 你要的输出 | 选 | 表列语义（不可混名） |
 |-----------|-----|---------------------|
-| GRN 置零 + 流形距离 + FDR | `scTenifoldKnk`（默认） | `distance`、`Z`、`FC`、`p.adj` |
-| VGAE 潜空间 KL + 排列稳定性 | `GenKI` | `KL`、`hit`（禁写 `p.adj`） |
+| GRN 置零 + 流形距离 + FDR（仅 WT） | `scTenifoldKnk`（默认） | `distance`、`Z`、`FC`、`p.adj` |
+| VGAE 潜空间 KL + 排列稳定性（仅 WT） | `GenKI` | `KL`、`hit`（禁写 `p.adj`） |
+| TF 扰动 + 命运/轨迹（RNA±ATAC GRN） | `CellOracle` | 该包字段；禁写 Knk `p.adj` |
+| 已有 Perturb-seq，预测未见组合 | `GEARS` | 预测表达；禁写成 Virtual KO DR |
+| 已有对照+扰动训练，向量算术外推 | `scGen` / `CPA` / `CellOT` | 各包字段；与 A 类分开声称 |
 
 - 每份实例计划 `method` 只填一个引擎；用户点名两引擎 = 两份计划、两套表。
 - 1.4.3 GPU 说的是**建网公式与加速**（`pcnet_143`，`n_comp=3`，`q=0.9`），敲除后半段仍是官方张量/流形/dRegulation；报告里不写成「纯 GPU 敲除」。
 - 不默认算法对照/共识；对比是用户另开的短任务（方法论 §5）。
+- B 类引擎（GEARS/scGen/…）无统一一键脚本时，先写实例计划与环境再跑。
 
 ---
 

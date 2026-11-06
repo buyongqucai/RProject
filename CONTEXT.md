@@ -15,14 +15,23 @@
 | 技能说明 | 技能的必读入口；agent 动手前必须先 Read；只写决策边界与指针，细则在 SOP |
 | SOP | `文档_docs/` 内流水线细则，技能内执行优先级最高（同技能内） |
 | FROZEN | 已用户确认的交付/视觉范式；改前须用户说「解冻 / unfreeze」；**冻结≠永不进化**，解冻后按反馈改 SSOT 一处即可 |
-| 金标 | 桌面正式交付目录样板（如 `痤疮_分子对接_序号文件夹/`） |
+| BASELINE | 已固化可跑通路径、尚未口头「冻结」；改规则只改对应 `文档_docs/`（如 PP `对接与交付基线_PPDockBaseline`） |
+| 金标 | 桌面正式交付目录样板（如 `痤疮_分子对接_序号文件夹/`；PP：`{ST}_{PT}_蛋白蛋白对接_序号文件夹/`） |
 | 仓内课题沙箱 | 本仓根下课题目录（如 `努力学习项目/`）；脚本可入库，大图默认忽略（ADR 0003） |
 | SSOT | 单一事实来源；同一含义只在一处维护 |
 | 反馈闭环 | 用户确认满意 → 写入 SOP 或 FROZEN → 技能说明只改指针/摘要 → 下次反馈仍改同一 SSOT |
 | `center_source` | 对接任务定心方法受控词（如 `cocrystal_meeko` / `autosite` / `FAIL`）；summary 强制列 |
 | provenance | 样例/数据真实性：`REAL` / `TOY` / `BLOCKED`（契约桩用 BLOCKED，不用 toy） |
-| detail / result | 对接：`detail-N`=口袋特写；`result_N`=big+detail 拼图；定稿规则见对接 SOP §7.3/§7.4 |
+| detail / result | 对接：`detail-N`=口袋特写；`result_N`=big+detail 拼图；定稿规则见对接 SOP §7.3/§7.4；蛋白–蛋白对接复用同一套 |
+| `chain_source` | 蛋白–蛋白对接：链/结构域选用依据受控词（`user_specified` / `literature_domain` / `entity_longest` / `fail_need_input` 等）；见 PPDockingSOP §2 |
+| `het_policy` | PP 对接清理策略：`keep_cofactor`（默认）/ `protein_only` / `custom` |
+| ProteinProteinDocking | 蛋白–蛋白对接技能；与 MolecularDocking（蛋白–配体）并列 |
+| ST / PT（PP） | 蛋白–蛋白对接：ST=固定侧蛋白，PT=移动侧蛋白；CJ/QJ 为界面残基与接触（见 PP `PyMOL可视化_ST-PT`） |
+| chain_survey | PP 任务强制调研记录（文献+结构特性→选链）；落盘 `01_clean/chain_survey.md` |
 | intent-skill-router | `.cursor/skills/intent-skill-router`：未 @ 技能时按意图自动 Read 对应 `技能说明_*.md` |
+| 课题报告 | 终局 HTML（入口 + 论文式 + 方法论）。没有另行说明就用 `课题报告_ProjectReport` 的 `page()` 和 `报告要求_ReportRequirements.md` |
+| 本地韦恩 | 网药默认用 `_jvenn_assets/jvenn_runner.html` 这份 HTML 复刻（`render_replica_svg`）。不是 R 的 VennDiagram，也不是打开微生信网站 |
+| 影刀 CLI | `.cursor/skills/shadowbot-cli`：Windows 用 `shadowbot.shell-cli.exe`，Linux/mac/信创用 `shadowbot-cli`。拖入应用目录时，`package.json` 里 `kind: Code` 的流程对应同目录 `.py`，经客户端任务运行 |
 | alert_kit / qq-smtp-alert | 跨项目 QQ SMTP 告警：`E:\alert_kit\`；Cursor 全局技能 `~/.cursor/skills/qq-smtp-alert` |
 | 工单 / frontier | `.scratch/<功能>/issues/NN-*.md`；只做 Blocked by 已完成且 `待Agent处理` 的单（见 `docs/agents/工单工作流_WorkOrder.md`） |
 | 技能范式 | 新建/审计领域技能的勾选 SSOT（L0 写法）：`docs/agents/技能范式清单_SkillParadigm.md` |
@@ -33,6 +42,7 @@
 | 契约桩（BLOCKED） | 无真实数据时的合规占位；provenance 必须标 BLOCKED |
 | 网络毒理学 | 暴露物–靶点–表型网络技能；库档位 SSOT 为该技能 `数据库可抓取登记`（AUTO_API / AUTO_BULK / KEY / MANUAL / PREDICT） |
 | 虚拟敲除接诊表 | `虚拟敲除与扰动_InSilicoKO` 强制：自动抽取字段 → 确认表（含信源/可信度 H|M|L）→ 再 Phase1/Phase2；SSOT 为该技能 `接诊与确认表单` |
+| MR 默认路径 | 汇总数据两样本、独立工具变量时，主分析为乘法随机效应 IVW（≤3 个 SNP 用固定效应）。步骤 SSOT：`孟德尔随机化_MendelianRandomization/文档_docs/实现流水线_MrPipeline.md`；版本与文献：同目录 `信源与工具选型_SourcesAndStack.md`。尚未冻结 |
 
 ## 边界
 

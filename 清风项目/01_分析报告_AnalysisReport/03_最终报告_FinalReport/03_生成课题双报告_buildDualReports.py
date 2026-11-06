@@ -2,18 +2,32 @@
 """清风课题双报告（严格遵守 ProjectDualReport §2.1）：
 
 - 同步 交付文件/图片/**/*.png → 本目录 图片文件/
-- 论文式：全量嵌图 + 逐图结果分析
-- 方法论：全量嵌图 + 逐图「怎么读」分析
-- 生成后校验：嵌图数==交付PNG数、坏链=0、报告内无重复
+- 论文式 / 方法论：全量 **base64 内嵌** PNG + 逐图分析（单文件可打开）
+- 生成后校验：嵌图数==去重后PNG数、均为 data URI、报告内无重复字节
 """
 from __future__ import annotations
 
+import base64
+import hashlib
 import html
+import io
 import json
 import re
 import shutil
 from datetime import datetime
 from pathlib import Path
+
+try:
+    from PIL import Image
+
+    # 网药 HCTP/桑基等超大 PNG 合法，放宽 PIL 像素上限
+    Image.MAX_IMAGE_PIXELS = 200_000_000
+except ImportError:  # pragma: no cover
+    Image = None  # type: ignore
+
+# 超大网络图等比缩边，避免单 HTML 过大（对齐昱阳嵌图口径）
+_EMBED_MAX_SIDE = 2000
+_EMBED_BIG_BYTES = int(1.5 * 1024 * 1024)
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -41,17 +55,31 @@ def esc(s) -> str:
     return html.escape(str(s))
 
 
+def _md5(path: Path) -> str:
+    return hashlib.md5(path.read_bytes()).hexdigest()
+
+
 def sync_figures() -> list[Path]:
+    """同步交付 PNG；字节完全相同的重复文件只保留路径序最先的一份（§2.1 去重）。"""
     if LOCAL_FIG.exists():
         shutil.rmtree(LOCAL_FIG)
     LOCAL_FIG.mkdir(parents=True)
-    outs = []
+    outs: list[Path] = []
+    seen_hash: dict[str, str] = {}
+    skipped: list[str] = []
     for src in sorted(SRC_FIG.rglob("*.png")):
         rel = src.relative_to(SRC_FIG)
+        h = _md5(src)
+        if h in seen_hash:
+            skipped.append(f"{rel.as_posix()} == {seen_hash[h]}")
+            continue
+        seen_hash[h] = rel.as_posix()
         dst = LOCAL_FIG / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, dst)
         outs.append(rel)
+    if skipped:
+        print("[dedup-png]", "; ".join(skipped))
     return outs
 
 
@@ -290,20 +318,12 @@ def build_registry() -> list[dict]:
     add(
         "PPI/PPI渐变图.png",
         "r5",
-        "PPI 代码布局",
-        "图·PPI 代码布局（score≥900）。Coded PPI layout.",
-        "代码布局强调核心互作团。可与 Degree 图一起挑选候选枢纽蛋白，供后续对接/实验设计，但本身不是验证。",
-        "读图·代码 PPI：关注大度节点与连通片。",
-        "无边基因名单必须在局限中交代，避免假装全覆盖。",
-    )
-    add(
-        "PPI/PPI渐变图_Degree.png",
-        "r5",
-        "PPI Degree 视图",
-        "图·PPI Degree 视图。PPI degree view.",
-        "Degree 视图突出互作度数分布，便于与 HCTP 枢纽交叉点名（如炎症相关酶/受体）。交叉点名仍属假说生成。",
-        "读图·Degree：点数高≠生物学最重要。",
-        "结合 Betweenness 等表字段再写候选列表。",
+        "PPI 代码布局（Degree 渐变）",
+        "图·STRING PPI 代码布局（score≥900；节点大小/颜色按 Degree）。Coded PPI layout with degree gradient.",
+        "同心布局强调核心互作团与度数分布；可与 HCTP 枢纽交叉点名（如炎症相关酶/受体），供后续对接/实验设计。"
+        "Degree 高只说明拓扑中心性，不是湿实验验证。交付包中曾另存 `_Degree` 副本，与本图字节相同，报告按 §2.1 只嵌一次。",
+        "读图·代码 PPI：关注大度节点与连通片；点数高≠生物学最重要。",
+        "无边基因名单必须在局限中交代；候选列表结合 Betweenness 等表字段，勿重复贴同一 PNG。",
     )
 
     return items
@@ -373,11 +393,38 @@ def page(title: str, side: str, sub: str, nav: list[tuple[str, str]], body: str)
     )
 
 
+def png_data_uri(rel: str) -> tuple[str, str]:
+    """返回 (data_uri, content_md5)。大图缩到最长边 ≤2000px。"""
+    path = LOCAL_FIG / rel
+    if not path.is_file():
+        raise SystemExit(f"missing figure for embed: {rel}")
+    raw = path.read_bytes()
+    out = raw
+    if Image is not None:
+        img = Image.open(io.BytesIO(raw))
+        w, h = img.size
+        if max(w, h) > _EMBED_MAX_SIDE or len(raw) > _EMBED_BIG_BYTES:
+            if img.mode in ("P", "LA"):
+                img = img.convert("RGBA")
+            ratio = _EMBED_MAX_SIDE / max(w, h)
+            if ratio < 1:
+                img = img.resize(
+                    (max(1, round(w * ratio)), max(1, round(h * ratio))),
+                    Image.LANCZOS,
+                )
+            buf = io.BytesIO()
+            img.save(buf, format="PNG", optimize=True)
+            out = buf.getvalue()
+    digest = hashlib.md5(out).hexdigest()
+    uri = "data:image/png;base64," + base64.b64encode(out).decode("ascii")
+    return uri, digest
+
+
 def fig_block(rel: str, title: str, caption: str, analysis: str, fig_id: str) -> str:
-    src = f"图片文件/{rel}"
+    src, _ = png_data_uri(rel)
     return (
         f"<h3 id='{fig_id}'>{esc(title)}</h3>"
-        f"<figure><img src='{esc(src)}' alt='{esc(title)}'/>"
+        f"<figure><img src='{src}' alt='{esc(title)}'/>"
         f"<figcaption>{caption}</figcaption></figure>"
         f"<div class='ana'><strong>分析：</strong>{analysis}</div>"
     )
@@ -427,7 +474,7 @@ def main() -> None:
         f"""
 <div class='hero'>
   <h1>论文式报告 · 水蛭宣痹化纤汤干预 IPF 的潜在机制</h1>
-  <p>网络药理学计算预测 · 交付图册全量嵌图并逐图分析（课题双报告范式 §2.1）</p>
+  <p>网络药理学计算预测 · 交付图册全量 <strong>base64 内嵌</strong>并逐图分析（课题双报告范式 §2.1）</p>
   <div class='pills'>
     <span class='pill'>STATUS: COMPLETE</span>
     <span class='pill'>data_provenance: REAL</span>
@@ -500,7 +547,7 @@ HCTP 385 节点 / 2,571 边；STRING≥900 为 173 / 687；富集提示炎症–
         f"""
 <div class='hero'>
   <h1>方法论报告 · 清风网药</h1>
-  <p>路线 / 阈值 / QC + 交付图册全量「怎么读」分析（与论文式同图源、不同叙述）</p>
+  <p>路线 / 阈值 / QC + 交付图册全量 <strong>base64 内嵌</strong>「怎么读」分析（与论文式同图源、不同叙述）</p>
   <div class='pills'>
     <span class='pill'>嵌图 {len(reg)} 张</span>
     <span class='pill warn'>计算预测</span>
@@ -515,7 +562,7 @@ HCTP 385 节点 / 2,571 边；STRING≥900 为 173 / 687；富集提示炎症–
 </ol>
 <h2 id='m2'>软件与脚本</h2>
 <p><code>04_富集与PPI_EnrichPPI/02_代码文件_Code/01–09</code>；本脚本 <code>03_生成课题双报告_buildDualReports.py</code>。
-图文件已同步至报告目录 <code>图片文件/</code>。</p>
+图已 <strong>base64 内嵌</strong>进 HTML（源 PNG 仍同步在 <code>图片文件/</code> 便于核对）。</p>
 <h2 id='m3'>质控</h2>
 <ul class='tight'>
 <li>剔 COPD 非基因；剔 CCL12 小鼠基因</li>
@@ -523,7 +570,7 @@ HCTP 385 节点 / 2,571 边；STRING≥900 为 173 / 687；富集提示炎症–
 <li>STRING≥900 无边基因 25 个见 PPIQC</li>
 </ul>
 <h2 id='m4'>图册阅读指南（全量嵌图）</h2>
-<p>以下与论文式使用<strong>同一批 PNG</strong>，每图说明「看什么 / 不看什么」。报告内不重复同一路径。</p>
+<p>以下与论文式使用<strong>同一批 PNG（base64 内嵌）</strong>，每图说明「看什么 / 不看什么」。报告内不重复同一图。</p>
 """
     ]
     for i, it in enumerate(reg, 1):
@@ -559,7 +606,7 @@ a.btn{{display:inline-block;margin:.35rem .45rem 0 0;padding:.55rem 1rem;backgro
 <h1>清风项目 · 课题报告入口</h1>
 <div class='note'>{CLAIM}</div>
 <div class='card'>
-<p>规范：课题双报告范式 §2.1（交付图册全量嵌图 + 逐图分析）。本包嵌图 <strong>{len(reg)}</strong> 张。</p>
+<p>规范：课题双报告范式 §2.1（交付图册全量 <strong>base64 内嵌</strong> + 逐图分析）。本包嵌图 <strong>{len(reg)}</strong> 张；单 HTML 即可查看图。</p>
 <a class='btn' href='01_论文式报告_PaperStyle.html'>01 论文式报告</a>
 <a class='btn' href='02_方法论报告_Methodology.html'>02 方法论报告</a>
 </div>
@@ -567,28 +614,36 @@ a.btn{{display:inline-block;margin:.35rem .45rem 0 0;padding:.55rem 1rem;backgro
 </div></body></html>"""
     (HERE / "00_报告入口_index.html").write_text(index, encoding="utf-8")
 
-    # validate links
+    # validate: all imgs are data URI; unique payloads
     for name in ["01_论文式报告_PaperStyle.html", "02_方法论报告_Methodology.html"]:
         text = (HERE / name).read_text(encoding="utf-8")
-        srcs = re.findall(r"src=['\"]([^'\"]+)['\"]", text)
+        srcs = re.findall(r"<img[^>]+src=['\"]([^'\"]+)['\"]", text, flags=re.I)
         assert len(srcs) == len(reg), (name, len(srcs), len(reg))
-        assert len(srcs) == len(set(srcs)), f"dup in {name}"
-        bad = [s for s in srcs if not (HERE / s).exists()]
-        if bad:
-            raise SystemExit(f"bad links in {name}: {bad[:5]}")
+        non_data = [s[:60] for s in srcs if not s.startswith("data:image/")]
+        if non_data:
+            raise SystemExit(f"{name} still has relative img src: {non_data[:3]}")
+        payloads = []
+        for s in srcs:
+            # data:image/png;base64,XXXX
+            b64 = s.split(",", 1)[1]
+            payloads.append(hashlib.md5(base64.b64decode(b64)).hexdigest())
+        if len(payloads) != len(set(payloads)):
+            raise SystemExit(f"duplicate embedded image content in {name}")
 
     (HERE / "清风项目分析报告.md").write_text(
-        f"# 课题双报告（§2.1 全量嵌图）\n\n"
+        f"# 课题双报告（§2.1 全量 base64 嵌图）\n\n"
         f"- 入口：`00_报告入口_index.html`\n"
-        f"- 论文式 / 方法论：各嵌图 **{len(reg)}** 张并逐图分析\n"
-        f"- 图目录：`图片文件/`（自交付文件同步）\n",
+        f"- 论文式 / 方法论：各 **base64 内嵌** **{len(reg)}** 张并逐图分析（字节相同 PNG 已去重）\n"
+        f"- 源图目录：`图片文件/`（自交付文件同步，便于核对）\n",
         encoding="utf-8",
     )
     (HERE / "STATUS.md").write_text(
-        f"# STATUS\n\n- 2026-10-16：双报告按 ProjectDualReport §2.1 重生成；嵌图 {len(reg)}/{len(synced)}；坏链 0。\n",
+        f"# STATUS\n\n"
+        f"- 2026-10-16：双报告按 ProjectDualReport §2.1；**base64 内嵌** {len(reg)}/{len(synced)}；"
+        f"坏链 0；Degree 同字节副本已去重。\n",
         encoding="utf-8",
     )
-    print("OK figs", len(reg), "synced", len(synced))
+    print("OK figs", len(reg), "synced", len(synced), "embed=base64")
 
 
 if __name__ == "__main__":

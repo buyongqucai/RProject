@@ -95,7 +95,7 @@ data_provenance: REAL | TOY | BLOCKED
 - 报告须写明是否 `source` 了 VizStandards + DeliveryStandards + 本技能脚本
 - `data_provenance` 与 STATUS 分列，勿混
 - **样例** HTML 版式 → [`文档_docs/样例报告范式_SampleReportParadigm.md`](文档_docs/样例报告范式_SampleReportParadigm.md)
-- **课题终局双报告**（论文式 + 方法论 + 入口；升格自婷婷金标）→ [`文档_docs/课题双报告范式_ProjectDualReport.md`](文档_docs/课题双报告范式_ProjectDualReport.md)；**禁止**用样例骨架冒充课题终局报告
+- **课题终局双报告** → 技能 [`课题报告_ProjectReport`](../课题报告_ProjectReport/技能说明_课题报告_ProjectReport.md)（侧栏 `page()`、分节正文、逐图分析）。旧文件 [`文档_docs/课题双报告范式_ProjectDualReport.md`](文档_docs/课题双报告范式_ProjectDualReport.md) 只留指针
 
 ## 8. 能否结合其它生信
 

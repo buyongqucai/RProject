@@ -3,7 +3,8 @@
 | 文件 | 作用 |
 |------|------|
 | `01_契约接口_DataContracts.R` | 单药/分库 CSV 契约读写与交集 |
-| `02_可视化_NetworkPharmPlots.R` | 真韦恩、单药交集、成分交集（均分/按药水平柱）、GO/KEGG（含 circlize 圈图；图面 English only） |
+| `02_可视化_NetworkPharmPlots.R` | 单药交集、成分交集、GO/KEGG。其中 `np_plot_*_venn` 不是韦恩默认路径 |
+| `weishengxin_venn_lib.py` | 默认韦恩：`render_replica_svg` 打开 `_jvenn_assets/jvenn_runner.html` |
 | `03_STRING与网络图_StringNetwork.R` | STRING API/缓存 PPI；官方 3D 图下载；基础网络工具 |
 | `04_交付网络布局_DeliveryNetworkLayouts.R` | **网络图布局 SSOT**（覆盖 `03_*`）：PPI Degree 同心；HCTP columns/ellipse；布局后 `viz_qa_network_nodes`（项目级 PlotQA） |
 | `运行骨架_runSkeleton.R` | 项目入口骨架 |

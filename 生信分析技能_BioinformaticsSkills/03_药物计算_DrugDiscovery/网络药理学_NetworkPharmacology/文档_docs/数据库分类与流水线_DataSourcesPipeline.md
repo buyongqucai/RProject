@@ -20,7 +20,7 @@
 | 6 | DisGeNET | `疾病靶点_DisGeNET.csv` |
 
 **本次下游默认 = 5 库含 CTD**（GeneCards≥40 ∪ TTD ∪ DrugBank ∪ OMIM ∪ **CTD_curated**）；DisGeNET 为六库第 6 位，未导出则不纳入。  
-疾病多库**韦恩图** = 五库（GeneCards全量 / **CTD_curated** / OMIM / TTD / DrugBank），**真实微生信 jvenn**（https://bioinformatics.com.cn/static/others/jvenn/example.html → `build_disease_5db_svg`）。药病两集可用 jvenn 模板 `build_two_set_svg`。下游并集 = GeneCards≥40 ∪ CTD_curated ∪ OMIM ∪ TTD ∪ DrugBank。详见 **§0a / §G**。
+疾病多库**韦恩图** = 五库（GeneCards全量 / **CTD_curated** / OMIM / TTD / DrugBank）。出图引擎见出图约束 **§G**（默认本地代码）。下游并集 = GeneCards≥40 ∪ CTD_curated ∪ OMIM ∪ TTD ∪ DrugBank。详见 **§0a / §G**。
 
 ### 1.2 药物 / 成分–靶点
 

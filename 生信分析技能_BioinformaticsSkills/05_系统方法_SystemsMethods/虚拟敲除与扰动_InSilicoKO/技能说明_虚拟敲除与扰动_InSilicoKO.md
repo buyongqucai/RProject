@@ -2,12 +2,14 @@
 name: bioinfo-insilico-ko
 description: >-
   虚拟敲除与扰动 / InSilicoKO：默认 scTenifoldKnk（GRN 虚拟敲除）；接诊确认表单强制。
-  触发：虚拟敲除, in silico KO, scTenifoldKnk, GenKI, CellOracle, regulon KO。
+  触发：虚拟敲除, in silico KO, scTenifoldKnk, GenKI, CellOracle, regulon KO,
+  GEARS, scGen, CPA, CellOT, 引擎选型, 算法选择。
 ---
 
 # 虚拟敲除与扰动 / InSilicoKO
 
 > **交付 SOP（先读这个跑交付）：** [`文档_docs/交付SOP_VkoDeliveryPlaybook.md`](文档_docs/交付SOP_VkoDeliveryPlaybook.md) — 文件存放 / 环境准备 / 数据选择 / 算法选择 / 数据筛选 / 各种分析，一次交付从头到尾。  
+> **引擎选型 / 适用场景（SSOT）：** [`文档_docs/引擎选型与适用场景_EngineCatalog.md`](文档_docs/引擎选型与适用场景_EngineCatalog.md) — WT-only 虚拟敲除 vs 扰动屏预测；Knk/GenKI/CellOracle/GEARS/scGen/CPA/CellOT 等何时用。  
 > **接诊 SSOT：** [`文档_docs/接诊与确认表单_IntakeConfirmForm.md`](文档_docs/接诊与确认表单_IntakeConfirmForm.md) — 每次先抽字段出确认表；未确认禁止正式敲除。  
 > **方法默认 / 信源：** [`文档_docs/方法默认与信源登记_MethodDefaultsRegistry.md`](文档_docs/方法默认与信源登记_MethodDefaultsRegistry.md)  
 > **出图图册：** [`文档_docs/出图图册_VkoFigureAtlas.md`](文档_docs/出图图册_VkoFigureAtlas.md) — PDF 图种重绘；禁论文截图当结果。  
@@ -27,8 +29,9 @@ description: >-
 
 ## 3. 何时选用
 
-- 虚拟敲除 / in silico KO：接诊后 **选定一个引擎** 写实例计划（默认 scTenifoldKnk；也可 GenKI 等，见方法登记）  
+- 虚拟敲除 / in silico KO：接诊后 **选定一个引擎** 写实例计划（默认 scTenifoldKnk；场景表见引擎选型 SSOT）  
 - regulon 逆转 **仅** master TF + 已有 DEG  
+- 已有 Perturb-seq/药物屏时，可点名 GEARS / scGen / CPA / CellOT（属扰动预测，与 WT-only 虚拟敲除分声称）  
 
 不适用：无表达矩阵的纯网药；非扰动的普通 DEG/富集 → 其它技能。多种算法对照 **不是** 默认步骤。
 

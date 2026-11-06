@@ -51,7 +51,8 @@ raw 文件/夹名含来源库；禁止无来源的 `结构/`、`download/`。
 - 验证靶点结合、虚筛排序；山水 M16
 - 山水用途层标签：药物-基因
 
-不适用：输入类型不匹配或仅需其它技能可覆盖的步骤。
+不适用：输入类型不匹配或仅需其它技能可覆盖的步骤。  
+**蛋白–蛋白对接**（ZDOCK/ClusPro/HDOCK 等）→ 兄弟技能 [`蛋白蛋白对接_ProteinProteinDocking`](../蛋白蛋白对接_ProteinProteinDocking/技能说明_蛋白蛋白对接_ProteinProteinDocking.md)（本技能仅蛋白–配体）。
 
 ## 4. 数据处理方法
 

@@ -30,7 +30,7 @@
 | `bio_state` | 建网生物学状态 | naive/对照/造模/TN/CION/CFA | 标红或给选项 |
 | `contrast_priority` | 数据检索优先级 | 「模型vs正常」「只要图谱」 | 默认询问 |
 | `cell_universe` | 细胞宇宙 | 亚群/全神经元/含胶质 | 默认问亚群 vs 合并 |
-| `method` | 主算法 | scTenifoldKnk/CellOracle/regulon | 默认 scTenifoldKnk（见 B） |
+| `method` | 主算法 | scTenifoldKnk/GenKI/CellOracle/regulon；有扰动屏时可 GEARS/scGen/CPA/CellOT | 默认 scTenifoldKnk；场景见 [`引擎选型与适用场景_EngineCatalog.md`](引擎选型与适用场景_EngineCatalog.md) |
 | `delivery_scope` | 交付边界 | 只做VKO/联合网药报告 | 默认问 |
 
 ## B. 文献/工具默认（仍列出供确认）

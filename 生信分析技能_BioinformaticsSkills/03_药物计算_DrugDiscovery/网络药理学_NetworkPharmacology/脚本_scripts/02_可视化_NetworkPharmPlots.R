@@ -1,13 +1,14 @@
 # 网络药理学 — 可视化（对齐 D:\网络药理学文件\交付文件\图片）
-# 疾病多库韦恩：VennDiagram 固定四色 + 底部 Size of each list（非 count 热力填色）
+# 疾病多库韦恩：本地 VennDiagram + 底部大小柱。空库只出现在大小柱。画布由 np_save_venn 加宽。
 
 np_npg <- c("#E64B35", "#4DBBD5", "#00A087", "#3C5488", "#F39B7F", "#8491B4", "#91D1C2", "#B09C85")
-# 交付 SVG 四库色：TTD / DrugBank / GeneCards / OMIM
+# 五库色。顺序即默认摆放顺序。
 np_venn_db_cols <- c(
-  TTD = "#006600",
-  DrugBank = "#5A9BD4",
   GeneCards = "#F15A60",
-  OMIM = "#CFCF1B"
+  CTD = "#FF7500",
+  OMIM = "#CFCF1B",
+  TTD = "#006600",
+  DrugBank = "#5A9BD4"
 )
 # 交付 GO 柱：BP 青绿 / CC 橙 / MF 蓝紫（对齐 BPCCMF柱状图.tiff）
 np_go_bar_cols <- c(
@@ -41,17 +42,26 @@ np_apply_journal <- function(p) {
 
 #' 从 disease_by_db 取固定顺序的命名列表
 np_disease_sets_ordered <- function(disease_by_db, order = names(np_venn_db_cols)) {
+  src <- unique(as.character(disease_by_db$source))
+  use <- order[order %in% src]
+  if (!length(use)) use <- src
   out <- list()
-  for (nm in order) {
+  for (nm in use) {
     genes <- unique(as.character(disease_by_db$gene[disease_by_db$source == nm]))
     genes <- genes[!is.na(genes) & nzchar(genes)]
-    if (length(genes)) out[[nm]] <- genes
-  }
-  if (!length(out)) {
-    # fallback: whatever sources exist
-    out <- np_disease_sets(disease_by_db)
+    out[[nm]] <- genes
   }
   out
+}
+
+np_one_set_panel <- function(name, n, fill) {
+  cowplot::ggdraw() +
+    cowplot::draw_grob(grid::circleGrob(
+      x = 0.5, y = 0.46, r = 0.28,
+      gp = grid::gpar(fill = fill, col = fill, lwd = 1.6)
+    )) +
+    cowplot::draw_label(as.character(n), x = 0.5, y = 0.46, fontface = "bold", size = 16) +
+    cowplot::draw_label(name, x = 0.5, y = 0.82, fontface = "bold", size = 14, colour = fill)
 }
 
 #' 疾病多库真韦恩 — 交付风格（VennDiagram + Size of each list）
@@ -62,37 +72,45 @@ np_plot_disease_db_venn <- function(disease_by_db) {
     stop("Install VennDiagram for delivery-style Venn plots")
   }
   sets <- np_disease_sets_ordered(disease_by_db)
-  if (length(sets) < 2) stop("疾病库集合不足 2")
+  if (!length(sets)) stop("疾病库集合为空")
 
   nms <- names(sets)
   fills <- unname(np_venn_db_cols[nms])
-  fills[is.na(fills)] <- np_npg[seq_along(fills)]
+  fills[is.na(fills)] <- np_npg[((seq_along(fills) - 1L) %% length(np_npg)) + 1L]
   sizes <- vapply(sets, length, integer(1))
-  union_n <- length(unique(unlist(sets, use.names = FALSE)))
+  draw_sets <- sets[sizes > 0]
+  draw_fills <- fills[sizes > 0]
+  if (!length(draw_sets)) stop("疾病库集合为空")
 
-  # suppress VennDiagram log file
-  futile.logger::flog.threshold(futile.logger::ERROR, name = "VennDiagramLogger")
-
-  vd <- VennDiagram::venn.diagram(
-    x = sets,
-    filename = NULL,
-    disable.logging = TRUE,
-    fill = fills,
-    alpha = 0.50,
-    cex = 1.35,
-    cat.cex = 1.15,
-    cat.col = fills,
-    cat.fontface = "bold",
-    cat.dist = rep(0.06, length(sets)),
-    margin = 0.08,
-    lwd = 1.2,
-    col = fills,
-    fontfamily = "sans",
-    cat.fontfamily = "sans",
-    main = NULL,
-    print.mode = "raw",
-    sigdigs = 0
-  )
+  if (length(draw_sets) >= 2) {
+    if (requireNamespace("futile.logger", quietly = TRUE)) {
+      futile.logger::flog.threshold(futile.logger::ERROR, name = "VennDiagramLogger")
+    }
+    vd <- VennDiagram::venn.diagram(
+      x = draw_sets,
+      filename = NULL,
+      disable.logging = TRUE,
+      fill = draw_fills,
+      alpha = 0.50,
+      cex = 1.25,
+      cat.cex = 1.15,
+      cat.col = draw_fills,
+      cat.fontface = "bold",
+      cat.dist = rep(0.12, length(draw_sets)),
+      margin = 0.26,
+      lwd = 1.2,
+      col = draw_fills,
+      fontfamily = "sans",
+      cat.fontfamily = "sans",
+      main = NULL,
+      print.mode = "raw",
+      sigdigs = 0
+    )
+    venn_gg <- cowplot::ggdraw(vd)
+  } else {
+    venn_gg <- np_one_set_panel(names(draw_sets), unname(sizes[sizes > 0]), draw_fills)
+  }
+  empty_nms <- nms[sizes == 0]
 
   bar_df <- data.frame(
     database = factor(nms, levels = nms),
@@ -159,35 +177,40 @@ np_plot_disease_db_venn <- function(disease_by_db) {
       "Disease genes across databases",
       fontface = "bold", size = 14, hjust = 0.5
     )
-  sub_gg <- cowplot::ggdraw() +
-    cowplot::draw_label(
-      "Queried by English disease name · full GeneCards for Venn",
-      size = 10, color = "grey40", hjust = 0.5
+  sub_txt <- "Full exported lists. Downstream filters are a separate count."
+  if (length(empty_nms)) {
+    sub_txt <- paste0(
+      "Empty set omitted from ellipses, shown as 0: ",
+      paste(empty_nms, collapse = ", ")
     )
-  venn_gg <- cowplot::ggdraw(vd)
+  }
+  sub_gg <- cowplot::ggdraw() +
+    cowplot::draw_label(sub_txt, size = 10, color = "grey40", hjust = 0.5)
   cowplot::plot_grid(
     title_gg, sub_gg, venn_gg, p_bar, p_share,
     ncol = 1,
-    rel_heights = c(0.05, 0.035, 0.55, 0.22, 0.145)
+    rel_heights = c(0.05, 0.04, 0.55, 0.22, 0.145)
   )
 }
 
 #' 药物 vs 疾病 两集合韦恩（固定双色 + 底部大小柱）
-np_plot_drug_disease_venn <- function(drug_genes, disease_genes) {
+np_plot_drug_disease_venn <- function(drug_genes, disease_genes,
+                                     name_a = "Drugs", name_b = "Disease") {
   if (!requireNamespace("ggplot2", quietly = TRUE)) stop("需要 ggplot2")
   if (!requireNamespace("VennDiagram", quietly = TRUE)) {
     stop("Install VennDiagram for delivery-style Venn plots")
   }
   if (!requireNamespace("cowplot", quietly = TRUE)) stop("Install cowplot")
 
-  sets <- list(
-    Drugs = unique(as.character(drug_genes$gene)),
-    Disease = unique(as.character(disease_genes$gene))
-  )
+  as_genes <- function(x) {
+    if (is.data.frame(x)) x <- x$gene
+    unique(as.character(x[!is.na(x) & nzchar(as.character(x))]))
+  }
+  sets <- setNames(list(as_genes(drug_genes), as_genes(disease_genes)), c(name_a, name_b))
   fills <- c("#00A087", "#3C5488")
   sizes <- vapply(sets, length, integer(1))
   union_n <- length(unique(unlist(sets, use.names = FALSE)))
-  inter_n <- length(intersect(sets$Drugs, sets$Disease))
+  inter_n <- length(intersect(sets[[1]], sets[[2]]))
 
   futile.logger::flog.threshold(futile.logger::ERROR, name = "VennDiagramLogger")
   vd <- VennDiagram::venn.diagram(
@@ -200,7 +223,8 @@ np_plot_drug_disease_venn <- function(drug_genes, disease_genes) {
     cat.cex = 1.2,
     cat.col = fills,
     cat.fontface = "bold",
-    margin = 0.06,
+    cat.dist = c(0.09, 0.09),
+    margin = 0.18,
     lwd = 1.2,
     col = fills,
     fontfamily = "sans",
@@ -210,8 +234,8 @@ np_plot_drug_disease_venn <- function(drug_genes, disease_genes) {
 
   # 交付原图底栏仅 Drugs / Disease 两柱（不含 Overlap 第三柱）
   bar_df <- data.frame(
-    set = factor(c("Drugs", "Disease"), levels = c("Drugs", "Disease")),
-    n = c(sizes[["Drugs"]], sizes[["Disease"]]),
+    set = factor(c(name_a, name_b), levels = c(name_a, name_b)),
+    n = c(sizes[[1]], sizes[[2]]),
     fill = fills,
     stringsAsFactors = FALSE
   )
@@ -266,6 +290,17 @@ np_plot_drug_disease_venn <- function(drug_genes, disease_genes) {
     title_gg, sub_gg, cowplot::ggdraw(vd), p_bar, p_share,
     ncol = 1, rel_heights = c(0.05, 0.035, 0.55, 0.22, 0.145)
   )
+}
+
+#' 韦恩保存。宽度至少 12 in，避免集合名贴边被裁。
+np_save_venn <- function(plot, stem, dir = ".", width = 14, height = 11) {
+  if (width < 12 || height < 10) stop("np_save_venn: width >= 12 and height >= 10 inches")
+  dir.create(dir, recursive = TRUE, showWarnings = FALSE)
+  png <- file.path(dir, paste0(stem, ".png"))
+  svg <- file.path(dir, paste0(stem, ".svg"))
+  ggplot2::ggsave(png, plot, width = width, height = height, dpi = 600, bg = "white")
+  ggplot2::ggsave(svg, plot, width = width, height = height, bg = "white")
+  invisible(c(png = png, svg = svg))
 }
 
 

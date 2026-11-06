@@ -30,15 +30,20 @@
 ## 其它引擎（各自独立实例，不预设对照）
 
 新增引擎只加卡片。如何开工见 [`虚拟敲除方法论_VkoMethodology.md`](虚拟敲除方法论_VkoMethodology.md)。  
+**场景选型（何时用哪个）：** [`引擎选型与适用场景_EngineCatalog.md`](引擎选型与适用场景_EngineCatalog.md)。  
 **声称：** 结果表头与方法名必须与该引擎一致；禁止把 A 的数字标成 B。
 
 | 引擎 | 何时单开一份实例计划 | 来源 | 可信度 |
 |------|----------------------|------|--------|
 | `GenKI` | 用户要 VGAE 虚拟敲除（可与 Knk 课题数据相同，但是另一份计划） | Yang et al., *NAR* (2023) [10.1093/nar/gkad450](https://doi.org/10.1093/nar/gkad450)；[GenKI](https://github.com/yjgeno/GenKI)。搜索项、15% 边阈值、1000 次排列与 top 5% / 95% 规则写在该课题实例计划，不套用本表 Knk 的 FDR | H |
-| CellOracle | 用户点名 | — | M |
-| DoRothEA regulon 逆转 | 仅 master TF + 已有 DEG；非转录因子不适用 | — | H（不适用边界） |
+| `CellOracle` | 用户点名；靶点为 TF；有/可建 scATAC–motif GRN | Kamimoto et al., *Nature* 2023 [10.1038/s41586-022-05688-9](https://doi.org/10.1038/s41586-022-05688-9)；参数写实例计划 | H（文献）；M（本技能脚本成熟度） |
+| DoRothEA regulon 逆转 | 仅 master TF + 已有 DEG；非转录因子不适用 | 延展启发式；≠ Knk/CellOracle 金标 | H（不适用边界） |
+| `scGen` | 用户点名 **且** 有对照+扰动训练 scRNA | Lotfollahi et al., *Nat Methods* 2019 [10.1038/s41592-019-0494-8](https://doi.org/10.1038/s41592-019-0494-8) | H（文献）；目录收录 |
+| `CPA` | 用户点名 **且** 有扰动屏/药化数据 | Lotfollahi et al. CPA / chemCPA | H（文献）；目录收录 |
+| `GEARS` | 用户点名 **且** 有 Perturb-seq（多扰动、每扰动足够细胞） | Roohani et al., *Nat Biotechnol* 2023 [10.1038/s41587-023-01905-6](https://doi.org/10.1038/s41587-023-01905-6) | H（文献）；目录收录 |
+| `CellOT` | 用户点名 **且** 有 unpaired 对照 vs 处理分布 | Bunne et al., *Nat Methods* 2023 [10.1038/s41592-023-01969-x](https://doi.org/10.1038/s41592-023-01969-x) | H（文献）；目录收录 |
 
-课题实例计划放在各课题目录，不在本登记表列举。
+课题实例计划放在各课题目录，不在本登记表列举。目录收录引擎启用前必须先写实例计划与环境，不默认提供与 Knk 同级的一键脚本。
 
 ## 组织依赖标志（仅当 tissue=TG 等感觉神经节时启用）
 

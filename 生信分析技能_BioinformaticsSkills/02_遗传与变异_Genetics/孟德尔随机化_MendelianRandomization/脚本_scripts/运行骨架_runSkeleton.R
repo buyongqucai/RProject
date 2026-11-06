@@ -1,4 +1,8 @@
-# 孟德尔随机化 骨架 status=skeleton；包检查；出图 source 出版级出图
+# 孟德尔随机化 骨架 status=skeleton
+# 只检查默认包并 source 出版级出图。因果估计按
+# 文档_docs/实现流水线_MrPipeline.md ；版本见 文档_docs/信源与工具选型_SourcesAndStack.md
+# 主分析列用 MendelianRandomization::mr_ivw 或 TwoSampleMR::mr_ivw_mre
+# mr() 默认的 mr_ivw 含欠离散校正，只作对照列
 find_project_root <- function(start = getwd()) {
   p <- normalizePath(start, winslash = "/", mustWork = FALSE)
   for (i in 1:8) {
@@ -20,7 +24,7 @@ source_pub_viz <- function(project_root = find_project_root()) {
 }
 run_mendelianrandomization_skeleton <- function(input_path = NULL, out_dir = tempfile("bioinfo_"),
                   project_root = find_project_root()) {
-  pkgs <- c("TwoSampleMR", "MendelianRandomization", "ggplot2")
+  pkgs <- c("TwoSampleMR", "ieugwasr", "MendelianRandomization", "ggplot2")
   present <- pkgs[vapply(pkgs, requireNamespace, quietly = TRUE, FUN.VALUE = logical(1))]
   missing <- setdiff(pkgs, present)
   if (length(missing)) message("【骨架】未安装（可稍后安装）: ", paste(missing, collapse = ", "))

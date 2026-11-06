@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""微生信韦恩（jvenn）出图库（网药 FROZEN §G）。
+"""本地复刻的微生信 jvenn。默认入口是 `render_replica_svg`。
 
-权威：https://bioinformatics.com.cn/static/others/jvenn/example.html （jvenn）
-- 2 集 / 4 集：可用历史 jvenn 导出 SVG 模板填数（`参考_交付原图/Venn_*.svg`）
-- 5 集：Selenium 驱动金标页 `render_jvenn_svg`（同页 jvenn.min.js）→ 导出 SVG；**禁止**自绘花瓣椭圆
+复刻页：`_jvenn_assets/jvenn_runner.html`（同目录 jquery、canvas2svg、jvenn.min.js）。
+不要用 R 的 VennDiagram，也不要打开微生信网站。
+`render_jvenn_svg` 只在用户点名「用网站」时调用。
 
 引用：Bardou et al. BMC Bioinformatics 2014, 15:293
 """
@@ -280,6 +280,105 @@ return serialized;
 """
 
 
+def expand_svg_canvas(svg: str, pad_x: int = 160, pad_y: int = 36) -> str:
+    """把视口向外扩，使画在边缘、text-anchor=middle 的集合名完整落在画面内。"""
+    mw = re.search(r'\bwidth="([\d.]+)', svg)
+    mh = re.search(r'\bheight="([\d.]+)', svg)
+    width = float(mw.group(1)) if mw else 500.0
+    height = float(mh.group(1)) if mh else 695.0
+    new_w = width + 2 * pad_x
+    new_h = height + 2 * pad_y
+    view = f'viewBox="-{pad_x} -{pad_y} {new_w:.0f} {new_h:.0f}"'
+    if mw:
+        svg = svg.replace(mw.group(0), f'width="{new_w:.0f}', 1)
+    if mh:
+        svg = svg.replace(mh.group(0), f'height="{new_h:.0f}', 1)
+    if re.search(r"\bviewBox=", svg):
+        svg = re.sub(r'\bviewBox="[^"]*"', view, svg, count=1)
+    else:
+        svg = svg.replace("<svg", f"<svg {view}", 1)
+    return svg
+
+
+def render_replica_svg(
+    series: list[dict],
+    *,
+    colors: list[str] | None = None,
+    display_mode: str = "classic",
+    timeout_s: float = 90.0,
+) -> str:
+    """用本地 HTML 复刻页出 SVG。series 项为 {name, data}。空列表也要传入。"""
+    runner = JVENN_ASSETS / "jvenn_runner.html"
+    if not runner.exists():
+        raise SystemExit(f"missing local jvenn replica: {runner}")
+    if CHROME is None:
+        raise SystemExit("No Chrome/Edge for local jvenn replica")
+    try:
+        from selenium import webdriver
+        from selenium.webdriver.edge.options import Options as EdgeOptions
+        from selenium.webdriver.edge.service import Service as EdgeService
+        from selenium.webdriver.support.ui import WebDriverWait
+    except ImportError as e:
+        raise SystemExit("pip install selenium") from e
+
+    payload = {
+        "series": [{"name": s["name"], "data": list(s.get("data") or [])} for s in series],
+        "colors": colors or [],
+        "displayMode": display_mode,
+        "fontSize": "14px",
+        "fontFamily": "Arial",
+    }
+    page = runner.read_text(encoding="utf-8").replace(
+        "__PAYLOAD__", json.dumps(payload, ensure_ascii=False)
+    )
+    tmp = JVENN_ASSETS / "_run_payload.html"
+    tmp.write_text(page, encoding="utf-8")
+    edge = next(
+        (p for p in (
+            Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"),
+            Path(r"C:\Program Files\Microsoft\Edge\Application\msedge.exe"),
+        ) if p.exists()),
+        None,
+    )
+    if edge is None:
+        raise SystemExit("Edge not found for local jvenn replica")
+    opts = EdgeOptions()
+    opts.binary_location = str(edge)
+    opts.add_argument("--headless=new")
+    opts.add_argument("--disable-gpu")
+    opts.add_argument("--window-size=1400,1600")
+    opts.add_argument("--hide-scrollbars")
+    driver_path = Path(
+        r"C:\Users\10540\.cache\selenium\msedgedriver\win64\150.0.4078.144\msedgedriver.exe"
+    )
+    service = EdgeService(executable_path=str(driver_path)) if driver_path.exists() else EdgeService()
+    driver = webdriver.Edge(service=service, options=opts)
+    try:
+        driver.set_page_load_timeout(timeout_s)
+        driver.get(tmp.resolve().as_uri())
+        WebDriverWait(driver, timeout_s).until(
+            lambda d: d.title == "JVENN_READY" or str(d.title).startswith("JVENN_FAIL")
+        )
+        if str(driver.title).startswith("JVENN_FAIL"):
+            detail = driver.execute_script(
+                "return document.getElementById('svg-dump') ? document.getElementById('svg-dump').textContent : ''"
+            )
+            raise SystemExit(f"local jvenn replica failed: {driver.title} {detail}")
+        svg = driver.execute_script(
+            "return document.getElementById('svg-dump').textContent"
+        ) or ""
+    finally:
+        driver.quit()
+        tmp.unlink(missing_ok=True)
+    svg = svg.strip()
+    if not svg.startswith("<svg"):
+        sm = re.search(r"<svg[\s\S]*</svg>", svg)
+        if not sm:
+            raise SystemExit(f"local jvenn replica returned no svg: {svg[:300]}")
+        svg = sm.group(0)
+    return expand_svg_canvas(svg)
+
+
 def render_jvenn_svg(
     series: list[dict],
     *,
@@ -379,10 +478,7 @@ def render_jvenn_svg(
 
 
 def build_disease_5db_svg(sets: dict[str, set[str]]) -> str:
-    """五库疾病韦恩 = **真实微生信 jvenn**（官网页面引擎）。
-
-    集合：GeneCards / CTD / OMIM / TTD / DrugBank；CTD 须为 curated。
-    """
+    """五库疾病韦恩 = 本地 HTML 复刻 `jvenn_runner.html`。空库也传入。"""
     order = ["GeneCards", "CTD", "OMIM", "TTD", "DrugBank"]
     color_by = {
         "GeneCards": "rgb(241,90,96)",
@@ -397,7 +493,7 @@ def build_disease_5db_svg(sets: dict[str, set[str]]) -> str:
         genes = sorted(_as_set(sets.get(name, set())))
         series.append({"name": name, "data": genes})
         colors.append(color_by[name])
-    return render_jvenn_svg(series, colors=colors, display_mode="classic")
+    return render_replica_svg(series, colors=colors, display_mode="classic")
 
 
 def build_two_set_svg(
@@ -408,130 +504,32 @@ def build_two_set_svg(
     col_a: tuple[int, int, int] | None = None,
     col_b: tuple[int, int, int] | None = None,
 ) -> str:
-    """Two-set Venn from Venn_DrugDisease.svg geometry (微生信)."""
-    a = _as_set(set_a)
-    b = _as_set(set_b)
+    """两集韦恩 = 本地 HTML 复刻 `_jvenn_assets/jvenn_runner.html`。"""
     ca = col_a or COL["Drugs"]
     cb = col_b or COL["Disease"]
-    only_a = len(a - b)
-    only_b = len(b - a)
-    inter = len(a & b)
-    n_a, n_b = len(a), len(b)
-    n1, n2 = only_a + only_b, inter
-    # 轴顶留空，避免柱顶数字与 Y 轴刻度（ymax）重叠
-    ymax = max(int(round(max(n_a, n_b, 1) * 1.12)), max(n_a, n_b, 1) + 1)
-    y_base, y_top_axis = 535.0, 450.0
-    h_max = y_base - y_top_axis
-
-    def bar_y(n: int) -> float:
-        return y_base - (n / ymax) * h_max
-
-    tmpl = SAMPLE_REF.joinpath("Venn_DrugDisease.svg").read_text(encoding="utf-8")
-    parts = re.findall(
-        r'<path fill="none" stroke="none"></path><g transform="translate\([^"]+"[^>]*>.*?</g>',
-        tmpl,
-    )
-    ellipse_block = "".join(parts[:2])
-
-    labels = [
-        text(123, 209, str(only_a)),
-        text(357, 209, str(only_b)),
-        text(251, 209, str(inter)),
-    ]
-    names = [
-        text(115, 54, name_a, size="14px", weight="400", fill=rgb(ca), opacity=0.5),
-        text(380, 54, name_b, size="14px", weight="400", fill=rgb(cb), opacity=0.5),
-    ]
-
-    bars = []
-    yt = bar_y(n_a)
-    bars.append(bar_rect(70, 235, yt, y_base, ca))
-    bars.append(
-        text(230, yt - 10, str(n_a), size="8pt", weight="normal", fill=rgb(ca), opacity=0.5, fs="8pt", anchor="end")
-        if n_a / ymax < 0.15
-        else text(230, yt + 15, str(n_a), size="8pt", weight="normal", fill="white", fs="8pt", anchor="end")
-    )
-    bars.append(text(152.5, 550, name_a, size="8pt", weight="normal", fs="8pt"))
-    bars.append(
-        '<path fill="none" stroke="rgb(0,0,0)" d="M 152.5 535 L 152.5 540 Z" '
-        'stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
-    )
-    yt2 = bar_y(n_b)
-    bars.append(bar_rect(255, 420, yt2, y_base, cb))
-    bars.append(text(415, yt2 + 15, str(n_b), size="8pt", weight="normal", fill="white", fs="8pt", anchor="end"))
-    bars.append(text(337.5, 550, name_b, size="8pt", weight="normal", fs="8pt"))
-    bars.append(
-        '<path fill="none" stroke="rgb(0,0,0)" d="M 337.5 535 L 337.5 540 Z" '
-        'stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
-    )
-
-    axis = (
-        f'{text(45, 537, "0", size="8pt", weight="normal", fs="8pt", anchor="end")}'
-        f'{text(45, 502.5, str(int(round(ymax / 2))), size="8pt", weight="normal", fs="8pt", anchor="end")}'
-        f'{text(45, 469, str(ymax), size="8pt", weight="normal", fs="8pt", anchor="end")}'
-        '<path fill="none" stroke="rgb(0,0,0)" d="M 50 535 L 50 450 Z" stroke-opacity="0.7" stroke-miterlimit="10"></path>'
-        '<path fill="none" stroke="rgb(0,0,0)" d="M 50 535 L 450 535 Z" stroke-opacity="0.7" stroke-miterlimit="10"></path>'
-        '<path fill="none" stroke="rgb(0,0,0)" d="M 47 499 L 53 499 Z" stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
-        '<path fill="none" stroke="rgb(0,0,0)" d="M 47 465 L 53 465 Z" stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
-        '<g><path fill="rgb(0,0,0)" stroke="none" d="M 50 440 L 46 450 L 54 450" fill-opacity="0.7"></path></g>'
-        '<g><path fill="rgb(0,0,0)" stroke="none" d="M 460 535 L 450 531 L 450 539" fill-opacity="0.7"></path></g>'
-    )
-
-    total = max(n1 + n2, 1)
-    x0, x1 = 60.0, 450.0
-    w = x1 - x0
-    share = []
-    w2 = max(w * n2 / total, 4.0)
-    w1 = w - w2
-    share.append(bar_rect(x0, x0 + w2, 600, 620, COL["share"], opacity=0.4))
-    mid2 = x0 + w2 / 2
-    share.append(text(mid2, 642, "2", size="8pt", weight="normal", fs="8pt"))
-    share.append(text(mid2 + 6, 642, f"({n2})", size="8pt", weight="normal", fs="8pt", anchor="start"))
-    share.append(
-        f'<path fill="none" stroke="rgb(0,0,0)" d="M {mid2} 625 L {mid2} 630 Z" '
-        f'stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
-    )
-    share.append(bar_rect(x0 + w2, x0 + w2 + w1, 600, 620, COL["share"], opacity=0.666))
-    mid1 = x0 + w2 + w1 / 2
-    share.append(text(mid1, 614, str(n1), size="8pt", weight="normal", fill="white", fs="8pt"))
-    share.append(text(mid1, 654, "1", size="8pt", weight="normal", fs="8pt"))
-    share.append(
-        f'<path fill="none" stroke="rgb(0,0,0)" d="M {mid1} 625 L {mid1} 630 Z" '
-        f'stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
-    )
-    share.append(
-        '<path fill="none" stroke="rgb(0,0,0)" d="M 50 625 L 460 625 Z" stroke-opacity="0.7" stroke-miterlimit="10"></path>'
-    )
-
-    title_size = text(250, 442, "Size of each list", size="10pt", weight="normal", fs="10pt").replace(
-        'font-style="normal"', 'font-style="italic"'
-    )
-    title_share = text(
-        250,
-        585,
-        "Number of elements: specific (1) or shared by 2, 3, ... lists",
-        size="10pt",
-        weight="normal",
-        fs="10pt",
-    ).replace('font-style="normal"', 'font-style="italic"')
-
-    return (
-        f'<svg version="1.1" xmlns="http://www.w3.org/2000/svg" '
-        f'xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="695">'
-        f"<defs></defs><g>{ellipse_block}{title_size}{axis}{''.join(bars)}"
-        f"{title_share}{''.join(share)}{''.join(labels)}{''.join(names)}</g></svg>"
+    return render_replica_svg(
+        [
+            {"name": name_a, "data": sorted(_as_set(set_a))},
+            {"name": name_b, "data": sorted(_as_set(set_b))},
+        ],
+        colors=[rgb(ca), rgb(cb)],
     )
 
 
 def rasterize(svg: Path, png: Path) -> None:
     if CHROME is None:
         raise SystemExit("No Chrome/Edge found for headless screenshot")
+    raw = svg.read_text(encoding="utf-8")
+    mw = re.search(r'\bwidth="([\d.]+)', raw)
+    mh = re.search(r'\bheight="([\d.]+)', raw)
+    width = int(float(mw.group(1))) if mw else 820
+    height = int(float(mh.group(1))) if mh else 780
     html = svg.with_suffix(".preview.html")
     html.write_text(
         "<!DOCTYPE html><html><head><meta charset=utf-8>"
         "<style>html,body{margin:0;padding:0;background:#fff;}"
-        "svg{display:block;width:500px;height:695px;}</style>"
-        f"</head><body>{svg.read_text(encoding='utf-8')}</body></html>",
+        f"svg{{display:block;width:{width}px;height:{height}px;}}</style>"
+        f"</head><body>{raw}</body></html>",
         encoding="utf-8",
     )
     cmd = [
@@ -539,7 +537,7 @@ def rasterize(svg: Path, png: Path) -> None:
         "--headless=new",
         "--disable-gpu",
         f"--screenshot={png}",
-        "--window-size=520,720",
+        f"--window-size={width + 8},{height + 8}",
         "--hide-scrollbars",
         "--force-device-scale-factor=2",
         html.resolve().as_uri(),

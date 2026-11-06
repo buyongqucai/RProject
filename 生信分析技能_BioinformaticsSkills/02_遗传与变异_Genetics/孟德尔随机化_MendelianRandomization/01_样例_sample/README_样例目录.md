@@ -1,5 +1,7 @@
 # 样例目录说明 / Sample layout
 
+本目录 provenance 为 **TOY**，只验证交付目录，不作为真实孟德尔随机化结论。方法步骤见 `../文档_docs/实现流水线_MrPipeline.md`。
+
 本样例已按 DeliveryStandards 约定：
 
 - `数据文件/` = **原始/raw 输入 only**

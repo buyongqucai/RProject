@@ -41,8 +41,11 @@
 |---------|------|----------------------|----------|
 | `scTenifoldKnk` | Osorio et al., *Patterns* 2022, [10.1016/j.patter.2022.100434](https://doi.org/10.1016/j.patter.2022.100434) | DR / distance / `p.adj` | CPU；加速另见该实例的优化节 |
 | `GenKI` | Yang et al., *NAR* 2023, [10.1093/nar/gkad450](https://doi.org/10.1093/nar/gkad450) | 潜空间距离（如 KL）+ 排列检验排序 | CPU 建网 + GPU 训练 |
-| `CellOracle` | 用户点名时再启用 | 按该文/该包字段 | 见当时计划 |
+| `CellOracle` | Kamimoto et al., *Nature* 2023；用户点名 TF 扰动 | 按该文/该包字段 | 见当时计划 |
 | regulon 逆转 | 仅 master TF + 已有 DEG | rescued DEG 计数 | 非转录因子不适用 |
+| `scGen` / `CPA` / `GEARS` / `CellOT` | 见引擎选型 SSOT；需真实扰动训练数据 | 各包预测表达/嵌入；禁写成 Knk DR | GPU 常见 |
+
+**场景表（何时选哪个）：** [`引擎选型与适用场景_EngineCatalog.md`](引擎选型与适用场景_EngineCatalog.md)。
 
 ---
 
@@ -117,6 +120,10 @@
 4. 硬件：VGAE 训练用 GPU。开跑前运行该课题的资源探测，由它按当前机器分配线程、搜索并发、内存和显存。换机器就重新探测，不手写核数。  
 5. 列名与图注用 GenKI 自己的字段，不写成 Knk 的 DR 表。
 
+### CellOracle / scGen / CPA / GEARS / CellOT
+
+启用前读 [`引擎选型与适用场景_EngineCatalog.md`](引擎选型与适用场景_EngineCatalog.md)：确认数据类别（WT-only vs 扰动屏）与声称边界。实施细节（版本、阈值、硬件）写在**该课题实例计划**，不在本方法论堆参数。列名与图注只用该引擎字段。
+
 ### 以后的新引擎
 
-在方法登记加一行卡片，并在本节追加不超过半页的实施要点。不在卡片或要点里绑定其它引擎。
+先在引擎选型 SSOT 加行 → 方法登记加卡片 → 本节追加不超过半页实施要点。不在卡片或要点里绑定其它引擎。

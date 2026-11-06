@@ -8,7 +8,7 @@
 - **出图**: PPI 与 HCTP **代码绘制（交付默认）**，无需 Cytoscape 手绘
 - **AUTO（可达时）**: CTD bulk、KEGG REST、STRING API、HERB chedi、SwissTargetPrediction 表单提交（Open Targets 陪跑）
 - **MANUAL（需你导出）**: GeneCards、TTD、DrugBank、OMIM、DisGeNET、TCMSP、BATMAN、ETCM2、TCMBank；HERB/STP 在 AUTO 失败时回退（详见技能说明 §1.5）
-- **韦恩图**: 样例结果图可用微生信交付原图；数据分库见 `VennFull` 表
+- **韦恩图**: 新出图用本地 HTML 复刻 `render_replica_svg` / `jvenn_runner.html`（出图约束 §G）。数据分库见 `VennFull` 表。目录里若仍是旧导出图，重跑样例时替换。
 - **下游交集/富集**: GeneCards Relevance≥40（`疾病靶点按库_DiseaseGenesByDB.csv`）
 - **交付路径**: `D:\网络药理学文件\网络药理学交付文件20260710(1)\交付文件`
 - **规范**: DeliveryStandards + VizStandards + DataAuthenticity
