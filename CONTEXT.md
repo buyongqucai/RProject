@@ -31,7 +31,7 @@
 | intent-skill-router | `.cursor/skills/intent-skill-router`：未 @ 技能时按意图自动 Read 对应 `技能说明_*.md` |
 | 课题报告 | 终局 HTML（入口 + 论文式 + 方法论）。没有另行说明就用 `课题报告_ProjectReport` 的 `page()` 和 `报告要求_ReportRequirements.md` |
 | 本地韦恩 | 网药默认用 `_jvenn_assets/jvenn_runner.html` 这份 HTML 复刻（`render_replica_svg`）。不是 R 的 VennDiagram，也不是打开微生信网站 |
-| 影刀 CLI | `.cursor/skills/shadowbot-cli`：Windows 用 `shadowbot.shell-cli.exe`，Linux/mac/信创用 `shadowbot-cli`。拖入应用目录时，`package.json` 里 `kind: Code` 的流程对应同目录 `.py`，经客户端任务运行 |
+| 影刀 CLI | `.cursor/skills/shadowbot-cli`：Windows 用 `shadowbot.shell-cli.exe`，Linux/mac/信创用 `shadowbot-cli`。拖入应用目录时，`package.json` 里 `kind: Code` 的流程对应同目录 `.py`，经客户端任务运行。写应用绑定全局技能 `~/.cursor/skills/shadowbot-develop` |
 | alert_kit / qq-smtp-alert | 跨项目 QQ SMTP 告警：`E:\alert_kit\`；Cursor 全局技能 `~/.cursor/skills/qq-smtp-alert` |
 | 工单 / frontier | `.scratch/<功能>/issues/NN-*.md`；只做 Blocked by 已完成且 `待Agent处理` 的单（见 `docs/agents/工单工作流_WorkOrder.md`） |
 | 技能范式 | 新建/审计领域技能的勾选 SSOT（L0 写法）：`docs/agents/技能范式清单_SkillParadigm.md` |

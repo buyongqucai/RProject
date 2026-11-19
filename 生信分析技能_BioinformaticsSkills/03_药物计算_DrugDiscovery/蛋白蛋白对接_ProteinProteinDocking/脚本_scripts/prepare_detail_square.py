@@ -1,97 +1,111 @@
 #!/usr/bin/env python3
-"""Prepare a user detail screenshot into a square PNG for PP docking collage.
+"""PP detail 切方（已定稿）：用户截图 → 对接按颜色裁 → 正方形 → 拉大。
 
-Pipeline (BASELINE):
-  1) docking-style trim_white_border (whole near-white rows/cols)
-  2) aggressive near-white row/col trim (flecked anti-aliased borders)
-  3) center-crop to square (no white padding)
+只改输入/输出路径。颜色与包围盒调用分子对接拼图，禁止自造掩膜/cover/垫白。
 
-Usage:
-  python prepare_detail_square.py INPUT.jpg -o detail-2.png
-  python prepare_detail_square.py INPUT.png --thresh 248 --white-frac 0.92
+SSOT 颜色：``E:\\PythonProject\\分子对接\\2.分子对接结果图组合.py``
+  ``build_key_content_mask`` / ``_bbox_from_mask``
+
+流程：
+  1. 按残基/氢键/标签色定包围盒（裁掉无这些内容的多余幅面）
+  2. 在原图内取能包住该盒的正方形（不垫白边）
+  3. 拉到 ``--detail-size``²（默认 6000）
+
+用户原图可放在任务 ``图片/``（如 ``detail-N_用户原图.png``）。
 """
 from __future__ import annotations
 
 import argparse
+import importlib.util
+import sys
 from pathlib import Path
 
-import numpy as np
-from PIL import Image
+DOCK_COLLAGE = Path(r"E:\PythonProject\分子对接\2.分子对接结果图组合.py")
 
 
-def trim_white_border(
-    img: Image.Image,
-    thresh: int = 250,
-    dust_frac: float = 0.001,
-) -> Image.Image:
-    """Match MolecularDocking collage trim_white_border semantics."""
-    rgb = np.array(img.convert("RGB"))
-    non_white = np.any(rgb < thresh, axis=2)
-    cols = non_white.sum(axis=0)
-    rows = non_white.sum(axis=1)
-    min_cols = max(1, int(non_white.shape[0] * dust_frac))
-    min_rows = max(1, int(non_white.shape[1] * dust_frac))
-    xs = np.where(cols > min_cols)[0]
-    ys = np.where(rows > min_rows)[0]
-    if xs.size == 0 or ys.size == 0:
-        return img
-    return img.crop((int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1))
+def _load_dock_collage():
+    spec = importlib.util.spec_from_file_location("dock_collage", DOCK_COLLAGE)
+    if spec is None or spec.loader is None:
+        raise FileNotFoundError(f"missing docking collage: {DOCK_COLLAGE}")
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = mod
+    spec.loader.exec_module(mod)
+    return mod
 
 
-def trim_near_white(
-    img: Image.Image,
-    thresh: int = 248,
-    white_frac: float = 0.92,
-) -> Image.Image:
-    """Drop rows/cols that are mostly near-white (anti-aliased flecks)."""
-    rgb = np.asarray(img.convert("RGB"))
-    white = (rgb >= thresh).all(axis=2)
-    rows = white.mean(axis=1)
-    cols = white.mean(axis=0)
-    ys = np.where(rows < white_frac)[0]
-    xs = np.where(cols < white_frac)[0]
-    if ys.size == 0 or xs.size == 0:
-        return img
-    return img.crop((int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1))
-
-
-def square_center(img: Image.Image) -> Image.Image:
-    w, h = img.size
-    side = min(w, h)
-    left = (w - side) // 2
-    top = (h - side) // 2
-    return img.crop((left, top, left + side, top + side))
-
-
-def prepare_detail_square(
+def square_from_user_shot(
     src: Path,
-    thresh: int = 248,
-    white_frac: float = 0.92,
-) -> Image.Image:
-    im = Image.open(src).convert("RGB")
-    im = trim_white_border(im, thresh=min(250, thresh + 2))
-    im = trim_near_white(im, thresh=thresh, white_frac=white_frac)
-    return square_center(im)
+    dst: Path,
+    *,
+    detail_size: int = 6000,
+    dpi: int = 600,
+) -> Path:
+    """用户截图 → 颜色定界 → 正方形 → 拉大。返回 dst。"""
+    from PIL import Image
+
+    src = Path(src)
+    dst = Path(dst)
+    dock = _load_dock_collage()
+    img = Image.open(src).convert("RGB")
+    w, h = img.size
+    profile = dock.DEFAULT_COLLAGE_PROFILE.with_auto_from_image(img)
+
+    mask = dock.build_key_content_mask(img, dilate=True, profile=profile)
+    bbox = dock._bbox_from_mask(mask)
+    if bbox is None:
+        raise RuntimeError("build_key_content_mask empty")
+    cx, cy, bw, bh = bbox
+    kl = max(0, int(round(cx - bw / 2.0)))
+    kt = max(0, int(round(cy - bh / 2.0)))
+    kr = min(w, int(round(cx + bw / 2.0)))
+    kb = min(h, int(round(cy + bh / 2.0)))
+    kw, kh = kr - kl, kb - kt
+    if kw <= 0 or kh <= 0:
+        raise RuntimeError(f"bad key box ({kl},{kt},{kr},{kb})")
+
+    side = max(kw, kh)
+    if side > w or side > h:
+        side = min(w, h)
+    left = int(max(0, min(max(kr - side, min(kl, w - side)), w - side)))
+    top = int(max(0, min(max(kb - side, min(kt, h - side)), h - side)))
+    square = img.crop((left, top, left + side, top + side))
+    out = square.resize((detail_size, detail_size), Image.LANCZOS)
+
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    out.save(dst, dpi=(dpi, dpi))
+    print(
+        f"ok color→square→enlarge {src.name} {img.size} "
+        f"key=({kl},{kt},{kr},{kb}) side={side} crop=({left},{top}) "
+        f"-> {dst.name} {out.size} "
+        f"res:{profile.residue_color}/hb:{profile.hbond_color}",
+        flush=True,
+    )
+    return dst
 
 
-def main() -> None:
+def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("input", type=Path, help="User detail screenshot")
-    ap.add_argument("-o", "--output", type=Path, required=True, help="Output square PNG")
-    ap.add_argument("--thresh", type=int, default=248)
-    ap.add_argument("--white-frac", type=float, default=0.92)
-    ap.add_argument("--also-jpeg", action="store_true", help="Also write .jpeg sibling")
+    ap.add_argument("input", type=Path, help="用户截图，如 图片/detail-1_用户原图.png")
+    ap.add_argument("-o", "--output", type=Path, required=True, help="图片/detail-N.png")
+    ap.add_argument("--detail-size", type=int, default=6000)
+    ap.add_argument("--dpi", type=int, default=600)
     args = ap.parse_args()
-
-    out = prepare_detail_square(args.input, thresh=args.thresh, white_frac=args.white_frac)
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    out.save(args.output)
-    print(f"saved {args.output} {out.size[0]}x{out.size[1]}")
-    if args.also_jpeg:
-        jpeg = args.output.with_suffix(".jpeg")
-        out.save(jpeg, quality=95)
-        print(f"saved {jpeg}")
+    src = args.input.resolve()
+    if not src.is_file():
+        print(f"ERROR: not found: {src}", file=sys.stderr)
+        return 2
+    if not DOCK_COLLAGE.is_file():
+        print(f"ERROR: missing {DOCK_COLLAGE}", file=sys.stderr)
+        return 2
+    try:
+        square_from_user_shot(
+            src, args.output.resolve(), detail_size=args.detail_size, dpi=args.dpi
+        )
+    except Exception as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 3
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

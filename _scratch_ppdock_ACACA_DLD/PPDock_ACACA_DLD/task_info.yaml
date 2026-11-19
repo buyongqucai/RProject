@@ -1,0 +1,42 @@
+st_partner: ACACA
+pt_partner: DLD
+pdb_st: 6G2D
+pdb_pt: 6I4Q
+chains_st: ["C"]
+chains_pt: ["A", "B"]
+chain_source_st: entity_longest
+chain_source_pt: auth_asym_partner
+chain_survey: 01_clean/chain_survey.md
+het_policy: keep_cofactor
+het_kept: [FAD]
+het_dropped: [BTB, SO4, HOH]
+email: 1054034696@stu.cqut.edu.cn
+servers:
+  zdock:
+    status: submitted_with_restraints
+    job_id: pending_email
+    files: [ST_ACACA_6G2D_chainC_CA.pdb, PT_DLD_6I4Q_AB_CA.pdb]
+    contact_pt: ["A437", "A443", "A444"]
+    block_st: ["C315-320", "C1823", "C2127", "C2129"]
+    block_pt: ["A45", "A50", "A452", "B45", "B50", "B452"]
+    note: CA-only; Edge residue UI; no ACACA–DLD co-crystal — DLD contacts=E3BP face; blocks=catalytic pockets
+  cluspro:
+    status: queued
+    job_id: "1479041"
+    job_name: ACACA_DLD_ST_PT_skil
+    note: PDB ID mode 6G2D/C x 6I4Q/A B (server-side fetch)
+  hdock:
+    status: done_visualized
+    job_id: "6ae693419a01b"
+    job_name: test
+    email: 1054034696@qq.com
+    receptor: "6G2D:C"
+    ligand: "6I4Q:AB"
+    results_url: "http://hdock.phys.hust.edu.cn/data/6ae693419a01b/"
+    top1_score: -277.53
+    deliverable_root: HDOCK_序号文件夹
+    task_dirs: ["HDOCK_序号文件夹/1", "HDOCK_序号文件夹/2", "HDOCK_序号文件夹/3"]
+    server_raw: HDOCK_序号文件夹/00_服务器原始包_ServerRaw
+    note: "PDB ID mode; layout=序号文件夹金标（结构+.pse+图片/同夹）"
+model_note: "6G2D 5.4A EM; ST=C; PT=DLD dimer; HDOCK models lack FAD HET"
+status: hdock_numbered_layout_ready

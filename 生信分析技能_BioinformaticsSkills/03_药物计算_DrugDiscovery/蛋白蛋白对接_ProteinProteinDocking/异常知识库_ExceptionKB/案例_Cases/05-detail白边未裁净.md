@@ -1,28 +1,23 @@
-# detail 截图四周仍有白边 / 拼图右框露白
+# detail 标签被切掉 / 误用 cover 切方
 
-- 日期/体系：2026-11-02；ACACA×DLD HDOCK detail-2
-- 状态：已自动化
+- 日期/体系：2026-11-07 ACOX1 用户截图
+- 状态：已定稿纠正
 
-## 症状（怎么发现的）
+## 症状
 
-用户反馈「detail-2 截图白边没有去掉」；正方形 PNG 顶/底仍可见整行近白带（anti-aliased flecks），拼进 `result_2` 后虚线框内边缘发白。
+对用户宽屏 detail 截图做 `side=min` 中心裁方后，左右残基/氢键/标签消失；或垫白边凑正方形。
 
-## 判定（真异常还是假象）
+## 判定
 
-1. 读 PNG 边缘行：`(rgb >= 248).all(axis=2).mean(axis=1)`；若 top/bot 连续行 `white_frac >= 0.92` → **真白边**。  
-2. 若边缘行 white_frac 约 0.3–0.5 且可见 cartoon 像素 → **假象**（结构留白，勿再裁）。  
-决定性证据：连续整行/整列近白，而非构图内空隙。
+对接 §7.3 钩子后半段「视口中心裁方」**前提**是已 zoom 把标签放进方框。对任意用户 PNG 直接 cover = 真异常。
 
-## 补救（按序尝试）
+## 定稿补救（只改路径）
 
-1. `python 脚本_scripts/prepare_detail_square.py <截图> -o 图片/detail-N.png`（内含 docking trim + near-white + center square）。  
-2. 仍露白：略降 `--white-frac`（如 0.88）重跑；**禁止**用白边 pad 成正方形。  
-3. `python 脚本_scripts/combine_pp_result.py --img-dir 图片 --index N` 重拼。
+1. 用户原图放 `图片/detail-N_用户原图.png`  
+2. `prepare_detail_square.py`：对接 `build_key_content_mask` → 原图内正方形 → 拉 6000²  
+3. `E:\PythonProject\分子对接\2.分子对接结果图组合.py --dir=<图片> N`  
+4. 对接 `--from-image` 拒绝执行；要钩子 1:1 才用 `--root`
 
-## 何时放弃
+## 复盘
 
-用户新截图构图本身大片留白且残基已贴边仍「显空」→ 请用户重新取景，勿无限收紧阈值。
-
-## 复盘（根因一句话 + 预防）
-
-对接 `trim_white_border` 只裁「几乎全白」行，抗锯齿噪点会卡住；基线切方脚本已合并近白行/列裁剪。见 `对接与交付基线_PPDockBaseline.md` §2。
+根因：把钩子「裁方」一步当成可独立用于任意截图的 API。预防：基线 §2.1。

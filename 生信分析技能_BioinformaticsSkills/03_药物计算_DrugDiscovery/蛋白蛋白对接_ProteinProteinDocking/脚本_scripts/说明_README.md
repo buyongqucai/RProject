@@ -5,8 +5,8 @@
 | `summarize_pdb_chains.py` | 只读：每链残基数 / HET / 体积，供 `chain_survey` |
 | `clean_pp_structures.py` | 按 `het_policy` 清理；写 `clean_report.json` |
 | `pymol_pp_dock_viz_standard.py` | ST/PT/CJ/QJ → big/surface/detail `.pse`+PNG |
-| `prepare_detail_square.py` | 用户 detail 截图 → 去白边 → 居中切正方形 |
-| `combine_pp_result.py` | big + detail → `result_N.png`（分子对接拼图引擎） |
+| `prepare_detail_square.py` | **已定稿**：用户截图 → 对接颜色定界 → 正方形 → 拉到 6000² |
+| `combine_pp_result.py` | 薄封装；优先直接跑 `E:\PythonProject\分子对接\2.分子对接结果图组合.py` |
 
 ## 推荐顺序
 
@@ -21,9 +21,12 @@ python clean_pp_structures.py 00_raw/PT.pdb 01_clean/PT_clean.pdb --chains A,B -
 E:\pymol\python.exe pymol_pp_dock_viz_standard.py \
   --st .../1/ST_*.pdb --pt .../1/PT_*.pdb --out-dir .../1 --tag 1
 
-# 手调 detail-1.pse 后由用户截图（可多角度）→ 落盘到 图片/
-python prepare_detail_square.py 用户截图_detail2.jpg -o .../1/图片/detail-2.png --also-jpeg
-python combine_pp_result.py --img-dir .../1/图片 --index 2
+# 手调并截图 → 原图放入 图片/detail-N_用户原图.png → 切方 → 拼图
+python prepare_detail_square.py .../1/图片/detail-1_用户原图.png -o .../1/图片/detail-1.png
+python E:\PythonProject\分子对接\2.分子对接结果图组合.py --dir=.../1/图片 1
+
+# 仅有 .pse、未截图时才用对接完整钩子：
+python ..\分子对接与虚拟筛选_MolecularDocking\脚本_scripts\export_detail_png_from_pse.py --root .../1
 ```
 
-定稿指针：[`对接与交付基线_PPDockBaseline.md`](../文档_docs/对接与交付基线_PPDockBaseline.md)；几何细节复用分子对接 SOP §7.3/§7.4。
+定稿：[`对接与交付基线_PPDockBaseline.md`](../文档_docs/对接与交付基线_PPDockBaseline.md)。

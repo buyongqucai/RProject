@@ -1,0 +1,21 @@
+{
+  "src": "E:\\RProject\\_scratch_ppdock_6I4Q_pairs\\PPDock_ACOX1_DLD\\00_raw\\PDB_7Q84_ACOX1.pdb",
+  "dst": "E:\\RProject\\_scratch_ppdock_6I4Q_pairs\\PPDock_ACOX1_DLD\\01_clean\\ST_ACOX1_7Q84_AB_clean.pdb",
+  "chains": [
+    "A",
+    "B"
+  ],
+  "rename": {},
+  "het_policy": "keep_cofactor",
+  "n_atom": 9951,
+  "het_kept": {},
+  "het_dropped": {
+    "CSO": 28,
+    "PGE": 20,
+    "EDO": 40,
+    "PEG": 7,
+    "GOL": 18,
+    "HOH": 492
+  },
+  "bytes": 796831
+}

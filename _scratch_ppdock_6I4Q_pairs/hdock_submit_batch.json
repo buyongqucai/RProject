@@ -1,0 +1,30 @@
+[
+  {
+    "key": "ACOX1_DLD",
+    "status_code": 200,
+    "url": "http://hdock.phys.hust.edu.cn/data/6aed98eb1bfd8/",
+    "jobname": "ACOX1_DLD",
+    "pdbid1": "7Q84:AB",
+    "pdbid2": "6I4Q:AB",
+    "data_ids": [
+      "example"
+    ],
+    "links": [],
+    "text_snip": " HDOCK Server: Job results for 6aed98eb1bfd8 function popup(mylink, windowname) { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=1020,height=600,scrollbars=yes'); return false; } function formAction (action, id) { if (action == 'show') { document.getElementById(\"optionForm\"+id).style.display= \"block\"; document.getElementById(\"option\"+id).href= \"javascript:formAction('hide', \"+id+\")\"; document.getElementById(\"showtext\"+id).innerHTML = \"Hide)\"; } if (action == 'hide') { document.getElementById(\"optionForm\"+id).style.display= \"none\"; document.getElementById(\"option\"+id).href= \"javascript:formAction('show', \"+id+\")\"; document.getElementById(\"showtext\"+id).innerHTML = \"Show)\"; } } HDOCK SERVER Pr",
+    "html": "E:\\RProject\\_scratch_ppdock_6I4Q_pairs\\PPDock_ACOX1_DLD\\02_submit\\hdock_submit_response.html"
+  },
+  {
+    "key": "DLD_SCD",
+    "status_code": 200,
+    "url": "http://hdock.phys.hust.edu.cn/data/6aed98ee37a8c/",
+    "jobname": "DLD_SCD",
+    "pdbid1": "6I4Q:AB",
+    "pdbid2": "4ZYO:A",
+    "data_ids": [
+      "example"
+    ],
+    "links": [],
+    "text_snip": " HDOCK Server: Job results for 6aed98ee37a8c function popup(mylink, windowname) { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=1020,height=600,scrollbars=yes'); return false; } function formAction (action, id) { if (action == 'show') { document.getElementById(\"optionForm\"+id).style.display= \"block\"; document.getElementById(\"option\"+id).href= \"javascript:formAction('hide', \"+id+\")\"; document.getElementById(\"showtext\"+id).innerHTML = \"Hide)\"; } if (action == 'hide') { document.getElementById(\"optionForm\"+id).style.display= \"none\"; document.getElementById(\"option\"+id).href= \"javascript:formAction('show', \"+id+\")\"; document.getElementById(\"showtext\"+id).innerHTML = \"Show)\"; } } HDOCK SERVER Pr",
+    "html": "E:\\RProject\\_scratch_ppdock_6I4Q_pairs\\PPDock_DLD_SCD\\02_submit\\hdock_submit_response.html"
+  }
+]

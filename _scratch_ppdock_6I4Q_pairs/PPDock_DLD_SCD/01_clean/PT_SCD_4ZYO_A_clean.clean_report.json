@@ -1,0 +1,19 @@
+{
+  "src": "E:\\RProject\\_scratch_ppdock_6I4Q_pairs\\PPDock_DLD_SCD\\00_raw\\PDB_4ZYO_SCD.pdb",
+  "dst": "E:\\RProject\\_scratch_ppdock_6I4Q_pairs\\PPDock_DLD_SCD\\01_clean\\PT_SCD_4ZYO_A_clean.pdb",
+  "chains": [
+    "A"
+  ],
+  "rename": {},
+  "het_policy": "keep_cofactor",
+  "n_atom": 2466,
+  "het_kept": {
+    "ZN": 2
+  },
+  "het_dropped": {
+    "ST9": 67,
+    "LMT": 23,
+    "HOH": 1
+  },
+  "bytes": 198370
+}

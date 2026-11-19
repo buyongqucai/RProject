@@ -1,0 +1,24 @@
+st_partner: ACOX1
+pt_partner: DLD
+pdb_st: 7Q84
+pdb_pt: 6I4Q
+chains_st: ["A", "B"]
+chains_pt: ["A", "B"]
+chain_source_st: auth_asym_partner
+chain_source_pt: auth_asym_partner
+chain_survey: 01_clean/chain_survey.md
+het_policy: keep_cofactor
+het_kept: [FAD]
+het_dropped: [BTB, SO4, HOH, CSO, EDO, GOL, PEG, PGE]
+email: 1054034696@qq.com
+servers:
+  hdock:
+    status: queued
+    job_id: "6aed98eb1bfd8"
+    job_name: ACOX1_DLD
+    receptor: "7Q84:AB"
+    ligand: "6I4Q:AB"
+    results_url: "http://hdock.phys.hust.edu.cn/data/6aed98eb1bfd8/"
+    note: PDB ID mode; hypothetical PPI
+model_note: "No strong ACOX1–DLD PPI evidence in HPA/STRING; coarse model only"
+status: queued_hdock

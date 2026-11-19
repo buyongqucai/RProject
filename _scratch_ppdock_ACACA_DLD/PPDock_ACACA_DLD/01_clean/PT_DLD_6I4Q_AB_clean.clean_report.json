@@ -1,0 +1,20 @@
+{
+  "src": "E:\\RProject\\_scratch_ppdock_ACACA_DLD\\PPDock_ACACA_DLD\\00_raw\\PDB_6I4Q_DLD.pdb",
+  "dst": "E:\\RProject\\_scratch_ppdock_ACACA_DLD\\PPDock_ACACA_DLD\\01_clean\\PT_DLD_6I4Q_AB_clean.pdb",
+  "chains": [
+    "A",
+    "B"
+  ],
+  "rename": {},
+  "het_policy": "keep_cofactor",
+  "n_atom": 7077,
+  "het_kept": {
+    "FAD": 106
+  },
+  "het_dropped": {
+    "BTB": 66,
+    "SO4": 50,
+    "HOH": 537
+  },
+  "bytes": 575750
+}

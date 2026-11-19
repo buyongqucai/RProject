@@ -32,8 +32,9 @@ CJ：由 QJ 配对残基并集生成（ST 与 PT 两侧），禁止为减负删�
 | `big-N.pse` / `图片/big-N.png` | ST+PT cartoon + CJ + QJ；无残基标签 |
 | `surface-N.pse` / `图片/surface-N.png` | ST surface + PT cartoon/surface 策略见脚本；+ CJ/QJ；无标签 |
 | `detail-N.pse` | 透明 cartoon + CJ 界面 + 标签；**手调后**再截图 |
-| `图片/detail-*.png` | 用户截图 → `prepare_detail_square.py` 切方（禁止定稿用偷懒 `cmd.png` 代替手调） |
-| `图片/result_*.png` | 同一 big + 对应 detail；`combine_pp_result.py` |
+| `图片/detail-N_用户原图.png` | 手调后用户截图（可多张） |
+| `图片/detail-*.png` | `prepare_detail_square.py`：对接颜色定界 → 正方形 → 6000² |
+| `图片/result_*.png` | 同一 big + 对应 detail；对接拼图脚本 |
 
 `--out-dir` 必须指向该任务夹（例：`…_蛋白蛋白对接_序号文件夹/1`）。
 
@@ -43,9 +44,9 @@ big/surface：Draw(fast) 默认 **5040×3653、dpi=600、ray=0**（对齐分子�
 
 | 步骤 | 文档/脚本 |
 |------|-----------|
-| 手调标签后截图 | 分子对接 SOP **§7.3**；窗口最大化；用户截图优先 |
-| 切正方形 | `脚本_scripts/prepare_detail_square.py`（白边 + 近白行/列 → 居中切方，禁垫白） |
-| 拼图 | SOP **§7.4**；`combine_pp_result.py` → `E:\PythonProject\分子对接\2.分子对接结果图组合.py` |
+| 手调后 1:1 detail | 对接 SOP **§7.3 完整钩子**：`export_detail_png_from_pse.py --root <本任务夹>`（先 zoom 再裁方；只改路径） |
+| 用户已截好的 PNG | `prepare_detail_square.py`（对接颜色→正方形→拉大）；**禁止** `side=min` cover / 垫白 |
+| 拼图 | SOP **§7.4**：`E:\PythonProject\分子对接\2.分子对接结果图组合.py --dir=<图片>` |
 | 指针摘要 | [`result拼图与detail导出定稿_CollageDetailExport.md`](../../分子对接与虚拟筛选_MolecularDocking/文档_docs/result拼图与detail导出定稿_CollageDetailExport.md) |
 
 取景仍以 `zoom(PT or CJ, buffer=4)` 等钩子逻辑为准（有 CJ 则 `PT or CJ`）。

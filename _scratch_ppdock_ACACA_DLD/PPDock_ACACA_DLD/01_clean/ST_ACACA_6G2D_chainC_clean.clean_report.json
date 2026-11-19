@@ -1,0 +1,13 @@
+{
+  "src": "E:\\RProject\\_scratch_ppdock_ACACA_DLD\\PPDock_ACACA_DLD\\00_raw\\PDB_6G2D_ACACA.pdb",
+  "dst": "E:\\RProject\\_scratch_ppdock_ACACA_DLD\\PPDock_ACACA_DLD\\01_clean\\ST_ACACA_6G2D_chainC_clean.pdb",
+  "chains": [
+    "C"
+  ],
+  "rename": {},
+  "het_policy": "keep_cofactor",
+  "n_atom": 16940,
+  "het_kept": {},
+  "het_dropped": {},
+  "bytes": 1356015
+}

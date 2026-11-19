@@ -18,7 +18,7 @@
   （可选）00_raw/ 01_clean/ 02_submit/ task_info.yaml STATUS.md
   summary_*_scores.tsv                  # 可放交付夹根或 ServerRaw
   00_服务器原始包_ServerRaw/            # 可选
-  1/ … N/                               # 每个构象（rank）一个数字任务夹 —— 强制
+  1/                                    # 默认仅最优构象（model_1）；用户要 topN 才建 2/…N/
 ```
 
 ### 0.1 单任务夹（强制，同分子对接 §2.2）
@@ -126,7 +126,7 @@ N/
 | 对接前检查 | 可并排 `fig_clean_check`；**不得**当对接结果交付 |
 | 对接后 | 对象 **ST / PT / CJ / QJ**（见 PyMOL可视化_ST-PT） |
 | big / surface | 完整入画；无残基标签；PNG 仅在 `图片/` |
-| detail | **先手调标签再截图**（用户截图优先）；再 `prepare_detail_square.py` 切方 |
+| detail | **先手调标签再截图** → 原图存 `图片/detail-N_用户原图.png` → `prepare_detail_square.py`（颜色→正方形→拉大） |
 | result | 分子对接 §7.4；`combine_pp_result.py`（引擎=分子对接拼图脚本 + `背景图.png`） |
 
 脚本：`pymol_pp_dock_viz_standard.py`（常用 `E:\pymol\python.exe`）；切方/拼图见 `脚本_scripts/说明_README.md`。

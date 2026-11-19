@@ -16,7 +16,7 @@ description: >-
 > **PyMOL：** [`文档_docs/PyMOL可视化_ST-PT.md`](文档_docs/PyMOL可视化_ST-PT.md)（**ST/PT/CJ/QJ**）  
 > **拼图指针：** 分子对接 [`result拼图与detail导出定稿`](../分子对接与虚拟筛选_MolecularDocking/文档_docs/result拼图与detail导出定稿_CollageDetailExport.md)  
 > **叠加：** DeliveryStandards + VizStandards + PlotQA。  
-> **金标目录：** 桌面 `{ST}_{PT}_蛋白蛋白对接_序号文件夹/`（例：`ACACA_DLD_蛋白蛋白对接_序号文件夹/1/`）
+> **金标目录：** 桌面 `{ST}_{PT}_蛋白蛋白对接_序号文件夹/1/`（**默认仅最优构象**；其余 rank 留 ServerRaw）
 
 ## 1. 数据来源
 

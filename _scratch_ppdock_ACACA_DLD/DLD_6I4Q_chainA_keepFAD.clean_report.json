@@ -1,0 +1,21 @@
+{
+  "src": "C:\\Users\\10540\\Downloads\\DLD-6I4Q.pdb",
+  "dst": "E:\\RProject\\_scratch_ppdock_ACACA_DLD\\DLD_6I4Q_chainA_keepFAD.pdb",
+  "chains": [
+    "A"
+  ],
+  "rename": {
+    "A": "B"
+  },
+  "het_policy": "keep_cofactor",
+  "n_atom": 3507,
+  "het_kept": {
+    "FAD": 53
+  },
+  "het_dropped": {
+    "BTB": 33,
+    "SO4": 30,
+    "HOH": 288
+  },
+  "bytes": 285908
+}

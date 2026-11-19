@@ -35,7 +35,7 @@ Issues 以本地 markdown 跟踪，目录 `.scratch/<功能名>/`。详见 `docs
 
 ### 影刀 CLI（疾病/药物取数）
 
-项目技能：`.cursor/skills/shadowbot-cli/SKILL.md`。Windows 用 `shadowbot.shell-cli.exe`，Linux/mac/信创用 `shadowbot-cli`。拖入影刀应用目录时，一并使用其中 `kind: Code` 的 Python 指令。
+项目技能：`.cursor/skills/shadowbot-cli/SKILL.md`。Windows 用 `shadowbot.shell-cli.exe`，Linux/mac/信创用 `shadowbot-cli`。拖入影刀应用目录时，一并使用其中 `kind: Code` 的 Python 指令。写或修改应用时再 Read 全局技能 `~/.cursor/skills/shadowbot-develop/SKILL.md`。
 
 ### 全局邮件告警（跨项目）
 

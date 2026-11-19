@@ -1,0 +1,24 @@
+st_partner: DLD
+pt_partner: SCD
+pdb_st: 6I4Q
+pdb_pt: 4ZYO
+chains_st: ["A", "B"]
+chains_pt: ["A"]
+chain_source_st: auth_asym_partner
+chain_source_pt: entity_longest
+chain_survey: 01_clean/chain_survey.md
+het_policy: keep_cofactor
+het_kept: [FAD, ZN]
+het_dropped: [BTB, SO4, HOH, ST9, LMT]
+email: 1054034696@qq.com
+servers:
+  hdock:
+    status: queued
+    job_id: "6aed98ee37a8c"
+    job_name: DLD_SCD
+    receptor: "6I4Q:AB"
+    ligand: "4ZYO:A"
+    results_url: "http://hdock.phys.hust.edu.cn/data/6aed98ee37a8c/"
+    note: PDB ID mode; SCD membrane fragment 3.25A; hypothetical PPI
+model_note: "4ZYO 3.25A membrane fragment UNP45-359; no strong DLD–SCD PPI evidence"
+status: queued_hdock

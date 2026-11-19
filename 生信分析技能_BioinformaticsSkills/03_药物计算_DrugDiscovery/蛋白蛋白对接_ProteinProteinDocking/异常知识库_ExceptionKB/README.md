@@ -10,4 +10,4 @@
 | 02 | 辅因子被误删 | clean_report 无 FAD 等 | keep_cofactor 重清 | [02](案例_Cases/02-辅因子误删.md) |
 | 03 | 跳过调研直接最长链 | 无 chain_survey | 补调研模板 | [03](案例_Cases/03-跳过调研直接最长链.md) |
 | 04 | 全纤维链超体积 | 多全长链合计过大 | 只留代表原体/CA | [04](案例_Cases/04-全纤维链超体积.md) |
-| 05 | detail 白边未裁净 | 边缘行 white_frac≥0.92 | `prepare_detail_square.py` | [05](案例_Cases/05-detail白边未裁净.md) |
+| 05 | detail 白边/标签被切 | cover 切方 or 垫白 | `prepare_detail_square.py`（颜色→正方形→拉大） | [05](案例_Cases/05-detail白边未裁净.md) |

@@ -1,0 +1,476 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>HDOCK Server</title>
+
+<head>
+<style type="text/css">
+	a:link {color:black}
+	a:visited {color:black}
+	a:hover {color:blue}
+	a:active {color:white}
+</style>
+<link href="/style.css" rel="stylesheet" type="text/css">
+
+<script language="JavaScript" type="text/javascript">
+
+function popup(mylink, windowname)
+{
+if (! window.focus)return true;
+var href;
+if (typeof(mylink) == 'string')
+   href=mylink;
+else
+   href=mylink.href;
+window.open(href, windowname, 'width=1020,height=400,scrollbars=yes');
+return false;
+}
+
+function example(pdbid,name,id)
+{
+var STR=IO("example/"+pdbid+"/"+name+".fasta");
+document.getElementById("fastaseq"+id).value = STR;
+if ( name == "monomer" ){
+	document.getElementById("symmetry").value = "D2";
+}
+if ( pdbid == "1CGI" && name == "lig" ){
+	document.getElementById("ligtyp").value = "protein";
+}
+}
+
+
+function example1()
+{
+var STR=IO("example1.fasta");
+document.form1.fastaseq1.value = STR;
+}
+
+function example2()
+{
+var STR=IO("example2.fasta");
+document.form1.fastaseq2.value = STR;
+}
+
+function IO(U, V) 
+{
+    var X = !window.XMLHttpRequest ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttpRequest();
+    X.open(V ? 'PUT' : 'GET', U, false );
+    X.setRequestHeader('Content-Type', 'text/html')
+    X.send(V ? V : '');
+return X.responseText;
+}
+
+function formAction (action, id)
+{
+	if (action == 'show')
+	{
+		document.getElementById("optionForm"+id).style.display= "block";
+		if(document.getElementById("optionGraphic"+id)){
+		  document.getElementById("optionGraphic"+id).src="/image/down_triangle.gif";
+		}
+		if(document.getElementById("showtext"+id)){
+		  document.getElementById("showtext"+id).innerHTML = "Hide):";
+		}
+		document.getElementById("option"+id).href= "javascript:formAction('hide', "+id+")";
+	}
+	
+	if (action == 'hide')
+	{
+		document.getElementById("optionForm"+id).style.display= "none";
+		if(document.getElementById("optionGraphic"+id)){
+		  document.getElementById("optionGraphic"+id).src="/image/right_triangle.gif";
+		}
+		if(document.getElementById("showtext"+id)){
+		  document.getElementById("showtext"+id).innerHTML = "Show):";
+		}
+		document.getElementById("option"+id).href= "javascript:formAction('show', "+id+")";
+	}
+}
+
+function showhideMessage()
+{
+	var ele = document.getElementById("div_message");
+
+        if(ele.style.display == "block") {
+                ele.style.display = "none";
+        }   
+        else 
+	{
+                ele.style.display = "block";
+
+        }   
+}
+
+function showhideNote()
+{
+	var ele = document.getElementById("div_Note");
+
+        if(ele.style.display == "block") {
+                ele.style.display = "none";
+        }   
+        else 
+	{
+                ele.style.display = "block";
+        }   
+}
+
+function autofill_pdb(id,pdbid)
+{
+	if(id==1){
+		document.getElementById('pdbid1').value=pdbid;
+		change_default();
+	}else if(id==2){
+		document.getElementById('pdbid2').value=pdbid;
+		change_default();
+	}
+}
+
+function OnSubmitForm(){
+        let sym = document.getElementById("symmetry");
+
+        let pdbfile1 = document.getElementById("pdbfile1");
+        let pdbid1 = document.getElementById("pdbid1");
+        let fastafile1 = document.getElementById("fastafile1");
+        let fastaseq1 = document.getElementById("fastaseq1");
+
+        let pdbfile2 = document.getElementById("pdbfile2");
+        let pdbid2 = document.getElementById("pdbid2");
+        let fastafile2 = document.getElementById("fastafile2");
+        let fastaseq2 = document.getElementById("fastaseq2");
+
+        let inputjobname = document.getElementById("jobname");
+	if ( inputjobname.value ) {
+		inputjobname.value = inputjobname.value.trim().replace(/\s+/g, '_');
+	}
+
+        console.log(sym.value);
+        if( ! sym.value ){
+		let recinput = pdbfile1.value + pdbid1.value + fastafile1.value + fastaseq1.value + "";
+		if ( ! recinput ){
+			alert('Receptor input is required.');
+			return false;
+		}
+
+		let liginput = pdbfile2.value + pdbid2.value + fastafile2.value + fastaseq2.value + "";
+		if ( ! liginput ){
+			alert('Ligand input is required.');
+			return false;
+		}
+
+                document.form1.action="runhdock.php";
+        }
+        else{
+		let recinput = pdbfile1.value + pdbid1.value + fastafile1.value + fastaseq1.value + "";
+		if ( ! recinput ){
+			alert('Receptor input is required.');
+			return false;
+		}
+
+                document.form1.action="runhsymdock.php";
+        }
+	return true;
+}
+
+
+</script>
+
+</head>
+<body link="#000099" VLINK="#000099" ALINK="#000099">
+
+<table style="width:%100; border:0; cellspacing:0 cellpadding:0">
+
+<tr style="height:100px;">
+        <td style="padding:10px 10px 10px 10px;background-image:url('/image/complex.png');">
+        <br>
+        <div align="center" style="text-shadow:3px 3px 3px gray;font-weight:bold;line-height:100%;font-size:2.6em;color:black">
+        HDOCK SERVER<font style="font-size:18px;color:blue"> </font>
+        </div>
+
+<div id="left" style="float:left ;  width:31%; "></div>
+<div id="right" style="float:right ;  width:69%; ">
+<p style="font-size:120%;">
+Protein-protein and protein-DNA/RNA docking
+based on a hybrid algorithm of template-based modeling and <i>ab initio</i> free docking.
+</p>
+</div>
+
+</td>
+</tr>
+
+<tr style="height:18px; background-color:white">
+	<td style="text-align:center;font-weight:bold;padding:5px 0px 5px 0px;
+	 border-bottom-color:black;
+  border-bottom-style:solid; border-bottom-width:0.5px;">
+
+[<a target="_blank" href="http://huanglab.phys.hust.edu.cn">Huang Lab</a>] &nbsp;
+[<a target="_blank" href="/">HDOCK</a>]  &nbsp;
+[<a target="_blank" href="/help.php" target="_blank">Help</a>]  &nbsp;
+[<a target="_blank" href="/data/example/">Output example</a>] &nbsp;
+
+</td>
+</tr>
+</table>
+
+<div style="text-align: center; color: red;">
+<mark><b>Notice 7/7/2026:</b> Our server was having problems in supporting sequence input for DNA/RNA in the last three weeks. It's fixed now!!!</mark>
+</div>
+
+<!-- #071d75 -->
+<form id="form1" name="form1" enctype="multipart/form-data" onSubmit="OnSubmitForm();" action="" method="post">
+
+<table class="fixed" style="width:100%;line-height:1.8em; padding:10px 10px 10px 10px">
+
+<tr style="background-color:lightgray;">
+<td>
+<strong><font color="#000099">Input Receptor Molecule</font></strong> 
+<font color=red>using <b>ONE</b> of the following four options:</font> 
+[<a href="help.html#input" onClick="return popup(this, 'notes')">help</a>]
+</td></tr>
+
+<tr height=60 halign="left" > <td width=200>
+<ul>
+<li>Upload your <b>pdb</b> file in <a target="_blank" href="http://www.rcsb.org/pdb/static.do?p=file_formats/pdb/index.html">PDB format</a>:
+<input name="pdbfile1" id="pdbfile1" style="width: 300px" type="file"> 
+[<a href="/example/receptor.pdb" onClick="return popup(this, 'notes')">example</a>]</li> 
+<b>OR</b> provide your <b>pdb</b> file in PDB ID:ChainID:
+<input name="pdbid1" id="pdbid1" type="text" pattern="[A-Za-z0-9]{4}:[A-Za-z0-9]+" title="Please follow PDB ID:ChainID format!"  size="12" maxlength="12"> 
+(<a href="javascript:void(0)" onclick="autofill_pdb(1,'1CGI:E')">Example: 1CGI:E</a>)<br>
+<b>OR</b> copy and paste your <b>sequence</b> below in <a target="_blank" href=https://en.wikipedia.org/wiki/FASTA_format>FASTA format</a> 
+(Sample input: 
+<a href="javascript:example('1CGI','rec',1)">1CGI:E</a>, 
+<a href="javascript:example('1HCJ','monomer',1)">1HCJ:A</a>
+)<br>
+<textarea name="fastaseq1" id="fastaseq1" rows=6 cols=100 maxlength="5500" ></textarea><br>
+<b>OR</b> upload your <b>sequence</b> file in <a target="_blank" href=https://en.wikipedia.org/wiki/FASTA_format>FASTA format</a>:
+<input name="fastafile1" id="fastafile1" style="width: 300px" type="file">
+[<a href="/example/receptor.fasta" onClick="return popup(this, 'notes')">example</a>]
+<br>
+</ol>
+</td> </tr>
+
+<tr style="background-color:lightgray;"><td>
+<strong><font color="#000099">Input Ligand Molecule</font></strong>
+<font color=red>using <b>ONE</b> of the following four options:</font>
+[<a href="help.html#input" onClick="return popup(this, 'notes')">help</a>]
+</td></tr>
+
+<tr height=60 halign="left" >
+<td width=200>
+<ul>
+<li>Upload your <b>pdb</b> file in <a target="_blank" href="http://www.rcsb.org/pdb/static.do?p=file_formats/pdb/index.html">PDB format</a>:
+<input name="pdbfile2" id="pdbfile2" style="width: 300px" type="file">
+[<a href="/example/ligand.pdb" onClick="return popup(this, 'notes')">example</a>]
+</li>
+<b>OR</b> provide your <b>pdb</b> file in PDB ID:ChainID:
+<input name="pdbid2" id="pdbid2" type="text" pattern="[A-Za-z0-9]{4}:[A-Za-z0-9]+" title="Please follow  PDB ID:ChainID format!" size="12" maxlength="12"> 
+(<a href="javascript:void(0)" onclick="autofill_pdb(2,'1CGI:I')">Example: 1CGI:I</font></a>)<br>
+<b>OR</b> copy and paste your <b>sequence</b> below in <a target="_blank" href=https://en.wikipedia.org/wiki/FASTA_format>FASTA format</a> 
+(Sample input: 
+<a href="javascript:example('1CGI','lig',2)">1CGI:I</a>
+)
+<select name="ligtyp" id ="ligtyp">
+  <option value="" selected="selected">Select a type</option>
+  <option value="protein">Protein</option>
+  <option value="rna">ssRNA</option>
+  <option value="dna">dsDNA</option>
+  <option value="rna.d">dsRNA</option>
+  <option value="rna">ssDNA</option>
+</select>
+&nbsp;[<a href="help.html#type" onClick="return popup(this, 'notes')">help</a>]
+<br>
+<textarea name="fastaseq2" id="fastaseq2" rows=6 cols=100 maxlength="5500"></textarea><br>
+<b>OR</b> upload your <b>sequence</b> file in <a target="_blank" href=https://en.wikipedia.org/wiki/FASTA_format>FASTA format</a>:
+<input name="fastafile2" id="fastafile2" style="width: 300px" type="file">
+[<a href="/example/ligand.fasta" onClick="return popup(this, 'notes')">example</a>]
+<br>
+</ul>
+</td> </tr>
+
+
+<!--
+<tr><td width=260>
+<strong><font color="#000099">Option I:</font></strong>
+Use available binding site information from the PDB? </font></strong>
+<input type="radio" name="pdbsite" value="no" checked>No
+<input type="radio" name="pdbsite" value="yes">Yes
+</td></tr>
+-->
+
+<tr  style="background-color:lightgray;"><td>
+        <b><font color="#000099">Advanced Options (Optional):</font></b>
+</td></tr>
+
+
+<tr><td>
+
+	<ul>
+
+	<li>Template-free docking only 
+	<input type="checkbox" name="hdock" Value="hdocklite" > &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
+	[<abbr title="By default, HDOCK conducts the hybrid protocol of template-based modeling and free docking.  
+Users may perform template-free docking only without using the complex information in the PDB by checking this box.">Explanation</abbr>]
+	</li>
+
+	 <li>Symmetric multimer docking: 
+         <input type="text" name="symmetry" id="symmetry" size="12" pattern="[cCdDhH][0-9]+$"> &emsp; (<i>e.g., <b>C2</b> or <b>C3</b> for Cyclic; <b>D2</b> or <b>D3</b> for Dihedral</i>)
+	 &emsp;&emsp;&emsp;&emsp;
+	 [<abbr title="For symmetric multimer docking, only the Receptor Molecule is needed. 
+HDOCK server supports both cyclic and dihedral symmetric docking.">Note</abbr>]
+	</li>
+
+	<li>SAXS experimental data file:
+	<input name="saxsfile" id="saxsfile" style="width: 300px" type="file">
+	[<a href="help.html#saxs" onClick="return popup(this, 'notes')">help</a>] 
+	[<a href="/example/saxs_1cgi.dat" onClick="return popup(this, 'notes')">example</a>]
+	</li>
+
+	<!-- changes made for javascript hideable form -->
+	<li>
+	<a id="option1" href="javascript:formAction('show', 1)"><img id="optionGraphic1" border=0 src="/image/right_triangle.gif" /> Specify the residues of the binding site. </a>
+
+	<div id="optionForm1" style="display:none">
+
+	   <table cellpadding="5" >
+
+	   <tr>
+               <td align="left"><li>Receptor binding site residue(s):</td>
+               <td><input type="text" name="sitenum1" pattern="[A-Za-z0-9:,\s\-]*" size="33"></td>
+               <td> <A HREF="help.html#site" onClick="return popup(this, 'notes')">Explanation</A></td>
+  	   </tr>
+           <tr>
+               <td align="left"><b>OR</b> upload your binding site file:</td>
+               <td><input type="file" name="sitefile1" size="30"></td>
+               <td> <A HREF="help.html#site" onClick="return popup(this, 'notes')">Explanation</A></td>
+           </tr>
+
+           <tr>
+	       <td align="left"><li>Ligand binding site residue(s):</td>
+	       <td><input type="text" name="sitenum2" pattern="[A-Za-z0-9:,\s\-]*" size="33"></td>
+	       <td> <A HREF="help.html#site" onClick="return popup(this, 'notes')">Explanation</A></td>
+           </tr>	
+           <tr>
+               <td align="left"><b>OR</b> upload your binding site file:</td>
+               <td><input type="file" name="sitefile2" size="30"></td>
+               <td> <A HREF="help.html#site" onClick="return popup(this, 'notes')">Explanation</A></td>
+           </tr>
+
+	   <tr>
+	       <td align="left"><li>Residue distance restraints:</td>
+	       <td><input type="text" name="restrnum" pattern="[A-Za-z0-9:,\s\-]*" size="33"></td>
+	       <td> <A HREF="help.html#restraint" onClick="return popup(this, 'notes')">Explanation</A></td>
+	   </tr>
+           <tr>
+               <td align="left"><b>OR</b> upload your restraint file:</td>
+               <td><input type="file" name="restrfile" size="30"></td>
+               <td> <A HREF="help.html#restraint" onClick="return popup(this, 'notes')">Explanation</A></td>
+           </tr>
+
+	   </table>
+
+	</div>
+
+	</li>
+
+	</ul>
+
+</td></tr>
+
+
+<tr><td width=260>
+<strong><font color="#000099">Optional:</font></strong>
+</td></tr>
+
+<tr><td width=260>
+    <ul>
+
+	Enter your email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input name="email" id="emailaddress" type="email" size="35" maxlength="100">
+	<br>
+
+	Enter your jobname:
+	<input name="jobname" id="jobname" type="text" size="35" maxlength="100">
+    </ul>
+
+</td></tr>
+
+<tr><td style="padding-left:50px;padding-top:0px">
+
+	<input name="upload" type="submit" value="Submit"> &nbsp;
+	<INPUT TYPE="reset" VALUE="Clear form">
+	<!-- INPUT TYPE="reset" VALUE="Clear form" class="btn" -->
+
+</td></tr>
+
+</table>
+
+</form>
+
+<p style="text-align:center;"><a target="_blank" href="http://huanglab.phys.hust.edu.cn/software/hdocklite/"><b>Download the HDOCKlite v1.1 standalone package</b></a> <sup><i><mark>new</mark></i></sup></p>
+
+
+<div style="padding: 0px 10px 5px 10px">
+
+<hr>
+
+<b>References:</b>
+<ol>
+<li>
+Yan Y, Tao H, He J, Huang S-Y.* The HDOCK server for integrated protein-protein docking. 
+Nature Protocols, 2020; doi: https://doi.org/10.1038/s41596-020-0312-x.
+</li>
+<li>
+Yan Y, Zhang D, Zhou P, Li B, Huang S-Y. HDOCK: a web server for
+protein-protein and protein-DNA/RNA docking based on a hybrid strategy. Nucleic
+Acids Res. 2017;45(W1):W365-W373.
+</li>
+<li>Yan Y, Wen Z, Wang X, Huang S-Y. Addressing recent docking challenges: A hybrid
+strategy to integrate template-based and free protein-protein docking. Proteins 
+2017;85:497-512.</li>
+<li>Huang S-Y, Zou X. A knowledge-based scoring function for protein-RNA
+interactions derived from a statistical mechanics-based iterative method. Nucleic
+Acids Res. 2014;42:e55.</li>
+<li>Huang S-Y, Zou X. An iterative knowledge-based scoring function for protein-protein recognition. Proteins
+2008;72:557-579.</li>
+</ol>
+
+<b>If you submit sequences, please also cite:</b>
+<ol>
+<li>Remmert M, Biegert A, Hauser A, Soing J. HHblits: lightning-fast iterative
+protein sequence searching by HMM-HMM alignment. Nat Methods. 2011;9:173-175.</li>
+<li>W. R. Pearson and D. J. Lipman. Improved tools for biological sequence comparison. Proc
+Natl Acad Sci USA 1988;85:2444-2448.</li>
+<li>Sievers F, Wilm A, Dineen D, Gibson TJ, Karplus K, Li W, Lopez R, McWilliam H,
+Remmert M, Soding J, Thompson JD, Higgins DG. Fast, scalable generation of
+high-quality protein multiple sequence alignments using Clustal Omega. Mol Syst
+Biol. 2011;7:539.</li>
+<li>Larkin MA, Blackshields G, Brown NP, Chenna R, McGettigan PA, McWilliam H,
+Valentin F, Wallace IM, Wilm A, Lopez R, Thompson JD, Gibson TJ, Higgins DG.
+Clustal W and Clustal X version 2.0. Bioinformatics. 2007;23:2947-8.</li>
+<li>Marti-Renom MA, Stuart A, Fiser A, Sanchez R, Melo F, Sali A.
+Comparative protein structure modeling of genes and genomes. Annu
+Rev Biophys Biomol Struct 2000;29:291-325.</li>
+<li>Berman HM, Westbrook J, Feng Z, Gilliland G,
+Bhat TN, Weissig H, Shindyalov IN, Bourne PE. The Protein Data
+Bank. Nucleic Acids Res 2000;28:235-242.</li>
+</ol>
+
+</div>
+
+<div id="clustrmaps-widget"></div>
+
+<div style="text-align:center;color:blue;line-height:20px">
+The PDB database is updated monthly. Current version: 2026-06-26
+<div>
+
+
+<div style="width:%100;text-align:center;line-height:30px;font-size:90%;color:white; background-color:gray">
+&copy; Lab of Bioinformatics and Molecular Modeling, huanglab@hust.edu.cn
+</div>
+
+<script>
+#  window.location.href="/maintain.php"
+</script>
+
+</body>
+
+</html>

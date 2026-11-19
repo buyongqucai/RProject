@@ -1,0 +1,7 @@
+HDOCK 序号文件夹（对齐分子对接金标：一任务一数字目录）
+
+1/ 2/ 3/ … = Top 构象任务夹
+  任务根：model_N.pdb、ST/PT 拆分、interface、*.pse、task_info.txt
+  图片/：仅 PNG（big/surface/detail；定稿后补 result_N.png）
+00_服务器原始包_ServerRaw/ = 服务器整包下载存档（其余 rank、tar.gz）
+summary_hdock_scores.tsv = Top10 分数表

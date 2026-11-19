@@ -1,128 +1,134 @@
-> 昱阳课题研究计划 SSOT。存放规范见同项目 `00_文件存放映射_FileLayout.md`。  
-> 口径：计算预测；非重复暴露湿实验；非槲皮素给药臂。  
-> 已引用：研究方案编排 + 网络药理学 + 网络毒理学 + RNA-seq/DEG + 分子对接（执行阶段再打开各技能 SSOT）。
+# 昱阳课题研究计划（重做版 · 2026-10-16）
 
-## 1. 科学问题（锁定表述）
-
-基于 **GSE106799** 鉴定新生小鼠丙泊酚暴露相关 DEG，结合 **CTD 化学–基因（propofol）** 补充疾病侧；药物侧为槲皮素 **实验活性靶（ChEMBL ± BindingDB）∪ 多源预测靶**；取交集预测潜在干预靶点与通路，并对核心靶点做分子对接。
-
-**禁止写法：**「槲皮素治疗丙泊酚重复暴露小鼠」——无给药臂、非多日重复暴露、结论仅为 in silico。
-
-**可写：** 新生期丙泊酚暴露发育神经毒性 × 槲皮素（计算预测干预靶点）。
-
-## 2. 双口径目录（同级）
-
-```text
-昱阳项目/
-  01_分析报告_AnalysisReport/          ← 计划与汇总（共用）
-  02_未补充口径_Baseline_STPonly/      ← 备份冻结：仅 STP × DEG
-  03_补充口径_Expanded_MultiSource/    ← 主执行：实验∪预测 × DEG∪CTD
-```
-
-每个口径内部步骤同级编号：
-
-| 子目录 | 阶段 | 说明 |
-|--------|------|------|
-| `01_差异分析与药靶断点_DEGandGate` | A | DEG + 药靶 + 断点 |
-| `02_可选严谨包_RigorOptional` | B | **默认不跑**；见下 |
-| `03_富集与PPI_EnrichPPI` | C | 一轮 GO/KEGG + PPI |
-| `04_分子对接_Docking` | C | 对接 |
-
-### 严谨包决策
-
-| 口径 | 严谨包 |
-|------|--------|
-| **未补充** | **确认不执行**；STATUS = `SKIPPED_CONFIRMED_DONE`（目录保留；不加宽口径不做严谨包） |
-| **补充** | **已确认试跑**；STATUS = `DONE`（旁路：阈值敏感性 / 超几何 / GSEA / 多站共识；**不改**主交集名单） |
-
-## 3. 分析路线（补充口径 = 主线）
-
-```mermaid
-flowchart LR
-  GEO[GSE106799] --> DEG[主阈值DEG]
-  CTD[CTD_propofol化学基因] --> Dis[疾病基因并集]
-  DEG --> Dis
-  ExpT[ChEMBL_BindingDB实验靶] --> Drug[药靶并集分层]
-  Pred[STP及3to5预测站] --> Drug
-  Drug --> Map[人鼠映射]
-  Dis --> Gate[数量断点]
-  Map --> Gate
-  Gate --> Enrich[一轮GO_KEGG]
-  Gate --> PPI[STRING_PPI]
-  PPI --> Hub[Hub]
-  Hub --> Dock[对接]
-  Gate -.->|仅补充口径且你确认| Opt[可选严谨包]
-```
-
-### 药靶：并集 + 分层（非交集作门槛）
-
-| 层 | 来源 | 标签 |
-|----|------|------|
-| 实验 | ChEMBL（CHEMBL50）；BindingDB（可达时） | `experimental` |
-| 预测 | SwissTargetPrediction + 另 3–5 预测站 | `predicted` |
-| **主池** | **实验 ∪ 预测** | 分表可溯源 |
-| 双证据 | 实验 ∩ 预测 | 仅排序/优先湿实验，不作唯一名单 |
-
-实验靶过滤（写死）：优先 binding 类；有标准值时 **≤ 10 µM**（或等价 pChEMBL）；物种优先人源再同源小鼠。
-
-预测站（补充口径目标 4–6 源，含 STP）：STP（已入库）；PharmMapper / TargetNet / BATMAN 已入库；SEA / Super-PRED 接口不可用时手工导出。**各源筛选门槛见** `03_补充口径_Expanded_MultiSource/.../04_STP_STITCH_PharmMapper_TargetNet_BATMAN_预测靶点/DATA_SOURCE.md`（PharmMapper **已采纳加宽版**：研究相关物种=小鼠∪人 ∩ Normalized Fit ≥ 0.6；≥0.8 仅作严格审计）。每源独立 CSV + 证据标签。
-
-### 疾病基因（补充口径）
-
-| 层 | 来源 | 规则 |
-|----|------|------|
-| 主 | GSE106799 DEG | `\|logFC\|≥1 & P<0.05`（与已跑一致） |
-| 补充 | CTD 化学–基因 *propofol* | curated 优先；人/鼠 → 小鼠符号 |
-| **主池** | **DEG ∪ CTD** | 分表标明来源 |
-| **明确不做** | P60 文献基因表；宽病名疾病六库并集 | — |
-
-未补充口径：疾病 = 仅 DEG；药物 = 仅 STP（Probability>0）——已跑通并冻结备份。
-
-### 阶段
-
-- **A**：PCA/DEG（可复用）→ 药靶整合 → 人鼠映射 → 断点表  
-- **B**：可选严谨包（见上表）  
-- **C**：一轮富集（交集&lt;15 则 ORA 用全疾病基因池）→ PPI → 对接 Top hub  
-- **明确不做**：WGCNA、ML 选 hub、双轮 ORA、治疗因果宣称  
-
-后续湿实验：优先 **实验靶 ∩ 疾病**，其次高概率/多站共识预测 ∩ 疾病。
-
-## 4. 数据来源摘要
-
-| 侧 | 未补充口径 | 补充口径 |
-|----|------------|----------|
-| 疾病 | GSE106799 DEG | DEG ∪ CTD(propofol) |
-| 药物 | STP only | ChEMBL±BindingDB ∪ 多预测站 |
-| GEO 主集 | GSE106799 | 同左（不换 GSE186216/200968 作毒性主 DEG） |
-
-配体：PubChem CID **5280343**（Quercetin）。  
-PPI：STRING；对接：Vina/AutoDock-GPU 按对接技能 SOP。
-
-## 5. 技能组合（有序）
-
-1. DataAuthenticity — GSE106799  
-2. RNA-seq — DEG / 火山 / 热图  
-3. NetworkToxicology — CTD 化学–基因  
-4. NetworkPharmacology — 药靶分层、韦恩、PPI  
-5. GSEA-Pathway — 一轮 ORA（及你确认后的可选 GSEA）  
-6. MolecularDocking — 槲皮素–hub  
-7. VizStandards + DeliveryStandards  
-
-## 6. 交付物
-
-- 双口径各自：断点表、药靶分层表、疾病并集表、交集、一轮 GO/KEGG、PPI/hub、对接（补充口径跑通；未补充对接/富集可标跳过或未展开）  
-- 报告汇总在 `01_分析报告`  
-- 口径：in silico / 计算预测；DPI≥600；图面 English  
-
-## 7. 风险与局限
-
-- 公开小鼠丙泊酚毒性 bulk 几乎仅 GSE106799；样本量小  
-- STP 训练背景含 ChEMBL，实验靶与预测部分重叠 → 必须分层，勿称「完全独立验证」  
-- 多预测站并集抬假阳性；用证据标签与（可选）≥2 站共识降噪  
-- 对接 ≠ 湿实验验证  
-- CTD 边为策展关联，不等于本实验因果  
+> **本版取代**旧「双口径 DEG∪CTD × 实验∪预测」。旧稿归档：`01_研究计划_ResearchPlan_旧双口径_archived_2026-10-16.md`。  
+> **整夹备份：** `E:\RProject\_备份_Backup\昱阳项目_重做前_2026-10-16\`；项目内归档：`_archived_旧双口径_2026-10-16\`。  
+> 口径：计算预测 / in silico；**禁止**写成「槲皮素治疗丙泊酚暴露」疗效结论。  
+> 已引用：网络药理学（CTD_curated + 韦恩/PPI）+ 分子对接 FROZEN + VizStandards + DeliveryStandards（课题双报告 §2.1）。
 
 ---
 
-**执行默认（本版锁定）：**  
-补充口径为主线；药靶 = 实验 ∪ 预测（分层）；疾病 = DEG ∪ CTD；不做 P60、不做宽病名六库；未补充口径备份冻结且严谨包不执行；补充口径严谨包已试跑（旁路，不改主交集）。
+## 1. 科学问题（锁定表述）
+
+以 **CTD curated（Direct Evidence）** 获取丙泊酚相关疾病/化学–基因靶点为疾病侧；以 **槲皮素（Quercetin, PubChem CID 5280343）预测药物靶点** 为药物侧；二者取交集，做一轮富集、STRING PPI，并对核心 hub 做分子对接。
+
+**可写：** 丙泊酚相关靶点 × 槲皮素预测靶点的网络药理学与对接（计算预测）。  
+**不可写：** 治疗 / 已验证机制 / 湿实验结论。
+
+> 用语说明：用户口令「CTD 疾病治愈靶点」按网药冻结口径落实为 **CTD_curated（审编 / Direct Evidence）**，不用 CTD_any。
+
+---
+
+## 2. 与旧版差异（强制）
+
+| 项 | 旧双口径 | **本版重做** |
+|----|----------|----------------|
+| 疾病侧 | GSE106799 DEG ∪ CTD | **仅 CTD_curated**（propofol 化学–基因；人/鼠映射到统一符号） |
+| 药物侧 | ChEMBL±BindingDB 实验 ∪ 多站预测 | **仅槲皮素预测靶点**（STP 为主；可并列 1–2 站并分层标注，**不作实验层门槛**） |
+| DEG / GEO | 主病侧 | **本版不跑 DEG**（旧 GEO 仅作背景参考，不进主交集） |
+| 网络图 | HCTP 含药(A)/成分(B)色块层 | **禁止**药物色块层、化合物色块层；只做 **靶点–通路** 与/或 **STRING PPI** |
+| 对接 | hub × 槲皮素 | 同左；每任务登记 `center_source` |
+
+---
+
+## 3. 目录（现行）
+
+```text
+昱阳项目/
+  README.md
+  01_分析报告_AnalysisReport/          ← 计划 / 阶段汇总 / 终局双报告
+  02_主执行_CTDcurated_QuercetinPredicted/
+    01_靶点获取与交集_TargetsAndOverlap/
+    02_富集与PPI_EnrichPPI/
+    03_分子对接_Docking/
+  _archived_旧双口径_2026-10-16/       ← 旧 02/03/_shared_scripts（只读参考）
+```
+
+仓外整夹备份：`E:\RProject\_备份_Backup\昱阳项目_重做前_2026-10-16\`。
+
+---
+
+## 4. 分析路线
+
+```mermaid
+flowchart LR
+  CTD[CTD_curated_propofol] --> Dis[疾病靶点]
+  Pred[槲皮素预测靶点] --> Drug[药靶]
+  Dis --> Venn[药病韦恩]
+  Drug --> Venn
+  Venn --> Ov[交集]
+  Ov --> Enrich[GO_KEGG]
+  Ov --> PPI[STRING_PPI]
+  PPI --> Hub[Hub]
+  Hub --> Dock[分子对接]
+```
+
+### 4.1 疾病靶点（CTD_curated）
+
+| 规则 | 要求 |
+|------|------|
+| 库 | CTD chemical–gene；化学物 = **propofol** |
+| 证据 | **Direct Evidence / curated only**（不用 any） |
+| 物种 | 优先人源；鼠源映射到人 HGNC（或课题统一小鼠符号，全程一种） |
+| 落盘 | `01_…/01_初始数据_RawInitial/01_CTD_Propofol_curated/` + `DATA_SOURCE.md` |
+| 产出 | `疾病靶点_CTD_curated.csv` |
+
+可复用旧档 `_archived_…/03_补充口径…/05_CTD_Propofol/` 中 **已核实 curated** 行；须重算并写明下载/过滤日期。
+
+### 4.2 药物靶点（槲皮素 · 预测）
+
+| 规则 | 要求 |
+|------|------|
+| 配体 | Quercetin · CID **5280343** |
+| 主源 | SwissTargetPrediction（Probability>0，剔除 0） |
+| 可选并集 | PharmMapper / TargetNet / BATMAN 等；**每源独立 CSV + 证据标签 `predicted`** |
+| 明确不做 | 本版主池**不要求** ChEMBL/BindingDB 实验层（旧实验表仅归档参考） |
+| 落盘 | `…/02_STP_Quercetin_Predicted/`（及可选多站子夹） |
+
+### 4.3 交集与图册
+
+1. 药病韦恩（两集：Drug predicted ∩ Disease CTD_curated）→ 微生信/jvenn 两集模板。  
+2. 一轮 GO / KEGG（ORA；交集过小则在报告中诚实标注效能不足）。  
+3. **STRING PPI**（建议 score≥900；代码布局 + Degree 渐变；**content-hash 去重嵌报告**）。  
+4. **靶点–通路网络（可选）**：节点仅靶点+通路；**不出现**药味/成分色块层（本课题特例，覆盖通用 HCTP 默认）。  
+5. **禁止出图：** HCTP 药–成分–靶–通路多层色块图、药味 UpSet、药–成分桑基（因本版无复方成分瀑布）。
+
+### 4.4 分子对接
+
+- 配体：槲皮素（已有 pdbqt 可自归档复制并重登记）。  
+- 受体：PPI / 度中心性 Top hub（建议 5–10；须可溯源基因表）。  
+- 引擎与盒子：分子对接技能 SOP + FROZEN；**每任务 `center_source`**。  
+- 交付：summary、热图、PyMOL big/surface/detail/result。
+
+---
+
+## 5. 阶段与完成判据
+
+| 阶段 | 目录 | 完成判据 |
+|------|------|----------|
+| A 靶点 | `01_靶点获取与交集_…` | CTD_curated 表 + 预测药靶表 + 交集表 + 韦恩；STATUS |
+| B 富集 PPI | `02_富集与PPI_…` | GO/KEGG + STRING；**无 A/B 色块网络图**；STATUS |
+| C 对接 | `03_分子对接_…` | hub 对接批次 + center_source 齐全；STATUS |
+| D 报告 | `01_分析报告/03_最终报告` | 论文式+方法论双报告（§2.1 正文嵌图） |
+
+**明确不做（本版）：** WGCNA、ML 选 hub、疗效宣称、DEG 主病池、HCTP 药/成分层出图、MD（除非另开）。
+
+---
+
+## 6. 技能组合（有序）
+
+1. 网络药理学 — CTD_curated、韦恩、PPI、靶–通路（无 A/B）  
+2. 分子对接 — AutoDock-GPU 默认路径  
+3. VizStandards + DeliveryStandards（双报告嵌图）  
+
+---
+
+## 7. 风险与局限
+
+- CTD curated 边为策展关联 ≠ 本暴露模型因果。  
+- 预测药靶假阳性高；多站仅作分层，勿称湿实验验证。  
+- 无 DEG 后与旧「暴露表型」叙事脱钩，报告须写清「靶点来自 CTD curated，非本 GEO 差异基因」。  
+- 对接分 ≠ 体内活性。
+
+---
+
+**执行默认（本版锁定）：** 疾病 = CTD_curated（propofol）；药物 = 槲皮素预测靶；网络图无药物/化合物色块层；对接跟 hub；旧双口径仅归档不混跑。

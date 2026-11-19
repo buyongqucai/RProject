@@ -209,6 +209,40 @@ def strip_dark_chrome_edges(img: Image.Image) -> Image.Image:
     return rgb.crop((0, top, w, bottom + 1))
 
 
+def square_viewport_center(
+    img: Image.Image, detail_size: int = 6000, dpi: int = 600
+) -> Image.Image:
+    """钩子截到的 canvas：视口几何中心裁方（zoom 已保证标签在框内）。"""
+    canvas = strip_dark_chrome_edges(img.convert("RGB"))
+    cw, ch = canvas.size
+    side = min(cw, ch)
+    left = (cw - side) // 2
+    top = (ch - side) // 2
+    crop = canvas.crop((left, top, left + side, top + side))
+    squared = crop.resize((detail_size, detail_size), Image.LANCZOS)
+    squared.info["dpi"] = (dpi, dpi)
+    return squared
+
+
+def square_from_image_file(
+    src: Path,
+    dst: Path,
+    detail_size: int = 6000,
+    dpi: int = 600,
+) -> Path:
+    """已有截图禁止走本入口。
+
+    §7.3 裁方前提是钩子已 zoom 把标签放进方框；对任意宽屏 PNG 做
+    ``square_viewport_center`` = 禁止的 cover，会切残基/标签。
+    用户截图请用 PP ``prepare_detail_square.py``（对接 ``trim_white_border``）
+    或本脚本 ``--root`` 完整钩子。
+    """
+    raise RuntimeError(
+        f"--from-image refused ({src}): do not cover-crop user screenshots. "
+        "Use prepare_detail_square.py (trim_white_border only) or --root for full §7.3."
+    )
+
+
 def export_detail_png(
     job: Path, detail_size: int = 6000, dpi: int = 600, debug_window: bool = False
 ) -> tuple[bool, str]:
@@ -333,7 +367,36 @@ def main(argv: list[str] | None = None) -> int:
         default=[],
         help="jobs root or a folder that directly contains detail-*.pse",
     )
+    ap.add_argument(
+        "--from-image",
+        type=Path,
+        default=None,
+        help="已拒绝：用户截图勿 cover。请用 PP prepare_detail_square.py（trim_white）或本脚本 --root",
+    )
+    ap.add_argument(
+        "-o",
+        "--output",
+        type=Path,
+        default=None,
+        help="配合 --from-image 的输出 PNG",
+    )
     args = ap.parse_args(argv)
+
+    if args.from_image is not None:
+        if args.output is None:
+            print("ERROR: --from-image requires -o/--output", file=sys.stderr)
+            return 2
+        out = square_from_image_file(
+            args.from_image,
+            args.output,
+            detail_size=args.detail_size,
+            dpi=args.dpi,
+        )
+        print(
+            f"[from-image] ok {out} bytes={out.stat().st_size} "
+            f"mode=square_viewport_center(§7.3) size={args.detail_size}"
+        )
+        return 0
 
     desktop = Path.home() / "Desktop"
     if args.root:

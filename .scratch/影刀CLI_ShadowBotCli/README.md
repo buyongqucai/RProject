@@ -4,7 +4,7 @@
 
 让 RProject 用影刀 CLI 跑已有的疾病/药物 RPA，而不是只覆盖 Linux/信创命令。拖入影刀应用目录时，一并使用 `package.json` 里 `kind: Code` 的 Python 指令。
 
-SSOT：`.cursor/skills/shadowbot-cli/SKILL.md`。
+SSOT：`.cursor/skills/shadowbot-cli/SKILL.md`。写应用另读全局技能 `~/.cursor/skills/shadowbot-develop/SKILL.md`（见 issues/02）。
 
 ## 验收
 

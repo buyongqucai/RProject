@@ -1,0 +1,68 @@
+[
+  {
+    "file": "E:\\RProject\\_scratch_ppdock_ACACA_DLD\\PPDock_ACACA_DLD\\00_raw\\PDB_6G2D_ACACA.pdb",
+    "title": "CITRATE-INDUCED ACETYL-COA CARBOXYLASE (ACC-CIT) FILAMENT AT 5.4 A RESOLUTION",
+    "expdta": "ELECTRON MICROSCOPY",
+    "chains": [
+      {
+        "chain": "B",
+        "n_atom": 10226,
+        "n_res": 625,
+        "het": {}
+      },
+      {
+        "chain": "C",
+        "n_atom": 33781,
+        "n_res": 2121,
+        "het": {}
+      },
+      {
+        "chain": "D",
+        "n_atom": 33782,
+        "n_res": 2121,
+        "het": {}
+      },
+      {
+        "chain": "F",
+        "n_atom": 10380,
+        "n_res": 634,
+        "het": {}
+      }
+    ],
+    "n_chains": 4,
+    "bytes": 7625016,
+    "MB": 7.272
+  },
+  {
+    "file": "E:\\RProject\\_scratch_ppdock_ACACA_DLD\\PPDock_ACACA_DLD\\00_raw\\PDB_6I4Q_DLD.pdb",
+    "title": "CRYSTAL STRUCTURE OF THE HUMAN DIHYDROLIPOAMIDE DEHYDROGENASE AT 1.75 ANGSTROM RESOLUTION",
+    "expdta": "X-RAY DIFFRACTION",
+    "chains": [
+      {
+        "chain": "A",
+        "n_atom": 7219,
+        "n_res": 472,
+        "het": {
+          "FAD": 84,
+          "BTB": 33,
+          "SO4": 30,
+          "HOH": 288
+        }
+      },
+      {
+        "chain": "B",
+        "n_atom": 7291,
+        "n_res": 481,
+        "het": {
+          "FAD": 84,
+          "BTB": 33,
+          "SO4": 20,
+          "HOH": 249
+        }
+      }
+    ],
+    "n_chains": 2,
+    "bytes": 1921482,
+    "MB": 1.832
+  }
+]
