@@ -7,10 +7,12 @@
 |------|------|----------|------|
 | 打分（默认） | AutoDock-GPU（AD4） | `E:\AutoDock-GPU\AutoDock-GPU.exe` | `--nrun 20` 可调；产出 `summary_adgpu.csv` |
 | 打分（对照） | AutoDock Vina | 本机 Vina 可执行文件 | 非默认；`summary_vina.csv` |
-| 地图 | AutoGrid / Meeko | 随 AD-GPU 路线 | 共晶用 Meeko `--box_enveloping` |
-| 定心 | AutoSite | 无共晶时的主路径 | 质控失败再回退 |
-| 定心回退 | P2Rank、Fpocket(+PRANK) | 按技术路线顺序 | 最后才是文献位点 / manual |
-| 配体格式 | Open Babel | `obabel` | PDBQT、加氢 |
+| 地图 | AutoGrid4 | `E:\ADFRsuite\bin\autogrid4.exe` | WSL：`~/ADFRsuite-1.1/bin/autogrid4` |
+| 地图 / 共晶包盒 | Meeko | `python -m meeko`（pip 0.8.0） | `--box_enveloping`；需 rdkit/gemmi |
+| 定心 | AutoSite | `E:\ADFRsuite\bin\autosite.bat` | WSL：`~/ADFRsuite-1.1/bin/autosite`；无共晶主路径 |
+| 定心回退 | P2Rank | `E:\p2rank\` | AutoSite 质控 FAIL |
+| 定心回退 | Fpocket(+PRANK) | WSL `~/fpocket/bin/fpocket` | P2Rank 后仍歧义；PRANK 按需 |
+| 配体格式 | Open Babel | `obabel` / `E:\OpenBabel-3.1.1\` | PDBQT、加氢 |
 | 受体清洗 / 坐标 | Python `bio3d` 或技能脚本 | `脚本_scripts/` | R 侧条图用 ggplot2 |
 | 三维图 | PyMOL | `E:\pymol\python.exe` | ST/PT/CJ/QJ；`pymol_dock_viz_standard.py` |
 | detail 重导 | PyMOLWin | SOP §7.3 | 不回写 `.pse` |

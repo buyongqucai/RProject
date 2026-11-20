@@ -128,11 +128,13 @@ E:\AutoDock-GPU\AutoDock-GPU.exe ^
 | 工具 | 路径/状态 | 用途 |
 |------|-----------|------|
 | AutoDock-GPU | `E:\AutoDock-GPU\` ✅ | 对接引擎 |
-| AutoSite | **待装到 E:**（如 `E:\AutoSite\`） | 主定盒 |
-| Meeko | **待装** | 配体/受体/PDBQT、GPF、共晶 enveloping |
-| AutoGrid4 | **待装**（ADT 或 Meeko 流程） | 生成 `.maps.fld` |
-| P2Rank / Fpocket | **按需装** | 仅 AutoSite 异常回退 |
+| AutoSite | `E:\ADFRsuite\bin\autosite.bat` ✅（WSL：`~/ADFRsuite-1.1/bin/autosite`） | 主定盒 |
+| Meeko | Python 包 `meeko` 0.8.0 ✅（依赖 `rdkit`/`gemmi` 已装） | 配体/受体/PDBQT、GPF、共晶 enveloping |
+| AutoGrid4 | `E:\ADFRsuite\bin\autogrid4.exe` ✅（WSL：`~/ADFRsuite-1.1/bin/autogrid4`；系统亦有 `/usr/bin/autogrid4`） | 生成 `.maps.fld` |
+| P2Rank | `E:\p2rank\` ✅ | AutoSite 异常回退 |
+| Fpocket | WSL `~/fpocket/bin/fpocket` ✅（`make fpocket`；PATH 已写入 `~/.bashrc`） | P2Rank 后仍歧义时回退 |
 | Open Babel / PyMOL | 已有 | 格式与出图 |
+| selenium | Python 包 4.51 ✅ | 本地 jvenn/微生信无头渲染等 |
 
 ---
 
@@ -146,7 +148,7 @@ E:\AutoDock-GPU\AutoDock-GPU.exe ^
 
 ## 8. 实施里程碑（给 Agent）
 
-1. 安装 AutoSite + Meeko + AutoGrid 到 E:  
+1. ~~安装 AutoSite + Meeko + AutoGrid 到 E:~~ ✅（2026-10-19：ADFRsuite→`E:\ADFRsuite\`；Meeko/rdkit/gemmi/selenium pip；Fpocket WSL）  
 2. 写 `批量对接_runBatchAdgpu.py`：决策树 §2 + GPU 调用  
 3. 对「努力学习」课题：缺共晶靶点走 AutoSite；FAIL 则 P2Rank/Fpocket  
 4. TP53/3d06、FGA 等无共晶：必须过 §3；FGA 禁止链 COM  

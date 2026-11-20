@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
-"""本地复刻的微生信 jvenn。默认入口是 `render_replica_svg`。
+"""微生信韦恩模板库（网药 FROZEN §G）。
 
-复刻页：`_jvenn_assets/jvenn_runner.html`（同目录 jquery、canvas2svg、jvenn.min.js）。
-不要用 R 的 VennDiagram，也不要打开微生信网站。
-`render_jvenn_svg` 只在用户点名「用网站」时调用。
+几何与配色来自 `01_样例_sample/参考_交付原图/Venn_*.svg`（2/4 集纯 SVG）。
+5 集（及任意 2–6 集）走本地 `jvenn_local/`（微生信 jvenn HTML）。
+项目侧只传入基因集合并指定输出路径；禁止另写 VennDiagram/R 近似顶替交付。
 
-引用：Bardou et al. BMC Bioinformatics 2014, 15:293
+画幅：出图后统一 `pad_svg_canvas` 左留白，避免 GeneCards 等左侧集合名被裁。
 """
 from __future__ import annotations
 
 import json
 import re
-import shutil
 import subprocess
 import tempfile
 from collections import Counter
 from pathlib import Path
+from typing import Iterable, Mapping, Sequence
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 SAMPLE_REF = SKILL_ROOT / "01_样例_sample" / "参考_交付原图"
-JVENN_ASSETS = Path(__file__).resolve().parent / "_jvenn_assets"
+JVENN_LOCAL = Path(__file__).resolve().parent / "jvenn_local"
 
 CHROME_CANDIDATES = [
     Path(r"C:\Program Files\Google\Chrome\Application\chrome.exe"),
@@ -29,16 +29,30 @@ CHROME_CANDIDATES = [
 ]
 CHROME = next((p for p in CHROME_CANDIDATES if p.exists()), None)
 
+# Default pad (left, right, top, bottom) — GeneCards 五库左/上标签需要足够白边
+DEFAULT_SVG_PAD = (72, 48, 48, 20)
+CROP_PAD_PX = 40
+
 COL = {
     "TTD": (0, 102, 0),
     "DrugBank": (90, 155, 212),
     "GeneCards": (241, 90, 96),
     "OMIM": (207, 207, 27),
-    "CTD": (243, 146, 60),
+    "CTD": (255, 117, 0),
     "Drugs": (0, 102, 0),
     "Disease": (90, 155, 212),
     "share": (156, 106, 156),
 }
+
+# jvenn / 微生信默认六色（必须 rgb()，hex 会令 jvenn 的 h() 崩）
+JVENN_COLORS_RGB = [
+    "rgb(0,102,0)",
+    "rgb(90,155,212)",
+    "rgb(241,90,96)",
+    "rgb(207,207,27)",
+    "rgb(255,117,0)",
+    "rgb(192,152,83)",
+]
 
 
 def rgb(c: tuple[int, int, int]) -> str:
@@ -47,6 +61,83 @@ def rgb(c: tuple[int, int, int]) -> str:
 
 def _as_set(genes) -> set[str]:
     return {str(g).strip() for g in genes if str(g).strip() and str(g).strip().lower() != "nan"}
+
+
+def pad_svg_canvas(
+    svg_text: str,
+    left: int = DEFAULT_SVG_PAD[0],
+    right: int = DEFAULT_SVG_PAD[1],
+    top: int = DEFAULT_SVG_PAD[2],
+    bottom: int = DEFAULT_SVG_PAD[3],
+) -> str:
+    """Widen SVG and translate content so edge labels (e.g. GeneCards) stay inside the frame."""
+    m = re.search(
+        r'<svg([^>]*)\bwidth="(\d+(?:\.\d+)?)"([^>]*)\bheight="(\d+(?:\.\d+)?)"([^>]*)>',
+        svg_text,
+        flags=re.I,
+    )
+    if not m:
+        m = re.search(
+            r'<svg([^>]*)\bheight="(\d+(?:\.\d+)?)"([^>]*)\bwidth="(\d+(?:\.\d+)?)"([^>]*)>',
+            svg_text,
+            flags=re.I,
+        )
+        if not m:
+            return svg_text
+        pre, h, mid, w, post = m.group(1), m.group(2), m.group(3), m.group(4), m.group(5)
+        open_tag = f'<svg{pre}height="{float(h) + top + bottom}"{mid}width="{float(w) + left + right}"{post}>'
+        old_open = m.group(0)
+    else:
+        pre, w, mid, h, post = m.group(1), m.group(2), m.group(3), m.group(4), m.group(5)
+        open_tag = f'<svg{pre}width="{float(w) + left + right}"{mid}height="{float(h) + top + bottom}"{post}>'
+        old_open = m.group(0)
+
+    body = svg_text[m.end() :]
+    if body.rstrip().endswith("</svg>"):
+        inner, close = body.rsplit("</svg>", 1)
+    else:
+        inner, close = body, ""
+    # Avoid double-padding
+    if 'data-venn-padded="1"' in svg_text or 'transform="translate(' in inner[:80]:
+        if 'data-venn-padded="1"' in svg_text:
+            return svg_text
+    padded_inner = f'<g data-venn-padded="1" transform="translate({left},{top})">{inner}</g>'
+    return f"{open_tag}{padded_inner}</svg>{close}"
+
+
+def _svg_wh(svg_text: str) -> tuple[int, int]:
+    wm = re.search(r'\bwidth="(\d+(?:\.\d+)?)"', svg_text)
+    hm = re.search(r'\bheight="(\d+(?:\.\d+)?)"', svg_text)
+    w = int(float(wm.group(1))) if wm else 500
+    h = int(float(hm.group(1))) if hm else 695
+    return w, h
+
+
+def _normalize_sets(
+    sets: Mapping[str, Iterable] | Sequence[tuple[str, Iterable]],
+) -> list[tuple[str, set[str]]]:
+    if isinstance(sets, Mapping):
+        items = list(sets.items())
+    else:
+        items = list(sets)
+    out: list[tuple[str, set[str]]] = []
+    for name, genes in items:
+        out.append((str(name), _as_set(genes)))
+    if not (2 <= len(out) <= 6):
+        raise ValueError(f"jvenn supports 2–6 sets, got {len(out)}")
+    return out
+
+
+def _to_jvenn_rgb(color: str) -> str:
+    """jvenn `h()` only parses rgb(...)/rgba(...); convert #RRGGBB if needed."""
+    s = str(color).strip()
+    if s.lower().startswith("rgb"):
+        return s
+    m = re.fullmatch(r"#([0-9a-fA-F]{6})", s)
+    if m:
+        h = m.group(1)
+        return f"rgb({int(h[0:2], 16)},{int(h[2:4], 16)},{int(h[4:6], 16)})"
+    raise ValueError(f"unsupported color for jvenn: {color!r}")
 
 
 def text(x, y, s, *, size="19px", weight="700", fill="#000", opacity=1, anchor="middle", fs=None):
@@ -127,11 +218,12 @@ def build_disease_4db_svg(sets: dict[str, set[str]]) -> str:
         (250, 234, r(15)),
     ]
     label_txt = [text(x, y, str(n), weight="700" if n else "400") for x, y, n in labels]
+    # 名称内收，避开画布上/右边缘（再经 pad_svg_canvas）
     names = [
-        (25, 84, "TTD", COL["TTD"]),
-        (105, 19, "DrugBank", COL["DrugBank"]),
-        (370, 19, "GeneCards", COL["GeneCards"]),
-        (448, 84, "OMIM", COL["OMIM"]),
+        (48, 90, "TTD", COL["TTD"]),
+        (120, 36, "DrugBank", COL["DrugBank"]),
+        (345, 36, "GeneCards", COL["GeneCards"]),
+        (420, 90, "OMIM", COL["OMIM"]),
     ]
     name_txt = [
         text(x, y, lab, size="14px", weight="400", fill=rgb(c), opacity=0.5)
@@ -236,266 +328,6 @@ def build_disease_4db_svg(sets: dict[str, set[str]]) -> str:
     )
 
 
-# 微生信 jvenn 默认色序（example.html colorDefault）
-JVENN_COLORS = ["#006600", "#5a9bd4", "#f15a60", "#cfcf1b", "#ff7500", "#c09853"]
-
-
-JVENN_EXAMPLE_URL = "https://bioinformatics.com.cn/static/others/jvenn/example.html"
-
-_EXPORT_SVG_JS = r"""
-function F(s,e,t,l,r,c,o,i,u){
-  if(u){e=parseInt(String(e).replace('px',''))+20;t=parseInt(String(t).replace('px',''))+14;}
-  else{e=parseInt(String(e).replace('px',''))+5;t=parseInt(String(t).replace('px',''))+14;}
-  return '<text fill="'+l+'" fill-opacity="'+r+'" stroke="none" font-family="'+c+
-    '" font-size="'+o+'" font-style="normal" font-weight="'+i+
-    '" text-decoration="none" x="'+e+'" y="'+t+
-    '" text-anchor="middle" dominant-baseline="alphabetic">'+s+'</text>';
-}
-const $ = jQuery;
-const wrap = $('<div></div>');
-const svg = $('#jvenn-container svg').first();
-if(!svg.length) return null;
-wrap.append(svg.clone());
-$('[id^=resultC]').each(function(){
-  if($(this).css('display')==='none') return;
-  const value = (0===String($(this).html()).indexOf('<span')) ? '?' : $(this).text();
-  if(!value) return;
-  wrap.children('svg').children('g').append($(F(
-    value,$(this).css('left'),$(this).css('top'),$(this).css('color'),$(this).css('opacity'),
-    $(this).css('font-family'),$(this).css('font-size'),$(this).css('font-weight'),false
-  )));
-});
-$('[id^=label]').each(function(){
-  const html=$(this).text(); if(!html) return;
-  wrap.children('svg').children('g').append($(F(
-    html,$(this).css('left'),$(this).css('top'),$(this).css('color'),$(this).css('opacity'),
-    $(this).css('font-family'),$(this).css('font-size'),$(this).css('font-weight'),true
-  )));
-});
-let serialized = wrap.html();
-if(serialized.indexOf('xmlns=')<0){
-  serialized = serialized.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"');
-}
-return serialized;
-"""
-
-
-def expand_svg_canvas(svg: str, pad_x: int = 160, pad_y: int = 36) -> str:
-    """把视口向外扩，使画在边缘、text-anchor=middle 的集合名完整落在画面内。"""
-    mw = re.search(r'\bwidth="([\d.]+)', svg)
-    mh = re.search(r'\bheight="([\d.]+)', svg)
-    width = float(mw.group(1)) if mw else 500.0
-    height = float(mh.group(1)) if mh else 695.0
-    new_w = width + 2 * pad_x
-    new_h = height + 2 * pad_y
-    view = f'viewBox="-{pad_x} -{pad_y} {new_w:.0f} {new_h:.0f}"'
-    if mw:
-        svg = svg.replace(mw.group(0), f'width="{new_w:.0f}', 1)
-    if mh:
-        svg = svg.replace(mh.group(0), f'height="{new_h:.0f}', 1)
-    if re.search(r"\bviewBox=", svg):
-        svg = re.sub(r'\bviewBox="[^"]*"', view, svg, count=1)
-    else:
-        svg = svg.replace("<svg", f"<svg {view}", 1)
-    return svg
-
-
-def render_replica_svg(
-    series: list[dict],
-    *,
-    colors: list[str] | None = None,
-    display_mode: str = "classic",
-    timeout_s: float = 90.0,
-) -> str:
-    """用本地 HTML 复刻页出 SVG。series 项为 {name, data}。空列表也要传入。"""
-    runner = JVENN_ASSETS / "jvenn_runner.html"
-    if not runner.exists():
-        raise SystemExit(f"missing local jvenn replica: {runner}")
-    if CHROME is None:
-        raise SystemExit("No Chrome/Edge for local jvenn replica")
-    try:
-        from selenium import webdriver
-        from selenium.webdriver.edge.options import Options as EdgeOptions
-        from selenium.webdriver.edge.service import Service as EdgeService
-        from selenium.webdriver.support.ui import WebDriverWait
-    except ImportError as e:
-        raise SystemExit("pip install selenium") from e
-
-    payload = {
-        "series": [{"name": s["name"], "data": list(s.get("data") or [])} for s in series],
-        "colors": colors or [],
-        "displayMode": display_mode,
-        "fontSize": "14px",
-        "fontFamily": "Arial",
-    }
-    page = runner.read_text(encoding="utf-8").replace(
-        "__PAYLOAD__", json.dumps(payload, ensure_ascii=False)
-    )
-    tmp = JVENN_ASSETS / "_run_payload.html"
-    tmp.write_text(page, encoding="utf-8")
-    edge = next(
-        (p for p in (
-            Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"),
-            Path(r"C:\Program Files\Microsoft\Edge\Application\msedge.exe"),
-        ) if p.exists()),
-        None,
-    )
-    if edge is None:
-        raise SystemExit("Edge not found for local jvenn replica")
-    opts = EdgeOptions()
-    opts.binary_location = str(edge)
-    opts.add_argument("--headless=new")
-    opts.add_argument("--disable-gpu")
-    opts.add_argument("--window-size=1400,1600")
-    opts.add_argument("--hide-scrollbars")
-    driver_path = Path(
-        r"C:\Users\10540\.cache\selenium\msedgedriver\win64\150.0.4078.144\msedgedriver.exe"
-    )
-    service = EdgeService(executable_path=str(driver_path)) if driver_path.exists() else EdgeService()
-    driver = webdriver.Edge(service=service, options=opts)
-    try:
-        driver.set_page_load_timeout(timeout_s)
-        driver.get(tmp.resolve().as_uri())
-        WebDriverWait(driver, timeout_s).until(
-            lambda d: d.title == "JVENN_READY" or str(d.title).startswith("JVENN_FAIL")
-        )
-        if str(driver.title).startswith("JVENN_FAIL"):
-            detail = driver.execute_script(
-                "return document.getElementById('svg-dump') ? document.getElementById('svg-dump').textContent : ''"
-            )
-            raise SystemExit(f"local jvenn replica failed: {driver.title} {detail}")
-        svg = driver.execute_script(
-            "return document.getElementById('svg-dump').textContent"
-        ) or ""
-    finally:
-        driver.quit()
-        tmp.unlink(missing_ok=True)
-    svg = svg.strip()
-    if not svg.startswith("<svg"):
-        sm = re.search(r"<svg[\s\S]*</svg>", svg)
-        if not sm:
-            raise SystemExit(f"local jvenn replica returned no svg: {svg[:300]}")
-        svg = sm.group(0)
-    return expand_svg_canvas(svg)
-
-
-def render_jvenn_svg(
-    series: list[dict],
-    *,
-    colors: list[str] | None = None,
-    display_mode: str = "classic",
-    timeout_s: float = 180.0,
-    url: str = JVENN_EXAMPLE_URL,
-) -> str:
-    """驱动微生信官网 jvenn 页填入列表并导出 SVG（与页面「下载 SVG」同逻辑）。
-
-    权威：https://bioinformatics.com.cn/static/others/jvenn/example.html
-    """
-    if CHROME is None:
-        raise SystemExit("No Chrome/Edge for jvenn headless render")
-    try:
-        from selenium import webdriver
-        from selenium.webdriver.chrome.options import Options
-        from selenium.webdriver.support.ui import WebDriverWait
-    except ImportError as e:
-        raise SystemExit("pip install selenium  # required for jvenn render") from e
-
-    # name colors: set via inline style so jvenn reads css('color')
-    color_map = {}
-    if colors:
-        for s, c in zip(series, colors):
-            color_map[s["name"]] = c
-
-    opts = Options()
-    opts.binary_location = str(CHROME)
-    opts.add_argument("--headless=new")
-    opts.add_argument("--disable-gpu")
-    opts.add_argument("--window-size=1100,1200")
-    opts.add_argument("--hide-scrollbars")
-    driver = webdriver.Chrome(options=opts)
-    try:
-        driver.set_page_load_timeout(timeout_s)
-        driver.get(url)
-        WebDriverWait(driver, timeout_s).until(
-            lambda d: d.execute_script("return !!(window.jQuery && jQuery.fn.jvenn);")
-        )
-        # classic mode + stats if controls exist
-        driver.execute_script(
-            """
-            const mode = arguments[0];
-            // display mode radios/buttons often labeled classic / Edwards
-            document.querySelectorAll('input[type=radio],button,a,label').forEach(el => {
-              const t = ((el.value||'') + ' ' + (el.textContent||'')).toLowerCase();
-              if (mode === 'classic' && t.includes('classic')) { try { el.click(); } catch(e){} }
-              if (mode === 'edwards' && t.includes('edward')) { try { el.click(); } catch(e){} }
-            });
-            """,
-            display_mode,
-        )
-        driver.execute_script(
-            """
-            const series = arguments[0];
-            const colorMap = arguments[1] || {};
-            for (let i = 1; i <= 6; i++) {
-              const n = document.getElementById('name' + i);
-              const a = document.getElementById('area' + i);
-              if (n) { n.value = ''; n.style.color = ''; jQuery(n).trigger('change'); }
-              if (a) { a.value = ''; jQuery(a).trigger('change'); }
-            }
-            series.forEach((s, idx) => {
-              const i = idx + 1;
-              const n = document.getElementById('name' + i);
-              const a = document.getElementById('area' + i);
-              n.value = s.name;
-              if (colorMap[s.name]) n.style.color = colorMap[s.name];
-              a.value = (s.data || []).join('\\n');
-              jQuery(n).trigger('change');
-              jQuery(a).trigger('change');
-            });
-            """,
-            series,
-            color_map,
-        )
-        WebDriverWait(driver, timeout_s).until(
-            lambda d: d.execute_script(
-                "const c=document.getElementById('jvenn-container');"
-                "return !!(c && c.querySelector('svg') && c.innerHTML.length>800);"
-            )
-        )
-        # settle absolute labels
-        driver.execute_script("return new Promise(r => setTimeout(r, 1200));")
-        svg = driver.execute_script(_EXPORT_SVG_JS)
-    finally:
-        driver.quit()
-
-    svg = (svg or "").strip()
-    if not svg.startswith("<svg"):
-        sm = re.search(r"<svg[\s\S]*</svg>", svg or "")
-        if not sm:
-            raise SystemExit(f"jvenn svg export failed: {str(svg)[:400]}")
-        svg = sm.group(0)
-    return svg
-
-
-def build_disease_5db_svg(sets: dict[str, set[str]]) -> str:
-    """五库疾病韦恩 = 本地 HTML 复刻 `jvenn_runner.html`。空库也传入。"""
-    order = ["GeneCards", "CTD", "OMIM", "TTD", "DrugBank"]
-    color_by = {
-        "GeneCards": "rgb(241,90,96)",
-        "CTD": "rgb(255,117,0)",
-        "OMIM": "rgb(207,207,27)",
-        "TTD": "rgb(0,102,0)",
-        "DrugBank": "rgb(90,155,212)",
-    }
-    series = []
-    colors = []
-    for name in order:
-        genes = sorted(_as_set(sets.get(name, set())))
-        series.append({"name": name, "data": genes})
-        colors.append(color_by[name])
-    return render_replica_svg(series, colors=colors, display_mode="classic")
-
-
 def build_two_set_svg(
     set_a,
     set_b,
@@ -504,32 +336,172 @@ def build_two_set_svg(
     col_a: tuple[int, int, int] | None = None,
     col_b: tuple[int, int, int] | None = None,
 ) -> str:
-    """两集韦恩 = 本地 HTML 复刻 `_jvenn_assets/jvenn_runner.html`。"""
+    """Two-set Venn from Venn_DrugDisease.svg geometry (微生信)."""
+    a = _as_set(set_a)
+    b = _as_set(set_b)
     ca = col_a or COL["Drugs"]
     cb = col_b or COL["Disease"]
-    return render_replica_svg(
-        [
-            {"name": name_a, "data": sorted(_as_set(set_a))},
-            {"name": name_b, "data": sorted(_as_set(set_b))},
-        ],
-        colors=[rgb(ca), rgb(cb)],
+    only_a = len(a - b)
+    only_b = len(b - a)
+    inter = len(a & b)
+    n_a, n_b = len(a), len(b)
+    n1, n2 = only_a + only_b, inter
+    # 轴顶留空，避免柱顶数字与 Y 轴刻度（ymax）重叠
+    ymax = max(int(round(max(n_a, n_b, 1) * 1.12)), max(n_a, n_b, 1) + 1)
+    y_base, y_top_axis = 535.0, 450.0
+    h_max = y_base - y_top_axis
+
+    def bar_y(n: int) -> float:
+        return y_base - (n / ymax) * h_max
+
+    tmpl = SAMPLE_REF.joinpath("Venn_DrugDisease.svg").read_text(encoding="utf-8")
+    parts = re.findall(
+        r'<path fill="none" stroke="none"></path><g transform="translate\([^"]+"[^>]*>.*?</g>',
+        tmpl,
     )
+    ellipse_block = "".join(parts[:2])
+
+    labels = [
+        text(123, 209, str(only_a)),
+        text(357, 209, str(only_b)),
+        text(251, 209, str(inter)),
+    ]
+    names = [
+        text(115, 54, name_a, size="14px", weight="400", fill=rgb(ca), opacity=0.5),
+        text(380, 54, name_b, size="14px", weight="400", fill=rgb(cb), opacity=0.5),
+    ]
+
+    bars = []
+    yt = bar_y(n_a)
+    bars.append(bar_rect(70, 235, yt, y_base, ca))
+    bars.append(
+        text(230, yt - 10, str(n_a), size="8pt", weight="normal", fill=rgb(ca), opacity=0.5, fs="8pt", anchor="end")
+        if n_a / ymax < 0.15
+        else text(230, yt + 15, str(n_a), size="8pt", weight="normal", fill="white", fs="8pt", anchor="end")
+    )
+    bars.append(text(152.5, 550, name_a, size="8pt", weight="normal", fs="8pt"))
+    bars.append(
+        '<path fill="none" stroke="rgb(0,0,0)" d="M 152.5 535 L 152.5 540 Z" '
+        'stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
+    )
+    yt2 = bar_y(n_b)
+    bars.append(bar_rect(255, 420, yt2, y_base, cb))
+    bars.append(text(415, yt2 + 15, str(n_b), size="8pt", weight="normal", fill="white", fs="8pt", anchor="end"))
+    bars.append(text(337.5, 550, name_b, size="8pt", weight="normal", fs="8pt"))
+    bars.append(
+        '<path fill="none" stroke="rgb(0,0,0)" d="M 337.5 535 L 337.5 540 Z" '
+        'stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
+    )
+
+    axis = (
+        f'{text(45, 537, "0", size="8pt", weight="normal", fs="8pt", anchor="end")}'
+        f'{text(45, 502.5, str(int(round(ymax / 2))), size="8pt", weight="normal", fs="8pt", anchor="end")}'
+        f'{text(45, 469, str(ymax), size="8pt", weight="normal", fs="8pt", anchor="end")}'
+        '<path fill="none" stroke="rgb(0,0,0)" d="M 50 535 L 50 450 Z" stroke-opacity="0.7" stroke-miterlimit="10"></path>'
+        '<path fill="none" stroke="rgb(0,0,0)" d="M 50 535 L 450 535 Z" stroke-opacity="0.7" stroke-miterlimit="10"></path>'
+        '<path fill="none" stroke="rgb(0,0,0)" d="M 47 499 L 53 499 Z" stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
+        '<path fill="none" stroke="rgb(0,0,0)" d="M 47 465 L 53 465 Z" stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
+        '<g><path fill="rgb(0,0,0)" stroke="none" d="M 50 440 L 46 450 L 54 450" fill-opacity="0.7"></path></g>'
+        '<g><path fill="rgb(0,0,0)" stroke="none" d="M 460 535 L 450 531 L 450 539" fill-opacity="0.7"></path></g>'
+    )
+
+    total = max(n1 + n2, 1)
+    x0, x1 = 60.0, 450.0
+    w = x1 - x0
+    share = []
+    w2 = max(w * n2 / total, 4.0)
+    w1 = w - w2
+    share.append(bar_rect(x0, x0 + w2, 600, 620, COL["share"], opacity=0.4))
+    mid2 = x0 + w2 / 2
+    share.append(text(mid2, 642, "2", size="8pt", weight="normal", fs="8pt"))
+    share.append(text(mid2 + 6, 642, f"({n2})", size="8pt", weight="normal", fs="8pt", anchor="start"))
+    share.append(
+        f'<path fill="none" stroke="rgb(0,0,0)" d="M {mid2} 625 L {mid2} 630 Z" '
+        f'stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
+    )
+    share.append(bar_rect(x0 + w2, x0 + w2 + w1, 600, 620, COL["share"], opacity=0.666))
+    mid1 = x0 + w2 + w1 / 2
+    share.append(text(mid1, 614, str(n1), size="8pt", weight="normal", fill="white", fs="8pt"))
+    share.append(text(mid1, 654, "1", size="8pt", weight="normal", fs="8pt"))
+    share.append(
+        f'<path fill="none" stroke="rgb(0,0,0)" d="M {mid1} 625 L {mid1} 630 Z" '
+        f'stroke-opacity="0.7" stroke-miterlimit="10" stroke-width="0.4"></path>'
+    )
+    share.append(
+        '<path fill="none" stroke="rgb(0,0,0)" d="M 50 625 L 460 625 Z" stroke-opacity="0.7" stroke-miterlimit="10"></path>'
+    )
+
+    title_size = text(250, 442, "Size of each list", size="10pt", weight="normal", fs="10pt").replace(
+        'font-style="normal"', 'font-style="italic"'
+    )
+    title_share = text(
+        250,
+        585,
+        "Number of elements: specific (1) or shared by 2, 3, ... lists",
+        size="10pt",
+        weight="normal",
+        fs="10pt",
+    ).replace('font-style="normal"', 'font-style="italic"')
+
+    return (
+        f'<svg version="1.1" xmlns="http://www.w3.org/2000/svg" '
+        f'xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="695">'
+        f"<defs></defs><g>{ellipse_block}{title_size}{axis}{''.join(bars)}"
+        f"{title_share}{''.join(share)}{''.join(labels)}{''.join(names)}</g></svg>"
+    )
+
+
+def _crop_whitespace(
+    png: Path,
+    pad: int = CROP_PAD_PX,
+    *,
+    pad_left: int | None = None,
+    pad_right: int | None = None,
+    pad_top: int | None = None,
+    pad_bottom: int | None = None,
+) -> None:
+    from PIL import Image, ImageChops
+
+    im = Image.open(png)
+    rgb_im = im.convert("RGB")
+    bg = Image.new("RGB", rgb_im.size, (255, 255, 255))
+    diff = ImageChops.difference(rgb_im, bg)
+    # Threshold 2: pale set-name labels (opacity~0.5 pink) must still count as content
+    gray = diff.convert("L").point(lambda p: 255 if p > 2 else 0)
+    bbox = gray.getbbox()
+    if not bbox:
+        return
+    pl = pad if pad_left is None else pad_left
+    pr = pad if pad_right is None else pad_right
+    pt = pad if pad_top is None else pad_top
+    pb = pad if pad_bottom is None else pad_bottom
+    l, t, r, b = bbox
+    im = im.crop(
+        (
+            max(0, l - pl),
+            max(0, t - pt),
+            min(rgb_im.width, r + pr),
+            min(rgb_im.height, b + pb),
+        )
+    )
+    im.save(png, optimize=True)
 
 
 def rasterize(svg: Path, png: Path) -> None:
     if CHROME is None:
         raise SystemExit("No Chrome/Edge found for headless screenshot")
-    raw = svg.read_text(encoding="utf-8")
-    mw = re.search(r'\bwidth="([\d.]+)', raw)
-    mh = re.search(r'\bheight="([\d.]+)', raw)
-    width = int(float(mw.group(1))) if mw else 820
-    height = int(float(mh.group(1))) if mh else 780
+    svg_text = svg.read_text(encoding="utf-8")
+    w, h = _svg_wh(svg_text)
+    # CSS size follows SVG; window larger than content so labels are not clipped by viewport
+    css_w, css_h = w, h
+    win_w = max(css_w + 80, 640)
+    win_h = max(css_h + 80, 800)
     html = svg.with_suffix(".preview.html")
     html.write_text(
         "<!DOCTYPE html><html><head><meta charset=utf-8>"
-        "<style>html,body{margin:0;padding:0;background:#fff;}"
-        f"svg{{display:block;width:{width}px;height:{height}px;}}</style>"
-        f"</head><body>{raw}</body></html>",
+        "<style>html,body{margin:0;padding:16px;background:#fff;}"
+        f"svg{{display:block;width:{css_w}px;height:{css_h}px;}}</style>"
+        f"</head><body>{svg_text}</body></html>",
         encoding="utf-8",
     )
     cmd = [
@@ -537,7 +509,7 @@ def rasterize(svg: Path, png: Path) -> None:
         "--headless=new",
         "--disable-gpu",
         f"--screenshot={png}",
-        f"--window-size={width + 8},{height + 8}",
+        f"--window-size={win_w},{win_h}",
         "--hide-scrollbars",
         "--force-device-scale-factor=2",
         html.resolve().as_uri(),
@@ -546,32 +518,150 @@ def rasterize(svg: Path, png: Path) -> None:
     html.unlink(missing_ok=True)
     if not png.exists() or png.stat().st_size < 1000:
         raise SystemExit(f"rasterize failed: {png}")
-    from PIL import Image, ImageChops
-
-    im = Image.open(png)
-    rgb_im = im.convert("RGB")
-    bg = Image.new("RGB", rgb_im.size, (255, 255, 255))
-    diff = ImageChops.difference(rgb_im, bg)
-    gray = diff.convert("L").point(lambda p: 255 if p > 5 else 0)
-    bbox = gray.getbbox()
-    if bbox:
-        pad = 16
-        l, t, r, b = bbox
-        im = im.crop(
-            (
-                max(0, l - pad),
-                max(0, t - pad),
-                min(rgb_im.width, r + pad),
-                min(rgb_im.height, b + pad),
-            )
-        )
-        im.save(png, optimize=True)
+    _crop_whitespace(png, pad=CROP_PAD_PX)
 
 
-def write_venn_pair(svg_text: str, out_dir: Path, stem: str) -> tuple[Path, Path]:
+def write_venn_pair(
+    svg_text: str,
+    out_dir: Path,
+    stem: str,
+    *,
+    pad: tuple[int, int, int, int] = DEFAULT_SVG_PAD,
+) -> tuple[Path, Path]:
     out_dir.mkdir(parents=True, exist_ok=True)
     svg_path = out_dir / f"{stem}.svg"
     png_path = out_dir / f"{stem}.png"
-    svg_path.write_text(svg_text, encoding="utf-8")
+    svg_path.write_text(pad_svg_canvas(svg_text, *pad), encoding="utf-8")
     rasterize(svg_path, png_path)
     return svg_path, png_path
+
+
+def render_jvenn_sets(
+    sets: Mapping[str, Iterable] | Sequence[tuple[str, Iterable]],
+    out_dir: Path,
+    stem: str,
+    *,
+    colors_hex: Sequence[str] | None = None,
+    display_stat: bool = True,
+) -> tuple[Path, Path]:
+    """Draw 2–6 set Venn via local jvenn HTML (微生信), with left-pad so names are not clipped.
+
+    Returns (svg_path|empty stub, png_path). SVG is written when harvest succeeds;
+    PNG always comes from padded-container screenshot.
+    """
+    if CHROME is None:
+        raise SystemExit("No Chrome/Edge found for headless screenshot")
+    if not (JVENN_LOCAL / "headless_venn.html").exists():
+        raise SystemExit(f"missing jvenn_local driver: {JVENN_LOCAL}")
+
+    pairs = _normalize_sets(sets)
+    names = [n for n, _ in pairs]
+    lists = [sorted(g) for _, g in pairs]
+    if colors_hex:
+        # Accept #RRGGBB or rgb(...)；统一成 rgb() 供 jvenn
+        cols = [_to_jvenn_rgb(c) for c in colors_hex]
+    else:
+        cols = list(JVENN_COLORS_RGB[: len(names)])
+        for i, n in enumerate(names):
+            if n in COL and i < len(cols):
+                c = COL[n]
+                cols[i] = f"rgb({c[0]},{c[1]},{c[2]})"
+
+    payload = {
+        "names": names,
+        "lists": lists,
+        "colors": cols,
+        "displayStat": display_stat,
+    }
+    driver = (JVENN_LOCAL / "headless_venn.html").read_text(encoding="utf-8")
+    # Inject payload before other scripts run
+    inject = (
+        "<script>window.__JVENN_PAYLOAD__ = "
+        + json.dumps(payload, ensure_ascii=False)
+        + ";</script>\n"
+    )
+    driver = driver.replace("<script src=\"jquery.min.js\"></script>", inject + '<script src="jquery.min.js"></script>', 1)
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    png_path = out_dir / f"{stem}.png"
+    svg_path = out_dir / f"{stem}.svg"
+
+    svg_text = ""
+    with tempfile.TemporaryDirectory(prefix="jvenn_") as td:
+        td_path = Path(td)
+        for name in ("jquery.min.js", "canvas2svg.js", "jvenn.min.js"):
+            src = JVENN_LOCAL / name
+            (td_path / name).write_bytes(src.read_bytes())
+        html_path = td_path / "run.html"
+        html_path.write_text(driver, encoding="utf-8")
+
+        win_w, win_h = 900, 1100
+        cmd_shot = [
+            str(CHROME),
+            "--headless=new",
+            "--disable-gpu",
+            f"--screenshot={png_path}",
+            f"--window-size={win_w},{win_h}",
+            "--hide-scrollbars",
+            "--force-device-scale-factor=2",
+            "--virtual-time-budget=4000",
+            html_path.resolve().as_uri(),
+        ]
+        subprocess.run(cmd_shot, capture_output=True, check=False)
+
+        cmd_dom = [
+            str(CHROME),
+            "--headless=new",
+            "--disable-gpu",
+            "--dump-dom",
+            "--virtual-time-budget=4000",
+            html_path.resolve().as_uri(),
+        ]
+        dom_proc = subprocess.run(cmd_dom, capture_output=True, check=False)
+        dom = (dom_proc.stdout or b"").decode("utf-8", errors="replace")
+        m = re.search(r'id="svg-out"[^>]*>([\s\S]*?)</pre>', dom)
+        if m:
+            svg_text = (
+                m.group(1)
+                .replace("&lt;", "<")
+                .replace("&gt;", ">")
+                .replace("&amp;", "&")
+                .replace("&quot;", '"')
+                .strip()
+            )
+
+    if not png_path.exists() or png_path.stat().st_size < 1000:
+        raise SystemExit(f"jvenn screenshot failed: {png_path}")
+    # Extra left/top pad so GeneCards-class labels survive whitespace crop
+    _crop_whitespace(png_path, pad_left=56, pad_right=40, pad_top=48, pad_bottom=36)
+
+    if svg_text.startswith("<svg"):
+        svg_path.write_text(pad_svg_canvas(svg_text), encoding="utf-8")
+    else:
+        svg_path.write_text(
+            "<!-- jvenn SVG harvest empty; see companion PNG -->\n"
+            '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"></svg>\n',
+            encoding="utf-8",
+        )
+    return svg_path, png_path
+
+
+def write_disease_venn(
+    sets: Mapping[str, Iterable],
+    out_dir: Path,
+    stem: str,
+    *,
+    prefer_jvenn: bool | None = None,
+) -> tuple[Path, Path]:
+    """Route helper: 4-key classic order → pure SVG; else / 5+ → jvenn; 2 → two-set SVG."""
+    keys = list(sets.keys())
+    n = len(keys)
+    classic4 = ["TTD", "DrugBank", "GeneCards", "OMIM"]
+    if prefer_jvenn is None:
+        prefer_jvenn = n == 5 or n == 6 or (n == 4 and set(keys) != set(classic4))
+    if n == 2 and not prefer_jvenn:
+        a, b = keys[0], keys[1]
+        return write_venn_pair(build_two_set_svg(sets[a], sets[b], a, b), out_dir, stem)
+    if n == 4 and not prefer_jvenn and set(keys) == set(classic4):
+        return write_venn_pair(build_disease_4db_svg(dict(sets)), out_dir, stem)
+    return render_jvenn_sets(sets, out_dir, stem)

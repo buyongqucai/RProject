@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>jvenn-boot</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #fff; }
+  /* Extra left pad so GeneCards / leftmost set names are not clipped */
+  #pad {
+    display: inline-block;
+    padding: 28px 48px 20px 72px;
+    background: #fff;
+    overflow: visible;
+  }
+  #jvenn-container, #frame, #canvasEllipse {
+    overflow: visible !important;
+  }
+  #jvenn-container { margin: 0; }
+  #svg-out { white-space: pre; font-size: 1px; color: transparent; height: 0; overflow: hidden; }
+</style>
+<script src="jquery.min.js"></script>
+<script src="canvas2svg.js"></script>
+<script src="jvenn.min.js"></script>
+</head>
+<body>
+<div id="pad"><div id="jvenn-container"></div></div>
+<div id="svg-out"></div>
+<script>
+(function () {
+  /* Must be rgb(...) — jvenn color helper cannot parse #hex */
+  var DEFAULT_COLORS = [
+    "rgb(0,102,0)", "rgb(90,155,212)", "rgb(241,90,96)",
+    "rgb(207,207,27)", "rgb(255,117,0)", "rgb(192,152,83)"
+  ];
+  var PAD_LEFT = 64;
+
+  function payload() {
+    return window.__JVENN_PAYLOAD__ || {
+      names: ["A", "B"],
+      lists: [["g1", "g2"], ["g2", "g3"]],
+      colors: DEFAULT_COLORS.slice(0, 2),
+      displayStat: true
+    };
+  }
+
+  function buildSeries(p) {
+    var series = [];
+    for (var i = 0; i < p.names.length; i++) {
+      series.push({ name: String(p.names[i]), data: (p.lists[i] || []).map(String) });
+    }
+    return series;
+  }
+
+  /** Build SVG the same way jvenn's Download SVG does, then pad left. */
+  function harvestSvg() {
+    var $ = window.jQuery;
+    // jvenn keeps a C2S context as `j` in closure; serialized chart lives in container canvas/svg.
+    // Walk export path: getSerializedSvg from the drawing context attached to container.
+    var host = document.querySelector("#jvenn-container");
+    if (!host) return "";
+
+    // jvenn stores canvas2svg on the plugin instance; fall back to any svg under container
+    var serialized = null;
+    try {
+      // The plugin paints via C2S; serialized form is available after displayStat draw.
+      // Trigger the same assembly as #format-svg:
+      var wrap = $("<div></div>");
+      // Find C2S root: jvenn appends an svg as first child in some builds; else rebuild from canvas
+      var liveSvg = host.querySelector("svg");
+      if (liveSvg) {
+        wrap.append(liveSvg.cloneNode(true));
+      } else {
+        // Rebuild from canvas pixel path is lossy; require C2S.
+        var canvases = host.querySelectorAll("canvas");
+        if (!canvases.length) return "";
+        // As last resort return empty — Python will screenshot #pad instead.
+        return "";
+      }
+
+      $("[id^=resultC]").each(function () {
+        if ($(this).css("display") === "none") return;
+        var value = String($(this).html()).indexOf("<span") === 0 ? "?" : $(this).html();
+        wrap.children("svg").children("g").append(
+          labelText(value, $(this).css("left"), $(this).css("top"),
+            $(this).css("color"), $(this).css("opacity"),
+            $(this).css("font-family"), $(this).css("font-size"),
+            $(this).css("font-weight"), false)
+        );
+      });
+      $("[id^=label]").each(function () {
+        wrap.children("svg").children("g").append(
+          labelText($(this).html(), $(this).css("left"), $(this).css("top"),
+            $(this).css("color"), $(this).css("opacity"),
+            $(this).css("font-family"), $(this).css("font-size"),
+            $(this).css("font-weight"), true)
+        );
+      });
+      serialized = wrap.html();
+    } catch (e) {
+      serialized = "";
+    }
+    if (!serialized) return "";
+    return padSvgHtml(serialized, PAD_LEFT, 24, 16, 12);
+  }
+
+  function labelText(s, left, top, color, opacity, fontFamily, fontSize, fontWeight, isName) {
+    var e = parseInt(String(left).replace("px", ""), 10) || 0;
+    var t = parseInt(String(top).replace("px", ""), 10) || 0;
+    if (isName) { e += 20; t += 14; } else { e += 5; t += 14; }
+    return '<text fill="' + color + '" fill-opacity="' + opacity +
+      '" stroke="none" font-family="' + fontFamily + '" font-size="' + fontSize +
+      '" font-style="normal" font-weight="' + fontWeight +
+      '" text-decoration="none" x="' + e + '" y="' + t +
+      '" text-anchor="middle" dominant-baseline="alphabetic">' + s + "</text>";
+  }
+
+  function padSvgHtml(svgHtml, left, right, top, bottom) {
+    var div = document.createElement("div");
+    div.innerHTML = svgHtml;
+    var svg = div.querySelector("svg");
+    if (!svg) return svgHtml;
+    var w = parseInt(svg.getAttribute("width"), 10) || 500;
+    var h = parseInt(svg.getAttribute("height"), 10) || 695;
+    var inner = svg.innerHTML;
+    svg.setAttribute("width", String(w + left + right));
+    svg.setAttribute("height", String(h + top + bottom));
+    svg.innerHTML = '<g transform="translate(' + left + "," + top + ')">' + inner + "</g>";
+    return svg.outerHTML;
+  }
+
+  $(function () {
+    var p = payload();
+    var colors = (p.colors && p.colors.length) ? p.colors : DEFAULT_COLORS.slice(0, p.names.length);
+    function fixLabels() {
+      var $frame = $("#frame");
+      if ($frame.length) {
+        $frame.css({ overflow: "visible", width: "600px" });
+      }
+      $("#jvenn-container").css({ overflow: "visible", width: "660px", height: "auto" });
+      $("[id^=label]").each(function () {
+        var $el = $(this);
+        var text = ($el.text() || "").trim();
+        if (!text) return;
+        var left = parseInt($el.css("left"), 10);
+        var top = parseInt($el.css("top"), 10);
+        if (isNaN(left)) left = 0;
+        if (isNaN(top)) top = 0;
+        // GeneCards etc. start near x=0; push right so full word stays in frame
+        if (left < 100) $el.css("left", Math.max(left + 80, 96));
+        if (top < 28) $el.css("top", top + 18);
+        // Stronger than jvenn default 0.5 so whitespace-crop keeps faint names
+        $el.css("opacity", 0.85);
+      });
+    }
+
+    try {
+      $("#jvenn-container").jvenn({
+        series: buildSeries(p),
+        colors: colors,
+        fontSize: "14px",
+        fontFamily: "Arial",
+        displayStat: p.displayStat !== false,
+        displayMode: "classic",
+        shortNumber: false,
+        exporting: false,
+        fnClickCallback: function () {}
+      });
+      fixLabels();
+      var svg = harvestSvg();
+      document.getElementById("svg-out").textContent = svg;
+      window.__JVENN_SVG__ = svg;
+      document.title = "JVENN_READY";
+      document.documentElement.setAttribute("data-jvenn", "ready");
+      document.documentElement.setAttribute("data-svg-len", String(svg.length));
+    } catch (err) {
+      document.title = "JVENN_ERROR";
+      document.documentElement.setAttribute("data-jvenn-error", String(err));
+    }
+  });
+})();
+</script>
+</body>
+</html>

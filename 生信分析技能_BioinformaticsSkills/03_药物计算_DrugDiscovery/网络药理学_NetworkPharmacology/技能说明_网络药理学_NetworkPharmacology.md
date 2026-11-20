@@ -56,7 +56,9 @@ description: >-
 
 ## 7. 数据结果解读
 
-多库并集抬高假阳性；中心性 ≠ 因果；样例为演示非诊疗建议。
+多库并集抬高假阳性；中心性 ≠ 因果；样例为演示非诊疗建议。  
+凡正式图「怎么看 / 回答什么」→ 出图约束 **§I 图种读法图册**（§E1–E2 为成分柱与热图细表）；可复用占位句 → [`报告读图与方法模板_ReportProseTemplates.md`](文档_docs/报告读图与方法模板_ReportProseTemplates.md)；双报告细读写法 → `.cursor/skills/dual-report-writing`。  
+韦恩出图：`脚本_scripts/weishengxin_venn_lib.py`（本地 jvenn；画幅留白见出图约束 **§G**）。
 
 ## 8. 能否结合其它生信
 
